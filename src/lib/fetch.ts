@@ -1,11 +1,15 @@
 import qs from 'qs';
 
-import type { CurrencyCode } from '@/domain/currencyCode';
+import { type CurrencyCode, isCurrencyCode } from '@/domain/currencyCode';
 import type { GeoLocation } from '@/domain/geoLocation';
 import { isGeoLocation } from '@/domain/geoLocation';
+import type { PaymentPlan } from '@/domain/paymentPlan';
+import { isPaymentPlan } from '@/domain/paymentPlan';
 import type { Price } from '@/domain/price';
 import { isPrice } from '@/domain/price';
-import type { School } from '@/domain/school';
+import { isSchool, type School } from '@/domain/school';
+import type { Title } from '@/domain/title';
+import { isTitle } from '@/domain/title';
 
 const pricesUrl = process.env.NEXT_PUBLIC_PRICES_ENDPOINT;
 
