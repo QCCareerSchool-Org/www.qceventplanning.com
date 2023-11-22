@@ -25,7 +25,7 @@ export const Testimonial: FC<Props> = memo(({ id }) => {
           src={testimonial.image}
           alt={testimonial.name}
           fill
-          sizes="200px"
+          sizes="112px"
           objectFit="cover"
           className={styles.image}
           style={{ objectPosition: `${typeof testimonial.imagePositionX === 'undefined' ? '50%' : `${testimonial.imagePositionX}%`} ${typeof testimonial.imagePositionY === 'undefined' ? '50%' : `${testimonial.imagePositionY}%`}` }}

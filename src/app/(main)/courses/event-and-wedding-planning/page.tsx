@@ -25,7 +25,7 @@ const EventAndWeddingPlanningPage: FC = () => {
         <div className="container">
           <div className="row g-s">
             <div className="col-12">
-              <Hero src={HeroImage}>
+              <Hero src={HeroImage} priority>
                 <CourseType className="mb-2 mb-xl-4">Foundation Course</CourseType>
                 <h1 className="mb-2 mb-xl-4">Event &amp; Wedding Planning</h1>
                 <p className="h5 mb-3 mb-xl-5">Become a Certified Event &amp; Wedding Planner</p>

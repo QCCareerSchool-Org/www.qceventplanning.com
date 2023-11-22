@@ -6,11 +6,12 @@ import styles from './hero.module.css';
 
 type Props = {
   src: StaticImageData;
+  priority?: boolean;
 };
 
-export const Hero: FC<PropsWithChildren<Props>> = ({ src, children }) => (
+export const Hero: FC<PropsWithChildren<Props>> = ({ src, priority, children }) => (
   <div className={styles.wrapper}>
-    <Image src={src} className={styles.image} alt="" sizes="100vw" />
+    <Image src={src} priority={priority} className={styles.image} alt="" sizes="100vw" />
     <div className={styles.overlay} />
     <div className={styles.content}>
       {children}
