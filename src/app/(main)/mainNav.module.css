@@ -1,8 +1,11 @@
 .mainNav {
   transition: border-color 300ms;
   border-bottom: 1px solid rgba(0,0,0,0);
+  
+  /* transition: box-shadow 300ms; */
 }
 
 .mainNav.scrolled {
-  border-color: rgba(0,0,0,0.25);
+  border-color: rgba(0,0,0,0.10);
+  /* box-shadow: 0 0 0.125rem rgba(0,0,0,0.10); */
 }

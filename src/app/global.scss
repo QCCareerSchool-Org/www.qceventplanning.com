@@ -1,6 +1,19 @@
 :root {
   --qc-color-dark-blue: #0a2540;
+  --qc-color-navy: #010025;
+  --qc-color-light-gold: #faf0b6;
+  --qc-color-gold: #e1bc93;
+  --qc-color-light-steel: #d9e5f1;
+  --qc-color-steel: #506172;
 }
+
+$color-dark-blue: #0a2540;
+$color-navy: #010025;
+$color-light-gold: #faf0b6;
+$color-gold: #e1bc93;
+$color-light-steel: #d9e5f1;
+$color-steel: #506172;
+
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
@@ -12,6 +25,7 @@ $headings-font-weight: 600;
 $lead-font-weight: 400; /* no 300 available */
 
 $body-color: #506172;
+$headings-color: #02013F;
 
 $form-label-margin-bottom: 0.25rem;
 
@@ -26,7 +40,7 @@ $primary: #23d7bc;
 
 $btn-padding-x: 1rem;
 
-$navbar-nav-link-padding-x: 0.875rem;
+$navbar-nav-link-padding-x: 1rem;
 
 $navbar-light-toggler-border-color: none;
 $navbar-dark-toggler-border-color: none;
@@ -37,11 +51,12 @@ $navbar-toggler-focus-width: 0;
 @import "~bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
-$custom-colors: (
-  "navy": #010025,
-);
+// $custom-colors: (
+//   "light-steel": $color-light-steel,
+//   "steel": $color-steel,
+// );
 
-$theme-colors: map-merge($theme-colors, $custom-colors);
+// $theme-colors: map-merge($theme-colors, $custom-colors);
 
 $btn-border-radius: $border-radius-pill;
 
@@ -87,8 +102,10 @@ $btn-border-radius: $border-radius-pill;
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
 
-$section-padding: 5rem;
-$section-padding-lg: 7rem;
+$section-padding: 3rem;
+$section-padding-md: 5rem;
+$section-padding-lg: 6rem;
+$section-padding-xl: 7rem;
 
 body {
   overflow-y: scroll; /* Show scrollbars */
@@ -110,20 +127,6 @@ section > div.container {
   position: relative; /* so that if we use a cover image, the content will display on top */
 }
 
-section.noPadding {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-section.noPadding > div.container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-section:nth-of-type(2n) {
-  background-color: #eee;
-}
-
 .p-s { padding: $section-padding }
 .py-s { padding-top: $section-padding; padding-bottom: $section-padding; }
 .px-s { padding-left: $section-padding; padding-right: $section-padding; }
@@ -139,6 +142,28 @@ section:nth-of-type(2n) {
 .mb-s { margin-bottom: $section-padding; }
 .ms-s { margin-left: $section-padding; }
 .me-s { margin-right: $section-padding; }
+
+@include media-breakpoint-up(md) {
+  section {
+    padding: $section-padding-md 0;
+  }
+
+  .p-s { padding: $section-padding-md }
+  .py-s { padding-top: $section-padding-md; padding-bottom: $section-padding-md; }
+  .px-s { padding-left: $section-padding-md; padding-right: $section-padding-md; }
+  .pt-s { padding-top: $section-padding-md; }
+  .pb-s { padding-bottom: $section-padding-md; }
+  .ps-s { padding-left: $section-padding-md; }
+  .pe-s { padding-right: $section-padding-md; }
+
+  .m-s { margin: $section-padding-md }
+  .my-s { margin-top: $section-padding-md; margin-bottom: $section-padding-md; }
+  .mx-s { margin-left: $section-padding-md; margin-right: $section-padding-md; }
+  .mt-s { margin-top: $section-padding-md; }
+  .mb-s { margin-bottom: $section-padding-md; }
+  .ms-s { margin-left: $section-padding-md; }
+  .me-s { margin-right: $section-padding-md; }
+}
 
 @include media-breakpoint-up(lg) {
   section {
@@ -162,14 +187,51 @@ section:nth-of-type(2n) {
   .me-s { margin-right: $section-padding-lg; }
 }
 
+@include media-breakpoint-up(xl) {
+  section {
+    padding: $section-padding-xl 0;
+  }
+
+  .p-s { padding: $section-padding-xl }
+  .py-s { padding-top: $section-padding-xl; padding-bottom: $section-padding-xl; }
+  .px-s { padding-left: $section-padding-xl; padding-right: $section-padding-xl; }
+  .pt-s { padding-top: $section-padding-xl; }
+  .pb-s { padding-bottom: $section-padding-xl; }
+  .ps-s { padding-left: $section-padding-xl; }
+  .pe-s { padding-right: $section-padding-xl; }
+
+  .m-s { margin: $section-padding-xl }
+  .my-s { margin-top: $section-padding-xl; margin-bottom: $section-padding-xl; }
+  .mx-s { margin-left: $section-padding-xl; margin-right: $section-padding-xl; }
+  .mt-s { margin-top: $section-padding-xl; }
+  .mb-s { margin-bottom: $section-padding-xl; }
+  .ms-s { margin-left: $section-padding-xl; }
+  .me-s { margin-right: $section-padding-xl; }
+}
+
+section.noPadding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section.noPadding > div.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+section:nth-of-type(2n) {
+  background-color: #eee;
+}
+
+
 h1, .h1 { font-size: 2.5rem; line-height: 1.2; }
 h2, .h2 { font-size: 2.25rem; line-height: 1.2; }
 h3, .h3 { font-size: 2rem; line-height: 1.2; }
 h4, .h4 { font-size: 1.5rem; line-height: 1.4; }
-h5, .h5 { font-size: 1.25rem; line-height: 1.4; font-family: $font-family-sans-serif }
+h5, .h5 { font-size: 1.25rem; line-height: 1.4; font-weight: 500;}
 h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-serif }
 
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(lg) {
   h1, .h1 { font-size: 3.5rem; line-height: 1.2; }
   h2, .h2 { font-size: 3rem; line-height: 1.2; }
   h3, .h3 { font-size: 2.5rem; line-height: 1.2; }

@@ -3,8 +3,10 @@ import type { FC } from 'react';
 
 import BookReader from './book-reader.svg';
 import styles from './footer.module.scss';
+import { FooterColumn1 } from './footerColumn1';
+import { FooterColumn2 } from './footerColumn2';
+import { FooterColumn3 } from './footerColumn3';
 import Logo from '@/app/logo.svg';
-import { TelephoneNumber } from '@/components/telephoneNumber';
 
 export const Footer: FC = () => (
   <footer className={`${styles.footer} mt-auto`}>
@@ -21,43 +23,33 @@ export const Footer: FC = () => (
               <div className={styles.column1}>
                 <h3 className={`h6 ${styles.columnHeader}`}>Popular Courses</h3>
                 <ul className={styles.linkList}>
-                  <li><Link href="/courses/event-and-wedding-planning">Event &amp; Wedding Planning</Link></li>
-                  <li><Link href="/courses/wedding-planning">Wedding Planning</Link></li>
-                  <li><Link href="/courses/event-decor">Event Decor</Link></li>
-                  <li><Link href="/courses/floral-design">Floral Design</Link></li>
-                  <li><Link href="/courses/luxury-wedding-planning">Luxury Wedding Planning</Link></li>
-                  <li><Link href="/courses/destination-wedding-planning">Destination Wedding Planning</Link></li>
+                  <FooterColumn1 />
                 </ul>
               </div>
               <div className={styles.column2}>
                 <h3 className={`h6 ${styles.columnHeader}`}>Resources</h3>
                 <ul className={styles.linkList}>
-                  <li>FAQ</li>
-                  <li>About QC</li>
-                  <li>Student Success</li>
-                  <li>Tuition and Fees</li>
-                  <li>Blog</li>
+                  <FooterColumn2 />
                 </ul>
               </div>
               <div className={styles.column3}>
                 <h3 className={`h6 ${styles.columnHeader}`}>Contact Us</h3>
                 <ul className={styles.linkList}>
-                  <li><a href="#">Chat</a></li>
-                  <li><a href="mailto:info@qceventplanning.com">Email</a></li>
-                  <li><TelephoneNumber /></li>
-                  <li><a href="https://studentcenter.qccareerschool.com/students" target="_blank" rel="noreferrer">Student Login</a></li>
+                  <FooterColumn3 />
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <hr />
-        <small>
-          <span className="me-3">&copy; {new Date().getFullYear()} QC Event Planning</span>
-          <span className="me-3"><Link href="/terms">Privacy Policy</Link></span>
-          <span className="me-3"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer">BBB Accredited A+</a></span>
-          <a href="https://www.qccareerschool.com" target="_blank" rel="noreferrer">QC Career School</a>
-        </small>
+        <div className="small d-flex flex-column flex-md-row">
+          <div className="me-md-3 mb-1 mb-md-0">&copy; {new Date().getFullYear()} QC Event Planning</div>
+          <div className="d-flex flex-column flex-sm-row">
+            <div className="me-sm-3"><Link href="/terms">Privacy Policy</Link></div>
+            <div className="me-sm-3"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer">BBB Accredited A+</a></div>
+            <a href="https://www.qccareerschool.com" target="_blank" rel="noreferrer">QC Career School</a>
+          </div>
+        </div>
       </div>
     </section>
   </footer>

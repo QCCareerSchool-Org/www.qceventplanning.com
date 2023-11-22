@@ -1,0 +1,13 @@
+.courseType {
+  color: var(--qc-color-gold) !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5rem;
+  text-shadow: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .courseType {
+    color: var(--qc-color-light-gold) !important;
+  }
+}
