@@ -7,6 +7,7 @@
   --qc-color-gold: #e1bc93;
   --qc-color-light-blue-steel: #d9e5f1;
   --qc-color-blue-steel: #506172;
+  --qc-color-light: #f8f8fb;
 
   --qc-section-padding: 4rem;
   @media only screen and (min-width: 768px) {
@@ -44,6 +45,7 @@ $focus-ring-width: 0.125rem;
 $headings-margin-bottom: 0.5rem;
 
 $primary: #23d7bc;
+$light: #f8f8fb;
 
 $btn-padding-x: 1rem;
 
@@ -60,6 +62,7 @@ $navbar-toggler-focus-width: 0;
 
 // 4. Include any default map overrides here
 // $custom-colors: (
+//   "foo": #B5C3D1,
 // );
 
 // $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -198,3 +201,37 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 
 .gold { color: var(--qc-color-gold); }
 .lightGold { color: var(--qc-color-light-gold); }
+
+.btn-outline-grey {
+  --bs-btn-color: var(--qc-color-text);
+  --bs-btn-border-color: #B5C3D1;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #B5C3D1;
+  --bs-btn-hover-border-color: #B5C3D1;
+  --bs-btn-focus-shadow-rgb: 181, 195, 209;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #B5C3D1;
+  --bs-btn-active-border-color: #B5C3D1;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #B5C3D1;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #B5C3D1;
+  --bs-gradient: none;
+}
+
+.btn-grey {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #B5C3D1;
+  --bs-btn-border-color: #B5C3D1;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #c0ccd8;
+  --bs-btn-hover-border-color: #bcc9d6;
+  --bs-btn-focus-shadow-rgb: 154, 166, 178;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #c4cfda;
+  --bs-btn-active-border-color: #bcc9d6;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #B5C3D1;
+  --bs-btn-disabled-border-color: #B5C3D1;
+}

@@ -1,0 +1,10 @@
+.wrapper {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+}
+
+.image {
+  border-radius: 28px;
+}

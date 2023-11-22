@@ -26,13 +26,5 @@
 }
 
 .imageWrapper {
-  position: relative;
-  width: 56px;
-  height: 56px;
-  border-radius: 28px;
   margin-right: 1rem;
-}
-
-.image {
-  border-radius: 28px;
 }
