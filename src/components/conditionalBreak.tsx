@@ -1,6 +1,7 @@
 'use client';
 
 import type { FC } from 'react';
+
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 
 type Props = {
