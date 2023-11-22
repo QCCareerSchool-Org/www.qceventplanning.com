@@ -3,22 +3,32 @@
   --qc-color-navy: #010025;
   --qc-color-light-gold: #faf0b6;
   --qc-color-gold: #e1bc93;
-  --qc-color-light-steel: #d9e5f1;
-  --qc-color-steel: #506172;
+  --qc-color-light-blue-steel: #d9e5f1;
+  --qc-color-blue-steel: #506172;
+
+  --qc-section-padding: 3rem;
+  @media only screen and (min-width: 768px) {
+    --qc-section-padding: 5rem;
+  }
+  @media only screen and (min-width: 992px) {
+    --qc-section-padding: 6rem;
+  }
+  @media only screen and (min-width: 1200px) {
+    --qc-section-padding: 7rem;
+  }
 }
-
-$color-dark-blue: #0a2540;
-$color-navy: #010025;
-$color-light-gold: #faf0b6;
-$color-gold: #e1bc93;
-$color-light-steel: #d9e5f1;
-$color-steel: #506172;
-
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "~bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+$color-dark-blue: #0a2540;
+$color-navy: #010025;
+$color-light-gold: #faf0b6;
+$color-gold: #e1bc93;
+$color-light-blue-steel: #d9e5f1;
+$color-blue-steel: #506172;
+
 $font-family-sans-serif: var(--qc-neue-haas-text), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font-family: var(--qc-neue-haas-display), serif;
 $headings-font-weight: 600;
@@ -41,6 +51,7 @@ $primary: #23d7bc;
 $btn-padding-x: 1rem;
 
 $navbar-nav-link-padding-x: 1rem;
+$navbar-padding-y: 0.5rem;
 
 $navbar-light-toggler-border-color: none;
 $navbar-dark-toggler-border-color: none;
@@ -52,8 +63,6 @@ $navbar-toggler-focus-width: 0;
 
 // 4. Include any default map overrides here
 // $custom-colors: (
-//   "light-steel": $color-light-steel,
-//   "steel": $color-steel,
 // );
 
 // $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -102,11 +111,6 @@ $btn-border-radius: $border-radius-pill;
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "~bootstrap/scss/utilities/api";
 
-$section-padding: 3rem;
-$section-padding-md: 5rem;
-$section-padding-lg: 6rem;
-$section-padding-xl: 7rem;
-
 body {
   overflow-y: scroll; /* Show scrollbars */
   --scrollbar-width: calc(100vw - 100%);
@@ -120,94 +124,36 @@ body {
 section {
   position: relative;
   overflow: hidden;
-  padding: $section-padding 0;
+  padding: var(--qc-section-padding) 0;
+}
+
+section:first-of-type {
+  padding: calc(var(--qc-section-padding) / 2) 0 var(--qc-section-padding)
 }
 
 section > div.container {
   position: relative; /* so that if we use a cover image, the content will display on top */
 }
 
-.p-s { padding: $section-padding }
-.py-s { padding-top: $section-padding; padding-bottom: $section-padding; }
-.px-s { padding-left: $section-padding; padding-right: $section-padding; }
-.pt-s { padding-top: $section-padding; }
-.pb-s { padding-bottom: $section-padding; }
-.ps-s { padding-left: $section-padding; }
-.pe-s { padding-right: $section-padding; }
+.p-s { padding: var(--qc-section-padding); }
+.py-s { padding-top: var(--qc-section-padding); padding-bottom: var(--qc-section-padding); }
+.px-s { padding-left: var(--qc-section-padding); padding-right: var(--qc-section-padding); }
+.pt-s { padding-top: var(--qc-section-padding); }
+.pb-s { padding-bottom: var(--qc-section-padding); }
+.ps-s { padding-left: var(--qc-section-padding); }
+.pe-s { padding-right: var(--qc-section-padding); }
 
-.m-s { margin: $section-padding }
-.my-s { margin-top: $section-padding; margin-bottom: $section-padding; }
-.mx-s { margin-left: $section-padding; margin-right: $section-padding; }
-.mt-s { margin-top: $section-padding; }
-.mb-s { margin-bottom: $section-padding; }
-.ms-s { margin-left: $section-padding; }
-.me-s { margin-right: $section-padding; }
+.m-s { margin: var(--qc-section-padding) }
+.my-s { margin-top: var(--qc-section-padding); margin-bottom: var(--qc-section-padding); }
+.mx-s { margin-left: var(--qc-section-padding); margin-right: var(--qc-section-padding); }
+.mt-s { margin-top: var(--qc-section-padding); }
+.mb-s { margin-bottom: var(--qc-section-padding); }
+.ms-s { margin-left: var(--qc-section-padding); }
+.me-s { margin-right: var(--qc-section-padding); }
 
-@include media-breakpoint-up(md) {
-  section {
-    padding: $section-padding-md 0;
-  }
-
-  .p-s { padding: $section-padding-md }
-  .py-s { padding-top: $section-padding-md; padding-bottom: $section-padding-md; }
-  .px-s { padding-left: $section-padding-md; padding-right: $section-padding-md; }
-  .pt-s { padding-top: $section-padding-md; }
-  .pb-s { padding-bottom: $section-padding-md; }
-  .ps-s { padding-left: $section-padding-md; }
-  .pe-s { padding-right: $section-padding-md; }
-
-  .m-s { margin: $section-padding-md }
-  .my-s { margin-top: $section-padding-md; margin-bottom: $section-padding-md; }
-  .mx-s { margin-left: $section-padding-md; margin-right: $section-padding-md; }
-  .mt-s { margin-top: $section-padding-md; }
-  .mb-s { margin-bottom: $section-padding-md; }
-  .ms-s { margin-left: $section-padding-md; }
-  .me-s { margin-right: $section-padding-md; }
-}
-
-@include media-breakpoint-up(lg) {
-  section {
-    padding: $section-padding-lg 0;
-  }
-
-  .p-s { padding: $section-padding-lg }
-  .py-s { padding-top: $section-padding-lg; padding-bottom: $section-padding-lg; }
-  .px-s { padding-left: $section-padding-lg; padding-right: $section-padding-lg; }
-  .pt-s { padding-top: $section-padding-lg; }
-  .pb-s { padding-bottom: $section-padding-lg; }
-  .ps-s { padding-left: $section-padding-lg; }
-  .pe-s { padding-right: $section-padding-lg; }
-
-  .m-s { margin: $section-padding-lg }
-  .my-s { margin-top: $section-padding-lg; margin-bottom: $section-padding-lg; }
-  .mx-s { margin-left: $section-padding-lg; margin-right: $section-padding-lg; }
-  .mt-s { margin-top: $section-padding-lg; }
-  .mb-s { margin-bottom: $section-padding-lg; }
-  .ms-s { margin-left: $section-padding-lg; }
-  .me-s { margin-right: $section-padding-lg; }
-}
-
-@include media-breakpoint-up(xl) {
-  section {
-    padding: $section-padding-xl 0;
-  }
-
-  .p-s { padding: $section-padding-xl }
-  .py-s { padding-top: $section-padding-xl; padding-bottom: $section-padding-xl; }
-  .px-s { padding-left: $section-padding-xl; padding-right: $section-padding-xl; }
-  .pt-s { padding-top: $section-padding-xl; }
-  .pb-s { padding-bottom: $section-padding-xl; }
-  .ps-s { padding-left: $section-padding-xl; }
-  .pe-s { padding-right: $section-padding-xl; }
-
-  .m-s { margin: $section-padding-xl }
-  .my-s { margin-top: $section-padding-xl; margin-bottom: $section-padding-xl; }
-  .mx-s { margin-left: $section-padding-xl; margin-right: $section-padding-xl; }
-  .mt-s { margin-top: $section-padding-xl; }
-  .mb-s { margin-bottom: $section-padding-xl; }
-  .ms-s { margin-left: $section-padding-xl; }
-  .me-s { margin-right: $section-padding-xl; }
-}
+.gx-s { --bs-gutter-x: var(--qc-section-padding); }
+.gy-s { --bs-gutter-y: var(--qc-section-padding); }
+.g-s { --bs-gutter-x: var(--qc-section-padding); --bs-gutter-y: var(--qc-section-padding); }
 
 section.noPadding {
   padding-top: 0;
@@ -244,3 +190,11 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 // .navbar .btn { font-size: 0.9375rem; }
 
 .text-dark-blue { color: var(--qc-color-dark-blue); }
+
+@media only screen and (min-width: 992px) {
+  .navbar { padding-top: 1rem; padding-bottom: 1rem; }
+}
+
+@media only screen and (min-width: 1200px) {
+  .navbar { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+}
