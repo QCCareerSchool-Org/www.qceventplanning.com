@@ -2,13 +2,36 @@
   
 }
 
+.stars {
+  margin-bottom: 2rem;
+}
+
+.quotation {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  display: flex;
+}
+
+.attribution {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--qc-color-headings);
+}
+
+.title {
+  font-size: 0.875rem;
+}
+
 .imageWrapper {
   position: relative;
   width: 56px;
   height: 56px;
   border-radius: 28px;
+  margin-right: 1rem;
 }
-
 
 .image {
   border-radius: 28px;

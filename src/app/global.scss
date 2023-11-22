@@ -1,4 +1,6 @@
 :root {
+  --qc-color-text: #506172;
+  --qc-color-headings: #02013f;
   --qc-color-dark-blue: #0a2540;
   --qc-color-navy: #010025;
   --qc-color-light-gold: #faf0b6;
@@ -22,12 +24,6 @@
 @import "~bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
-$color-dark-blue: #0a2540;
-$color-navy: #010025;
-$color-light-gold: #faf0b6;
-$color-gold: #e1bc93;
-$color-light-blue-steel: #d9e5f1;
-$color-blue-steel: #506172;
 
 $font-family-sans-serif: var(--qc-neue-haas-text), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $headings-font-family: var(--qc-neue-haas-display), serif;
@@ -36,7 +32,7 @@ $lead-font-size: 1.125rem;
 $lead-font-weight: 400; /* no 300 available */
 
 $body-color: #506172;
-$headings-color: #02013F;
+$headings-color: var(--qc-color-headings);
 
 $form-label-margin-bottom: 0.25rem;
 
@@ -199,3 +195,6 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 @media only screen and (min-width: 1200px) {
   .navbar { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 }
+
+.gold { color: var(--qc-color-gold); }
+.lightGold { color: var(--qc-color-light-gold); }
