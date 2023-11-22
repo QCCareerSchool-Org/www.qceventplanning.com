@@ -6,6 +6,8 @@ export type Testimonial = {
   name: string;
   quote: string[];
   image: StaticImageData;
+  imagePositionX?: number;
+  imagePositionY?: number;
   stars: 0 | 1 | 2 | 3 | 4 | 5;
 };
 

@@ -10,7 +10,7 @@ type Props = {
 
 export const Hero: FC<PropsWithChildren<Props>> = ({ src, children }) => (
   <div className={styles.wrapper}>
-    <Image src={src} className={styles.image} alt="" />
+    <Image src={src} className={styles.image} alt="" sizes="100vw" />
     <div className={styles.overlay} />
     <div className={styles.content}>
       {children}

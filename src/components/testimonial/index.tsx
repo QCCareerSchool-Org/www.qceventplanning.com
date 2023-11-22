@@ -21,7 +21,15 @@ export const Testimonial: FC<Props> = memo(({ id }) => {
       })}
       <p className="mb-0">&mdash;{testimonial.name}</p>
       <div className={styles.imageWrapper}>
-        <Image src={testimonial.image} alt={testimonial.name} fill objectFit="cover" className={styles.image} />
+        <Image
+          src={testimonial.image}
+          alt={testimonial.name}
+          fill
+          sizes="200px"
+          objectFit="cover"
+          className={styles.image}
+          style={{ objectPosition: `${typeof testimonial.imagePositionX === 'undefined' ? '50%' : `${testimonial.imagePositionX}%`} ${typeof testimonial.imagePositionY === 'undefined' ? '50%' : `${testimonial.imagePositionY}%`}` }}
+        />
       </div>
     </div>
   );
