@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import type { FC } from 'react';
 import { memo } from 'react';
 
