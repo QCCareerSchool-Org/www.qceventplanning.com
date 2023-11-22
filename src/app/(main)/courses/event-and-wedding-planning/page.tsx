@@ -61,25 +61,28 @@ const EventAndWeddingPlanningPage: FC = () => {
           </div>
           <div className="row justify-content-center g-5">
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="a" />
+              <Testimonial id="TE-0001" />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="b" />
+              <Testimonial id="TE-0002" />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="b" />
+              <Testimonial id="TE-0002" />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="b" />
+              <Testimonial id="TE-0002" />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="b" />
+              <Testimonial id="TE-0002" />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="b" />
+              <Testimonial id="TE-0002" />
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <Image src={WhatYoullLearnImage} alt="" className="img-fluid" />
       </section>
     </>
   );

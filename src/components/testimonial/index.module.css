@@ -1,0 +1,15 @@
+.testimonial {
+  
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+
+.image {
+  border-radius: 50px;
+}
