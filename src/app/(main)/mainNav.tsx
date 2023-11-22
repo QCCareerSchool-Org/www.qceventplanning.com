@@ -41,7 +41,7 @@ export const MainNav: FC = () => {
             </NavDropdown>
             <Link href="/free-catalog" className="nav-link">Free Catalog</Link>
             <Link href="/student-success" className="nav-link">Student Success</Link>
-            <Link href="/about" className="nav-link">Contact<span className="d-lg-none d-xl-inline"> Us</span></Link>
+            <Link href="/contact-us" className="nav-link">Contact<span className="d-lg-none d-xl-inline"> Us</span></Link>
             <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-primary">Enroll Now</Link></div>
           </Nav>
         </Navbar.Collapse>

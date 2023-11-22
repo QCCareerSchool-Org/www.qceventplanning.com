@@ -133,15 +133,15 @@ const EventAndWeddingPlanningPage: FC = () => {
               <p className="mb-3 fst-italic">An International Team of Instructors</p>
               <h2 className="h3 mb-3">Meet Your New Event &amp; Wedding Planning Instructors</h2>
               <p className="mb-5">QC is proud to work with leaders of the global event planning industry to develop our courses. Our international team of instructors bring diverse experience and skills to aspiring event planners around the globe.</p>
-              <div className="row">
-                <div className="col-6">
+              <div className="row g-5">
+                <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                   <div className="mb-3">
                     <MwaiYeboah />
                   </div>
                   <h3 className="h6 mb-3">Mwai Yeboah</h3>
                   <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai in the UK, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                   <div className="mb-3">
                     <AlyssaPerna />
                   </div>
@@ -156,14 +156,14 @@ const EventAndWeddingPlanningPage: FC = () => {
       <section className="bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
-            <div className="col-12 col-sm-10 col-md-8 text-center">
+            <div className="col-12 col-xl-10 text-center">
               <h2 className="mb-3">Course Outline</h2>
-              <p className="mb-0">The Event and Wedding Planning Course is divided into 7 parts, each comprising separate training units.</p>
+              <p className="lead mb-0">The Event and Wedding Planning Course is divided into 7 parts, each comprising separate training units.</p>
             </div>
             <div className="col-12 col-sm-10 col-md-8 text-center">
               xxx
             </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 text-center">
+            <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
               <h3 className="h5 mb-3">Have Questions About the Course?</h3>
               <p className="lead mb-3">Don't hesitate to reach out to our dedicated student support team for guidance and support. <strong>Your success is our priority!</strong></p>
               <Link href="/contact-us" className="btn btn-outline-grey">Contact Us</Link>
