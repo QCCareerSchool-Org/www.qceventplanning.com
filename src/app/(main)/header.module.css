@@ -1,3 +1,15 @@
 .header {
-  margin-bottom: 56px;
+  margin-bottom: 57px;
+}
+
+@media only screen and (min-width: 992px) {
+  .header {
+    margin-bottom: 73px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header {
+    margin-bottom: 89px;
+  }
 }
