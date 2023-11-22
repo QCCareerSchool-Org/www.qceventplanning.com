@@ -105,7 +105,7 @@ const EventAndWeddingPlanningPage: FC = () => {
         </div>
       </section>
       <section className="text-white">
-        <Image src={CertificationBackgroundImage} fill objectFit="cover" alt="" sizes="100vw" />
+        <Image src={CertificationBackgroundImage} fill placeholder="blur" objectFit="cover" alt="" sizes="100vw" />
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
