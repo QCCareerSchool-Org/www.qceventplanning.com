@@ -6,7 +6,7 @@ import AislePlannerLogoImage from './aisle-planner-logo.png';
 
 export const AislePlannerSection: FC = () => (
   <section className="text-white">
-    <Image src={AislePlannerBackgroundImage} fill placeholder="blur" objectFit="cover" alt="" sizes="100vw" />
+    <Image src={AislePlannerBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
     <div className="container">
       <div className="row">
         <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">

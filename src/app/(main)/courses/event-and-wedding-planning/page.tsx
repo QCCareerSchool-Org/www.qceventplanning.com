@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import type { FC } from 'react';
 
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
@@ -8,6 +7,7 @@ import { OutlineSection } from './outline-section';
 import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
+import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aisle-planner-section';
 import { CourseType } from '@/components/courseType';
 import { Hero } from '@/components/hero';
@@ -19,7 +19,7 @@ import { MwaiYeboah } from '@/components/tutors/mwaiYeboah';
 
 const courseCodes = [ 'ep' ];
 
-const EventAndWeddingPlanningPage: FC = () => {
+const EventAndWeddingPlanningPage: PageComponent = () => {
   return (
     <>
       <section>
@@ -104,7 +104,7 @@ const EventAndWeddingPlanningPage: FC = () => {
         </div>
       </section>
       <section className="text-white">
-        <Image src={CertificationBackgroundImage} fill placeholder="blur" objectFit="cover" alt="" sizes="100vw" />
+        <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
