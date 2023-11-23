@@ -1,4 +1,4 @@
-import type { FC, MouseEventHandler } from 'react';
+import type { FC } from 'react';
 
 import { EnrollButton } from './enrollButton';
 import styles from './heroButtons.module.css';
@@ -6,7 +6,6 @@ import { PaymentPlanButton } from './paymentPlanButton';
 
 type Props = {
   courseCodes: string[];
-  onPaymentPlansClick: MouseEventHandler<HTMLButtonElement>;
 };
 
 export const HeroButtons: FC<Props> = props => {
@@ -15,7 +14,7 @@ export const HeroButtons: FC<Props> = props => {
       <div className="me-3">
         <EnrollButton courseCodes={props.courseCodes} />
       </div>
-      <PaymentPlanButton onClick={props.onPaymentPlansClick} />
+      <PaymentPlanButton />
     </div>
   );
 };

@@ -1,7 +1,5 @@
-'use client';
-
 import Image from 'next/image';
-import type { FC, MouseEventHandler } from 'react';
+import type { FC } from 'react';
 
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
@@ -22,11 +20,6 @@ import { MwaiYeboah } from '@/components/tutors/mwaiYeboah';
 const courseCodes = [ 'ep' ];
 
 const EventAndWeddingPlanningPage: FC = () => {
-
-  const handlePaymentPlanClick: MouseEventHandler = e => {
-    e.preventDefault();
-  };
-
   return (
     <>
       <section>
@@ -38,7 +31,7 @@ const EventAndWeddingPlanningPage: FC = () => {
                 <h1 className="mb-2 mb-xl-4">Event &amp; Wedding Planning</h1>
                 <p className="h5 mb-3 mb-xl-5">Become a Certified Event &amp; Wedding Planner</p>
                 <div className="d-flex justify-content-center justify-content-md-start">
-                  <HeroButtons courseCodes={courseCodes} onPaymentPlansClick={handlePaymentPlanClick} />
+                  <HeroButtons courseCodes={courseCodes} />
                 </div>
               </Hero>
             </div>
