@@ -1,0 +1,35 @@
+.text { margin-bottom: 2rem; }
+
+.quotation {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--qc-color-headings);
+}
+
+@media only screen and (min-width: 992px) {
+  .quotation { font-size: 1.5rem; }
+}
+
+.quotation:last-of-type {
+  margin-bottom: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: var(--qc-color-headings);
+  font-style: normal;
+}
+
+.title {
+  font-size: 0.875rem;
+}

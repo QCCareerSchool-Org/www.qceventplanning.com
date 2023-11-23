@@ -1,23 +1,23 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import type { FC, MouseEventHandler } from 'react';
 
-import AislePlannerBackgroundImage from './aisle-planner-background.jpg';
-import AislePlannerLogoImage from './aisle-planner-logo.png';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import IEWPImage from './iewp.svg';
+import { OutlineSection } from './outline-section';
 import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
+import { AislePlannerSection } from '@/components/aisle-planner-section';
 import { CourseType } from '@/components/courseType';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/heroButtons';
 import { Testimonial } from '@/components/testimonial';
-import { AlyssaPerna } from '@/tutors/alyssaPerna';
-import { MwaiYeboah } from '@/tutors/mwaiYeboah';
+import { TestimonialSection } from '@/components/testimonial-section';
+import { AlyssaPerna } from '@/components/tutors/alyssaPerna';
+import { MwaiYeboah } from '@/components/tutors/mwaiYeboah';
 
 const courseCodes = [ 'ep' ];
 
@@ -153,35 +153,16 @@ const EventAndWeddingPlanningPage: FC = () => {
           </div>
         </div>
       </section>
+      <OutlineSection />
+      <AislePlannerSection />
+      <TestimonialSection id="TE-0001" />
       <section className="bg-light">
         <div className="container">
-          <div className="row justify-content-center g-s">
-            <div className="col-12 col-xl-10 text-center">
-              <h2 className="mb-3">Course Outline</h2>
-              <p className="lead mb-0">The Event and Wedding Planning Course is divided into 7 parts, each comprising separate training units.</p>
-            </div>
-            <div className="col-12 col-sm-10 col-md-8 text-center">
-              xxx
-            </div>
-            <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
-              <h3 className="h5 mb-3">Have Questions About the Course?</h3>
-              <p className="lead mb-3">Don't hesitate to reach out to our dedicated student support team for guidance and support. <strong>Your success is our priority!</strong></p>
-              <Link href="/contact-us" className="btn btn-outline-grey">Contact Us</Link>
-            </div>
-          </div>
+          <h2>Tuition &amp; Payment Plans</h2>
+
         </div>
       </section>
-      <section className="text-white">
-        <Image src={AislePlannerBackgroundImage} fill placeholder="blur" objectFit="cover" alt="" sizes="100vw" />
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-              <h2><Image src={AislePlannerLogoImage} alt="Aisle Planner" className="img-fluid mb-4" /></h2>
-              <p className="mb-0">As a QC Student, you'll have access to an amazing event planning software, Aisle Planner! This software allows you to manage all your events at the touch of a button, from creating a project timeline to planning seating for your event to keeping track of all your clients, and so much more! For a limited time, all QC students can get a 6-month subscription to Aisle Planner, absolutely free!</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialSection id="TE-0002" />
     </>
   );
 };

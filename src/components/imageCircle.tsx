@@ -18,9 +18,8 @@ export const ImageCircle: FC<Props> = ({ src, alt, imagePositionX, imagePosition
       alt={alt}
       fill
       sizes="112px"
-      objectFit="cover"
       className={styles.image}
-      style={{ objectPosition: `${typeof imagePositionX === 'undefined' ? '50%' : `${imagePositionX}%`} ${typeof imagePositionY === 'undefined' ? '50%' : `${imagePositionY}%`}` }}
+      style={{ objectFit: 'cover', objectPosition: `${typeof imagePositionX === 'undefined' ? '50%' : `${imagePositionX}%`} ${typeof imagePositionY === 'undefined' ? '50%' : `${imagePositionY}%`}` }}
     />
   </div>
 );

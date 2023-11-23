@@ -8,6 +8,7 @@
   --qc-color-light-blue-steel: #d9e5f1;
   --qc-color-blue-steel: #506172;
   --qc-color-light: #f8f8fb;
+  --qc-color-light-stroke: #b5c3d1;
 
   --qc-section-padding: 4rem;
   @media only screen and (min-width: 768px) {
@@ -55,6 +56,14 @@ $navbar-padding-y: 0.5rem;
 $navbar-light-toggler-border-color: none;
 $navbar-dark-toggler-border-color: none;
 $navbar-toggler-focus-width: 0;
+
+$accordion-padding-x: 1.5rem;
+$accordion-padding-y: 1.5rem;
+$accordion-border-radius: 1.5rem;
+$accordion-border-color: var(--qc-color-light-stroke);
+$accordion-button-active-bg: white;
+$accordion-button-focus-box-shadow: none;
+
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "~bootstrap/scss/variables";
@@ -165,11 +174,6 @@ section.noPadding > div.container {
   padding-right: 0;
 }
 
-section:nth-of-type(2n) {
-  background-color: #eee;
-}
-
-
 h1, .h1 { font-size: 2.5rem; line-height: 1.2; }
 h2, .h2 { font-size: 2.25rem; line-height: 1.2; }
 h3, .h3 { font-size: 2rem; line-height: 1.2; }
@@ -235,3 +239,8 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
   --bs-btn-disabled-bg: #B5C3D1;
   --bs-btn-disabled-border-color: #B5C3D1;
 }
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+.accordion-body { padding-top: 0; }
