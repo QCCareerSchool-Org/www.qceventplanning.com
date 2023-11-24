@@ -37,7 +37,9 @@ const getPrice = async (countryCode: string | null, provinceCode: string | null,
 
   const url = `https://api.qccareerschool.com/prices?${queryParams.join('&')}`;
 
-  const response = await fetch(url);
+  const response = await fetch(url, {
+    headers: { 'x-api-version': '2' },
+  });
   if (!response.ok) {
     throw Error(response.statusText);
   }

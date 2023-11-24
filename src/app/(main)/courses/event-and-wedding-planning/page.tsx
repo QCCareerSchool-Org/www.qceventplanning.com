@@ -40,7 +40,6 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
                   <HeroButtons courseCodes={courseCodes} />
                 </div>
               </Hero>
-              <pre>{JSON.stringify(provinceCode)}</pre>
             </div>
             <div className="col-12 col-lg-6">
               <h2 className="mb-4">Why Choose<br />QC Event School</h2>
