@@ -11,7 +11,7 @@ type Props = {
 
 export const Hero: FC<PropsWithChildren<Props>> = ({ src, priority, children }) => (
   <div className={styles.wrapper}>
-    <Image src={src} priority={priority} className={styles.image} alt="" sizes="100vw" />
+    <Image src={src} priority={priority} placeholder="blur" className={styles.image} alt="" sizes="100vw" />
     <div className={styles.overlay} />
     <div className={styles.content}>
       {children}
