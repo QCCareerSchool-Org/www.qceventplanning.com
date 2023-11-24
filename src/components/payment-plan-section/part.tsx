@@ -6,7 +6,7 @@ import ClockIcon from './clock.svg';
 import commonStyles from './commonStyles.module.css';
 import DollarCircleIcon from './dollar-circle.svg';
 import styles from './part.module.scss';
-import ShieldIcon from './shield.svg';
+import ShieldCheckIcon from './shield-check.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 
@@ -27,7 +27,7 @@ export const Part: FC<Props> = ({ price, href }) => (
       <ul className={commonStyles.list}>
         <li className={`${commonStyles.bold} ${styles.dark}`}><DollarCircleIcon className={commonStyles.icon} /> {price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</li>
         <li className={styles.offWhite}><CertIcon className={commonStyles.icon} /> Certification upon graduation</li>
-        <li className={styles.offWhite}><ShieldIcon className={commonStyles.icon} /> 21-day money-back guarantee</li>
+        <li className={styles.offWhite}><ShieldCheckIcon className={commonStyles.icon} /> 21-day money-back guarantee</li>
         <li className={styles.offWhite}><ClockIcon className={commonStyles.icon} /> Lifetime Access</li>
       </ul>
     </div>

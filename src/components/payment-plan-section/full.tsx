@@ -5,7 +5,7 @@ import CertIcon from './cert.svg';
 import ClockIcon from './clock.svg';
 import commonStyles from './commonStyles.module.css';
 import styles from './full.module.scss';
-import ShieldIcon from './shield.svg';
+import ShieldCheckIcon from './shield-check.svg';
 import TagIcon from './tag.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
@@ -27,7 +27,7 @@ export const Full: FC<Props> = ({ price, href }) => (
       <ul className={commonStyles.list}>
         <li className={`${commonStyles.bold} ${styles.dark}`}><TagIcon className={commonStyles.icon} /> SAVE {price.currency.symbol}{formatPrice(price.plans.full.discount)} when you pay in full</li>
         <li><CertIcon className={commonStyles.icon} /> Certification upon graduation</li>
-        <li><ShieldIcon className={commonStyles.icon} /> 21-day money-back guarantee</li>
+        <li><ShieldCheckIcon className={commonStyles.icon} /> 21-day money-back guarantee</li>
         <li><ClockIcon className={commonStyles.icon} /> Lifetime Access</li>
       </ul>
     </div>
