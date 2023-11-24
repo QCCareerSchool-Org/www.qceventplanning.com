@@ -5,13 +5,13 @@ import Link from 'next/link';
 import type { FC } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 
-import Part1Image from './ep-part-1.jpg';
-import Part2Image from './ep-part-2.jpg';
-import Part3Image from './ep-part-3.jpg';
-import Part4Image from './ep-part-4.jpg';
-import Part5Image from './ep-part-5.jpg';
-import Part6Image from './ep-part-6-option-1.jpg';
-import Part7Image from './ep-part-7.jpg';
+import Part1Image from './part-1.jpg';
+import Part2Image from './part-2.jpg';
+import Part3Image from './part-3.jpg';
+import Part4Image from './part-4.jpg';
+import Part5Image from './part-5.jpg';
+import Part6Image from './part-6.jpg';
+import Part7Image from './part-7.jpg';
 
 export const OutlineSection: FC = () => (
   <section className="bg-light">
