@@ -152,7 +152,6 @@ const CorporateEventPlanningPage: PageComponent = () => {
         </div>
       </section>
       <OutlineSection />
-      <AislePlannerSection />
       <TestimonialSection id="TE-0001" />
       <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
       <TestimonialSection id="TE-0002" />
