@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { EnrollButton } from './enrollButton';
+import { EnrollButton } from '../enrollButton';
 import styles from './heroButtons.module.css';
 import { PaymentPlanButton } from './paymentPlanButton';
 

@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import Image from 'next/image';
 
 import CertificationBackgroundImage from './cert-bg.jpg';
@@ -10,16 +11,21 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aisle-planner-section';
 import { CourseType } from '@/components/courseType';
+import { GetStartedSection } from '@/components/get-started-section';
 import { Hero } from '@/components/hero';
-import { HeroButtons } from '@/components/heroButtons';
+import { HeroButtons } from '@/components/hero/heroButtons';
+import { PaymentPlanSection } from '@/components/payment-plan-section';
 import { Testimonial } from '@/components/testimonial';
 import { TestimonialSection } from '@/components/testimonial-section';
-import { AlyssaPerna } from '@/components/tutors/alyssaPerna';
-import { MwaiYeboah } from '@/components/tutors/mwaiYeboah';
+import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
+import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 
 const courseCodes = [ 'ep' ];
 
 const EventAndWeddingPlanningPage: PageComponent = () => {
+  const headerList = headers();
+  const countryCode = headerList.get('x-vercel-ip-country');
+  const provinceCode = headerList.get('x-vercel-ip-country-region');
   return (
     <>
       <section>
@@ -149,13 +155,9 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
       <OutlineSection />
       <AislePlannerSection />
       <TestimonialSection id="TE-0001" />
-      <section className="bg-light">
-        <div className="container">
-          <h2>Tuition &amp; Payment Plans</h2>
-
-        </div>
-      </section>
+      <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
       <TestimonialSection id="TE-0002" />
+      <GetStartedSection courseCode="EP" />
     </>
   );
 };

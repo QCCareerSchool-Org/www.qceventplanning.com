@@ -10,7 +10,7 @@ type Props = {
   style?: CSSProperties;
 };
 
-export const TelephoneNumber: FC<Props> = ({ className, style }) => {
+export const TelephoneLink: FC<Props> = ({ className, style }) => {
   const geoLocation = useGeoLocation();
   const telephoneNumber = getTelephoneNumber(geoLocation.countryCode);
   return (

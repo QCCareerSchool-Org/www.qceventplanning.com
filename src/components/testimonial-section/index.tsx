@@ -16,8 +16,8 @@ export const TestimonialSection: FC<Props> = ({ id }) => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-9 col-xl-8 col-xxl-6">
-            <blockquote itemScope itemType="https://schema.org/Quotation">
-              <div className={styles.text} itemProp="text">
+            <blockquote>
+              <div className={styles.text}>
                 {testimonial.quote.map((q, i, a) => {
                   if (i < a.length - 1) {
                     return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;
@@ -25,9 +25,9 @@ export const TestimonialSection: FC<Props> = ({ id }) => {
                   return <p key={i} className={styles.quotation}>&ldquo;{q}&rdquo;</p>;
                 })}
               </div>
-              <footer className={styles.footer} itemProp="creator" itemType="https://schema.org/Person">
+              <footer className={styles.footer}>
                 <ImageCircle src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
-                <cite className={styles.name} itemProp="name">{testimonial.name}</cite>
+                <cite className={styles.name}>{testimonial.name}</cite>
                 <div className={styles.title}>{testimonial.title}</div>
               </footer>
             </blockquote>

@@ -1,3 +1,7 @@
+/**
+ * Changes color at different screen sizes
+ */
+
 import type { FC } from 'react';
 
 import styles from './paymentPlanButton.module.css';
