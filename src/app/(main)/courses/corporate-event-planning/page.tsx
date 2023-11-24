@@ -9,7 +9,6 @@ import { OutlineSection } from './outline-section';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { AislePlannerSection } from '@/components/aisle-planner-section';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/get-started-section';
 import { Hero } from '@/components/hero';
