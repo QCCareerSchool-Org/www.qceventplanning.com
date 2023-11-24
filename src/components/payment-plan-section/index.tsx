@@ -1,7 +1,9 @@
 import type { FC } from 'react';
 
-import type { Price } from '@/domain/price';
-import { isPrice } from '@/domain/price';
+import { Full } from './full';
+import { PaymentSectionGuarantee } from './guarantee';
+import { Part } from './part';
+import { fetchPrice, type PriceQuery } from '@/lib/fetch';
 
 type Props = {
   countryCode: string | null;
@@ -11,43 +13,37 @@ type Props = {
 };
 
 export const PaymentPlanSection: FC<Props> = async ({ countryCode, provinceCode, courseCodes, className }) => {
-  const price = await getPrice(countryCode, provinceCode, courseCodes);
+  const priceQuery: PriceQuery = countryCode
+    ? { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes }
+    : { countryCode: 'US', provinceCode: 'MD', courses: courseCodes };
+
+  const price = await fetchPrice(priceQuery);
+
+  if (!price) {
+    return null;
+  }
+
+  const href = 'https://enroll.qceventplanning.com/?' + courseCodes.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
 
   return (
-    <section className={className ?? 'bg-light'}>
+    <section className={className ?? 'bg-light'} id="paymentPlans">
       <div className="container">
-        <h2>Tuition &amp; Payment Plans</h2>
-        <pre>{JSON.stringify(price)}</pre>
+        <div className="row g-s justify-content-center">
+          <div className="col-12 text-center">
+            <h2 className="mb-4">Tuition &amp; Payment Plans</h2>
+            <p className="lead">Select the payment plan that best suits your budget. Prices are listed in {price.currency.name}.</p>
+          </div>
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+            <Part price={price} href={href} />
+          </div>
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+            <Full price={price} href={href} />
+          </div>
+          <div className="col-12 col-lg-6">
+            <PaymentSectionGuarantee />
+          </div>
+        </div>
       </div>
     </section>
   );
-};
-
-const getPrice = async (countryCode: string | null, provinceCode: string | null, courseCodes: string[]): Promise<Price> => {
-  const queryParams = courseCodes.map(c => `courses[]=${encodeURIComponent(c)}`);
-  if (countryCode) {
-    queryParams.push(`countryCode=${encodeURIComponent(countryCode)}`);
-    if (provinceCode) {
-      queryParams.push(`provinceCode=${encodeURIComponent(provinceCode)}`);
-    }
-  } else {
-    queryParams.push('countryCode=US');
-    queryParams.push('provinceCode=MD');
-  }
-
-  const url = `https://api.qccareerschool.com/prices?${queryParams.join('&')}`;
-
-  const response = await fetch(url, {
-    headers: { 'x-api-version': '2' },
-  });
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-
-  const body: unknown = await response.json();
-  if (isPrice(body)) {
-    return body;
-  }
-
-  throw Error('Invalid response');
 };

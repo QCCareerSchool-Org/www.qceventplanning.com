@@ -3,12 +3,15 @@
   --qc-color-headings: #02013f;
   --qc-color-dark-blue: #0a2540;
   --qc-color-navy: #010025;
+  --qc-color-navy-gradient-start: #0a2540;
+  --qc-color-navy-gradient-end: #010025;
   --qc-color-light-gold: #faf0b6;
   --qc-color-gold: #e1bc93;
   --qc-color-light-blue-steel: #d9e5f1;
   --qc-color-blue-steel: #506172;
   --qc-color-light: #f8f8fb;
   --qc-color-light-stroke: #b5c3d1;
+  
 
   --qc-section-padding: 4rem;
   @media only screen and (min-width: 768px) {
@@ -57,9 +60,12 @@ $navbar-light-toggler-border-color: none;
 $navbar-dark-toggler-border-color: none;
 $navbar-toggler-focus-width: 0;
 
+$border-radius: 1.5rem;
+$card-spacer-y: 2rem;
+$card-spacer-x: 2rem;
+
 $accordion-padding-x: 1.5rem;
 $accordion-padding-y: 1.5rem;
-$accordion-border-radius: 1.5rem;
 $accordion-border-color: var(--qc-color-light-stroke);
 $accordion-button-active-bg: white;
 $accordion-button-focus-box-shadow: none;

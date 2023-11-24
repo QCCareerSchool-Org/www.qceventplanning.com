@@ -3,10 +3,12 @@ import type { FC } from 'react';
 
 import AislePlannerBackgroundImage from './aisle-planner-background.jpg';
 import AislePlannerLogoImage from './aisle-planner-logo.png';
+import styles from './index.module.css';
 
 export const AislePlannerSection: FC = () => (
   <section className="text-white">
     <Image src={AislePlannerBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+    <div className={styles.overlay} />
     <div className="container">
       <div className="row">
         <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">

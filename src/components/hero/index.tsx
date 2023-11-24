@@ -2,7 +2,7 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC, PropsWithChildren } from 'react';
 
-import styles from './hero.module.css';
+import styles from './index.module.css';
 
 type Props = {
   src: StaticImageData;
