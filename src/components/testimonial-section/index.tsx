@@ -18,7 +18,7 @@ export const TestimonialSection: FC<Props> = ({ id }) => {
           <div className="col-12 col-lg-9 col-xl-8 col-xxl-6">
             <blockquote>
               <div className={styles.text}>
-                {testimonial.quote.map((q, i, a) => {
+                {testimonial.long.map((q, i, a) => {
                   if (i < a.length - 1) {
                     return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;
                   }
