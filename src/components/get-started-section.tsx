@@ -4,31 +4,24 @@ import type { FC } from 'react';
 import styles from './get-started-section.module.scss';
 
 type Props = {
-  courseCode: 'EP';
+  title: string;
+  text: string;
+  courseCodes: string[];
 };
 
-export const GetStartedSection: FC<Props> = ({ courseCode }) => {
-  const career = getCareer(courseCode);
-  const href = `https://enroll.qceventplanning.com?c[]=${encodeURIComponent(courseCode)}`;
+export const GetStartedSection: FC<Props> = ({ title, text, courseCodes }) => {
+  const href = 'https://enroll.qceventplanning.com?' + courseCodes.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
   return (
     <section className={styles.section}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 col-xl-7 text-center">
-            <h2 className="mb-3">Ready to Start Your {career}?</h2>
-            <p className="mb-3">Become Professionally Certified with QC's Online Event Planning Training</p>
+            <h2 className="mb-3">{title}</h2>
+            <p className="mb-3">{text}</p>
             <Link href={href} className="btn btn-primary">Enroll Today</Link>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-const getCareer = (courseCode: string): string => {
-  switch (courseCode) {
-    case 'EP':
-      return 'Event & Wedding Planning Career';
-  }
-  throw Error('Invalid course code');
 };

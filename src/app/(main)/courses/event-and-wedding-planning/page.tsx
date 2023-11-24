@@ -157,7 +157,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
       <TestimonialSection id="TE-0001" />
       <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
       <TestimonialSection id="TE-0002" />
-      <GetStartedSection courseCode="EP" />
+      <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" courseCodes={courseCodes} />
     </>
   );
 };

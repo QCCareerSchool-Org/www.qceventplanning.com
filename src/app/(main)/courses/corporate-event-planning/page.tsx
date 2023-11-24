@@ -156,7 +156,7 @@ const CorporateEventPlanningPage: PageComponent = () => {
       <TestimonialSection id="TE-0001" />
       <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
       <TestimonialSection id="TE-0002" />
-      <GetStartedSection courseCode="EP" />
+      <GetStartedSection title="Ready to Help Your Clients Create Memorable Events?" text="Become a Professionally Certified Corporate Event Planner" courseCodes={courseCodes} />
     </>
   );
 };
