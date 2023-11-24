@@ -21,7 +21,7 @@ export const Full: FC<Props> = ({ price, href }) => (
       <h6 className={commonStyles.title}>Pay In Full</h6>
       <div className={commonStyles.description}>One-Time Payment of</div>
       <hr className={commonStyles.hr} />
-      <div className={`${commonStyles.price} ${styles.dark}`}><span className={commonStyles.priceSmall}>{price.currency.symbol}</span>{price.plans.full.total}</div>
+      <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}</span><span className={styles.dark}>{price.plans.full.total}</span></div>
       <Link href={href} className="btn btn-primary">Enroll Now</Link>
       <hr className={commonStyles.hr} />
       <ul className={commonStyles.list}>

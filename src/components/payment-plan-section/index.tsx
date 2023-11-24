@@ -39,7 +39,7 @@ export const PaymentPlanSection: FC<Props> = async ({ countryCode, provinceCode,
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
             <Full price={price} href={href} />
           </div>
-          <div className="col-12 col-lg-6">
+          <div className="col-12 col-lg-8 col-xl-6">
             <PaymentSectionGuarantee />
           </div>
         </div>
