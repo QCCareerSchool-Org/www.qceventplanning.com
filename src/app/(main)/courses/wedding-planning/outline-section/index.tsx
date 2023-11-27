@@ -14,7 +14,7 @@ export const OutlineSection: FC = () => (
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">The Event and Wedding Planning Course is divided into 7 parts, each comprising separate training units.</p>
+          <p className="lead mb-0">The Wedding Planning Course is divided into 3 parts, each comprising separate training units.</p>
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="The Ins and Outs of Wedding Planning" src={Part1Image} open className="mb-3">
@@ -31,9 +31,9 @@ export const OutlineSection: FC = () => (
               <li>Discover what's involved in both civil and religious wedding ceremonies, and learn how you can personalize the ceremony to suit your clients perfectly</li>
               <li>Learn how to execute a seamless reception by coordinating with vendors, entertainers and other wedding staff</li>
               <li>Study how weddings are celebrated across a variety of religions and cultures to discover tips to bring traditions together from multiple backgrounds</li>
-            </ul>F
+            </ul>
           </CourseOutline>
-          <CourseOutline title="Running Your Event Planning Business" src={Part3Image} className="mb-3">
+          <CourseOutline title="Running Your Event Planning Business" src={Part3Image}>
             <ul className="small">
               <li>Study the essential components of launching a lucrative wedding planning business</li>
               <li>Learn how to market and promote your event and wedding planning services</li>

@@ -31,7 +31,6 @@ const RootLayout: LayoutComponent = async ({ children }) => {
   const geoLocation: GeoLocation = detectedGeoLocation ?? { countryCode: 'US', provinceCode: 'MD' };
 
   return (
-
     <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`}>
       <body className="d-flex flex-column h-100">
         <Provider geoLocation={geoLocation}>

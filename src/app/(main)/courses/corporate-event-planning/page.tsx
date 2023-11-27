@@ -18,8 +18,9 @@ import { Testimonial } from '@/components/testimonial';
 import { TestimonialSection } from '@/components/testimonial-section';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
+import type { CourseCode } from '@/domain/courseCode';
 
-const courseCodes = [ 'cp' ];
+const courseCodes: CourseCode[] = [ 'cp' ];
 
 const CorporateEventPlanningPage: PageComponent = () => {
   const headerList = headers();
@@ -66,22 +67,22 @@ const CorporateEventPlanningPage: PageComponent = () => {
           </div>
           <div className="row justify-content-center g-s">
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0001" />
+              <Testimonial id="TE-0001" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0002" />
+              <Testimonial id="TE-0002" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0003" />
+              <Testimonial id="TE-0003" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0004" />
+              <Testimonial id="TE-0004" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0005" />
+              <Testimonial id="TE-0005" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0006" />
+              <Testimonial id="TE-0006" courseCodes={courseCodes} />
             </div>
           </div>
         </div>
@@ -112,7 +113,7 @@ const CorporateEventPlanningPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-              <ICPPImage height="166" className="mb-3" alt="International Event and Wedding Planning Professional certification logo" />
+              <ICPPImage height="166" className="mb-3" alt="International Corporate Event Planning Professional certification logo" />
               <h2 className="text-white mb-3">Corporate Event Planning Certification</h2>
               <p className="mb-3">Graduate from your Corporate Event Planning course and receive the designation of International Corporate Event Planning Professional (ICPP). Your certification improves your credibility as an event planner, and gives you a competitive edge over other professionals in your area.</p>
               <p className="mb-0 small gold">International Corporate Event Planning Professional (ICPP)™</p>
@@ -151,9 +152,9 @@ const CorporateEventPlanningPage: PageComponent = () => {
         </div>
       </section>
       <OutlineSection />
-      <TestimonialSection id="TE-0001" />
+      <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
       <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
-      <TestimonialSection id="TE-0002" />
+      <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
       <GetStartedSection title="Ready to Help Your Clients Create Memorable Events?" text="Become a Professionally Certified Corporate Event Planner" courseCodes={courseCodes} />
     </>
   );

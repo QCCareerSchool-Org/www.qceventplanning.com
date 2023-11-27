@@ -19,8 +19,9 @@ import { Testimonial } from '@/components/testimonial';
 import { TestimonialSection } from '@/components/testimonial-section';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
+import type { CourseCode } from '@/domain/courseCode';
 
-const courseCodes = [ 'wp' ];
+const courseCodes: CourseCode[] = [ 'wp' ];
 
 const WeddingPlanningPage: PageComponent = () => {
   const headerList = headers();
@@ -67,22 +68,22 @@ const WeddingPlanningPage: PageComponent = () => {
           </div>
           <div className="row justify-content-center g-s">
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0001" />
+              <Testimonial id="TE-0013" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0002" />
+              <Testimonial id="TE-0002" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0003" />
+              <Testimonial id="TE-0003" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0004" />
+              <Testimonial id="TE-0004" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0005" />
+              <Testimonial id="TE-0005" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0006" />
+              <Testimonial id="TE-0006" courseCodes={courseCodes} />
             </div>
           </div>
         </div>
@@ -113,7 +114,7 @@ const WeddingPlanningPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-              <IWPPImage height="166" className="mb-3" alt="International Event and Wedding Planning Professional certification logo" />
+              <IWPPImage height="166" className="mb-3" alt="International Wedding Planning Professional certification logo" />
               <h2 className="text-white mb-3">QC's Wedding Planning Certification</h2>
               <p className="mb-3">Once you graduate from your online wedding planning course, you'll receive a certification and be able to use the designation of International Wedding Planning Professional (IWPP). Your designation demonstrates your credibility as a wedding planner and will help you develop positive relationships with clients and industry professionals.</p>
               <p className="mb-0 small gold">International Wedding Planning Professional (IWPP)™</p>
@@ -153,9 +154,9 @@ const WeddingPlanningPage: PageComponent = () => {
       </section>
       <OutlineSection />
       <AislePlannerSection />
-      <TestimonialSection id="TE-0001" />
+      <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
       <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
-      <TestimonialSection id="TE-0002" />
+      <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
       <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Wedding Memories?" text="Become a Professionally Certified Wedding Planner" courseCodes={courseCodes} />
     </>
   );

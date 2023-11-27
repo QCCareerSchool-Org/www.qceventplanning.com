@@ -3,12 +3,14 @@ import type { FC } from 'react';
 import { Full } from './full';
 import { PaymentSectionGuarantee } from './guarantee';
 import { Part } from './part';
-import { fetchPrice, type PriceQuery } from '@/lib/fetch';
+import type { CourseCode } from '@/domain/courseCode';
+import type { PriceQuery } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetch';
 
 type Props = {
   countryCode: string | null;
   provinceCode: string | null;
-  courseCodes: string[];
+  courseCodes: CourseCode[];
   className?: string;
 };
 
@@ -39,7 +41,7 @@ export const PaymentPlanSection: FC<Props> = async ({ countryCode, provinceCode,
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
             <Full price={price} href={href} />
           </div>
-          <div className="col-12 col-lg-8 col-xl-6">
+          <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
             <PaymentSectionGuarantee />
           </div>
         </div>

@@ -19,8 +19,9 @@ import { Testimonial } from '@/components/testimonial';
 import { TestimonialSection } from '@/components/testimonial-section';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
+import type { CourseCode } from '@/domain/courseCode';
 
-const courseCodes = [ 'ep' ];
+const courseCodes: CourseCode[] = [ 'ep' ];
 
 const EventAndWeddingPlanningPage: PageComponent = () => {
   const headerList = headers();
@@ -43,10 +44,10 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
             </div>
             <div className="col-12 col-lg-6">
               <h2 className="mb-4">Why Choose<br />QC Event School</h2>
-              <p className="lead mb-4">QC's Event & Wedding Planning Certification course provides students with the most comprehensive training available to succeed in the event industry.</p>
+              <p className="lead mb-4">QC's Event &amp; Wedding Planning Certification course provides students with the most comprehensive training available to succeed in the event industry.</p>
               <ul className="mb-0">
                 <li>No previous training required&mdash;our premium event and wedding planning course is designed to take you from beginner to expert</li>
-                <li>Personalized feedback & advice on your assignments from our top industry event planning experts</li>
+                <li>Personalized feedback &amp; advice on your assignments from our top industry event planning experts</li>
                 <li>Thriving virtual classroom to connect with other event planners, get feedback, and gain access to bonus material</li>
                 <li>Built-in business training to help you launch your career and grow your clientele as a certified event and wedding planner</li>
                 <li>Discounts and affiliations with top organizations including Aisle Planner and the International Live Events Association</li>
@@ -68,22 +69,22 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
           </div>
           <div className="row justify-content-center g-s">
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0001" />
+              <Testimonial id="TE-0001" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0002" />
+              <Testimonial id="TE-0002" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0003" />
+              <Testimonial id="TE-0003" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0004" />
+              <Testimonial id="TE-0004" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0005" />
+              <Testimonial id="TE-0005" courseCodes={courseCodes} />
             </div>
             <div className="col-12 col-sm-8 col-lg-4">
-              <Testimonial id="TE-0006" />
+              <Testimonial id="TE-0006" courseCodes={courseCodes} />
             </div>
           </div>
         </div>
@@ -93,7 +94,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
           <div className="row align-items-center justify-content-center g-s">
             <div className="col-12 col-lg-6">
               <h2 className="mb-3">Here's What You'll Learn</h2>
-              <p className="lead">QC's comprehensive event & wedding planning course will shows you how to:</p>
+              <p className="lead">QC's comprehensive event &amp; wedding planning course will shows you how to:</p>
               <ul className="mb-0">
                 <li>Plan and organize milestone parties, weddings, industry special events, and more!</li>
                 <li>Develop a unique theme, atmosphere, and vision for events with your clients</li>
@@ -114,9 +115,9 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-              <IEWPImage className="mb-3" alt="International Event and Wedding Planning Professional certification logo" />
+              <IEWPImage height="166" className="mb-3" alt="International Event and Wedding Planning Professional certification logo" />
               <h2 className="text-white mb-3">Event &amp; Wedding Planning Certification</h2>
-              <p className="mb-3">Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Event and Wedding Planning Professional (IEWP). The IEWP Event & Wedding Planning certification is approved by the International Live Events Association and cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>
+              <p className="mb-3">Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Event and Wedding Planning Professional (IEWP). The IEWP Event &amp; Wedding Planning certification is approved by the International Live Events Association and cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>
               <p className="mb-0 small gold">International Event and Wedding Planning Professional™</p>
             </div>
           </div>
@@ -154,9 +155,9 @@ const EventAndWeddingPlanningPage: PageComponent = () => {
       </section>
       <OutlineSection />
       <AislePlannerSection />
-      <TestimonialSection id="TE-0001" />
+      <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
       <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
-      <TestimonialSection id="TE-0002" />
+      <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
       <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" courseCodes={courseCodes} />
     </>
   );

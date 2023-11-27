@@ -1,15 +1,43 @@
-import type { FC } from 'react';
+import { type FC, useMemo } from 'react';
 import { ImageCircle } from '../imageCircle';
+import { courseSort } from '../testimonial';
 import { testimonials } from '../testimonial/data';
 
 import styles from './index.module.css';
+import { Title } from './title';
+import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
   id: string;
+  courseCodes: CourseCode[];
 };
 
-export const TestimonialSection: FC<Props> = ({ id }) => {
-  const testimonial = testimonials[id];
+export const TestimonialSection: FC<Props> = ({ id, courseCodes }) => {
+  const testimonial = useMemo(() => {
+    const found = testimonials[id];
+    if (!found) {
+      return;
+    }
+    return {
+      ...found,
+      courses: found.courses.sort((a, b) => {
+        if (courseCodes.includes(a) && courseCodes.includes(b)) {
+          return courseSort(a, b);
+        }
+        if (courseCodes.includes(a)) {
+          return -1;
+        }
+        if (courseCodes.includes(b)) {
+          return 1;
+        }
+        return courseSort(a, b);
+      }),
+    };
+  }, [ id, courseCodes ]);
+
+  if (!testimonial) {
+    return;
+  }
 
   return (
     <section>
@@ -28,7 +56,7 @@ export const TestimonialSection: FC<Props> = ({ id }) => {
               <footer className={styles.footer}>
                 <ImageCircle src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
                 <cite className={styles.name}>{testimonial.name}</cite>
-                <div className={styles.title}>{testimonial.title}</div>
+                <Title testimonial={testimonial} />
               </footer>
             </blockquote>
           </div>
