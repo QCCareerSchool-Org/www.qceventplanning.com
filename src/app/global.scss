@@ -64,7 +64,9 @@ $navbar-toggler-focus-width: 0;
 $dropdown-padding-x: 0.5rem;
 $dropdown-padding-y: 1rem;
 
-$border-radius: 1.5rem;
+$btn-border-radius: 1.5rem;
+$accordion-border-radius: 1.5rem;
+$card-border-radius: 1.5rem;
 $card-spacer-y: 2rem;
 $card-spacer-x: 2rem;
 
@@ -85,8 +87,6 @@ $custom-colors: (
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
-
-$btn-border-radius: $border-radius-pill;
 
 // 5. Include remainder of required parts
 @import "~bootstrap/scss/maps";
@@ -270,7 +270,6 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
   --bs-tooltip-bg: var(--qc-color-navy);
   --bs-tooltip-padding-x: 0.75rem;
   --bs-tooltip-padding-y: 0.75rem;
-  --bs-tooltip-border-radius: 0.5rem;
   .tooltip-inner {
     text-align: left;
   }

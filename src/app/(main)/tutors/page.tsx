@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import { Blurb } from './blurb';
 import type { PageComponent } from '@/app/serverComponent';
 import { ILEASection } from '@/components/ilea-section';
+import { TestimonialSection } from '@/components/testimonial-section';
 import AlyssaPernaImage from '@/components/tutorImages/images/alyssa-perna.jpg';
 import AngelaHodelImage from '@/components/tutorImages/images/angela-hodal.jpg';
 import AnitaDiPaoloImage from '@/components/tutorImages/images/anita-dipaolo.jpg';
@@ -68,6 +70,21 @@ const TutorsPage: PageComponent = () => (
       </div>
     </section>
     <ILEASection />
+    <TestimonialSection id="TE-0013" />
+    <section className="bg-navy text-white">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-xl-10 col-xxl-8 text-center">
+            <h2 className="mb-3">Unlock Your Event Planning Potential with Expert Insights!</h2>
+            <p className="lead mb-3">Dive into learning with individualized guidance from experts in event and wedding planning</p>
+            <div className="d-flex justify-content-center">
+              <Link className="btn btn-primary me-3" href="https://enroll.qceventplanning.com">Enroll Now</Link>
+              <Link className="btn btn-outline-light" href="/courses">View Courses</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </>
 );
 
