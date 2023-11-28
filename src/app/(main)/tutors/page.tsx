@@ -79,7 +79,7 @@ const TutorsPage: PageComponent = () => (
             <p className="lead mb-3">Dive into learning with individualized guidance from experts in event and wedding planning</p>
             <div className="d-flex justify-content-center">
               <Link className="btn btn-primary me-3" href="https://enroll.qceventplanning.com">Enroll Now</Link>
-              <Link className="btn btn-outline-light" href="/courses">View Courses</Link>
+              <Link className="btn btn-outline-light" href="/online-event-courses">View Courses</Link>
             </div>
           </div>
         </div>
