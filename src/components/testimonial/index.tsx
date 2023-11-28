@@ -10,7 +10,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
   id: string;
-  courseCodes: string[];
+  courseCodes?: string[];
 };
 
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
@@ -35,13 +35,13 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
     return {
       ...found,
       courses: found.courses.sort((a, b) => {
-        if (courseCodes.includes(a) && courseCodes.includes(b)) {
+        if (courseCodes?.includes(a) && courseCodes?.includes(b)) {
           return courseSort(a, b);
         }
-        if (courseCodes.includes(a)) {
+        if (courseCodes?.includes(a)) {
           return -1;
         }
-        if (courseCodes.includes(b)) {
+        if (courseCodes?.includes(b)) {
           return 1;
         }
         return courseSort(a, b);

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import styles from './get-started-section.module.scss';
+import styles from './index.module.scss';
 
 type Props = {
   title: string;

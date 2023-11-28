@@ -1,5 +1,6 @@
 import { Blurb } from './blurb';
 import type { PageComponent } from '@/app/serverComponent';
+import { ILEASection } from '@/components/ilea-section';
 import AlyssaPernaImage from '@/components/tutorImages/images/alyssa-perna.jpg';
 import AngelaHodelImage from '@/components/tutorImages/images/angela-hodal.jpg';
 import AnitaDiPaoloImage from '@/components/tutorImages/images/anita-dipaolo.jpg';
@@ -66,6 +67,7 @@ const TutorsPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <ILEASection />
   </>
 );
 

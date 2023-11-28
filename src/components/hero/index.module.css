@@ -2,10 +2,15 @@
   position: relative;
 }
 
+.mobileImageWrapper {
+  position: relative;
+  height: 320px;
+  margin-bottom: 1rem;
+}
+
 .image {
   width: 100%;
   height: auto;
-  margin-bottom: 1rem;
 }
 
 .content {
@@ -13,7 +18,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .image { margin-bottom: 0; }
+  .mobileImageWrapper { display: none; }
   .content {
     text-align: start;
     position: absolute;

@@ -80,11 +80,11 @@ $accordion-button-active-color: inherit;
 @import "~bootstrap/scss/variables-dark";
 
 // 4. Include any default map overrides here
-// $custom-colors: (
-//   "foo": #B5C3D1,
-// );
+$custom-colors: (
+  "navy": #010025,
+);
 
-// $theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 $btn-border-radius: $border-radius-pill;
 

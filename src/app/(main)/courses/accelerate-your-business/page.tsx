@@ -29,7 +29,7 @@ const AccelerateYourBusinessPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12">
-              <Hero src={HeroImage} priority>
+              <Hero src={HeroImage} priority objectPosition="100% 0">
                 <CourseType className="mb-2 mb-xl-4">Specialty Course</CourseType>
                 <h1 className="mb-2 mb-xl-4">Accelerate Your Business Workshop</h1>
                 <p className="h5 mb-3 mb-xl-5">Market &amp; Grow Your Event Planning Business</p>

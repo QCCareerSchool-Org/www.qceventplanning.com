@@ -40,14 +40,14 @@ export const MainNav: FC = () => {
               <Link href="/courses/corporate-event-planning" className="dropdown-item" onClick={handleClick}>Corporate Event Planning</Link>
               <Link href="/courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
               <Link href="/courses/floral-design" className="dropdown-item" onClick={handleClick}>Floral Design</Link>
-              <Link href="/courses/luxury-event-and-wedding-planning" className="dropdown-item" onClick={handleClick}>Luxury Wedding &amp; Event Planning</Link>
+              <Link href="/courses/luxury-wedding-and-event-planning" className="dropdown-item" onClick={handleClick}>Luxury Wedding &amp; Event Planning</Link>
               <Link href="/courses/destination-wedding-planning" className="dropdown-item" onClick={handleClick}>Destination Wedding Planning</Link>
               <Link href="/courses/accelerate-your-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
             </NavDropdown>
             <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
             <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
             <Link href="/contact-us" className="nav-link" onClick={handleClick}>Contact<span className="d-lg-none d-xl-inline"> Us</span></Link>
-            <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-primary">Enroll Now</Link></div>
+            <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-navy">Enroll Now</Link></div>
           </Nav>
         </Navbar.Collapse>
       </div>
