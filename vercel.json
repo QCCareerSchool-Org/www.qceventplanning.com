@@ -28,5 +28,9 @@
     { "source": "/tution", "destination": "/online-event-courses" },
     { "source": "/reviews", "destination": "/" },
     { "source": "/employee-training-programs", "destination": "/online-event-courses" }
+  ],
+  "rewrites": [
+    { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog" },
+    { "source": "/blog/:match*", "destination": "https://blog.qceventplanning.com/blog/:match" }
   ]
 }
