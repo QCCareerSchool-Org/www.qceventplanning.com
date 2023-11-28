@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import type { LayoutComponent } from './serverComponent';
 
-import './global.scss';
 import type { GeoLocation } from '@/domain/geoLocation';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { fetchGeoLocation } from '@/lib/fetch';
