@@ -7,6 +7,8 @@ import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { fetchGeoLocation } from '@/lib/fetch';
 import { Provider } from '@/providers';
 
+import './global.scss';
+
 export const metadata: Metadata = {
   title: 'QC Event School',
 };
