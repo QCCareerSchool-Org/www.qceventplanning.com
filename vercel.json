@@ -1,0 +1,32 @@
+{
+  "redirects": [
+    { "source": "/about-qc/frequently-asked-questions", "destination": "/frequently-asked-questions" },
+    { "source": "/online-event-courses/luxury-wedding-and-event-planning-specialization", "destination": "/online-event-courses/luxury-wedding-and-event-planning" },
+    { "source": "/online-event-courses/destination-wedding-planning-specialization", "destination": "/online-event-courses/destination-wedding-planning" },
+    { "source": "/online-event-courses/event-planning", "destination": "/online-event-courses" },
+    { "source": "/online-event-courses/promotional-event-planning", "destination": "/online-event-courses" },
+    { "source": "/career-training(/.*)?", "destination": "/student-success" },
+    { "source": "/education-requirements", "destination": "/student-success" },
+    { "source": "/careers-in-the-industry", "destination": "/student-success" },
+    { "source": "/event-planning-course-selection", "destination": "/student-success" },
+    { "source": "/why-choose-qc", "destination": "/student-success" },
+    { "source": "/student-life(/.*)?", "destination": "/student-success" },
+    { "source": "/tamesha-antria", "destination": "/student-success" },
+    { "source": "/graduate-success-story", "destination": "/student-success" },
+    { "source": "/tutors/mwai-yeboah", "destination": "/student-success" },
+    { "source": "/tutors/renee-tucci", "destination": "/student-success" },
+    { "source": "/tutors/maryellen-madaio", "destination": "/student-success" },
+    { "source": "/tutors/angela-hodel", "destination": "/student-success" },
+    { "source": "/tutors/alyssa-perna", "destination": "/student-success" },
+    { "source": "/tutors/ashley-friesen", "destination": "/student-success" },
+    { "source": "/tutors/shannon-fowler", "destination": "/student-success" },
+    { "source": "/tutors/amira-harris", "destination": "/student-success" },
+    { "source": "/tutors/sarah-webb", "destination": "/student-success" },
+    { "source": "/tutors/anita-dipaolo", "destination": "/student-success" },
+    { "source": "/tutors/heather-hawes", "destination": "/student-success" },
+    { "source": "/tutors/become-a-tutor", "destination": "/student-success" },
+    { "source": "/tution", "destination": "/online-event-courses" },
+    { "source": "/reviews", "destination": "/" },
+    { "source": "/employee-training-programs", "destination": "/online-event-courses" }
+  ]
+}
