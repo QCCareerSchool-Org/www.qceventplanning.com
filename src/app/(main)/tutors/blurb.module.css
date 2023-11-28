@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   /* align-items: center */
-  border-top-right-radius: 1.5rem;
 }
 
 .content {
@@ -17,7 +16,6 @@
 .image {
   width: 250px;
   height: auto;
-  border-top-right-radius: 1.5rem;
 }
 
 @media only screen and (min-width: 992px) {
@@ -25,6 +23,7 @@
     flex-direction: row;
     align-items: center;
     box-shadow: var(--bs-box-shadow-lg);
+    border-top-right-radius: 1.5rem;
   }
   .content {
     margin-bottom: 0;
@@ -32,7 +31,10 @@
     padding-right: 1.5rem;
   }
   .text { font-size: 1rem; }
-  .image { width: 400px; }  
+  .image {
+    width: 400px;
+    border-top-right-radius: 1.5rem;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
