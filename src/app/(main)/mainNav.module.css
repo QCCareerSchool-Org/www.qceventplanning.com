@@ -1,11 +1,9 @@
 .mainNav {
-  transition: border-color 300ms;
-  border-bottom: 1px solid rgba(0,0,0,0);
-  
-  /* transition: box-shadow 300ms; */
+  /* transition: border-color 300ms; */
+  /* border-bottom: 1px solid rgba(0,0,0,0); */
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.125);
 }
 
 .mainNav.scrolled {
-  border-color: rgba(0,0,0,0.10);
-  /* box-shadow: 0 0 0.125rem rgba(0,0,0,0.10); */
+  /* border-color: rgba(0,0,0,0.10); */
 }
