@@ -3,7 +3,7 @@ import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 
-const EnrollmentAgreementPage: PageComponent = () => (
+const EnrollmentAgreementGBPage: PageComponent = () => (
   <div className={styles.terms}>
     <h1>Enrollment Agreement</h1>
     <h2>1. Shipping Policy</h2>
@@ -52,12 +52,12 @@ const EnrollmentAgreementPage: PageComponent = () => (
     <p>As a student of QC, you are expected to put in your best effort to complete your course work and assignments. Cheating, plagiarism, tampering, or falsification of your work in any way is not permitted.</p>
     <p>If your tutor suspects your work to be the result of any form of cheating, your account may be immediately placed under academic probation while a review of your work is conducted. If your work is determined to be the result of cheating, you will receive a failing grade for that unit and will be required to pay a re-submission fee to submit the unit. Additional instances of cheating will result in immediate expulsion from the School without a tuition refund.</p>
     <h2>8. Governing Law and Jurisdiction</h2>
-    <p>This Agreement is governed by and is to be construed in accordance with the laws of the Province of Ontario and the laws of Canada applicable therein and treated in all respects as an Ontario contract. The parties to this Agreement hereby irrevocably and unconditionally attorn to the exclusive jurisdiction of the courts of the Province of Ontario and all courts competent to hear appeals therefrom.</p>
+    <p>This Agreement is governed by and is to be construed in accordance with the laws of England and Wales. The parties to this Agreement hereby irrevocably and unconditionally attorn to the exclusive jurisdiction of the courts of England Wales and all courts competent to hear appeals therefrom.</p>
     <h2>9. Age of Majority</h2>
-    <p>If you are under 18 or under the age of majority in your state/province, you will need a parental consent form in order to enroll with Winghill. Please contact the School for further details.</p>
+    <p>If you are under 18 or under the age of majority in your state/province, you will need a parental consent form in order to enroll with QC. Please contact the School for further details.</p>
     <h2>10. Contact Information</h2>
-    <p>QC Quality of Course Inc.<br />Corporation Number: 208502-0<br />Business Number (BN): 105927339RC0001</p>
-    <p>Email: <InfoEmailAddress /><br />Phone: 1-613-749-8248</p>
+    <p>QC Quality of Course Ltd.<br />Company Registration Number: 6766876</p>
+    <p>Email: <InfoEmailAddress /><br />Phone: 0800 066 4734</p>
     <table>
       <tbody>
         <tr>
@@ -67,7 +67,7 @@ const EnrollmentAgreementPage: PageComponent = () => (
           </td>
           <td>
             <p><em>Registered Office</em></p>
-            <p>2026 Delmar Crt<br />Ottawa ON&nbsp; K1H 5R6<br />Canada</p>
+            <p>R+<br />2 Blagrave Street<br />READING<br />RG1 1AZ<br />United Kingdom</p>
           </td>
         </tr>
       </tbody>
@@ -75,4 +75,4 @@ const EnrollmentAgreementPage: PageComponent = () => (
   </div>
 );
 
-export default EnrollmentAgreementPage;
+export default EnrollmentAgreementGBPage;
