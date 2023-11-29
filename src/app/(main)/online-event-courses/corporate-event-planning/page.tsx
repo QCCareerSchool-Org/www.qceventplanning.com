@@ -1,6 +1,6 @@
-import { headers } from 'next/headers';
 import Image from 'next/image';
 
+import { Suspense } from 'react';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import ICPPImage from './icpp.svg';
@@ -19,13 +19,12 @@ import { TestimonialSection } from '@/components/testimonial-section';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import type { CourseCode } from '@/domain/courseCode';
+import { getData } from '@/lib/getData';
 
 const courseCodes: CourseCode[] = [ 'cp' ];
 
 const CorporateEventPlanningPage: PageComponent = () => {
-  const headerList = headers();
-  const countryCode = headerList.get('x-vercel-ip-country');
-  const provinceCode = headerList.get('x-vercel-ip-country-region');
+  const { countryCode, provinceCode } = getData();
   return (
     <>
       <section>
@@ -153,7 +152,9 @@ const CorporateEventPlanningPage: PageComponent = () => {
       </section>
       <OutlineSection />
       <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
-      <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
+      </Suspense>
       <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
       <GetStartedSection title="Ready to Help Your Clients Create Memorable Events?" text="Become a Professionally Certified Corporate Event Planner" courseCodes={courseCodes} />
     </>

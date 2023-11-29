@@ -1,6 +1,6 @@
-import { headers } from 'next/headers';
 import Image from 'next/image';
 
+import { Suspense } from 'react';
 import CandiceImage from './candice.jpg';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
@@ -18,13 +18,12 @@ import { PaymentPlanSection } from '@/components/payment-plan-section';
 import { Testimonial } from '@/components/testimonial';
 import { TestimonialSection } from '@/components/testimonial-section';
 import type { CourseCode } from '@/domain/courseCode';
+import { getData } from '@/lib/getData';
 
 const courseCodes: CourseCode[] = [ 'lw' ];
 
 const LuxuryWeddingAndEventPlanningPage: PageComponent = () => {
-  const headerList = headers();
-  const countryCode = headerList.get('x-vercel-ip-country');
-  const provinceCode = headerList.get('x-vercel-ip-country-region');
+  const { countryCode, provinceCode } = getData();
   return (
     <>
       <section>
@@ -136,7 +135,9 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => {
       <OutlineSection />
       <AislePlannerSection />
       <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
-      <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
+      </Suspense>
       <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
       <GetStartedSection title="Ready to Help Your Clients Create Incredible Memories?" text="Specialize as a luxury wedding & event planner" courseCodes={courseCodes} />
     </>

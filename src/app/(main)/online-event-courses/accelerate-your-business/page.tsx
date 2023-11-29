@@ -1,6 +1,6 @@
-import { headers } from 'next/headers';
 import Image from 'next/image';
 
+import { Suspense } from 'react';
 import DesktopImage from './desktop.jpg';
 import HeroImage from './hero.jpg';
 import styles from './index.module.css';
@@ -16,13 +16,12 @@ import { PaymentPlanSection } from '@/components/payment-plan-section';
 import { Testimonial } from '@/components/testimonial';
 import { TestimonialSection } from '@/components/testimonial-section';
 import type { CourseCode } from '@/domain/courseCode';
+import { getData } from '@/lib/getData';
 
 const courseCodes: CourseCode[] = [ 'eb' ];
 
 const AccelerateYourBusinessPage: PageComponent = () => {
-  const headerList = headers();
-  const countryCode = headerList.get('x-vercel-ip-country');
-  const provinceCode = headerList.get('x-vercel-ip-country-region');
+  const { countryCode, provinceCode } = getData();
   return (
     <>
       <section>
@@ -116,7 +115,9 @@ const AccelerateYourBusinessPage: PageComponent = () => {
       </section>
       <OutlineSection />
       <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
-      <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection countryCode={countryCode} provinceCode={provinceCode} courseCodes={courseCodes} />
+      </Suspense>
       <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
       <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" courseCodes={courseCodes} />
     </>
