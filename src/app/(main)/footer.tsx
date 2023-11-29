@@ -6,14 +6,14 @@ import styles from './footer.module.scss';
 import { FooterColumn1 } from './footerColumn1';
 import { FooterColumn2 } from './footerColumn2';
 import { FooterColumn3 } from './footerColumn3';
-import Logo from '@/app/logo.svg';
+import { Logo } from '@/components/logo';
 
 export const Footer: FC = () => (
   <footer className={`${styles.footer} mt-auto`}>
     <div className="container">
       <div className="row">
         <div className="col-12 col-lg-4 col-xl-5 col-xxl-6 mb-4 mb-lg-0">
-          <Logo height="22" className="mb-4" />
+          <div className="mb-4"><Logo height={22} /></div>
           <h2 className="h6 mb-4">Get Started with a Free Course Catalog</h2>
           <Link href="/free-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
         </div>
