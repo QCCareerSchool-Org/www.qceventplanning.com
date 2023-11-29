@@ -1,0 +1,16 @@
+.footer {
+  margin-top: auto;
+  background-color: var(--qc-color-navy);
+  color: white;
+  padding: 1rem 0;
+
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white; }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer { padding: 1.5rem 0; }
+}
+
+@media only screen and (min-width: 992px) {
+  .footer { padding: 2rem 0; }
+}
