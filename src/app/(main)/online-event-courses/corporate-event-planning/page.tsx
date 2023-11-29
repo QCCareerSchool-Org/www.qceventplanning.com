@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { Suspense } from 'react';
@@ -20,6 +21,10 @@ import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
+
+export const metadata: Metadata = {
+  title: 'Corporate Event Planning Course - QC Event School',
+};
 
 const courseCodes: CourseCode[] = [ 'cp' ];
 

@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
 import { Blurb } from './blurb';
 import type { PageComponent } from '@/app/serverComponent';
 import { ILEASection } from '@/components/ilea-section';
@@ -9,6 +11,10 @@ import AnitaDiPaoloImage from '@/components/tutorImages/images/anita-dipaolo.jpg
 import AshleyFriesenImage from '@/components/tutorImages/images/ashley-friesen.jpg';
 import HeatherHawesImage from '@/components/tutorImages/images/heather-hawes.jpg';
 import SarahWebbImage from '@/components/tutorImages/images/sarah-webb.jpg';
+
+export const metadata: Metadata = {
+  title: 'Tutors - QC Event School',
+};
 
 const TutorsPage: PageComponent = () => (
   <>

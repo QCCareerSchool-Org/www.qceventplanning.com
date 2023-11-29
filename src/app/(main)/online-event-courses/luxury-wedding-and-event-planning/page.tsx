@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { Suspense } from 'react';
@@ -19,6 +20,10 @@ import { Testimonial } from '@/components/testimonial';
 import { TestimonialSection } from '@/components/testimonial-section';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
+
+export const metadata: Metadata = {
+  title: 'Luxury Wedding & Event Planning Course - QC Event School',
+};
 
 const courseCodes: CourseCode[] = [ 'lw' ];
 

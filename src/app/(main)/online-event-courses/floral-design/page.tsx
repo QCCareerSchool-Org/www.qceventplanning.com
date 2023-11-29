@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { Suspense } from 'react';
@@ -21,6 +22,10 @@ import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
+
+export const metadata: Metadata = {
+  title: 'Floral Design Course - QC Event School',
+};
 
 const courseCodes: CourseCode[] = [ 'fd' ];
 

@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
+
 import type { PageComponent } from '@/app/serverComponent';
+
+export const metadata: Metadata = {
+  title: 'Student Success - QC Event School',
+};
 
 const StudentSuccessPage: PageComponent = () => {
   return (

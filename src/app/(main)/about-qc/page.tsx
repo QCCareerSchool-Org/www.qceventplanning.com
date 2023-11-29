@@ -1,8 +1,13 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import AboutQCImage from './about-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+
+export const metadata: Metadata = {
+  title: 'About QC - QC Event School',
+};
 
 const AboutQCPage: PageComponent = () => (
   <>

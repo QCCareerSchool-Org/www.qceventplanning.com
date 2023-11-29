@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
+
 import type { PageComponent } from '@/app/serverComponent';
+
+export const metadata: Metadata = {
+  title: 'Your Course Catalog - QC Event School',
+};
 
 const ThankYouPage: PageComponent = ({ searchParams }) => {
   const firstName = getParam(searchParams.firstName);
