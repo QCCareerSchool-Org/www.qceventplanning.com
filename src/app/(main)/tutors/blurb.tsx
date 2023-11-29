@@ -9,15 +9,16 @@ type Props = {
   subHeading?: string;
   text: string;
   src: StaticImageData;
+  priority?: boolean;
 };
 
-export const Blurb: FC<Props> = ({ name, subHeading, text, src }) => (
+export const Blurb: FC<Props> = ({ name, subHeading, text, src, priority }) => (
   <div className={styles.blurb}>
     <div className={styles.content}>
       <h2 className="h3 mb-2 mb-xl-3">{name}</h2>
       {subHeading && <p className="small mb-2 mb-xl-3">{subHeading}</p>}
       <p className={styles.text}>{text}</p>
     </div>
-    <Image src={src} alt={name} className={styles.image} />
+    <Image src={src} alt={name} className={styles.image} priority={priority} />
   </div>
 );
