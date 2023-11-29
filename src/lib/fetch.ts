@@ -1,3 +1,5 @@
+'use server';
+
 import qs from 'qs';
 
 import { type CurrencyCode, isCurrencyCode } from '@/domain/currencyCode';
