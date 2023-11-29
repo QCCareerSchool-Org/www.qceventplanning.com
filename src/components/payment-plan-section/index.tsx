@@ -8,19 +8,15 @@ import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
 type Props = {
-  countryCode: string | null;
+  countryCode: string;
   provinceCode: string | null;
   courseCodes: CourseCode[];
   className?: string;
 };
 
 export const PaymentPlanSection: FC<Props> = async ({ countryCode, provinceCode, courseCodes, className }) => {
-  const priceQuery: PriceQuery = countryCode
-    ? { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes }
-    : { countryCode: 'US', provinceCode: 'MD', courses: courseCodes };
-
+  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
-
   if (!price) {
     return null;
   }
