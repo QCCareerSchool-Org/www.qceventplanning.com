@@ -5,31 +5,11 @@ import qs from 'qs';
 import type { CurrencyCode } from '@/domain/currencyCode';
 import type { Enrollment } from '@/domain/enrollment';
 import { isRawEnrollment } from '@/domain/enrollment';
-import type { GeoLocation } from '@/domain/geoLocation';
-import { isGeoLocation } from '@/domain/geoLocation';
 import type { Price } from '@/domain/price';
 import { isPrice } from '@/domain/price';
 import type { School } from '@/domain/school';
 
 const pricesUrl = process.env.PRICES_ENDPOINT;
-
-export const fetchGeoLocation = async (headers: Record<string, string>, controller?: AbortController): Promise<GeoLocation | undefined> => {
-  try {
-    const url = 'https://api.qccareerschool.com/geoLocation/ip';
-    const response = await fetch(url, {
-      headers,
-      signal: controller?.signal,
-    });
-    if (response.ok) {
-      const body: unknown = await response.json();
-      if (isGeoLocation(body)) {
-        return body;
-      }
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
 
 export const fetchPrice = async (priceQuery: PriceQuery, controller?: AbortController): Promise<Price | undefined> => {
   try {

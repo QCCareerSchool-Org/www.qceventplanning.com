@@ -8,7 +8,11 @@ import { FooterColumn2 } from './footerColumn2';
 import { FooterColumn3 } from './footerColumn3';
 import { Logo } from '@/components/logo';
 
-export const Footer: FC = () => (
+type Props = {
+  countryCode: string;
+};
+
+export const Footer: FC<Props> = ({ countryCode }) => (
   <footer className={`${styles.footer} mt-auto`}>
     <div className="container">
       <div className="row">
@@ -34,7 +38,7 @@ export const Footer: FC = () => (
             <div className={styles.column3}>
               <h3 className={`h6 ${styles.columnHeader}`}>Contact Us</h3>
               <ul className={styles.linkList}>
-                <FooterColumn3 />
+                <FooterColumn3 countryCode={countryCode} />
               </ul>
             </div>
           </div>

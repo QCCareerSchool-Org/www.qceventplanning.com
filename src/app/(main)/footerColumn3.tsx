@@ -5,7 +5,11 @@ import { useEffect, useState } from 'react';
 
 import { TelephoneLink } from '@/components/telephoneLink';
 
-export const FooterColumn3: FC = () => {
+type Props = {
+  countryCode: string;
+};
+
+export const FooterColumn3: FC<Props> = ({ countryCode }) => {
   const [ emailAddress, setEmailAddress ] = useState('');
 
   const handleChatLinkClick: MouseEventHandler<HTMLAnchorElement> = e => {
@@ -21,7 +25,7 @@ export const FooterColumn3: FC = () => {
     <>
       <li><a onClick={handleChatLinkClick} href="#">Live Chat</a></li>
       <li><a href={`mailto:${emailAddress}`}>{emailAddress}</a></li>
-      <li><TelephoneLink /></li>
+      <li><TelephoneLink countryCode={countryCode} /></li>
     </>
   );
 };
