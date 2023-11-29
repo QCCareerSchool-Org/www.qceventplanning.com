@@ -43,20 +43,20 @@ const RootLayout: LayoutComponent = async ({ children }) => {
   return (
     <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`}>
       <head>
-        {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} />}
-        {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} adsId={process.env.NEXT_PUBLIC_GOOGLE_ADS_ID} />}
+        {process.env.NEXT_PUBLIC_VWO_ID && <VWO id={parseInt(process.env.NEXT_PUBLIC_VWO_ID, 10)} />}
       </head>
       <body className="d-flex flex-column h-100">
         <Provider geoLocation={geoLocation}>
           {children}
         </Provider>
-        {process.env.FACEBOOK_ID && <Facebook id={process.env.FACEBOOK_ID} />}
-        {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
-        {process.env.PARDOT_ACCOUNT_ID && process.env.PARDOT_CAMPAIGN_ID && <Pardot accountId={process.env.PARDOT_ACCOUNT_ID} campaignId={process.env.PARDOT_CAMPAIGN_ID} />}
-        {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
-        {process.env.TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.TRUSTPULSE_ID, 10)} />}
+        {process.env.NEXT_PUBLIC_FACEBOOK_ID && <Facebook id={process.env.NEXT_PUBLIC_FACEBOOK_ID} />}
+        {process.env.NEXT_PUBLIC_TIKTOK_ID && <Tiktok id={process.env.NEXT_PUBLIC_TIKTOK_ID} />}
+        {process.env.NEXT_PUBLIC_PARDOT_ACCOUNT_ID && process.env.NEXT_PUBLIC_PARDOT_CAMPAIGN_ID && <Pardot accountId={process.env.NEXT_PUBLIC_PARDOT_ACCOUNT_ID} campaignId={process.env.NEXT_PUBLIC_PARDOT_CAMPAIGN_ID} />}
+        {process.env.NEXT_PUBLIC_BING_ID && <Bing id={process.env.NEXT_PUBLIC_BING_ID} />}
+        {process.env.NEXT_PUBLIC_TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.NEXT_PUBLIC_TRUSTPULSE_ID, 10)} />}
         <LiveChat license={1056788} group={1} />
-        {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
+        {process.env.NEXT_PUBLIC_PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.NEXT_PUBLIC_PERFECT_AUDIENCE_ID} />}
       </body>
     </html>
   );
