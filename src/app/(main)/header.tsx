@@ -1,5 +1,3 @@
-'use client';
-
 import type { FC } from 'react';
 
 import styles from './header.module.css';

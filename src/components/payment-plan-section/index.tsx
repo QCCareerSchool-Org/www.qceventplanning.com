@@ -6,15 +6,15 @@ import { Part } from './part';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
+import { getData } from '@/lib/getData';
 
 type Props = {
-  countryCode: string;
-  provinceCode: string | null;
   courseCodes: CourseCode[];
   className?: string;
 };
 
-export const PaymentPlanSection: FC<Props> = async ({ countryCode, provinceCode, courseCodes, className }) => {
+export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) => {
+  const { countryCode, provinceCode } = getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {
