@@ -10,6 +10,6 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-export type PageComponent<P = {}> = FC<P & PageProps>;
+export type PageComponent = FC<PageProps>;
 
 export type LayoutComponent = FC<LayoutProps>;
