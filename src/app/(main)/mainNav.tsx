@@ -9,7 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import styles from './mainNav.module.css';
 import Toggle from './toggle.svg';
-import Logo from '@/app/logo.svg';
+import { Logo } from '@/components/logo';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
 export const MainNav: FC = () => {
@@ -25,7 +25,7 @@ export const MainNav: FC = () => {
   return (
     <Navbar key={key} expand="lg" collapseOnSelect={true} fixed="top" className={`${styles.mainNav} ${scrollPosition > 1 ? styles.scrolled : undefined} bg-white`}>
       <div className="container">
-        <Link className="navbar-brand" href="/" aria-label="Go back to the home page"><Logo alt="QC Event School" style={{ height: 20, width: 'auto' }} /></Link>
+        <Link className="navbar-brand" href="/" aria-label="Go back to the home page"><Logo height={20} /></Link>
         <div className="d-flex">
           <div className="d-none d-sm-block d-lg-none me-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-navy">Enroll Now</Link></div>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
