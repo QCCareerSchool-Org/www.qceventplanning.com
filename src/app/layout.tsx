@@ -13,8 +13,6 @@ import { VWO } from '@/components/scripts/vwo';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { Provider } from '@/providers';
 
-import './global.scss';
-
 export const metadata: Metadata = {
   title: 'QC Event School',
 };

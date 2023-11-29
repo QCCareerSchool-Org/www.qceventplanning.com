@@ -2,6 +2,8 @@ import { Footer } from './footer';
 import { Header } from './header';
 import type { LayoutComponent } from '@/app/serverComponent';
 
+import '@/app/bootstrap.scss';
+
 const LandingLayout: LayoutComponent = ({ children }) => (
   <>
     <Header />
