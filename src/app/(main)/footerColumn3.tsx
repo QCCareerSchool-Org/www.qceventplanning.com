@@ -24,7 +24,7 @@ export const FooterColumn3: FC<Props> = ({ countryCode }) => {
   return (
     <>
       <li><a onClick={handleChatLinkClick} href="#">Live Chat</a></li>
-      <li><a href={`mailto:${emailAddress}`}>{emailAddress}</a></li>
+      <li><a href={`mailto:${emailAddress}`}>Email</a></li>
       <li><TelephoneLink countryCode={countryCode} /></li>
     </>
   );
