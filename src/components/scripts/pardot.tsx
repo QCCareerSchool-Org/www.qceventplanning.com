@@ -13,7 +13,7 @@ export const Pardot: FC<Props> = ({ accountId, campaignId }) => (
 const getScript = (accountId: string, campaignId: string): string => `
 piAId = \`${accountId.replace(/`/ug, '\\`')}\`;
 picampaignId = \`${campaignId.replace(/`/ug, '\\`')}\`;
-piHostname = 'go.qcmakeupacademy.com';
+piHostname = 'go.qceventplanning.com';
 
 (function() {
   function async_load(){
