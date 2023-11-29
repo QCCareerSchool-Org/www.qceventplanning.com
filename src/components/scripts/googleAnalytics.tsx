@@ -5,7 +5,7 @@ import Script from 'next/script';
 import type { FC } from 'react';
 import { useEffect } from 'react';
 
-import { pageView } from '@/lib/gtag';
+import { gaPageview } from '@/lib/gtag';
 
 type Props = {
   id: string;
@@ -18,7 +18,7 @@ export const GoogleAnalytics: FC<Props> = ({ id, adsId }) => {
 
   useEffect(() => {
     const url = pathname + searchParams.toString();
-    pageView(id, url);
+    gaPageview(id, url);
   }, [ pathname, searchParams, id ]);
 
   return (
