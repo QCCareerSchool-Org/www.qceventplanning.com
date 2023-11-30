@@ -1,0 +1,30 @@
+.contactUs {
+  .green {
+    font-size: 1.25rem;
+    color: var(--bs-primary);
+  }
+  .bold {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .emailCol {
+    svg { margin-bottom: 24px; }
+    @media only screen and (min-width: 992px) { width: 28% }
+    @media only screen and (min-width: 1400px) { width: 30% }
+  }
+
+  .phoneCol {
+    svg { margin-bottom: 17px; }
+    @media only screen and (min-width: 992px) { width: 44% }
+    @media only screen and (min-width: 1400px) { width: 40% }  }
+
+  .chatCol {
+    svg { margin-bottom: 16px; }
+    @media only screen and (min-width: 992px) { width: 28% }
+    @media only screen and (min-width: 1400px) { width: 30% }
+  }
+
+  a { color: var(--qc-color-headings); }
+  a:hover, a:active { color: var(--qc-color-blue-steel); }
+}

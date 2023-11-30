@@ -6,11 +6,12 @@ import styles from './index.module.scss';
 type Props = {
   title: string;
   text: string;
-  courseCodes: string[];
+  courseCodes?: string[];
+  buttonText?: string;
 };
 
-export const GetStartedSection: FC<Props> = ({ title, text, courseCodes }) => {
-  const href = 'https://enroll.qceventplanning.com?' + courseCodes.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
+export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today' }) => {
+  const href = 'https://enroll.qceventplanning.com?' + courseCodes?.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
   return (
     <section className={styles.section}>
       <div className="container">
@@ -18,7 +19,7 @@ export const GetStartedSection: FC<Props> = ({ title, text, courseCodes }) => {
           <div className="col-12 col-lg-8 col-xl-7 text-center">
             <h2 className="mb-3">{title}</h2>
             <p className="mb-3">{text}</p>
-            <Link href={href} className="btn btn-primary">Enroll Today</Link>
+            <Link href={href} className="btn btn-primary">{buttonText}</Link>
           </div>
         </div>
       </div>
