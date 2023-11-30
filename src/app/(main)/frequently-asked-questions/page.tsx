@@ -36,7 +36,7 @@ const FAQPage: PageComponent = () => {
               </Question>
             )}
             <Question heading="How do I know QC Event School is legitimate?">
-              <p>We have been specializing in distance education since 1984. We operate five faculties under the <a href="https://www.qccareerschool.com" target="_blank" rel="noreferrer">QC Career School</a> banner. We are accredited by the Better Business Bureau and <a href="https://www.bbb.org/ca/on/ottawa/profile/correspondence-schools/qc-career-school-0117-4175/" target="_blank" rel="noreferrer">maintain an A+ rating</a> with them year after year.</p>
+              <p>We have been specializing in distance education since 1984. We operate six faculties under the <a href="https://www.qccareerschool.com" target="_blank" rel="noreferrer">QC Career School</a> banner. We are accredited by the Better Business Bureau and <a href="https://www.bbb.org/ca/on/ottawa/profile/correspondence-schools/qc-career-school-0117-4175/" target="_blank" rel="noreferrer">maintain an A+ rating</a> with them year after year.</p>
               <p>If you are unsure about student satisfaction, we invite you to check out <a href="https://www.facebook.com/QCEventPlanning/" target="_blank" rel="noreferrer">our Facebook page</a> for student testimonials. We also feature current students and graduates from the event planning school on our <Link href="/blog/category/graduate-features">Pointers for Planners blog</Link>.</p>
             </Question>
             <Question heading="Do I need prior training or experience?">
