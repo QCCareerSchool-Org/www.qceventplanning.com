@@ -13,12 +13,12 @@ import Part7Image from './part-7.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
 export const OutlineSection: FC = () => (
-  <section className="bg-light">
+  <section id="outline" className="bg-light">
     <div className="container">
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">The Event and Wedding Planning Course is divided into 7 parts, each comprising separate training units.</p>
+          <p className="lead mb-0">The Event &amp; Wedding Planning Course is divided into 7 parts, each comprising separate training units.</p>
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="The Fundamentals of Event and Wedding Planning" src={Part1Image} open className="mb-3">

@@ -10,7 +10,7 @@ import Part4Image from './part-4.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
 export const OutlineSection: FC = () => (
-  <section className="bg-light">
+  <section id="outline" className="bg-light">
     <div className="container">
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
