@@ -5,7 +5,13 @@
   hr { margin: 2rem 0; }
 
   a { color: var(--qc-color-dark-blue); }
+  font-size: 0.875rem;
 
+  @media only screen and (min-width: 1400px) {
+    font-size: 1rem;
+  }
+
+  .bottom { font-size: 0.875rem; }
   
   .columnHeader {
     color: var(--qc-color-dark-blue);
@@ -27,15 +33,26 @@
     }
   }
 
+  .column0 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 2rem;
+    @media screen and (min-width: 576px) { }
+    @media screen and (min-width: 768px) { }
+    @media screen and (min-width: 992px) { width: 33%; margin-bottom: 0; }
+    @media screen and (min-width: 1200px) { width: 39%; }
+    @media screen and (min-width: 1400px) { width: 39%; }
+  }
+
   .column1 {
     flex: 0 0 auto;
     width: 100%;
     margin-bottom: 2rem;
     @media screen and (min-width: 576px) { width: 60%; }
-    @media screen and (min-width: 768px) { width: 46%; margin-bottom: 0; }
-    @media screen and (min-width: 992px) { width: 46%; }
-    @media screen and (min-width: 1200px) { width: 45%; }
-    @media screen and (min-width: 1400px) { width: 46%; }
+    @media screen and (min-width: 768px) { width: 39%; margin-bottom: 0; }
+    @media screen and (min-width: 992px) { width: 25%; }
+    @media screen and (min-width: 1200px) { width: 25%; }
+    @media screen and (min-width: 1400px) { width: 25%; }
   }
 
   .column2 {
@@ -43,19 +60,19 @@
     width: 100%;
     margin-bottom: 2rem;
     @media screen and (min-width: 576px) { width: 40%; }
-    @media screen and (min-width: 768px) { width: 31%; margin-bottom: 0; }
-    @media screen and (min-width: 992px) { width: 27%; }
-    @media screen and (min-width: 1200px) { width: 28%; }
-    @media screen and (min-width: 1400px) { width: 28%; }
+    @media screen and (min-width: 768px) { width: 25%; margin-bottom: 0; }
+    @media screen and (min-width: 992px) { width: 16%; }
+    @media screen and (min-width: 1200px) { width: 15%; }
+    @media screen and (min-width: 1400px) { width: 15%; }
   }
 
   .column3 {
     flex: 0 0 auto;
     width: 100%;
-    @media screen and (min-width: 576px) { width: 100%; }
-    @media screen and (min-width: 768px) { width: 23%; }
-    @media screen and (min-width: 992px) { width: 27%; }
-    @media screen and (min-width: 1200px) { width: 26%; }
-    @media screen and (min-width: 1400px) { width: 25%; }
+    @media screen and (min-width: 576px) { }
+    @media screen and (min-width: 768px) { width: 36%; }
+    @media screen and (min-width: 992px) { width: 26%; }
+    @media screen and (min-width: 1200px) { width: 21%; }
+    @media screen and (min-width: 1400px) { width: 21%; }
   }
 }

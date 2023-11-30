@@ -14,8 +14,11 @@ const NotFoundPage: PageComponent = () => {
     <MainLayout>
       <div className={styles.wrapper}>
         <h1>Page Not Found</h1>
-        <p>Sorry, we could not find the requested resource</p>
-        <p><Link href="/">Home Page</Link></p>
+        <p>Sorry, we could not find the requested page</p>
+        <div className="d-flex justify-content-center">
+          <Link href="/" className="btn btn-primary me-3">Home Page</Link>
+          <Link href="/online-event-courses" className="btn btn-outline-dark">Course List</Link>
+        </div>
       </div>
     </MainLayout>
   );
