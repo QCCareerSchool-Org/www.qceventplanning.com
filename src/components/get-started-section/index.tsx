@@ -11,15 +11,18 @@ type Props = {
 };
 
 export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today' }) => {
-  const href = 'https://enroll.qceventplanning.com?' + courseCodes?.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
+  let href = 'https://enroll.qceventplanning.com';
+  if (courseCodes) {
+    href += '?' + courseCodes?.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
+  }
   return (
     <section className={styles.section}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 col-xl-7 text-center">
-            <h2 className="mb-3">{title}</h2>
-            <p className="mb-3">{text}</p>
-            <Link href={href} className="btn btn-primary">{buttonText}</Link>
+            <h2 className="mb-4">{title}</h2>
+            <p className="mb-4">{text}</p>
+            <Link href={href} className={`btn btn-lg btn-primary ${styles.button}`}>{buttonText}</Link>
           </div>
         </div>
       </div>

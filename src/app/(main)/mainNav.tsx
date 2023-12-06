@@ -46,7 +46,7 @@ export const MainNav: FC = () => {
             </NavDropdown>
             <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
             <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
-            <Link href="/contact-us" className="nav-link" onClick={handleClick}>Contact<span className="d-lg-none d-xl-inline"> Us</span></Link>
+            <Link href="/about-qc" className="nav-link" onClick={handleClick}>About QC</Link>
             <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-navy">Enroll Now</Link></div>
           </Nav>
         </Navbar.Collapse>

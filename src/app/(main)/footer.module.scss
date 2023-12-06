@@ -4,7 +4,7 @@
   
   hr { margin: 2rem 0; }
 
-  a { color: var(--qc-color-dark-blue); }
+  a { color: var(--qc-color-dark-blue); text-decoration: none; }
   font-size: 0.875rem;
 
   @media only screen and (min-width: 1400px) {

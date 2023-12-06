@@ -10,6 +10,6 @@ export const EnrollButton: FC<Props> = ({ courseCodes }) => {
     href += `c[]=${encodeURIComponent(c)}`;
   }
   return (
-    <a href={href} className="btn btn-primary">Enroll Now</a>
+    <a href={href} className="btn btn-lg btn-primary">Enroll Now</a>
   );
 };

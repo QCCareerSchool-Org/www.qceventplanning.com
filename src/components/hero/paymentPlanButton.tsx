@@ -8,5 +8,5 @@ import type { FC } from 'react';
 import styles from './paymentPlanButton.module.css';
 
 export const PaymentPlanButton: FC = () => (
-  <Link href="#paymentPlans" className={`btn ${styles.paymentPlanButton}`}>Payment Plans</Link>
+  <Link href="#paymentPlans" className={`btn btn-lg ${styles.paymentPlanButton}`}>Payment Plans</Link>
 );

@@ -26,7 +26,7 @@ export const Footer: FC = () => {
             <Link href="/free-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
           </div>
           <div className={styles.column1}>
-            <h3 className={`h6 ${styles.columnHeader}`}>Popular Courses</h3>
+            <h3 className={`h6 ${styles.columnHeader}`}><Link href="/online-event-courses">Online Event Courses</Link></h3>
             <ul className={styles.linkList}>
               <FooterColumn1 />
             </ul>
@@ -38,7 +38,7 @@ export const Footer: FC = () => {
             </ul>
           </div>
           <div className={styles.column3}>
-            <h3 className={`h6 ${styles.columnHeader}`}>Contact Us</h3>
+            <h3 className={`h6 ${styles.columnHeader}`}><Link href="/contact-us">Contact Us</Link></h3>
             <ul className={styles.linkList}>
               <FooterColumn3 countryCode={countryCode} />
             </ul>
