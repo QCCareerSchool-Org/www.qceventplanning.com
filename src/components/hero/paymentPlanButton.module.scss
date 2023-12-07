@@ -13,11 +13,11 @@
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #506172;
   --bs-gradient: none;
-}
 
-@media only screen and (min-width: 768px) {
-  .paymentPlanButton {
-    --bs-btn-color: #d9e5f1;
+  @media only screen and (min-width: 768px) {
+    --bs-btn-bg: rgba(0, 0, 0, 0.5);
+    // --bs-btn-color: #d9e5f1;
+    --bs-btn-color: white;
     --bs-btn-border-color: #d9e5f1;
     --bs-btn-hover-color: #000;
     --bs-btn-hover-bg: #d9e5f1;
@@ -31,5 +31,9 @@
     --bs-btn-disabled-bg: transparent;
     --bs-btn-disabled-border-color: #d9e5f1;
     --bs-gradient: none;
+  }
+
+  @media only screen and (min-width: 992px) {
+  --bs-btn-bg: rgba(0, 0, 0, 0.375);
   }
 }

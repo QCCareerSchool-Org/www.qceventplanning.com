@@ -33,7 +33,8 @@ export const CourseCard: FC<Props> = ({ type, name, description, href, backgroun
       </div>
       <div className="d-flex flex-column flex-sm-row">
         <Link href={href} className="btn btn-lg btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
-        <Link href={`${href}#paymentPlans`} className="btn btn-lg btn-none" style={{ whiteSpace: 'nowrap' }}>See Tuition<span className="ms-3"><ChevronIcon /></span></Link>
+        {/* next/link doesn't scroll to the anchor */}
+        <a href={`${href}#paymentPlans`} className="btn btn-lg btn-none" style={{ whiteSpace: 'nowrap' }}>See Tuition<span className="ms-3"><ChevronIcon /></span></a>
       </div>
     </div>
   </div>

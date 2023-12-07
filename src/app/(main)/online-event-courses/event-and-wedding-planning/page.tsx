@@ -6,6 +6,7 @@ import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import IEWPImage from './iewp.svg';
 import { OutlineSection } from './outline-section';
+import styles from './page.module.scss';
 import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 const courseCodes: CourseCode[] = [ 'ep' ];
 
 const EventAndWeddingPlanningPage: PageComponent = () => (
-  <>
+  <div className={styles.page}>
     <section>
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -55,7 +56,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-            <Image src={WhyQCImage} alt="" className="img-fluid" />
+            <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
         </div>
       </div>
@@ -162,7 +163,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
     </Suspense>
     <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" courseCodes={courseCodes} />
-  </>
+  </div>
 );
 
 export default EventAndWeddingPlanningPage;

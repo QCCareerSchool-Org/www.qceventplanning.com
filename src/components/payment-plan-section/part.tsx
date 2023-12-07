@@ -9,6 +9,7 @@ import styles from './part.module.scss';
 import ShieldCheckIcon from './shield-check.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
+import { tightNumber } from '@/lib/tightNumber';
 
 type Props = {
   price: Price;
@@ -21,7 +22,7 @@ export const Part: FC<Props> = ({ price, href }) => (
       <h6 className={`${commonStyles.title} ${styles.dark}`}>Monthly Tuition Plan</h6>
       <div className={commonStyles.description}>Get Started for only</div>
       <hr className={commonStyles.hr} />
-      <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}</span><span className={styles.dark}>{price.plans.part.deposit}</span></div>
+      <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}{tightNumber(price.plans.part.deposit) && <span style={{ marginRight: '0.25rem' }} />}</span><span className={styles.dark}>{price.plans.part.deposit}</span></div>
       <Link href={href} className="btn btn-primary">Enroll Now</Link>
       <hr className={commonStyles.hr} />
       <ul className={commonStyles.list}>

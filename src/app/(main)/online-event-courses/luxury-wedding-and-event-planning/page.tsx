@@ -6,6 +6,7 @@ import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import IEWPImage from './lwes.svg';
 import { OutlineSection } from './outline-section';
+import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 const courseCodes: CourseCode[] = [ 'lw' ];
 
 const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
-  <>
+  <div className={styles.page}>
     <section>
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -53,7 +54,7 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-            <Image src={WhyQCImage} alt="" className="img-fluid" />
+            <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
         </div>
       </div>
@@ -142,7 +143,7 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
     </Suspense>
     <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Incredible Memories?" text="Specialize as a luxury wedding & event planner" courseCodes={courseCodes} />
-  </>
+  </div>
 );
 
 export default LuxuryWeddingAndEventPlanningPage;

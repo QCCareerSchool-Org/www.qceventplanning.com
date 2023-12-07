@@ -1,0 +1,21 @@
+.page {
+  .whyQCImage {
+    margin-bottom: -12.5%; // to account for the drop shadow
+  }
+
+  .overlay {
+    position: absolute; 
+    background: rgba(0, 0, 0, 0.5);
+    
+    /* center overlay text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    inset: 0;
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .overlay { display: none; }
+  } 
+}

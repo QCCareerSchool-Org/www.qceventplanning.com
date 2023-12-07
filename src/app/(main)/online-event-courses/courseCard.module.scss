@@ -21,8 +21,11 @@
   .certification {
     position: absolute;
     top: 50%;
-    left: 2rem;
+    left: 1rem;
     transform: translate(0, -50%);
+    @media only screen and (min-width: 576px) {
+      left: 2rem;
+    }
   }
 
   .message {

@@ -9,6 +9,7 @@ import ShieldCheckIcon from './shield-check.svg';
 import TagIcon from './tag.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
+import { tightNumber } from '@/lib/tightNumber';
 
 type Props = {
   price: Price;
@@ -21,7 +22,7 @@ export const Full: FC<Props> = ({ price, href }) => (
       <h6 className={commonStyles.title}>Pay In Full</h6>
       <div className={commonStyles.description}>One-Time Payment of</div>
       <hr className={commonStyles.hr} />
-      <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}</span><span className={styles.dark}>{price.plans.full.total}</span></div>
+      <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}{tightNumber(price.plans.full.total) && <span style={{ marginRight: '0.25rem' }} />}</span><span className={styles.dark}>{price.plans.full.total}</span></div>
       <Link href={href} className="btn btn-primary">Enroll Now</Link>
       <hr className={commonStyles.hr} />
       <ul className={commonStyles.list}>

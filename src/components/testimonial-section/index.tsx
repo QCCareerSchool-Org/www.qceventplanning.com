@@ -10,9 +10,10 @@ import type { CourseCode } from '@/domain/courseCode';
 type Props = {
   id: string;
   courseCodes?: CourseCode[];
+  className?: string;
 };
 
-export const TestimonialSection: FC<Props> = ({ id, courseCodes }) => {
+export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -40,7 +41,7 @@ export const TestimonialSection: FC<Props> = ({ id, courseCodes }) => {
   }
 
   return (
-    <section>
+    <section className={className}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-9 col-xl-8 col-xxl-6">

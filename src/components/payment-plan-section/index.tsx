@@ -26,17 +26,21 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) 
   return (
     <section className={className ?? 'bg-light'} id="paymentPlans">
       <div className="container">
-        <div className="row g-s justify-content-center">
+        <div className="row justify-content-center mb-5">
           <div className="col-12 text-center">
             <h2 className="mb-4">Tuition &amp; Payment Plans</h2>
-            <p className="lead">Select the payment plan that best suits your budget. Prices are listed in {price.currency.name}.</p>
+            <p className="lead mb-0">Select the payment plan that best suits your budget. Prices are listed in {price.currency.name}.</p>
           </div>
-          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+        </div>
+        <div className="row justify-content-center mb-5">
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4 mb-5 mb-lg-0">
             <Part price={price} href={href} />
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
             <Full price={price} href={href} />
           </div>
+        </div>
+        <div className="row justify-content-center">
           <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
             <PaymentSectionGuarantee />
           </div>

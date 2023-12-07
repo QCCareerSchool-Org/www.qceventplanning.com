@@ -6,6 +6,7 @@ import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import IEDPImage from './iedp.svg';
 import { OutlineSection } from './outline-section';
+import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 const courseCodes: CourseCode[] = [ 'ed' ];
 
 const EventDecorPage: PageComponent = () => (
-  <>
+  <div className={styles.page}>
     <section>
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -52,7 +53,7 @@ const EventDecorPage: PageComponent = () => (
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-            <Image src={WhyQCImage} alt="" className="img-fluid" />
+            <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
         </div>
       </div>
@@ -141,7 +142,7 @@ const EventDecorPage: PageComponent = () => (
     </Suspense>
     <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Become a Professionally Certified Event Decorator" courseCodes={courseCodes} />
-  </>
+  </div>
 );
 
 export default EventDecorPage;

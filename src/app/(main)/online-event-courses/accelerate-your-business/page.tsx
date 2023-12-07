@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { Suspense } from 'react';
 import DesktopImage from './desktop.jpg';
 import HeroImage from './hero.jpg';
-import styles from './index.module.css';
 import { OutlineSection } from './outline-section';
+import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const courseCodes: CourseCode[] = [ 'eb' ];
 
 const AccelerateYourBusinessPage: PageComponent = () => (
-  <>
+  <div className={styles.page}>
     <section>
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -49,7 +49,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-            <Image src={WhyQCImage} alt="" className="img-fluid" />
+            <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     </Suspense>
     <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" courseCodes={courseCodes} />
-  </>
+  </div>
 );
 
 export default AccelerateYourBusinessPage;

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const CoursesPage: PageComponent = () => (
   <>
-    <section>
+    <section style={{ paddingBottom: 0 }}>
       <div className="container">
         <div className="row justify-content-center mb-s">
           <div className="col-12 col-lg-7 col-xl-6 col-xxl-5 text-center">
@@ -31,7 +31,7 @@ const CoursesPage: PageComponent = () => (
           </div>
         </div>
         <div className="row justify-content-center g-4">
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="foundation"
               name="Event & Wedding Planning"
@@ -42,7 +42,7 @@ const CoursesPage: PageComponent = () => (
               message="Most Popular"
             />
           </div>
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="foundation"
               name="Corporate Event Planning"
@@ -52,17 +52,17 @@ const CoursesPage: PageComponent = () => (
               certification={<CourseCardCertifcation courseCode="cp" />}
             />
           </div>
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="foundation"
               name="Event Decor"
-              description="Expand your creative skills to design an event’s mood and aesthetic experience. Learn to coordinate lighting, color, and decor to suit a theme."
+              description="Expand your creative skills to design an event's mood and aesthetic experience. Learn to coordinate lighting, color, and decor to suit a theme."
               href="/online-event-courses/event-decor"
               backgroundSrc={EDImage}
               certification={<CourseCardCertifcation courseCode="ed" />}
             />
           </div>
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="foundation"
               name="Floral Design"
@@ -72,7 +72,7 @@ const CoursesPage: PageComponent = () => (
               certification={<CourseCardCertifcation courseCode="fd" />}
             />
           </div>
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="foundation"
               name="Wedding Planning"
@@ -82,7 +82,7 @@ const CoursesPage: PageComponent = () => (
               certification={<CourseCardCertifcation courseCode="wp" />}
             />
           </div>
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="specialty"
               name={<>Luxury Wedding<span className="d-lg-none d-xl-inline"> &amp; Event</span> Planning</>}
@@ -92,7 +92,7 @@ const CoursesPage: PageComponent = () => (
               certification={<CourseCardCertifcation courseCode="lw" />}
             />
           </div>
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="specialty"
               name="Destination Wedding Planning"
@@ -102,7 +102,7 @@ const CoursesPage: PageComponent = () => (
               certification={<CourseCardCertifcation courseCode="dw" />}
             />
           </div>
-          <div className="col-10 col-lg-6 d-flex">
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="specialty"
               name="Accelerate Your Business"

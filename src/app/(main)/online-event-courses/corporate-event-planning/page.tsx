@@ -7,6 +7,7 @@ import HeroImage from './hero.jpg';
 import ICPPImage from './icpp.svg';
 import ModernEventImage from './modern-event.jpg';
 import { OutlineSection } from './outline-section';
+import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 const courseCodes: CourseCode[] = [ 'cp' ];
 
 const CorporateEventPlanningPage: PageComponent = () => (
-  <>
+  <div className={styles.page}>
     <section>
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -46,14 +47,14 @@ const CorporateEventPlanningPage: PageComponent = () => (
             <h2 className="mb-4">Why Choose<br />QC Event School</h2>
             <p className="lead mb-4">QC's Corporate Event Planning certification course provides students with the most comprehensive training available to succeed in the corporate planning industry.</p>
             <ul className="mb-0">
-              <li>No previous training required – our professional corporate event planning course is designed to take you from beginner to expert</li>
+              <li>No previous training required&mdash;our professional corporate event planning course is designed to take you from beginner to expert</li>
               <li>Personalized feedback &amp; advice on your assignments from our top industry corporate planning experts</li>
               <li>Thriving virtual classroom to connect with other event planners, get feedback, and gain access to bonus material</li>
               <li>Built-in business training to help you launch your career and grow your clientele as a certified corporate event planner</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-            <Image src={WhyQCImage} alt="" className="img-fluid" />
+            <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
         </div>
       </div>
@@ -159,7 +160,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
     </Suspense>
     <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Memorable Events?" text="Become a Professionally Certified Corporate Event Planner" courseCodes={courseCodes} />
-  </>
+  </div>
 );
 
 export default CorporateEventPlanningPage;

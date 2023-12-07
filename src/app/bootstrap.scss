@@ -14,7 +14,6 @@
   --qc-color-light: #f8f8fb;
   --qc-color-light-stroke: #b5c3d1;
   
-
   --qc-section-padding: 4rem;
   @media only screen and (min-width: 768px) {
     --qc-section-padding: 5rem;
@@ -156,8 +155,8 @@ section {
 }
 
 section:first-of-type {
-  padding: calc(var(--qc-section-padding) / 1.25) 0 var(--qc-section-padding)
-}
+  padding: calc(var(--qc-section-padding) / 2) 0 var(--qc-section-padding); // reduce 
+}   
 
 section > div.container {
   position: relative; /* so that if we use a cover image, the content will display on top */
@@ -193,7 +192,7 @@ section.noPadding > div.container {
   padding-right: 0;
 }
 
-h1, .h1 { font-size: 2.5rem; line-height: 1.2; }
+h1, .h1 { font-size: 2.75rem; line-height: 1.2; }
 h2, .h2 { font-size: 2.25rem; line-height: 1.2; }
 h3, .h3 { font-size: 2rem; line-height: 1.2; }
 h4, .h4 { font-size: 1.5rem; line-height: 1.4; }
@@ -322,7 +321,6 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
   --bs-btn-disabled-border-color: #4d5760;
   --bs-gradient: none;
 }
-
 
 .btn-none {
   --bs-btn-color: inherit;
