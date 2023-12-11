@@ -97,7 +97,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section>
+    <section id="instructors">
       <div className="container">
         <div className="row g-s">
           <div className="d-none d-lg-block col-lg-6">

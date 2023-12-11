@@ -94,7 +94,7 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section>
+    <section id="instructors">
       <div className="container">
         <div className="row g-s">
           <div className="col-12 col-lg-6">
