@@ -1,24 +1,32 @@
 import type { Metadata } from 'next';
 
+import { GallerySection } from './gallerySection';
 import type { PageComponent } from '@/app/serverComponent';
+import { GetStartedSection } from '@/components/getStartedSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
   title: 'Student Success - QC Event School',
 };
+
+const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
 const StudentSuccessPage: PageComponent = () => {
   return (
     <>
       <section>
         <div className="container">
-          <h1>Student Success</h1>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8 text-center">
+              <h1 className="mb-3">Student Success</h1>
+              <p className="lead mb-0">Explore the success stories of our students and graduates, and take a look at the impressive event works crafted by our talented students.</p>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="bg-navy text-white">
-        <div className="container">
-          <h2>Lorem Ipsum</h2>
-        </div>
-      </section>
+      <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+      <GallerySection />
+      <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" />
     </>
   );
 };

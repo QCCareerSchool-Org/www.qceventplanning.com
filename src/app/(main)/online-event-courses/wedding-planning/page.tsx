@@ -11,14 +11,14 @@ import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { AislePlannerSection } from '@/components/aisle-planner-section';
+import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { CourseType } from '@/components/courseType';
-import { GetStartedSection } from '@/components/get-started-section';
+import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
-import { PaymentPlanSection } from '@/components/payment-plan-section';
-import { Testimonial } from '@/components/testimonial';
-import { TestimonialSection } from '@/components/testimonial-section';
+import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { TestimonialSection } from '@/components/testimonialSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import type { CourseCode } from '@/domain/courseCode';
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'wp' ];
+const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
 const WeddingPlanningPage: PageComponent = () => (
   <div className={styles.page}>
@@ -60,36 +61,7 @@ const WeddingPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section className="bg-light">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-8 col-xl-6 text-lg-center">
-            <h2 className="mb-4">What Our Students and Grads Are Saying</h2>
-            <p className="lead mb-5">We've helped 8000+ students and graduates start their own successful event and wedding planning business!</p>
-          </div>
-        </div>
-        <div className="row justify-content-center g-s">
-          <div className="col-12 col-sm-8 col-lg-4">
-            <Testimonial id="TE-0013" courseCodes={courseCodes} />
-          </div>
-          <div className="col-12 col-sm-8 col-lg-4">
-            <Testimonial id="TE-0002" courseCodes={courseCodes} />
-          </div>
-          <div className="col-12 col-sm-8 col-lg-4">
-            <Testimonial id="TE-0003" courseCodes={courseCodes} />
-          </div>
-          <div className="col-12 col-sm-8 col-lg-4">
-            <Testimonial id="TE-0004" courseCodes={courseCodes} />
-          </div>
-          <div className="col-12 col-sm-8 col-lg-4">
-            <Testimonial id="TE-0005" courseCodes={courseCodes} />
-          </div>
-          <div className="col-12 col-sm-8 col-lg-4">
-            <Testimonial id="TE-0006" courseCodes={courseCodes} />
-          </div>
-        </div>
-      </div>
-    </section>
+    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">

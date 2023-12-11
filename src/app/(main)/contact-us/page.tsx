@@ -7,7 +7,7 @@ import { EmailLink } from './emailLink';
 import styles from './page.module.scss';
 import PhoneIcon from './phone.svg';
 import type { PageComponent } from '@/app/serverComponent';
-import { GetStartedSection } from '@/components/get-started-section';
+import { GetStartedSection } from '@/components/getStartedSection';
 import { getData } from '@/lib/getData';
 import { getTelephoneNumber } from '@/lib/telephone';
 

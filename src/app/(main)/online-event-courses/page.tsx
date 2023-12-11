@@ -11,8 +11,8 @@ import FDImage from './floral-design/hero.jpg';
 import LWImage from './luxury-wedding-and-event-planning/hero.jpg';
 import WPImage from './wedding-planning/hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { GetStartedSection } from '@/components/get-started-section';
-import { TestimonialSection } from '@/components/testimonial-section';
+import { GetStartedSection } from '@/components/getStartedSection';
+import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses - QC Event School',

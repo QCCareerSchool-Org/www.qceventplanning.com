@@ -6,7 +6,7 @@ import AboutQCImage from './about-qc.jpg';
 import BBBIcon from './bbb.svg';
 import ShieldIcon from './shield.svg';
 import type { PageComponent } from '@/app/serverComponent';
-import { ILEASection } from '@/components/ilea-section';
+import { ILEASection } from '@/components/ileaSection';
 
 export const metadata: Metadata = {
   title: 'About QC - QC Event School',

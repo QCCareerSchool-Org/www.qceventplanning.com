@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 import { Blurb } from './blurb';
 import type { PageComponent } from '@/app/serverComponent';
-import { ILEASection } from '@/components/ilea-section';
-import { TestimonialSection } from '@/components/testimonial-section';
+import { ILEASection } from '@/components/ileaSection';
+import { TestimonialSection } from '@/components/testimonialSection';
 import AlyssaPernaImage from '@/components/tutorImages/images/alyssa-perna.jpg';
 import AngelaHodelImage from '@/components/tutorImages/images/angela-hodal.jpg';
 import AnitaDiPaoloImage from '@/components/tutorImages/images/anita-dipaolo.jpg';
