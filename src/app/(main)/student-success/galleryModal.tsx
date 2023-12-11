@@ -12,7 +12,7 @@ type Props = {
 
 export const GalleryModal: FC<Props> = props => (
   <Modal show={props.show} onHide={props.onHide} size="lg">
-    <Modal.Header closeButton>Student Success Gallery</Modal.Header>
+    <Modal.Header closeButton><span style={{ fontWeight: 500 }}>Student Success Gallery</span></Modal.Header>
     <Modal.Body>
       <Image src={props.src} alt={props.description} placeholder="blur" className="img-fluid" style={{ width: '100%', height: 'auto' }} />
     </Modal.Body>

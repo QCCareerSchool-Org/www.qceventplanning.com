@@ -22,11 +22,11 @@ type GalleryData = {
 const data: GalleryData[] = [
   { src: AmyPetit01Image, description: 'A two-tiered wedding cake with white frosting and purple flowers.' },
   { src: CameshaIsaac01Image, description: 'A luxurious wedding dinner setup with tall, tropical centerpieces and golden chairs.' },
-  { src: JeannetteSpencer01Image, description: 'The bride is having her makeup done before the wedding ceremony.' },
+  { src: JeannetteSpencer01Image, description: 'The bride having her makeup done before the wedding ceremony.' },
   { src: CameshaIsaac02Image, description: 'A place setting at a wedding reception, featuring white linens and green tropical leaves.' },
   { src: GianaLuchese01Image, description: 'A table at a wedding reception adorned with a dense floral arrangement in shades of pink and cream.' },
   { src: LaurenSpignola01Image, description: 'An elegant wedding invitation on a teal background with gold cursive writing.' },
-  { src: JordanMerlino01Image, description: 'A bride and groom sharing a dance, smiling at each other, dressed in traditional Filipino wedding attire.' },
+  { src: JordanMerlino01Image, description: 'A bride and groom sharing a dance, smiling at each other, dressed in traditional wedding attire.' },
 ];
 
 export const GallerySection: FC = () => {
