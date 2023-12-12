@@ -2,13 +2,13 @@
 
 import type { FC } from 'react';
 
-import ICPP from './corporate-event-planning/icpp.svg';
-import DWS from './destination-wedding-planning/dws.svg';
-import IEWP from './event-and-wedding-planning/iewp.svg';
-import IEDP from './event-decor/iedp.svg';
-import IFDP from './floral-design/ifdp.svg';
-import LWES from './luxury-wedding-and-event-planning/lwes.svg';
-import IWPP from './wedding-planning/iwpp.svg';
+import DWS from '@/components/certifications/dws.svg';
+import ICPP from '@/components/certifications/icpp.svg';
+import IEDP from '@/components/certifications/iedp.svg';
+import IEWP from '@/components/certifications/iewp.svg';
+import IFDP from '@/components/certifications/ifdp.svg';
+import IWPP from '@/components/certifications/iwpp.svg';
+import LWES from '@/components/certifications/lwes.svg';
 import type { CourseCode } from '@/domain/courseCode';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 

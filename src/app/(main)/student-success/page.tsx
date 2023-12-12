@@ -26,7 +26,7 @@ const StudentSuccessPage: PageComponent = () => {
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <GallerySection />
-      <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" />
+      <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" />
     </>
   );
 };

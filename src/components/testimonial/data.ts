@@ -56,7 +56,7 @@ export const testimonials: Record<string, Testimonial> = {
     stars: 5,
   },
   'TE-0006': {
-    name: 'Madyson Bel',
+    name: 'Madyson Bell',
     courses: [ 'ep', 'ed' ],
     short: [ 'I can definitely say that I would not have gotten off to nearly as strong of a start, had it not been for my training through QC.' ],
     long: [ 'I can definitely say that I would not have gotten off to nearly as strong of a start, had it not been for my training through QC. I learned a lot about how to portray myself as a professional, how to deal with difficult situations, and how to make a space look beautiful and molded to a client\'s needs.' ],

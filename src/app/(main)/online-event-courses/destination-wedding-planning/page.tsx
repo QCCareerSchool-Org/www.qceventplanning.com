@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import { Suspense } from 'react';
 import CertificationBackgroundImage from './cert-bg.jpg';
-import DWSImage from './dws.svg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
 import styles from './page.module.scss';
@@ -12,6 +11,7 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { Candice } from '@/components/candice';
+import DWSImage from '@/components/certifications/dws.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';

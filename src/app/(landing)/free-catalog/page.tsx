@@ -1,7 +1,15 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
+import { CertificationSection } from './certificationSection';
+import HeroLgImage from './hero-large.jpg';
+import HeroSmImage from './hero-small.jpg';
+import { IndustrySection } from './industrySection';
+import { JoinQCSection } from './joinQCSection';
+import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrochureForm } from '@/components/brochureForm';
+import { TestimonialSection } from '@/components/testimonialSection';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
@@ -11,31 +19,36 @@ export const metadata: Metadata = {
 const FreeCatalogPage: PageComponent = () => {
   const { testGroup, countryCode, provinceCode } = getData();
   return (
-    <>
-      <section>
+    <div className={styles.freeCatalog}>
+      <section className="text-white">
+        <Image src={HeroLgImage} alt="" fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
+        <Image src={HeroSmImage} alt="" fill placeholder="blur" className="d-md-none" style={{ objectFit: 'cover' }} />
         <div className="container">
-          <div className="row justify-content-center g-s">
-            <div className="col-12 col-lg-6 col-xl-5">
-              <h1 className="h2 mb-3">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
-              <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi maximus lacus et neque consectetur posuere et in ex. Suspendisse ullamcorper blandit metus in sagittis. Nulla tempus erat sapien, eu hendrerit enim dictum a.</p>
-            </div>
-            <div className="col-12 col-sm-11 col-md-8 col-lg-6 col-xl-5 order-lg-first">
-              <div className="card bg-light">
+          <div className="row g-0">
+            <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
+              <div className={`card bg-light ${styles.card}`}>
                 <div className="card-body">
-                  <h2 className="h5 mb-3">Download the Free Catalog</h2>
-                  <BrochureForm
-                    action="https://go.qceventplanning.com/l/947642/2022-02-15/8n8h7"
-                    testGroup={testGroup}
-                    countryCode={countryCode}
-                    provinceCode={provinceCode}
-                  />
+                  <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
+                  <div className={styles.formWrapper}>
+                    <BrochureForm
+                      action="https://go.qceventplanning.com/l/947642/2022-02-15/8n8h7"
+                      testGroup={testGroup}
+                      countryCode={countryCode}
+                      provinceCode={provinceCode}
+                      placeholders
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+      <IndustrySection />
+      <JoinQCSection />
+      <TestimonialSection id="TE-0006" />
+      <CertificationSection />
+    </div>
   );
 };
 

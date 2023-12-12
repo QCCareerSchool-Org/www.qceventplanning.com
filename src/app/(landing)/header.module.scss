@@ -1,0 +1,29 @@
+.headerComponent {
+  .header {
+    background-color: var(--bs-light);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    .content {
+      height: 62px;
+      @media only screen and (min-width: 768px) { height: 70px; }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .button {
+      display: none;
+      @media only screen and (min-width: 475px) { display: block }
+      padding-left: 1rem;
+      padding-right: 1.25rem;
+    }
+  }
+  
+  .headerSpacer {
+    margin-bottom: 62px;
+    @media only screen and (min-width: 768px) { margin-bottom: 70px; }
+  }
+}
