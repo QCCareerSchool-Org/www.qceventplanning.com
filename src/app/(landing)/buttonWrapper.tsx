@@ -32,7 +32,7 @@ const show = (screenWidth: number, scrollPosition: number): boolean => {
     return scrollPosition >= 385;
   }
 
-  if (screenWidth >= 400) {
+  if (screenWidth >= 375) {
     return scrollPosition >= 420;
   }
 

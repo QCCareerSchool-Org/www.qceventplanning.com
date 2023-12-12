@@ -13,7 +13,7 @@ export const Header: FC = () => (
         <div className={styles.content}>
           <Logo height={20} />
           <ButtonWrapper>
-            <Link href="#" className={`btn btn-navy ${styles.button}`}><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your </span>Free Catalog</Link>
+            <Link href="#" className={`btn btn-navy ${styles.button}`}><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</Link>
           </ButtonWrapper>
         </div>
       </div>
