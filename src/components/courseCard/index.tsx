@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 
 import ChevronIcon from './chevron-right.svg';
-import styles from './courseCard.module.scss';
+import styles from './index.module.scss';
 
 type Props = {
   type: 'foundation' | 'specialty';

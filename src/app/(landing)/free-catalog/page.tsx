@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import Link from 'next/link';
+import { BottomSection } from '../bottomSection';
+import { AboutSection } from './aboutSection';
 import { CertificationSection } from './certificationSection';
 import HeroLgImage from './hero-large.jpg';
 import HeroSmImage from './hero-small.jpg';
@@ -48,6 +51,11 @@ const FreeCatalogPage: PageComponent = () => {
       <JoinQCSection />
       <TestimonialSection id="TE-0006" />
       <CertificationSection />
+      <AboutSection />
+      <BottomSection>
+        <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
+        <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>
+      </BottomSection>
     </div>
   );
 };

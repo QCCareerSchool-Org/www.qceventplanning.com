@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 
 import EBImage from './accelerate-your-business/hero.jpg';
 import CPImage from './corporate-event-planning/hero.jpg';
-import { CourseCard } from './courseCard';
-import { CourseCardCertifcation } from './courseCardCertification';
 import DWImage from './destination-wedding-planning/hero.jpg';
 import EPImage from './event-and-wedding-planning/hero.jpg';
 import EDImage from './event-decor/hero.jpg';
@@ -11,6 +9,8 @@ import FDImage from './floral-design/hero.jpg';
 import LWImage from './luxury-wedding-and-event-planning/hero.jpg';
 import WPImage from './wedding-planning/hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { CourseCard } from '@/components/courseCard';
+import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 
