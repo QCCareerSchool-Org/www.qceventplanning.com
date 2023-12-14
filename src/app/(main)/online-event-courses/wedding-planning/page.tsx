@@ -19,7 +19,7 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
+import { AshleyFriesen } from '@/components/tutorImages/ashleyFriesen';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -117,9 +117,9 @@ const WeddingPlanningPage: PageComponent = () => (
               </div>
               <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                 <div className="mb-3">
-                  <AlyssaPerna />
+                  <AshleyFriesen />
                 </div>
-                <h3 className="h6 mb-3">Asley Brooke</h3>
+                <h3 className="h6 mb-3">Asley Friesen</h3>
                 <p className="small mb-0">Ashley is the owner and lead planner of Ashley Brooke Weddings. She specializes in wedding planning, design and coordination and loves being able to create weddings that are unique to each of her couples.</p>
               </div>
             </div>

@@ -19,7 +19,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
-import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
+import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
@@ -108,7 +108,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
             <div className="row g-5">
               <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                 <div className="mb-3">
-                  <MwaiYeboah />
+                  <MarkCheplowitz />
                 </div>
                 <h3 className="h6 mb-3">Mark Cheplowitz</h3>
                 <p className="small mb-0">Mark Cheplowitz is an award-winning event planner and President of NYC - based Wizard of Ahs. Mark's event production work has taken him all over the world. Career highlights include planning the Super Bowl and the grand opening of the Rock and Roll Hall of Fame.</p>
