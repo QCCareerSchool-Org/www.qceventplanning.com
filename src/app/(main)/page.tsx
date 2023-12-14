@@ -52,7 +52,7 @@ const HomePage: PageComponent = () => {
         <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
-              <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Event School?</h2>
+              <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Event School</h2>
               <div className="row g-5 g-lg-4 g-xxl-5">
                 <div className="col-12 col-lg-6">
                   <BriefcaseIcon className="d-lg-none d-xxl-block mb-3" />
