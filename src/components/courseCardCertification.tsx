@@ -24,7 +24,7 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const Certification = getCertification(courseCode);
   if (Certification) {
-    return <Certification height={screenWidth > 1200 ? 160 : screenWidth > 768 ? 140 : 100} />;
+    return <Certification height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
   }
 };
 

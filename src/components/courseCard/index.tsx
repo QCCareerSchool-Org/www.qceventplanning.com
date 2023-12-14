@@ -14,7 +14,7 @@ type Props = {
   backgroundSrc: StaticImageData;
   certification: JSX.Element;
   message?: string;
-  buttons?: 'course' | 'courseAndTuition' | 'enroll';
+  buttons?: 'course' | 'courseAndTuition' | 'enroll' | 'none';
 };
 
 export const CourseCard: FC<Props> = ({ type, name, description, href, backgroundSrc, certification, message, buttons = 'courseAndTuition' }) => (
