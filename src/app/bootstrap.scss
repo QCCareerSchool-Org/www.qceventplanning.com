@@ -248,6 +248,50 @@ section > div.container {
   .g-lg-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
 }
 
+@include media-breakpoint-up(xl) {
+  .p-xl-s { padding: var(--qc-section-padding) !important; }
+  .py-xl-s { padding-top: var(--qc-section-padding) !important; padding-bottom: var(--qc-section-padding) !important; }
+  .px-xl-s { padding-left: var(--qc-section-padding) !important; padding-right: var(--qc-section-padding) !important; }
+  .pt-xl-s { padding-top: var(--qc-section-padding) !important; }
+  .pb-xl-s { padding-bottom: var(--qc-section-padding) !important; }
+  .ps-xl-s { padding-left: var(--qc-section-padding) !important; }
+  .pe-xl-s { padding-right: var(--qc-section-padding) !important; }
+
+  .m-xl-s { margin: var(--qc-section-padding) !important; }
+  .my-xl-s { margin-top: var(--qc-section-padding) !important; margin-bottom: var(--qc-section-padding) !important; }
+  .mx-xl-s { margin-left: var(--qc-section-padding) !important; margin-right: var(--qc-section-padding) !important; }
+  .mt-xl-s { margin-top: var(--qc-section-padding) !important; }
+  .mb-xl-s { margin-bottom: var(--qc-section-padding) !important; }
+  .ms-xl-s { margin-left: var(--qc-section-padding) !important; }
+  .me-xl-s { margin-right: var(--qc-section-padding) !important; }
+
+  .gx-xl-s { --bs-gutter-x: var(--qc-section-padding) !important; }
+  .gy-xl-s { --bs-gutter-y: var(--qc-section-padding) !important; }
+  .g-xl-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
+}
+
+@include media-breakpoint-up(xxl) {
+  .p-xxl-s { padding: var(--qc-section-padding) !important; }
+  .py-xxl-s { padding-top: var(--qc-section-padding) !important; padding-bottom: var(--qc-section-padding) !important; }
+  .px-xxl-s { padding-left: var(--qc-section-padding) !important; padding-right: var(--qc-section-padding) !important; }
+  .pt-xxl-s { padding-top: var(--qc-section-padding) !important; }
+  .pb-xxl-s { padding-bottom: var(--qc-section-padding) !important; }
+  .ps-xxl-s { padding-left: var(--qc-section-padding) !important; }
+  .pe-xxl-s { padding-right: var(--qc-section-padding) !important; }
+
+  .m-xxl-s { margin: var(--qc-section-padding) !important; }
+  .my-xxl-s { margin-top: var(--qc-section-padding) !important; margin-bottom: var(--qc-section-padding) !important; }
+  .mx-xxl-s { margin-left: var(--qc-section-padding) !important; margin-right: var(--qc-section-padding) !important; }
+  .mt-xxl-s { margin-top: var(--qc-section-padding) !important; }
+  .mb-xxl-s { margin-bottom: var(--qc-section-padding) !important; }
+  .ms-xxl-s { margin-left: var(--qc-section-padding) !important; }
+  .me-xxl-s { margin-right: var(--qc-section-padding) !important; }
+
+  .gx-xxl-s { --bs-gutter-x: var(--qc-section-padding) !important; }
+  .gy-xxl-s { --bs-gutter-y: var(--qc-section-padding) !important; }
+  .g-xxl-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
+}
+
 section.noPadding {
   padding-top: 0;
   padding-bottom: 0;

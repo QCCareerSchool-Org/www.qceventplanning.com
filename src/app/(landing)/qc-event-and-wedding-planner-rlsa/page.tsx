@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import Link from 'next/link';
 import EBImage from '../../(main)/online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from '../../(main)/online-event-courses/corporate-event-planning/hero.jpg';
 import DWImage from '../../(main)/online-event-courses/destination-wedding-planning/hero.jpg';
@@ -9,21 +10,97 @@ import FDImage from '../../(main)/online-event-courses/floral-design/hero.jpg';
 import LWImage from '../../(main)/online-event-courses/luxury-wedding-and-event-planning/hero.jpg';
 import WPImage from '../../(main)/online-event-courses/wedding-planning/hero.jpg';
 import { Header } from '../header';
+import BBBIcon from './bbb.svg';
+import CertificationIcon from './certification.svg';
+import CheckCircleIcon from './check-circle.svg';
 import HeroImage from './hero.jpg';
+import ShieldIcon from './shield.svg';
 import type { PageComponent } from '@/app/serverComponent';
 import { Candice } from '@/components/candice';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
-import { TestimonialSection } from '@/components/testimonialSection';
+import { ILEASection } from '@/components/ileaSection';
+import { AylaOtto } from '@/components/testimonial/images';
+import WhyQCImage from '@/components/why-qc.jpg';
 
 const RSLAPage: PageComponent = () => {
   return (
     <>
-      <Header />
+      <Header href="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
       <section className="p-0 text-center">
         <Image src={HeroImage} alt="Become a Wedding & Event Planner" className="img-fluid" />
       </section>
-      <TestimonialSection id="TE-0001" />
+      <section>
+        <div className="container">
+          <h2>Start a Rewarding career in the Event Industry</h2>
+          <ul>
+            <li>Get certified in 3-6 months with one-on-one guidance from industry professionals.</li>
+            <li>Study online at your own pace and on your own schedule&mdash;no strict deadlines or exams!</li>
+            <li>Comprehensive business training and resources to help you launch your own business.</li>
+            <li>Lifetime access to up-to-date course materials in the Online Student Center.</li>
+            <li>Access student support services 7 days a week&mdash;before, during, and after completing your course!</li>
+            <li>Connect with a worldwide network of event planners in the Virtual Classroom</li>
+            <li>Flexible payment plans allow you to learn without the financial burden of high tuition costs.</li>
+          </ul>
+        </div>
+      </section>
+      <ILEASection />
+      <section className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center g-lg-s">
+            <div className="col-5 col-sm-4 col-md-3 mb-4 mb-md-0 text-center">
+              <div style={{ position: 'relative', maxWidth: '100%', aspectRatio: 1, borderRadius: '50%' }}>
+                <Image
+                  src={AylaOtto}
+                  alt="Ayla Otto"
+                  fill
+                  sizes="50vh"
+                  style={{ objectFit: 'cover', borderRadius: '50%' }}
+                />
+              </div>
+            </div>
+            <div className="col-12 col-md-9 text-center text-md-start">
+              <p className="lead">&ldquo;I liked that it was all online. Plus, I had a long time (2 years) to complete the course. The price was also very affordable! I loved the convenience of doing training online&mdash;rather than in-person&mdash;because you can do the course a little bit at a time, whenever it's convenient for your schedule.&rdquo;</p>
+              <p className="lead fw-bold">&mdash;Ayla Otto, owner and founder of Events by Ayla</p>
+              <p className="mb-0"><Link href="https://www.qceventplanning.com/blog/2023/07/qc-event-school-graduate-spotlight-ayla-otto">Read the full QC graduate interview</Link></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
+            <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
+              <h2 className="mb-4 mb-xl-5">Why Choose QC?</h2>
+              <div className="row g-4 g-xxl-5">
+                <div className="col-12 col-lg-6">
+                  <ShieldIcon className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">40-Year History in Distance Education</h3>
+                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <CheckCircleIcon className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">Our 21-Day Money-Back Guarantee</h3>
+                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <CertificationIcon className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">Industry-Recognized Certifications</h3>
+                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <BBBIcon className="d-lg-none d-xxl-block mb-3" />
+                  <h3 className="h6 mb-3">An A+ Accreditation with the BBB</h3>
+                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                </div>
+              </div>
+            </div>
+            <div className="d-none d-lg-block col-lg-5 col-xl-6 col-xxl-5">
+              <Image src={WhyQCImage} alt="" className="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="bg-light">
         <div className="container">
           <div className="row justify-content-center mb-s">

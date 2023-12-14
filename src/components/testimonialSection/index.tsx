@@ -1,4 +1,5 @@
-import { type FC, useMemo } from 'react';
+import { useMemo } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { ImageCircle } from '../imageCircle';
 import { courseSort } from '../testimonial';
 import { testimonials } from '../testimonial/data';

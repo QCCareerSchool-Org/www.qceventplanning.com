@@ -29,7 +29,7 @@ export const JoinQCSection: FC = () => (
           <FadeUpAnimation>
             <div>
               <ChartIcon className="mt-3 mb-4" />
-              <h3 className="h6 mb-4">Learn the Fundamentals</h3>
+              <h3 className="h6 mb-4">Comprehensive Training</h3>
               <p className="mb-0">Practical knowledge for budgeting, coordinating, and executing a variety of events.</p>
             </div>
           </FadeUpAnimation>

@@ -4,11 +4,15 @@ import type { FC, PropsWithChildren } from 'react';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
-export const ButtonWrapper: FC<PropsWithChildren> = ({ children }) => {
+type Props = {
+  alwaysVisible: boolean;
+};
+
+export const ButtonWrapper: FC<PropsWithChildren<Props>> = ({ alwaysVisible, children }) => {
   const scrollPosition = useScrollPosition();
   const screenWidth = useScreenWidth();
 
-  return show(screenWidth, scrollPosition) && children;
+  return (alwaysVisible || show(screenWidth, scrollPosition)) && children;
 };
 
 const show = (screenWidth: number, scrollPosition: number): boolean => {
