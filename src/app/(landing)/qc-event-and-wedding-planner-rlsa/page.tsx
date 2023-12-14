@@ -3,16 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import EBImage from '../../(main)/online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from '../../(main)/online-event-courses/corporate-event-planning/hero.jpg';
-import DWImage from '../../(main)/online-event-courses/destination-wedding-planning/hero.jpg';
 import EPImage from '../../(main)/online-event-courses/event-and-wedding-planning/hero.jpg';
 import EDImage from '../../(main)/online-event-courses/event-decor/hero.jpg';
 import FDImage from '../../(main)/online-event-courses/floral-design/hero.jpg';
-import LWImage from '../../(main)/online-event-courses/luxury-wedding-and-event-planning/hero.jpg';
 import WPImage from '../../(main)/online-event-courses/wedding-planning/hero.jpg';
+import { BottomSection } from '../bottomSection';
 import { Header } from '../header';
 import BBBIcon from './bbb.svg';
 import CertificationIcon from './certification.svg';
 import CheckCircleIcon from './check-circle.svg';
+import EventCareersImage from './event-careers.jpg';
 import HeroImage from './hero.jpg';
 import ShieldIcon from './shield.svg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -20,7 +20,8 @@ import { Candice } from '@/components/candice';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { ILEASection } from '@/components/ileaSection';
-import { AylaOtto } from '@/components/testimonial/images';
+import { AylaOtto, TylerReid } from '@/components/testimonial/images';
+import { TestimonialSection } from '@/components/testimonialSection';
 import WhyQCImage from '@/components/why-qc.jpg';
 
 const RSLAPage: PageComponent = () => {
@@ -32,9 +33,9 @@ const RSLAPage: PageComponent = () => {
       </section>
       <section>
         <div className="container">
-          <h2>Start a Rewarding career in the Event Industry</h2>
+          <h2>Start a Rewarding Career in the Event Industry</h2>
           <ul>
-            <li>Get certified in 3-6 months with one-on-one guidance from industry professionals.</li>
+            <li>Get certified in 3 to 6 months with one-on-one guidance from industry professionals.</li>
             <li>Study online at your own pace and on your own schedule&mdash;no strict deadlines or exams!</li>
             <li>Comprehensive business training and resources to help you launch your own business.</li>
             <li>Lifetime access to up-to-date course materials in the Online Student Center.</li>
@@ -45,18 +46,32 @@ const RSLAPage: PageComponent = () => {
         </div>
       </section>
       <ILEASection />
+      <section id="instructors">
+        <div className="container">
+          <div className="row justify-content-center mb-5 mb-lg-s">
+            <div className="col-12 col-lg-10 col-xl-8 text-center">
+              <h2 className="mb-3">Industry-Expert Tutors</h2>
+              <p className="lead mb-0">Once you enroll in a course, you'll be matched with a personal tutor who will review your work and provide you with in-depth feedback and advice. You'll learn from an industry expert who will inspire and motivate you to pursue your own goals and push your creative boundaries.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center g-4 g-lg-s">
+            <div className="col-12 col-lg-6 col-xl-7 text-center text-lg-start">
+              <h3 className="h4 mb-3">Meet Candice Coppola, QC Event School Tutor</h3>
+              <p>Candice Coppola is the creative force behind Jubilee Events, a renowned Connecticut-based event design and planning boutique specializing in artful weddings, events, and occasions. Her highly-acclaimed company continues to expand, recently opening a Barbados-based sister company, A Jubilee Event in the Caribbean, which plans stunning destination weddings for luxury clients.</p>
+              <p className="mb-0">Candice is one of QC's talented tutors; she is also featured in the instructional videos for all QC Event courses, where she shares her vast knowledge of running a successful event and wedding planning business.</p>
+            </div>
+            <div className="col-10 col-sm-8 col-md-6 col-xl-5">
+              <Candice className="img-fluid" sizes="50vw" />
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="bg-light">
         <div className="container">
           <div className="row justify-content-center g-lg-s">
             <div className="col-5 col-sm-4 col-md-3 mb-4 mb-md-0 text-center">
               <div style={{ position: 'relative', maxWidth: '100%', aspectRatio: 1, borderRadius: '50%' }}>
-                <Image
-                  src={AylaOtto}
-                  alt="Ayla Otto"
-                  fill
-                  sizes="50vh"
-                  style={{ objectFit: 'cover', borderRadius: '50%' }}
-                />
+                <Image src={AylaOtto} alt="Ayla Otto" fill sizes="50vh" style={{ objectFit: 'cover', borderRadius: '50%' }} />
               </div>
             </div>
             <div className="col-12 col-md-9 text-center text-md-start">
@@ -97,6 +112,49 @@ const RSLAPage: PageComponent = () => {
             </div>
             <div className="d-none d-lg-block col-lg-5 col-xl-6 col-xxl-5">
               <Image src={WhyQCImage} alt="" className="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center mb-4">
+            <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
+              <h2 className="mb-3">Career Opportunities</h2>
+              <p>As the demand for meetings, events, and weddings grow, so does the need for professional and experienced planners. According to the Bureau of Labor Statistics, jobs for event planners are projected to grow more than 8% by 2032.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center g-s">
+            <div className="col-12 col-lg-8">
+              <h3 className="h5">Choose from a number of career opportunities in the event and wedding planning industry:</h3>
+              <ul>
+                <li>Start an event and wedding planning business. Be your own boss!</li>
+                <li>Plan meetings, fundraisers and industry events for corporate clients</li>
+                <li>Work as an in-house planner for companies and organizations</li>
+                <li>Become a destination wedding planner and travel as you work</li>
+                <li>Work with high-profile clients planning luxury events</li>
+                <li>Style weddings and events with professional event decor</li>
+                <li>Plan live events in various industries, such as music festivals and sports games</li>
+              </ul>
+            </div>
+            <div className="d-none d-lg-block col-4">
+              <Image src={EventCareersImage} alt="" className="img-fluid" style={{ width: '100%', height: 'auto' }} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row justify-content-center g-lg-s">
+            <div className="col-5 col-sm-4 col-md-3 mb-4 mb-md-0 text-center">
+              <div style={{ position: 'relative', maxWidth: '100%', aspectRatio: 1, borderRadius: '50%' }}>
+                <Image src={TylerReid} alt="TylerReid" fill sizes="50vh" style={{ objectFit: 'cover', borderRadius: '50%' }} />
+              </div>
+            </div>
+            <div className="col-12 col-md-9 text-center text-md-start">
+              <p className="lead">&ldquo;I always knew I had a passion for events, ever since I planned my 16th birthday party. However, I didn't truly come to the realization until the Dean of my college challenged me to choose a clear path upon graduation. This online certification [from QC] has given me the networks that will last a lifetime! I’m thankful for the word-of-mouth that led me to QC Event School and I am eternally grateful for the knowledge.&rdquo;</p>
+              <p className="lead fw-bold">&mdash;Tyler Reid, Principal Planner of Eminent Events Wedding & Event Planning</p>
+              <p className="mb-0"><Link href="https://www.qceventplanning.com/blog/2023/05/qc-event-school-graduate-spotlight-tyler-reid">Read the full QC graduate interview</Link></p>
             </div>
           </div>
         </div>
@@ -166,26 +224,6 @@ const RSLAPage: PageComponent = () => {
             <div className="col-12 col-sm-10 col-lg-6 d-flex">
               <CourseCard
                 type="specialty"
-                name={<>Luxury Wedding<span className="d-lg-none d-xl-inline"> &amp; Event</span> Planning</>}
-                description="Master planning upscale events and weddings! Handle substantial budgets, network with high-end vendors, and embrace the latest trends."
-                href="/online-event-courses/luxury-wedding-and-event-planning"
-                backgroundSrc={LWImage}
-                certification={<CourseCardCertifcation courseCode="lw" />}
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-lg-6 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Destination Wedding Planning"
-                description="Gain skills to coordinate stunning destination weddings. Network with travel agents, translators, and niche vendors for unforgettable events."
-                href="/online-event-courses/destination-wedding-planning"
-                backgroundSrc={DWImage}
-                certification={<CourseCardCertifcation courseCode="dw" />}
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-lg-6 d-flex">
-              <CourseCard
-                type="specialty"
                 name="Accelerate Your Business"
                 description="Learn how to start and grow your event planning business. Work with different marketing tools to help you achieve your business goals faster."
                 href="/online-event-courses/accelerate-your-business"
@@ -196,26 +234,12 @@ const RSLAPage: PageComponent = () => {
           </div>
         </div>
       </section>
-      <section id="instructors">
-        <div className="container">
-          <div className="row justify-content-center mb-5 mb-lg-s">
-            <div className="col-12 col-lg-10 col-xl-8 text-center">
-              <h2 className="mb-3">Industry-Expert Tutors</h2>
-              <p className="lead mb-0">Once you enroll in a course, you'll be matched with a personal tutor who will review your work and provide you with in-depth feedback and advice. You'll learn from an industry expert who will inspire and motivate you to pursue your own goals and push your creative boundaries.</p>
-            </div>
-          </div>
-          <div className="row justify-content-center g-4 g-lg-s">
-            <div className="col-12 col-lg-6 col-xl-7 text-center text-lg-start">
-              <h3 className="h4 mb-3">Meet Candice Coppola, QC Event School Tutor</h3>
-              <p>Candice Coppola is the creative force behind Jubilee Events, a renowned Connecticut-based event design and planning boutique specializing in artful weddings, events, and occasions. Her highly-acclaimed company continues to expand, recently opening a Barbados-based sister company, A Jubilee Event in the Caribbean, which plans stunning destination weddings for luxury clients.</p>
-              <p className="mb-0">Candice is one of QC's talented tutors; she is also featured in the instructional videos for all QC Event courses, where she shares her vast knowledge of running a successful event and wedding planning business.</p>
-            </div>
-            <div className="col-10 col-sm-8 col-md-6 col-xl-5">
-              <Candice className="img-fluid" sizes="50vw" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialSection id="TE-0002" />
+      <BottomSection>
+        <h2 className="mb-4">Ready to Start Your Event & Wedding Planning Career?</h2>
+        <p className="lead mb-4">Become Professionalky Certified with QC's Online Event Planning Training</p>
+        <Link href="https://enroll.qceventplanning.com" className="btn btn-lg btn-primary">Enroll Now</Link>
+      </BottomSection>
     </>
   );
 };
