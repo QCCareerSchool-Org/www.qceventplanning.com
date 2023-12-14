@@ -71,8 +71,8 @@ const RSLAPage: PageComponent = () => {
         <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
-              <h2 className="mb-4 mb-xl-5">Why Choose QC?</h2>
-              <div className="row g-4 g-xxl-5">
+              <h2 className="mb-5 mb-lg-4 mb-xx-5">Why Choose QC?</h2>
+              <div className="row g-5 g-lg-4 g-xxl-5">
                 <div className="col-12 col-lg-6">
                   <ShieldIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">40-Year History in Distance Education</h3>
