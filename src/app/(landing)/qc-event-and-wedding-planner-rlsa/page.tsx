@@ -43,16 +43,20 @@ const RSLAPage: PageComponent = () => {
       </section>
       <section>
         <div className="container">
-          <h2>Start a Rewarding Career in the Event Industry</h2>
-          <ul>
-            <li>Get certified in 3 to 6 months with one-on-one guidance from industry professionals.</li>
-            <li>Study online at your own pace and on your own schedule&mdash;no strict deadlines or exams!</li>
-            <li>Comprehensive business training and resources to help you launch your own business.</li>
-            <li>Lifetime access to up-to-date course materials in the Online Student Center.</li>
-            <li>Access student support services 7 days a week&mdash;before, during, and after completing your course!</li>
-            <li>Connect with a worldwide network of event planners in the Virtual Classroom</li>
-            <li>Flexible payment plans allow you to learn without the financial burden of high tuition costs.</li>
-          </ul>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10 col-xl-9 col-xxl-8">
+              <h2>Start a Rewarding Career in the Event Industry</h2>
+              <ul>
+                <li>Get certified in 3 to 6 months with one-on-one guidance from industry professionals.</li>
+                <li>Study online at your own pace and on your own schedule&mdash;no strict deadlines or exams!</li>
+                <li>Comprehensive business training and resources to help you launch your own business.</li>
+                <li>Lifetime access to up-to-date course materials in the Online Student Center.</li>
+                <li>Access student support services 7 days a week&mdash;before, during, and after completing your course!</li>
+                <li>Connect with a worldwide network of event planners in the Virtual Classroom</li>
+                <li>Flexible payment plans allow you to learn without the financial burden of high tuition costs.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
       <ILEASection />
