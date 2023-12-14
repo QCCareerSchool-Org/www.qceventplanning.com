@@ -28,8 +28,18 @@ const RSLAPage: PageComponent = () => {
   return (
     <>
       <Header logoLink buttonHref="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
-      <section className="p-0 text-center">
-        <Image src={HeroImage} alt="Become a Wedding & Event Planner" className="img-fluid" />
+      <section className="p-0" />
+      <section className="text-white">
+        <Image src={HeroImage} alt="" priority fill style={{ objectFit: 'cover' }} />
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-10 col-lg-8  text-center">
+              <div className="py-4 py-lg-5">
+                <h1>Become a Certified Event &amp; Wedding Planner</h1>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <section>
         <div className="container">
