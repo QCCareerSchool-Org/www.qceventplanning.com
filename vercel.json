@@ -25,7 +25,7 @@
     { "source": "/tutors/anita-dipaolo", "destination": "/student-success" },
     { "source": "/tutors/heather-hawes", "destination": "/student-success" },
     { "source": "/tutors/become-a-tutor", "destination": "/student-success" },
-    { "source": "/tution", "destination": "/online-event-courses" },
+    { "source": "/tuition", "destination": "/online-event-courses" },
     { "source": "/reviews", "destination": "/" },
     { "source": "/employee-training-programs", "destination": "/online-event-courses" }
   ],
