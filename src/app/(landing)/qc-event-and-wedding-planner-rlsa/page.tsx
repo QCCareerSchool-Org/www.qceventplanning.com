@@ -162,7 +162,7 @@ const RSLAPage: PageComponent = () => {
               </div>
             </div>
             <div className="col-12 col-md-9 text-center text-md-start">
-              <p className="lead">&ldquo;I always knew I had a passion for events, ever since I planned my 16th birthday party. However, I didn't truly come to the realization until the Dean of my college challenged me to choose a clear path upon graduation. This online certification [from QC] has given me the networks that will last a lifetime! I’m thankful for the word-of-mouth that led me to QC Event School and I am eternally grateful for the knowledge.&rdquo;</p>
+              <p className="lead">&ldquo;I always knew I had a passion for events, ever since I planned my 16th birthday party. However, I didn't truly come to the realization until the Dean of my college challenged me to choose a clear path upon graduation. This online certification [from QC] has given me the networks that will last a lifetime! I'm thankful for the word-of-mouth that led me to QC Event School and I am eternally grateful for the knowledge.&rdquo;</p>
               <p className="lead fw-bold">&mdash;Tyler Reid, Principal Planner of Eminent Events Wedding & Event Planning</p>
               <p className="mb-0"><Link href="https://www.qceventplanning.com/blog/2023/05/qc-event-school-graduate-spotlight-tyler-reid">Read the full QC graduate interview</Link></p>
             </div>
