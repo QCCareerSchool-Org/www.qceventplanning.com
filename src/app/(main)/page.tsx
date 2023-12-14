@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import BBBIcon from './bbb.svg';
 import BookIcon from './book.svg';
+import BriefcaseIcon from './briefcase.svg';
 import CertificationIcon from './certification.svg';
-import CheckCircleIcon from './check-circle.svg';
+import ObjectsVerticalBottomIcon from './objects-vertical-bottom.svg';
 import EBImage from './online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from './online-event-courses/corporate-event-planning/hero.jpg';
 import DWImage from './online-event-courses/destination-wedding-planning/hero.jpg';
@@ -14,12 +14,16 @@ import EDImage from './online-event-courses/event-decor/hero.jpg';
 import FDImage from './online-event-courses/floral-design/hero.jpg';
 import LWImage from './online-event-courses/luxury-wedding-and-event-planning/hero.jpg';
 import WPImage from './online-event-courses/wedding-planning/hero.jpg';
-import ShieldIcon from './shield.svg';
+import UserVoiceIcon from './user-voice.svg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
+import { GetStartedSection } from '@/components/getStartedSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { ILEASection } from '@/components/ileaSection';
+import { PaymentSectionGuarantee } from '@/components/paymentPlanSection/guarantee';
+import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import WhyQCImage from '@/components/why-qc.jpg';
 
@@ -48,15 +52,15 @@ const HomePage: PageComponent = () => {
         <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
-              <h2 className="mb-5 mb-lg-4 mb-xx-5">Why Choose QC Event School?</h2>
+              <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Event School?</h2>
               <div className="row g-5 g-lg-4 g-xxl-5">
                 <div className="col-12 col-lg-6">
-                  <ShieldIcon className="d-lg-none d-xxl-block mb-3" />
+                  <BriefcaseIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">Learn From Expert Instructors</h3>
                   <p className="mb-0">We've hand-selected the top event planning professionals in the industry to guide you through your course material.</p>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <CheckCircleIcon className="d-lg-none d-xxl-block mb-3" />
+                  <UserVoiceIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">Flexible Online Training</h3>
                   <p className="mb-0">QC provides a fully online education&mdash;learn at your own pace and engage with fellow students and grads in our virtual classroom!</p>
                 </div>
@@ -66,7 +70,7 @@ const HomePage: PageComponent = () => {
                   <p className="mb-0">Graduate with professional event planning certifications and open up a world of career &amp; business opportunities</p>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <BBBIcon className="d-lg-none d-xxl-block mb-3" />
+                  <ObjectsVerticalBottomIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">Business Training Included</h3>
                   <p className="mb-0">Each course includes built-in business training to help you launch your career and grow your clientele as a newly certified event planner</p>
                 </div>
@@ -110,7 +114,6 @@ const HomePage: PageComponent = () => {
                 buttons="course"
               />
             </div>
-
             <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
               <CourseCard
                 type="foundation"
@@ -184,8 +187,19 @@ const HomePage: PageComponent = () => {
               />
             </div>
           </div>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
+              <PaymentSectionGuarantee />
+            </div>
+          </div>
         </div>
       </section>
+      <AislePlannerSection />
+      <TestimonialSection id="TE-0006" />
+      <GetStartedSection
+        title="Ready To Start Your Event & Wedding Planning Career?"
+        text="Become Professionally Certified with QC’s Online Event Planning Training"
+      />
     </>
   );
 };

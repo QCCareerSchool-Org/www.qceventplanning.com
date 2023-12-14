@@ -71,27 +71,27 @@ const RSLAPage: PageComponent = () => {
         <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
-              <h2 className="mb-5 mb-lg-4 mb-xx-5">Why Choose QC?</h2>
+              <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Event School?</h2>
               <div className="row g-5 g-lg-4 g-xxl-5">
                 <div className="col-12 col-lg-6">
                   <ShieldIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">40-Year History in Distance Education</h3>
-                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                  <p className="mb-0">We've set the benchmark for excellence in distance education since 1984 and have many thousands of successful graduates. You could be one of them!</p>
                 </div>
                 <div className="col-12 col-lg-6">
                   <CheckCircleIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">Our 21-Day Money-Back Guarantee</h3>
-                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                  <p className="mb-0">Starting a new career can be scary. But don't worry! Once you enroll with QC Event School, you'll be protected by a money-back guarantee!</p>
                 </div>
                 <div className="col-12 col-lg-6">
                   <CertificationIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">Industry-Recognized Certifications</h3>
-                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                  <p className="mb-0">Graduate with professional event planning certifications and open up a world of career &amp; business opportunities.</p>
                 </div>
                 <div className="col-12 col-lg-6">
                   <BBBIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">An A+ Accreditation with the BBB</h3>
-                  <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien libero, aliquam at aliquam vitae, ultrices sit amet quam.</p>
+                  <p className="mb-0">QC is happy to celebrate 15 years of accreditation and has the highest possible consumer satisfaction rating (A+) with the Better Business Bureau.</p>
                 </div>
               </div>
             </div>
