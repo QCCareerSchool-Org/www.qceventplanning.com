@@ -123,6 +123,18 @@ const BogoOfferPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <section>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-10 col-lg-9 text-md-center">
+            <h2 className="mb-3">Get Your Second Course FREE!</h2>
+            <p>Enroll in a foundation course and receive any additional course for free.</p>
+            <p>Foundation courses prepare you to work in the event planning industry. Advanced and specialty courses help enhance your career and grow your business. At QC, your professional development matters!</p>
+            <p className="mb-0">Check out popular professional development training paths most QC students and graduates follow. Find the training plan that best suits your career goals!</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <ILEASection />
     <TestimonialSection id="TE-0006" />
     <BottomSection>
