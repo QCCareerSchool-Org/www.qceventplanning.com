@@ -12,6 +12,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
 
 const CoursesPage: PageComponent = () => (
   <>
+    <section className="p-0" />
+    <ILEASection />
     <section style={{ paddingBottom: 0 }}>
       <div className="container">
         <div className="row justify-content-center mb-s">
