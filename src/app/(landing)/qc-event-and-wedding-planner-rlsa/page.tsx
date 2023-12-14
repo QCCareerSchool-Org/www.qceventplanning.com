@@ -30,7 +30,7 @@ const RSLAPage: PageComponent = () => {
       <Header logoLink buttonHref="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
       <section className="p-0" />
       <section className="text-white">
-        <Image src={HeroImage} alt="" priority fill style={{ objectFit: 'cover' }} />
+        <Image src={HeroImage} alt="" priority fill placeholder="blur" style={{ objectFit: 'cover' }} />
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8  text-center">

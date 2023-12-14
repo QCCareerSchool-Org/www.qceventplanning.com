@@ -34,7 +34,7 @@ const ThankYouPage: PageComponent = () => {
               </div>
             </div>
             <div className="col-10 col-md-8 col-lg-6 text-center">
-              <Link href="/catalog.pdf" download><Image src={CatalogImage} alt="QC Event School course catalog" style={{ marginLeft: '-11.2%', marginRight: '-21.9%', marginTop: '-11.7%', marginBottom: '-11.7%' }} className="img-fluid" /></Link>
+              <Link href="/catalog.pdf" download><Image src={CatalogImage} placeholder="blur" priority alt="QC Event School course catalog" style={{ marginLeft: '-11.2%', marginRight: '-21.9%', marginTop: '-11.7%', marginBottom: '-11.7%' }} className="img-fluid" /></Link>
             </div>
           </div>
         </div>
