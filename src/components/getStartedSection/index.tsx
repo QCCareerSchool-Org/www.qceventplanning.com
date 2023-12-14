@@ -13,7 +13,7 @@ type Props = {
 export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today' }) => {
   let href = 'https://enroll.qceventplanning.com';
   if (courseCodes) {
-    href += '?' + courseCodes?.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
+    href += '?' + courseCodes?.map(c => `c=${encodeURIComponent(c)}`).join('&');
   }
   return (
     <section className={styles.section}>

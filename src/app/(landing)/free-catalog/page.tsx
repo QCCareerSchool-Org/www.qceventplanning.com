@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import Link from 'next/link';
 import { BottomSection } from '../bottomSection';
+import { Header } from '../header';
 import { AboutSection } from './aboutSection';
 import { CertificationSection } from './certificationSection';
 import HeroLgImage from './hero-large.jpg';
@@ -12,6 +13,7 @@ import { JoinQCSection } from './joinQCSection';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrochureForm } from '@/components/brochureForm';
+import DownloadIcon from '@/components/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getData } from '@/lib/getData';
 
@@ -23,6 +25,7 @@ const FreeCatalogPage: PageComponent = () => {
   const { testGroup, countryCode, provinceCode } = getData();
   return (
     <div className={styles.freeCatalog}>
+      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <Image src={HeroLgImage} alt="" fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
         <Image src={HeroSmImage} alt="" fill placeholder="blur" className="d-md-none" style={{ objectFit: 'cover' }} />

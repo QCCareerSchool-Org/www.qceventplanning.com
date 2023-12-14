@@ -1,12 +1,13 @@
 import { Footer } from './footer';
-import { Header } from './header';
 import type { LayoutComponent } from '@/app/serverComponent';
 
 import '@/app/bootstrap.scss';
 
+/**
+ * The header, if any, should be included on the page
+ */
 const LandingLayout: LayoutComponent = ({ children }) => (
   <>
-    <Header />
     <main className="flex-shrink-0">{children}</main>
     <Footer />
   </>

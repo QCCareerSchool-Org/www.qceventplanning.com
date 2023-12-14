@@ -8,6 +8,7 @@ import EDImage from '../../(main)/online-event-courses/event-decor/hero.jpg';
 import FDImage from '../../(main)/online-event-courses/floral-design/hero.jpg';
 import LWImage from '../../(main)/online-event-courses/luxury-wedding-and-event-planning/hero.jpg';
 import WPImage from '../../(main)/online-event-courses/wedding-planning/hero.jpg';
+import { Header } from '../header';
 import HeroImage from './hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { Candice } from '@/components/candice';
@@ -18,6 +19,7 @@ import { TestimonialSection } from '@/components/testimonialSection';
 const RSLAPage: PageComponent = () => {
   return (
     <>
+      <Header />
       <section className="p-0 text-center">
         <Image src={HeroImage} alt="Become a Wedding & Event Planner" className="img-fluid" />
       </section>
