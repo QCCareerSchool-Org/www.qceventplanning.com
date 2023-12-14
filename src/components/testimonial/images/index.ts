@@ -15,3 +15,5 @@ export { default as CamashaIsaac } from './TE-0014-camasha-isaac.jpg';
 export { default as JeanetteSpencer } from './TE-0015-jeanette-spencer.jpg';
 export { default as FencesSteiner } from './TE-0016-frances-steiner.jpg';
 export { default as TazmanBaker } from './TE-0017-tazman-baker.jpg';
+export { default as JennyAlperin } from './TE-0018-jenny-alperin.jpg';
+export { default as TamesaSquire } from './TE-0019-tamesha-squire.jpg';

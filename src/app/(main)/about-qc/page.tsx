@@ -36,12 +36,12 @@ const AboutQCPage: PageComponent = () => (
           <div className="col-12 col-lg-6">
             <div className="mb-3"><BBBIcon /></div>
             <h2 className="h4 mb-3">BBB Accreditation</h2>
-            <p className="lead mb-0">QC is happy to celebrate 15 years of accreditation with the Better Business Bureau. Are you hesitant about enrolling in an online course? Rest assured that QC has the highest possible consumer satisfaction rating (A+) with the Better Business Bureau. QC Event School has had thousands of satisfied students take these courses, and many students are now running their own successful businesses. See our BBB review.</p>
+            <p className="lead mb-0">QC is happy to celebrate 20 years of accreditation with the Better Business Bureau. Are you hesitant about enrolling in an online course? Rest assured that QC has the highest possible consumer satisfaction rating (A+) with the Better Business Bureau. QC Event School has had thousands of satisfied students take these courses, and many students are now running their own successful businesses. <a href="https://www.bbb.org/ca/on/ottawa/profile/correspondence-schools/qc-career-school-0117-4175" target="_blank" rel="noreferrer">See our BBB review</a>.</p>
           </div>
           <div className="col-12 col-lg-6">
             <div className="mb-3"><ShieldIcon style={{ marginBttom: 6 }} /></div>
             <h2 className="h4 mb-3">21-Day Money-Back Guarantee</h2>
-            <p className="lead mb-0">Once you enroll with QC Event School, you'll be protected by a money-back guarantee! Once your enrollment has been processed, you have 21 days to review the course materials and decide whether you want to continue. If you decide this course isn't the right course for you, simply contact the school to request a full refund.Additional information on QC's money-back guarantee is available in your enrollment.</p>
+            <p className="lead mb-0">Once you enroll with QC Event School, you'll be protected by a money-back guarantee! Once your enrollment has been processed, you have 21 days to review the course materials and decide whether you want to continue. If you decide this course isn't the right course for you, simply contact the school to request a full refund. Additional information on QC's money-back guarantee is available in your enrollment.</p>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ export const OutlineSection: FC = () => (
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">The Corporate Event Planning Course is divided into 6 parts, each comprising separate training units.</p>
+          <p className="lead mb-0">The Floral Design Course is divided into 6 parts, each comprising separate training units.</p>
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="The Floral Design Industry" src={Part1Image} open className="mb-3">
@@ -38,12 +38,13 @@ export const OutlineSection: FC = () => (
               <li>Learn how to create a floral design plan to account for every element of your design</li>
             </ul>
           </CourseOutline>
-          <CourseOutline title="The Planning Process" src={Part3Image} className="mb-3">
+          <CourseOutline title="Running Your Floral Design Business" src={Part3Image} className="mb-3">
             <ul className="small">
-              <li>Learn how the planning process varies between different types of events including children's birthday parties, themed parties, holiday celebrations and religious rites</li>
-              <li>Discover creative ways to celebrate milestone occasions that your clients will never forget</li>
-              <li>Find out how you can assist clients during difficult times such as planning a funeral, as well as during happy moments including celebrations for religious rites</li>
-              <li>Study the planning processes for industry and special events, as well as for charities and community partners to ensure you're well versed in all types of event planning</li>
+              <li>Study the various types of businesses and explore the best option for your floral design career</li>
+              <li>Discover the steps involved in starting your business, whether you want to open a flower shop, specialize in floral design for events or work as a freelance florist</li>
+              <li>Learn how to effectively market and promote your floral design business so that you stand out from the competition</li>
+              <li>Explore your options for buying wholesale flowers and supplies and learn how to manage your floral inventory</li>
+              <li>Learn effective communication and sales strategies to help you interact with customers in a professional way</li>
             </ul>
           </CourseOutline>
           <CourseOutline title="Decorative Arrangements" src={Part4Image} className="mb-3">

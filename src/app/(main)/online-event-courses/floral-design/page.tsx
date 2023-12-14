@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'fd' ];
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0008', 'TE-0018', 'TE-0016', 'TE-0015', 'TE-0014', 'TE-0012' ];
 
 const FloralDesignPage: PageComponent = () => (
   <div className={styles.page}>
@@ -118,7 +118,7 @@ const FloralDesignPage: PageComponent = () => (
                   <MwaiYeboah />
                 </div>
                 <h3 className="h6 mb-3">Mwai Yeboah</h3>
-                <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai in the UK, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
+                <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai and multi-award winning planner, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
               </div>
             </div>
           </div>
@@ -127,11 +127,11 @@ const FloralDesignPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0008" courseCodes={courseCodes} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0011" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} />
   </div>
 );

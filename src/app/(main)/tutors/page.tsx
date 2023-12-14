@@ -57,19 +57,19 @@ export default TutorsPage;
 const tutors = [
   {
     name: 'Alyssa Perna',
-    subHeading: 'Principal at Experience Events and Managing Director, Ingenuity Cleveland',
+    subHeading: 'Principal and Managing Director of Experience Marketing and Events',
     text: 'Alyssa has over a decade of event operations experience ranging from leading multinational business-to-business conferences, festivals and tradeshows, press conferences, large-scale fundraisers, complex social events and more.',
     src: AlyssaPernaImage,
   },
   {
     name: 'Angela Hodel',
     subHeading: 'Owner and Manager of Imagine Events, Wedding and Event Planning',
-    text: 'She became certified as an event and wedding planner in 2009, and graduated from QC Event School as an International Wedding Planning Professional. Now, Angela has over 10 successful years in business leading her own company and has worked for multiple non-profit organizations, bringing knowledge and experience to her role as an event planner.',
+    text: 'Angela became certified as an event and wedding planner in 2009, and graduated from QC Event School as an International Wedding Planning Professional. Now, Angela has over 10 successful years in business leading her own company and has worked for multiple non-profit organizations, bringing knowledge and experience to her role as an event planner.',
     src: AngelaHodelImage,
   },
   {
     name: 'Heather Hawes',
-    text: 'An event & wedding planner with over 20 years in event management, Heather has produced a vast array of events in her diverse career, including hosting the First Lady Michele Obama at Spelman\'s Commencement.',
+    text: 'An event & wedding planner with over 20 years in event management, Heather has produced a vast array of events in her diverse career, including hosting First Lady Michele Obama at Spelman\'s Commencement.',
     src: HeatherHawesImage,
   },
   {

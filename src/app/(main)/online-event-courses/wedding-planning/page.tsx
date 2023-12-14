@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'wp' ];
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0019', 'TE-0017', 'TE-0016', 'TE-0015', 'TE-0013', 'TE-0012' ];
 
 const WeddingPlanningPage: PageComponent = () => (
   <div className={styles.page}>
@@ -53,6 +53,7 @@ const WeddingPlanningPage: PageComponent = () => (
               <li>Personalized feedback &amp; advice on your assignments from our top industry wedding planning experts</li>
               <li>Thriving virtual classroom to connect with other event planners, get feedback, and gain access to bonus material</li>
               <li>Built-in business training to help you launch your career and grow your clientele as a certified wedding planner</li>
+              <li>Discounts and affiliations with top organizations including Aisle Planner and the International Live Events Association</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -104,7 +105,7 @@ const WeddingPlanningPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <p className="mb-3 fst-italic">An International Team of Instructors</p>
-            <h2 className="h3 mb-3">Meet Your New Event &amp; Wedding Planning Instructors</h2>
+            <h2 className="h3 mb-3">Meet Your New Wedding Planning Instructors</h2>
             <p className="mb-5">QC is proud to work with leaders of the global event planning industry to develop our courses. Our international team of instructors bring diverse experience and skills to aspiring event planners around the globe.</p>
             <div className="row g-5">
               <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
@@ -112,14 +113,14 @@ const WeddingPlanningPage: PageComponent = () => (
                   <MwaiYeboah />
                 </div>
                 <h3 className="h6 mb-3">Mwai Yeboah</h3>
-                <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai in the UK, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
+                <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai and multi-award winning planner, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
               </div>
               <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                 <div className="mb-3">
                   <AlyssaPerna />
                 </div>
-                <h3 className="h6 mb-3">Alyssa Perna</h3>
-                <p className="small mb-0">Alyssa Perna, Principal of Experience Events and Managing Director at Ingenuity Cleveland, brings over a decade of diverse event operations experience, including multinational conferences, festivals, fundraisers, and various social events.</p>
+                <h3 className="h6 mb-3">Asley Brooke</h3>
+                <p className="small mb-0">Ashley is the owner and lead planner of Ashley Brooke Weddings. She specializes in wedding planning, design and coordination and loves being able to create weddings that are unique to each of her couples.</p>
               </div>
             </div>
           </div>

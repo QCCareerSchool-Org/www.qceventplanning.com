@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'lw' ];
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0012', 'TE-0014', 'TE-0003', 'TE-0002', 'TE-0001', 'TE-0019' ];
 
 const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
@@ -46,13 +46,13 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Event School</h2>
             <p className="lead mb-4">QC's Luxury Wedding &amp; Event Planning certification course provides students with the most comprehensive training available to succeed in the event planning industry.</p>
-            <ul className="mb-0">
-              <li>No previous training is required&mdash;our professional Luxury Wedding &amp; Event planning course is designed to take you from beginner to expert</li>
+            <ul>
               <li>Personalized feedback &amp; advice on your assignments from our top industry event &amp; wedding planning experts</li>
               <li>Thriving virtual classroom to connect with other event planners, get feedback, and gain access to bonus material</li>
               <li>Built-in business training to help you launch your career and grow your clientele as a certified Luxury Wedding &amp; Event planner</li>
-              <li>Discounts and affiliations with top organizations including Aisle Planner and the International Live Events Association</li>
+              <li>Discounts and affiliations with top organizations including Aisle Planner and The Association of  Wedding Planners International</li>
             </ul>
+            <p className="mb-0"><strong>Note:</strong> Students should have previous training in event and wedding planning, or relevant work experience before enrolling in this course.</p>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
@@ -109,12 +109,12 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0003" courseCodes={courseCodes} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
-    <GetStartedSection title="Ready to Help Your Clients Create Incredible Memories?" text="Specialize as a luxury wedding & event planner" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0018" courseCodes={courseCodes} />
+    <GetStartedSection title="Ready to Help Your Clients Create Incredible Memories?" text="Specialize as a Luxury Wedding & Event Planner" courseCodes={courseCodes} />
   </div>
 );
 

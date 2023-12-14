@@ -43,17 +43,18 @@ const FAQPage: PageComponent = () => {
               <p>You do not need any previous education or experience in the event planning industry to succeed in our event planning courses. Our foundation event courses are designed to start you at a beginner's level. By the time you graduate, you will be able to work in the field!</p>
             </Question>
             <Question heading="Do you offer flexible payment plans?">
-              <p>Yes! We offer three different tuition payment plans for QC students. Choose the option that best suits your needs, and set your own payment schedule.</p>
+              <p>Yes! We offer two different tuition payment plans for QC students. Choose the option that best suits your needs, and set your own payment schedule.</p>
               <p>Here are the payment options for your event planning courses:</p>
               <ul>
                 <li>Full, up-front payment during the time of enrollment&mdash;get a great discount!</li>
-                <li>Monthly installment payments: 1 deposit payment and 12 monthly installments&mdash;get more time to pay off your fees!</li>
+                <li>Monthly installment payments: 1 deposit payment and small monthly installments&mdash;get more time to pay off your fees!</li>
               </ul>
               <p><Link href="/online-event-courses">Learn more about each payment plan here.</Link></p>
               <p>If you choose to pay your tuition in an installment payment plan, you can choose the date your payments are processed. This adds another level of convenience unique to QC Event School! <Link href="/contact-us">Contact the Student Support Team</Link> to find the perfect payment option for you.</p>
+              <p>If you would you like to adjust the date your payments come out? Contact the Student Support Team to find the perfect payment option for you.</p>
             </Question>
             <Question heading="What's included in the tuition?">
-              <p>For every course, your tuition covers the cost of your online course texts, instructional videos, study guides, access to the Online Student Center, and your certificate upon course completion. As part of your online event planning course fees, you'll also receive career advice and insider secrets from your tutor, an event planning professional.</p>
+              <p>Your tuition covers the cost of your online instructional materials and video, knowledge checks, access to the Online Student Center and your virtual classroom, and your certificate upon course completion. As part of your online event planning course fees, you'll also receive career advice and insider secrets from your tutor, an event planning professional.</p>
               <p>Our goal is to set you up with the tools you need to complete your event planning courses with flying colors.</p>
             </Question>
             <Question heading="Can I take these courses if I want to just explore the industry but am not necessarily interested in a new career?">
@@ -76,7 +77,7 @@ const FAQPage: PageComponent = () => {
         </div>
         <div id="whileYouLearn" className="mt-s" style={{ scrollMarginTop: 120 }}>
           <div className="container">
-            <h2 className="h3 mb-3">While You Lean</h2>
+            <h2 className="h3 mb-3">While You Learn</h2>
             <Question heading="How long will it take to complete the course?">
               <p>QC's courses are self-paced&mdash;this means you can work on it whenever it's most convenient for you! With QC's flexible online training, you have no assignment deadlines or exams to worry about. Complete and submit your assignments at your own pace. There's no rush!</p>
               <p>As a rough guideline, most people take about 10 to 12 weeks to complete their course when working on it a couple of hours per week. You have a full two years to complete the course starting from your date of enrollment. For a better idea of what your workload will be like, take a look at the <Link href="/online-event-courses/event-and-wedding-planning#outline">Event &amp; Wedding Planning course curriculum</Link>.</p>
@@ -96,7 +97,7 @@ const FAQPage: PageComponent = () => {
           <div className="container">
             <h2 className="h3 mb-3">After You Graduate</h2>
             <Question heading="Do you offer job placements after the course is complete?">
-              <p>Once you graduate, it is your responsibility to seek employment. QC provides students with the professional training required to work in the industry as well as business training to help you start your own business if you so desire. We provide a business listing via our website and an Online Career Center with tips for resume building and job searching.</p>
+              <p>Once you graduate, it is your responsibility to seek employment. QC provides students with the professional training required to work in the industry as well as business training to help you start your own business if you so desire.</p>
             </Question>
             <Question heading="Will I need any training in addition to QC's courses to become a professional event and wedding planner?">
               <p>No. Our courses provide you with all the training you need to excel in the industry. Your professional event planner certification from QC Event School improves your credibility and provides you with a competitive advantage in the field.</p>
@@ -131,15 +132,13 @@ const FAQPage: PageComponent = () => {
               <p>If you're interested in partnering with us, you can join our Affiliate Program! QC's Affiliate Program is an incentive to help students, graduates, and business partners increase their salary through referral web traffic. By simply placing a unique link on your website or social media profiles, any enrollments from traffic you send to QC will earn you a commission. <a href="https://affiliates.qccareerschool.com" target="_blank" rel="noreferrer">You can learn more about the program here</a>.</p>
             </Question>
             <Question heading="Are your courses approved by the International Live Events Association?">
-              <p>Yes, our professional certification courses have been approved by the International Live Events Association which means that our content has met their rigorous standards. We are committed to offering students high quality training in event planning. It's completely optional to do so, but you can sign up for an ILEA membership when you're ready to start your business.</p>
+              <p>Yes, our professional event certification courses have been approved by the International Live Events Association which means that our content has met their rigorous standards. We are committed to offering students high quality training in event planning. It's completely optional to do so, but you can sign up for an ILEA membership when you're ready to start your business.</p>
               <p>Other associations you can join include…</p>
               <ul>
                 <li>Association of Bridal Consultants (ABC)</li>
                 <li>Association for Wedding Planners International (AFWPI)</li>
                 <li>International Festival and Events Association (IFEA)</li>
-                <li>UK Alliance of Wedding Planners</li>
-                <li>Wedding Planning Association of Australia</li>
-                <li>New Zealand Association of Event Professionals (NZAEP)</li>
+                <li>New Zealand Association of Event Professionals (NZEA)</li>
               </ul>
             </Question>
           </div>
@@ -151,7 +150,7 @@ const FAQPage: PageComponent = () => {
             <div className="col-12 col-lg-8 col-xl-7 text-center">
               <h2 className="mb-3">Have Another Question?</h2>
               <p className="lead mb-3">Feel free to contact the School anytime to learn more about payment plans, career options for event planners, and studying online!</p>
-              <Link href="/contact" className="btn btn-primary">Contact Us</Link>
+              <Link href="/contact-us" className="btn btn-primary">Contact Us</Link>
             </div>
           </div>
         </div>

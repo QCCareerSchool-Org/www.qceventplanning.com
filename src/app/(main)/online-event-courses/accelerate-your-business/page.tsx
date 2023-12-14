@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'eb' ];
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0004', 'TE-0007', 'TE-0003', 'TE-0009', 'TE-0010', 'TE-0011' ];
 
 const AccelerateYourBusinessPage: PageComponent = () => (
   <div className={styles.page}>
@@ -42,9 +42,9 @@ const AccelerateYourBusinessPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Event School</h2>
-            <p className="lead mb-4">QC's Accelerate Your Business course provides students with the most comprehensive training available to launch &amp; grow an event planning business</p>
+            <p className="lead mb-4">QC's Accelerate Your Business course provides students with the most comprehensive training available to grow your event planning business.</p>
             <ul className="mb-0">
-              <li>No previous training required&mdash;our professional workshop is designed to take you from business beginner to expert</li>
+              <li>Our professional workshop is designed to help you take your existing event business to the next level</li>
               <li>Thriving virtual classroom to connect with other event professionals, get feedback, and gain access to bonus material</li>
               <li>Catapult your career with access to real-world templates, self-study assignments, and bonus materials</li>
             </ul>
@@ -62,7 +62,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
         <div className="row justify-content-end">
           <div className="col-12 col-lg-6">
             <h2 className="h3 mb-4">Your Independent Development Project</h2>
-            <p className="lead">Your business is unique, and so are your business needs. That's why you have the option of completing a personalized Independent Development Project at the end of your course. Your tutor will get to know you and your business intimately. Then, she'll create an advanced assignment covering an area of your business that you'd like to work on. You'll set up an exclusive Skype session with your tutor for in-depth feedback on your work and learn where your business can go next.</p>
+            <p className="lead">Your business is unique, and so are your business needs. Work with a QC tutor to advance your business. Learn in-depth marketing strategies, work on building a strong portfolio, fine tune your project management practices, become more comfortable with financing and budgeting, and more. During the optional final unit of this workshop, you'll have the opportunity to hone in on the areas of your business you would most like to work on! You can ask your tutor for specific advice on your marketing strategy or website copy, or seek general advice on a tricky event plan. This is a great opportunity to learn and improve!</p>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
             <h2 className="mb-3">Here's What You'll Learn</h2>
             <p className="lead">QC's comprehensive Accelerate Your Business Workshop will show you how to turn your event planning business into a thriving success. You'll learn how to:</p>
             <ul className="mb-0">
-              <li>Build a brand and gain all the knowledge you need to start a thriving event business</li>
+              <li>Build a brand and gain all the knowledge you need to grow a thriving event business</li>
               <li>Use branding, social media, content marketing, search engine optimization and other advanced marketing tools</li>
               <li>Master business communications, project management and financial management, allowing you to target the aspects of business ownership you need to succeed</li>
               <li>Create a personalized development project that targets your unique business needs</li>
@@ -88,11 +88,11 @@ const AccelerateYourBusinessPage: PageComponent = () => (
       </div>
     </section>
     <OutlineSection />
-    <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0006" courseCodes={courseCodes} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0009" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" courseCodes={courseCodes} />
   </div>
 );

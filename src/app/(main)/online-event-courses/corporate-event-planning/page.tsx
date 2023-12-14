@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'cp' ];
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0013', 'TE-0018', 'TE-0004', 'TE-0007', 'TE-0017', 'TE-0003' ];
 
 const CorporateEventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
@@ -103,22 +103,22 @@ const CorporateEventPlanningPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <p className="mb-3 fst-italic">An International Team of Instructors</p>
-            <h2 className="h3 mb-3">Meet Your New Event &amp; Wedding Planning Instructors</h2>
+            <h2 className="h3 mb-3">Meet Your New Corporate Event Planning Instructors</h2>
             <p className="mb-5">QC is proud to work with leaders of the global event planning industry to develop our courses. Our international team of instructors bring diverse experience and skills to aspiring event planners around the globe.</p>
             <div className="row g-5">
               <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                 <div className="mb-3">
                   <MwaiYeboah />
                 </div>
-                <h3 className="h6 mb-3">Mwai Yeboah</h3>
-                <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai in the UK, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
+                <h3 className="h6 mb-3">Mark Cheplowitz</h3>
+                <p className="small mb-0">Mark Cheplowitz is an award-winning event planner and President of NYC - based Wizard of Ahs. Mark's event production work has taken him all over the world. Career highlights include planning the Super Bowl and the grand opening of the Rock and Roll Hall of Fame.</p>
               </div>
               <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                 <div className="mb-3">
                   <AlyssaPerna />
                 </div>
                 <h3 className="h6 mb-3">Alyssa Perna</h3>
-                <p className="small mb-0">Alyssa Perna, Principal of Experience Events and Managing Director at Ingenuity Cleveland, brings over a decade of diverse event operations experience, including multinational conferences, festivals, fundraisers, and various social events.</p>
+                <p className="small mb-0">Alyssa Perna, Principal of Experience Marketing and Events, brings over a decade of diverse event operations experience, including multinational conferences, festivals, fundraisers, and various social events.</p>
               </div>
             </div>
           </div>
@@ -126,11 +126,11 @@ const CorporateEventPlanningPage: PageComponent = () => (
       </div>
     </section>
     <OutlineSection />
-    <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0013" courseCodes={courseCodes} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0018" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Memorable Events?" text="Become a Professionally Certified Corporate Event Planner" courseCodes={courseCodes} />
   </div>
 );

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'ep' ];
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0006', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0002', 'TE-0017' ];
 
 const EventAndWeddingPlanningPage: PageComponent = () => (
   <div className={styles.page}>
@@ -113,14 +113,14 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
                   <MwaiYeboah />
                 </div>
                 <h3 className="h6 mb-3">Mwai Yeboah</h3>
-                <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai in the UK, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
+                <p className="small mb-0">Mwai Yeboah, founder of Love From Mwai and multi-award winning planner, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
               </div>
               <div className="col-12 col-sm-8 col-md-6 col-lg-12 col-xxl-6">
                 <div className="mb-3">
                   <AlyssaPerna />
                 </div>
                 <h3 className="h6 mb-3">Alyssa Perna</h3>
-                <p className="small mb-0">Alyssa Perna, Principal of Experience Events and Managing Director at Ingenuity Cleveland, brings over a decade of diverse event operations experience, including multinational conferences, festivals, fundraisers, and various social events.</p>
+                <p className="small mb-0">Alyssa Perna, Principal of Experience Marketing and Events, brings over a decade of diverse event operations experience, including multinational conferences, festivals, fundraisers, and various social events.</p>
               </div>
             </div>
           </div>
@@ -129,11 +129,11 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0017" courseCodes={courseCodes} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0003" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" courseCodes={courseCodes} />
   </div>
 );

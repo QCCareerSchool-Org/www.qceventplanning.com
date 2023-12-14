@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 const courseCodes: CourseCode[] = [ 'ed' ];
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0019', 'TE-0008', 'TE-0002', 'TE-0011', 'TE-0004', 'TE-0014' ];
 
 const EventDecorPage: PageComponent = () => (
   <div className={styles.page}>
@@ -108,11 +108,11 @@ const EventDecorPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0017" courseCodes={courseCodes} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
+    <TestimonialSection id="TE-0019" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Become a Professionally Certified Event Decorator" courseCodes={courseCodes} />
   </div>
 );

@@ -15,7 +15,7 @@ export const OutlineSection: FC = () => (
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">The Accelerate Your Business Course is divided into 4 parts, each comprising separate training units.</p>
+          <p className="lead mb-0">The Accelerate Your Business Workshop is divided into 4 parts, each comprising separate training units.</p>
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="Branding and Promotions" src={Part1Image} open className="mb-3">
