@@ -6,15 +6,12 @@ import CatalogImage from '../cover-book.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { Logo } from '@/components/logo';
-import { TelephoneLink } from '@/components/telephoneLink';
-import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog - QC Event School',
 };
 
-const ThankYouPage: PageComponent = () => {
-  const { countryCode } = getData();
+const ThankYouCourseCatalogPage: PageComponent = () => {
   // const firstName = getParam(searchParams.firstName);
   // const lastName = getParam(searchParams.lastName);
   // const emailAddress = getParam(searchParams.emailAddress);
@@ -29,9 +26,9 @@ const ThankYouPage: PageComponent = () => {
               <div className="mb-2">
                 <Logo height={16} />
               </div>
-              <h1 className="mb-4">Course Catalog</h1>
-              <p className="lead mb-3">Download a free Course Catalog to learn more about QC's courses!</p>
-              <p className="mb-5">If you have any questions about QC's courses, please don't hesitate to contact us at <TelephoneLink countryCode={countryCode} />.</p>
+              <h1 className="mb-4">Your Course Catalog</h1>
+              <p className="lead mb-3">Thank You For Your Interest in QC Event School!</p>
+              <p className="mb-5">You can download your course catalog below. We've also sent a link to your email so you can download the catalog at any time. If you have any questions about QC's courses, please don't hesitate to contact us.</p>
               <div className="d-flex">
                 <Link href="/catalog.pdf" download className="btn btn-navy me-3"><DownloadIcon height={16} style={{ position: 'relative', top: -1 }} className="me-2" />Download Catalog</Link>
                 <Link href="/online-event-courses" className="btn btn-outline-navy">View Courses</Link>
@@ -58,7 +55,7 @@ const ThankYouPage: PageComponent = () => {
   );
 };
 
-export default ThankYouPage;
+export default ThankYouCourseCatalogPage;
 
 // const getParam = (param: string[] | string | undefined): string | undefined => {
 //   return Array.isArray(param)

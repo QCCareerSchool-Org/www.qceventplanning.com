@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
 import EBImage from '../../(main)/online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from '../../(main)/online-event-courses/corporate-event-planning/hero.jpg';
 import DWImage from '../../(main)/online-event-courses/destination-wedding-planning/hero.jpg';
@@ -14,6 +16,10 @@ import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
+
+export const metadata: Metadata = {
+  title: 'Free Specialty Course Offer - QC Event School',
+};
 
 const enrollLink = 'https://enroll.qceventplanning.com/bogo-1';
 
