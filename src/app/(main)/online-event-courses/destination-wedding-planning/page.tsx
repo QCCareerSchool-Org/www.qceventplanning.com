@@ -50,7 +50,7 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
               <li>Personalized feedback &amp; advice on your assignments from our top industry wedding planning experts</li>
               <li>Thriving virtual classroom to connect with other wedding planners, get feedback, and gain access to bonus material</li>
               <li>Built-in business training to help you launch your career and grow your clientele as a certified destination event &amp; wedding planner</li>
-              <li>Discounts and affiliations with top organizations including Aisle Planner and the International Live Events Association</li>
+              <li>Discounts and affiliations with top organizations including Aisle Planner and The Association of Wedding Planners International</li>
             </ul>
             <p className="mb-0"><strong>Note:</strong> Students should have previous training in event and wedding planning, or relevant work experience before enrolling in this course.</p>
           </div>

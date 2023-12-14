@@ -51,7 +51,7 @@ const FAQPage: PageComponent = () => {
               </ul>
               <p><Link href="/online-event-courses">Learn more about each payment plan here.</Link></p>
               <p>If you choose to pay your tuition in an installment payment plan, you can choose the date your payments are processed. This adds another level of convenience unique to QC Event School! <Link href="/contact-us">Contact the Student Support Team</Link> to find the perfect payment option for you.</p>
-              <p>If you would you like to adjust the date your payments come out? Contact the Student Support Team to find the perfect payment option for you.</p>
+              <p>If you would you like to adjust the date your payments come out, contact the Student Support Team to find the perfect payment option for you.</p>
             </Question>
             <Question heading="What's included in the tuition?">
               <p>Your tuition covers the cost of your online instructional materials and video, knowledge checks, access to the Online Student Center and your virtual classroom, and your certificate upon course completion. As part of your online event planning course fees, you'll also receive career advice and insider secrets from your tutor, an event planning professional.</p>

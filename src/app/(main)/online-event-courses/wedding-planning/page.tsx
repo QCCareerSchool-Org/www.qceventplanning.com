@@ -119,7 +119,7 @@ const WeddingPlanningPage: PageComponent = () => (
                 <div className="mb-3">
                   <AshleyFriesen />
                 </div>
-                <h3 className="h6 mb-3">Asley Friesen</h3>
+                <h3 className="h6 mb-3">Ashley Friesen</h3>
                 <p className="small mb-0">Ashley is the owner and lead planner of Ashley Brooke Weddings. She specializes in wedding planning, design and coordination and loves being able to create weddings that are unique to each of her couples.</p>
               </div>
             </div>
