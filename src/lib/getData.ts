@@ -1,4 +1,4 @@
-'use server';
+// 'use server';
 
 import { randomInt } from 'crypto';
 import { cookies, headers } from 'next/headers';
