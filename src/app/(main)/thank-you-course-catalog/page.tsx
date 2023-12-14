@@ -19,6 +19,7 @@ const ThankYouCourseCatalogPage: PageComponent = () => {
 
   return (
     <>
+      <section className="p-0" />
       <section>
         <div className="container">
           <div className="row justify-content-center">
