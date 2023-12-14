@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import CatalogImage from '../cover-book.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { Logo } from '@/components/logo';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog - QC Event School',
@@ -21,9 +22,12 @@ const ThankYouPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-6 mb-s mb-lg-0">
-              <h1>Your Course Catalog</h1>
-              <p className="lead">Thank You For Your Interest in QC Event School!</p>
-              <p>You can download your course catalog below. We've also sent a link to your email so you can download the catalog at any time. If you have any questions about QC's courses, please don't hesitate to contact us.</p>
+              <div className="mb-2">
+                <Logo height={16} />
+              </div>
+              <h1 className="mb-4">Your Course Catalog</h1>
+              <p className="lead mb-3">Thank You For Your Interest in QC Event School!</p>
+              <p className="mb-5">You can download your course catalog below. We've also sent a link to your email so you can download the catalog at any time. If you have any questions about QC's courses, please don't hesitate to contact us.</p>
               <div className="d-flex">
                 <Link href="/catalog.pdf" download className="btn btn-navy me-3">Download Catalog</Link>
                 <Link href="/online-event-courses" className="btn btn-outline-navy">View Courses</Link>
