@@ -26,7 +26,7 @@ import WhyQCImage from '@/components/why-qc.jpg';
 const RSLAPage: PageComponent = () => {
   return (
     <>
-      <Header href="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
+      <Header logoLink buttonHref="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
       <section className="p-0 text-center">
         <Image src={HeroImage} alt="Become a Wedding & Event Planner" className="img-fluid" />
       </section>

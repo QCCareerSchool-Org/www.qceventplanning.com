@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import type { FC } from 'react';
+
 import { ImageCircle } from '../imageCircle';
 import { courseSort } from '../testimonial';
 import { testimonials } from '../testimonial/data';
-
 import styles from './index.module.css';
 import { Title } from './title';
 import type { CourseCode } from '@/domain/courseCode';

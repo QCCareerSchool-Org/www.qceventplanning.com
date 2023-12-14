@@ -25,7 +25,7 @@ const FreeCatalogPage: PageComponent = () => {
   const { testGroup, countryCode, provinceCode } = getData();
   return (
     <div className={styles.freeCatalog}>
-      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <Image src={HeroLgImage} alt="" fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
         <Image src={HeroSmImage} alt="" fill placeholder="blur" className="d-md-none" style={{ objectFit: 'cover' }} />
