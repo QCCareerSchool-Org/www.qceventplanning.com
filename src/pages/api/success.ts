@@ -38,7 +38,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         } : undefined,
         courses: 'courses' in body && Array.isArray(body.courses) && body.courses.every(c => typeof c === 'string') ? body.courses : undefined,
       };
-      console.log(payload);
       try {
         await addLead(payload);
       } catch (err) {
