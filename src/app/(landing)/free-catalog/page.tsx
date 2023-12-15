@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 const FreeCatalogPage: PageComponent = () => {
   const { testGroup, countryCode, provinceCode } = getData();
   return (
-    <div className={`${styles.freeCatalog} text-white`}>
+    <div className={`${styles.freeCatalog}`}>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
-      <section>
+      <section className="text-white">
         <HomeHeroImage />
         <div className="container">
           <div className="row g-0">
