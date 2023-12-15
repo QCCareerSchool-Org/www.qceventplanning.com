@@ -6,7 +6,7 @@ import HeroSmImage from './hero-small.jpg';
 
 export const HomeHeroImage: FC = () => (
   <>
-    <Image src={HeroLgImage} alt="" fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
-    <Image src={HeroSmImage} alt="" fill placeholder="blur" className="d-md-none" style={{ objectFit: 'cover' }} />
+    <Image src={HeroLgImage} alt="" priority fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
+    <Image src={HeroSmImage} alt="" priority fill placeholder="blur" className="d-md-none" style={{ objectFit: 'cover' }} />
   </>
 );
