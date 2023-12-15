@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Student Success - QC Event School',
 };
 
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds = [ 'TE-0006', 'TE-0008', 'TE-0019', 'TE-0018', 'TE-0016', 'TE-0003' ];
 
 const StudentSuccessPage: PageComponent = () => {
   return (
