@@ -10,7 +10,7 @@ const nextConfig = {
   },
   experimental: {
     serverActions: {
-      allowedOrigins: [ 'https://go.qceventplanning.com' ],
+      allowedOrigins: [ 'http://localhost:3000', 'https://go.qceventplanning.com' ],
     }
   }
 };
