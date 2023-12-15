@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const testGroup = testGroupString === null ? null : parseInt(testGroupString, 10);
     const marketing = 'marketing' in body && body.marketing !== null && typeof body.marketing === 'object' ? body.marketing : undefined;
     if (emailAddress) {
-      await addLead({
+      const payload = {
         school: 'QC Event School',
         emailAddress,
         firstName: 'firstName' in body && typeof body.firstName === 'string' && body.firstName.length > 0 ? body.firstName : null,
@@ -37,7 +37,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           term: 'term' in marketing && typeof marketing.term === 'string' && marketing.term.length > 0 ? marketing.term : null,
         } : undefined,
         courses: 'courses' in body && Array.isArray(body.courses) && body.courses.every(c => typeof c === 'string') ? body.courses : undefined,
-      });
+      };
+      console.log(payload);
+      try {
+        await addLead(payload);
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 
