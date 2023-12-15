@@ -17,7 +17,7 @@ export const GoogleAnalytics: FC<Props> = ({ id, adsId }) => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
+    const url = pathname + (searchParams ? searchParams.toString() : '');
     gaPageview(id, url);
   }, [ pathname, searchParams, id ]);
 
