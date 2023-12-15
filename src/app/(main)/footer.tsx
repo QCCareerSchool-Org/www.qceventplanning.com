@@ -55,11 +55,11 @@ export const Footer: FC = () => {
             </div>
           </div>
           <div className="d-flex">
-            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer"><TiktokIcon /></a></div>
-            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer"><Instagram /></a></div>
-            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer"><Facebook /></a></div>
-            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer"><Linkedin /></a></div>
-            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer"><Pinterest /></a></div>
+            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer"><TiktokIcon alt="Tiktok" /></a></div>
+            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer"><Instagram alt="Instagram" /></a></div>
+            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer"><Facebook alt="Facebook" /></a></div>
+            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer"><Linkedin alt="LinkedIn" /></a></div>
+            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer"><Pinterest alt="Pinterest" /></a></div>
           </div>
         </div>
       </div>
