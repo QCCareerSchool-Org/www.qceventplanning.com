@@ -40,11 +40,13 @@ type Base = {
   telephoneNumber: string;
   emailAddress: string;
   paymentPlan: PaymentPlan;
+  paymentDay: number;
   currencyCode: CurrencyCode;
   cost: number;
   deposit: number;
   installment: number;
   authorizationId: string | null;
+  transactionTime: string | null;
   authCode: string | null;
   maskedPan: string | null;
   currencySymbol: string | null;
@@ -55,11 +57,12 @@ type Base = {
 
 export type RawEnrollment = Base & {
   /** string date */
-  transactionTime: string | null;
+  paymentDate: string;
 };
 
 export type Enrollment = Base & {
-  transactionTime: Date | null;
+
+  paymentDate: Date;
 };
 
 export const isRawEnrollment = (obj: unknown): obj is RawEnrollment => {
@@ -86,6 +89,7 @@ export const isRawEnrollment = (obj: unknown): obj is RawEnrollment => {
     'telephoneNumber' in obj && typeof obj.telephoneNumber === 'string' &&
     'emailAddress' in obj && typeof obj.emailAddress === 'string' &&
     'paymentPlan' in obj && isPaymentPlan(obj.paymentPlan) &&
+    'paymentDay' in obj && typeof obj.paymentDay === 'number' &&
     'currencyCode' in obj && isCurrencyCode(obj.currencyCode) &&
     'cost' in obj && typeof obj.cost === 'number' &&
     'deposit' in obj && typeof obj.deposit === 'number' &&

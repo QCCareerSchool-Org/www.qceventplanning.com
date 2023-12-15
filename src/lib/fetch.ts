@@ -64,6 +64,6 @@ export const getEnrollment = async (id: number, code: string): Promise<Enrollmen
   }
   return {
     ...responseBody,
-    transactionTime: responseBody.transactionTime === null ? null : new Date(responseBody.transactionTime),
+    paymentDate: new Date(responseBody.paymentDate),
   };
 };

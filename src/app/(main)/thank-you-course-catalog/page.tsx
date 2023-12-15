@@ -1,24 +1,28 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import CatalogImage from '../cover-book.jpg';
+import { Processing } from './processing';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { Logo } from '@/components/logo';
+import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog - QC Event School',
 };
 
-const ThankYouCourseCatalogPage: PageComponent = () => {
-  // const firstName = getParam(searchParams.firstName);
-  // const lastName = getParam(searchParams.lastName);
-  // const emailAddress = getParam(searchParams.emailAddress);
-  // const emailOptIn = getParam(searchParams.emailOptIn);
+const ThankYouCourseCatalogPage: PageComponent = ({ searchParams }) => {
+  const headerList = headers();
+  const firstName = getParam(searchParams.firstName);
+  const emailAddress = getParam(searchParams.emailAddress);
+  const ipAddress = headerList.get('x-real-ip') ?? undefined;
 
   return (
     <>
+      <Processing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} />
       <section className="p-0" />
       <section>
         <div className="container">
@@ -57,9 +61,3 @@ const ThankYouCourseCatalogPage: PageComponent = () => {
 };
 
 export default ThankYouCourseCatalogPage;
-
-// const getParam = (param: string[] | string | undefined): string | undefined => {
-//   return Array.isArray(param)
-//     ? param[0]
-//     : param;
-// };

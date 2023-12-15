@@ -8,11 +8,6 @@ const nextConfig = {
   
     return config;
   },
-  experimental: {
-    serverActions: {
-      allowedOrigins: [ 'http://localhost:3000', 'https://go.qceventplanning.com' ],
-    }
-  }
 };
 
 module.exports = nextConfig;

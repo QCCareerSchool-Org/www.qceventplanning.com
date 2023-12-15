@@ -11,5 +11,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       parameters.push(`${encodeURIComponent(entry[0])}=${encodeURIComponent(entry[1])}`);
     }
   }
+  // doesn't work because of 307 or 308 and we need to switch to a GET request (301, 302)
   return NextResponse.redirect(`${protocol}://${host}/thank-you-course-catalog?${parameters.join('&')}`);
 }
