@@ -25,9 +25,17 @@ export const MainNav: FC = () => {
   return (
     <Navbar key={key} expand="lg" collapseOnSelect={true} fixed="top" className={`${styles.mainNav} ${scrollPosition > 1 ? styles.scrolled : undefined} bg-white`}>
       <div className="container">
-        <Link className="navbar-brand" href="/" aria-label="Go back to the home page"><Logo height={20} /></Link>
+        <Link className="navbar-brand" href="/" aria-label="Go back to the home page">
+          <div className="d-none d-sm-block">
+            <Logo height={20} />
+          </div>
+          <div className="d-sm-none">
+            <Logo height={16} />
+          </div>
+        </Link>
         <div className="d-flex">
           <div className="d-none d-sm-block d-lg-none me-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-navy">Enroll Now</Link></div>
+          <div className="d-sm-none me-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-sm btn-navy">Enroll Now</Link></div>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <Toggle />
           </Navbar.Toggle>
