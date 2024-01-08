@@ -1,5 +1,6 @@
 {
   "redirects": [
+    { "source": "/free-event-course-catalog", "destination": "/free-catalog" },
     { "source": "/about-qc/frequently-asked-questions", "destination": "/frequently-asked-questions" },
     { "source": "/online-event-courses/luxury-wedding-and-event-planning-specialization", "destination": "/online-event-courses/luxury-wedding-and-event-planning" },
     { "source": "/online-event-courses/destination-wedding-planning-specialization", "destination": "/online-event-courses/destination-wedding-planning" },
