@@ -1,8 +1,9 @@
 'use client';
 
 import type { ChangeEventHandler, FC } from 'react';
-import { useId, useState } from 'react';
+import { useCallback, useId, useState } from 'react';
 
+import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/download.svg';
 
@@ -21,6 +22,8 @@ export const BrochureForm: FC<Props> = props => {
   const [ firstName, setFirstName ] = useState('');
   const [ lastName, setLastName ] = useState('');
   const [ emailAddress, setEmailAddress ] = useState('');
+  const [ token, setToken ] = useState<string>();
+  const [ refreshReCaptcha ] = useState(false);
 
   const handleFirstNameChange: ChangeEventHandler<HTMLInputElement> = e => {
     setFirstName(e.target.value);
@@ -34,8 +37,13 @@ export const BrochureForm: FC<Props> = props => {
     setEmailAddress(e.target.value);
   };
 
+  const handleVerify = useCallback((t: string): void => {
+    setToken(t);
+  }, []);
+
   return (
     <form action={props.action} method="post" className={styles.brochureForm}>
+      <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Event School" />
       <input type="hidden" name="testGroup" value={props.testGroup} />
       <input type="hidden" name="countryCode" value={props.countryCode} />
@@ -58,6 +66,7 @@ export const BrochureForm: FC<Props> = props => {
         </div>
       </div>
       <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+      <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
     </form>
   );
 };

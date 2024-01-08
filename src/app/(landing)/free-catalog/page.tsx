@@ -34,7 +34,7 @@ const FreeCatalogPage: PageComponent = () => {
                   <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
                   <div className={styles.formWrapper}>
                     <BrochureForm
-                      action="https://go.qceventplanning.com/l/947642/2022-02-15/8n8h7"
+                      action="https://captcha.qccareerschool.com/59004cd4-947c-11ee-847e-bc764e017ab0"
                       testGroup={testGroup}
                       countryCode={countryCode}
                       provinceCode={provinceCode}
