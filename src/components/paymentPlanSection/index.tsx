@@ -21,7 +21,7 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) 
     return null;
   }
 
-  const href = 'https://enroll.qceventplanning.com/?' + courseCodes.map(c => `c[]=${encodeURIComponent(c)}`).join('&');
+  const href = 'https://enroll.qceventplanning.com/?' + courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&');
 
   return (
     <section className={className ?? 'bg-light'} id="paymentPlans">
