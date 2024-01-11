@@ -68,7 +68,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
         <div className="row align-items-center justify-content-center g-s">
           <div className="col-12 col-lg-6">
             <h2 className="mb-3">Here's What You'll Learn</h2>
-            <p className="lead">QC's comprehensive event &amp; wedding planning course will shows you how to:</p>
+            <p className="lead">QC's comprehensive event &amp; wedding planning course will show you how to:</p>
             <ul className="mb-0">
               <li>Plan and organize milestone parties, weddings, industry special events, and more!</li>
               <li>Develop a unique theme, atmosphere, and vision for events with your clients</li>
