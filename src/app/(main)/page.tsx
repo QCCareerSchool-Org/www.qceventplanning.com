@@ -11,8 +11,11 @@ import CPImage from './online-event-courses/corporate-event-planning/hero.jpg';
 import DWImage from './online-event-courses/destination-wedding-planning/hero.jpg';
 import EPImage from './online-event-courses/event-and-wedding-planning/hero.jpg';
 import EDImage from './online-event-courses/event-decor/hero.jpg';
+import CEImage from './online-event-courses/event-planning/hero.jpg';
+import FLImage from './online-event-courses/festivals-and-live-events/hero.jpg';
 import FDImage from './online-event-courses/floral-design/hero.jpg';
 import LWImage from './online-event-courses/luxury-wedding-and-event-planning/hero.jpg';
+import PEImage from './online-event-courses/promotional-event-planning/hero.jpg';
 import WPImage from './online-event-courses/wedding-planning/hero.jpg';
 import UserVoiceIcon from './user-voice.svg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -91,7 +94,7 @@ const HomePage: PageComponent = () => {
             <p className="lead mb-5">Discover a wide range of foundation and specialty courses offered by our online event school.</p>
           </div>
           <div className="row justify-content-center g-4 mb-s">
-            <div className="col-12 col-sm-10 col-md-6 d-flex">
+            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
               <CourseCard
                 type="foundation"
                 name="Event & Wedding Planning"
@@ -103,7 +106,7 @@ const HomePage: PageComponent = () => {
                 buttons="course"
               />
             </div>
-            <div className="col-12 col-sm-10 col-md-6 d-flex">
+            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
               <CourseCard
                 type="foundation"
                 name="Corporate Event Planning"
@@ -111,6 +114,17 @@ const HomePage: PageComponent = () => {
                 href="/online-event-courses/corporate-event-planning"
                 backgroundSrc={CPImage}
                 certification={<CourseCardCertifcation courseCode="cp" />}
+                buttons="course"
+              />
+            </div>
+            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
+              <CourseCard
+                type="foundation"
+                name="Event Planning"
+                description="Work with a variety of different clients and discover how to plan outstanding events including industry gatherings, milestone parties, holiday parties, and more."
+                href="/online-event-courses/event-planning"
+                backgroundSrc={CEImage}
+                certification={<CourseCardCertifcation courseCode="ce" />}
                 buttons="course"
               />
             </div>
@@ -153,7 +167,7 @@ const HomePage: PageComponent = () => {
             <h2 className="mb-5">Specialty Courses</h2>
           </div>
           <div className="row justify-content-center g-4 mb-s">
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
+            <div className="col-12 col-sm-10 col-md-6 d-flex">
               <CourseCard
                 type="specialty"
                 name={<>Luxury Wedding<span className="d-lg-none d-xl-inline"> &amp; Event</span> Planning</>}
@@ -164,7 +178,7 @@ const HomePage: PageComponent = () => {
                 buttons="course"
               />
             </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
+            <div className="col-12 col-sm-10 col-md-6 d-flex">
               <CourseCard
                 type="specialty"
                 name="Destination Wedding Planning"
@@ -183,6 +197,28 @@ const HomePage: PageComponent = () => {
                 href="/online-event-courses/accelerate-your-business"
                 backgroundSrc={EBImage}
                 certification={<CourseCardCertifcation courseCode="eb" />}
+                buttons="course"
+              />
+            </div>
+            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
+              <CourseCard
+                type="specialty"
+                name="Promotional Event Planning"
+                description="Take your corporate event planning skills a step further by learning how to effectively implement impromptu marketing campaigns, pop-up shops, and more."
+                href="/online-event-courses/promotional-event-planning"
+                backgroundSrc={PEImage}
+                certification={<CourseCardCertifcation courseCode="pe" />}
+                buttons="course"
+              />
+            </div>
+            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
+              <CourseCard
+                type="specialty"
+                name="Festivals and Live Events"
+                description="Explore live-event logistics and use your existing corporate event knowledge to plan both small and large-scale festivals and entertainment events."
+                href="/online-event-courses/festivals-and-live-events"
+                backgroundSrc={FLImage}
+                certification={<CourseCardCertifcation courseCode="fl" />}
                 buttons="course"
               />
             </div>
