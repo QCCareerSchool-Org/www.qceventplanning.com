@@ -4,8 +4,6 @@
     { "source": "/about-qc/frequently-asked-questions", "destination": "/frequently-asked-questions" },
     { "source": "/online-event-courses/luxury-wedding-and-event-planning-specialization", "destination": "/online-event-courses/luxury-wedding-and-event-planning" },
     { "source": "/online-event-courses/destination-wedding-planning-specialization", "destination": "/online-event-courses/destination-wedding-planning" },
-    { "source": "/online-event-courses/event-planning", "destination": "/online-event-courses" },
-    { "source": "/online-event-courses/promotional-event-planning", "destination": "/online-event-courses" },
     { "source": "/career-training(/.*)?", "destination": "/student-success" },
     { "source": "/education-requirements", "destination": "/student-success" },
     { "source": "/careers-in-the-industry", "destination": "/student-success" },
