@@ -5,8 +5,11 @@ import CPImage from './corporate-event-planning/hero.jpg';
 import DWImage from './destination-wedding-planning/hero.jpg';
 import EPImage from './event-and-wedding-planning/hero.jpg';
 import EDImage from './event-decor/hero.jpg';
+import CEImage from './event-planning/hero.jpg';
+import FLImage from './festivals-and-live-events/hero.jpg';
 import FDImage from './floral-design/hero.jpg';
 import LWImage from './luxury-wedding-and-event-planning/hero.jpg';
+import PEImage from './promotional-event-planning/hero.jpg';
 import WPImage from './wedding-planning/hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CourseCard } from '@/components/courseCard';
@@ -53,6 +56,16 @@ const CoursesPage: PageComponent = () => (
               href="/online-event-courses/corporate-event-planning"
               backgroundSrc={CPImage}
               certification={<CourseCardCertifcation courseCode="cp" />}
+            />
+          </div>
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
+            <CourseCard
+              type="foundation"
+              name="Event Planning"
+              description="Work with a variety of different clients and discover how to plan outstanding events including industry gatherings, milestone parties, holiday parties, and more."
+              href="/online-event-courses/event-planning"
+              backgroundSrc={CEImage}
+              certification={<CourseCardCertifcation courseCode="ce" />}
             />
           </div>
           <div className="col-12 col-sm-10 col-lg-6 d-flex">
@@ -113,6 +126,26 @@ const CoursesPage: PageComponent = () => (
               href="/online-event-courses/accelerate-your-business"
               backgroundSrc={EBImage}
               certification={<CourseCardCertifcation courseCode="eb" />}
+            />
+          </div>
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
+            <CourseCard
+              type="specialty"
+              name="Promotional Event Planning"
+              description="Take your corporate event planning skills a step further by learning how to effectively implement impromptu marketing campaigns, pop-up shops, and more."
+              href="/online-event-courses/promotional-event-planning"
+              backgroundSrc={PEImage}
+              certification={<CourseCardCertifcation courseCode="pe" />}
+            />
+          </div>
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
+            <CourseCard
+              type="specialty"
+              name="Festivals and Live Events"
+              description="Explore live-event logistics and use your existing corporate event knowledge to plan both small and large-scale festivals and entertainment events."
+              href="/online-event-courses/festivals-and-live-events"
+              backgroundSrc={FLImage}
+              certification={<CourseCardCertifcation courseCode="fl" />}
             />
           </div>
         </div>
