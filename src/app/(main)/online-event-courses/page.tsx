@@ -121,16 +121,6 @@ const CoursesPage: PageComponent = () => (
           <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
               type="specialty"
-              name="Accelerate Your Business"
-              description="Learn how to start and grow your event planning business. Work with different marketing tools to help you achieve your business goals faster."
-              href="/online-event-courses/accelerate-your-business"
-              backgroundSrc={EBImage}
-              certification={<CourseCardCertifcation courseCode="eb" />}
-            />
-          </div>
-          <div className="col-12 col-sm-10 col-lg-6 d-flex">
-            <CourseCard
-              type="specialty"
               name="Promotional Event Planning"
               description="Take your corporate event planning skills a step further by learning how to effectively implement impromptu marketing campaigns, pop-up shops, and more."
               href="/online-event-courses/promotional-event-planning"
@@ -146,6 +136,16 @@ const CoursesPage: PageComponent = () => (
               href="/online-event-courses/festivals-and-live-events"
               backgroundSrc={FLImage}
               certification={<CourseCardCertifcation courseCode="fl" />}
+            />
+          </div>
+          <div className="col-12 col-sm-10 col-lg-6 d-flex">
+            <CourseCard
+              type="specialty"
+              name="Accelerate Your Business"
+              description="Learn how to start and grow your event planning business. Work with different marketing tools to help you achieve your business goals faster."
+              href="/online-event-courses/accelerate-your-business"
+              backgroundSrc={EBImage}
+              certification={<CourseCardCertifcation courseCode="eb" />}
             />
           </div>
         </div>
