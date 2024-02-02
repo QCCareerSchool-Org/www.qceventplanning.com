@@ -1,7 +1,7 @@
-export type CourseCode = 'ep' | 'ce' | 'wp' | 'cp' | 'ed' | 'lw' | 'dw' | 'fd' | 've' | 'eb';
+export type CourseCode = 'ep' | 'ce' | 'wp' | 'cp' | 'ed' | 'lw' | 'dw' | 'fd' | 've' | 'eb' | 'fl' | 'pe';
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb' ].includes(obj);
+  return typeof obj === 'string' && [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ].includes(obj);
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
@@ -26,5 +26,9 @@ export const getCourseName = (courseCode: CourseCode): string => {
       return 'Virtual Event Planning Course';
     case 'eb':
       return 'Accelerate Your Business Workshop';
+    case 'fl':
+      return 'Festivals and Live Events Course';
+    case 'pe':
+      return 'Promotional Event Planning';
   }
 };
