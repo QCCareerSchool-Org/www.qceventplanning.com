@@ -67,7 +67,7 @@ const EventPlanningPage: PageComponent = () => (
         <div className="row align-items-center justify-content-center g-s">
           <div className="col-12 col-lg-6">
             <h2 className="mb-3">Here's What You'll Learn</h2>
-            <p className="lead">QC's advanced specialization course in promotional event planning will show you how to bring your career to the next level:</p>
+            <p className="lead">QC's Festivals and Live Events specialization course provides students with the most comprehensive training available to succeed in the corporate event industry.</p>
             <ul className="mb-4">
               <li>Use your existing corporate event planning skills to succeed in the live events industry</li>
               <li>Develop a unique theme, atmosphere, and vision for events with your clients</li>
@@ -90,7 +90,7 @@ const EventPlanningPage: PageComponent = () => (
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
             <IFLPImage height="166" className="mb-3" alt="Festivals and Live Events certification logo" />
             <h2 className="text-white mb-3">Festivals and Live Events Certification</h2>
-            <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Festivals and Live Events Planning Professional&trade; (IFLP&trade;). The IFLP certification is approved by the International Live Events Association and cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>
+            <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Festivals and Live Events Planning Professional&trade; (IFLP&trade;). The certification cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>
           </div>
         </div>
       </div>

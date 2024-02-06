@@ -18,7 +18,7 @@ export const OutlineSection: FC = () => (
           <p className="lead mb-0">The Event Planning Course is divided into four parts, each comprising separate training units.</p>
         </div>
         <div className="col-12 col-xl-10">
-          <CourseOutline title="The Fundamentals of Event and Wedding Planning" src={Part1Image} open className="mb-3">
+          <CourseOutline title="The Fundamentals of Event Planning" src={Part1Image} open className="mb-3">
             <ul className="small">
               <li>Dive into event planning and explore the ways in which you can create unique event concepts to wow your clients with events they'll remember forever</li>
               <li>Learn all about the event planning timeline so that you'll be ready to organize and prioritize important tasks</li>
