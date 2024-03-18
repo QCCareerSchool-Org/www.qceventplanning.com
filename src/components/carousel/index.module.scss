@@ -1,0 +1,29 @@
+.slideWrapper {
+  display: flex;
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.slideContainer {
+  position: absolute;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slideContainer.show {
+  opacity: 1;
+  z-index: 100;
+  transition: opacity 1s ease-in-out 0.25s;
+}
+
+.carouselNavItem {
+  margin: 0 0.75rem;
+  cursor: pointer;
+
+  &:first-of-type { margin-left: 0; }
+  &:last-of-type { margin-right: 0; }
+}

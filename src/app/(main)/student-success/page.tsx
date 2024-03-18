@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { GallerySection } from './gallerySection';
+import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -25,7 +25,7 @@ const StudentSuccessPage: PageComponent = () => {
         </div>
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
-      <GallerySection />
+      <CarouselSection />
       <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" />
     </>
   );

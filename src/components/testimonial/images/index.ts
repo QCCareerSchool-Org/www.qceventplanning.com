@@ -17,3 +17,4 @@ export { default as FencesSteiner } from './TE-0016-frances-steiner.jpg';
 export { default as TazmanBaker } from './TE-0017-tazman-baker.jpg';
 export { default as JennyAlperin } from './TE-0018-jenny-alperin.jpg';
 export { default as TamesaSquire } from './TE-0019-tamesha-squire.jpg';
+export { default as GiannaLuchese } from './gianna-luchese.jpg';
