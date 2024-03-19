@@ -30,7 +30,7 @@ export const Portfolio: FC<Props> = props => {
     <Modal show={props.show} onHide={props.onHide}>
       <Modal.Header closeButton>{props.name}'s Work</Modal.Header>
       <Modal.Body>
-        <Image src={props.images[index].src} placeholder="blur" alt="" className="img-fluid w-100" />
+        <Image src={props.images[index].src} placeholder="blur" alt={`Image ${index + 1} of ${props.images.length}`} className="img-fluid w-100" />
       </Modal.Body>
       {(props.images.length > 1 || typeof props.images[index].description !== 'undefined') && (
         <Modal.Footer>
