@@ -29,13 +29,15 @@ export const Showcase: FC<Props> = props => {
 
   return (
     <>
-      <div className="row justify-content-center g-s">
-        <div className="col-8 col-sm-6 col-lg-6">
-          <Image src={props.showcaseImageSrc} alt={`${props.name}'s Showcase`} className="img-fluid" />
+      <div className="row justify-content-center g-4 g-lg-s">
+        <div className="col-8 col-sm-6 col-lg-6 order-2 order-lg-1">
+          <Image onClick={handleHide} src={props.showcaseImageSrc} alt={`${props.name}'s Showcase`} className="img-fluid" style={{ cursor: 'pointer' }} />
         </div>
-        <div className="col-12 col-lg-6">
-          <h2>Student Feature</h2>
-          <p>We take immense pride in the success of all our graduates. See below for one inspiring story among many, highlighting the remarkable achievments of our talented alumni.</p>
+        <div className="col-12 col-lg-6 order-1 order-lg-2">
+          <div className="text-center text-lg-start mb-5 mb-lg-3">
+            <h2>Student Feature</h2>
+            <p className="mb-0">We take immense pride in the success of all our graduates. See below for one inspiring story among many, highlighting the remarkable achievments of our talented alumni.</p>
+          </div>
           <div className="mb-3">
             <div className="d-flex">
               {props.iconImageSrc && <div className="me-3"><ImageCircle src={props.iconImageSrc} alt={props.name} /></div>}
