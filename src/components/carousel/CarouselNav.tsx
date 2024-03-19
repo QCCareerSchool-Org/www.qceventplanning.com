@@ -14,7 +14,7 @@ type Props = {
 
 export const CarouselNav: FC<Props> = props => {
   return (
-    <>
+    <div style={{ scale: '0.8' }}>
       <span className={styles.carouselNavItem}>
         <ArrowImage onClick={props.onPrev} alt="Prev" />
       </span>
@@ -24,6 +24,6 @@ export const CarouselNav: FC<Props> = props => {
       <span className={styles.carouselNavItem}>
         <ArrowImage onClick={props.onNext} alt="Next" style={{ transform: 'scaleX(-1)' }} />
       </span>
-    </>
+    </div>
   );
 };
