@@ -36,6 +36,7 @@ type GAUserData = {
 };
 
 export const gaUserData = (userData: GAUserData): void => {
+  console.log('sending user data', userData);
   window.gtag?.('set', 'user-data', userData);
 };
 
