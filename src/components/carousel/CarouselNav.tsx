@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, memo } from 'react';
 
 import { CarouselNavCircle } from './CarouselNavCircle';
 import ArrowImage from './images/nav-arrow-icon.svg';
@@ -12,7 +12,7 @@ type Props = {
   onClick: (index: number) => void;
 };
 
-export const CarouselNav: FC<Props> = props => {
+export const CarouselNav: FC<Props> = memo(props => {
   return (
     <div style={{ scale: '0.8' }}>
       <span className={styles.carouselNavItem}>
@@ -26,4 +26,6 @@ export const CarouselNav: FC<Props> = props => {
       </span>
     </div>
   );
-};
+});
+
+CarouselNav.displayName = 'CarouselNav';

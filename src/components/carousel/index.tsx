@@ -11,22 +11,22 @@ type Props = {
   slides: FC[];
 };
 
-export const Carousel: FC<Props> = memo(props => {
-  const numPages = props.slides.length;
+export const Carousel: FC<Props> = memo(({ slides }) => {
+  const numPages = slides.length;
   const [ currentPage, setCurrentPage ] = useState(0);
   const [ heights, setHeights ] = useState<number[]>(new Array(numPages).fill(0));
 
-  const handleNext = (): void => {
+  const handleNext = useCallback((): void => {
     setCurrentPage(c => (c < numPages - 1 ? c + 1 : 0));
-  };
+  }, [ numPages, setCurrentPage ]);
 
-  const handlePrev = (): void => {
+  const handlePrev = useCallback((): void => {
     setCurrentPage(c => (c > 0 ? c - 1 : numPages - 1));
-  };
+  }, [ numPages, setCurrentPage ]);
 
-  const handleClick = (index: number): void => {
+  const handleClick = useCallback((index: number): void => {
     setCurrentPage(index);
-  };
+  }, [ setCurrentPage ]);
 
   const handleHeightChange = useCallback((index: number, height: number): void => {
     setHeights(h => {
@@ -41,7 +41,7 @@ export const Carousel: FC<Props> = memo(props => {
   return (
     <>
       <div className={styles.slideWrapper} style={{ height: maxHeight }}>
-        {props.slides.map((Slide, i) => (
+        {slides.map((Slide, i) => (
           <SlideContainer key={i} show={currentPage === i} index={i} onHeightChange={handleHeightChange}>
             <Slide />
           </SlideContainer>
