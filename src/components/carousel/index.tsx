@@ -1,7 +1,7 @@
 'use client';
 
 import type { FC } from 'react';
-import { memo, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
 import { CarouselNav } from './CarouselNav';
 import styles from './index.module.scss';
@@ -28,13 +28,13 @@ export const Carousel: FC<Props> = memo(props => {
     setCurrentPage(index);
   };
 
-  const handleHeightChange = (index: number, height: number): void => {
+  const handleHeightChange = useCallback((index: number, height: number): void => {
     setHeights(h => {
       const newHieghts = [ ...h ];
       newHieghts[index] = height;
       return newHieghts;
     });
-  };
+  }, []);
 
   const maxHeight = heights.reduce((prev, cur) => (cur > prev ? cur : prev), 0);
 
@@ -42,7 +42,7 @@ export const Carousel: FC<Props> = memo(props => {
     <>
       <div className={styles.slideWrapper} style={{ height: maxHeight }}>
         {props.slides.map((Slide, i) => (
-          <SlideContainer key={i} show={currentPage === i} onHeightChange={h => handleHeightChange(i, h)}>
+          <SlideContainer key={i} show={currentPage === i} index={i} onHeightChange={handleHeightChange}>
             <Slide />
           </SlideContainer>
         ))}
