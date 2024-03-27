@@ -68,7 +68,7 @@ export const OutlineSection: FC = () => (
               <li>Study how weddings are celebrated across a variety of religions and cultures to discover tips to bring traditions together from multiple backgrounds</li>
             </ul>
           </CourseOutline>
-          <CourseOutline title="Wedding Day Coordination" src={Part7Image}>
+          <CourseOutline title="Running Your Event Planning Business" src={Part7Image}>
             <ul className="small">
               <li>Study the essential components of launching a thriving event planning business</li>
               <li>Learn how to market and promote your event and wedding planning services to your target audience</li>
