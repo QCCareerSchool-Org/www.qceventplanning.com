@@ -12,10 +12,13 @@ import { FooterColumn1 } from './footerColumn1';
 import { FooterColumn2 } from './footerColumn2';
 import { FooterColumn3 } from './footerColumn3';
 import { Logo } from '@/components/logo';
+import { getAddress } from '@/lib/address';
 import { getData } from '@/lib/getData';
 
 export const Footer: FC = () => {
   const { countryCode } = getData();
+  const address = getAddress(countryCode);
+
   return (
     <footer className={`${styles.footer} mt-auto`}>
       <div className="container">
@@ -46,12 +49,17 @@ export const Footer: FC = () => {
         </div>
         <hr />
         <div className={`${styles.bottom} d-flex flex-column flex-lg-row justify-content-lg-between`}>
-          <div className="d-flex flex-column flex-md-row mb-2 mb-lg-0">
-            <div className="me-md-3 mb-1 mb-md-0">&copy; {new Date().getFullYear()} QC Event Planning</div>
-            <div className="d-flex flex-column flex-sm-row">
-              <div className="me-sm-3"><Link href="/terms">Privacy Policy</Link></div>
-              <div className="me-sm-3"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer">BBB Accredited A+</a></div>
-              <a href="https://www.qccareerschool.com" target="_blank" rel="noreferrer">QC Career School</a>
+          <div>
+            <div className="d-flex flex-column flex-md-row mb-1">
+              <div className="me-md-3 mb-1 mb-md-0">&copy; {new Date().getFullYear()} QC Event Planning</div>
+              <div className="d-flex flex-column flex-sm-row">
+                <div className="me-sm-3"><Link href="/terms">Privacy Policy</Link></div>
+                <div className="me-sm-3"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer">BBB Accredited A+</a></div>
+                <a href="https://www.qccareerschool.com" target="_blank" rel="noreferrer">QC Career School</a>
+              </div>
+            </div>
+            <div className="mb-2 mb-lg-0">
+              {address.join(', ')}
             </div>
           </div>
           <div className="d-flex">
