@@ -21,7 +21,7 @@ export const Title: FC<Props> = ({ testimonial }) => {
 
   const tooltip: FC = props => (
     <Tooltip id="button-tooltip" {...props}>
-      Other Courses:
+      Also a graduate of:
       <ul className="m-0 ps-3">
         {testimonial.courses.filter((c, i) => i >= 1).map(c => <li className="small" style={{ whiteSpace: 'nowrap' }} key={c}>{getCourseName(c)}</li>)}
       </ul>
