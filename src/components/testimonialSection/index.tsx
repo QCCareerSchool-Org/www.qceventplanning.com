@@ -56,7 +56,7 @@ export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) =>
                 })}
               </div>
               <footer className={styles.footer}>
-                <ImageCircle src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
+                <ImageCircle src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} size={96} />
                 <cite className={styles.name}>{testimonial.name}</cite>
                 <Title testimonial={testimonial} />
               </footer>

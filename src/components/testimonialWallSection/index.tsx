@@ -18,7 +18,7 @@ export const TestimonialWallSection: FC<Props> = ({ courseCodes, testimonialIds,
           <p className="lead mb-5">We've helped 8000+ students and graduates start their own successful event and wedding planning business!</p>
         </div>
       </div>
-      <div className="row justify-content-center g-s">
+      <div className="row justify-content-center g-5">
         {testimonialIds.map(id => (
           <div key={id} className="col-12 col-sm-8 col-lg-4">
             <Testimonial id={id} courseCodes={courseCodes} />
