@@ -448,3 +448,7 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
   --bs-btn-disabled-bg: inherit;
   --bs-btn-disabled-border-color: inherit;
 }
+
+.dropdown-menu {
+  --bs-dropdown-padding-y: 0.5rem;
+}
