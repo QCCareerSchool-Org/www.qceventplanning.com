@@ -152,7 +152,7 @@ const CoursesPage: PageComponent = () => (
       </div>
     </section>
     <TestimonialSection id="TE-0006" />
-    <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planning" />
+    <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
   </>
 );
 

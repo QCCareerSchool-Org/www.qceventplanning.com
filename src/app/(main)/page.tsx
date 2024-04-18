@@ -233,8 +233,8 @@ const HomePage: PageComponent = () => {
       <AislePlannerSection />
       <TestimonialSection id="TE-0006" />
       <GetStartedSection
-        title="Ready To Start Your Event & Wedding Planning Career?"
-        text="Become Professionally Certified with QC’s Online Event Planning Training"
+        title="Ready to Start Your Event & Wedding Planning Career?"
+        text="Become Professionally Certified with QC's Online Event Planning Training"
       />
     </>
   );
