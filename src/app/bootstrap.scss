@@ -335,13 +335,19 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 // .navbar { font-size: 0.9375rem; }
 // .navbar .btn { font-size: 0.9375rem; }
 
+#navLogo {
+  position: relative;
+  top: -1px;
+  @include media-breakpoint-up(lg) { top: -2px; }
+}
+
 .text-dark-blue { color: var(--qc-color-dark-blue); }
 
-@media only screen and (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .navbar { padding-top: 1rem; padding-bottom: 1rem; }
 }
 
-@media only screen and (min-width: 1200px) {
+@include media-breakpoint-up(xl) {
   .navbar { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 }
 
