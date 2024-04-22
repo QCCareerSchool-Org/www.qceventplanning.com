@@ -50,7 +50,7 @@ const WebinarThankYouPage: PageComponent = ({ searchParams }) => {
           </div>
         </div>
       </section>
-      <section className="bg-light">
+      <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
