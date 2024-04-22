@@ -42,16 +42,14 @@ const WebinarThankYouPage: PageComponent = ({ searchParams }) => {
       <Header logoLink buttonAlwaysVisible buttonContent={<><span className="text-primary"><CheckIcon height="16" className="me-2" style={{ position: 'relative', top: -1 }} /></span>Enroll Now</>} buttonHref="https://enroll.qceventplanning.com" />
       <section>
         <div className="container">
-          <div className="row justify-content-center g-0">
+          <div className="row justify-content-center mb-5">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <h1 className="mb-4">{searchParams.firstName && <>{searchParams.firstName}, </>} Watch Your <span className="text-uppercase">Free</span> Event Planning Workshop Now!</h1>
-              <WistiaPlayer videoId="15k0mttyr9" wrapper="wistia-player-container-1" />
+              <h1 className="h2 mb-4">{searchParams.firstName && <>{searchParams.firstName}, </>} Watch Your <span className="text-uppercase">Free</span> Event Planning Workshop Now!</h1>
+              <div className="mb-5">
+                <WistiaPlayer videoId="15k0mttyr9" wrapper="wistia-player-container-1" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
               <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Event School</h2>
