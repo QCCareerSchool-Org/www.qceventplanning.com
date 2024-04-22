@@ -31,12 +31,18 @@ export const HeroSection: FC = () => {
                   <input type="hidden" name="countryCode" value={countryCode} />
                   <input type="hidden" name="provinceCode" value={provinceCode ?? ''} />
                   <div className="mb-3">
-                    <label htmlFor={`${id}_firstName`} className="form-label">Name</label>
-                    <input type="text" name="firstName" id={`${id}_firstName`} className="form-control" />
+                    <input type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder="Name" />
                   </div>
                   <div className="mb-3">
-                    <label htmlFor={`${id}_emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>
-                    <input type="email" name="emailAddress" id={`${id}_emailAddress`} className="form-control" required />
+                    <input type="email" name="emailAddress" id={`${id}emailAddress`} className="form-control" placeholder="Email *" required />
+                  </div>
+                  <div className="mb-3">
+                    <div className="form-check">
+                      <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" value="Yes" />
+                      <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
+                        I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions, </span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
+                      </label>
+                    </div>
                   </div>
                   <button className="btn btn-primary"><span className="text-navy"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Join the Workshop</button>
                 </form>
