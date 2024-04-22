@@ -11,7 +11,7 @@ import CheckIcon from '@/components/check.svg';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
-  title: 'QC Event School',
+  title: 'Join the Free Webinar with Lisa Forbes',
 };
 
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
