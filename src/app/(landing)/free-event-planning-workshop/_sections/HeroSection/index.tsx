@@ -6,9 +6,12 @@ import HeroLgImage from './hero-large.jpg';
 import HeroSmImage from './hero-small.jpg';
 import ChartIcon from './icon-chart.svg';
 import CheckIcon from '@/components/check.svg';
+import { getData } from '@/lib/getData';
 
 export const HeroSection: FC = () => {
   const id = useId();
+
+  const { testGroup, countryCode, provinceCode } = getData();
 
   return (
     <section>
@@ -23,6 +26,10 @@ export const HeroSection: FC = () => {
                 <h1 className="h4">Become an Event Planner</h1>
                 <p>Learn the tips, tricks, and insider knowledge you need to start &amp; grow a successful event planning business from scratch</p>
                 <form action="https://go.qccareerschool.com/l/947642/2024-04-22/wm92v">
+                  <input type="hidden" name="school" value="QC Event Planning" />
+                  <input type="hidden" name="testGroup" value={testGroup} />
+                  <input type="hidden" name="countryCode" value={countryCode} />
+                  <input type="hidden" name="provinceCode" value={provinceCode ?? ''} />
                   <div className="mb-3">
                     <label htmlFor={`${id}_firstName`} className="form-label">Name</label>
                     <input type="text" name="firstName" id={`${id}_firstName`} className="form-control" />
