@@ -8,12 +8,18 @@ type Props = {
   text: string;
   courseCodes?: string[];
   buttonText?: string;
+  buttonHref?: string;
 };
 
-export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today' }) => {
-  let href = 'https://enroll.qceventplanning.com';
-  if (courseCodes) {
-    href += '?' + courseCodes?.map(c => `c=${encodeURIComponent(c)}`).join('&');
+export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today', buttonHref }) => {
+  let href: string;
+  if (buttonHref) {
+    href = buttonHref;
+  } else {
+    href = 'https://enroll.qceventplanning.com';
+    if (courseCodes) {
+      href += '?' + courseCodes?.map(c => `c=${encodeURIComponent(c)}`).join('&');
+    }
   }
   return (
     <section className={styles.section}>
