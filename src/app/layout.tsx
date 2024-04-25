@@ -5,6 +5,7 @@ import { Bing } from '@/components/scripts/bing';
 import { Facebook } from '@/components/scripts/facebook';
 import { GoogleAnalytics } from '@/components/scripts/googleAnalytics';
 import { LiveChat } from '@/components/scripts/liveChat';
+import { OptInMonster } from '@/components/scripts/optInMonster';
 import { Pardot } from '@/components/scripts/pardot';
 import { PerfectAudience } from '@/components/scripts/perfectAudience';
 import { Tiktok } from '@/components/scripts/tiktok';
@@ -37,6 +38,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.TRUSTPULSE_ID, 10)} />}
         <LiveChat license={1056788} group={1} />
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
+        <OptInMonster />
       </body>
     </html>
   );
