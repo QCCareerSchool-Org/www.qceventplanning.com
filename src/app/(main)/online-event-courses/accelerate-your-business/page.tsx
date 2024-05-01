@@ -45,7 +45,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
             <p className="lead mb-4">QC's Accelerate Your Business course provides students with the most comprehensive training available to grow your event planning business.</p>
             <ul className="mb-0">
               <li>Our professional workshop is designed to help you take your existing event business to the next level</li>
-              <li>Thriving virtual classroom to connect with other event professionals, get feedback, and gain access to bonus material</li>
+              <li>Thriving virtual community to connect with other event professionals, get feedback, and gain access to bonus material</li>
               <li>Catapult your career with access to real-world templates, self-study assignments, and bonus materials</li>
             </ul>
           </div>

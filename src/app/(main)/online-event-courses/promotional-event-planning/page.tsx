@@ -50,7 +50,7 @@ const EventPlanningPage: PageComponent = () => (
             <p className="lead mb-4">QC's Promotional Event Planning specialization provides students with the most comprehensive training available to succeed in the corporate event industry.</p>
             <ul className="mb-0">
               <li>Personalized feedback &amp; advice on your assignments from our top industry event planning experts</li>
-              <li>Thriving virtual classroom to connect with other event planners, get feedback, and gain access to bonus material</li>
+              <li>Thriving virtual community to connect with other event planners, get feedback, and gain access to bonus material</li>
               <li>In-depth video case studies to give you an insider's look at high-profile promotional events</li>
               <li>Discounts and affiliations with top event planning software companies like Aisle Planner, Sample Board and more!</li>
             </ul>

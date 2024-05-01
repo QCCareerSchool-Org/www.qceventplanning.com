@@ -65,7 +65,7 @@ const HomePage: PageComponent = () => {
                 <div className="col-12 col-lg-6">
                   <UserVoiceIcon className="d-lg-none d-xxl-block mb-3" />
                   <h3 className="h6 mb-3">Flexible Online Training</h3>
-                  <p className="mb-0">QC provides a fully online education&mdash;learn at your own pace and engage with fellow students and grads in our virtual classroom!</p>
+                  <p className="mb-0">QC provides a fully online education&mdash;learn at your own pace and engage with fellow students and grads in our virtual community!</p>
                 </div>
                 <div className="col-12 col-lg-6">
                   <CertificationIcon className="d-lg-none d-xxl-block mb-3" />

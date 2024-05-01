@@ -48,7 +48,7 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
             <p className="lead mb-4">QC's Luxury Wedding &amp; Event Planning certification course provides students with the most comprehensive training available to succeed in the event planning industry.</p>
             <ul>
               <li>Personalized feedback &amp; advice on your assignments from our top industry event &amp; wedding planning experts</li>
-              <li>Thriving virtual classroom to connect with other event planners, get feedback, and gain access to bonus material</li>
+              <li>Thriving virtual community to connect with other event planners, get feedback, and gain access to bonus material</li>
               <li>Built-in business training to help you launch your career and grow your clientele as a certified Luxury Wedding &amp; Event planner</li>
               <li>Discounts and affiliations with top organizations including Aisle Planner and The Association of  Wedding Planners International</li>
             </ul>

@@ -52,7 +52,7 @@ const RSLAPage: PageComponent = () => {
                 <li>Comprehensive business training and resources to help you launch your own business.</li>
                 <li>Lifetime access to up-to-date course materials in the Online Student Center.</li>
                 <li>Access student support services 7 days a week&mdash;before, during, and after completing your course!</li>
-                <li>Connect with a worldwide network of event planners in the Virtual Classroom</li>
+                <li>Connect with a worldwide network of event planners in the Virtual Community</li>
                 <li>Flexible payment plans allow you to learn without the financial burden of high tuition costs.</li>
               </ul>
             </div>

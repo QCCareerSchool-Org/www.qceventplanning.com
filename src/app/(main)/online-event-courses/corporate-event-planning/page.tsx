@@ -50,7 +50,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
             <ul className="mb-0">
               <li>No previous training required&mdash;our professional corporate event planning course is designed to take you from beginner to expert</li>
               <li>Personalized feedback &amp; advice on your assignments from our top industry corporate planning experts</li>
-              <li>Thriving virtual classroom to connect with other event planners, get feedback, and gain access to bonus material</li>
+              <li>Thriving virtual community to connect with other event planners, get feedback, and gain access to bonus material</li>
               <li>Built-in business training to help you launch your career and grow your clientele as a certified corporate event planner</li>
             </ul>
           </div>

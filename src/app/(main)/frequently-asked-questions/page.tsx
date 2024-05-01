@@ -54,7 +54,7 @@ const FAQPage: PageComponent = () => {
               <p>If you would you like to adjust the date your payments come out, contact the Student Support Team to find the perfect payment option for you.</p>
             </Question>
             <Question heading="What's included in the tuition?">
-              <p>Your tuition covers the cost of your online instructional materials and video, knowledge checks, access to the Online Student Center and your virtual classroom, and your certificate upon course completion. As part of your online event planning course fees, you'll also receive career advice and insider secrets from your tutor, an event planning professional.</p>
+              <p>Your tuition covers the cost of your online instructional materials and video, knowledge checks, access to the Online Student Center and your virtual community, and your certificate upon course completion. As part of your online event planning course fees, you'll also receive career advice and insider secrets from your tutor, an event planning professional.</p>
               <p>Our goal is to set you up with the tools you need to complete your event planning courses with flying colors.</p>
             </Question>
             <Question heading="Can I take these courses if I want to just explore the industry but am not necessarily interested in a new career?">
