@@ -64,12 +64,6 @@ export const gaSale = (enrollment: Enrollment): void => {
 
   gaUserData(userData);
 
-  // Since installment payers only pay a fraction of what they owe, modify the transaction value that we send to Google.
-  // Values as of 2023-11-14 (enrollments from 30 to 24 months ago)
-  const priceModifier = enrollment.paymentPlan === 'full'
-    ? 1
-    : enrollment.countryCode === 'US' ? 0.5722 : enrollment.countryCode === 'CA' ? 0.6614 : 0.5320;
-
   // Google Analtytics e-commerce event
   gaEvent('purchase', {
     transaction_id: enrollment.id.toString(), // eslint-disable-line camelcase
@@ -79,7 +73,7 @@ export const gaSale = (enrollment: Enrollment): void => {
     tax: 0,
     shipping: 0,
     items: enrollment.courses.map(c => {
-      const price = Big(c.baseCost).minus(c.planDiscount).minus(c.discount).times(priceModifier).toFixed(2);
+      const price = Big(c.baseCost).minus(c.planDiscount).minus(c.discount).toFixed(2);
       return {
         id: c.code,
         name: c.name,
@@ -88,6 +82,12 @@ export const gaSale = (enrollment: Enrollment): void => {
       };
     }),
   });
+
+  // Since installment payers only pay a fraction of what they owe, modify the transaction value that we send to Google Ads.
+  // Values as of 2023-11-14 (enrollments from 30 to 24 months ago)
+  const priceModifier = enrollment.paymentPlan === 'full'
+    ? 1
+    : enrollment.countryCode === 'US' ? 0.5722 : enrollment.countryCode === 'CA' ? 0.6614 : 0.5320;
 
   // Google Ads sale conversion
   gaEvent('conversion', {
