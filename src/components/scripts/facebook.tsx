@@ -5,15 +5,15 @@ type Props = {
   id: string;
 };
 
+// the image inside the noscript tag is loaded even if javascript is disabled, causing double counting
 export const Facebook: FC<Props> = ({ id }) => (
   <>
     <Script id="facebook" dangerouslySetInnerHTML={{ __html: getScript(id) }} />
     {/* eslint-disable-next-line @next/next/no-img-element */}
-    <noscript><img height="1" width="1" style={{ display: 'none' }} src={`https://www.facebook.com/tr?id=${encodeURIComponent(id)}&ev=PageView&noscript=1`} alt="" /></noscript>
+    {/* <noscript><img height="1" width="1" style={{ display: 'none' }} src={`https://www.facebook.com/tr?id=${encodeURIComponent(id)}&ev=PageView&noscript=1`} alt="" /></noscript> */}
   </>
 );
 
-// don't track a page view here because it's being done on route changes
 const getScript = (id: string): string => `
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,5 +24,5 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', \`${id.replace(/`/ug, '\\`')}\`);
-// fbq('track', 'PageView');
+fbq('track', 'PageView');
 `;
