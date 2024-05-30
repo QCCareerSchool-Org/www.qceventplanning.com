@@ -13,6 +13,7 @@ export const Facebook: FC<Props> = ({ id }) => (
   </>
 );
 
+// don't track a page view here because it's being done on route changes
 const getScript = (id: string): string => `
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -23,5 +24,5 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', \`${id.replace(/`/ug, '\\`')}\`);
-fbq('track', 'PageView');
+// fbq('track', 'PageView');
 `;

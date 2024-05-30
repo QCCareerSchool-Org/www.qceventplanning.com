@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
 import { Bing } from '@/components/scripts/bing';
 import { Facebook } from '@/components/scripts/facebook';
@@ -40,6 +41,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
       </body>
+      <LayoutClient />
     </html>
   );
 };

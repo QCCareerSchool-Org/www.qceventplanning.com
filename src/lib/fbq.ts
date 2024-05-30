@@ -13,8 +13,12 @@ declare global {
 }
 
 // log the page view with a specific URL
-export const fbqPageview = (url: string): void => {
-  window.fbq?.('trackCustom', 'VirtualPageView', { url });
+export const fbqPageview = (url?: string): void => {
+  if (typeof url !== 'undefined') {
+    window.fbq?.('trackCustom', 'VirtualPageView', { url });
+  } else {
+    window.fbq?.('track', 'PageView');
+  }
 };
 
 // log the conversion

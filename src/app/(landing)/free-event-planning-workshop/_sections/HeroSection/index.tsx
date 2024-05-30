@@ -8,7 +8,11 @@ import ChartIcon from './icon-chart.svg';
 import CheckIcon from '@/components/check.svg';
 import { getData } from '@/lib/getData';
 
-export const HeroSection: FC = () => {
+type Props = {
+  extraFields?: boolean;
+};
+
+export const HeroSection: FC<Props> = ({ extraFields }) => {
   const id = useId();
 
   const { testGroup, countryCode, provinceCode } = getData();
@@ -36,6 +40,26 @@ export const HeroSection: FC = () => {
                   <div className="mb-3">
                     <input type="email" name="emailAddress" id={`${id}emailAddress`} className="form-control" placeholder="Email *" required />
                   </div>
+                  {extraFields
+                    ? (
+                      <div className="mb-3">
+                        Interests:
+                        <div className="form-check">
+                          <input type="checkbox" name="webinarQuestionA" id={`${id}webinarQuestionA`} className="form-check-input" value="1" />
+                          <label htmlFor={`${id}webinarQuestionA`} className="form-check-label">A</label>
+                        </div>
+                        <div className="form-check">
+                          <input type="checkbox" name="webinarQuestionB" id={`${id}webinarQuestionB`} className="form-check-input" value="1" />
+                          <label htmlFor={`${id}webinarQuestionB`} className="form-check-label">B</label>
+                        </div>
+                        <div className="form-check">
+                          <input type="checkbox" name="webinarQuestionC" id={`${id}webinarQuestionC`} className="form-check-input" value="1" />
+                          <label htmlFor={`${id}webinarQuestionC`} className="form-check-label">C</label>
+                        </div>
+                      </div>
+                    )
+                    : <input type="hidden" name="webinarQuestionNone" value="1" />
+                  }
                   <div className="mb-3">
                     <div className="form-check">
                       <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" value="Yes" />
