@@ -19,10 +19,11 @@ const ThankYouCourseCatalogPage: PageComponent = ({ searchParams }) => {
   const firstName = getParam(searchParams.firstName);
   const emailAddress = getParam(searchParams.emailAddress);
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
+  const leadId = getParam(searchParams.leadId);
 
   return (
     <>
-      <Processing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} />
+      <Processing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} leadId={leadId} />
       <section className="p-0" />
       <section>
         <div className="container">

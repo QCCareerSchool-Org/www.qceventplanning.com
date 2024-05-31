@@ -26,6 +26,16 @@ export const Processing: FC<Props> = ({ enrollment, code, ipAddress }) => {
       sendEnrollmentEmail(enrollment.id, code).catch(console.error);
       setStudent(enrollment.id, code).catch(console.error);
       trustPulseEnrollment(enrollment, ipAddress).catch(console.error);
+
+      const url = `/api/sale?enrollmentId=${encodeURIComponent(enrollment.id)}&code=${encodeURIComponent(code)}`;
+      fetch(url, { method: 'post' }).then(async response => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        }
+        return response.json();
+      }).then(responseBody => {
+        console.log(responseBody);
+      }).catch(console.error);
     }
   }, [ enrollment, code, ipAddress ]);
   return null;

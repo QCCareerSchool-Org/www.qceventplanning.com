@@ -5,12 +5,10 @@ type Props = {
   id: string;
 };
 
-// the image inside the noscript tag is loaded even if javascript is disabled, causing double counting
 export const Facebook: FC<Props> = ({ id }) => (
   <>
     <Script id="facebook" dangerouslySetInnerHTML={{ __html: getScript(id) }} />
-    {/* eslint-disable-next-line @next/next/no-img-element */}
-    {/* <noscript><img height="1" width="1" style={{ display: 'none' }} src={`https://www.facebook.com/tr?id=${encodeURIComponent(id)}&ev=PageView&noscript=1`} alt="" /></noscript> */}
+    <noscript dangerouslySetInnerHTML={{ __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${encodeURIComponent(id)}&ev=PageView&noscript=1" alt="" />` }} />
   </>
 );
 

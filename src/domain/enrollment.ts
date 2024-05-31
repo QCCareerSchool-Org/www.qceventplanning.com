@@ -46,7 +46,6 @@ type Base = {
   deposit: number;
   installment: number;
   authorizationId: string | null;
-  transactionTime: string | null;
   authCode: string | null;
   maskedPan: string | null;
   currencySymbol: string | null;
@@ -57,11 +56,13 @@ type Base = {
 
 export type RawEnrollment = Base & {
   /** string date */
+  transactionTime: string | null;
+  /** string date */
   paymentDate: string;
 };
 
 export type Enrollment = Base & {
-
+  transactionTime: Date | null;
   paymentDate: Date;
 };
 
@@ -95,6 +96,7 @@ export const isRawEnrollment = (obj: unknown): obj is RawEnrollment => {
     'deposit' in obj && typeof obj.deposit === 'number' &&
     'installment' in obj && typeof obj.installment === 'number' &&
     'authorizationId' in obj && (obj.authorizationId === null || typeof obj.authorizationId === 'string') &&
+    'transactionTime' in obj && (obj.transactionTime === null || typeof obj.authorizationId === 'string') &&
     'authCode' in obj && (obj.authCode === null || typeof obj.authCode === 'string') &&
     'maskedPan' in obj && (obj.maskedPan === null || typeof obj.maskedPan === 'string') &&
     'currencySymbol' in obj && (obj.currencySymbol === null || typeof obj.currencySymbol === 'string') &&

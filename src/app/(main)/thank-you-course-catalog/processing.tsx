@@ -11,6 +11,7 @@ type Props = {
   emailAddress?: string;
   firstName?: string;
   ipAddress?: string;
+  leadId?: string;
 };
 
 export const Processing: FC<Props> = props => {
@@ -25,7 +26,7 @@ export const Processing: FC<Props> = props => {
     }
     effectCalled.current = true;
     gaUserData({ email: props.emailAddress });
-    fbqLead();
+    fbqLead(props.leadId);
     gaEvent('conversion', {
       send_to: 'AW-1071836607/9wB_CNvknggQv9uL_wM', // eslint-disable-line camelcase
       value: 1.0,
@@ -37,7 +38,7 @@ export const Processing: FC<Props> = props => {
       postalCode: null,
       ipAddress: props.ipAddress ?? null,
     });
-  }, [ props.emailAddress, props.firstName, props.ipAddress ]);
+  }, [ props.emailAddress, props.firstName, props.ipAddress, props.leadId ]);
 
   return null;
 };
