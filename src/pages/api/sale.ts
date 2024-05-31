@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { postSale } from '@/lib/facebookConversionAPI';
+import { postPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
+import { getIPAddress } from '@/lib/getIpAddress';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   console.log('handler');
@@ -20,14 +21,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const id = parseInt(req.query.enrollmentId, 10);
   const code = req.query.code;
   const referrer = req.headers.referer;
-  const clientIPAddress = getIPAddress(req);
+  const clientIpAddress = getIPAddress(req);
   const clientUserAgent = req.headers['user-agent'];
   const fbc = req.cookies._fbc;
   const fbp = req.cookies._fbp;
 
   try {
     const enrollment = await getEnrollment(id, code);
-    const response = await postSale(enrollment, referrer, clientIPAddress, clientUserAgent, fbc, fbp);
+    const response = await postPurchase(enrollment, referrer, clientIpAddress, clientUserAgent, fbc, fbp);
     res.send(response);
   } catch (err) {
     if (err instanceof Error) {
@@ -37,14 +38,3 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   }
 }
-
-const getIPAddress = (req: NextApiRequest): string | undefined => {
-  const forwardedFor = req.headers['x-forwarded-for'];
-  if (Array.isArray(forwardedFor) && forwardedFor.length) {
-    return forwardedFor[0].split(',')[0].trim();
-  } else if (typeof forwardedFor === 'string') {
-    return forwardedFor.split(',')[0].trim();
-  } else if (req.socket.remoteAddress) {
-    return req.socket.remoteAddress;
-  }
-};
