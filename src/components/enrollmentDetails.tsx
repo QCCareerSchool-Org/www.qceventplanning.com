@@ -103,7 +103,7 @@ export const EnrollmentDetails: FC<Props> = ({ enrollment }) => {
                 </tr>
                 <tr>
                   <td>Time</td>
-                  <td>{enrollment.transactionTime}</td>
+                  <td>{enrollment.transactionTime !== null ? formatDate(enrollment.transactionTime) : ''}</td>
                 </tr>
                 <tr>
                   <td>Auth Code</td>
