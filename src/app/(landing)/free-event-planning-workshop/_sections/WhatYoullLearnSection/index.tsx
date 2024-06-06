@@ -2,22 +2,25 @@ import Image from 'next/image';
 import type { FC } from 'react';
 
 import styles from './index.module.scss';
-import WhyQCImage from './why-qc.jpg';
+import BackgroundDeskopImage from './what-youll-learn-5.jpg';
+import BackgroundMobileImage from './what-youll-learn-med-2.jpg';
 
 export const WhatYoullLearnSection: FC = () => (
-  <section>
+  <section className={styles.section}>
+    <Image src={BackgroundDeskopImage} className="d-none d-lg-block" alt="" fill placeholder="blur" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
     <div className="container">
-      <div className="row justify-content-center g-s">
-        <div className="col-12 col-lg-6">
-          <h2 className="h3 mb-3">Here's What You'll Learn in This <span className="text-uppercase">Free</span> Career Workshop:</h2>
+      <div className="row">
+        <div className="col-12 col-lg-5 col-xxl-5">
+          <h2 className="h3 mb-3">Here's What You'll Learn in This FREE Career Webinar</h2>
           <ul className="mb-0">
-            <li>Get the <b>real</b> scoop on how to kickstart your event planning career, from business tips and networking hacks to gaining real-world experience</li>
-            <li>Find out if jumping into event planning in 2024 is a smart move and snag some insider tips on how you can stand out in a crowded field</li>
-            <li>Learn about the common slip-ups newbie event planners make and how to avoid them, setting yourself up for success from the get-go</li>
+            <li>Networking tips and how to gain real-world experience</li>
+            <li>How to thrive in a competitive landscape</li>
+            <li>Pricing strategies for your event services</li>
+            <li>How to build lasting client relationships</li>
           </ul>
-        </div>
-        <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-          <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
+          <div className="text-center">
+            <Image src={BackgroundMobileImage} className="mt-3 d-lg-none" alt="" placeholder="blur" style={{ width: '75%', height: 'auto' }} />
+          </div>
         </div>
       </div>
     </div>

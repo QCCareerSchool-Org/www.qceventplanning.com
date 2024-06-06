@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 
+import CheckIcon from '@/components/check.svg';
 import { GetStartedSection } from '@/components/getStartedSection';
 
 export const CTASection: FC = () => (
   <GetStartedSection
-    title="Skyrocket Your New Career"
-    text="Ready to learn exactly how you can become a successful event planning professional?"
-    buttonText="Join the Workshop"
+    title="Ready to Launch Your Event Planning Career?"
+    buttonText={<><CheckIcon height="20" style={{ position: 'relative', top: -1 }} /> <span className="text-white">Access FREE Webinar</span></>}
     buttonHref="#"
   />
 );

@@ -1,0 +1,55 @@
+.card {
+  max-width: 360px;
+  color: white;
+  --bs-card-bg: none;
+  --bs-card-border-width: 0;
+  --bs-card-spacer-x: 0;
+  --bs-card-spacer-y: 0;
+  p, h1, h2, h3, h4, h5, h6 {
+      color: white;
+      text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+    }
+}
+
+.cardHeader {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+
+   /* center overlay text */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   inset: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    max-width: none;
+    color: black;
+    box-shadow: var(--bs-box-shadow) !important;
+    --bs-card-bg: white;
+    --bs-card-border-width: 1px;
+    --bs-card-spacer-x: 2rem;
+    --bs-card-spacer-y: 2rem; 
+    p, h1, h2, h3, h4, h5, h6 {
+      color: black;
+      text-shadow: none;
+    }
+    .cardBody {
+      padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    }
+  }
+
+  .cardHeader {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+
+  .overlay { display: none }
+}

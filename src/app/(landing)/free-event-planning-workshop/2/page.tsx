@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { Header } from '../../header';
+import { AboutQCSection } from '../_sections/AboutQCSection';
 import { CTASection } from '../_sections/CTASection';
 import { HeroSection } from '../_sections/HeroSection';
 import { MeetInstructorSection } from '../_sections/MeetInstructorSection';
@@ -23,7 +24,8 @@ const WebinarPage: PageComponent = () => {
       <HeroSection extraFields />
       <WhatYoullLearnSection />
       <MeetInstructorSection />
-      <TestimonialWallSection testimonialIds={testimonialIds} hideHeading />
+      <AboutQCSection />
+      <TestimonialWallSection testimonialIds={testimonialIds} />
       <CTASection />
     </>
   );

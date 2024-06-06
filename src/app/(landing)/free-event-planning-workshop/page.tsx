@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { Header } from '../header';
+import { AboutQCSection } from './_sections/AboutQCSection';
 import { CTASection } from './_sections/CTASection';
 import { HeroSection } from './_sections/HeroSection';
 import { MeetInstructorSection } from './_sections/MeetInstructorSection';
@@ -21,9 +22,10 @@ const WebinarPage: PageComponent = () => {
     <>
       <Header logoLink buttonContent={<><span className={styles.headerButtonSmallText}>Register Now</span><span className={styles.headerButtonLargeText}><span className="text-primary"><CheckIcon height="16" className="me-2" style={{ position: 'relative', top: -1 }} /></span>Join the Workshop</span></>} />
       <HeroSection />
-      <WhatYoullLearnSection />
       <MeetInstructorSection />
-      <TestimonialWallSection testimonialIds={testimonialIds} hideHeading />
+      <WhatYoullLearnSection />
+      <AboutQCSection />
+      <TestimonialWallSection testimonialIds={testimonialIds} />
       <CTASection />
     </>
   );
