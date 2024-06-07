@@ -26,8 +26,6 @@ export const metadata: Metadata = {
   title: 'Thank You for Joining the Webinar',
 };
 
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
-
 const WebinarThankYouPage: PageComponent = () => {
   return (
     <>
