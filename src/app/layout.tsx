@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 
 import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
-import { Bing } from '@/components/scripts/bing';
-import { Facebook } from '@/components/scripts/facebook';
-import { GoogleAnalytics } from '@/components/scripts/googleAnalytics';
-import { LiveChat } from '@/components/scripts/liveChat';
-import { OptInMonster } from '@/components/scripts/optInMonster';
-import { Pardot } from '@/components/scripts/pardot';
-import { PerfectAudience } from '@/components/scripts/perfectAudience';
-import { Tiktok } from '@/components/scripts/tiktok';
-import { TrustPulse } from '@/components/scripts/trustPulse';
-import { VWO } from '@/components/scripts/vwo';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { Provider } from '@/providers';
+import { Bing } from '@/scripts/bing';
+import { Facebook } from '@/scripts/facebook';
+import { GoogleAnalytics } from '@/scripts/googleAnalytics';
+import { LiveChat } from '@/scripts/liveChat';
+import { OptInMonster } from '@/scripts/optInMonster';
+import { Pardot } from '@/scripts/pardot';
+import { PerfectAudience } from '@/scripts/perfectAudience';
+import { Tiktok } from '@/scripts/tiktok';
+import { TrustPulse } from '@/scripts/trustPulse';
+import { VWO } from '@/scripts/vwo';
 
 import './global.scss';
 

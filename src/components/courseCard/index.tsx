@@ -30,7 +30,7 @@ export const CourseCard: FC<Props> = ({ type, name, description, href, backgroun
       <div>
         <div className={styles.type}>{type === 'foundation' ? 'Foundation Course' : 'Specialty Course'}</div>
         <h2 className="h4">{name}</h2>
-        <p className="lead">{description}</p>
+        <p>{description}</p>
       </div>
       {(buttons === 'courseAndTuition' || buttons === 'course') && (
         <div className="d-flex flex-column flex-sm-row">

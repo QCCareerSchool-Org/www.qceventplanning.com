@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
+import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaTiktok } from 'react-icons/fa';
 
 import BriefcaseIcon from '../../../(main)/briefcase.svg';
 import CertificationIcon from '../../../(main)/certification.svg';
@@ -12,12 +14,13 @@ import { Header } from '../../header';
 import { AboutQCSection } from '../_sections/AboutQCSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
+import BookIcon from '@/components/book.svg';
 import CheckIcon from '@/components/check.svg';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { ILEASection } from '@/components/ileaSection';
-import { PaymentSectionGuarantee } from '@/components/paymentPlanSection/guarantee';
+import MagnifyingGlassIcon from '@/components/magnifying-glass.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 import WhyQCImage from '@/components/why-qc.jpg';
 import { WistiaPlayer } from '@/components/wistiaPlayer';
@@ -82,7 +85,7 @@ const WebinarThankYouPage: PageComponent = () => {
           <div className="text-center">
             <h2 className="mb-4">Popular Event Courses</h2>
           </div>
-          <div className="row justify-content-center g-4 mb-s">
+          <div className="row justify-content-center g-4 mb-5">
             <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
               <CourseCard
                 type="foundation"
@@ -118,8 +121,11 @@ const WebinarThankYouPage: PageComponent = () => {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
-              <PaymentSectionGuarantee />
+            <div className="col-12 col-lg-8 col-xl-7 col-xxl-6 text-center">
+              <MagnifyingGlassIcon className="mb-3" />
+              <h3 className="h4">Explore More Paths in Event Planning</h3>
+              <p>Are you ready to expand your expertise? Our diverse range of courses is tailored to your individual interests and career goals. Whether you're seeking foundational knowledge or specialized techniques, unleash your creativity and elevate your skills.</p>
+              <Link href="/online-event-courses" className="btn btn-primary btn-lg"><BookIcon className="me-2" />Discover More Courses</Link>
             </div>
           </div>
         </div>
@@ -130,6 +136,17 @@ const WebinarThankYouPage: PageComponent = () => {
         title="Ready to Start Your Event & Wedding Planning Career?"
         text="Become Professionally Certified with QC's Online Event Planning Training"
       />
+      <div className="bg-navy text-white">
+        <div className="container">
+          <div className="d-flex justify-content-center">
+            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaTiktok alt="Tiktok" /></a></div>
+            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaInstagram alt="Instagram" /></a></div>
+            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaFacebook alt="Facebook" /></a></div>
+            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaLinkedin alt="LinkedIn" /></a></div>
+            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaPinterest alt="Pinterest" style={{ color: 'inherit' }} /></a></div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
