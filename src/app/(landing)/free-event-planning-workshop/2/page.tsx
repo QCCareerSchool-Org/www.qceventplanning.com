@@ -20,7 +20,7 @@ const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 
 const WebinarPage: PageComponent = () => {
   return (
     <>
-      <Header logoLink buttonContent={<><span className={styles.headerButtonSmallText}>Register Now</span><span className={styles.headerButtonLargeText}><span className="text-primary"><CheckIcon height="16" className="me-2" style={{ position: 'relative', top: -1 }} /></span>Join the Workshop</span></>} />
+      <Header logoLink buttonContent={<><span className={styles.headerButtonSmallText}>FREE Webinar</span><span className={styles.headerButtonLargeText}><span className="text-primary"><CheckIcon height="16" className="me-2" style={{ position: 'relative', top: -1 }} /></span>Access FREE Webinar</span></>} />
       <HeroSection extraFields />
       <WhatYoullLearnSection />
       <MeetInstructorSection />

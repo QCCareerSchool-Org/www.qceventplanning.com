@@ -40,4 +40,11 @@
     text-transform: uppercase;
     font-weight: 500;
   }
+
+  .textLink {
+    white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
 }

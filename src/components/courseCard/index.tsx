@@ -14,7 +14,7 @@ type Props = {
   backgroundSrc: StaticImageData;
   certification: JSX.Element;
   message?: string;
-  buttons?: 'course' | 'courseAndTuition' | 'enroll' | 'none';
+  buttons?: 'course' | 'courseSmall' | 'courseAndTuition' | 'enroll' | 'none';
 };
 
 export const CourseCard: FC<Props> = ({ type, name, description, href, backgroundSrc, certification, message, buttons = 'courseAndTuition' }) => (
@@ -44,6 +44,11 @@ export const CourseCard: FC<Props> = ({ type, name, description, href, backgroun
       {buttons === 'enroll' && (
         <div className="d-flex flex-column flex-sm-row">
           <Link href={href} className="btn btn-lg btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Enroll Now</Link>
+        </div>
+      )}
+      {buttons === 'courseSmall' && (
+        <div className="d-flex flex-column flex-sm-row">
+          <Link href={href} className={styles.textLink}>Learn More &gt;</Link>
         </div>
       )}
     </div>

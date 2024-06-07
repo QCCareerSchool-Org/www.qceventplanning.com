@@ -58,5 +58,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   }
 
-  res.redirect(301, `/thank-you-course-catalog?${params.join('&')}`);
+  const destination = typeof req.query.destination === 'string'
+    ? req.query.destination
+    : '/thank-you-course-catalog';
+
+  res.redirect(301, `${destination}?${params.join('&')}`);
 }

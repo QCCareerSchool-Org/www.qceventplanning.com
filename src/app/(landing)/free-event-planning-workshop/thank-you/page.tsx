@@ -17,6 +17,7 @@ import PEImage from '../../../(main)/online-event-courses/promotional-event-plan
 import WPImage from '../../../(main)/online-event-courses/wedding-planning/hero.jpg';
 import UserVoiceIcon from '../../../(main)/user-voice.svg';
 import { Header } from '../../header';
+import { AboutQCSection } from '../_sections/AboutQCSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import CheckIcon from '@/components/check.svg';
@@ -36,20 +37,24 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
-const WebinarThankYouPage: PageComponent = ({ searchParams }) => {
+const WebinarThankYouPage: PageComponent = () => {
   return (
     <>
       <Header logoLink buttonAlwaysVisible buttonContent={<><span className="text-primary"><CheckIcon height="16" className="me-2" style={{ position: 'relative', top: -1 }} /></span>Enroll Now</>} buttonHref="https://enroll.qceventplanning.com" />
       <section>
-        <div className="container">
-          <div className="row justify-content-center mb-5">
-            <div className="col-12 col-md-10 col-lg-8 text-center">
-              <h1 className="h2 mb-4">{searchParams.firstName && <>{searchParams.firstName}, </>} Watch Your <span className="text-uppercase">Free</span> Event Planning Workshop Now!</h1>
-              <div className="mb-5">
-                <WistiaPlayer videoId="15k0mttyr9" wrapper="wistia-player-container-1" />
-              </div>
+        <div className="container text-center">
+          <div className="row justify-content-center m-3">
+            <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-5">
+              <h1 className="h2 mb-0">Ready to Launch Your Event Planning Career?</h1>
             </div>
           </div>
+          <h2 className="h5 mb-3">Watch the Free Webinar!</h2>
+          <WistiaPlayer videoId="15k0mttyr9" wrapper="wistia-player-container-1" />
+        </div>
+      </section>
+      <AboutQCSection showCoursesButton />
+      <section>
+        <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
             <div className="col-12 col-md-10 col-lg-7 col-xl-6 col-xxl-7 text-center text-lg-start">
               <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Event School</h2>
@@ -83,12 +88,10 @@ const WebinarThankYouPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <ILEASection />
-      <TestimonialWallSection testimonialIds={testimonialIds} />
-      <section className="bg-light">
+      <section>
         <div className="container">
           <div className="text-center">
-            <h2 className="mb-4">Our Foundation Courses</h2>
-            <p className="lead mb-5">Discover a wide range of foundation and specialty courses offered by our online event school.</p>
+            <h2 className="mb-4">Popular Event Courses</h2>
           </div>
           <div className="row justify-content-center g-4 mb-s">
             <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
@@ -99,8 +102,7 @@ const WebinarThankYouPage: PageComponent = ({ searchParams }) => {
                 href="/online-event-courses/event-and-wedding-planning"
                 backgroundSrc={EPImage}
                 certification={<CourseCardCertifcation courseCode="ep" />}
-                message="Most Popular"
-                buttons="course"
+                buttons="courseSmall"
               />
             </div>
             <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
@@ -111,18 +113,7 @@ const WebinarThankYouPage: PageComponent = ({ searchParams }) => {
                 href="/online-event-courses/corporate-event-planning"
                 backgroundSrc={CPImage}
                 certification={<CourseCardCertifcation courseCode="cp" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="foundation"
-                name="Event Planning"
-                description="Work with a variety of different clients and discover how to plan outstanding events including industry gatherings, milestone parties, holiday parties, and more."
-                href="/online-event-courses/event-planning"
-                backgroundSrc={CEImage}
-                certification={<CourseCardCertifcation courseCode="ce" />}
-                buttons="course"
+                buttons="courseSmall"
               />
             </div>
             <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
@@ -133,90 +124,7 @@ const WebinarThankYouPage: PageComponent = ({ searchParams }) => {
                 href="/online-event-courses/event-decor"
                 backgroundSrc={EDImage}
                 certification={<CourseCardCertifcation courseCode="ed" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="foundation"
-                name="Floral Design"
-                description="Launch your own business, work for an experienced floral designer, or incorporate your floral design skills into an existing career in event planning."
-                href="/online-event-courses/floral-design"
-                backgroundSrc={FDImage}
-                certification={<CourseCardCertifcation courseCode="fd" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="foundation"
-                name="Wedding Planning"
-                description="Exceed expectations by learning to plan unique weddings tailored to your client's wishes, considering cultural variations, budgets, timelines, and more."
-                href="/online-event-courses/wedding-planning"
-                backgroundSrc={WPImage}
-                certification={<CourseCardCertifcation courseCode="wp" />}
-                buttons="course"
-              />
-            </div>
-          </div>
-
-          <div className="text-center">
-            <h2 className="mb-5">Specialty Courses</h2>
-          </div>
-          <div className="row justify-content-center g-4 mb-s">
-            <div className="col-12 col-sm-10 col-md-6 d-flex">
-              <CourseCard
-                type="specialty"
-                name={<>Luxury Wedding<span className="d-lg-none d-xl-inline"> &amp; Event</span> Planning</>}
-                description="Master planning upscale events and weddings! Handle substantial budgets, network with high-end vendors, and embrace the latest trends."
-                href="/online-event-courses/luxury-wedding-and-event-planning"
-                backgroundSrc={LWImage}
-                certification={<CourseCardCertifcation courseCode="lw" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Destination Wedding Planning"
-                description="Gain skills to coordinate stunning destination weddings. Network with travel agents, translators, and niche vendors for unforgettable events."
-                href="/online-event-courses/destination-wedding-planning"
-                backgroundSrc={DWImage}
-                certification={<CourseCardCertifcation courseCode="dw" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Promotional Event Planning"
-                description="Take your corporate event planning skills a step further by learning how to effectively implement impromptu marketing campaigns, pop-up shops, and more."
-                href="/online-event-courses/promotional-event-planning"
-                backgroundSrc={PEImage}
-                certification={<CourseCardCertifcation courseCode="pe" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Festivals and Live Events"
-                description="Explore live-event logistics and use your existing corporate event knowledge to plan both small and large-scale festivals and entertainment events."
-                href="/online-event-courses/festivals-and-live-events"
-                backgroundSrc={FLImage}
-                certification={<CourseCardCertifcation courseCode="fl" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Accelerate Your Business"
-                description="Learn how to start and grow your event planning business. Work with different marketing tools to help you achieve your business goals faster."
-                href="/online-event-courses/accelerate-your-business"
-                backgroundSrc={EBImage}
-                certification={<CourseCardCertifcation courseCode="eb" />}
-                buttons="course"
+                buttons="courseSmall"
               />
             </div>
           </div>
