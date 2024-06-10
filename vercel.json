@@ -28,7 +28,8 @@
     { "source": "/reviews", "destination": "/" },
     { "source": "/employee-training-programs", "destination": "/online-event-courses" },
     { "source": "/terms.html", "destination": "/terms" },
-    { "source": "/online-event-courses/course-pricing", "destination": "/online-event-courses" }
+    { "source": "/online-event-courses/course-pricing", "destination": "/online-event-courses" },
+    { "source": "free-event-planning-workshop", "destination": "free-event-planning-webinar" }
   ],
   "rewrites": [
     { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog/" },
