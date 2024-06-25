@@ -30,7 +30,7 @@ export const HeroSection: FC<Props> = ({ extraFields }) => {
               <div className="card-body">
                 <p className={`lead text-primary fw-bold text-uppercase mb-1 d-none d-md-block`}>Free Webinar <span style={{ position: 'relative', top: -2 }}><ChartIcon height={18} /></span></p>
                 <h1 className={`h4 ${styles.cardHeader} mb-3 mb-md-2`}>Ready to Launch Your Event Planning Career?</h1>
-                <p className="d-none d-md-block">Explore insider secrets with Lisa Forbes, the force behind White Aspen Weddings and Hitched Planning &amp; Design</p>
+                <p className="d-none d-md-block">Get insider expertise from the renowned planner, Lisa Forbes.</p>
                 <form action="https://go.qccareerschool.com/l/947642/2024-06-03/wxvtv">
                   <input type="hidden" name="school" value="QC Event Planning" />
                   <input type="hidden" name="testGroup" value={testGroup} />
@@ -62,7 +62,7 @@ export const HeroSection: FC<Props> = ({ extraFields }) => {
                       </label>
                     </div>
                   </div>
-                  <button className="btn btn-navy"><span className="text-primary"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Access FREE Webinar</button>
+                  <button className="btn btn-navy"><span className="text-primary"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
                 </form>
               </div>
             </div>

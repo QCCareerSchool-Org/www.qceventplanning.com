@@ -11,7 +11,7 @@ export const WhatYoullLearnSection: FC = () => (
     <div className="container">
       <div className="row">
         <div className="col-12 col-lg-5 col-xxl-5">
-          <h2 className="h3 mb-3">Here's What You'll Learn in This FREE Career Webinar</h2>
+          <h2 className="h3 mb-3">Discover what's in the FREE webinar</h2>
           <ul className="mb-0">
             <li>Networking tips and how to gain real-world experience</li>
             <li>How to thrive in a competitive landscape</li>

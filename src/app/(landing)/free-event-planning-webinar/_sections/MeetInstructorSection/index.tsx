@@ -13,7 +13,7 @@ export const MeetInstructorSection: FC = () => (
         <div className="col-12 col-lg-6">
           <h2 className="h3 mb-3">Meet Lisa Forbes</h2>
           <h3 className="h6 mb-3">Owner of White Aspen Weddings and Lead Planner at Hitched Planning &amp; Design</h3>
-          <p className="mb-0">With over 15 years of experience crafting unforgettable moments, Lisa brings a wealth of expertise and entrepreneurial savvy. Renowned for her grace under pressure and genuine warmth, Lisa's webinar propels you to kickstart and grow your own event planning business. Uncover insider tips, networking hacks, and real-world tips that will help you stand out in the booming event planning landscape.</p>
+          <p className="mb-0">Join our webinar and gain exclusive insights, networking hacks, and practical advice from Lisa Forbes. With over 15 years of experience curating unforgettable moments, Lisa brings a wealth of expertise and entrepreneurial savvy. Her grace under pressure and genuine warmth will inspire and empower you in your event planning journey, setting you apart in today's thriving event-planning industry.</p>
         </div>
       </div>
     </div>

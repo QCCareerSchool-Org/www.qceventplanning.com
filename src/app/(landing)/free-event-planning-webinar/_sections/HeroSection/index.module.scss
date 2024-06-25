@@ -53,3 +53,10 @@
 
   .overlay { display: none }
 }
+
+@media screen and (min-width: 992px) {
+  .card {
+    --bs-card-spacer-x: 2.5rem;
+    --bs-card-spacer-y: 2.5rem;
+  }
+}
