@@ -35,8 +35,8 @@
     box-shadow: var(--bs-box-shadow) !important;
     --bs-card-bg: white;
     --bs-card-border-width: 1px;
-    --bs-card-spacer-x: 2rem;
-    --bs-card-spacer-y: 2rem; 
+    --bs-card-spacer-x: 2.5rem;
+    --bs-card-spacer-y: 2.5rem; 
     p, h1, h2, h3, h4, h5, h6 {
       color: black;
       text-shadow: none;
@@ -52,11 +52,4 @@
   }
 
   .overlay { display: none }
-}
-
-@media screen and (min-width: 992px) {
-  .card {
-    --bs-card-spacer-x: 2.5rem;
-    --bs-card-spacer-y: 2.5rem;
-  }
 }

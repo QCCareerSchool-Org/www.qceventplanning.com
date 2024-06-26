@@ -2,8 +2,8 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { useId } from 'react';
 
-import HeroLgImage from './hero-large.jpg';
-import HeroSmImage from './hero-small.jpg';
+import HeroLgImage from './hero-large-2.jpg';
+import HeroSmImage from './hero-small-2.jpg';
 import ChartIcon from './icon-chart.svg';
 import styles from './index.module.scss';
 import CheckIcon from '@/components/check.svg';
@@ -25,7 +25,7 @@ export const HeroSection: FC<Props> = ({ extraFields }) => {
       <div className={styles.overlay} />
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-7 col-lg-6">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
             <div className={`card ${styles.card}`}>
               <div className="card-body">
                 <p className={`lead text-primary fw-bold text-uppercase mb-1 d-none d-md-block`}>Free Webinar <span style={{ position: 'relative', top: -2 }}><ChartIcon height={18} /></span></p>

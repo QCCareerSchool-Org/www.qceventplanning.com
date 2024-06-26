@@ -25,7 +25,7 @@ const WebinarPage: PageComponent = () => {
       <MeetInstructorSection />
       <WhatYoullLearnSection />
       <AboutQCSection />
-      <TestimonialWallSection heading="Hear From Students and Grads" testimonialIds={testimonialIds} />
+      <TestimonialWallSection heading="Hear From Students and Grads" h={3} testimonialIds={testimonialIds} />
       <CTASection />
     </>
   );
