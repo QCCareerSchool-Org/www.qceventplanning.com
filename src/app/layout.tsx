@@ -7,7 +7,6 @@ import { Provider } from '@/providers';
 import { Bing } from '@/scripts/bing';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
-import { LiveChat } from '@/scripts/liveChat';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { Pardot } from '@/scripts/pardot';
 import { PerfectAudience } from '@/scripts/perfectAudience';
@@ -37,7 +36,6 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.PARDOT_ACCOUNT_ID && process.env.PARDOT_CAMPAIGN_ID && <Pardot accountId={process.env.PARDOT_ACCOUNT_ID} campaignId={process.env.PARDOT_CAMPAIGN_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
         {process.env.TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.TRUSTPULSE_ID, 10)} />}
-        <LiveChat license={1056788} group={1} />
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
       </body>
