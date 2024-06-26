@@ -16,7 +16,7 @@ export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialI
     <div className="container">
       {!hideHeading && (
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-8 col-xl-7 col-xxl-6 text-lg-center">
+          <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
             <h2 className={`mb-4 ${typeof h === 'undefined' ? '' : `h${h}`}`}>Hear From Students and Grads</h2>
             <p className="lead mb-5">We've helped 8000+ students and graduates start their own successful event and wedding planning business!</p>
           </div>
