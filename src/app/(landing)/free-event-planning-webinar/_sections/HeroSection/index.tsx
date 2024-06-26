@@ -20,12 +20,12 @@ export const HeroSection: FC<Props> = ({ extraFields }) => {
 
   return (
     <section style={{ backgroundColor: '#e3dfda' }}>
-      <Image src={HeroLgImage} alt="" priority fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
+      <Image src={HeroLgImage} alt="" priority fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '0% 50%' }} />
       <Image src={HeroSmImage} alt="" priority fill sizes="100%" placeholder="blur" className="d-md-none" style={{ objectFit: 'cover', objectPosition: '50% 50%' }} />
       <div className={styles.overlay} />
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-5">
             <div className={`card ${styles.card}`}>
               <div className="card-body">
                 <p className={`lead text-primary fw-bold text-uppercase mb-1 d-none d-md-block`}>Free Webinar <span style={{ position: 'relative', top: -2 }}><ChartIcon height={18} /></span></p>
@@ -62,7 +62,8 @@ export const HeroSection: FC<Props> = ({ extraFields }) => {
                       </label>
                     </div>
                   </div>
-                  <button className="btn btn-navy"><span className="text-primary"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
+                  <button className="btn btn-primary d-md-none" style={{ paddingLeft: '1rem', paddingRight: '1.25rem' }}><span className="text-navy"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
+                  <button className="btn btn-navy d-none d-md-block" style={{ paddingLeft: '1rem', paddingRight: '1.25rem' }}><span className="text-primary"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
                 </form>
               </div>
             </div>
