@@ -30,7 +30,7 @@ export const HeroSection: FC<Props> = ({ extraFields }) => {
               <div className="card-body">
                 <p className={`lead text-primary fw-bold text-uppercase mb-1 d-none d-md-block`}>Free Webinar <span style={{ position: 'relative', top: -2 }}><ChartIcon height={18} /></span></p>
                 <h1 className={`h4 ${styles.cardHeader} mb-3 mb-md-2`}>Ready to Launch Your Event Planning Career?</h1>
-                <p className="d-none d-md-block">Get insider expertise from the renowned planner, Lisa Forbes.</p>
+                <p className="d-none d-md-block">Get insider tips from QC's renowned event planning expert, Lisa Forbes.</p>
                 <form action="https://go.qccareerschool.com/l/947642/2024-06-03/wxvtv">
                   <input type="hidden" name="school" value="QC Event Planning" />
                   <input type="hidden" name="testGroup" value={testGroup} />
