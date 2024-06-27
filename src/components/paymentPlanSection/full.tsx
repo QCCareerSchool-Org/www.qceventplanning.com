@@ -19,7 +19,7 @@ type Props = {
 export const Full: FC<Props> = ({ price, href }) => (
   <div className={`${styles.full} card`}>
     <div className="card-body">
-      <h6 className={commonStyles.title}>Pay In Full</h6>
+      <h6 className={commonStyles.title}>Pay in Full</h6>
       <div className={commonStyles.description}>One-Time Payment of</div>
       <hr className={commonStyles.hr} />
       <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}{tightNumber(price.plans.full.total) && <span style={{ marginRight: '0.25rem' }} />}</span><span className={styles.dark}>{price.plans.full.total}</span></div>
