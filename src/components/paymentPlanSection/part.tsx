@@ -19,7 +19,7 @@ type Props = {
 export const Part: FC<Props> = ({ price, href }) => (
   <div className={`${styles.part} card`}>
     <div className="card-body">
-      <h6 className={`${commonStyles.title} ${styles.dark}`}>Monthly Tuition Plan</h6>
+      <h6 className={`${commonStyles.title} ${styles.dark}`}>{price.plans.part.installmentSize}-Month Installment Plan</h6>
       <div className={commonStyles.description}>Get Started for only</div>
       <hr className={commonStyles.hr} />
       <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}{tightNumber(price.plans.part.deposit) && <span style={{ marginRight: '0.25rem' }} />}</span><span className={styles.dark}>{price.plans.part.deposit}</span></div>
