@@ -19,6 +19,7 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
@@ -108,6 +109,7 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <VirtualCommunitySection />
     <OutlineSection />
     <AislePlannerSection />
     <TestimonialSection id="TE-0014" courseCodes={courseCodes} />

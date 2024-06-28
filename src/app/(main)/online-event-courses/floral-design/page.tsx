@@ -21,6 +21,7 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
@@ -125,6 +126,7 @@ const FloralDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <VirtualCommunitySection />
     <OutlineSection />
     <AislePlannerSection />
     <TestimonialSection id="TE-0008" courseCodes={courseCodes} />

@@ -20,6 +20,7 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
@@ -125,6 +126,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <VirtualCommunitySection />
     <OutlineSection />
     <TestimonialSection id="TE-0013" courseCodes={courseCodes} />
     <Suspense>
