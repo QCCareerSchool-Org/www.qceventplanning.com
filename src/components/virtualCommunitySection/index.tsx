@@ -4,8 +4,12 @@ import type { FC } from 'react';
 import DesktopImage from './desktop.jpg';
 import MobileImage from './mobile.jpg';
 
-export const VirtualCommunitySection: FC = () => (
-  <section className="pb-0">
+type Props = {
+  className?: string;
+};
+
+export const VirtualCommunitySection: FC<Props> = ({ className }) => (
+  <section className={`pb-0 ${className}`}>
     <div className="container text-center">
       <div className="row justify-content-center">
         <div className="col-12 col-lg-10">

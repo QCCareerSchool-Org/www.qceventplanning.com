@@ -126,7 +126,7 @@ const FloralDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection />
+    <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <AislePlannerSection />
     <TestimonialSection id="TE-0008" courseCodes={courseCodes} />

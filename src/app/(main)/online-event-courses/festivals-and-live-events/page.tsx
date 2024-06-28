@@ -126,7 +126,7 @@ const EventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection />
+    <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <TestimonialSection id="TE-0013" courseCodes={courseCodes} />
     <Suspense>

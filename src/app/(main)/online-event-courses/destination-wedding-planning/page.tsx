@@ -109,7 +109,7 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection />
+    <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <AislePlannerSection />
     <TestimonialSection id="TE-0014" courseCodes={courseCodes} />

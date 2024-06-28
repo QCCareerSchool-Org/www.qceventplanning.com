@@ -88,7 +88,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection />
+    <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <TestimonialSection id="TE-0006" courseCodes={courseCodes} />
     <Suspense>
