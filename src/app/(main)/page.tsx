@@ -28,6 +28,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { PaymentSectionGuarantee } from '@/components/paymentPlanSection/guarantee';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
 
 export const metadata: Metadata = {
@@ -230,6 +231,7 @@ const HomePage: PageComponent = () => {
           </div>
         </div>
       </section>
+      <VirtualCommunitySection />
       <AislePlannerSection />
       <TestimonialSection id="TE-0006" />
       <GetStartedSection
