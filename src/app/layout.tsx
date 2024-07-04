@@ -6,6 +6,7 @@ import type { LayoutComponent } from './serverComponent';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { Provider } from '@/providers';
 import { Bing } from '@/scripts/bing';
+import { Brevo } from '@/scripts/brevo';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
@@ -27,6 +28,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} />}
         {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
+        {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
       </head>
       <body className="d-flex flex-column h-100">
         <Provider>
