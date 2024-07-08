@@ -42,7 +42,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
       </body>
-      <Suspense><LayoutClient /></Suspense>
+      <LayoutClient />
     </html>
   );
 };
