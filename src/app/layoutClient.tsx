@@ -1,11 +1,29 @@
 'use client';
 
+import { usePathname, useSearchParams } from 'next/navigation';
 import type { FC } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { useRouteChange } from '@/hooks/useRouteChange';
+import { brevoPageview } from '@/lib/brevo';
 
 export const LayoutClient: FC = () => {
-  useRouteChange();
+  const countRef = useRef(0);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (countRef.current > 0) { // don't run the first time because it's already tracked
+      if (pathname) {
+        let url = `https://www.qceventplanning.com${pathname}`;
+        if (searchParams?.toString().length) {
+          url += `?${searchParams?.toString()}`;
+        }
+        const title = document.title;
+        brevoPageview(title, url, pathname);
+      }
+    }
+    countRef.current++;
+  }, [ pathname, searchParams ]);
 
   return null;
 };
