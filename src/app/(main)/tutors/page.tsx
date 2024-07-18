@@ -69,7 +69,7 @@ const tutors = [
   },
   {
     name: 'Heather Hawes',
-    text: 'An event & wedding planner with over 20 years in event management, Heather has produced a vast array of events in her diverse career, including hosting First Lady Michele Obama at Spelman\'s Commencement.',
+    text: 'An event & wedding planner with over 20 years in event management, Heather has produced a vast array of events in her diverse career, including hosting First Lady Michelle Obama at Spelman\'s Commencement.',
     src: HeatherHawesImage,
   },
   {
