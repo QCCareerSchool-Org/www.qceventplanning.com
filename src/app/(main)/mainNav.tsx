@@ -25,7 +25,7 @@ export const MainNav: FC = () => {
   return (
     <Navbar key={key} expand="lg" collapseOnSelect={true} fixed="top" className={`${styles.mainNav} ${scrollPosition > 1 ? styles.scrolled : undefined} bg-white`}>
       <div className="container">
-        <Link className="navbar-brand" href="/" aria-label="Go back to the home page">
+        <Link className="navbar-brand" href="/" aria-label="Home page">
           <div id="navLogo" className="d-none d-sm-block">
             <Logo height={20} />
           </div>
