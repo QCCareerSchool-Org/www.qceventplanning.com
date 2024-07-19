@@ -18,7 +18,7 @@ export const Header: FC<Props> = ({ logoLink, buttonHref = '#', buttonContent, b
       <div className="container">
         <div className={styles.content}>
           {logoLink
-            ? <Link href="/"><Logo height={20} /></Link>
+            ? <Link href="/" aria-label="Home page"><Logo height={20} /></Link>
             : <Logo height={20} />
           }
           {buttonContent && (
