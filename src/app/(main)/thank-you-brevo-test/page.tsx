@@ -1,5 +1,5 @@
 import { headers } from 'next/headers';
-import { Processing } from '../thank-you-course-catalog/processing';
+import { LeadProcessing } from '../../../components/leadProcessing';
 import type { PageComponent } from '@/app/serverComponent';
 import { getClientIp } from '@/lib/getClientIp';
 import { getParam } from '@/lib/getParam';
@@ -15,7 +15,7 @@ const ThankYouBrevoTestPage: PageComponent = ({ searchParams }) => {
 
   return (
     <>
-      <Processing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} leadId={leadId} />
+      <LeadProcessing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} leadId={leadId} />
       <section>
         <div className="container">
           <h1>

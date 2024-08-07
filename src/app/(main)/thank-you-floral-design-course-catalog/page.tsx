@@ -3,10 +3,10 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { LeadProcessing } from '../../../components/leadProcessing';
 import CatalogImage from '../cover-book.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
+import { LeadProcessing } from '@/components/leadProcessing';
 import { Logo } from '@/components/logo';
 import { getParam } from '@/lib/getParam';
 
