@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { postLead } from '@/lib/facebookConversionAPI';
+import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getIPAddress } from '@/lib/getIpAddress';
 import { addLead } from '@/lib/leads';
 
@@ -51,7 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       try {
         const response = await addLead(payload);
         params.push(`leadId=${response.leadId}`);
-        await postLead(response.leadId, new Date(), emailAddress, firstName ?? undefined, lastName ?? undefined, countryCode ?? undefined, undefined, clientIpAddress, clientUserAgent, fbc, fbp);
+        await fbPostLead(response.leadId, new Date(), emailAddress, firstName ?? undefined, lastName ?? undefined, countryCode ?? undefined, undefined, clientIpAddress, clientUserAgent, fbc, fbp);
       } catch (err) {
         console.error(err);
       }

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { postPurchase } from '@/lib/facebookConversionAPI';
+import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
 import { getIPAddress } from '@/lib/getIpAddress';
 
@@ -28,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const enrollment = await getEnrollment(id, code);
-    const response = await postPurchase(enrollment, referrer, clientIpAddress, clientUserAgent, fbc, fbp);
+    const response = await fbPostPurchase(enrollment, referrer, clientIpAddress, clientUserAgent, fbc, fbp);
     res.send(response);
   } catch (err) {
     if (err instanceof Error) {
