@@ -2,6 +2,7 @@ declare global {
   interface Window {
     sendinblue?: {
       page: (...args: unknown[]) => void;
+      identify: (emailAddress: string) => void;
     };
   }
 }
@@ -13,4 +14,8 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
     ma_url: url, // eslint-disable-line camelcase
     ma_path: path, // eslint-disable-line camelcase
   });
+};
+
+export const brevoIdentify = (emailAddress: string): void => {
+  window.sendinblue?.identify(emailAddress);
 };

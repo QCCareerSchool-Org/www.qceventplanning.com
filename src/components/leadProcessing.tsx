@@ -3,6 +3,7 @@
 import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
+import { brevoIdentify } from '@/lib/brevo';
 import { fbqLead } from '@/lib/fbq';
 import { gaEvent, gaUserData } from '@/lib/gtag';
 import { trustPulseLead } from '@/lib/trustpulse';
@@ -36,6 +37,7 @@ export const LeadProcessing: FC<Props> = props => {
       postalCode: null,
       ipAddress: props.ipAddress ?? null,
     });
+    brevoIdentify(props.emailAddress);
   }, [ props.emailAddress, props.firstName, props.ipAddress, props.leadId, props.conversionId ]);
 
   return null;
