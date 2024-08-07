@@ -129,6 +129,7 @@ const createBrevoContact = async (emailAddress: string, firstName?: string, last
       FIRSTNAME: firstName,
       LASTNAME: lastName,
       COUNTRY_CODE: countryCode?.toLocaleUpperCase(),
+      STATUS_EVENT_LEAD: true,
     },
   });
 
