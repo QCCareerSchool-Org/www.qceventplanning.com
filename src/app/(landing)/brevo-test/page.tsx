@@ -43,7 +43,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
                   <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation="http://localhost:3001/thank-you-brevo-test"
+                      successLocation="http://www.qceventplanning.com/thank-you-brevo-test"
                       listId={2}
                       countryCode={countryCode}
                       provinceCode={provinceCode}
