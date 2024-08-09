@@ -40,7 +40,7 @@ export const LeadProcessing: FC<Props> = props => {
       postalCode: null,
       ipAddress: props.ipAddress ?? null,
     });
-    brevoIdentify(props.emailAddress, props.countryCode, props.firstName, props.lastName);
+    brevoIdentify(props.emailAddress, props.countryCode, props.postalCode, props.firstName, props.lastName);
   }, [ props.emailAddress, props.countryCode, props.firstName, props.lastName, props.ipAddress, props.leadId, props.conversionId ]);
 
   return null;

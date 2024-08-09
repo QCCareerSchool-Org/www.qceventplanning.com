@@ -2,6 +2,7 @@ interface Properties {
   FIRSTNAME?: string;
   LASTNAME?: string;
   COUNTRY_CODE?: string;
+  PROVINCE_CODE?: string;
   STATUS_EVENT_LEAD: true;
 }
 
@@ -23,11 +24,12 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
   });
 };
 
-export const brevoIdentify = (emailAddress: string, countryCode: string, firstName?: string, lastName?: string): void => {
+export const brevoIdentify = (emailAddress: string, countryCode: string, provinceCode: string | null, firstName?: string, lastName?: string): void => {
   window.sendinblue?.identify(emailAddress, {
     FIRSTNAME: firstName,
     LASTNAME: lastName,
     COUNTRY_CODE: countryCode,
+    PROVINCE_CODE: provinceCode ?? '',
     STATUS_EVENT_LEAD: true,
   });
 };
