@@ -10,7 +10,10 @@ import { trustPulseLead } from '@/lib/trustpulse';
 
 type Props = {
   emailAddress?: string;
+  countryCode: string;
+  provinceCode: string | null;
   firstName?: string;
+  lastName?: string;
   ipAddress?: string;
   leadId?: string;
   conversionId: string;
@@ -37,8 +40,8 @@ export const LeadProcessing: FC<Props> = props => {
       postalCode: null,
       ipAddress: props.ipAddress ?? null,
     });
-    brevoIdentify(props.emailAddress);
-  }, [ props.emailAddress, props.firstName, props.ipAddress, props.leadId, props.conversionId ]);
+    brevoIdentify(props.emailAddress, props.countryCode, props.firstName, props.lastName);
+  }, [ props.emailAddress, props.countryCode, props.firstName, props.lastName, props.ipAddress, props.leadId, props.conversionId ]);
 
   return null;
 };

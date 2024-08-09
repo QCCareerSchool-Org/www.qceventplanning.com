@@ -8,6 +8,7 @@ import CatalogImage from '../cover-book.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { Logo } from '@/components/logo';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -15,15 +16,26 @@ export const metadata: Metadata = {
 };
 
 const ThankYouCourseCatalogPage: PageComponent = ({ searchParams }) => {
+  const { countryCode, provinceCode } = getData();
   const headerList = headers();
   const firstName = getParam(searchParams.firstName);
+  const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
   const leadId = getParam(searchParams.leadId);
 
   return (
     <>
-      <LeadProcessing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} leadId={leadId} conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM" />
+      <LeadProcessing
+        emailAddress={emailAddress}
+        countryCode={countryCode}
+        provinceCode={provinceCode}
+        firstName={firstName}
+        lastName={lastName}
+        ipAddress={ipAddress}
+        leadId={leadId}
+        conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
+      />
       <section className="p-0" />
       <section>
         <div className="container">

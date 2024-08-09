@@ -1,8 +1,15 @@
+interface Properties {
+  FIRSTNAME?: string;
+  LASTNAME?: string;
+  COUNTRY_CODE?: string;
+  STATUS_EVENT_LEAD: true;
+}
+
 declare global {
   interface Window {
     sendinblue?: {
       page: (...args: unknown[]) => void;
-      identify: (emailAddress: string) => void;
+      identify: (emailAddress: string, properties: Properties) => void;
     };
   }
 }
@@ -16,6 +23,11 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
   });
 };
 
-export const brevoIdentify = (emailAddress: string): void => {
-  window.sendinblue?.identify(emailAddress);
+export const brevoIdentify = (emailAddress: string, countryCode: string, firstName?: string, lastName?: string): void => {
+  window.sendinblue?.identify(emailAddress, {
+    FIRSTNAME: firstName,
+    LASTNAME: lastName,
+    COUNTRY_CODE: countryCode,
+    STATUS_EVENT_LEAD: true,
+  });
 };
