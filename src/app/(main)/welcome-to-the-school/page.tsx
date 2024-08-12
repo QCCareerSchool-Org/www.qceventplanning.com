@@ -6,8 +6,11 @@ import { Processing } from './processing';
 import type { PageComponent } from '@/app/serverComponent';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
 import { TelephoneLink } from '@/components/telephoneLink';
+import { createBrevoContact } from '@/lib/brevoAPI';
 import { getEnrollment } from '@/lib/fetch';
 import { getParam } from '@/lib/getParam';
+
+const brevoStudentListId = 14;
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
   const enrollmentIdParam = getParam(searchParams.enrollmentId);
@@ -30,6 +33,13 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
 
   const headerList = headers();
   const ipAddress = headerList.get('x-real-ip');
+
+  // create Brevo contact
+  try {
+    await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_EVENT_STUDENT: true }, [ brevoStudentListId ]);
+  } catch (err) {
+    console.error(err);
+  }
 
   return (
     <>

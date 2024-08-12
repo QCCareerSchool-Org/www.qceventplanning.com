@@ -4,6 +4,7 @@ import { type FC, useEffect } from 'react';
 
 import type { Enrollment } from '@/domain/enrollment';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
+import { brevoIdentify } from '@/lib/brevo';
 import { fbqSale } from '@/lib/fbq';
 import { gaSale } from '@/lib/gtag';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
@@ -37,6 +38,7 @@ export const Processing: FC<Props> = ({ enrollment, code, ipAddress }) => {
         console.log(responseBody);
       }).catch(console.error);
     }
+    brevoIdentify(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode, enrollment.firstName, enrollment.lastName);
   }, [ enrollment, code, ipAddress ]);
   return null;
 };
