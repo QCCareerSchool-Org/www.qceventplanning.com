@@ -32,8 +32,9 @@ export const createBrevoContact = async (emailAddress: string, firstName?: strin
     (body.attributes as Record<string, unknown>).COUNTRY_CODE = countryCode.toLocaleUpperCase();
   }
   if (typeof provinceCode !== 'undefined') {
-    (body.attributes as Record<string, unknown>).PROVINCE_CODE = provinceCode?.toLocaleUpperCase();
+    (body.attributes as Record<string, unknown>).PROVINCE_CODE = provinceCode === null ? '' : provinceCode.toLocaleUpperCase();
   }
+  console.log(body);
 
   const createContactResult = await contactsApi.createContact(body);
 

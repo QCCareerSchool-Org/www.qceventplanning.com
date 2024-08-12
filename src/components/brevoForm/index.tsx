@@ -1,6 +1,6 @@
 'use client';
 
-import type { ChangeEventHandler, FC } from 'react';
+import type { ChangeEventHandler, FC, ReactElement } from 'react';
 import { useCallback, useId, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 
@@ -10,6 +10,7 @@ import DownloadIcon from '@/components/download.svg';
 type Props = {
   successLocation: string;
   listId: number;
+  emailTemplateId?: number;
   countryCode: string;
   provinceCode: string | null;
   buttonText?: string;
@@ -22,6 +23,7 @@ type Props = {
   utmCampaign?: string;
   utmContent?: string;
   utmTerm?: string;
+  button?: ReactElement;
 };
 
 export const BrevoForm: FC<Props> = props => {
@@ -55,6 +57,7 @@ export const BrevoForm: FC<Props> = props => {
       <input type="hidden" name="listId" value={props.listId} />
       <input type="hidden" name="countryCode" value={props.countryCode} />
       <input type="hidden" name="provinceCode" value={props.provinceCode ?? ''} />
+      {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
       {props.utmSource && <input type="hidden" name="utmSource" value={props.utmSource} />}
@@ -79,7 +82,12 @@ export const BrevoForm: FC<Props> = props => {
           </label>
         </div>
       </div>
-      <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+      {props.button
+        ? <>{props.button}</>
+        : (
+          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+        )
+      }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
     </form>
   );

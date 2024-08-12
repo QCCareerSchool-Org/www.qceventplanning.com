@@ -1,22 +1,31 @@
 import Image from 'next/image';
 import type { FC } from 'react';
-import { useId } from 'react';
 
 import HeroLgImage from './hero-large-2.jpg';
 import HeroSmImage from './hero-small-2.jpg';
 import ChartIcon from './icon-chart.svg';
 import styles from './index.module.scss';
+import { BrevoForm } from '@/components/brevoForm';
 import CheckIcon from '@/components/check.svg';
 import { getData } from '@/lib/getData';
 
 type Props = {
-  extraFields?: boolean;
+  countryCode: string;
+  provinceCode: string | null;
+  gclid?: string;
+  msclkid?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
 };
 
-export const HeroSection: FC<Props> = ({ extraFields }) => {
-  const id = useId();
+const brevoListId = 10;
+const brevoEmailTemplateId = 35;
 
-  const { testGroup, countryCode, provinceCode } = getData();
+export const HeroSection: FC<Props> = props => {
+  const { countryCode, provinceCode } = getData();
 
   return (
     <section style={{ backgroundColor: '#e3dfda' }}>
@@ -31,40 +40,27 @@ export const HeroSection: FC<Props> = ({ extraFields }) => {
                 <p className={`lead text-primary fw-bold text-uppercase mb-1 d-none d-md-block`}>Free Webinar <span style={{ position: 'relative', top: -2 }}><ChartIcon height={18} /></span></p>
                 <h1 className={`h4 ${styles.cardHeader} mb-3 mb-md-2`}>Ready to Launch Your Event Planning Career?</h1>
                 <p className="d-none d-md-block">Get insider tips from QC's renowned event planning expert, Lisa Forbes.</p>
-                <form action="https://go.qccareerschool.com/l/947642/2024-06-03/wxvtv">
-                  <input type="hidden" name="school" value="QC Event Planning" />
-                  <input type="hidden" name="testGroup" value={testGroup} />
-                  <input type="hidden" name="countryCode" value={countryCode} />
-                  <input type="hidden" name="provinceCode" value={provinceCode ?? ''} />
-                  <div className="mb-3">
-                    <input type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder="Name" />
-                  </div>
-                  <div className="mb-3">
-                    <input type="email" name="emailAddress" id={`${id}emailAddress`} className="form-control" placeholder="Email *" required />
-                  </div>
-                  {extraFields
-                    ? (
-                      <div className="mb-3">
-                        <select name="interests" id={`${id}interests`} className="form-control">
-                          <option value="" selected>Why do you want to attend the webinar?</option>
-                          <option value="Career">I'm exploring a career in the event industry</option>
-                          <option value="Business">I want to start a business in event planning</option>
-                        </select>
-                      </div>
-                    )
-                    : <input type="hidden" name="webinarQuestionNone" value="1" />
-                  }
-                  <div className="mb-3">
-                    <div className="form-check">
-                      <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" value="Yes" />
-                      <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
-                        I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions, </span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
-                      </label>
-                    </div>
-                  </div>
-                  <button className="btn btn-primary d-md-none" style={{ paddingLeft: '1rem', paddingRight: '1.25rem' }}><span className="text-navy"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
-                  <button className="btn btn-navy d-none d-md-block" style={{ paddingLeft: '1rem', paddingRight: '1.25rem' }}><span className="text-primary"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
-                </form>
+                <BrevoForm
+                  successLocation={`${process.env.domain}/free-event-planning-webinar/thank-you`}
+                  listId={brevoListId}
+                  emailTemplateId={brevoEmailTemplateId}
+                  countryCode={countryCode}
+                  provinceCode={provinceCode}
+                  gclid={props.gclid}
+                  msclkid={props.msclkid}
+                  utmSource={props.utmSource}
+                  utmMedium={props.utmMedium}
+                  utmCampaign={props.utmCampaign}
+                  utmContent={props.utmContent}
+                  utmTerm={props.utmTerm}
+                  placeholders
+                  button={(
+                    <>
+                      <button className="btn btn-primary d-md-none" style={{ paddingLeft: '1rem', paddingRight: '1.25rem' }}><span className="text-navy"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
+                      <button className="btn btn-navy d-none d-md-block" style={{ paddingLeft: '1rem', paddingRight: '1.25rem' }}><span className="text-primary"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
+                    </>
+                  )}
+                />
               </div>
             </div>
           </div>

@@ -9,18 +9,30 @@ import { IndustrySection } from './industrySection';
 import { JoinQCSection } from './joinQCSection';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
-import { BrochureForm } from '@/components/brochureForm';
+import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getData } from '@/lib/getData';
+import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Catalog - QC Event School',
 };
 
-const FreeCatalogPage: PageComponent = () => {
-  const { testGroup, countryCode, provinceCode } = getData();
+const brevoListId = 2;
+const brevoEmailTemplateId = 32;
+
+const FreeCatalogPage: PageComponent = ({ searchParams }) => {
+  const { countryCode, provinceCode } = getData();
+  const gclid = getParam(searchParams.gclid);
+  const msclkid = getParam(searchParams.msclkid);
+  const utmSource = getParam(searchParams.utm_source);
+  const utmMedium = getParam(searchParams.utm_medium);
+  const utmCampaign = getParam(searchParams.utm_campaign);
+  const utmContent = getParam(searchParams.utm_content);
+  const utmTerm = getParam(searchParams.utm_term);
+
   return (
     <div className={`${styles.freeCatalog}`}>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
@@ -33,11 +45,19 @@ const FreeCatalogPage: PageComponent = () => {
                 <div className="card-body">
                   <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
                   <div className={styles.formWrapper}>
-                    <BrochureForm
-                      action="https://captcha.qccareerschool.com/59004cd4-947c-11ee-847e-bc764e017ab0"
-                      testGroup={testGroup}
+                    <BrevoForm
+                      successLocation={`${process.env.domain}/thank-you-brevo-test`}
+                      listId={brevoListId}
+                      emailTemplateId={brevoEmailTemplateId}
                       countryCode={countryCode}
                       provinceCode={provinceCode}
+                      gclid={gclid}
+                      msclkid={msclkid}
+                      utmSource={utmSource}
+                      utmMedium={utmMedium}
+                      utmCampaign={utmCampaign}
+                      utmContent={utmContent}
+                      utmTerm={utmTerm}
                       placeholders
                     />
                   </div>

@@ -17,6 +17,7 @@ const schema = zfd.formData({
   countryCode: zfd.text(z.string().length(2)),
   provinceCode: zfd.text(z.string().length(2).optional()),
   successLocation: zfd.text(z.string().regex(/^http(s?):\/\//ui)),
+  emailTemplateId: zfd.numeric(z.number().optional()),
   listId: zfd.numeric(z.number().multipleOf(1)),
   gclid: zfd.text(z.string().optional()),
   msclkid: zfd.text(z.string().optional()),
@@ -26,8 +27,6 @@ const schema = zfd.formData({
   utmContent: zfd.text(z.string().optional()),
   utmTerm: zfd.text(z.string().optional()),
 });
-
-const brevoTemplateId = 7;
 
 export const POST = async (request: NextRequest): Promise<Response> => {
   const forwardedFor = request.headers.get('x-forwarded-for') ?? undefined;
@@ -53,7 +52,7 @@ export const POST = async (request: NextRequest): Promise<Response> => {
     }
 
     // create Brevo contact
-    const createContactResult = await createBrevoContact(body.emailAddress, body.firstName, body.lastName, body.countryCode, body.provinceCode, { STATUS_EVENT_LEAD: true }, body.emailOptIn ? [ body.listId ] : undefined);
+    const createContactResult = await createBrevoContact(body.emailAddress, body.firstName, body.lastName, body.countryCode, body.provinceCode ?? '', { STATUS_EVENT_LEAD: true }, body.emailOptIn ? [ body.listId ] : undefined);
     if (!createContactResult) {
       throw Error('Unable to create contact');
     }
@@ -92,11 +91,13 @@ export const POST = async (request: NextRequest): Promise<Response> => {
       console.error(err);
     }
 
-    // trigger Brevo M1 email
-    try {
-      await sendBrevoEmail(brevoTemplateId, body.emailAddress, body.firstName, body.lastName);
-    } catch (err) {
-      console.error(err);
+    // send email
+    if (typeof body.emailTemplateId !== 'undefined') {
+      try {
+        await sendBrevoEmail(body.emailTemplateId, body.emailAddress, body.firstName, body.lastName);
+      } catch (err) {
+        console.error(err);
+      }
     }
 
     // redirect to success page
