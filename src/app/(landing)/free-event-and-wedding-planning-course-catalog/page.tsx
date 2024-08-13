@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 
 import Link from 'next/link';
 import { BottomSection } from '../bottomSection';
+import { AboutSection } from '../free-catalog//aboutSection';
+import { CertificationSection } from '../free-catalog//certificationSection';
+import { IndustrySection } from '../free-catalog//industrySection';
+import { JoinQCSection } from '../free-catalog//joinQCSection';
 import { Header } from '../header';
-import { AboutSection } from './aboutSection';
-import { CertificationSection } from './certificationSection';
-import { IndustrySection } from './industrySection';
-import { JoinQCSection } from './joinQCSection';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
@@ -17,13 +17,13 @@ import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Course Catalog - QC Event School',
+  title: 'Free Event & Wedding Planning Course Catalog - QC Event School',
 };
 
 const brevoListId = 2;
 const brevoEmailTemplateId = 32;
 
-const FreeCatalogPage: PageComponent = ({ searchParams }) => {
+const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams }) => {
   const { countryCode, provinceCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -80,4 +80,4 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
   );
 };
 
-export default FreeCatalogPage;
+export default FreeEventAndWeddingPlanningCatalogPage;

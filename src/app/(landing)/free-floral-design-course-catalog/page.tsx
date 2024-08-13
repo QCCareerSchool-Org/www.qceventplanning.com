@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 
 import Link from 'next/link';
 import { BottomSection } from '../bottomSection';
+import { CertificationSection } from '../free-catalog//certificationSection';
+import { IndustrySection } from '../free-catalog//industrySection';
+import { JoinQCSection } from '../free-catalog//joinQCSection';
+import { AboutSection } from '../free-catalog/aboutSection';
 import { Header } from '../header';
-import { AboutSection } from './aboutSection';
-import { CertificationSection } from './certificationSection';
-import { IndustrySection } from './industrySection';
-import { JoinQCSection } from './joinQCSection';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
@@ -17,13 +17,13 @@ import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Course Catalog - QC Event School',
+  title: 'Free Floral Design Course Catalog - QC Event School',
 };
 
-const brevoListId = 2;
+const brevoListId = 12;
 const brevoEmailTemplateId = 32;
 
-const FreeCatalogPage: PageComponent = ({ searchParams }) => {
+const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
   const { countryCode, provinceCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -43,7 +43,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
               <div className={`card bg-light ${styles.card}`}>
                 <div className="card-body">
-                  <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
+                  <h1 className="h3 mb-3 text-navy">Get a Free Floral Design Course Catalog</h1>
                   <div className={styles.formWrapper}>
                     <BrevoForm
                       successLocation={`${process.env.DOMAIN}/thank-you-course-catalog`}
@@ -70,7 +70,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
       <IndustrySection />
       <JoinQCSection />
       <TestimonialSection id="TE-0006" />
-      <CertificationSection />
+      <CertificationSection courseCode="fd" />
       <AboutSection />
       <BottomSection>
         <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
@@ -80,4 +80,4 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
   );
 };
 
-export default FreeCatalogPage;
+export default FreeFloralDesignCatalogPage;
