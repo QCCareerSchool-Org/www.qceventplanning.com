@@ -2,6 +2,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 
 import { Animation } from './animation';
+import BackgroundFDImage from './background-fd.jpg';
 import BackgroundImage from './background.jpg';
 import styles from './index.module.scss';
 import IEWPCertification from '@/components/certifications/iewp.svg';
@@ -14,7 +15,7 @@ type Props = {
 
 export const CertificationSection: FC<Props> = ({ courseCode }) => (
   <section className={`bg-dark text-white ${styles.certificationSection}`}>
-    <Image src={BackgroundImage} alt="" fill placeholder="blur" style={{ objectFit: 'cover' }} />
+    <Image src={courseCode === 'fd' ? BackgroundFDImage : BackgroundImage} alt="" fill placeholder="blur" style={{ objectFit: 'cover' }} />
     <div className="container">
       <div className="row justify-content-center g-s">
         <div className="col-6 col-sm-5 col-md-4 col-lg-4 col-xxl-3">
@@ -35,7 +36,6 @@ export const CertificationSection: FC<Props> = ({ courseCode }) => (
                   <li>Work for an existing florist</li>
                   <li>Specialize in wedding and event florals</li>
                 </ul>
-
               </>
             )
             : (
