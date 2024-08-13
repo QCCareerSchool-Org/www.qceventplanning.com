@@ -84,7 +84,7 @@ export const POST = async (request: NextRequest): Promise<Response> => {
       courses: undefined,
     };
     try {
-      const response = await addLead(payload, clientIpAddress ?? undefined);
+      const response = await addLead(payload, { ipAddress: clientIpAddress, userAgent: clientUserAgent });
       params.set('leadId', response.leadId);
       await fbPostLead(response.leadId, new Date(), body.emailAddress, body.firstName, body.lastName, body.countryCode, undefined, clientIpAddress ?? undefined, clientUserAgent ?? undefined, fbc, fbp);
     } catch (err) {

@@ -21,7 +21,12 @@ export type LeadPayload = {
   courses?: string[];
 };
 
-export const addLead = async (payload: LeadPayload, clientIp?: string): Promise<AddLeadResponse> => {
+type ClientData = {
+  ipAddress: string | null;
+  userAgent: string | null;
+};
+
+export const addLead = async (payload: LeadPayload, clientData?: ClientData): Promise<AddLeadResponse> => {
   const url = 'https://leads.qccareerschool.com/';
 
   if (payload.marketing && !(payload.marketing.source ?? payload.marketing.medium ?? payload.marketing.campaign ?? payload.marketing.content ?? payload.marketing.term)) {
@@ -35,8 +40,11 @@ export const addLead = async (payload: LeadPayload, clientIp?: string): Promise<
   }
 
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-  if (clientIp) {
-    headers['X-Forwarded-For'] = clientIp;
+  if (clientData?.ipAddress) {
+    headers['X-Forwarded-For'] = clientData.ipAddress;
+  }
+  if (clientData?.userAgent) {
+    headers['user-agent'] = clientData.userAgent;
   }
 
   const response = await fetch(url, {
