@@ -21,7 +21,7 @@ export type LeadPayload = {
   courses?: string[];
 };
 
-export const addLead = async (payload: LeadPayload): Promise<AddLeadResponse> => {
+export const addLead = async (payload: LeadPayload, clientIp?: string): Promise<AddLeadResponse> => {
   const url = 'https://leads.qccareerschool.com/';
 
   if (payload.marketing && !(payload.marketing.source ?? payload.marketing.medium ?? payload.marketing.campaign ?? payload.marketing.content ?? payload.marketing.term)) {
@@ -34,9 +34,14 @@ export const addLead = async (payload: LeadPayload): Promise<AddLeadResponse> =>
     payload.courses = undefined;
   }
 
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  if (clientIp) {
+    headers['X-Forwarded-For'] = clientIp;
+  }
+
   const response = await fetch(url, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify(payload),
   });
   if (!response.ok) {
