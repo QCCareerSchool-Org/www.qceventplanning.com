@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 const brevoListId = 12;
-const brevoEmailTemplateId = 32;
+const brevoEmailTemplateId = 37;
 
 const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
   const { countryCode, provinceCode } = getData();
