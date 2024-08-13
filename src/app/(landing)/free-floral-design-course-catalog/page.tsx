@@ -13,6 +13,7 @@ import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { TestimonialSection } from '@/components/testimonialSection';
+import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 12;
 const brevoEmailTemplateId = 37;
+const courseCodes: CourseCode[] = [ 'fd' ];
 
 const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
   const { countryCode, provinceCode } = getData();
@@ -58,6 +60,7 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
                       utmCampaign={utmCampaign}
                       utmContent={utmContent}
                       utmTerm={utmTerm}
+                      courseCodes={courseCodes}
                       placeholders
                     />
                   </div>

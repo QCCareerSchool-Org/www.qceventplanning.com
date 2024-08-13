@@ -26,6 +26,7 @@ const schema = zfd.formData({
   utmCampaign: zfd.text(z.string().optional()),
   utmContent: zfd.text(z.string().optional()),
   utmTerm: zfd.text(z.string().optional()),
+  courseCodes: zfd.repeatableOfType(z.string()).optional(),
 });
 
 export const POST = async (request: NextRequest): Promise<Response> => {
@@ -81,7 +82,7 @@ export const POST = async (request: NextRequest): Promise<Response> => {
       gclid: body.gclid ?? null,
       msclkid: body.msclkid ?? null,
       marketing,
-      courses: undefined,
+      courses: body.courseCodes,
     };
     try {
       const response = await addLead(payload, { ipAddress: clientIpAddress, userAgent: clientUserAgent });

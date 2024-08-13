@@ -23,6 +23,7 @@ type Props = {
   utmCampaign?: string;
   utmContent?: string;
   utmTerm?: string;
+  courseCodes?: string[];
   button?: ReactElement;
 };
 
@@ -57,6 +58,7 @@ export const BrevoForm: FC<Props> = props => {
       <input type="hidden" name="listId" value={props.listId} />
       <input type="hidden" name="countryCode" value={props.countryCode} />
       <input type="hidden" name="provinceCode" value={props.provinceCode ?? ''} />
+      {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
