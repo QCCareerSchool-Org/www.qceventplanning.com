@@ -46,7 +46,7 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
                   <h1 className="h3 mb-3 text-navy">Get a Free Floral Design Course Catalog</h1>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation={`${process.env.DOMAIN}/thank-you-course-catalog`}
+                      successLocation={`${process.env.DOMAIN}/thank-you-floral-design-course-catalog`}
                       listId={brevoListId}
                       emailTemplateId={brevoEmailTemplateId}
                       countryCode={countryCode}
