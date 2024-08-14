@@ -70,17 +70,12 @@ export const POST = async (request: NextRequest): Promise<Response> => {
       : undefined;
     const payload: LeadPayload = {
       school: 'QC Event School',
-      testGroup: 1,
       emailAddress: body.emailAddress,
-      telephoneNumber: null,
-      firstName: body.firstName ?? null,
-      lastName: body.lastName ?? null,
-      emailOptIn: body.emailOptIn ?? null,
-      smsOptIn: null,
-      countryCode: body.countryCode,
-      provinceCode: body.provinceCode ?? null,
-      gclid: body.gclid ?? null,
-      msclkid: body.msclkid ?? null,
+      firstName: body.firstName,
+      lastName: body.lastName,
+      emailOptIn: body.emailOptIn ?? undefined,
+      gclid: body.gclid,
+      msclkid: body.msclkid,
       marketing,
       courses: body.courseCodes,
     };

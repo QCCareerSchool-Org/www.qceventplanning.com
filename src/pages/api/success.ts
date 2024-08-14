@@ -19,11 +19,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
     }
     const emailAddress = 'emailAddress' in body && typeof body.emailAddress === 'string' ? body.emailAddress : null;
-    const firstName = 'firstName' in body && typeof body.firstName === 'string' && body.firstName.length > 0 ? body.firstName : null;
-    const lastName = 'lastName' in body && typeof body.lastName === 'string' && body.lastName.length > 0 ? body.lastName : null;
-    const countryCode = 'countryCode' in body && typeof body.countryCode === 'string' && body.countryCode.length > 0 ? body.countryCode : null;
-    const testGroupString = 'testGroup' in body && typeof body.testGroup === 'string' && body.testGroup.length > 0 ? body.testGroup : null;
-    const testGroup = testGroupString === null ? null : parseInt(testGroupString, 10);
+    const firstName = 'firstName' in body && typeof body.firstName === 'string' && body.firstName.length > 0 ? body.firstName : undefined;
+    const lastName = 'lastName' in body && typeof body.lastName === 'string' && body.lastName.length > 0 ? body.lastName : undefined;
+    const countryCode = 'countryCode' in body && typeof body.countryCode === 'string' && body.countryCode.length > 0 ? body.countryCode : undefined;
     const marketing = 'marketing' in body && body.marketing !== null && typeof body.marketing === 'object' ? body.marketing : undefined;
     if (emailAddress) {
       const payload = {
@@ -31,14 +29,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         emailAddress,
         firstName,
         lastName,
-        telephoneNumber: 'telephoneNumber' in body && typeof body.telephoneNumber === 'string' && body.telephoneNumber.length > 0 ? body.telephoneNumber : null,
-        emailOptIn: 'emailOptIn' in body && typeof body.emailOptIn === 'string' ? body.emailOptIn.toUpperCase() === 'YES' : null,
-        smsOptIn: 'smsOptIn' in body && typeof body.smsOptIn === 'string' ? body.smsOptIn.toUpperCase() === 'YES' : null,
-        countryCode,
-        provinceCode: 'provinceCode' in body && typeof body.provinceCode === 'string' && body.provinceCode.length > 0 ? body.provinceCode : null,
-        testGroup: testGroup === null || isNaN(testGroup) ? null : testGroup,
-        gclid: 'gclid' in body && typeof body.gclid === 'string' && body.gclid.length > 0 ? body.gclid : null,
-        msclkid: 'msclkid' in body && typeof body.msclkid === 'string' && body.msclkid.length > 0 ? body.msclkid : null,
+        telephoneNumber: 'telephoneNumber' in body && typeof body.telephoneNumber === 'string' && body.telephoneNumber.length > 0 ? body.telephoneNumber : undefined,
+        emailOptIn: 'emailOptIn' in body && typeof body.emailOptIn === 'string' ? body.emailOptIn.toUpperCase() === 'YES' : undefined,
+        smsOptIn: 'smsOptIn' in body && typeof body.smsOptIn === 'string' ? body.smsOptIn.toUpperCase() === 'YES' : undefined,
+        gclid: 'gclid' in body && typeof body.gclid === 'string' && body.gclid.length > 0 ? body.gclid : undefined,
+        msclkid: 'msclkid' in body && typeof body.msclkid === 'string' && body.msclkid.length > 0 ? body.msclkid : undefined,
         marketing: marketing ? {
           source: 'source' in marketing && typeof marketing.source === 'string' && marketing.source.length > 0 ? marketing.source : null,
           medium: 'medium' in marketing && typeof marketing.medium === 'string' && marketing.medium.length > 0 ? marketing.medium : null,
@@ -47,11 +42,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           term: 'term' in marketing && typeof marketing.term === 'string' && marketing.term.length > 0 ? marketing.term : null,
         } : undefined,
         courses: 'courses' in body && Array.isArray(body.courses) && body.courses.every(c => typeof c === 'string') ? body.courses : undefined,
-      };
+      } as const;
       try {
         const response = await addLead(payload);
         params.push(`leadId=${response.leadId}`);
-        await fbPostLead(response.leadId, new Date(), emailAddress, firstName ?? undefined, lastName ?? undefined, countryCode ?? undefined, undefined, clientIpAddress, clientUserAgent, fbc, fbp);
+        await fbPostLead(response.leadId, new Date(), emailAddress, firstName, lastName, countryCode, undefined, clientIpAddress, clientUserAgent, fbc, fbp);
       } catch (err) {
         console.error(err);
       }

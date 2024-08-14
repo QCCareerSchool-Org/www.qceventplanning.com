@@ -7,7 +7,6 @@ import ChartIcon from './icon-chart.svg';
 import styles from './index.module.scss';
 import { BrevoForm } from '@/components/brevoForm';
 import CheckIcon from '@/components/check.svg';
-import { getData } from '@/lib/getData';
 
 type Props = {
   countryCode: string;
@@ -25,8 +24,6 @@ const brevoListId = 10;
 const brevoEmailTemplateId = 35;
 
 export const HeroSection: FC<Props> = props => {
-  const { countryCode, provinceCode } = getData();
-
   return (
     <section style={{ backgroundColor: '#e3dfda' }}>
       <Image src={HeroLgImage} alt="" priority fill placeholder="blur" className="d-none d-md-block" style={{ objectFit: 'cover', objectPosition: '0% 50%' }} />
@@ -44,8 +41,6 @@ export const HeroSection: FC<Props> = props => {
                   successLocation={`${process.env.DOMAIN}/free-event-planning-webinar/thank-you`}
                   listId={brevoListId}
                   emailTemplateId={brevoEmailTemplateId}
-                  countryCode={countryCode}
-                  provinceCode={provinceCode}
                   gclid={props.gclid}
                   msclkid={props.msclkid}
                   utmSource={props.utmSource}

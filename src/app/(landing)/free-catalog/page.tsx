@@ -13,7 +13,6 @@ import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { TestimonialSection } from '@/components/testimonialSection';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -24,7 +23,6 @@ const brevoListId = 2;
 const brevoEmailTemplateId = 32;
 
 const FreeCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode, provinceCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -49,8 +47,6 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
                       successLocation={`${process.env.DOMAIN}/thank-you-course-catalog`}
                       listId={brevoListId}
                       emailTemplateId={brevoEmailTemplateId}
-                      countryCode={countryCode}
-                      provinceCode={provinceCode}
                       gclid={gclid}
                       msclkid={msclkid}
                       utmSource={utmSource}

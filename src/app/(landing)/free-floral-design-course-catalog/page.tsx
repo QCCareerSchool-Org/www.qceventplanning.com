@@ -14,7 +14,6 @@ import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { TestimonialSection } from '@/components/testimonialSection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -26,7 +25,6 @@ const brevoEmailTemplateId = 37;
 const courseCodes: CourseCode[] = [ 'fd' ];
 
 const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode, provinceCode } = getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -51,8 +49,6 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
                       successLocation={`${process.env.DOMAIN}/thank-you-floral-design-course-catalog`}
                       listId={brevoListId}
                       emailTemplateId={brevoEmailTemplateId}
-                      countryCode={countryCode}
-                      provinceCode={provinceCode}
                       gclid={gclid}
                       msclkid={msclkid}
                       utmSource={utmSource}

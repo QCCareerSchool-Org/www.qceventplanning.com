@@ -11,8 +11,6 @@ type Props = {
   successLocation: string;
   listId: number;
   emailTemplateId?: number;
-  countryCode: string;
-  provinceCode: string | null;
   buttonText?: string;
   buttonClassName?: string;
   placeholders?: boolean;
@@ -52,12 +50,11 @@ export const BrevoForm: FC<Props> = props => {
   }, []);
 
   return (
-    <form action="/leads" method="post" className={styles.brochureForm}>
+    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm}>
       <input type="hidden" name="g-recaptcha-response" value={token} />
+      <input type="hidden" name="school" value="QC Event School" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
       <input type="hidden" name="listId" value={props.listId} />
-      <input type="hidden" name="countryCode" value={props.countryCode} />
-      <input type="hidden" name="provinceCode" value={props.provinceCode ?? ''} />
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
