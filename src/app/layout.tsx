@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import type { LayoutComponent } from './serverComponent';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
-import { getData } from '@/lib/getData';
 import { Provider } from '@/providers';
 import { Bing } from '@/scripts/bing';
 import { Brevo } from '@/scripts/brevo';
@@ -22,14 +21,12 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: LayoutComponent = ({ children }) => {
-  const { countryCode, provinceCode } = getData();
   return (
     <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`}>
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} />}
         {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
-        <script dangerouslySetInnerHTML={{ __html: `window.qc = window.qc || {};\nwindow.qc.countryCode = ${escapeNullableString(countryCode)};\nwindow.qc.provinceCode = ${escapeNullableString(provinceCode)};\n` }} />
       </head>
       <body className="d-flex flex-column h-100">
         <Provider>
@@ -48,10 +45,3 @@ const RootLayout: LayoutComponent = ({ children }) => {
 };
 
 export default RootLayout;
-
-const escapeNullableString = (str: string | null): string => {
-  if (str === null) {
-    return 'null';
-  }
-  return `\`${str.replace(/`/ug, '\\`')}\``;
-};
