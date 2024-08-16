@@ -17,7 +17,7 @@ export const FooterColumn3: FC<Props> = ({ countryCode }) => {
 
   const handleChatLinkClick: MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault();
-    window.LC_API?.open_chat_window();
+    window.LC_API?.open_chat_window?.();
   };
 
   useEffect(() => {
