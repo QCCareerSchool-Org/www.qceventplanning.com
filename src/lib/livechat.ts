@@ -3,7 +3,7 @@ export {};
 declare global {
   interface Window {
     LC_API?: {
-      open_chat_window: () => void;
+      open_chat_window?: () => void;
     };
   }
 }
