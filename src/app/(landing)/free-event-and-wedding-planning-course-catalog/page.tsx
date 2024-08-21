@@ -44,7 +44,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
                   <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation={`${process.env.DOMAIN}/thank-you-course-catalog`}
+                      successLocation={`${process.env.HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
                       listId={brevoListId}
                       emailTemplateId={brevoEmailTemplateId}
                       gclid={gclid}
