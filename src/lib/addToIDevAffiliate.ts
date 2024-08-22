@@ -1,3 +1,5 @@
+'server-only';
+
 import type { Enrollment } from '@/domain/enrollment';
 
 export const addToIDevAffiliate = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
@@ -12,5 +14,5 @@ export const addToIDevAffiliate = async (enrollment: Enrollment, ipAddress: stri
   if (!response.ok) {
     throw Error(response.statusText);
   }
-  await response.json();
+  await response.text();
 };
