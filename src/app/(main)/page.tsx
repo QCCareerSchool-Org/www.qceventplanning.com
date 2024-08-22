@@ -91,7 +91,7 @@ const HomePage: PageComponent = () => {
       <section className="bg-light">
         <div className="container">
           <div className="text-center">
-            <h2 className="mb-4">Our Foundation Courses</h2>
+            <h2 className="mb-4" id="foundation">Our Foundation Courses</h2>
             <p className="lead mb-5">Discover a wide range of foundation and specialty courses offered by our online event school.</p>
           </div>
           <div className="row justify-content-center g-4 mb-s">
@@ -165,7 +165,7 @@ const HomePage: PageComponent = () => {
           </div>
 
           <div className="text-center">
-            <h2 className="mb-5">Specialty Courses</h2>
+            <h2 className="mb-5" id="specialty">Specialty Courses</h2>
           </div>
           <div className="row justify-content-center g-4 mb-s">
             <div className="col-12 col-sm-10 col-md-6 d-flex">
