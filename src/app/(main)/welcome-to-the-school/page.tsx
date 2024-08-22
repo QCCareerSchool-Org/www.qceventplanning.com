@@ -1,6 +1,7 @@
 import { cookies, headers } from 'next/headers';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
+
 import AlexSignatureImage from './alex-myers.png';
 import { Processing } from './processing';
 import type { PageComponent } from '@/app/serverComponent';
