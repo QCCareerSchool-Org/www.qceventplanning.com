@@ -1,3 +1,5 @@
+'server-only';
+
 import type { Enrollment } from '@/domain/enrollment';
 
 export const addToIDevAffiliate = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
