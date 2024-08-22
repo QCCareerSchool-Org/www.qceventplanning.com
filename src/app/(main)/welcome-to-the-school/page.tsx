@@ -1,4 +1,4 @@
-import { headers } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import AlexSignatureImage from './alex-myers.png';
@@ -6,9 +6,13 @@ import { Processing } from './processing';
 import type { PageComponent } from '@/app/serverComponent';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
 import { TelephoneLink } from '@/components/telephoneLink';
+import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
+import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
 import { getParam } from '@/lib/getParam';
+import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
+import { trustPulseEnrollment } from '@/lib/trustpulse';
 
 const brevoStudentListId = 14;
 
@@ -33,12 +37,48 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
 
   const headerList = headers();
   const ipAddress = headerList.get('x-real-ip');
+  const userAgent = headerList.get('user-agent');
 
-  // create Brevo contact
-  try {
-    await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_EVENT_STUDENT: true }, [ brevoStudentListId ]);
-  } catch (err) {
-    console.error(err);
+  const cookieStore = cookies();
+  const fbc = cookieStore.get('_fbc')?.value;
+  const fbp = cookieStore.get('_fbp')?.value;
+
+  if (!enrollment.emailed) {
+    // send email
+    try {
+      await sendEnrollmentEmail(enrollmentId, codeParam);
+    } catch (err) {
+      console.error(err);
+    }
+
+    // create Brevo contact
+    try {
+      await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_EVENT_STUDENT: true }, [ brevoStudentListId ]);
+    } catch (err) {
+      console.error(err);
+    }
+
+    // TrustPulse
+    try {
+      await trustPulseEnrollment(enrollment, ipAddress);
+    } catch (err) {
+      console.error(err);
+    }
+
+    // iDevAffiliate
+    try {
+      await addToIDevAffiliate(enrollment, ipAddress);
+    } catch (err) {
+      console.error(err);
+    }
+
+    // Facebook
+    try {
+      const source = 'https://www.qceventplanning.com/welcome-to-the-school';
+      await fbPostPurchase(enrollment, source, ipAddress, userAgent, fbc, fbp);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (
@@ -63,7 +103,7 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
         </div>
       </section>
       <EnrollmentDetails enrollment={enrollment} />
-      <Processing enrollment={enrollment} code={codeParam} ipAddress={ipAddress} />
+      <Processing enrollment={enrollment} />
     </>
   );
 };
