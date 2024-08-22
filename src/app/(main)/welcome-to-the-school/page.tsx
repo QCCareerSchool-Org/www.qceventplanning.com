@@ -36,15 +36,15 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
     redirect('/');
   }
 
-  const headerList = headers();
-  const ipAddress = headerList.get('x-real-ip');
-  const userAgent = headerList.get('user-agent');
-
-  const cookieStore = cookies();
-  const fbc = cookieStore.get('_fbc')?.value;
-  const fbp = cookieStore.get('_fbp')?.value;
-
   if (!enrollment.emailed) {
+    const headerList = headers();
+    const ipAddress = headerList.get('x-real-ip');
+    const userAgent = headerList.get('user-agent');
+
+    const cookieStore = cookies();
+    const fbc = cookieStore.get('_fbc')?.value;
+    const fbp = cookieStore.get('_fbp')?.value;
+
     // send email
     try {
       await sendEnrollmentEmail(enrollmentId, codeParam);
