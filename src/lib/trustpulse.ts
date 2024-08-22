@@ -22,6 +22,7 @@ export const trustPulseLead = async (payload: Payload): Promise<void> => {
 };
 
 export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
+  console.log('sending trust pulse zap', enrollment.id);
   const payload: Payload = {
     firstName: enrollment.firstName,
     emailAddress: enrollment.emailAddress,
@@ -46,6 +47,7 @@ const trustPulse = async (payload: Payload, url: string): Promise<void> => {
     method: 'post',
     // headers: { 'Content-Type': 'application/json' }, // CORS doesn't allow Content-Type header
     body: JSON.stringify(payload),
+    cache: 'no-cache',
   });
 
   if (!response.ok) {

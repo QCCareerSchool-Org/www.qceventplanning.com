@@ -1,4 +1,5 @@
 export const sendEnrollmentEmail = async (enrollmentId: number, code: string): Promise<void> => {
+  console.log('sending enrollment email', enrollmentId);
   const url = `${process.env.ENROLLMENT_ENDPOINT}/${enrollmentId}/email`;
   const response = await fetch(url, {
     method: 'post',

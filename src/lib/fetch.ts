@@ -54,7 +54,7 @@ type PriceQueryOptions = {
 
 export const getEnrollment = async (id: number, code: string): Promise<Enrollment> => {
   const url = `${process.env.ENROLLMENT_ENDPOINT}/${id}?code=${encodeURIComponent(code)}`;
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: 'no-cache' });
   if (!response.ok) {
     throw Error(response.statusText);
   }

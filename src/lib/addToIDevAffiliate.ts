@@ -10,7 +10,11 @@ export const addToIDevAffiliate = async (enrollment: Enrollment, ipAddress: stri
   if (ipAddress) {
     headers['X-Forwarded-For'] = ipAddress;
   }
-  const response = await fetch(url, { mode: 'no-cors', headers });
+  const response = await fetch(url, {
+    mode: 'no-cors',
+    headers,
+    cache: 'no-cache',
+  });
   if (!response.ok) {
     throw Error(response.statusText);
   }
