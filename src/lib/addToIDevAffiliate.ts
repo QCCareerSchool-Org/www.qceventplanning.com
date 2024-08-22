@@ -14,5 +14,5 @@ export const addToIDevAffiliate = async (enrollment: Enrollment, ipAddress: stri
   if (!response.ok) {
     throw Error(response.statusText);
   }
-  await response.json();
+  await response.text();
 };

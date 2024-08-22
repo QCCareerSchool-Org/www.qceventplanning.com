@@ -7,7 +7,6 @@ const prefix = 'https://www.qceventplanning.com';
 const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
   const files = await fs.readdir(filePath);
-  console.log(files);
   for (const f of files) {
     const fullname = path.join(filePath, f);
     const stat = await fs.stat(fullname);
