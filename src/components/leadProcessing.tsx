@@ -10,8 +10,8 @@ import { trustPulseLead } from '@/lib/trustpulse';
 
 type Props = {
   emailAddress?: string;
-  countryCode: string;
-  provinceCode: string | null;
+  countryCode?: string;
+  provinceCode?: string;
   firstName?: string;
   lastName?: string;
   ipAddress?: string;

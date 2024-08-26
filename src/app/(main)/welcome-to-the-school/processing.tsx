@@ -18,7 +18,7 @@ export const Processing: FC<Props> = ({ enrollment }) => {
       gaSale(enrollment);
       fbqSale(enrollment);
     }
-    brevoIdentify(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode, enrollment.firstName, enrollment.lastName);
+    brevoIdentify(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode ?? undefined, enrollment.firstName, enrollment.lastName);
   }, [ enrollment ]);
   return null;
 };
