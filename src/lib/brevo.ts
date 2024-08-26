@@ -24,12 +24,17 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
   });
 };
 
-export const brevoIdentify = (emailAddress: string, countryCode: string, provinceCode: string | null, firstName?: string, lastName?: string): void => {
-  window.sendinblue?.identify(emailAddress, {
+export const brevoIdentify = (emailAddress: string, countryCode?: string, provinceCode?: string, firstName?: string, lastName?: string): void => {
+  const properties: Properties = {
     FIRSTNAME: firstName,
     LASTNAME: lastName,
-    COUNTRY_CODE: countryCode,
-    PROVINCE_CODE: provinceCode ?? '',
     STATUS_EVENT_LEAD: true,
-  });
+  };
+  if (countryCode) {
+    properties.COUNTRY_CODE = countryCode;
+  }
+  if (provinceCode) {
+    properties.PROVINCE_CODE = provinceCode;
+  }
+  window.sendinblue?.identify(emailAddress, properties);
 };

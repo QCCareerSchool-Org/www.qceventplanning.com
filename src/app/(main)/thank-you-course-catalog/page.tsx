@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { headers } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,21 +8,34 @@ import CatalogImage from '../cover-book.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { Logo } from '@/components/logo';
-import { getData } from '@/lib/getData';
+import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog - QC Event School',
 };
 
-const ThankYouCourseCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode, provinceCode } = getData();
-  const headerList = headers();
+const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
+  const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
+  const countryCode = getParam(searchParams.countryCode);
+  const provinceCode = getParam(searchParams.provinceCode);
+  const headerList = headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
-  const leadId = getParam(searchParams.leadId);
+  const userAgent = headerList.get('user-agent') ?? undefined;
+  const cookieStore = cookies();
+  const fbc = cookieStore.get('_fbc')?.value;
+  const fbp = cookieStore.get('_fbp')?.value;
+
+  try {
+    if (leadId && emailAddress) {
+      await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+    }
+  } catch (err) {
+    console.error(err);
+  }
 
   return (
     <>

@@ -65,6 +65,57 @@ export const fbPostPurchase = async (
   return response.json();
 };
 
+export const fbPostLead = async (
+  eventId: string,
+  eventTime: Date,
+  emailAddress: string,
+  firstName: string | undefined,
+  lastName: string | undefined,
+  countryCode: string | undefined,
+  eventSourceUrl: string | undefined,
+  clientIPAddress: string | undefined,
+  clientUserAgent: string | undefined,
+  fbc?: string,
+  fbp?: string,
+): Promise<unknown> => {
+  const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
+
+  const body: { data: LeadConversion[] } = {
+    data: [
+      {
+        event_name: 'Lead', // eslint-disable-line camelcase
+        event_time: Math.floor(eventTime.getTime() / 1000), // eslint-disable-line camelcase
+        action_source: 'website', // eslint-disable-line camelcase
+        user_data: { // eslint-disable-line camelcase
+          em: hash(normalizeEmailAddress(emailAddress)),
+          fn: typeof firstName === 'undefined' ? undefined : hash(normalizeName(firstName)),
+          ln: typeof lastName === 'undefined' ? undefined : hash(normalizeName(lastName)),
+          country: typeof countryCode === 'undefined' ? undefined : hash(countryCode.toLowerCase()),
+          client_ip_address: clientIPAddress, // eslint-disable-line camelcase
+          client_user_agent: clientUserAgent, // eslint-disable-line camelcase
+          fbc,
+          fbp,
+        },
+        event_source_url: eventSourceUrl, // eslint-disable-line camelcase
+        event_id: eventId, // eslint-disable-line camelcase
+      },
+    ],
+  };
+
+  const response = await fetch(url, {
+    method: 'post',
+    body: JSON.stringify(body),
+    headers: { 'content-type': 'application/json' },
+    cache: 'no-cache',
+  });
+
+  if (!response.ok) {
+    throw Error(JSON.stringify(await response.json()));
+  }
+
+  return response.json();
+};
+
 const hash = (input: string): string => {
   return createHash('sha256').update(input).digest('hex');
 };
@@ -131,6 +182,15 @@ type UserData = {
   fbc?: string;
   /** Facebook browser id (do not hash) */
   fbp?: string;
+};
+
+type LeadConversion = {
+  event_name: 'Lead';
+  event_time: number;
+  action_source: ActionSource;
+  user_data: UserData;
+  event_source_url?: string;
+  event_id: string;
 };
 
 type CustomData = {
