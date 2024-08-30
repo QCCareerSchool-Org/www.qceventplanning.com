@@ -41,6 +41,7 @@ export const createBrevoContact = async (emailAddress: string, firstName?: strin
   return createContactResult.response.complete;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const sendBrevoEmail = async (templateId: number, emailAddress: string, firstName?: string, lastName?: string): Promise<void> => {
   console.log('sending brevo email', emailAddress);
   const transactionalEmailsApi = new brevo.TransactionalEmailsApi();
