@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { useEffect } from 'react';
 
 import type { Enrollment } from '@/domain/enrollment';
-import { brevoIdentify } from '@/lib/brevo';
+import { brevoIdentifyStudent } from '@/lib/brevo';
 import { fbqSale } from '@/lib/fbq';
 import { gaSale } from '@/lib/gtag';
 
@@ -18,7 +18,7 @@ export const Processing: FC<Props> = ({ enrollment }) => {
       gaSale(enrollment);
       fbqSale(enrollment);
     }
-    brevoIdentify(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode ?? undefined, enrollment.firstName, enrollment.lastName);
+    brevoIdentifyStudent(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode ?? undefined, enrollment.firstName, enrollment.lastName);
   }, [ enrollment ]);
   return null;
 };

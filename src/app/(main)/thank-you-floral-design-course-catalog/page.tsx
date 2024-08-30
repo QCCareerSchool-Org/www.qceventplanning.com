@@ -58,9 +58,10 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
                 <Logo height={16} />
               </div>
               <h1 className="mb-4">Your Course Catalog</h1>
-              <p className="lead mb-3">Thank You For Your Interest in QC Event School!</p>
-              <p className="mb-5">You can download your course catalog below. We've also sent a link to your email so you can download the catalog at any time. If you have any questions about QC's courses, please don't hesitate to contact us.</p>
-              <div className="d-flex">
+              <p className="lead mb-3">Thank You For Your Interest in QC Event School{firstName && <>, {firstName}</>}!</p>
+              <p className="mb-3">You can download your course catalog below. We've also sent a link to your email so you can download the catalog at any time. If you have any questions about QC's courses, please don't hesitate to contact us.</p>
+              {emailAddress && <p className="lead text-info">Your email was sent to <strong>{emailAddress}</strong>. If you don't see it in your inbox in a few minutes, please check your spam or junk mail folder.</p>}
+              <div className="d-flex mt-5">
                 <Link href="/catalog.pdf" download className="btn btn-navy me-3"><DownloadIcon height={16} style={{ position: 'relative', top: -1 }} className="me-2" />Download Catalog</Link>
                 <Link href="/online-event-courses" className="btn btn-outline-navy">View Courses</Link>
               </div>

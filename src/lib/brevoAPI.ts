@@ -49,7 +49,7 @@ export const sendBrevoEmail = async (templateId: number, emailAddress: string, f
   await transactionalEmailsApi.sendTransacEmail({
     to: firstName ? [ { email: emailAddress, name: firstName } ] : [ { email: emailAddress } ],
     templateId,
-    params: { name: firstName, surname: lastName },
+    // params: { name: firstName, surname: lastName },
     // headers: {
     //   'X-Mailin-custom': 'custom_header_1:custom_value_1|custom_header_2:custom_value_2',
     // },
