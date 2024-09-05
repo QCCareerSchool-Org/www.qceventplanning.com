@@ -1,7 +1,7 @@
 'use client';
 
-import type { ChangeEventHandler, FC, ReactElement } from 'react';
-import { useCallback, useId, useState } from 'react';
+import type { ChangeEventHandler, FC, FormEventHandler, ReactElement } from 'react';
+import { useCallback, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { v1 } from 'uuid';
 
@@ -33,6 +33,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ emailAddress, setEmailAddress ] = useState('');
   const [ token, setToken ] = useState<string>();
   const [ refreshReCaptcha ] = useState(false);
+  const submitting = useRef(false);
 
   const handleFirstNameChange: ChangeEventHandler<HTMLInputElement> = e => {
     setFirstName(e.target.value);
@@ -50,8 +51,19 @@ export const BrevoForm: FC<Props> = props => {
     setToken(t);
   }, []);
 
+  const handleSubmit: FormEventHandler = () => {
+    if (submitting.current) {
+      return false;
+    }
+    submitting.current = true;
+
+    setTimeout(() => { submitting.current = false; }, 10_000);
+
+    return true;
+  };
+
   return (
-    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm}>
+    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <input type="hidden" name="nonce" value={v1()} />
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Event School" />
