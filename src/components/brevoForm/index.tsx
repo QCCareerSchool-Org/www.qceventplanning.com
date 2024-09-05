@@ -3,6 +3,7 @@
 import type { ChangeEventHandler, FC, ReactElement } from 'react';
 import { useCallback, useId, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { v1 } from 'uuid';
 
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/download.svg';
@@ -51,6 +52,7 @@ export const BrevoForm: FC<Props> = props => {
 
   return (
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm}>
+      <input type="hidden" name="nonce" value={v1()} />
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Event School" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
