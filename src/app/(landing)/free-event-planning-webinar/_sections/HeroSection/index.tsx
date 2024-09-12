@@ -9,8 +9,6 @@ import { BrevoForm } from '@/components/brevoForm';
 import CheckIcon from '@/components/check.svg';
 
 type Props = {
-  countryCode: string;
-  provinceCode: string | null;
   gclid?: string;
   msclkid?: string;
   utmSource?: string;
@@ -18,6 +16,7 @@ type Props = {
   utmCampaign?: string;
   utmContent?: string;
   utmTerm?: string;
+  referrer: string | null;
 };
 
 const brevoListId = 10;
@@ -55,6 +54,7 @@ export const HeroSection: FC<Props> = props => {
                       <button className="btn btn-navy d-none d-md-block" style={{ paddingLeft: '1rem', paddingRight: '1.25rem' }}><span className="text-primary"><CheckIcon height="18" className="me-2" style={{ position: 'relative', top: -2 }} /></span>Watch the Webinar</button>
                     </>
                   )}
+                  referrer={props.referrer}
                 />
               </div>
             </div>

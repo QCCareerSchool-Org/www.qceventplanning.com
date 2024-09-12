@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-
+import { headers } from 'next/headers';
 import Link from 'next/link';
+
 import { BottomSection } from '../bottomSection';
 import { CertificationSection } from '../free-catalog//certificationSection';
 import { IndustrySection } from '../free-catalog//industrySection';
@@ -32,6 +33,8 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
+  const headerList = headers();
+  const referrer = headerList.get('referer');
 
   return (
     <div className={`${styles.freeCatalog}`}>
@@ -58,6 +61,7 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
                       utmTerm={utmTerm}
                       courseCodes={courseCodes}
                       placeholders
+                      referrer={referrer}
                     />
                   </div>
                 </div>
