@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-
+import { headers } from 'next/headers';
 import Link from 'next/link';
+
 import { BottomSection } from '../bottomSection';
 import { AboutSection } from '../free-catalog//aboutSection';
 import { CertificationSection } from '../free-catalog//certificationSection';
@@ -30,6 +31,8 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
+  const headerList = headers();
+  const referrer = headerList.get('referer');
 
   return (
     <div className={`${styles.freeCatalog}`}>
@@ -55,6 +58,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
                       utmContent={utmContent}
                       utmTerm={utmTerm}
                       placeholders
+                      referrer={referrer}
                     />
                   </div>
                 </div>

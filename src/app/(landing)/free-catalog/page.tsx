@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-
+import { headers } from 'next/headers';
 import Link from 'next/link';
+
 import { BottomSection } from '../bottomSection';
 import { Header } from '../header';
 import { AboutSection } from './aboutSection';
@@ -30,6 +31,10 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
+  const headerList = headers();
+  const referrer = headerList.get('referer');
+
+  console.log(referrer);
 
   return (
     <div className={`${styles.freeCatalog}`}>
@@ -55,6 +60,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
                       utmContent={utmContent}
                       utmTerm={utmTerm}
                       placeholders
+                      referrer={referrer}
                     />
                   </div>
                 </div>
