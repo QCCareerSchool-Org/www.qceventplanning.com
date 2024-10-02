@@ -18,6 +18,7 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
+import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
   title: 'Accelerate Your Business Workshop - QC Event School',
@@ -57,7 +58,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
       </div>
     </section>
     <section className="bg-black text-white">
-      <Image src={DesktopImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+      <BackgroundImage src={DesktopImage} />
       <div className={styles.overlay} />
       <div className="container">
         <div className="row justify-content-end">

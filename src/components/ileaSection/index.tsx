@@ -4,10 +4,11 @@ import type { FC } from 'react';
 import ILEABackgroundImage from './ilea-bg.jpg';
 import ILEALogoImage from './ilea-logo.svg';
 import styles from './index.module.scss';
+import { BackgroundImage } from '../backgroundImage';
 
 export const ILEASection: FC = () => (
   <section className={styles.section}>
-    <Image src={ILEABackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+    <BackgroundImage src={ILEABackgroundImage} />
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12 col-lg-9 col-xl-7 col-xxl-6 text-center">
