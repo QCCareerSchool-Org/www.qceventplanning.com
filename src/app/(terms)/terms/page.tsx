@@ -4,7 +4,7 @@ import styles from '../terms.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy and Terms of Service - QC Event School',
+  title: 'Privacy Policy and Terms of Service',
 };
 
 const TermsPage: PageComponent = () => (

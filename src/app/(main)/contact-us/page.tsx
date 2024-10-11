@@ -12,7 +12,7 @@ import { getData } from '@/lib/getData';
 import { getTelephoneNumber } from '@/lib/telephone';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - QC Event School',
+  title: 'Contact Us',
 };
 
 const ContactUsPage: PageComponent = () => {

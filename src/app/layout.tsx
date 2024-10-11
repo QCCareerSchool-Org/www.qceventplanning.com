@@ -16,7 +16,7 @@ import { VWO } from '@/scripts/vwo';
 import './global.scss';
 
 export const metadata: Metadata = {
-  title: 'QC Event School',
+  title: { default: 'QC Event School', template: '%s - QC Event School' },
 };
 
 const RootLayout: LayoutComponent = ({ children }) => {

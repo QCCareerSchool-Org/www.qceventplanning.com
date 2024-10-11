@@ -18,7 +18,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
-  title: 'Free Specialty Course Offer - QC Event School',
+  title: 'Free Specialty Course Offer',
 };
 
 const enrollLink = 'https://enroll.qceventplanning.com/free-specialty';

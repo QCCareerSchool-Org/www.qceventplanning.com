@@ -6,7 +6,7 @@ import styles from './not-found.module.scss';
 import type { PageComponent } from './serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found - QC Event School',
+  title: 'Page Not Found',
 };
 
 const NotFoundPage: PageComponent = () => {
