@@ -10,6 +10,7 @@ import AngelaHodelImage from '@/components/tutorImages/images/angela-hodal.jpg';
 import AnitaDiPaoloImage from '@/components/tutorImages/images/anita-dipaolo.jpg';
 import AshleyFriesenImage from '@/components/tutorImages/images/ashley-friesen.jpg';
 import HeatherHawesImage from '@/components/tutorImages/images/heather-hawes.jpg';
+import KimberlyJerkinsImage from '@/components/tutorImages/images/kimberly-jerkins.jpg';
 import SarahWebbImage from '@/components/tutorImages/images/sarah-webb.jpg';
 
 export const metadata: Metadata = {
@@ -89,5 +90,10 @@ const tutors = [
     subHeading: 'Owner and Creative Director at Timeless Inspirations',
     text: 'Sarah Webb is the Owner and Creative Director of Timeless Inspirations, a well-known Hertford-based planning boutique. Sarah\'s creative seed for planning weddings didn\'t come about until she planned her own wedding in 2005.',
     src: SarahWebbImage,
+  },
+  {
+    name: 'Kimberly Jerkins',
+    text: 'Kimberly brings over 20 years of expertise in managing events and trade shows across corporate, retail, and non-profit sectors. As a co-owner and lead planner at Perfectly You Events, she partners with her daughter Hallye to deliver exceptional experiences. Kimberly is also a proud graduate of QC Career School, where she earned her certification as an International Event Planner.',
+    src: KimberlyJerkinsImage,
   },
 ];
