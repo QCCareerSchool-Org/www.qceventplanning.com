@@ -9,7 +9,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { ILEASection } from '@/components/ileaSection';
 
 export const metadata: Metadata = {
-  title: 'About QC - QC Event School',
+  title: 'About QC',
 };
 
 const AboutQCPage: PageComponent = () => (

@@ -18,7 +18,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Floral Design Course Catalog - QC Event School',
+  title: 'Free Floral Design Course Catalog',
 };
 
 const brevoListId = 12;

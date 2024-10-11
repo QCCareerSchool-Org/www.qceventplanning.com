@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-
 import { Suspense } from 'react';
+
 import DesktopImage from './desktop.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -20,7 +20,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Accelerate Your Business Workshop - QC Event School',
+  title: 'Accelerate Your Business Workshop',
 };
 
 const courseCodes: CourseCode[] = [ 'eb' ];

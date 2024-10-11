@@ -25,7 +25,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Promotional Event Planning Course - QC Event School',
+  title: 'Promotional Event Planning Course',
 };
 
 const courseCodes: CourseCode[] = [ 'pe' ];

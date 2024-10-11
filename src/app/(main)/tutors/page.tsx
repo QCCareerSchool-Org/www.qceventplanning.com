@@ -14,7 +14,7 @@ import KimberlyJerkinsImage from '@/components/tutorImages/images/kimberly-jerki
 import SarahWebbImage from '@/components/tutorImages/images/sarah-webb.jpg';
 
 export const metadata: Metadata = {
-  title: 'Tutors - QC Event School',
+  title: 'Tutors',
 };
 
 const TutorsPage: PageComponent = () => (

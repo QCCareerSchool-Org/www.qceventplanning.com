@@ -12,7 +12,7 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Course Catalog - QC Event School',
+  title: 'Your Course Catalog',
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {

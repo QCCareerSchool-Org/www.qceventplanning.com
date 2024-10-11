@@ -23,7 +23,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Luxury Wedding & Event Planning Course - QC Event School',
+  title: 'Luxury Wedding & Event Planning Course',
 };
 
 const courseCodes: CourseCode[] = [ 'lw' ];

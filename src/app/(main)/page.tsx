@@ -33,7 +33,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
 
 export const metadata: Metadata = {
-  title: 'QC Event School',
+  title: { absolute: 'QC Event School' },
 };
 
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];

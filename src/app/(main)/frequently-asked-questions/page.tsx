@@ -8,7 +8,7 @@ import { getData } from '@/lib/getData';
 import { getTelephoneNumber } from '@/lib/telephone';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions - QC Event School',
+  title: 'Frequently Asked Questions',
 };
 
 const FAQPage: PageComponent = () => {
