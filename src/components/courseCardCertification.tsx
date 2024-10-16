@@ -1,7 +1,6 @@
 'use client';
 
-import type { FC } from 'react';
-
+import type { FC, ReactNode } from 'react';
 import DWS from '@/components/certifications/dws.svg';
 import ICPP from '@/components/certifications/icpp.svg';
 import IEDP from '@/components/certifications/iedp.svg';
@@ -24,35 +23,33 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
   if (screenWidth === 0) {
     return;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const Certification = getCertification(courseCode);
-  if (Certification) {
-    return <Certification height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
-  }
+  return getCertification(courseCode, screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90);
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getCertification = (courseCode: CourseCode): any => {
+export const getCertification = (courseCode: CourseCode, height: number): ReactNode => {
+
   switch (courseCode) {
     case 'ep':
-      return IEWP;
+      return <IEWP height={height} />;
     case 'wp':
-      return IWPP;
+      return <IWPP height={height} />;
     case 'cp':
-      return ICPP;
+      return <ICPP height={height} />;
     case 'ce':
-      return IEPP;
+      return <IEPP height={height} />;
     case 'ed':
-      return IEDP;
+      return <IEDP height={height} />;
     case 'fd':
-      return IFDP;
+      return <IFDP height={height} />;
     case 'dw':
-      return DWS;
+      return <DWS height={height} />;
     case 'lw':
-      return LWES;
+      return <LWES height={height} />;
     case 'pe':
-      return PES;
+      return <PES height={height} />;
     case 'fl':
-      return IFLP;
+      return <IFLP height={height} />;
+    default:
+      return null;
   }
 };
