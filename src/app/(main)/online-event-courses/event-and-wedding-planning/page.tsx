@@ -11,6 +11,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
+import { BackgroundImage } from '@/components/backgroundImage';
 import IEWPImage from '@/components/certifications/iewp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -23,7 +24,6 @@ import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
   title: 'Event & Wedding Planning Course',

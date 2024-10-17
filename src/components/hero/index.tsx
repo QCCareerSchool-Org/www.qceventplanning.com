@@ -11,8 +11,8 @@ type Props = {
 
 export const Hero: FC<PropsWithChildren<Props>> = ({ src, priority, objectPosition, children }) => (
   <div>
-    <BackgroundImage src={src} priority={priority} objectPosition={objectPosition}/>
-    <div >
+    <BackgroundImage src={src} priority={priority} objectPosition={objectPosition} />
+    <div>
       {children}
     </div>
   </div>

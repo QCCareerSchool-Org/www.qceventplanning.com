@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import type { FC } from 'react';
 
+import { BackgroundImage } from '../backgroundImage';
 import AislePlannerBackgroundImage from './aisle-planner-background.jpg';
 import AislePlannerLogoImage from './aisle-planner-logo.svg';
 import styles from './index.module.css';
-import { BackgroundImage } from '../backgroundImage';
 
 export const AislePlannerSection: FC = () => (
   <section className="text-white">

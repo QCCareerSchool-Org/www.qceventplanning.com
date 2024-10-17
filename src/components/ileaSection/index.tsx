@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import type { FC } from 'react';
 
+import { BackgroundImage } from '../backgroundImage';
 import ILEABackgroundImage from './ilea-bg.jpg';
 import ILEALogoImage from './ilea-logo.svg';
 import styles from './index.module.scss';
-import { BackgroundImage } from '../backgroundImage';
 
 export const ILEASection: FC = () => (
   <section className={styles.section}>

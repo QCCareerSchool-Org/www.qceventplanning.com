@@ -9,6 +9,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { Candice } from '@/components/candice';
 import IEPPImage from '@/components/certifications/iepp.svg';
 import { CourseType } from '@/components/courseType';
@@ -20,7 +21,6 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
   title: 'Event Planning Course',
