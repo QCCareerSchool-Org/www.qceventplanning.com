@@ -26,21 +26,24 @@ export const Footer: FC = () => {
       <div className="container">
         <div className="row">
           <div className={styles.column0}>
-            <div className="mb-4"><Logo height={22} /></div>
-            <h2 className="h6 mb-4">Get Started with a Free Course Catalog</h2>
-            <Link href="/free-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
-            <div className="d-flex mt-4">
-              <div className="d-flex flex-column align-items-center text-center" style={{ width: 75, marginRight: '1.25rem' }}>
-                <div className="mb-2"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer"><BBBIcon /></a></div>
-                <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer" className="small" style={{ color: 'inherit', lineHeight: '1rem' }}>A+ Rated by the BBB</a>
+            <div className="d-flex h-100 flex-column justify-content-between">
+              <div className="mb-5">
+                <div className="mb-4"><Logo height={22} /></div>
+                <h2 className="h6 mb-4">Get Started with a Free Course Catalog</h2>
+                <Link href="/free-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
               </div>
-              <div className="d-flex flex-column align-items-center text-center" style={{ width: 100 }}>
-                <div className="mb-2"><FortyYearsIcon height="68" /></div>
-                <span className="small" style={{ lineHeight: '1rem' }}>40+ Years of Innovation</span>
+              <div className="d-flex">
+                <div className="d-flex flex-column align-items-center text-center" style={{ width: 75, marginRight: '1.25rem' }}>
+                  <div className="mb-2"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer"><BBBIcon /></a></div>
+                  <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer" className="small" style={{ color: 'inherit', lineHeight: '1rem' }}>A+ Rated by the BBB</a>
+                </div>
+                <div className="d-flex flex-column align-items-center text-center" style={{ width: 100 }}>
+                  <div className="mb-2"><FortyYearsIcon height="68" /></div>
+                  <span className="small" style={{ lineHeight: '1rem' }}>40+ Years of Innovation</span>
+                </div>
               </div>
             </div>
           </div>
-
           <div className={styles.column1}>
             <h3 className={`h6 ${styles.columnHeader}`}><Link href="/online-event-courses">Popular Courses</Link></h3>
             <ul className={styles.linkList}>
