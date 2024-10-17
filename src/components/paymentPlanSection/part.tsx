@@ -1,12 +1,8 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import CertIcon from './cert.svg';
-import ClockIcon from './clock.svg';
-import commonStyles from './commonStyles.module.css';
-import DollarCircleIcon from './dollar-circle.svg';
+import commonStyles from './commonStyles.module.scss';
 import styles from './part.module.scss';
-import ShieldCheckIcon from './shield-check.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 import { tightNumber } from '@/lib/tightNumber';
@@ -17,20 +13,19 @@ type Props = {
 };
 
 export const Part: FC<Props> = ({ price, href }) => (
-  <div className={`${styles.part} card`}>
-    <div className="card-body">
+  <div className={`${commonStyles.card} ${styles.part} card`}>
+    <div className={`${commonStyles.message} ${styles.message}`} />
+    <div className={`card-body ${commonStyles.cardBody}`}>
       <h6 className={`${commonStyles.title} ${styles.dark}`}>{price.plans.part.installments}-Month Installment Plan</h6>
-      <div className={commonStyles.description}>Get Started for only</div>
-      <hr className={commonStyles.hr} />
-      <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}{tightNumber(price.plans.part.deposit) && <span style={{ marginRight: '0.25rem' }} />}</span><span className={styles.dark}>{price.plans.part.deposit}</span></div>
-      <Link href={href} className="btn btn-primary">Enroll Now</Link>
-      <hr className={commonStyles.hr} />
-      <ul className={commonStyles.list}>
-        <li className={`${commonStyles.bold} ${styles.dark}`}><DollarCircleIcon className={commonStyles.icon} /> {price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</li>
-        <li className={styles.offWhite}><CertIcon className={commonStyles.icon} /> Certification upon graduation</li>
-        <li className={styles.offWhite}><ShieldCheckIcon className={commonStyles.icon} /> 21-day money-back guarantee</li>
-        <li className={styles.offWhite}><ClockIcon className={commonStyles.icon} /> Lifetime Access</li>
-      </ul>
+      <div className={commonStyles.description}>Start with a deposit of</div>
+      <hr className={`${commonStyles.hr} ${styles.hr}`} />
+      <div className={commonStyles.price}>
+        <span className={commonStyles.priceSmall}>{price.currency.symbol}</span>{tightNumber(price.plans.part.deposit) && <span style={{ marginRight: '0.25rem' }} />}<span className="text-black">{formatPrice(price.plans.part.deposit)}</span>
+      </div>
+      <p className="fw-bold mb-1"><span className="d-none d-sm-inline d-md-none d-lg-inline">Make </span>{price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
+      <p className="fw-bold">(Total: {price.currency.symbol}{formatPrice(price.plans.part.total)})</p>
+      <hr className={`${commonStyles.hr} ${styles.hr}`} />
+      <Link href={href} className="btn btn-secondary">Enroll Now</Link>
     </div>
   </div>
 );

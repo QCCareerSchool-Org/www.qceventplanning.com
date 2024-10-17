@@ -1,0 +1,87 @@
+.card {
+  overflow: hidden;
+  text-align: left;
+  @media only screen and (min-width: 430px) {
+    display: inline-block;
+    width: 380px;
+  }
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    width: auto;
+  }
+}
+
+.cardBody {
+  padding: 1rem 1.5rem 1.5rem;
+  @media only screen and (min-width: 992px) {
+    padding: 1.25rem 2rem 2rem;
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  text-align: center;
+  padding: 0.75rem 0 0.625rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  @media only screen and (min-width: 992px) {
+    font-size: 1rem;
+  }
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: 0.25rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.hr {
+  margin: 1.25rem 0;
+}
+
+.price {
+  font-size: 3.75rem;
+  line-height: 2.625rem;
+  font-weight: 600;
+  font-family: var(--qc-neue-haas-display);
+  margin-bottom: 0.375rem;
+  @media only screen and (min-width: 992px) {
+    font-size: 4.125rem;
+    line-height: 4.125rem; 
+    margin-bottom: 0;
+  }
+}
+
+.priceSmall {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list li { margin-bottom: 1rem; }
+.list li:last-of-type { margin-bottom: 0; }
+
+.bold { font-weight: 500; }
+
+.icon {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+.largePriceCurrencySymbolSpacing {
+  margin-right: 0.25rem;
+}
