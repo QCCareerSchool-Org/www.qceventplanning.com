@@ -12,8 +12,8 @@ import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -71,7 +71,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
       </section>
       <IndustrySection />
       <JoinQCSection />
-      <TestimonialSection id="TE-0006" />
+      <GoogleReviewSection />
       <CertificationSection />
       <AboutSection />
       <BottomSection>
