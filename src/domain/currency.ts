@@ -14,3 +14,13 @@ export const isCurrency = (obj: unknown): obj is Currency => {
     'name' in obj && typeof obj.name === 'string' &&
     'exchangeRate' in obj && typeof obj.exchangeRate === 'number';
 };
+
+const gbpCountries = [ 'GB', 'IM', 'GG', 'JE', 'GS' ];
+
+/** determines if we charge people from a country in pounds sterling */
+export const gbpCountry = (countryCode: string | null): boolean => {
+  if (countryCode === null) {
+    return false;
+  }
+  return gbpCountries.includes(countryCode.toUpperCase());
+};

@@ -1,1 +1,14 @@
-.grecaptcha-badge { visibility: hidden; }
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+@import 'react-multi-carousel/lib/styles.css';
+
+.react-multi-carousel-dot button {
+  border: 0;
+  background-color: #bcbccb;
+}
+
+.react-multi-carousel-dot--active button {
+  background-color: #02013f;
+}
