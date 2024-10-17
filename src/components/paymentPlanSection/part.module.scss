@@ -1,11 +1,3 @@
 .part {
-  background-color: var(--qc-color-navy);
-  background: linear-gradient(var(--qc-color-navy-gradient-start), var(--qc-color-navy-gradient-end));
-  color: var(--qc-color-light-blue-steel);
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: white }
   border: 1px solid var(--qc-color-light-stroke);
-}
-
-.dark {
-  color: white;
 }

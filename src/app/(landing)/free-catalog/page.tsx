@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import { BottomSection } from '../bottomSection';
 import { Header } from '../header';
-import { AboutSection } from './aboutSection';
 import { CertificationSection } from './certificationSection';
 import { IndustrySection } from './industrySection';
 import { JoinQCSection } from './joinQCSection';
@@ -14,6 +13,9 @@ import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
+import { HowYoullLearnSection } from '@/components/howYoullLearnSection';
+import { StatsSection } from '@/components/statsSection/statsSection';
+import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -70,10 +72,12 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <IndustrySection />
+      <HowYoullLearnSection graduateTitle="Event Planner" />
+      <StatsSection />
       <JoinQCSection />
       <GoogleReviewSection />
       <CertificationSection />
-      <AboutSection />
+      <SupportSection />
       <BottomSection>
         <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
         <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>

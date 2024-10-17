@@ -1,0 +1,21 @@
+.howYoullLearn {
+  margin-bottom: -12.5%;
+  max-width: 100%;
+  height: auto;
+}
+
+.list li {
+  margin-bottom: 0.75rem;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.listWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.listIcon {
+  margin-top: 0.25rem;
+  margin-right: 1rem;
+}
