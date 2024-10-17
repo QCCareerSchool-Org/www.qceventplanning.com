@@ -26,7 +26,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
-  title: 'Festivals and Live Events Course - QC Event School',
+  title: 'Festivals and Live Events Course',
 };
 
 const courseCodes: CourseCode[] = [ 'fl' ];

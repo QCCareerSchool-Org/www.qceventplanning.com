@@ -19,7 +19,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
-  title: 'Online Event Courses - QC Event School',
+  title: 'Online Event Courses',
 };
 
 const CoursesPage: PageComponent = () => (

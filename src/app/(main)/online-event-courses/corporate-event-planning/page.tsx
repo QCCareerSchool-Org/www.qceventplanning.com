@@ -25,7 +25,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
-  title: 'Corporate Event Planning Course - QC Event School',
+  title: 'Corporate Event Planning Course',
 };
 
 const courseCodes: CourseCode[] = [ 'cp' ];

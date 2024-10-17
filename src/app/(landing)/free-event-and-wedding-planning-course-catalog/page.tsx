@@ -17,7 +17,7 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Event & Wedding Planning Course Catalog - QC Event School',
+  title: 'Free Event & Wedding Planning Course Catalog',
 };
 
 const brevoListId = 2;

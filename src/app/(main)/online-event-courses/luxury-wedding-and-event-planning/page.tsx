@@ -24,7 +24,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
-  title: 'Luxury Wedding & Event Planning Course - QC Event School',
+  title: 'Luxury Wedding & Event Planning Course',
 };
 
 const courseCodes: CourseCode[] = [ 'lw' ];

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-
 import { Suspense } from 'react';
+
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -24,7 +24,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
-  title: 'Event Decor Course - QC Event School',
+  title: 'Event Decor Course',
 };
 
 const courseCodes: CourseCode[] = [ 'ed' ];
