@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import { BottomSection } from '../bottomSection';
 import { Header } from '../header';
-import { AboutSection } from './aboutSection';
 import { CertificationSection } from './certificationSection';
 import { IndustrySection } from './industrySection';
 import { JoinQCSection } from './joinQCSection';
