@@ -36,7 +36,7 @@ const MeetTheTeamPage: PageComponent = () => {
         </section>
       ))}
       <GoogleReviewSection className={employeePairs.length % 2 === 0 ? 'bg-light' : undefined} />
-      <GetStartedSection title="Get Started Today" text="Unlock your potential and the step towards a rewarding career. Enroll now and join thousands of students who\'ve turned their passion into success." />
+      <GetStartedSection title="Get Started Today" text="Unlock your potential and the step towards a rewarding career. Enroll now and join thousands of students who've turned their passion into success." />
     </>
   );
 };
