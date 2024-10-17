@@ -6,7 +6,6 @@ import BookReader from './_footerIcons/book-reader.svg';
 import Facebook from './_footerIcons/facebook.svg';
 import Instagram from './_footerIcons/instagram.svg';
 import Linkedin from './_footerIcons/linkedin.svg';
-
 import Pinterest from './_footerIcons/pinterest.svg';
 import TiktokIcon from './_footerIcons/tiktok.svg';
 import BBBIcon from './bbb.svg';
