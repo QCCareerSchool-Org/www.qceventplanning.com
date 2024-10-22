@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
@@ -19,12 +20,13 @@ const StudentSuccessPage: PageComponent = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8 text-center">
               <h1 className="mb-3">Student Success</h1>
-              <p className="lead mb-0">Explore the success stories of our students and graduates, and take a look at the impressive event works crafted by our talented students.</p>
+              <p className="lead mb-0">Discover the inspiring success stories of QC Event School graduates, and explore the exceptional events planned by QC's talented students.</p>
             </div>
           </div>
         </div>
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+      <GoogleReviewSection />
       <CarouselSection />
       <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" />
     </>

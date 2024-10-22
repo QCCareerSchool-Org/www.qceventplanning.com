@@ -73,7 +73,7 @@ export const reviewData: ReviewData[] = [
     backgroundColor: 'green',
     reviewText: 'For years I was interested in wedding and event planning. I did my research and chose QC Event School, which was a great decision. This particular course had me thinking outside the box, thinking of unique ways to stay within a budget, incorporating the clients interests into their theme. I love how thorough the course is and the communication through the school is fantastic! I now have two weddings booked for 2025! Thank you QC Events!!',
     rating: 5,
-    courseCodes: [ 'wp' ],
+    courseCodes: [ 'wp', 'ep', 'lw', 'dw' ],
   },
   {
     name: 'Darlene Dungey',
@@ -82,6 +82,7 @@ export const reviewData: ReviewData[] = [
     backgroundColor: 'grey',
     reviewText: 'I have completed the Corporate Event Planning Course. I have found QC to very inciteful, well worth the money and time spent.',
     rating: 5,
+    courseCodes: [ 'cp' ],
   },
   {
     name: 'Ashley Walker',
@@ -90,7 +91,7 @@ export const reviewData: ReviewData[] = [
     backgroundColor: 'grey',
     reviewText: 'I have thoroughly enjoyed taking my wedding planning and event planning courses through the QC Event School! The community of other students is so supportive and so are the staff/tutors! The webinars that are offered are so influential as it helps you think creatively when completing homework assignments and planning.',
     rating: 5,
-    courseCodes: [ 'ep', 'wp' ],
+    courseCodes: [ 'ep', 'wp', 'ce' ],
   },
   {
     name: 'M',
@@ -107,6 +108,6 @@ export const reviewData: ReviewData[] = [
     backgroundColor: 'green',
     reviewText: 'I have completed my Event and Wedding Planning course and almost finished my Destination Wedding course and I have loved every moment of my learning! From doing local research, personal touches on what you would do in situations for the assignments to the tutor being very personable with me through my whole learning experience. With this being an online learning school there are many options to reach out to your tutor, any staff either through email, calling and even through the social media for any help that you need was amazing. And having that connection with the other students in the social media page is amazing! I am already looking forward to starting this next chapter of my life in doing something that I love and doing more courses through QC to enhance my career as well!',
     rating: 5,
-    courseCodes: [ 'ep', 'wp', 'dw' ],
+    courseCodes: [ 'ep', 'dw' ],
   },
 ];
