@@ -14,6 +14,7 @@ import { Candice } from '@/components/candice';
 import IEWPImage from '@/components/certifications/lwes.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
   title: 'Luxury Wedding & Event Planning Course',
 };
 
-const courseCodes: CourseCode[] = [ 'lw' ];
+const courseCode: CourseCode = 'lw';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0012', 'TE-0014', 'TE-0003', 'TE-0002', 'TE-0001', 'TE-0019' ];
 
 const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
@@ -111,7 +113,7 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0003" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

@@ -14,6 +14,7 @@ import { AislePlannerSection } from '@/components/aislePlannerSection';
 import IFDPImage from '@/components/certifications/ifdp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -28,7 +29,8 @@ export const metadata: Metadata = {
   title: 'Floral Design Course',
 };
 
-const courseCodes: CourseCode[] = [ 'fd' ];
+const courseCode: CourseCode = 'fd';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0008', 'TE-0018', 'TE-0016', 'TE-0015', 'TE-0014', 'TE-0012' ];
 
 const FloralDesignPage: PageComponent = () => (
@@ -129,7 +131,7 @@ const FloralDesignPage: PageComponent = () => (
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0008" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

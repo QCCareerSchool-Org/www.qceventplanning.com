@@ -14,6 +14,7 @@ import { Candice } from '@/components/candice';
 import IEDPImage from '@/components/certifications/iedp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
   title: 'Event Decor Course',
 };
 
-const courseCodes: CourseCode[] = [ 'ed' ];
+const courseCode: CourseCode = 'ed';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0019', 'TE-0008', 'TE-0002', 'TE-0011', 'TE-0004', 'TE-0014' ];
 
 const EventDecorPage: PageComponent = () => (
@@ -110,7 +112,7 @@ const EventDecorPage: PageComponent = () => (
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0017" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { OnlineCourseSection } from './onlineCourseSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 
@@ -15,7 +16,7 @@ const CoursesPage: PageComponent = () => (
     <section className="p-0" />
     <ILEASection />
     <OnlineCourseSection />
-    <TestimonialSection id="TE-0006" />
+    <GoogleReviewSection className="bg-light" />
     <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
   </>
 );
