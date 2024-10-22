@@ -5,7 +5,6 @@ import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses',
