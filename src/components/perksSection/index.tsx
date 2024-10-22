@@ -4,8 +4,8 @@ import type { FC } from 'react';
 import styles from './index.module.scss';
 import NetworkAssociationsImage from './network-associations.jpg';
 import OnlineCommunityImage from './online-community.jpg';
-import PointersForPlannersImage from './online-student-center.jpg'; // TODO: Fix
 import OnlineStudentCenter from './online-student-center.jpg';
+import PointersForPlannersImage from './pointers.jpg';
 
 type Props = {
   className?: string;
