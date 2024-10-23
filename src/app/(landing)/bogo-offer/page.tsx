@@ -22,10 +22,11 @@ export const metadata: Metadata = {
   title: 'Free Specialty Course Offer',
 };
 
-const CoursesPage: PageComponent = () => {
+const BogoOfferPage: PageComponent = () => {
   const { countryCode } = getData();
 
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
+
   return (
     <>
       <Header logoLink />
@@ -33,9 +34,7 @@ const CoursesPage: PageComponent = () => {
       <section>
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
-          <div
-            className="row justify-content-center" style={{ textShadow: '0px 0px 50px black' }}
-          >
+          <div className="row justify-content-center" style={{ textShadow: '0px 0px 50px black' }}>
             <div className="col-12 col-md-10 col-lg-9 col-xl-8 text-center text-white">
               <div className="mb-3"><Subtitle>Limited-Time Offer</Subtitle></div>
               <h1 className="h2 mb-4">Your Second Certification Is Free!</h1>
@@ -47,7 +46,7 @@ const CoursesPage: PageComponent = () => {
       </section>
       <section>
         <div className="container">
-          <div className="row g-4">
+          <div className="row g-5">
             <div className="col-12 col-lg-4">
               <Testimonial id="TE-0001" />
             </div>
@@ -60,7 +59,7 @@ const CoursesPage: PageComponent = () => {
           </div>
         </div>
       </section>
-      <OnlineCourseSection />
+      <OnlineCourseSection className="bg-light" />
       <SupportSection showLink />
       <GetStartedSection
         title="Get Started Today"
@@ -71,4 +70,4 @@ const CoursesPage: PageComponent = () => {
   );
 };
 
-export default CoursesPage;
+export default BogoOfferPage;
