@@ -24,7 +24,6 @@ export const metadata: Metadata = {
 
 const BogoOfferPage: PageComponent = () => {
   const { countryCode } = getData();
-
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
   return (
@@ -70,4 +69,4 @@ const BogoOfferPage: PageComponent = () => {
   );
 };
 
-export default BogoOfferPage;
+export default CoursesPage;
