@@ -111,8 +111,8 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
+    <VirtualCommunitySection />
     <AislePlannerSection />
     <GoogleReviewSection courseCode={courseCode} />
     <Suspense>

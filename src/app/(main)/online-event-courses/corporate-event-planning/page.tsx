@@ -99,7 +99,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section id="instructors">
+    <section id="instructors" className="bg-light">
       <div className="container">
         <div className="row g-s">
           <div className="d-none d-lg-block col-lg-6">
@@ -129,7 +129,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection className="pt-0" />
+    <VirtualCommunitySection />
     <OutlineSection />
     <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
