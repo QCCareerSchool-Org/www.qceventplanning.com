@@ -85,7 +85,7 @@ const HomePage: PageComponent = () => {
       <StatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <ILEASection />
-      <section>
+      <section className="bg-light">
         <div className="container">
           <h2 className="mb-5 text-center">Popular Design Courses</h2>
           <div className="row justify-content-center g-4 mb-s">
@@ -135,7 +135,7 @@ const HomePage: PageComponent = () => {
         </div>
       </section>
       <VirtualCommunitySection />
-      <SupportSection />
+      <SupportSection showLink />
       <GoogleReviewSection />
       <GetStartedSection
         title="Ready to Start Your Event & Wedding Planning Career?"

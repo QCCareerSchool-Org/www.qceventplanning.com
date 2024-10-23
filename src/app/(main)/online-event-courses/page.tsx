@@ -14,7 +14,7 @@ const CoursesPage: PageComponent = () => (
   <>
     <section className="p-0" />
     <ILEASection />
-    <OnlineCourseSection />
+    <OnlineCourseSection className="bg-light" />
     <TestimonialSection id="TE-0006" />
     <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
   </>
