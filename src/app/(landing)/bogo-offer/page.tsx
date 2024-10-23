@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Header } from '../header';
 import { OnlineCourseSection } from '@/app/(main)/online-event-courses/onlineCourseSection';
 import type { PageComponent } from '@/app/serverComponent';
-
 import { BackgroundImage } from '@/components/backgroundImage';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -32,12 +31,12 @@ const BogoOfferPage: PageComponent = () => {
       <DeadlineFunnelScript />
       <section>
         <BackgroundImage src={HeroImage} priority />
-        <div className="container">
-          <div className="row justify-content-center" style={{ textShadow: '0px 0px 50px black' }}>
-            <div className="col-12 col-md-10 col-lg-9 col-xl-8 text-center text-white">
+        <div className="container text-white text-shadow">
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-10 col-lg-9 col-xl-8 text-center">
               <div className="mb-3"><Subtitle>Limited-Time Offer</Subtitle></div>
               <h1 className="h2 mb-4">Your Second Certification Is Free!</h1>
-              <p className="mb-4">Enroll in any event planning course and get <strong>{discount} off your tuition plus a second course free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 45,000+ students and graduates start their own successful event planning businesses!</strong></p>
+              <p className="lead mb-4">Enroll in any event planning course and get <strong>{discount} off your tuition plus a second course free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 45,000+ students and graduates start their own successful event planning businesses!</strong></p>
               <Link href="#courses" className="btn btn-outline-light"><QIcon height="16" style={{ position: 'relative', top: -1, marginRight: '0.5rem' }} />View Courses</Link>
             </div>
           </div>
@@ -69,4 +68,4 @@ const BogoOfferPage: PageComponent = () => {
   );
 };
 
-export default CoursesPage;
+export default BogoOfferPage;
