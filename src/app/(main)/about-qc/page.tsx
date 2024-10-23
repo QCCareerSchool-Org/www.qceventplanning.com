@@ -36,10 +36,10 @@ const AboutQCPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <MeetOurTeamSection />
+    <MeetOurTeamSection className="bg-light" />
     <CoreValuesSection />
     <ILEASection />
-    <section className="bg-light">
+    <section>
       <div className="container">
         <div className="row g-5 g-xl-s">
           <div className="col-12 col-lg-6">
