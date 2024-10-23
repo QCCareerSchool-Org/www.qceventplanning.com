@@ -33,11 +33,11 @@
   }
 
   .content > * { color: white }
-  
+
   .overlay {
     position: absolute; 
     background: rgba(0, 0, 0, 0.4);
-    
+
     /* center overlay text */
     display: flex;
     align-items: center;

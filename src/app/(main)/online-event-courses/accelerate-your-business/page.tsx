@@ -9,6 +9,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -60,7 +61,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
       </div>
     </section>
     <section className="bg-black text-white">
-      <Image src={DesktopImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+      <BackgroundImage src={DesktopImage} />
       <div className={styles.overlay} />
       <div className="container">
         <div className="row justify-content-end">
