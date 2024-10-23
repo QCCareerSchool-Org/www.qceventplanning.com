@@ -1,4 +1,5 @@
-import { type CurrencyCode, isCurrencyCode } from './currencyCode';
+import type { CurrencyCode } from './currencyCode';
+import { isCurrencyCode } from './currencyCode';
 
 export type Currency = {
   code: CurrencyCode;
