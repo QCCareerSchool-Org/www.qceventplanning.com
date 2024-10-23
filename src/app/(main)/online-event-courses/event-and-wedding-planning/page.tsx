@@ -14,6 +14,7 @@ import { AislePlannerSection } from '@/components/aislePlannerSection';
 import IEWPImage from '@/components/certifications/iewp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -28,7 +29,8 @@ export const metadata: Metadata = {
   title: 'Event & Wedding Planning Course',
 };
 
-const courseCodes: CourseCode[] = [ 'ep' ];
+const courseCode: CourseCode = 'ep';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0006', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0002', 'TE-0017' ];
 
 const EventAndWeddingPlanningPage: PageComponent = () => (
@@ -131,7 +133,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0017" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

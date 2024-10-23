@@ -59,6 +59,7 @@ export const MainNav: FC = () => {
               <Link href="/online-event-courses/accelerate-your-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
               <li><hr className="dropdown-divider" /></li>
               <Link href="/online-event-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
+              <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Event Planning Online</Link>
             </NavDropdown>
             <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
             <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>

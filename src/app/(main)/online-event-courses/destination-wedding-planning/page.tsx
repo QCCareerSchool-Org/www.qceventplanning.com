@@ -14,6 +14,7 @@ import { Candice } from '@/components/candice';
 import DWSImage from '@/components/certifications/dws.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
   title: 'Destination Wedding Planning Course',
 };
 
-const courseCodes: CourseCode[] = [ 'dw' ];
+const courseCode: CourseCode = 'dw';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0003', 'TE-0014', 'TE-0019', 'TE-0017', 'TE-0016', 'TE-0001' ];
 
 const DestinationWeddingPlanningPage: PageComponent = () => (
@@ -112,7 +114,7 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0014" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

@@ -13,6 +13,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import ICPPImage from '@/components/certifications/icpp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
   title: 'Corporate Event Planning Course',
 };
 
-const courseCodes: CourseCode[] = [ 'cp' ];
+const courseCode: CourseCode = 'cp';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0013', 'TE-0018', 'TE-0004', 'TE-0007', 'TE-0017', 'TE-0003' ];
 
 const CorporateEventPlanningPage: PageComponent = () => (
@@ -128,7 +130,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
-    <TestimonialSection id="TE-0013" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

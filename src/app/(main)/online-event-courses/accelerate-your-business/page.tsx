@@ -11,6 +11,7 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -23,7 +24,9 @@ export const metadata: Metadata = {
   title: 'Accelerate Your Business Workshop',
 };
 
-const courseCodes: CourseCode[] = [ 'eb' ];
+const courseCode: CourseCode = 'eb';
+const courseCodes: CourseCode[] = [ courseCode ];
+
 const testimonialIds = [ 'TE-0004', 'TE-0007', 'TE-0003', 'TE-0009', 'TE-0010', 'TE-0011' ];
 
 const AccelerateYourBusinessPage: PageComponent = () => (
@@ -90,7 +93,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
-    <TestimonialSection id="TE-0006" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

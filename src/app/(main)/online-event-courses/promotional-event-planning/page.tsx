@@ -14,6 +14,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import PESImage from '@/components/certifications/pes.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -28,7 +29,8 @@ export const metadata: Metadata = {
   title: 'Promotional Event Planning Course',
 };
 
-const courseCodes: CourseCode[] = [ 'pe' ];
+const courseCode: CourseCode = 'pe';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0008', 'TE-0013', 'TE-0003', 'TE-0015', 'TE-0006', 'TE-0012' ];
 
 const EventPlanningPage: PageComponent = () => (
@@ -129,7 +131,7 @@ const EventPlanningPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection className="pt-0" />
     <OutlineSection />
-    <TestimonialSection id="TE-0013" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
