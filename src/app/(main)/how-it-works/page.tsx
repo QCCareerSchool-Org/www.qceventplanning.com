@@ -44,19 +44,19 @@ const HowItWorksPage: PageComponent = () => (
             <BookReaderIcon width={iconSize} className="text-primary mb-1" />
             <p className="text-primary fw-bold text-uppercase">Step 1</p>
             <h2 className="h4">Access Course Materials</h2>
-            <p>When you enroll with QC Event Planning, you'll have full access to the Online Student Center where you'll find all your online course texts, assignment templates, videos, and more. You'll have easy, convenient access to everything you need to complete your course!</p>
+            <p className="mb-0">When you enroll with QC Event Planning, you'll have full access to the Online Student Center where you'll find all your online course texts, assignment templates, videos, and more. You'll have easy, convenient access to everything you need to complete your course!</p>
           </div>
           <div className="col-12 col-md-8 col-lg-4 text-center">
             <CheckIcon width={iconSize} className="text-primary mb-1" />
             <p className="text-primary fw-bold text-uppercase">Step 2</p>
             <h2 className="h4">Submit Your Assignments</h2>
-            <p>Once you've finished a unit, you'll submit your assignments through the Online Student Center, and these will be sent directly to your personal tutor. Your tutor reviews your work and provides expert feedback within 7-10 business days!</p>
+            <p className="mb-0">Once you've finished a unit, you'll submit your assignments through the Online Student Center, and these will be sent directly to your personal tutor. Your tutor reviews your work and provides expert feedback within 7 to 10 business days!</p>
           </div>
           <div className="col-12 col-md-8 col-lg-4 text-center">
             <FeedbackIcon width={iconSize} className="text-primary mb-1" />
             <p className="text-primary fw-bold text-uppercase">Step 3</p>
             <h2 className="h4">Review Your Feedback</h2>
-            <p>Once you've finished a unit, you'll submit your assignments through the Online Student Center. Your tutor reviews your work and provides expert feedback. If you ever need help along the way, simply reach out to the School or connect with your peers in the Virtual Community.</p>
+            <p className="mb-0">Once you've finished a unit, you'll submit your assignments through the Online Student Center. Your tutor reviews your work and provides expert feedback. If you ever need help along the way, simply reach out to the School or connect with your peers in the Virtual Community.</p>
           </div>
         </div>
       </div>
