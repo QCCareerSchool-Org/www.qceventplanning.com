@@ -34,7 +34,7 @@ const testimonialIds = [ 'TE-0003', 'TE-0014', 'TE-0019', 'TE-0017', 'TE-0016', 
 
 const DestinationWeddingPlanningPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">

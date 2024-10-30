@@ -36,7 +36,7 @@ const testimonialIds = [ 'TE-0008', 'TE-0013', 'TE-0003', 'TE-0015', 'TE-0006', 
 
 const EventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">
