@@ -11,8 +11,12 @@ import { TazmanBakerShowcase } from '@/components/showcase/tazman-baker';
 
 const slides = [ CherelleJosephShowcase, JennaPelcherShowcase, MadysonBellShowcase, TazmanBakerShowcase, GiannaLucheseShowcase ];
 
-export const CarouselSection: FC = () => (
-  <section>
+type Props = {
+  className?: string;
+};
+
+export const CarouselSection: FC<Props> = ({ className }) => (
+  <section className={className}>
     <div className="container">
       <Carousel slides={slides} />
     </div>
