@@ -19,7 +19,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -118,7 +117,6 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0018" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Incredible Memories?" text="Specialize as a Luxury Wedding & Event Planner" courseCodes={courseCodes} />
   </div>
 );

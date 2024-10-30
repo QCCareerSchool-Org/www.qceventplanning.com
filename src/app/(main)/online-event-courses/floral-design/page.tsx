@@ -19,7 +19,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
@@ -136,7 +135,6 @@ const FloralDesignPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0011" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} />
   </div>
 );

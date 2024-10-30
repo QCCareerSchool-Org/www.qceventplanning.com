@@ -19,7 +19,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
@@ -138,7 +137,6 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0003" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" courseCodes={courseCodes} />
   </div>
 );

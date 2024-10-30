@@ -19,7 +19,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -117,7 +116,6 @@ const EventDecorPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0019" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Become a Professionally Certified Event Decorator" courseCodes={courseCodes} />
   </div>
 );

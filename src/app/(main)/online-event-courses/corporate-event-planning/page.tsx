@@ -18,7 +18,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
@@ -135,7 +134,6 @@ const CorporateEventPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0018" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Memorable Events?" text="Become a Professionally Certified Corporate Event Planner" courseCodes={courseCodes} />
   </div>
 );

@@ -19,7 +19,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AshleyFriesen } from '@/components/tutorImages/ashleyFriesen';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
@@ -138,7 +137,6 @@ const WeddingPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Wedding Memories?" text="Become a Professionally Certified Wedding Planner" courseCodes={courseCodes} />
   </div>
 );

@@ -16,7 +16,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -98,7 +97,6 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0009" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" courseCodes={courseCodes} />
   </div>
 );
