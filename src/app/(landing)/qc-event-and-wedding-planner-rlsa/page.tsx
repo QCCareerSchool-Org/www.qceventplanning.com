@@ -251,7 +251,7 @@ const RSLAPage: PageComponent = () => {
       <TestimonialSection id="TE-0002" />
       <BottomSection>
         <h2 className="mb-4">Ready to Start Your Event & Wedding Planning Career?</h2>
-        <p className="lead mb-4">Become Professionalky Certified with QC's Online Event Planning Training</p>
+        <p className="lead mb-4">Become Professionally Certified with QC's Online Event Planning Training</p>
         <Link href="https://enroll.qceventplanning.com" className="btn btn-lg btn-primary">Enroll Now</Link>
       </BottomSection>
     </>
