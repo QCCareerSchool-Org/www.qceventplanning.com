@@ -11,13 +11,14 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
+import { BackgroundImage } from '@/components/backgroundImage';
 import IWPPImage from '@/components/certifications/iwpp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AshleyFriesen } from '@/components/tutorImages/ashleyFriesen';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
@@ -28,12 +29,13 @@ export const metadata: Metadata = {
   title: 'Wedding Planning Course',
 };
 
-const courseCodes: CourseCode[] = [ 'wp' ];
+const courseCode: CourseCode = 'wp';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0019', 'TE-0017', 'TE-0016', 'TE-0015', 'TE-0013', 'TE-0012' ];
 
 const WeddingPlanningPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">
@@ -86,7 +88,7 @@ const WeddingPlanningPage: PageComponent = () => (
       </div>
     </section>
     <section className="text-white">
-      <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+      <BackgroundImage src={CertificationBackgroundImage} />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
@@ -98,7 +100,7 @@ const WeddingPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section id="instructors">
+    <section id="instructors" className="bg-light">
       <div className="container">
         <div className="row g-s">
           <div className="d-none d-lg-block col-lg-6">
@@ -128,14 +130,13 @@ const WeddingPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection className="pt-0" />
+    <VirtualCommunitySection />
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0001" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0002" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Wedding Memories?" text="Become a Professionally Certified Wedding Planner" courseCodes={courseCodes} />
   </div>
 );

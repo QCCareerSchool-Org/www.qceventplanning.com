@@ -11,13 +11,14 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
+import { BackgroundImage } from '@/components/backgroundImage';
 import IFDPImage from '@/components/certifications/ifdp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
@@ -28,12 +29,13 @@ export const metadata: Metadata = {
   title: 'Floral Design Course',
 };
 
-const courseCodes: CourseCode[] = [ 'fd' ];
+const courseCode: CourseCode = 'fd';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0008', 'TE-0018', 'TE-0016', 'TE-0015', 'TE-0014', 'TE-0012' ];
 
 const FloralDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">
@@ -84,7 +86,7 @@ const FloralDesignPage: PageComponent = () => (
       </div>
     </section>
     <section className="text-white">
-      <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+      <BackgroundImage src={CertificationBackgroundImage} />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
@@ -96,7 +98,7 @@ const FloralDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section id="instructors">
+    <section id="instructors" className="bg-light">
       <div className="container">
         <div className="row g-s">
           <div className="d-none d-lg-block col-lg-6">
@@ -126,14 +128,13 @@ const FloralDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection className="pt-0" />
+    <VirtualCommunitySection />
     <OutlineSection />
     <AislePlannerSection />
-    <TestimonialSection id="TE-0008" courseCodes={courseCodes} />
+    <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0011" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} />
   </div>
 );

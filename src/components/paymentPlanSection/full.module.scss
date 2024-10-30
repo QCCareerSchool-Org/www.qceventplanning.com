@@ -1,9 +1,46 @@
 .full {
-  background-color: white;
+  background-color: #02013F;
+  color: white;
   border: none;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.0625);
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.125);
 }
 
 .dark {
   color: var(--qc-color-headings);
+}
+
+.message {
+  background-color: #FF1717;
+  color: white;
+}
+
+.redStrikethrough {
+  font-size: 30px;
+  position: relative;
+  margin-right: 0.75rem;
+  padding: 0 0.375rem;
+  color: lightgrey;
+}
+
+.hr {
+  opacity: 0.625;
+}
+
+.redStrikethrough::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background-color: #FF1717;
+  z-index: 1;
+
+  --qc-angle: -3deg;
+
+  -webkit-transform: rotate(var(--qc-angle));
+  -moz-transform: rotate(var(--qc-angle));
+  -ms-transform: rotate(var(--qc-angle));
+  -o-transform: rotate(var(--qc-angle));
+  transform: rotate(var(--qc-angle));
 }

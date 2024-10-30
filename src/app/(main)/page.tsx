@@ -4,30 +4,25 @@ import Link from 'next/link';
 
 import BookIcon from './book.svg';
 import BriefcaseIcon from './briefcase.svg';
+
 import CertificationIcon from './certification.svg';
+
+import MagnifyingGlassIcon from './magnifying-glass.svg';
 import ObjectsVerticalBottomIcon from './objects-vertical-bottom.svg';
-import EBImage from './online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from './online-event-courses/corporate-event-planning/hero.jpg';
-import DWImage from './online-event-courses/destination-wedding-planning/hero.jpg';
 import EPImage from './online-event-courses/event-and-wedding-planning/hero.jpg';
-import EDImage from './online-event-courses/event-decor/hero.jpg';
-import CEImage from './online-event-courses/event-planning/hero.jpg';
-import FLImage from './online-event-courses/festivals-and-live-events/hero.jpg';
 import FDImage from './online-event-courses/floral-design/hero.jpg';
-import LWImage from './online-event-courses/luxury-wedding-and-event-planning/hero.jpg';
-import PEImage from './online-event-courses/promotional-event-planning/hero.jpg';
-import WPImage from './online-event-courses/wedding-planning/hero.jpg';
-import styles from './page.module.scss';
+import OpenBookIcon from './open-book.svg';
 import UserVoiceIcon from './user-voice.svg';
 import type { PageComponent } from '@/app/serverComponent';
-import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { ILEASection } from '@/components/ileaSection';
-import { PaymentSectionGuarantee } from '@/components/paymentPlanSection/guarantee';
-import { TestimonialSection } from '@/components/testimonialSection';
+import { StatsSection } from '@/components/statsSection/statsSection';
+import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
@@ -87,14 +82,12 @@ const HomePage: PageComponent = () => {
           </div>
         </div>
       </section>
-      <ILEASection />
+      <StatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} />
+      <ILEASection />
       <section className="bg-light">
         <div className="container">
-          <div className="text-center">
-            <h2 className={`mb-4 ${styles.anchor}`} id="foundation">Our Foundation Courses</h2>
-            <p className="lead mb-5">Discover a wide range of foundation and specialty courses offered by our online event school.</p>
-          </div>
+          <h2 className="mb-5 text-center">Popular Event Courses</h2>
           <div className="row justify-content-center g-4 mb-s">
             <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
               <CourseCard
@@ -122,28 +115,6 @@ const HomePage: PageComponent = () => {
             <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
               <CourseCard
                 type="foundation"
-                name="Event Planning"
-                description="Work with a variety of different clients and discover how to plan outstanding events including industry gatherings, milestone parties, holiday parties, and more."
-                href="/online-event-courses/event-planning"
-                backgroundSrc={CEImage}
-                certification={<CourseCardCertifcation courseCode="ce" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="foundation"
-                name="Event Decor"
-                description="Expand your creative skills to design an event's mood and aesthetic experience. Learn to coordinate lighting, color, and decor to suit a theme."
-                href="/online-event-courses/event-decor"
-                backgroundSrc={EDImage}
-                certification={<CourseCardCertifcation courseCode="ed" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="foundation"
                 name="Floral Design"
                 description="Launch your own business, work for an experienced floral designer, or incorporate your floral design skills into an existing career in event planning."
                 href="/online-event-courses/floral-design"
@@ -152,89 +123,20 @@ const HomePage: PageComponent = () => {
                 buttons="course"
               />
             </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="foundation"
-                name="Wedding Planning"
-                description="Exceed expectations by learning to plan unique weddings tailored to your client's wishes, considering cultural variations, budgets, timelines, and more."
-                href="/online-event-courses/wedding-planning"
-                backgroundSrc={WPImage}
-                certification={<CourseCardCertifcation courseCode="wp" />}
-                buttons="course"
-              />
-            </div>
-          </div>
-
-          <div className="text-center">
-            <h2 className={`mb-5 ${styles.anchor}`} id="specialty">Specialty Courses</h2>
-          </div>
-          <div className="row justify-content-center g-4 mb-s">
-            <div className="col-12 col-sm-10 col-md-6 d-flex">
-              <CourseCard
-                type="specialty"
-                name={<>Luxury Wedding<span className="d-lg-none d-xl-inline"> &amp; Event</span> Planning</>}
-                description="Master planning upscale events and weddings! Handle substantial budgets, network with high-end vendors, and embrace the latest trends."
-                href="/online-event-courses/luxury-wedding-and-event-planning"
-                backgroundSrc={LWImage}
-                certification={<CourseCardCertifcation courseCode="lw" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Destination Wedding Planning"
-                description="Gain skills to coordinate stunning destination weddings. Network with travel agents, translators, and niche vendors for unforgettable events."
-                href="/online-event-courses/destination-wedding-planning"
-                backgroundSrc={DWImage}
-                certification={<CourseCardCertifcation courseCode="dw" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Promotional Event Planning"
-                description="Take your corporate event planning skills a step further by learning how to effectively implement impromptu marketing campaigns, pop-up shops, and more."
-                href="/online-event-courses/promotional-event-planning"
-                backgroundSrc={PEImage}
-                certification={<CourseCardCertifcation courseCode="pe" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Festivals and Live Events"
-                description="Explore live-event logistics and use your existing corporate event knowledge to plan both small and large-scale festivals and entertainment events."
-                href="/online-event-courses/festivals-and-live-events"
-                backgroundSrc={FLImage}
-                certification={<CourseCardCertifcation courseCode="fl" />}
-                buttons="course"
-              />
-            </div>
-            <div className="col-12 col-sm-10 col-md-6 col-xl-4 d-flex">
-              <CourseCard
-                type="specialty"
-                name="Accelerate Your Business"
-                description="Learn how to start and grow your event planning business. Work with different marketing tools to help you achieve your business goals faster."
-                href="/online-event-courses/accelerate-your-business"
-                backgroundSrc={EBImage}
-                certification={<CourseCardCertifcation courseCode="eb" />}
-                buttons="course"
-              />
-            </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-12 col-lg-8 col-xl-7 col-xxl-6">
-              <PaymentSectionGuarantee />
+            <div className="col-12 col-lg-8 text-center">
+              <MagnifyingGlassIcon height="28" className="mb-3" />
+              <h3 className="h4 mb-3">Explore More Paths in Event Planning</h3>
+              <p className="lead mb-4">Looking to expand your event planning skills? Our comprehensive catalog offers a range of courses  so that you can tailor your learning experience to suit your unique career goals. From foundational skills to specialized techniques, QC is here to help you expand your professional expertise. Let your creativity soar and unlock your full potential in the event industry!</p>
+              <Link href="/online-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
             </div>
           </div>
         </div>
       </section>
       <VirtualCommunitySection />
-      <AislePlannerSection />
-      <TestimonialSection id="TE-0006" />
+      <SupportSection showLink />
+      <GoogleReviewSection />
       <GetStartedSection
         title="Ready to Start Your Event & Wedding Planning Career?"
         text="Become Professionally Certified with QC's Online Event Planning Training"

@@ -1,4 +1,5 @@
-import { type CurrencyCode, isCurrencyCode } from './currencyCode';
+import type { CurrencyCode } from './currencyCode';
+import { isCurrencyCode } from './currencyCode';
 
 export type Currency = {
   code: CurrencyCode;
@@ -13,4 +14,14 @@ export const isCurrency = (obj: unknown): obj is Currency => {
     'symbol' in obj && typeof obj.symbol === 'string' &&
     'name' in obj && typeof obj.name === 'string' &&
     'exchangeRate' in obj && typeof obj.exchangeRate === 'number';
+};
+
+const gbpCountries = [ 'GB', 'IM', 'GG', 'JE', 'GS' ];
+
+/** determines if we charge people from a country in pounds sterling */
+export const gbpCountry = (countryCode: string | null): boolean => {
+  if (countryCode === null) {
+    return false;
+  }
+  return gbpCountries.includes(countryCode.toUpperCase());
 };

@@ -59,11 +59,16 @@ export const MainNav: FC = () => {
               <Link href="/online-event-courses/accelerate-your-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
               <li><hr className="dropdown-divider" /></li>
               <Link href="/online-event-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
+              <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Event Planning Online</Link>
             </NavDropdown>
             <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
             <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
             <Link href="/tutors" className="nav-link d-lg-none d-xl-block" onClick={handleClick}>Tutors</Link>
-            <Link href="/about-qc" className="nav-link" onClick={handleClick}>About QC</Link>
+            <NavDropdown title="About" id="about-nav-dropdown">
+              <Link href="/about-qc" className="dropdown-item" onClick={handleClick}>About the School</Link>
+              <Link href="/about-qc/meet-the-team" className="dropdown-item" onClick={handleClick}>Meet the Team</Link>
+              <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
+            </NavDropdown>
             <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-navy">Enroll Now</Link></div>
           </Nav>
         </Navbar.Collapse>
