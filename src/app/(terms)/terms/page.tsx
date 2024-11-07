@@ -5,6 +5,9 @@ import type { PageComponent } from '@/app/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy and Terms of Service',
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 const TermsPage: PageComponent = () => (

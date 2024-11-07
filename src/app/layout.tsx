@@ -17,6 +17,7 @@ import './global.scss';
 
 export const metadata: Metadata = {
   title: { default: 'QC Event School', template: '%s - QC Event School' },
+  metadataBase: new URL('https://www.qceventplanning.com'),
 };
 
 const RootLayout: LayoutComponent = ({ children }) => {

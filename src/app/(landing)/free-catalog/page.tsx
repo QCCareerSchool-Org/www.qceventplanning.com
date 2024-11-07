@@ -20,6 +20,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Course Catalog',
+  alternates: {
+    canonical: '/free-catalog',
+  },
 };
 
 const brevoListId = 2;

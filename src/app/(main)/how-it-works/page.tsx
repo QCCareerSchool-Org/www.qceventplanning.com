@@ -12,6 +12,9 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 
 export const metadata: Metadata = {
   title: 'How It Works',
+  alternates: {
+    canonical: '/how-it-works',
+  },
 };
 
 const iconSize = 24;
