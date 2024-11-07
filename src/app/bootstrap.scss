@@ -13,6 +13,8 @@
   --qc-color-cobal-grey: #bcbccb;
   --qc-color-light: #f8f8fb;
   --qc-color-light-stroke: #b5c3d1;
+
+  --qc-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
   
   --qc-section-padding: 4rem;
   @media only screen and (min-width: 768px) {
@@ -154,7 +156,7 @@ section {
   padding: var(--qc-section-padding) 0;
 }
 
-section:first-of-type {
+section.half-padding-top {
   padding: calc(var(--qc-section-padding) / 2) 0 var(--qc-section-padding); // reduce 
 }   
 
@@ -461,4 +463,8 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 
 .btn-lg {
   --bs-btn-line-height: normal;
+}
+
+.text-shadow {
+  text-shadow: var(--qc-text-shadow);
 }

@@ -1,5 +1,14 @@
 {
+  "rewrites": [
+    { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog/" },
+    { "source": "/blog/:match*", "destination": "https://blog.qceventplanning.com/blog/:match" }
+  ],
   "redirects": [
+    { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path*", "destination": "/blog/:year/:month/:path" },
+    { "source": "/author/:path*", "destination": "/blog/author/:path" },
+    { "source": "/category/:path*", "destination": "/blog/category/:path" },
+    { "source": "/tag/:path*", "destination": "/blog/tag/:path" },
+
     { "source": "/free-event-course-catalog", "destination": "/free-catalog" },
     { "source": "/about-qc/frequently-asked-questions", "destination": "/frequently-asked-questions" },
     { "source": "/online-event-courses/luxury-wedding-and-event-planning-specialization", "destination": "/online-event-courses/luxury-wedding-and-event-planning" },
@@ -12,27 +21,23 @@
     { "source": "/student-life(/.*)?", "destination": "/student-success" },
     { "source": "/tamesha-antria", "destination": "/student-success" },
     { "source": "/graduate-success-story", "destination": "/student-success" },
-    { "source": "/tutors/mwai-yeboah", "destination": "/student-success" },
-    { "source": "/tutors/renee-tucci", "destination": "/student-success" },
-    { "source": "/tutors/maryellen-madaio", "destination": "/student-success" },
-    { "source": "/tutors/angela-hodel", "destination": "/student-success" },
-    { "source": "/tutors/alyssa-perna", "destination": "/student-success" },
-    { "source": "/tutors/ashley-friesen", "destination": "/student-success" },
-    { "source": "/tutors/shannon-fowler", "destination": "/student-success" },
-    { "source": "/tutors/amira-harris", "destination": "/student-success" },
-    { "source": "/tutors/sarah-webb", "destination": "/student-success" },
-    { "source": "/tutors/anita-dipaolo", "destination": "/student-success" },
-    { "source": "/tutors/heather-hawes", "destination": "/student-success" },
-    { "source": "/tutors/become-a-tutor", "destination": "/student-success" },
+    { "source": "/tutors/mwai-yeboah", "destination": "/tutors" },
+    { "source": "/tutors/renee-tucci", "destination": "/tutors" },
+    { "source": "/tutors/maryellen-madaio", "destination": "/tutors" },
+    { "source": "/tutors/angela-hodel", "destination": "/tutors" },
+    { "source": "/tutors/alyssa-perna", "destination": "/tutors" },
+    { "source": "/tutors/ashley-friesen", "destination": "/tutors" },
+    { "source": "/tutors/shannon-fowler", "destination": "/tutors" },
+    { "source": "/tutors/amira-harris", "destination": "/tutors" },
+    { "source": "/tutors/sarah-webb", "destination": "/tutors" },
+    { "source": "/tutors/anita-dipaolo", "destination": "/tutors" },
+    { "source": "/tutors/heather-hawes", "destination": "/tutors" },
+    { "source": "/tutors/become-a-tutor", "destination": "/tutors" },
     { "source": "/tuition", "destination": "/online-event-courses" },
     { "source": "/reviews", "destination": "/" },
     { "source": "/employee-training-programs", "destination": "/online-event-courses" },
     { "source": "/terms.html", "destination": "/terms" },
     { "source": "/online-event-courses/course-pricing", "destination": "/online-event-courses" },
     { "source": "/free-event-planning-workshop/:path*", "destination": "/free-event-planning-webinar/:path*" }
-  ],
-  "rewrites": [
-    { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog/" },
-    { "source": "/blog/:match*", "destination": "https://blog.qceventplanning.com/blog/:match" }
   ]
 }

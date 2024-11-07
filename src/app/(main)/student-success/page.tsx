@@ -18,7 +18,7 @@ const testimonialIds = [ 'TE-0006', 'TE-0008', 'TE-0019', 'TE-0018', 'TE-0016', 
 const StudentSuccessPage: PageComponent = () => {
   return (
     <>
-      <section>
+      <section className="bg-light">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8 text-center">
@@ -28,8 +28,8 @@ const StudentSuccessPage: PageComponent = () => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
-      <GoogleReviewSection />
+      <TestimonialWallSection testimonialIds={testimonialIds} />
+      <GoogleReviewSection className="bg-light" />
       <CarouselSection />
       <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" />
     </>

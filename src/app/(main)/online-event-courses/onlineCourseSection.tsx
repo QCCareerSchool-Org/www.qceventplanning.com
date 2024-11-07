@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+
 import EBImage from './accelerate-your-business/hero.jpg';
 import CPImage from './corporate-event-planning/hero.jpg';
 import DWImage from './destination-wedding-planning/hero.jpg';
@@ -13,8 +14,12 @@ import WPImage from './wedding-planning/hero.jpg';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 
-export const OnlineCourseSection: FC = () => (
-  <section id="courses">
+type Props = {
+  className?: string;
+};
+
+export const OnlineCourseSection: FC<Props> = ({ className }) => (
+  <section id="courses" className={className}>
     <div className="container">
       <div className="row justify-content-center mb-s">
         <div className="col-12 col-lg-7 col-xl-6 col-xxl-5 text-center">

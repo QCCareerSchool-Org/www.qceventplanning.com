@@ -1,11 +1,9 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import CertIcon from './cert.svg';
-import ClockIcon from './clock.svg';
-import commonStyles from './commonStyles.module.css';
+import { Zoom } from '../zoom';
+import commonStyles from './commonStyles.module.scss';
 import styles from './full.module.scss';
-import ShieldCheckIcon from './shield-check.svg';
 import TagIcon from './tag.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
@@ -17,20 +15,21 @@ type Props = {
 };
 
 export const Full: FC<Props> = ({ price, href }) => (
-  <div className={`${styles.full} card`}>
-    <div className="card-body">
-      <h6 className={commonStyles.title}>Pay in Full</h6>
-      <div className={commonStyles.description}>One-Time Payment of</div>
-      <hr className={commonStyles.hr} />
-      <div className={commonStyles.price}><span className={commonStyles.priceSmall}>{price.currency.symbol}{tightNumber(price.plans.full.total) && <span style={{ marginRight: '0.25rem' }} />}</span><span className={styles.dark}>{price.plans.full.total}</span></div>
-      <Link href={href} className="btn btn-primary">Enroll Now</Link>
-      <hr className={commonStyles.hr} />
-      <ul className={commonStyles.list}>
-        <li className={`${commonStyles.bold} ${styles.dark}`}><TagIcon className={commonStyles.icon} /> SAVE {price.currency.symbol}{formatPrice(price.plans.full.discount)} when you pay in full</li>
-        <li><CertIcon className={commonStyles.icon} /> Certification upon graduation</li>
-        <li><ShieldCheckIcon className={commonStyles.icon} /> 21-day money-back guarantee</li>
-        <li><ClockIcon className={commonStyles.icon} /> Lifetime Access</li>
-      </ul>
+  <div className={`${commonStyles.card} ${styles.full} card`}>
+    <div className={`${commonStyles.message} ${styles.message}`}>Save {price.currency.symbol}{formatPrice(price.plans.full.discount)} - Limited Time Offer &nbsp;<Zoom><TagIcon height="18" color="#b20000" /></Zoom></div>
+    <div className={`card-body ${commonStyles.cardBody}`}>
+      <h6 className={`${commonStyles.title} text-white`}>Pay in Full</h6>
+      <div className={commonStyles.description}>One-time payment of</div>
+      <hr className={`${commonStyles.hr} ${styles.hr}`} />
+      <div className={commonStyles.price}>
+        <span className={styles.redStrikethrough}>{price.currency.symbol}{formatPrice(price.cost)}</span>
+        <span className={commonStyles.priceSmall}>{price.currency.symbol}</span>{tightNumber(price.plans.full.total) && <span style={{ marginRight: '0.25rem' }} />}{formatPrice(price.plans.full.total)}
+      </div>
+      <p className="mb-1">
+        <span className="fw-bold">Save {price.currency.symbol}{formatPrice(price.plans.full.discount)}</span> when you pay in full</p>
+      <p className="fw-bold">(Total: {price.currency.symbol}{formatPrice(price.plans.full.total)})</p>
+      <hr className={`${commonStyles.hr} ${styles.hr}`} />
+      <Link href={href} className="btn btn-light">Enroll Now</Link>
     </div>
   </div>
 );

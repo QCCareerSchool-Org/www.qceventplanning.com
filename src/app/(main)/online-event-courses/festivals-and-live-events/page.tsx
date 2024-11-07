@@ -11,6 +11,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { BackgroundImage } from '@/components/backgroundImage';
 import IFLPImage from '@/components/certifications/iflp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -18,7 +19,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
@@ -38,7 +38,7 @@ const testimonialIds = [ 'TE-0003', 'TE-0016', 'TE-0013', 'TE-0010', 'TE-0015', 
 
 const EventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">
@@ -90,7 +90,7 @@ const EventPlanningPage: PageComponent = () => (
       </div>
     </section>
     <section className="text-white">
-      <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+      <BackgroundImage src={CertificationBackgroundImage} />
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
@@ -101,7 +101,7 @@ const EventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section id="instructors">
+    <section id="instructors" className="bg-light">
       <div className="container">
         <div className="row g-s">
           <div className="d-none d-lg-block col-lg-6">
@@ -131,13 +131,12 @@ const EventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection className="pt-0" />
+    <VirtualCommunitySection />
     <OutlineSection />
     <GoogleReviewSection courseCode={courseCode} />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
-    <TestimonialSection id="TE-0018" courseCodes={courseCodes} />
     <GetStartedSection title="Ready to expand your event planning career?" text="Become professionally certified with QC's festivals and live events training" courseCodes={courseCodes} />
   </div>
 );
