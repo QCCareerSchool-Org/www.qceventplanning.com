@@ -3,6 +3,13 @@ import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 
+export const metadata: Metadata = {
+  title: 'Enrollment Agreement',
+  alternates: {
+    canonical: '/enrollment-agreement-gb',
+  },
+};
+
 const EnrollmentAgreementGBPage: PageComponent = () => (
   <div className={styles.terms}>
     <h1>Enrollment Agreement</h1>

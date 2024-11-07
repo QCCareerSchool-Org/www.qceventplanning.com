@@ -22,6 +22,9 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Accelerate Your Business Workshop',
+  alternates: {
+    canonical: '/online-event-courses/accelerate-your-business',
+  },
 };
 
 const courseCode: CourseCode = 'eb';

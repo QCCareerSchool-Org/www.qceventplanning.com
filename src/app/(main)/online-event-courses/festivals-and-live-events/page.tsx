@@ -27,6 +27,9 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Festivals and Live Events Course',
+  alternates: {
+    canonical: '/online-event-courses/festivals-and-live-events',
+  },
 };
 
 const courseCode: CourseCode = 'fl';

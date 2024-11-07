@@ -8,6 +8,9 @@ import { ILEASection } from '@/components/ileaSection';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses',
+  alternates: {
+    canonical: '/online-event-courses',
+  },
 };
 
 const CoursesPage: PageComponent = () => (

@@ -13,6 +13,9 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
   title: 'Become a Home Designer',
+  alternates: {
+    canonical: '/your-career',
+  },
 };
 
 const testimonialIds = [

@@ -25,6 +25,9 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Event Decor Course',
+  alternates: {
+    canonical: '/online-event-courses/event-decor',
+  },
 };
 
 const courseCode: CourseCode = 'ed';

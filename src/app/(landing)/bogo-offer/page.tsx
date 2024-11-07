@@ -20,6 +20,9 @@ const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
 export const metadata: Metadata = {
   title: 'Free Specialty Course Offer',
+  alternates: {
+    canonical: '/bogo-offer',
+  },
 };
 
 const CoursesPage: PageComponent = () => {

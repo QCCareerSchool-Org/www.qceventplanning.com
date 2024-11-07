@@ -10,6 +10,9 @@ import { ILEASection } from '@/components/ileaSection';
 
 export const metadata: Metadata = {
   title: 'About QC Event School',
+  alternates: {
+    canonical: '/about-qc',
+  },
 };
 
 const AboutQCPage: PageComponent = () => (

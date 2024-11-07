@@ -18,6 +18,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Event & Wedding Planning Course Catalog',
+  alternates: {
+    canonical: '/free-event-and-wedding-planning-course-catalog',
+  },
 };
 
 const brevoListId = 2;

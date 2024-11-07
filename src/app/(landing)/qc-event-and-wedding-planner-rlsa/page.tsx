@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import Link from 'next/link';
@@ -23,6 +24,13 @@ import { ILEASection } from '@/components/ileaSection';
 import { AylaOtto, TylerReid } from '@/components/testimonial/images';
 import { TestimonialSection } from '@/components/testimonialSection';
 import WhyQCImage from '@/components/why-qc.jpg';
+
+export const metadata: Metadata = {
+  title: 'Event & Wedding Planner Certification',
+  alternates: {
+    canonical: '/qc-event-and-wedding-planner-rlsa',
+  },
+};
 
 const RSLAPage: PageComponent = () => {
   return (
