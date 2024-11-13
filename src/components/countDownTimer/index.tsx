@@ -39,7 +39,7 @@ export const CountDownTimer: FC<Props> = ({ date }) => {
       >
         Hurry up, we're almost out!
         {currentDate >= startCountdownDate &&
-          <div className="d-flex justify-content-center align-items-center gap-2 gap-sm-4">
+          <div className="d-flex justify-content-center align-items-center gap-3 gap-sm-4">
             <CountDownElement number={days} name="day" disabled={daysDisabled} />
             <CountDownElement number={hours} name="hour" disabled={hoursDisabled} />
             <CountDownElement number={minutes} name="minute" disabled={minutesDisabled} />
@@ -52,7 +52,7 @@ export const CountDownTimer: FC<Props> = ({ date }) => {
 };
 
 export const CountDownElement: FC<{ name: string; number: number; disabled: boolean }> = ({ name, number, disabled }) => (
-  <div className="fw-bold text-center d-flex flex-column">
+  <div className="fw-bold text-center d-flex flex-column justify-content-center align-items-center" style={{ width: '40px' }}>
     <span className={`fs-2 fs-sm-1 display-lg-5 ${disabled ? 'text-secondary' : ''}`}>
       {number.toString().padStart(2, '0')}
     </span>
