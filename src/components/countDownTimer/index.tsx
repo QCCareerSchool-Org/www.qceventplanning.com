@@ -34,8 +34,7 @@ export const CountDownTimer: FC<Props> = ({ date }) => {
 
     return (
       <div
-        className="fw-bold text-center py-2"
-        style={{ backgroundColor: 'black', color: 'white' }}
+        className="fw-bold text-center py-2 bg-black text-white"
       >
         Hurry up, we're almost out!
         {currentDate >= startCountdownDate &&
@@ -56,7 +55,7 @@ export const CountDownElement: FC<{ name: string; number: number; disabled: bool
     <span className={`fs-2 fs-sm-1 display-lg-5 ${disabled ? 'text-secondary' : ''}`}>
       {number.toString().padStart(2, '0')}
     </span>
-    <span style={{ fontSize: '0.75rem', marginTop: '-10px' }} className={disabled ? 'text-secondary' : ''}>
+    <span style={{ fontSize: '0.75rem', marginTop: '-10px' }}>
       {name}{number !== 1 && 's'}
     </span>
   </div>
