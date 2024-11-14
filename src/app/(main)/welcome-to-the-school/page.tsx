@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
@@ -16,6 +17,13 @@ import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { trustPulseEnrollment } from '@/lib/trustpulse';
 
 const brevoStudentListId = 14;
+
+export const metadata: Metadata = {
+  title: 'Thank You for Enrolling with QC Event School!',
+  alternates: {
+    canonical: '/welcome-to-the-school',
+  },
+};
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
   const enrollmentIdParam = getParam(searchParams.enrollmentId);

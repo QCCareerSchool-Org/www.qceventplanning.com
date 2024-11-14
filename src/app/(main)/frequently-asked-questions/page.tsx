@@ -9,6 +9,9 @@ import { getTelephoneNumber } from '@/lib/telephone';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
+  alternates: {
+    canonical: '/frequently-asked-questions',
+  },
 };
 
 const FAQPage: PageComponent = () => {

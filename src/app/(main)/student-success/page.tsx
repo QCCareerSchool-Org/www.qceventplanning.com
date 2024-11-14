@@ -8,6 +8,9 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
   title: 'Student Success',
+  alternates: {
+    canonical: '/student-success',
+  },
 };
 
 const testimonialIds = [ 'TE-0006', 'TE-0008', 'TE-0019', 'TE-0018', 'TE-0016', 'TE-0003' ];

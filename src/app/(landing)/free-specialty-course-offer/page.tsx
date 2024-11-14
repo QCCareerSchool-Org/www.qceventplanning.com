@@ -19,6 +19,9 @@ import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
   title: 'Free Specialty Course Offer',
+  alternates: {
+    canonical: '/free-specialty-course-offer',
+  },
 };
 
 const enrollLink = 'https://enroll.qceventplanning.com/free-specialty';

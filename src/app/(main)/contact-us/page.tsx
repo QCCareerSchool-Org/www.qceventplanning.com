@@ -13,6 +13,9 @@ import { getTelephoneNumber } from '@/lib/telephone';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
+  alternates: {
+    canonical: '/contact-us',
+  },
 };
 
 const ContactUsPage: PageComponent = () => {

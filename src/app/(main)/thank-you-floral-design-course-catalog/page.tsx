@@ -13,6 +13,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog',
+  alternates: {
+    canonical: '/thank-you-floral-design-course-catalog',
+  },
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {

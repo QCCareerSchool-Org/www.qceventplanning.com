@@ -19,6 +19,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Floral Design Course Catalog',
+  alternates: {
+    canonical: '/free-floral-design-course-catalog',
+  },
 };
 
 const brevoListId = 12;

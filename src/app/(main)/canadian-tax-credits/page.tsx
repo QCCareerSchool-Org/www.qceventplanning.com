@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
 import type { PageComponent } from '@/app/serverComponent';
+
+export const metadata: Metadata = {
+  title: 'Canadian Tax Credits',
+  alternates: {
+    canonical: '/canadian-tax-credits',
+  },
+};
 
 const CanadianTaxCreditsPage: PageComponent = () => (
   <>
