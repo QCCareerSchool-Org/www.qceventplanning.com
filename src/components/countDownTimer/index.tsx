@@ -5,16 +5,15 @@ import { useEffect, useState } from 'react';
 
 import { Banner } from './banner';
 import { getParts } from './getParts';
-import { gbpCountry } from '@/domain/currency';
 
 type Props = {
   date: number;
   countryCode: string;
 };
 
-const bannerStartDate = Date.UTC(2024, 10, 12, 17, 43); // November 12, 2024 at 12:30 (17:30 UTC)
-const countDownStartDate = Date.UTC(2024, 10, 13, 17, 43); // November 13, 2024 at 12:30 (17:30 UTC)
-const endDate = Date.UTC(2024, 10, 20, 5); // November 20, 2024 at 00:00 (05:00 UTC)
+const bannerStartDate = Date.UTC(2024, 10, 18, 13); // November 18, 2024 at 08:00 (13:00 UTC)
+const countDownStartDate = Date.UTC(2024, 10, 29, 8); // November 29, 2024 at 3:00 (08:00 UTC)
+const endDate = Date.UTC(2024, 10, 30, 8); // November 30, 2024 at 03:00 (08:00 UTC)
 
 if (endDate < countDownStartDate) {
   throw Error('end is before count down start');
@@ -24,7 +23,7 @@ if (countDownStartDate < bannerStartDate) {
   throw Error('count down starts before banner starts');
 }
 
-export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
+export const CountDownTimer: FC<Props> = ({ date }) => {
   const [ currentDate, setCurrentDate ] = useState(date);
 
   // keep track of the current time each second
@@ -39,17 +38,15 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
   if (currentDate >= bannerStartDate && currentDate < endDate) {
     const [ days, hours, minutes, seconds ] = getParts(endDate - currentDate);
 
-    const discount = gbpCountry(countryCode) ? '£100' : '$100';
-
     const showTimer = currentDate >= countDownStartDate;
 
     const message = showTimer
-      ? <RegularMessage discount={discount} />
-      : <LastChanceMessage discount={discount} />;
+      ? <RegularMessage />
+      : <LastChanceMessage />;
 
     return (
       <Banner
-        url="https://enroll.qcdesignschool.com"
+        url="https://enroll.qceventplanning.com"
         message={message}
         showTimer={showTimer}
         days={days}
@@ -61,14 +58,14 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
   }
 };
 
-const RegularMessage: FC<{ discount: string }> = ({ discount }) => (
+const RegularMessage: FC = () => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday Ending:</strong> BOGO Any Course + {discount} Off
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Last Chance:</strong> Get 2 Specialty Courses FREE!
   </span>
 );
 
-const LastChanceMessage: FC<{ discount: string }> = ({ discount }) => (
+const LastChanceMessage: FC = () => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday:</strong> BOGO Any Course + {discount} Off
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday:</strong> Get 2 Specialty Courses FREE!
   </span>
 );
