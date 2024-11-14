@@ -3,19 +3,31 @@
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
+import { Banner } from './banner';
 import { getParts } from './getParts';
+import { gbpCountry } from '@/domain/currency';
 
 type Props = {
   date: number;
+  countryCode: string;
 };
 
-const startBannerDate = Date.UTC(2024, 10, 12, 17, 43); // November 12, 2024 at 12:30 (17:30 UTC)
-const startCountdownDate = Date.UTC(2024, 10, 13, 17, 43); // November 13, 2024 at 12:30 (17:30 UTC)
+const bannerStartDate = Date.UTC(2024, 10, 12, 17, 43); // November 12, 2024 at 12:30 (17:30 UTC)
+const countDownStartDate = Date.UTC(2024, 10, 13, 17, 43); // November 13, 2024 at 12:30 (17:30 UTC)
 const endDate = Date.UTC(2024, 10, 20, 5); // November 20, 2024 at 00:00 (05:00 UTC)
 
-export const CountDownTimer: FC<Props> = ({ date }) => {
+if (endDate < countDownStartDate) {
+  throw Error('end is before count down start');
+}
+
+if (countDownStartDate < bannerStartDate) {
+  throw Error('count down starts before banner starts');
+}
+
+export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
   const [ currentDate, setCurrentDate ] = useState(date);
 
+  // keep track of the current time each second
   useEffect(() => {
     const id = setInterval(() => {
       setCurrentDate(d => d + 1000);
@@ -24,39 +36,39 @@ export const CountDownTimer: FC<Props> = ({ date }) => {
     return () => clearInterval(id);
   }, []);
 
-  if (currentDate >= startBannerDate && currentDate < endDate) {
+  if (currentDate >= bannerStartDate && currentDate < endDate) {
     const [ days, hours, minutes, seconds ] = getParts(endDate - currentDate);
 
-    const daysDisabled = days === 0;
-    const hoursDisabled = hours === 0 && daysDisabled;
-    const minutesDisabled = minutes === 0 && hoursDisabled;
-    const secondsDisabled = seconds === 0 && minutesDisabled;
+    const discount = gbpCountry(countryCode) ? '£100' : '$100';
+
+    const showTimer = currentDate >= countDownStartDate;
+
+    const message = showTimer
+      ? <RegularMessage discount={discount} />
+      : <LastChanceMessage discount={discount} />;
 
     return (
-      <div
-        className="fw-bold text-center py-2 bg-black text-white"
-      >
-        Hurry up, we're almost out!
-        {currentDate >= startCountdownDate &&
-          <div className="d-flex justify-content-center align-items-center gap-3 gap-sm-4">
-            <CountDownElement number={days} name="day" disabled={daysDisabled} />
-            <CountDownElement number={hours} name="hour" disabled={hoursDisabled} />
-            <CountDownElement number={minutes} name="minute" disabled={minutesDisabled} />
-            <CountDownElement number={seconds} name="second" disabled={secondsDisabled} />
-          </div>
-        }
-      </div>
+      <Banner
+        url="https://enroll.qcdesignschool.com"
+        message={message}
+        showTimer={showTimer}
+        days={days}
+        hours={hours}
+        minutes={minutes}
+        seconds={seconds}
+      />
     );
   }
 };
 
-export const CountDownElement: FC<{ name: string; number: number; disabled: boolean }> = ({ name, number, disabled }) => (
-  <div className="fw-bold text-center d-flex flex-column justify-content-center align-items-center" style={{ width: '40px' }}>
-    <span className={`fs-2 fs-sm-1 display-lg-5 ${disabled ? 'text-secondary' : ''}`}>
-      {number.toString().padStart(2, '0')}
-    </span>
-    <span style={{ fontSize: '0.75rem', marginTop: '-10px' }}>
-      {name}{number !== 1 && 's'}
-    </span>
-  </div>
+const RegularMessage: FC<{ discount: string }> = ({ discount }) => (
+  <span style={{ textTransform: 'uppercase' }}>
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday Ending:</strong> BOGO Any Course + {discount} Off
+  </span>
+);
+
+const LastChanceMessage: FC<{ discount: string }> = ({ discount }) => (
+  <span style={{ textTransform: 'uppercase' }}>
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday:</strong> BOGO Any Course + {discount} Off
+  </span>
 );

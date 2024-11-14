@@ -9,7 +9,6 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import styles from './mainNav.module.css';
 import Toggle from './toggle.svg';
-import { CountDownTimer } from '@/components/countDownTimer';
 import { Logo } from '@/components/logo';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
@@ -23,11 +22,8 @@ export const MainNav: FC = () => {
     }, 0);
   };
 
-  const date = new Date().getTime();
-
   return (
-    <div style={{ position: 'fixed', top: 0, zIndex: 100, width: '100%' }} className="bg-white">
-      <CountDownTimer date={date} />
+    <div className="bg-white">
       <Navbar key={key} expand="lg" collapseOnSelect={true} className={`${styles.mainNav} ${scrollPosition > 1 ? styles.scrolled : undefined} bg-white`}>
         <div className="container">
           <Link className="navbar-brand" href="/" aria-label="Home page">
