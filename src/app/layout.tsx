@@ -17,6 +17,7 @@ import './global.scss';
 
 export const metadata: Metadata = {
   title: { default: 'QC Event School', template: '%s - QC Event School' },
+  metadataBase: new URL('https://www.qceventplanning.com'),
 };
 
 const RootLayout: LayoutComponent = ({ children }) => {
@@ -27,7 +28,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
       </head>
-      <body className="d-flex flex-column h-100">
+      <body className="d-flex flex-column">
         <Provider>
           {children}
         </Provider>

@@ -15,6 +15,9 @@ import SarahWebbImage from '@/components/tutorImages/images/sarah-webb.jpg';
 
 export const metadata: Metadata = {
   title: 'Tutors',
+  alternates: {
+    canonical: '/tutors',
+  },
 };
 
 const TutorsPage: PageComponent = () => (

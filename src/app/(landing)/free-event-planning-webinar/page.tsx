@@ -15,6 +15,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Join the Free Webinar with Lisa Forbes',
+  alternates: {
+    canonical: '/free-event-planning-webinar',
+  },
 };
 
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];

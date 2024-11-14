@@ -8,6 +8,9 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 
 export const metadata: Metadata = {
   title: 'Meet the Team',
+  alternates: {
+    canonical: '/about-qc/meet-the-team',
+  },
 };
 
 const MeetTheTeamPage: PageComponent = () => {

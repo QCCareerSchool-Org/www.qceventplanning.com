@@ -27,6 +27,9 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Promotional Event Planning Course',
+  alternates: {
+    canonical: '/online-event-courses/promotional-event-planning',
+  },
 };
 
 const courseCode: CourseCode = 'pe';
