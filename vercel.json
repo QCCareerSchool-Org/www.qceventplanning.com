@@ -8,6 +8,7 @@
     { "source": "/author/:path*", "destination": "/blog/author/:path" },
     { "source": "/category/:path*", "destination": "/blog/category/:path" },
     { "source": "/tag/:path*", "destination": "/blog/tag/:path" },
+    { "source": "/wp-content/:path*", "destination": "/blog/wp-content/:path" },
 
     { "source": "/free-event-course-catalog", "destination": "/free-catalog" },
     { "source": "/about-qc/frequently-asked-questions", "destination": "/frequently-asked-questions" },
