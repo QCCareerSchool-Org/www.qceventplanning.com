@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaTiktok } from 'react-icons/fa';
 
 import BriefcaseIcon from '../../../(main)/briefcase.svg';
 import CertificationIcon from '../../../(main)/certification.svg';
@@ -19,6 +18,11 @@ import CheckIcon from '@/components/check.svg';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { GetStartedSection } from '@/components/getStartedSection';
+import FacebookIcon from '@/components/icons/facebook.svg';
+import InstagramIcon from '@/components/icons/instagram.svg';
+import LinkedinIcon from '@/components/icons/linkedin.svg';
+import PinterestIcon from '@/components/icons/pinterest.svg';
+import TiktokIcon from '@/components/icons/tiktok.svg';
 import { ILEASection } from '@/components/ileaSection';
 import MagnifyingGlassIcon from '@/components/magnifying-glass.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
@@ -139,11 +143,11 @@ const WebinarThankYouPage: PageComponent = () => {
       <div className="bg-navy text-white">
         <div className="container">
           <div className="d-flex justify-content-center">
-            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaTiktok alt="Tiktok" /></a></div>
-            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaInstagram alt="Instagram" /></a></div>
-            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaFacebook alt="Facebook" /></a></div>
-            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaLinkedin alt="LinkedIn" /></a></div>
-            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FaPinterest alt="Pinterest" style={{ color: 'inherit' }} /></a></div>
+            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><TiktokIcon alt="Tiktok" /></a></div>
+            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><InstagramIcon alt="Instagram" /></a></div>
+            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FacebookIcon alt="Facebook" /></a></div>
+            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><LinkedinIcon alt="LinkedIn" /></a></div>
+            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><PinterestIcon alt="Pinterest" style={{ color: 'inherit' }} /></a></div>
           </div>
         </div>
       </div>

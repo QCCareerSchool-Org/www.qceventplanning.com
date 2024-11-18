@@ -64,16 +64,6 @@ export const OnlineCourseSection: FC<Props> = ({ className }) => (
         <div className="col-12 col-sm-10 col-lg-6 d-flex">
           <CourseCard
             type="foundation"
-            name="Event Decor"
-            description="Expand your creative skills to design an event's mood and aesthetic experience. Learn to coordinate lighting, color, and decor to suit a theme."
-            href="/online-event-courses/event-decor"
-            backgroundSrc={EDImage}
-            certification={<CourseCardCertifcation courseCode="ed" />}
-          />
-        </div>
-        <div className="col-12 col-sm-10 col-lg-6 d-flex">
-          <CourseCard
-            type="foundation"
             name="Floral Design"
             description="Launch your own business, work for an experienced floral designer, or incorporate your floral design skills into an existing career in event planning."
             href="/online-event-courses/floral-design"
@@ -89,6 +79,16 @@ export const OnlineCourseSection: FC<Props> = ({ className }) => (
             href="/online-event-courses/wedding-planning"
             backgroundSrc={WPImage}
             certification={<CourseCardCertifcation courseCode="wp" />}
+          />
+        </div>
+        <div className="col-12 col-sm-10 col-lg-6 d-flex">
+          <CourseCard
+            type="specialty"
+            name="Event Decor"
+            description="Expand your creative skills to design an event's mood and aesthetic experience. Learn to coordinate lighting, color, and decor to suit a theme."
+            href="/online-event-courses/event-decor"
+            backgroundSrc={EDImage}
+            certification={<CourseCardCertifcation courseCode="ed" />}
           />
         </div>
         <div className="col-12 col-sm-10 col-lg-6 d-flex">
