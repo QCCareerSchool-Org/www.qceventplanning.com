@@ -10,7 +10,7 @@ export const Header: FC = () => {
   const { countryCode } = getData();
 
   return (
-    <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 100, width: '100%' }}>
+    <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
       <CountDownTimer date={date} countryCode={countryCode} />
       <MainNav />
     </header>
