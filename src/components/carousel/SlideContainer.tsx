@@ -31,7 +31,7 @@ export const SlideContainer: FC<PropsWithChildren<Props>> = ({ show, index, onHe
 
       return () => element.removeEventListener('resize', handler);
     }
-  }, [ onHeightChange ]);
+  }, [ onHeightChange, index ]);
 
   return (
     <div ref={ref} className={`${styles.slideContainer} ${show ? styles.show : undefined}`}>

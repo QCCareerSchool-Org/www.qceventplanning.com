@@ -12,7 +12,7 @@ export const ButtonWrapper: FC<PropsWithChildren<Props>> = ({ alwaysVisible, chi
   const scrollPosition = useScrollPosition();
   const screenWidth = useScreenWidth();
 
-  return (alwaysVisible || show(screenWidth, scrollPosition)) && children;
+  return (alwaysVisible || show(screenWidth, scrollPosition)) && <>{children}</>;
 };
 
 const show = (screenWidth: number, scrollPosition: number): boolean => {

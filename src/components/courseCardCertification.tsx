@@ -1,6 +1,6 @@
 'use client';
 
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import DWS from '@/components/certifications/dws.svg';
 import ICPP from '@/components/certifications/icpp.svg';
 import IEDP from '@/components/certifications/iedp.svg';
@@ -23,32 +23,37 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
   if (screenWidth === 0) {
     return;
   }
-  return getCertification(courseCode, screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90);
+
+  const Certification = getCertification(courseCode);
+  if (Certification) {
+    return <Certification height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
+  }
 };
 
-export const getCertification = (courseCode: CourseCode, height: number): ReactNode => {
+type ImageComponent = FC<{ height: number }>;
 
+export const getCertification = (courseCode: CourseCode): ImageComponent | null => {
   switch (courseCode) {
     case 'ep':
-      return <IEWP height={height} />;
+      return IEWP as ImageComponent;
     case 'wp':
-      return <IWPP height={height} />;
+      return IWPP as ImageComponent;
     case 'cp':
-      return <ICPP height={height} />;
+      return ICPP as ImageComponent;
     case 'ce':
-      return <IEPP height={height} />;
+      return IEPP as ImageComponent;
     case 'ed':
-      return <IEDP height={height} />;
+      return IEDP as ImageComponent;
     case 'fd':
-      return <IFDP height={height} />;
+      return IFDP as ImageComponent;
     case 'dw':
-      return <DWS height={height} />;
+      return DWS as ImageComponent;
     case 'lw':
-      return <LWES height={height} />;
+      return LWES as ImageComponent;
     case 'pe':
-      return <PES height={height} />;
+      return PES as ImageComponent;
     case 'fl':
-      return <IFLP height={height} />;
+      return IFLP as ImageComponent;
     default:
       return null;
   }
