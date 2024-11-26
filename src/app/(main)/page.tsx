@@ -21,11 +21,13 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { ILEASection } from '@/components/ileaSection';
+import { PromoSection } from '@/components/promoSection';
 import { StatsSection } from '@/components/statsSection/statsSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
+import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Event School' },
@@ -34,6 +36,9 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
 const HomePage: PageComponent = () => {
+  const { countryCode } = getData();
+  const date = new Date().getTime();
+
   return (
     <>
       <section className="text-white">
@@ -48,6 +53,7 @@ const HomePage: PageComponent = () => {
           </div>
         </div>
       </section>
+      <PromoSection date={date} countryCode={countryCode} />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">

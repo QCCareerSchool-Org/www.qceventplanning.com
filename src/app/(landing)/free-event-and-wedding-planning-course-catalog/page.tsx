@@ -13,7 +13,9 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
+import { PromoSection } from '@/components/promoSection';
 import { TestimonialSection } from '@/components/testimonialSection';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -27,6 +29,8 @@ const brevoListId = 2;
 const brevoEmailTemplateId = 32;
 
 const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams }) => {
+  const { countryCode } = getData();
+  const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -39,7 +43,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
 
   return (
     <div className={`${styles.freeCatalog}`}>
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <section className="text-white">
         <HomeHeroImage />
         <div className="container">
@@ -70,6 +74,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
           </div>
         </div>
       </section>
+      <PromoSection date={date} countryCode={countryCode} />
       <IndustrySection />
       <JoinQCSection />
       <TestimonialSection id="TE-0006" />
