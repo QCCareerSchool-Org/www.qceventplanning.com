@@ -10,9 +10,10 @@ type Props = {
 
 export const Popup: FC<Props> = props => (
   <Modal show={props.show} onHide={props.onHide}>
-    <Modal.Header closeButton>Black Friday Special</Modal.Header>
+    <Modal.Header closeButton><strong className="text-black">Black Friday Special</strong></Modal.Header>
     <Modal.Body>
       <p>Enroll in any foundation course and get two specialty courses FREE! Specialize your training and become a certified expert with our Black Friday special&mdash;don't miss out!</p>
+      <div className="text-center"><a href="https://enroll.qceventplanning.com"><button className="btn btn-primary shadow-sm">Enroll Now</button></a></div>
       <hr />
       <h6>Learn From Expert Instructors</h6>
       <p>We've hand-selected the top event planning professionals in the industry to guide you through your course material.</p>
