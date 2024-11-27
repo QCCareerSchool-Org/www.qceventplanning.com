@@ -37,7 +37,6 @@ export const Header: FC<Props> = ({ logoLink, buttonHref = '#', buttonContent, b
           </div>
         </div>
       </header>
-      <div className={styles.headerSpacer} />
     </div>
   );
 };

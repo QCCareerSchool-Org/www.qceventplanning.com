@@ -1,10 +1,12 @@
 .headerComponent {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+
   .header {
     background-color: var(--bs-light);
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 100;
 
     .content {
       height: 62px;
@@ -18,10 +20,5 @@
       padding-left: 1rem;
       padding-right: 1.25rem;
     }
-  }
-  
-  .headerSpacer {
-    margin-bottom: 62px;
-    @media only screen and (min-width: 768px) { margin-bottom: 70px; }
   }
 }
