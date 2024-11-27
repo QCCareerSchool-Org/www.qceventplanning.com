@@ -78,7 +78,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <IndustrySection />
+      <IndustrySection className="bg-light" />
       <HowYoullLearnSection graduateTitle="Event Planner" />
       <StatsSection />
       <JoinQCSection />
