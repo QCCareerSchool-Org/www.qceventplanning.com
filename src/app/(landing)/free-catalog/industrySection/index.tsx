@@ -2,8 +2,12 @@ import type { FC } from 'react';
 import { Animation } from './animation';
 import ChartIcon from './chart.svg';
 
-export const IndustrySection: FC = () => (
-  <section>
+type Props = {
+  className?: string;
+};
+
+export const IndustrySection: FC<Props> = ({ className }) => (
+  <section className={className}>
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6 text-center">
