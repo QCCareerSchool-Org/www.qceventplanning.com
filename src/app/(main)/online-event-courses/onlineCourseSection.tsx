@@ -83,7 +83,7 @@ export const OnlineCourseSection: FC<Props> = ({ className }) => (
         </div>
         <div className="col-12 col-sm-10 col-lg-6 d-flex">
           <CourseCard
-            type="specialty"
+            type="foundation"
             name="Event Decor"
             description="Expand your creative skills to design an event's mood and aesthetic experience. Learn to coordinate lighting, color, and decor to suit a theme."
             href="/online-event-courses/event-decor"
