@@ -4,7 +4,11 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      disallow: [ '/wp-admin/', '/blog/wp-admin/' ],
+      disallow: [
+        '/wp-admin/',
+        '/blog/wp-admin/',
+        '/*?*playAgain=',
+      ],
       allow: '/blog/wp-admin/admin-ajax.php',
       crawlDelay: 10,
     },
