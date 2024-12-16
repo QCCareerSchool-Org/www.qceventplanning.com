@@ -19,7 +19,7 @@ const FAQPage: PageComponent = () => {
   const telephoneNumber = getTelephoneNumber(countryCode);
 
   return (
-    <div className={styles.faq}>
+    <div className={styles.faq} itemScope itemType="https://schema.org/FAQPage">
       <section>
         <div className="container text-center">
           <h1>FAQ</h1>
