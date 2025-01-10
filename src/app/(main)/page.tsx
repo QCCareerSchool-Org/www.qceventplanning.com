@@ -135,7 +135,7 @@ const HomePage: PageComponent = () => {
               <MagnifyingGlassIcon height="28" className="mb-3" />
               <h3 className="h4 mb-3">Explore More Paths in Event Planning</h3>
               <p className="lead mb-4">Looking to expand your event planning skills? Our comprehensive catalog offers a range of courses  so that you can tailor your learning experience to suit your unique career goals. From foundational skills to specialized techniques, QC is here to help you expand your professional expertise. Let your creativity soar and unlock your full potential in the event industry!</p>
-              <Link href="/online-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
+              <Link href="/online-event-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
             </div>
           </div>
         </div>
