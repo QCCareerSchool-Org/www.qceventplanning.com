@@ -4,8 +4,9 @@ import { LayoutClient } from '../layoutClient';
 import { Footer } from './footer';
 import { Header } from './header';
 import type { LayoutComponent } from '@/app/serverComponent';
+import { BrevoConversations } from '@/scripts/brevoCoversations';
+
 import '@/app/bootstrap.scss';
-import { LiveChat } from '@/scripts/liveChat';
 
 const MainLayout: LayoutComponent = ({ children }) => {
   return (
@@ -13,7 +14,7 @@ const MainLayout: LayoutComponent = ({ children }) => {
       <Header />
       <main className="flex-shrink-0">{children}</main>
       <Footer />
-      <LiveChat license={1056788} group={1} />
+      {process.env.BREVO_CONVERSATIONS_ID && <BrevoConversations conversationsId={process.env.BREVO_CONVERSATIONS_ID} />}
       <Suspense><LayoutClient /></Suspense>
     </>
   );
