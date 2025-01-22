@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 
@@ -49,7 +50,7 @@ const TermsPage: PageComponent = () => (
     <h2>Contacting Us</h2>
     <p>If there are any questions regarding this privacy policy you may contact us using the information below.</p>
     <p>QC Career School<br />38 McArthur Ave<br />Ottawa ON &nbsp;K1L 6R2<br />Canada</p>
-    <p>Email: info@qccareerschool.com<br />Phone: 1-613-749-8248</p>
+    <p>Email: <InfoEmailAddress /><br />Phone: 1-613-749-8248</p>
     <p><em>This policy is powered by Free Privacy Policy and Rhino Support helpdesk software.</em></p>
   </div>
 );
