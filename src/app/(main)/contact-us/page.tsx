@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 import ChatIcon from './chat.svg';
-import { ChatLink } from './chatLink';
 import EmailIcon from './email.svg';
-import { EmailLink } from './emailLink';
 import styles from './page.module.scss';
 import PhoneIcon from './phone.svg';
 import type { PageComponent } from '@/app/serverComponent';
+import { ChatLink } from '@/components/chatLink';
+import { EmailLink } from '@/components/emailLink';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getData } from '@/lib/getData';
 import { getTelephoneNumber } from '@/lib/telephone';
@@ -50,7 +50,7 @@ const ContactUsPage: PageComponent = () => {
               <ChatIcon />
               <h2 className="h4">Chat</h2>
               <p>Have an urgent question? Our Student Support Specialists are standing by<span className="d-lg-none d-xxl-inline"> for a quick chat</span>!</p>
-              <ChatLink />
+              <ChatLink>Chat with Support</ChatLink>
             </div>
           </div>
         </div>
