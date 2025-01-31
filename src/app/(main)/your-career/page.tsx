@@ -12,20 +12,13 @@ import { PerksSection } from '@/components/perksSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
-  title: 'Become a Home Designer',
+  title: 'Your Event & Wedding Planning Career',
   alternates: {
     canonical: '/your-career',
   },
 };
 
-const testimonialIds = [
-  'TE-0001',
-  'TE-0002',
-  'TE-0003',
-  'TE-0004',
-  'TE-0005',
-  'TE-0006',
-];
+const testimonialIds = [ 'TE-0001', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
 const YourCareerPage: PageComponent = () => (
   <>
