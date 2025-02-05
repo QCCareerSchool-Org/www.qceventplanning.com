@@ -33,7 +33,7 @@ const YourCareerPage: PageComponent = () => (
         <div className="row">
           <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
             <p className="lead mb-4"><strong>Start your career as an event planning professional!</strong> QC's comprehensive courses equip you with the essential skills and industry knowledge to excel in your chosen event planning niche. Each course is designed to help you confidently launch your dream career in the dynamic event industry.</p>
-            <Link href="/online-courses" className="btn btn-dark btn-lg">View Courses</Link>
+            <Link href="/online-event-courses" className="btn btn-dark btn-lg">View Courses</Link>
           </div>
         </div>
       </div>
