@@ -70,7 +70,7 @@ const HowItWorksPage: PageComponent = () => (
       title="Start Your Event Planning Career Today!"
       text="It's never too late to start a career you'll love. Enroll in an online course with QC today and become a certified event planning professional!"
       buttonText="View Courses"
-      buttonHref="/online-courses"
+      buttonHref="/online-event-courses"
     />
   </div>
 );
