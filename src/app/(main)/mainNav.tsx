@@ -50,9 +50,9 @@ export const MainNav: FC = () => {
                 <Link href="/online-event-courses/event-planning" className="dropdown-item" onClick={handleClick}>Event Planning</Link>
                 <Link href="/online-event-courses/floral-design" className="dropdown-item" onClick={handleClick}>Floral Design</Link>
                 <Link href="/online-event-courses/wedding-planning" className="dropdown-item" onClick={handleClick}>Wedding Planning</Link>
+                <Link href="/online-event-courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
                 <li><hr className="dropdown-divider" /></li>
                 <li style={{ paddingLeft: '1rem', fontWeight: 'bold', margin: '1rem 0 0.5rem 0' }}>Specialty Courses</li>
-                <Link href="/online-event-courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
                 <Link href="/online-event-courses/luxury-wedding-and-event-planning" className="dropdown-item" onClick={handleClick}>Luxury Wedding &amp; Event Planning</Link>
                 <Link href="/online-event-courses/destination-wedding-planning" className="dropdown-item" onClick={handleClick}>Destination Wedding Planning</Link>
                 <Link href="/online-event-courses/promotional-event-planning" className="dropdown-item" onClick={handleClick}>Promotional Event Planning</Link>
