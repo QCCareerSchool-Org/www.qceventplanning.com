@@ -64,7 +64,7 @@ const FAQPage: PageComponent = () => {
               <p>Absolutely. Perhaps you'd like to learn how to plan an upcoming wedding, organize events for fun, or add new skills to your resume. Whatever your reason, our training will be very useful to you even if you do not wish to work in the industry professionally.</p>
             </Question>
             <Question heading="Will I receive a discount if I enroll with a friend or colleague?">
-              <p>Yes! Groups of two or more are eligible to receive a 25% discount per person when you enroll. Simply <Link href="/contact-us">contact QC's Student Support Team</Link>, and we'll help you get started.</p>
+              <p>Yes! Groups of two or more are eligible for a special discount when you enroll. Simply contact <Link href="/contact-us">contact QC's Student Support Team</Link>, and we'll help you get started.</p>
             </Question>
             <Question heading="Do you offer a military discount?">
               <p>QC Event School is pleased to offer a military discount of 10% for current members of the forces. The discount process requires you to submit proof of identification to the School. Note that this discount is only applicable when enrolling using one of our payment plans. Please <Link href="/contact-us">contact Student Support services</Link> for more information.</p>
