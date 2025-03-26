@@ -8,7 +8,6 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import AlyssaPernaImage from '@/components/tutorImages/images/alyssa-perna.jpg';
 import AngelaHodelImage from '@/components/tutorImages/images/angela-hodal.jpg';
 import AnitaDiPaoloImage from '@/components/tutorImages/images/anita-dipaolo.jpg';
-import AshleyFriesenImage from '@/components/tutorImages/images/ashley-friesen.jpg';
 import HeatherHawesImage from '@/components/tutorImages/images/heather-hawes.jpg';
 import KimberlyJerkinsImage from '@/components/tutorImages/images/kimberly-jerkins.jpg';
 import SarahWebbImage from '@/components/tutorImages/images/sarah-webb.jpg';
@@ -81,12 +80,6 @@ const tutors = [
     subHeading: 'Owner of Grazie Gifts With over 9 years of experience',
     text: 'Anita thrives on the challenge of creating proposals within budget, and coordinating entire themed events starting from the simplest spark of inspiration.',
     src: AnitaDiPaoloImage,
-  },
-  {
-    name: 'Ashley Friesen',
-    subHeading: 'Owner and lead planner for Ashley Brooke Weddings',
-    text: 'With 10 years of experience in the wedding industry, she specializes in wedding planning, design and coordination and loves being able to create weddings that are unique to each of her couples.',
-    src: AshleyFriesenImage,
   },
   {
     name: 'Sarah Webb',
