@@ -35,7 +35,7 @@ const FAQPage: PageComponent = () => {
             <h2 className="h3 mb-3">Before You Enroll</h2>
             {countryCode === 'CA' && (
               <Question heading="Can I claim my course tuition on my taxes?">
-                <p>Yes, and you can have more than 50% of your course fees covered! QC is a Certified Education Institution with Employment and Social Development Canada. At the end of the year, we'll send you a T2202 tax receipt for the course fees you paid during the year. You can use the receipt to get a tax refund. <Link href="/canadian-tax-credits">Learn more about the Canadian tax credits here</Link>.</p>
+                <p>Yes, and you can have more than <Link href="/canadian-tax-credits">50% of your course fees covered</Link>! QC is a Certified Education Institution with Employment and Social Development Canada. At the end of the year, we'll send you a T2202 tax receipt for the course fees you paid during the year. You can use the receipt to get a tax refund. <Link href="/canadian-tax-credits">Learn more about the Canadian tax credits here</Link>.</p>
               </Question>
             )}
             <Question heading="How do I know QC Event School is legitimate?">
