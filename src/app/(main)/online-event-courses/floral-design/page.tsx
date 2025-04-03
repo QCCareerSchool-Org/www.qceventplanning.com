@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
+import { getCourseJsonLD } from '../courseJsonLd';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -24,17 +25,19 @@ import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-
-export const metadata: Metadata = {
-  title: 'Floral Design Course',
-  alternates: {
-    canonical: '/online-event-courses/floral-design',
-  },
-};
+import { getCourseDescription } from '@/domain/courseCode';
 
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0008', 'TE-0018', 'TE-0016', 'TE-0015', 'TE-0014', 'TE-0012' ];
+
+export const metadata: Metadata = {
+  title: 'Floral Design Course',
+  description: getCourseDescription(courseCode),
+  alternates: {
+    canonical: '/online-event-courses/floral-design',
+  },
+};
 
 const FloralDesignPage: PageComponent = () => (
   <div className={styles.page}>
@@ -139,6 +142,7 @@ const FloralDesignPage: PageComponent = () => (
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
     <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode)) }} />
   </div>
 );
 

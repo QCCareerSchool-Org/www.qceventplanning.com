@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
+import { getCourseJsonLD } from '../courseJsonLd';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -24,17 +25,19 @@ import { AshleyFriesen } from '@/components/tutorImages/ashleyFriesen';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-
-export const metadata: Metadata = {
-  title: 'Wedding Planning Course',
-  alternates: {
-    canonical: '/online-event-courses/wedding-planning',
-  },
-};
+import { getCourseDescription } from '@/domain/courseCode';
 
 const courseCode: CourseCode = 'wp';
 const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0019', 'TE-0017', 'TE-0016', 'TE-0015', 'TE-0013', 'TE-0012' ];
+
+export const metadata: Metadata = {
+  title: 'Wedding Planning Course',
+  description: getCourseDescription(courseCode),
+  alternates: {
+    canonical: '/online-event-courses/wedding-planning',
+  },
+};
 
 const WeddingPlanningPage: PageComponent = () => (
   <div className={styles.page}>
@@ -141,6 +144,7 @@ const WeddingPlanningPage: PageComponent = () => (
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Wedding Memories?" text="Become a Professionally Certified Wedding Planner" courseCodes={courseCodes} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode)) }} />
   </div>
 );
 
