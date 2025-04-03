@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-import { getCourseJsonLD } from '../courses';
+import { getCourseJsonLD } from '../courseJsonLd';
 import DesktopImage from './desktop.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';

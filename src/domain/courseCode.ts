@@ -4,6 +4,25 @@ export const isCourseCode = (obj: unknown): obj is CourseCode => {
   return typeof obj === 'string' && [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ].includes(obj);
 };
 
+const descriptions: Record<CourseCode, string> = {
+  ep: '...',
+  wp: '...',
+  ce: '...',
+  cp: '...',
+  lw: '...',
+  dw: '...',
+  ed: '...',
+  eb: 'QC\'s Accelerate Your Business course provides students with the most comprehensive training available to grow your event planning business.',
+  fd: '...',
+  fl: '...',
+  pe: '...',
+  ve: '...',
+};
+
+export const getCourseDescription = (courseCode: CourseCode): string => {
+  return descriptions[courseCode];
+};
+
 export const getCourseName = (courseCode: CourseCode): string => {
   switch (courseCode) {
     case 'ep':

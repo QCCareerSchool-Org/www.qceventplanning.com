@@ -6,7 +6,7 @@ import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import { type CourseCode, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { type CourseCode, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 
 type Props = {
   id: string;
@@ -59,7 +59,12 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
         ? (
           <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
             <meta itemProp="name" content={getCourseName(testimonial.courses[0])} />
+            <meta itemProp="description" content={getCourseDescription(testimonial.courses[0])} />
             <meta itemProp="sameAs" content={getCourseUrl(testimonial.courses[0])} />
+            <span itemProp="provider" itemScope itemType="https://schema.org/EducationalOrganization">
+              <meta itemProp="name" content="QC Event School" />
+              <meta itemProp="sameAs" content="https://www.qceventplanning.com" />
+            </span>
           </span>
         )
         : (
