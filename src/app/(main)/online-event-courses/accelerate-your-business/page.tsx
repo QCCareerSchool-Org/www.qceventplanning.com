@@ -20,18 +20,19 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
+import { getCourseDescription } from '@/domain/courseCode';
+
+const courseCode: CourseCode = 'eb';
+const courseCodes: CourseCode[] = [ courseCode ];
+const testimonialIds = [ 'TE-0004', 'TE-0007', 'TE-0003', 'TE-0009', 'TE-0010', 'TE-0011' ];
 
 export const metadata: Metadata = {
   title: 'Accelerate Your Business Workshop',
+  description: getCourseDescription(courseCode),
   alternates: {
     canonical: '/online-event-courses/accelerate-your-business',
   },
 };
-
-const courseCode: CourseCode = 'eb';
-const courseCodes: CourseCode[] = [ courseCode ];
-
-const testimonialIds = [ 'TE-0004', 'TE-0007', 'TE-0003', 'TE-0009', 'TE-0010', 'TE-0011' ];
 
 const AccelerateYourBusinessPage: PageComponent = () => (
   <div className={styles.page}>

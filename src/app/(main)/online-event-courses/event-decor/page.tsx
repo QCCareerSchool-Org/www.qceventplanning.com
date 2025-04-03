@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
+import { getCourseJsonLD } from '../courseJsonLd';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -22,17 +23,19 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-
-export const metadata: Metadata = {
-  title: 'Event Decor Course',
-  alternates: {
-    canonical: '/online-event-courses/event-decor',
-  },
-};
+import { getCourseDescription } from '@/domain/courseCode';
 
 const courseCode: CourseCode = 'ed';
 const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0019', 'TE-0008', 'TE-0002', 'TE-0011', 'TE-0004', 'TE-0014' ];
+
+export const metadata: Metadata = {
+  title: 'Event Decor Course',
+  description: getCourseDescription(courseCode),
+  alternates: {
+    canonical: '/online-event-courses/event-decor',
+  },
+};
 
 const EventDecorPage: PageComponent = () => (
   <div className={styles.page}>
@@ -120,6 +123,7 @@ const EventDecorPage: PageComponent = () => (
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Become a Professionally Certified Event Decorator" courseCodes={courseCodes} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode)) }} />
   </div>
 );
 
