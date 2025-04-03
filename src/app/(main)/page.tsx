@@ -28,6 +28,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
 import { getData } from '@/lib/getData';
+import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Event School' },
@@ -147,6 +148,7 @@ const HomePage: PageComponent = () => {
         title="Ready to Start Your Event & Wedding Planning Career?"
         text="Become Professionally Certified with QC's Online Event Planning Training"
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qcEventSchoolEducationalOrganization) }} />
     </>
   );
 };

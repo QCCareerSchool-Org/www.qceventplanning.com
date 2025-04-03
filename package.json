@@ -1,6 +1,6 @@
 {
   "name": "www.qceventplanning.com",
-  "version": "0.1.58",
+  "version": "0.1.59",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -26,6 +26,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-use-count-up": "^1.0.2",
     "sass": "^1.81.0",
+    "schema-dts": "^1.1.5",
     "server-only": "^0.0.1",
     "uuid": "^10.0.0"
   },

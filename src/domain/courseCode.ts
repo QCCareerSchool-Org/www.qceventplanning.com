@@ -32,3 +32,32 @@ export const getCourseName = (courseCode: CourseCode): string => {
       return 'Promotional Event Planning';
   }
 };
+
+export const getCourseUrl = (courseCode: CourseCode): string => {
+  switch (courseCode) {
+    case 'ep':
+      return 'https://www.qceventplanning.com/online-event-courses/event-and-wedding-planning';
+    case 'ce':
+      return 'https://www.qceventplanning.com/online-event-courses/wedding-planning';
+    case 'wp':
+      return 'https://www.qceventplanning.com/online-event-courses/event-planning';
+    case 'cp':
+      return 'https://www.qceventplanning.com/online-event-courses/corporate-event-planning';
+    case 'ed':
+      return 'https://www.qceventplanning.com/online-event-courses/event-decor';
+    case 'lw':
+      return 'https://www.qceventplanning.com/online-event-courses/luxury-wedding-planning';
+    case 'dw':
+      return 'https://www.qceventplanning.com/online-event-courses/destination-wedding-planning.';
+    case 'fd':
+      return 'https://www.qceventplanning.com/online-event-courses/floral-design.';
+    case 've':
+      return 'https://www.qceventplanning.com/online-event-courses/virtual-event-planning.';
+    case 'eb':
+      return 'https://www.qceventplanning.com/online-event-courses/accelerate-your-business';
+    case 'fl':
+      return 'https://www.qceventplanning.com/online-event-courses/festivals-and-live-events';
+    case 'pe':
+      return 'https://www.qceventplanning.com/online-event-courses/promotional-event-planning';
+  }
+};

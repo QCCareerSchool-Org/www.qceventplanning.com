@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
+import { getCourseJsonLD } from '../courses';
 import DesktopImage from './desktop.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -101,6 +102,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
     <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" courseCodes={courseCodes} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode)) }} />
   </div>
 );
 
