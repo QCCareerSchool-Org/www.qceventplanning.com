@@ -4,6 +4,25 @@ export const isCourseCode = (obj: unknown): obj is CourseCode => {
   return typeof obj === 'string' && [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ].includes(obj);
 };
 
+const descriptions: Record<CourseCode, string> = {
+  ep: 'Become a certified event and wedding planner with QC Event School\'s online course! Learn to plan any event, gain industry skills and launch a successful career. Start today!',
+  wp: 'Master everything from the planning process to day-of wedding coordination with QC Event School\'s online course. Sign up today to become a certified wedding planner!',
+  ce: 'Become a certified event planner with QC Event School! Learn to plan successful industry events, milestone parties and build a thriving career in the event industry. Start now! ',
+  cp: 'Learn to plan successful product launches, trade shows and promotional events with QC Event School! Enroll today and earn a professional certification with QC\'s online course.',
+  lw: 'Learn to plan extravagant events that leave a lasting impression and attract high-end clients with QC\'s online Luxury Wedding & Event Planning course. Enroll today!',
+  dw: 'Master long-distance planning and seamless travel coordination to create stunning weddings worldwide with QC\'s online Destination Wedding Planning course. Enroll today!',
+  ed: 'Learn to use florals, color theory, lighting and accessories to design breathtaking events with QC Event School\'s online Event Decor course. Start today!',
+  eb: 'QC\'s Accelerate Your Business course provides students with comprehensive online training to grow your event planning business. Start today!',
+  fd: 'QC\'s Floral Design certification course offers a comprehensive curriculum covering design principles, advanced techniques, and bouquet designs. Sign up today!',
+  fl: 'Build a career in the exciting world of live events with QC Event School\'s online course. Learn to plan concerts, sports entertainment, festivals and more. Start today! ',
+  pe: 'With QC Event School\'s online course, you\'ll learn to plan impactful promotional events that impress corporate clients, from product launches to sales campaigns. Start today!',
+  ve: 'Expand your services, plan engaging online events and reach clients all over the world with QC\'s Virtual Event Planning training.',
+};
+
+export const getCourseDescription = (courseCode: CourseCode): string => {
+  return descriptions[courseCode];
+};
+
 export const getCourseName = (courseCode: CourseCode): string => {
   switch (courseCode) {
     case 'ep':
