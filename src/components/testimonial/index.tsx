@@ -63,7 +63,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
           </span>
         )
         : (
-          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
+          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
             <meta itemProp="name" content="QC Event School" />
             <meta itemProp="sameAs" content="https://www.qceventplanning.com" />
           </span>
