@@ -70,6 +70,8 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
         )}
       <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <meta itemProp="ratingValue" content={testimonial.stars.toString()} />
+        <meta itemProp="worstRating" content="0" />
+        <meta itemProp="bestRating" content="5" />
       </span>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div>
