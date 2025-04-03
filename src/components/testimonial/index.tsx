@@ -6,7 +6,8 @@ import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import { type CourseCode, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import type { CourseCode } from '@/domain/courseCode';
+import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 
 type Props = {
   id: string;
