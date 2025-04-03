@@ -57,20 +57,20 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
       {testimonial.courses.length > 0
         ? (
-          <meta itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
+          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
             <meta itemProp="name" content={getCourseName(testimonial.courses[0])} />
             <meta itemProp="sameAs" content={getCourseUrl(testimonial.courses[0])} />
-          </meta>
+          </span>
         )
         : (
-          <meta itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
+          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
             <meta itemProp="name" content="QC Event School" />
             <meta itemProp="sameAs" content="https://www.qceventplanning.com" />
-          </meta>
+          </span>
         )}
-      <meta itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+      <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <meta itemProp="ratingValue" content={testimonial.stars.toString()} />
-      </meta>
+      </span>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div>
         {testimonial.short.map((q, i, a) => {

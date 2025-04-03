@@ -4,9 +4,7 @@ import Link from 'next/link';
 
 import BookIcon from './book.svg';
 import BriefcaseIcon from './briefcase.svg';
-
 import CertificationIcon from './certification.svg';
-
 import MagnifyingGlassIcon from './magnifying-glass.svg';
 import ObjectsVerticalBottomIcon from './objects-vertical-bottom.svg';
 import CPImage from './online-event-courses/corporate-event-planning/hero.jpg';
