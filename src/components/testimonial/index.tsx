@@ -6,7 +6,7 @@ import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import type { CourseCode } from '@/domain/courseCode';
+import { type CourseCode, getCourseName, getCourseUrl } from '@/domain/courseCode';
 
 type Props = {
   id: string;
@@ -54,7 +54,23 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
   }
 
   return (
-    <blockquote className={styles.testimonial}>
+    <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
+      {testimonial.courses.length > 0
+        ? (
+          <meta itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
+            <meta itemProp="name" content={getCourseName(testimonial.courses[0])} />
+            <meta itemProp="sameAs" content={getCourseUrl(testimonial.courses[0])} />
+          </meta>
+        )
+        : (
+          <meta itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
+            <meta itemProp="name" content="QC Event School" />
+            <meta itemProp="sameAs" content="https://www.qceventplanning.com" />
+          </meta>
+        )}
+      <meta itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+        <meta itemProp="ratingValue" content={testimonial.stars.toString()} />
+      </meta>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div>
         {testimonial.short.map((q, i, a) => {
@@ -64,12 +80,12 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
           return <p key={i} className={styles.quotation}>&ldquo;{q}&rdquo;</p>;
         })}
       </div>
-      <footer className={styles.footer}>
+      <footer className={styles.footer} itemProp="author" itemScope itemType="https://schema.org/Person">
         <div className={styles.imageWrapper}>
-          <ImageCircle src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
+          <ImageCircle itemProp src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
         </div>
         <cite>
-          <span className={styles.attribution}>{testimonial.name}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
+          <span className={styles.attribution} itemProp="name">{testimonial.name}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
         </cite>
       </footer>
     </blockquote>
