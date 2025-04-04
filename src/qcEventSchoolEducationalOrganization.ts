@@ -11,7 +11,10 @@ export const qcEventSchoolEducationalOrganization: WithContext<EducationalOrgani
   'logo': 'https://www.qceventplanning.com/logo.svg',
   'email': 'info@qceventplanning.com',
   'foundingDate': '2007-01-19T09:00:00-05:00',
-  'parentOrganization': { '@id': 'https://www.qccareerschool.com/#school' },
+  'parentOrganization': {
+    '@id': 'https://www.qccareerschool.com/#school',
+    'url': 'https://www.qccareerschool.com',
+  },
   'sameAs': [
     'https://www.facebook.com/QCEventPlanning',
     'https://www.instagram.com/qceventschool',
