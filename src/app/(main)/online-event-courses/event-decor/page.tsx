@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-import { getCourseJsonLD } from '../courseJsonLd';
+import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -123,7 +123,7 @@ const EventDecorPage: PageComponent = () => (
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Become a Professionally Certified Event Decorator" courseCodes={courseCodes} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode)) }} />
+    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 

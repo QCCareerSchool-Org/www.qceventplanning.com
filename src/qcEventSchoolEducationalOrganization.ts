@@ -4,10 +4,10 @@ import { getTelephoneNumber } from './lib/telephone';
 
 export const qcEventSchoolEducationalOrganization: WithContext<EducationalOrganization> = {
   '@context': 'https://schema.org',
-  '@id': 'https://www.qceventplanning.com/#school',
   '@type': 'EducationalOrganization',
+  '@id': 'https://www.qceventplanning.com/#school',
+  'url': 'https://www.qceventplanning.com',
   'name': 'QC Event School',
-  'url': 'https://www.qceventplanning.com/',
   'logo': 'https://www.qceventplanning.com/logo.svg',
   'email': 'info@qceventplanning.com',
   'foundingDate': '2007-01-19T09:00:00-05:00',
