@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
-import { getCourseJsonLD } from '../courseJsonLd';
+import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import ConcertImage from './concert.jpg';
 import HeroImage from './hero.jpg';
@@ -141,7 +141,7 @@ const EventPlanningPage: PageComponent = () => (
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
     <GetStartedSection title="Ready to expand your event planning career?" text="Become professionally certified with QC's festivals and live events training" courseCodes={courseCodes} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode)) }} />
+    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 
