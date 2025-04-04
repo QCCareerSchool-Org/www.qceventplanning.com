@@ -5,7 +5,7 @@ import { Star } from '../testimonial/star';
 import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
-import { getCourseUrl } from '@/domain/courseCode';
+import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 
 export const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes }) => (
   <div className={styles.wrapper} itemScope itemType="https://schema.org/Review">
@@ -14,12 +14,20 @@ export const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgrou
         <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
           <meta itemProp="@id" content={`https://www.qceventplanning.com/courses/#${courseCodes[0]}`} />
           <meta itemProp="url" content={getCourseUrl(courseCodes[0])} />
+          <meta itemProp="name" content={getCourseName(courseCodes[0])} />
+          <meta itemProp="description" content={getCourseDescription(courseCodes[0])} />
+          <span itemProp="provider" itemScope itemType="https://schema.org/EducationalOrganization">
+            <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
+            <meta itemProp="url" content="https://www.qceventplanning.com" />
+            <meta itemProp="name" content="QC Event School" />
+          </span>
         </span>
       )
       : (
         <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
           <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
           <meta itemProp="url" content="https://www.qceventplanning.com" />
+          <meta itemProp="name" content="QC Event School" />
         </span>
       )}
     <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
