@@ -20,7 +20,7 @@ export const getCourseJsonLD = (courseCode: CourseCode, price: number): WithCont
     '@type': 'Offer',
     'category': 'Paid',
     'priceCurrency': 'USD',
-    'price': price,
+    'price': price.toFixed(2),
   } ],
   'hasCourseInstance': [ {
     '@type': 'CourseInstance',
