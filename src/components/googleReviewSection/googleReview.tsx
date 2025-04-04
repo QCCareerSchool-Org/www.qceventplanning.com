@@ -8,7 +8,7 @@ import type { ReviewData } from './reviewData';
 import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 
 export const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes }) => (
-  <div className={styles.wrapper} itemScope itemType="https://schema.org/Review">
+  <div itemScope itemType="https://schema.org/Review" className={styles.wrapper}>
     {courseCodes && courseCodes.length > 0
       ? (
         <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
