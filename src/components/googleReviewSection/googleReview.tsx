@@ -1,25 +1,21 @@
 import type { FC } from 'react';
 
 import { ImageCircle } from '../imageCircle';
+import { CourseMicrodata } from '../microdata/course';
 import { Star } from '../testimonial/star';
 import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
-import { getCourseUrl } from '@/domain/courseCode';
 
 export const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes }) => (
-  <div className={styles.wrapper} itemScope itemType="https://schema.org/Review">
+  <div itemScope itemType="https://schema.org/Review" className={styles.wrapper}>
     {courseCodes && courseCodes.length > 0
-      ? (
-        <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
-          <meta itemProp="@id" content={`https://www.qceventplanning.com/courses/#${courseCodes[0]}`} />
-          <meta itemProp="url" content={getCourseUrl(courseCodes[0])} />
-        </span>
-      )
+      ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />
       : (
         <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
           <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
           <meta itemProp="url" content="https://www.qceventplanning.com" />
+          <meta itemProp="name" content="QC Event School" />
         </span>
       )}
     <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">

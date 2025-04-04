@@ -6,7 +6,7 @@ import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/cour
 export const getCourseJsonLD = (courseCode: CourseCode, price: number): WithContext<Course> => ({
   '@context': 'https://schema.org',
   '@type': 'Course',
-  '@id': `https://www.qceventplanning.com/courses/#{courseCode}`,
+  '@id': `https://www.qceventplanning.com/courses/#${courseCode}`,
   'url': getCourseUrl(courseCode),
   'name': getCourseName(courseCode),
   'description': getCourseDescription(courseCode),
@@ -14,6 +14,7 @@ export const getCourseJsonLD = (courseCode: CourseCode, price: number): WithCont
     '@type': 'EducationalOrganization',
     '@id': 'https://www.qceventplanning.com/#school',
     'url': 'https://www.qceventplanning.com',
+    'name': 'QC Event School',
   },
   'offers': [ {
     '@type': 'Offer',

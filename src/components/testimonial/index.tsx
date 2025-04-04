@@ -2,12 +2,12 @@ import type { FC } from 'react';
 import { memo, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
+import { CourseMicrodata } from '../microdata/course';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
 import type { CourseCode } from '@/domain/courseCode';
-import { getCourseUrl } from '@/domain/courseCode';
 
 type Props = {
   id: string;
@@ -57,16 +57,12 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
   return (
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
       {testimonial.courses.length > 0
-        ? (
-          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
-            <meta itemProp="@id" content={`https://www.qceventplanning.com/courses/#${testimonial.courses[0]}`} />
-            <meta itemProp="url" content={getCourseUrl(testimonial.courses[0])} />
-          </span>
-        )
+        ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
         : (
           <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
             <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
             <meta itemProp="url" content="https://www.qceventplanning.com" />
+            <meta itemProp="name" content="QC Event School" />
           </span>
         )}
       <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
