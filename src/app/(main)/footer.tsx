@@ -3,11 +3,12 @@ import type { FC } from 'react';
 
 import FortyYearsIcon from './40-years.svg';
 import BookReader from './_footerIcons/book-reader.svg';
-import Facebook from './_footerIcons/facebook.svg';
-import Instagram from './_footerIcons/instagram.svg';
-import Linkedin from './_footerIcons/linkedin.svg';
-import Pinterest from './_footerIcons/pinterest.svg';
+import FacebookIcon from './_footerIcons/facebook.svg';
+import InstagramIcon from './_footerIcons/instagram.svg';
+import LinkedinIcon from './_footerIcons/linkedin.svg';
+import PinterestIcon from './_footerIcons/pinterest.svg';
 import TiktokIcon from './_footerIcons/tiktok.svg';
+import YoutubeIcon from './_footerIcons/youtube.svg';
 import BBBIcon from './bbb.svg';
 import styles from './footer.module.scss';
 import { FooterColumn1 } from './footerColumn1';
@@ -80,10 +81,11 @@ export const Footer: FC = () => {
           </div>
           <div className="d-flex">
             <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer"><TiktokIcon alt="Tiktok" /></a></div>
-            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer"><Instagram alt="Instagram" /></a></div>
-            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer"><Facebook alt="Facebook" /></a></div>
-            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer"><Linkedin alt="LinkedIn" /></a></div>
-            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer"><Pinterest alt="Pinterest" /></a></div>
+            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer"><InstagramIcon alt="Instagram" /></a></div>
+            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer"><FacebookIcon alt="Facebook" /></a></div>
+            <div className="me-3"><a href="https://www.youtube.com/@QCEvent" target="_blank" rel="noreferrer"><YoutubeIcon alt="Youtube" /></a></div>
+            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer"><LinkedinIcon alt="LinkedIn" /></a></div>
+            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer"><PinterestIcon alt="Pinterest" /></a></div>
           </div>
         </div>
       </div>
