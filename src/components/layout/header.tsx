@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { MainNav } from './mainNav';
+import { MainNav } from '../../app/(main)/mainNav';
 import { CanadaHeader } from '@/components/canadaHeader';
 import { CountDownTimer } from '@/components/countDownTimer';
 import { getData } from '@/lib/getData';

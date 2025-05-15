@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import MainLayout from './(main)/layout';
 import styles from './not-found.module.scss';
 import type { PageComponent } from './serverComponent';
+import { Layout } from '@/components/layout';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const NotFoundPage: PageComponent = () => {
   return (
-    <MainLayout>
+    <Layout>
       <div className={styles.wrapper}>
         <h1>Page Not Found</h1>
         <p>Sorry, we could not find the requested page</p>
@@ -20,7 +20,7 @@ const NotFoundPage: PageComponent = () => {
           <Link href="/online-event-courses" className="btn btn-outline-dark">Course List</Link>
         </div>
       </div>
-    </MainLayout>
+    </Layout>
   );
 };
 
