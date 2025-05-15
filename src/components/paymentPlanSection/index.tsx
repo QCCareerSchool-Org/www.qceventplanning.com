@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import { CanadianTax } from './canadianTax';
 import { Full } from './full';
 import { PaymentSectionGuarantee } from './guarantee';
 import { Part } from './part';
@@ -30,6 +31,7 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) 
           <div className="col-12 text-center">
             <h2 className="mb-4">Tuition &amp; Payment Plans</h2>
             <p className="lead mb-0">Select the payment plan that best suits your budget. Prices are listed in {price.currency.name}.</p>
+            {countryCode === 'CA' && <CanadianTax />}
           </div>
         </div>
         <div className="row justify-content-center mb-5 g-4 g-lg-5">
