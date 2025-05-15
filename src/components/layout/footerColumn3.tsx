@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-import ChatIcon from './_footerIcons/chat.svg';
-import EmailIcon from './_footerIcons/email.svg';
-import PhoneIcon from './_footerIcons/phone.svg';
+import ChatIcon from './icons/chat.svg';
+import EmailIcon from './icons/email.svg';
+import PhoneIcon from './icons/phone.svg';
 import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
