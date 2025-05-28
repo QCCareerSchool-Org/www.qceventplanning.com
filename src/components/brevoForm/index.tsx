@@ -83,6 +83,7 @@ export const BrevoForm: FC<Props> = props => {
     if (!/^[^@\s]+@(?:[^@\s]+\.)+[^@\s]+$/ug.test(emailAddress)) {
       emailAddressRef.current?.setCustomValidity('Please ensure that your email address includes the TLD, such as .com or .org.');
       emailAddressRef.current?.focus();
+      emailAddressRef.current?.reportValidity();
       return false;
     }
 
