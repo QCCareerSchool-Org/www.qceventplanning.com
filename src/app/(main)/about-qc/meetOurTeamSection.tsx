@@ -5,7 +5,7 @@ import QIcon from './icons/q-logo.svg';
 import styles from './meetOurTeamSection.module.scss';
 import JoannePendonImage from '@/components/employees/joanne-pendon.jpg';
 import LucieDemersImage from '@/components/employees/lucie-demers.jpg';
-import MalcolmAsselinImage from '@/components/employees/malcolm-asselin.jpg';
+import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 import { ImageCircle } from '@/components/imageCircle';
 
 type Props = {
@@ -33,14 +33,14 @@ export const MeetOurTeamSection: FC<Props> = ({ className }) => (
         </div>
         <div className="col-12 col-md-8 col-lg-4">
           <div className="mb-4">
-            <ImageCircle size={imageSize} src={MalcolmAsselinImage} alt="Joanne Pendon" />
+            <ImageCircle size={imageSize} src={ShannonCooperImage} alt="Shannon Cooper" />
           </div>
-          <h3 className={styles.heading}>Malcolm, Student Success Manager</h3>
-          <p className="mb-0 small">My top priority at QC is to enrich your learning experience by fostering a strong, supportive community where you can connect with fellow students and graduates, and learn from industry experts. I want to make sure you have every resource you need right at your fingertips.</p>
+          <h3 className={styles.heading}>Shannon, Teaching Assistant</h3>
+          <p className="mb-0 small">As a teaching assistant at QC, I am here to help you excel in your course. I'm ready to answer any questions you might have about your course materials and coordinate with your expert instructor so that you get the most out of your learning experience. We want to do everything we can to help you succeed in your course.</p>
         </div>
         <div className="col-12 col-md-8 col-lg-4">
           <div className="mb-4">
-            <ImageCircle size={imageSize} src={LucieDemersImage} alt="Joanne Pendon" />
+            <ImageCircle size={imageSize} src={LucieDemersImage} alt="Lucie Demers" />
           </div>
           <h3 className={styles.heading}>Lucie, Student Coordinator</h3>
           <p className="mb-0 small">I'm here to support you from the moment you begin your journey with QC through to graduation. I oversee the enrollment process and personally welcome you to the school to ensure you get off to a great start. If you have any questions along the way, I'm just a phone call away!</p>
