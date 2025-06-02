@@ -8,7 +8,7 @@ import JoannePendonImage from '@/components/employees/joanne-pendon.jpg';
 import JojoJosephImage from '@/components/employees/jojo-joseph.jpg';
 import KaylaCuggyImage from '@/components/employees/kayla-cuggy.jpg';
 import LucieDemersImage from '@/components/employees/lucie-demers.jpg';
-import MalcolmAsselinImage from '@/components/employees/malcolm-asselin.jpg';
+// import MalcolmAsselinImage from '@/components/employees/malcolm-asselin.jpg';
 import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 
 export type Employee = {
@@ -56,13 +56,13 @@ export const employees: Employee[] = [
     heading: 'Chris Brooks, Head of Course Design',
     description: 'My #1 goal is to design a learning experience that works for you. Whether you\'re studying on a computer, tablet, or smartphone, I want to ensure your experience is the best that it can be. My team continuously updates course materials to keep up with the latest technologies and trends. We design interactive course lessons complete with instructional videos and activities to create an engaging learning environment, as well as practical assignments aimed at developing your skills. I know I\'ve done my job well when you\'ve completed your course, and had fun doing it!',
   },
-  {
-    src: MalcolmAsselinImage,
-    imagePositionX: 45,
-    name: 'Malcolm Asselin',
-    heading: 'Malcolm Asselin, Student Success Manager',
-    description: 'My top priority at QC is to enrich your learning experience by fostering a strong, supportive community where you can connect with fellow students and graduates, and learn from industry experts. I want to make sure you have every resource you need right at your fingertips. That\'s why you\'ll have access to live webinars, exclusive bonus materials, and active community discussions—all designed to enhance your course and guide you toward success.',
-  },
+  // {
+  //   src: MalcolmAsselinImage,
+  //   imagePositionX: 45,
+  //   name: 'Malcolm Asselin',
+  //   heading: 'Malcolm Asselin, Student Success Manager',
+  //   description: 'My top priority at QC is to enrich your learning experience by fostering a strong, supportive community where you can connect with fellow students and graduates, and learn from industry experts. I want to make sure you have every resource you need right at your fingertips. That\'s why you\'ll have access to live webinars, exclusive bonus materials, and active community discussions—all designed to enhance your course and guide you toward success.',
+  // },
   {
     src: EmilySpragueImage,
     imagePositionX: 40,
