@@ -5,7 +5,7 @@ import Link from 'next/link';
 import type { PageComponent } from '@/app/serverComponent';
 import { EmailSentToast } from '@/components/emailSentToast';
 import { LeadProcessing } from '@/components/leadProcessing';
-// import { TelephoneFormSection } from '@/components/telephoneFormSection';
+import { TelephoneFormSection } from '@/components/telephoneFormSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
@@ -50,7 +50,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         leadId={leadId}
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
-      {/* {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />} */}
+      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
       <section className="bg-navy text-white">
         <div className="container">
           <div className="row justify-content-center text-center">
@@ -66,6 +66,6 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   );
 };
 
-// const validCountryForSMS = (countrycode?: string): boolean => countrycode === 'CA' || countrycode === 'US';
+const validCountryForSMS = (countrycode?: string): boolean => countrycode === 'CA' || countrycode === 'US';
 
 export default ThankYouCourseCatalogPage;
