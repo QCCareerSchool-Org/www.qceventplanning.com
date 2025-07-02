@@ -22,7 +22,7 @@ type Props = {
 
 type State = 'ready' | 'submitting' | 'success' | 'error';
 
-const brevoListId = 50;
+const brevoListId = 53;
 
 export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
