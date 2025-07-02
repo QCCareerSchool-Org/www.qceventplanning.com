@@ -12,10 +12,9 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Course Catalog',
-  alternates: {
-    canonical: '/thank-you-floral-design-course-catalog',
-  },
+  title: 'Download Your Floral Design Course Catalog',
+  alternates: { canonical: '/download-floral-design-course-catalog' },
+  robots: { index: false },
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
