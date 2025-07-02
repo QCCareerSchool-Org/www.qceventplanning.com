@@ -12,3 +12,8 @@
 .react-multi-carousel-dot--active button {
   background-color: #02013f;
 }
+
+/* override the section that react-toastify uses */
+section.Toastify {
+  padding: 0;
+}
