@@ -3,10 +3,10 @@ import { cookies, headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { LeadProcessing } from '../../../components/leadProcessing';
 import CatalogImage from '../cover-book.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
+import { LeadProcessing } from '@/components/leadProcessing';
 import { Logo } from '@/components/logo';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
@@ -14,7 +14,7 @@ import { getParam } from '@/lib/getParam';
 export const metadata: Metadata = {
   title: 'Your Course Catalog',
   alternates: {
-    canonical: '/thank-you-course-catalog',
+    canonical: '/thank-you-floral-design-course-catalog',
   },
 };
 
