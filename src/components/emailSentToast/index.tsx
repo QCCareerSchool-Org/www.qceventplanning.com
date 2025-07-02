@@ -17,7 +17,7 @@ export const EmailSentToast: FC<Props> = ({ emailAddress, firstName }) => {
         Your email was sent to <strong>{emailAddress}</strong>. If you don't find it in your inbox, please check your junk mail folder.
       </div>
     );
-    toast.success(message, { delay: 1000, autoClose: 8000, className: styles.toast });
+    toast.success(message, { delay: 1500, autoClose: 12_000, className: styles.toast });
   }, [ emailAddress, firstName ]);
 
   return null;
