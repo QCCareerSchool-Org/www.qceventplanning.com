@@ -27,12 +27,12 @@ const DownloadFloralDesignCourseCatalogPage: PageComponent = () => (
             <p className="lead mb-3">Thank You For Your Interest in QC Event School!</p>
             <p className="mb-3">You can download your course catalog below. If you have any questions about QC's courses, please don't hesitate to contact us.</p>
             <div className="d-flex mt-5">
-              <Link href="/catalog.pdf" download className="btn btn-navy me-3"><DownloadIcon height={16} style={{ position: 'relative', top: -1 }} className="me-2" />Download Catalog</Link>
+              <Link href="/floral.pdf" download className="btn btn-navy me-3"><DownloadIcon height={16} style={{ position: 'relative', top: -1 }} className="me-2" />Download Catalog</Link>
               <Link href="/online-event-courses" className="btn btn-outline-navy">View Courses</Link>
             </div>
           </div>
           <div className="col-10 col-md-8 col-lg-6 text-center">
-            <Link href="/catalog.pdf" download><Image src={CatalogImage} placeholder="blur" priority alt="QC Event School course catalog" style={{ marginLeft: '-11.2%', marginRight: '-21.9%', marginTop: '-11.7%', marginBottom: '-11.7%' }} className="img-fluid" /></Link>
+            <Link href="/floral.pdf" download><Image src={CatalogImage} placeholder="blur" priority alt="QC Event School course catalog" style={{ marginLeft: '-11.2%', marginRight: '-21.9%', marginTop: '-11.7%', marginBottom: '-11.7%' }} className="img-fluid" /></Link>
           </div>
         </div>
       </div>
