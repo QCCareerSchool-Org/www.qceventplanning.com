@@ -3,8 +3,12 @@ import type { FC } from 'react';
 import styles from './index.module.scss';
 import ShieldIcon from './shield.svg';
 
-export const AboutSection: FC = () => (
-  <section className={styles.aboutSection}>
+type Props = {
+  className?: string;
+};
+
+export const AboutSection: FC<Props> = ({ className }) => (
+  <section className={`${styles.aboutSection} ${className}`}>
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12 col-lg-10 col-xl-9 col-xxl-8 text-center">
