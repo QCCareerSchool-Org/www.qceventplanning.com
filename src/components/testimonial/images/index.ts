@@ -18,3 +18,7 @@ export { default as TazmanBaker } from './TE-0017-tazman-baker.jpg';
 export { default as JennyAlperin } from './TE-0018-jenny-alperin.jpg';
 export { default as TamesaSquire } from './TE-0019-tamesha-squire.jpg';
 export { default as GiannaLuchese } from './gianna-luchese.jpg';
+export { default as JaymeSmith } from './TE-0021-jayme-smith.jpg';
+export { default as CaitlynBaldini } from './TE-0020-caitlyn-baldini.jpg';
+
+export { default as Placeholder } from './floral-profile.jpg';

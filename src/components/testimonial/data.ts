@@ -167,4 +167,28 @@ export const testimonials: Record<string, Testimonial> = {
     image: Images.TamesaSquire,
     stars: 5,
   },
+  'TE-0020': {
+    name: 'Caitlyn Baldini',
+    courses: [ 'fd' ],
+    short: [ 'The courses were easy to follow while also being challenging. My tutor was very helpful and I enjoyed her feedback.' ],
+    long: [ 'The courses were easy to follow while also being challenging. My tutor was very helpful and I enjoyed her feedback.' ],
+    image: Images.CaitlynBaldini,
+    stars: 5,
+  },
+  'TE-0021': {
+    name: 'Jayme Smith',
+    courses: [ 'ed' ],
+    short: [ 'The courses were thorough. They weren\'t easy but not overwhelming either. The staff was very helpful. My tutor was encouraging and helpful. I\'m proud to receive my certificates from QC Event School.' ],
+    long: [ 'The courses were thorough. They weren\'t easy but not overwhelming either. The staff was very helpful. My tutor was encouraging and helpful. I\'m proud to receive my certificates from QC Event School.' ],
+    image: Images.JaymeSmith,
+    stars: 5,
+  },
+  'TE-0022': {
+    name: 'Abigail Doto',
+    courses: [ 'fd' ],
+    short: [ 'Having this background and knowledge really prepared me and made me more confident about my decision to start a business.' ],
+    long: [ 'Having this background and knowledge really prepared me and made me more confident about my decision to start a business.' ],
+    image: Images.Placeholder,
+    stars: 5,
+  },
 };

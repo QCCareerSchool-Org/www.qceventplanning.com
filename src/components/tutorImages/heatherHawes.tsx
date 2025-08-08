@@ -3,4 +3,8 @@ import type { FC } from 'react';
 import HeatherHawesImage from './images/heather-hawes.jpg';
 import { ImageCircle } from '@/components/imageCircle';
 
-export const HeatherHawes: FC = () => <ImageCircle src={HeatherHawesImage} alt="Heather Hawes" size={96} />;
+type Props = {
+  size?: number;
+};
+
+export const HeatherHawes: FC<Props> = ({ size = 96 }) => <ImageCircle src={HeatherHawesImage} alt="Heather Hawes" size={size} />;
