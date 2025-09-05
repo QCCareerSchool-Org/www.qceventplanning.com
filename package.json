@@ -16,6 +16,7 @@
     "big.js": "^6.2.2",
     "bootstrap": "^5.3.3",
     "next": "^14.2.18",
+    "next-images": "^1.8.5",
     "qs": "^6.13.1",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.2.14",
@@ -35,8 +36,8 @@
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
     "@types/big.js": "^6.2.2",
-    "@types/node": "^20.17.6",
-    "@types/react": "^18.3.12",
+    "@types/node": "^20.19.13",
+    "@types/react": "^18.3.24",
     "@types/react-dom": "^18.3.1",
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
