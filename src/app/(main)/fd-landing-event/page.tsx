@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
-import { CourseStructuredData } from './courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
+import { CourseCardsSection } from './courseCardsSection';
+import { CourseStructuredData } from './courseStructuredData';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
 import styles from './page.module.scss';
 import PlaceSettingImage from './place-setting.jpg';
+import RedBadge from './price-badge-$500.png';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -29,12 +31,10 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
-import RedBadge from './price-badge-$500.png';
-import { CourseCardsSection } from './courseCardsSection';
 
 const courseCode: CourseCode = 'fd';
-const courseCodes: CourseCode[] = [courseCode];
-const testimonialIds = ['TE-0023', 'TE-0024', 'TE-0022', 'TE-0004', 'TE-0020', 'TE-0008'];
+const courseCodes: CourseCode[] = [ courseCode ];
+const testimonialIds = [ 'TE-0023', 'TE-0024', 'TE-0022', 'TE-0004', 'TE-0020', 'TE-0008' ];
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',
@@ -65,7 +65,7 @@ const FloralDesignPage: PageComponent = () => {
                   <HeroButtons courseCodes={courseCodes} />
                 </div>
               </Hero>
-              <Image src={RedBadge} alt="" className='position-absolute d-none d-md-block' style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+              <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ const FloralDesignPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you’ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don’t wait—take the first step toward your future in floral design today!</p>
+              <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you&rsquo;ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don&rsquo;t wait—take the first step toward your future in floral design today!</p>
 
               <Link href="https://enroll.qceventplanning.com/?c=fd"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
@@ -103,8 +103,8 @@ const FloralDesignPage: PageComponent = () => {
           <div className="text-center mt-4">
             <Link href="https://enroll.qceventplanning.com/?c=fd"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
           </div>
-        </div >
-      </section >
+        </div>
+      </section>
       {countryCode !== 'CA' && <SAFPartnerSection />}
       <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
       <section>
@@ -177,7 +177,7 @@ const FloralDesignPage: PageComponent = () => {
       <Suspense>
         <PaymentPlanSection courseCodes={courseCodes} />
       </Suspense>
-      <CourseCardsSection className="" />
+      <CourseCardsSection />
       <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} />
       <CourseStructuredData courseCode={courseCode} />
     </div>

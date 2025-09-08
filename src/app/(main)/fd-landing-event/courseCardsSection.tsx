@@ -1,19 +1,15 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import DWImage from './dw-hero.jpg';
-import EPImage from './ep-hero.jpg';
 import EDImage from './ed-hero.jpg';
+import EPImage from './ep-hero.jpg';
 import LWImage from './lw-hero.jpg';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 
 const LargeColumn: FC<PropsWithChildren> = ({ children }) => <div className="col-12 col-sm-10 col-lg-6 d-flex">{children}</div>;
 
-type Props = {
-  className?: string;
-};
-
-export const CourseCardsSection: FC<Props> = ({ className }) => (
+export const CourseCardsSection: FC = () => (
   <section>
     <div className="container">
       <div className="row justify-content-center g-s">
