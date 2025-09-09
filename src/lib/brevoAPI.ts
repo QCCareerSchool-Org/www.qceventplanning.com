@@ -14,7 +14,7 @@ export const createBrevoContact = async (emailAddress: string, firstName?: strin
   const contactsApi = new brevo.ContactsApi();
   contactsApi.setApiKey(brevo.ContactsApiApiKeys.apiKey, brevoApiKey);
 
-  const body = {
+  const body: brevo.CreateContact = {
     email: emailAddress,
     listIds,
     updateEnabled: true,
