@@ -20,6 +20,6 @@ export { default as TamesaSquire } from './TE-0019-tamesha-squire.jpg';
 export { default as GiannaLuchese } from './gianna-luchese.jpg';
 export { default as JaymeSmith } from './TE-0021-jayme-smith.jpg';
 export { default as CaitlynBaldini } from './TE-0020-caitlyn-baldini.jpg';
-export { default as TerryRussell} from './TE-0024-terry-russell.jpg';
+export { default as TerryRussell } from './TE-0024-terry-russell.jpg';
 
 export { default as Placeholder } from './floral-profile.jpg';
