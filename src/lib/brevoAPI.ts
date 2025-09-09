@@ -21,7 +21,7 @@ export const createBrevoContact = async (emailAddress: string, firstName?: strin
     attributes: {
       ...attributes,
     },
-  } satisfies brevo.CreateContact;
+  };
 
   if (typeof firstName !== 'undefined') {
     (body.attributes as Record<string, unknown>).FIRSTNAME = firstName;
