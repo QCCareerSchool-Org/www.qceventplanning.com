@@ -89,12 +89,12 @@ const FloralDesignPage: PageComponent = () => {
                 <li>Built-in business training to help you launch your career and grow your clientele as a certified floral designer</li>
               </ul>
             </div>
-            <div className="text-left mt-4">
-              <Link href="https://enroll.qceventplanning.com/?c=fd"><button className="btn btn-primary btn-lg mb-2 mt-3">Start My Course</button></Link>
-            </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6">
               <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
             </div>
+          </div>
+          <div className="text-left mt-4">
+            <Link href="https://enroll.qceventplanning.com/?c=fd"><button className="btn btn-primary btn-lg mb-2 mt-3">Start My Course</button></Link>
           </div>
         </div>
       </section>
@@ -114,7 +114,7 @@ const FloralDesignPage: PageComponent = () => {
                 <li>Build a brand and market your floral design business to attract clients</li>
               </ul>
               <div className="text-left">
-                <Link href="https://www.qcdesignschool.com/previews/floral-design/content/index.html" target="blank" rel="noopener noreferrer"><button className="btn btn-primary btn-lg mb-3 mt-5">Get My Free Lesson Preview</button></Link>
+                <Link href="https://www.qcdesignschool.com/previews/floral-design/content/index.html" target="blank" rel="noopener noreferrer"><button className="btn btn-primary btn-lg mb-4 mt-5">Get My Free Lesson Preview</button></Link>
               </div>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6">
