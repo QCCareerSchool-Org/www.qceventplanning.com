@@ -8,6 +8,7 @@ import { CertificationSection } from '../free-catalog//certificationSection';
 import { JoinQCSection } from '../free-catalog//joinQCSection';
 import { AboutSection } from '../free-catalog/aboutSection';
 import { Header } from '../header';
+import ChartIcon from './chart.svg';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import SAFLogo from './saf-logo.png';
@@ -19,7 +20,6 @@ import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { DarcieGarcia } from '@/components/tutorImages/darcieGarcia';
-import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
@@ -90,9 +90,10 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-8">
+              <ChartIcon className="mb-4" />
               <h2 className="mb-3">Join a Thriving Industry!</h2>
               <p className="mb-4"><strong>Floral design is in full bloom!</strong> With a market worth over <strong>$35 billion</strong>*, now's the perfect time to turn your creativity into a thriving career.</p>
-              <p className="small mb-0">* https://www.marketsandmarkets.com/Market-Reports/cut-flowers-market-18187231.htm</p>
+              <p className="small mb-0">* https://www.marketsandmarkets.com/Market-Reports/cut-flowers-market-18187231.html</p>
             </div>
           </div>
         </div>
@@ -108,20 +109,13 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
         <div className="container">
           <h2>Meet Your Educational Team</h2>
           <p className="mb-5">With QC's Floral Design course, you'll train under seasoned professionals:</p>
-          <div className="row justify-content-center g-5 g-lg-4 text-center text-lg-start">
+          <div className="row justify-content-left g-5 g-lg-4 text-center text-lg-start">
             <div className="col-12 col-lg-4">
               <div className="d-flex justify-content-center justify-content-lg-start mb-3">
                 <ReneeTucci size={128} />
               </div>
               <h3 className="h6 mb-4">Renee Tucci<br /><span className="fw-normal">Lead Educator</span></h3>
               With over 20 years of experience, Renee Tucci is a highly respected leader in the industry and the current <strong>President of the American Institute of Floral Designers (AIFD)</strong>. Renee designed QC's Floral Design course to seamlessly blend floral design theory with practical, real-world skills—ensuring students are fully prepared for success.
-            </div>
-            <div className="col-12 col-lg-4">
-              <div className="d-flex justify-content-center justify-content-lg-start mb-3">
-                <MwaiYeboah size={128} />
-              </div>
-              <h3 className="h6 mb-4">Mwai Yeboah<br /><span className="fw-normal">Course Educator</span></h3>
-              Mwai Yeboah, founder of the internationally acclaimed Love From Mwai, is a multi-award-winning destination wedding planner and luxury floral designer. Renowned for creating breathtaking events worldwide, Mwai brings her expertise to QC's Floral Design course, sharing exclusive business strategies and professional templates to set students up for lasting success in the floral design industry.
             </div>
             <div className="col-12 col-lg-4">
               <div className="d-flex justify-content-center justify-content-lg-start mb-3">
