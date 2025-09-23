@@ -13,9 +13,10 @@ type Props = {
   buttonContent?: JSX.Element | string;
   buttonAlwaysVisible?: boolean;
   showBanner?: boolean;
+  buttonClass?: string;
 };
 
-export const Header: FC<Props> = ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, showBanner }) => {
+export const Header: FC<Props> = ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, showBanner, buttonClass = `btn btn-navy ${styles.button}` }) => {
   const { countryCode } = getData();
   const date = new Date().getTime();
 
@@ -31,7 +32,7 @@ export const Header: FC<Props> = ({ logoLink, buttonHref = '#', buttonContent, b
             }
             {buttonContent && (
               <ButtonWrapper alwaysVisible={!!buttonAlwaysVisible}>
-                <Link href={buttonHref} className={`btn btn-navy ${styles.button}`}>{buttonContent}</Link>
+                <Link href={buttonHref} className={buttonClass}>{buttonContent}</Link>
               </ButtonWrapper>
             )}
           </div>
