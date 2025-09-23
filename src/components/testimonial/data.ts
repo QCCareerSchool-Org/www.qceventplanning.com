@@ -186,9 +186,25 @@ export const testimonials: Record<string, Testimonial> = {
   'TE-0022': {
     name: 'Abigail Doto',
     courses: [ 'fd' ],
-    short: [ 'Having this background and knowledge really prepared me and made me more confident about my decision to start a business.' ],
-    long: [ 'Having this background and knowledge really prepared me and made me more confident about my decision to start a business.' ],
-    image: Images.Placeholder,
+    short: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
+    long: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
+    image: Images.Placeholder, // update image
+    stars: 5,
+  },
+  'TE-0023': {
+    name: 'Maureen Bilokur',
+    courses: [ 'fd' ],
+    short: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
+    long: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
+    image: Images.Placeholder, // update image
+    stars: 5,
+  },
+  'TE-0024': {
+    name: 'Terry Russell',
+    courses: [ 'fd' ],
+    short: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it’s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
+    long: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it’s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
+    image: Images.TerryRussell,
     stars: 5,
   },
 };
