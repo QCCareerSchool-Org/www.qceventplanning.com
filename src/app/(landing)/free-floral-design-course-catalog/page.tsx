@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const brevoListId = 12;
-const brevoEmailTemplateId = 37;
+const brevoEmailTemplateId = 1998;
 const courseCodes: CourseCode[] = [ 'fd' ];
 const testimonialIds = [ 'TE-0020', 'TE-0021', 'TE-0012', 'TE-0022', 'TE-0004', 'TE-0003' ];
 
