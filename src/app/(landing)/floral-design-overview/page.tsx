@@ -99,7 +99,7 @@ const FloralDesignPage: PageComponent = () => {
       </section>
       {countryCode !== 'CA' && <SAFPartnerSection />}
       <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
-      <section>
+      <section id="what-youll-learn">
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
             <div className="col-12 col-lg-6">
