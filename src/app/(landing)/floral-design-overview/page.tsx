@@ -36,6 +36,7 @@ import { getData } from '@/lib/getData';
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds = [ 'TE-0023', 'TE-0024', 'TE-0022', 'TE-0004', 'TE-0020', 'TE-0008' ];
+const enrollUrl = 'https://enroll.qceventplanning.com/floral-design-overview?c=fd';
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',
@@ -50,7 +51,7 @@ const FloralDesignPage: PageComponent = () => {
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qceventplanning.com/floral-design-overview?c=fd'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+      <Header logoLink buttonContent={<>Enroll <span className="d-none d-sm-inline"> Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -69,7 +70,7 @@ const FloralDesignPage: PageComponent = () => {
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you&rsquo;ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don&rsquo;t wait—take the first step toward your future in floral design today!</p>
 
-              <Link href="https://enroll.qceventplanning.com/floral-design-overview?c=fd"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+              <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
             </div>
@@ -94,7 +95,7 @@ const FloralDesignPage: PageComponent = () => {
             </div>
           </div>
           <div className="text-left mt-4">
-            <Link href="https://enroll.qceventplanning.com/floral-design-overview?c=fd"><button className="btn btn-primary btn-lg mb-2 mt-3">Start My Course</button></Link>
+            <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-2 mt-3">Start My Course</button></Link>
           </div>
         </div>
       </section>
@@ -174,7 +175,7 @@ const FloralDesignPage: PageComponent = () => {
         <PaymentPlanSection courseCodes={courseCodes} />
       </Suspense>
       <CourseCardsSection />
-      <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} buttonHref="https://enroll.qceventplanning.com/floral-design-overview?c=fd" />
+      <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} buttonHref={enrollUrl} />
       <CourseStructuredData courseCode={courseCode} />
     </div>
   );
