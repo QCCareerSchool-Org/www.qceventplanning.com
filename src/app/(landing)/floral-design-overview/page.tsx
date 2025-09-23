@@ -41,9 +41,7 @@ const enrollUrl = 'https://enroll.qceventplanning.com/floral-design-overview?c=f
 export const metadata: Metadata = {
   title: 'Floral Design Course',
   description: getCourseDescription(courseCode),
-  alternates: {
-    canonical: '/online-event-courses/floral-design',
-  },
+  alternates: { canonical: '/floral-design-overview' },
 };
 
 const FloralDesignPage: PageComponent = () => {
