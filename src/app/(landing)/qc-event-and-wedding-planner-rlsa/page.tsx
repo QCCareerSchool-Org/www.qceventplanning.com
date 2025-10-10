@@ -104,7 +104,7 @@ const RSLAPage: PageComponent = () => {
               </div>
             </div>
             <div className="col-12 col-md-9 text-center text-md-start">
-              <p className="lead">&ldquo;I liked that it was all online. Plus, I had a long time (2 years) to complete the course. The price was also very affordable! I loved the convenience of doing training online&mdash;rather than in-person&mdash;because you can do the course a little bit at a time, whenever it's convenient for your schedule.&rdquo;</p>
+              <p className="lead">&ldquo;I liked that it was all online. Plus, I had a long time to complete the course. The price was also very affordable! I loved the convenience of doing training online&mdash;rather than in-person&mdash;because you can do the course a little bit at a time, whenever it's convenient for your schedule.&rdquo;</p>
               <p className="lead fw-bold">&mdash;Ayla Otto, owner and founder of Events by Ayla</p>
               <p className="mb-0"><Link href="https://www.qceventplanning.com/blog/2023/07/qc-event-school-graduate-spotlight-ayla-otto">Read the full QC graduate interview</Link></p>
             </div>
