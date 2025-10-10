@@ -83,7 +83,7 @@ const FAQPage: PageComponent = () => {
             <h2 className="h3 mb-3">While You Learn</h2>
             <Question heading="How long will it take to complete the course?">
               <p>QC's courses are self-paced&mdash;this means you can work on it whenever it's most convenient for you! With QC's flexible online training, you have no assignment deadlines or exams to worry about. Complete and submit your assignments at your own pace. There's no rush!</p>
-              <p>As a rough guideline, most people take about 10 to 12 weeks to complete their course when working on it a couple of hours per week. You have a full two years to complete the course starting from your date of enrollment. For a better idea of what your workload will be like, take a look at the <Link href="/online-event-courses/event-and-wedding-planning#outline">Event &amp; Wedding Planning course curriculum</Link>.</p>
+              <p>As a rough guideline, most people take about 10 to 12 weeks to complete their course when working on it a couple of hours per week. You have a year to complete the course starting from your date of enrollment. For a better idea of what your workload will be like, take a look at the <Link href="/online-event-courses/event-and-wedding-planning#outline">Event &amp; Wedding Planning course curriculum</Link>.</p>
             </Question>
             <Question heading="What if I get stuck on an assignment?">
               <p>You are learning from home but you are in no way alone. You can <Link href="/contact-us">contact our Student Support Team</Link> for assignment help as often as you would like. Every question will be answered.</p>
