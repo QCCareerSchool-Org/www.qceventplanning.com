@@ -6,9 +6,13 @@ import { Header } from '../../header';
 import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
 import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
+import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { TwoFreeSpecialty } from '@/components/promos/twoFreeSpecialty';
+import { SupportSection } from '@/components/supportSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
@@ -32,6 +36,8 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
+  const date = new Date().getTime();
+
   try {
     if (leadId && emailAddress) {
       await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
@@ -54,6 +60,10 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <ThankYouSection heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} />
+      {date < Date.UTC(2025, 9, 18, 12) && <TwoFreeSpecialty />}
+      <GoogleReviewSection />
+      <ILEASection />
+      <SupportSection />
       <section className="bg-navy text-white">
         <div className="container">
           <div className="row justify-content-center text-center">
