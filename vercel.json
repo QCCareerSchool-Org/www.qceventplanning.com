@@ -41,7 +41,8 @@
     { "source": "/online-event-courses/course-pricing", "destination": "/online-event-courses" },
     { "source": "/free-event-planning-workshop/:path*", "destination": "/free-event-planning-webinar/:path*" },
 
-    { "source": "/thank-you-floral-design-course-catalog", "destination": "/download-floral-design-course-catalog" },
+    { "source": "/download-course-catalog", "destination": "/thank-you-course-catalog" },
+    { "source": "/download-floral-design-course-catalog", "destination": "/thank-you-floral-design-course-catalog" },
 
     { "source": "/blog/2021/09/how-to-become-a-wedding-planner-a-step-by-step-guide", "destination": "/blog/2025/08/how-to-become-a-wedding-planner-2025-guide" }
   ]
