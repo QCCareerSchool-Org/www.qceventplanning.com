@@ -2,10 +2,13 @@ import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 import Link from 'next/link';
 
+import { Header } from '../../header';
+import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
-import { EmailSentToast } from '@/components/emailSentToast';
+import DownloadIcon from '@/components/download.svg';
+import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
+import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
 import { LeadProcessing } from '@/components/leadProcessing';
-import { TelephoneFormSection } from '@/components/telephoneFormSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
@@ -39,7 +42,6 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
 
   return (
     <>
-      {emailAddress && <EmailSentToast emailAddress={emailAddress} firstName={firstName} />}
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
@@ -50,7 +52,8 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         leadId={leadId}
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
-      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
+      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
+      <ThankYouSection heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} />
       <section className="bg-navy text-white">
         <div className="container">
           <div className="row justify-content-center text-center">
@@ -65,7 +68,5 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
     </>
   );
 };
-
-const validCountryForSMS = (countrycode?: string): boolean => countrycode === 'CA' || countrycode === 'US';
 
 export default ThankYouCourseCatalogPage;

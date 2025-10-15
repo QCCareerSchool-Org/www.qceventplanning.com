@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 2;
 const brevoEmailTemplateId = 32;
+const brevoTelephoneListId = 53;
 
 const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams }) => {
   const { countryCode } = getData();
@@ -56,6 +57,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
                     <BrevoForm
                       successLocation={`${process.env.HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
                       listId={brevoListId}
+                      telephoneListId={brevoTelephoneListId}
                       emailTemplateId={brevoEmailTemplateId}
                       gclid={gclid}
                       msclkid={msclkid}
@@ -66,6 +68,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
                       utmTerm={utmTerm}
                       placeholders
                       referrer={referrer}
+                      countryCode={countryCode}
                     />
                   </div>
                 </div>
