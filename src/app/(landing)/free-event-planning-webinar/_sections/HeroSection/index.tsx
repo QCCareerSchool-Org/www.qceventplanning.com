@@ -17,6 +17,7 @@ type Props = {
   utmContent?: string;
   utmTerm?: string;
   referrer: string | null;
+  countryCode: string;
 };
 
 const brevoListId = 10;
@@ -55,6 +56,7 @@ export const HeroSection: FC<Props> = props => {
                     </>
                   )}
                   referrer={props.referrer}
+                  countryCode={props.countryCode}
                 />
               </div>
             </div>
