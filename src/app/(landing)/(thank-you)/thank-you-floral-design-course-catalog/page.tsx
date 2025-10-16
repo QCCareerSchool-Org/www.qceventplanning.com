@@ -10,7 +10,7 @@ import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
-import { TwoFreeSpecialty } from '@/components/promos/twoFreeSpecialty';
+import { FreeSpecialty100 } from '@/components/promos/freeSpecialty100';
 import { SupportSection } from '@/components/supportSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
@@ -26,7 +26,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode);
+  const countryCode = getParam(searchParams.countryCode) ?? 'US';
   const provinceCode = getParam(searchParams.provinceCode);
   const headerList = headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
@@ -59,7 +59,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <ThankYouSection heroSrc={HeroImage} course="fd" />
-      {date < Date.UTC(2025, 9, 18, 12) && <TwoFreeSpecialty />}
+      {date < Date.UTC(2025, 9, 18, 12) && <FreeSpecialty100 countryCode={countryCode} />}
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection />
