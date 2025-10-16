@@ -61,7 +61,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <ThankYouSection heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} />
       {date < Date.UTC(2025, 9, 18, 12) && <TwoFreeSpecialty />}
-      <GoogleReviewSection />
+      <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection />
       <section className="bg-navy text-white">
