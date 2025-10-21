@@ -3,6 +3,7 @@ import { cookies, headers } from 'next/headers';
 import Link from 'next/link';
 
 import { Header } from '../../header';
+import { CurrentPromotion } from '../_components/currentPromotion';
 import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
@@ -11,7 +12,6 @@ import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
 import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
 import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
-import { FreeSpecialty100 } from '@/components/promos/freeSpecialty100';
 import { SupportSection } from '@/components/supportSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
@@ -60,7 +60,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <ThankYouSection heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} emailAddress={emailAddress} />
-      {date < Date.UTC(2025, 9, 18, 12) && <FreeSpecialty100 countryCode={countryCode} />}
+      <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection />
