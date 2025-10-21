@@ -4,13 +4,13 @@ import Link from 'next/link';
 
 import HeroImage from '../../free-floral-design-course-catalog/hero.jpg';
 import { Header } from '../../header';
+import { CurrentPromotion } from '../_components/currentPromotion';
 import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
-import { Halloween2025 } from '@/components/promos/halloween2025';
 import { SupportSection } from '@/components/supportSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
@@ -59,7 +59,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <ThankYouSection heroSrc={HeroImage} course="fd" emailAddress={emailAddress} />
-      {date >= Date.UTC(2025, 9, 22, 16) && date < Date.UTC(2025, 9, 31, 8) && <Halloween2025 />}
+      <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection />
