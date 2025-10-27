@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { Question } from '@/components/questionCourseFAQ';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
@@ -140,6 +141,39 @@ const EventPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <Question heading="What types of events will I learn to plan in the Festivals and Live Events course?">
+                <p>In QC&apos;s Festivals and Live Events Planning course, you'll learn how to organize a wide variety of large-scale public and ticketed events. These include:</p>
+                <ul>
+                  <li>Music festivals and concerts</li>
+                  <li>Sporting events and fan experiences</li>
+                  <li>Trade shows and consumer expos</li>
+                  <li>Charity fundraisers and community events</li>
+                </ul>
+                <p>You&apos;ll gain the skills to manage complex logistics, crowd control, permits, vendor coordination, health and safety, and marketing strategies&mdash;so you&apos;re fully prepared to plan unforgettable live events.</p>
+              </Question>
+              <Question heading="How much does a festival and live event planner typically earn?">
+                <p>According to ZipRecruiter, the average festival and large event planner salary is over $60,000 per <a href="https://www.ziprecruiter.com/Salaries/Festival-Event-Management-Salary#:~:text=Festival%20Event%20Management%20Salary&text=%2445%2C000%20is%20the%2025th%20percentile,Salaries%20below%20this%20are%20outliers.&text=%2475%2C000%20is%20the%2075th%20percentile">year</a>. With the global festival and live events industry estimated at over $736.8 <a href="https://www.globenewswire.com/news-release/2025/02/04/3020163/0/en/Events-Industry-Market-to-Reach-2-5-Trillion-Globally-by-2035-at-6-8-CAGR-Allied-Market-Research.html">billion</a>, the earning potential in this field is significant. With the right training, you can start your career and tap into this booming industry in under 1 month.</p>
+                <p>Want to boost your income even further? Taking additional QC Event School courses like Promotional Event Planning or Accelerate Your Business can help you expand your services and increase your client base.</p>
+              </Question>
+              <Question heading="Is QC an accredited online event planning school?">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB) with an A+ rating and a 100% positive consumer ranking. QC Event School is also recognized by the International Live Events Association (ILEA) for maintaining a high standard of education in the event industry.</p>
+                <p>We&apos;ve been delivering professional online training since 1984, with thousands of graduates around the world. QC Event School&apos;s courses are recognized by respected associations in the event planning industry, so you can feel confident in your education and future career.</p>
+              </Question>
+              <Question heading="Do I need prior training or experience before taking QC's online Festival and Live Event Planning course?">
+                <p>Yes. QC&apos;s Festivals and Live Events Planning course is a specialized, advanced-level program, designed for students who already have foundational knowledge or experience in event planning.</p>
+                <p>To succeed in this course, we recommend first completing or pairing it with QC&apos;s Corporate Event Planning course. This will give you the essential skills and context needed to confidently manage large-scale festivals, concerts, trade shows, and public events.</p>
+              </Question>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to expand your event planning career?" text="Become professionally certified with QC's festivals and live events training" courseCodes={courseCodes} />
     <CourseStructuredData courseCode={courseCode} />
   </div>
