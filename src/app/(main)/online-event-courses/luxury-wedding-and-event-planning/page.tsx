@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { Question } from '@/components/questionCourseFAQ';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -123,6 +124,31 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <Question heading="How much does a luxury wedding and event planner typically earn?">
+                <p>According to the Bureau of Labor, the average luxury wedding and event planner salary is over $99,000 per <a href="https://www.bls.gov/oes/2023/may/oes131121.htm">year</a>, depending on your experience, clientele, and location. Many high-end planners who work with celebrity or destination clients can earn even more. The North American luxury wedding and event industry is estimated to be worth $29.7 <a href="https://www.sphericalinsights.com/reports/luxury-wedding-market">billion</a>. With the right training and business foundation, you can begin booking luxury clients in less than two months.</p>
+              </Question>
+              <Question heading="How long does it take to become a luxury wedding and event planner?">
+                <p>When you take QC&apos;s Event & Wedding course, you can work at your own pace and according to your own schedule. You can become a certified luxury event wedding and planner in under two months!</p>
+                <p>If you want to take your time, you have a full year to complete your lessons and assignments and earn your Luxury Wedding and Event Planning certification.</p>
+              </Question>
+              <Question heading="Do I need prior experience to take this course?">
+                <p>Yes. The Luxury Wedding and Event Planning course is an advanced-level specialization. You&apos;ll need previous training or professional experience in event or wedding planning to succeed. If you&apos;re just starting out, we recommend completing the Event & Wedding Planning course first to build your foundational skills.</p>
+              </Question>
+              <Question heading="Is QC an accredited online event planning school?">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible consumer rating (A+) and a positive 100% consumer ranking. QC Event School is also recognized by the International Live Events Association (ILEA) for maintaining a high standard of education in the event industry.</p>
+                <p>There are many online event planning courses to choose from. When you enroll in QC Event School, you can be confident that we have been in business since 1984 and have a superb track record with students and customers. QC Event School is also recognized internationally by a wide variety of associations in the event planning industry.</p>
+              </Question>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to Help Your Clients Create Incredible Memories?" text="Specialize as a Luxury Wedding & Event Planner" courseCodes={courseCodes} />
     <CourseStructuredData courseCode={courseCode} />
   </div>
