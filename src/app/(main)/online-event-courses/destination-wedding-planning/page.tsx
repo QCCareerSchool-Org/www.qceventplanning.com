@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { Question } from '@/components/questionCourseFAQ';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -124,6 +125,34 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <Question heading="How much does a destination wedding planner typically earn?">
+                <p>According to ZipRecruiter, the average destination wedding planner salary is around $45,958 per <a href="https://www.ziprecruiter.com/Salaries/Destination-Wedding-Planner-Salary">year</a>. The destination wedding planning industry is estimated to generate $47.69 billion <a href="https://www.thebusinessresearchcompany.com/report/destination-wedding-global-market-report#:~:text=What%20Is%20The%20Destination%20Wedding,tourism%2C%20cultural%20and%20exotic%20appeal">annually</a>. With the right training, you can begin booking clients and claim a part of that industry in under two months!</p>
+              </Question>
+              <Question heading="Do I need prior experience to take this course?">
+                <p>Yes. The Destination Wedding Planning course is an advanced-level specialization. You&apos;ll need previous training or professional experience in event or wedding planning to succeed. If you&apos;re just starting out, we recommend completing the Event & Wedding Planning course first to build your foundational skills.</p>
+              </Question>
+              <Question heading="How long does it take to become a destination wedding planner?">
+                <p>When you take QC&apos;s Destination Wedding Planning course, you can work at your own pace and according to your own schedule. You can become a certified destination wedding planner and start booking clients in under two months!</p>
+                <p>If you want to take your time, you have a full year to complete your lessons and assignments and earn your destination wedding planner certification.</p>
+              </Question>
+              <Question heading="Is QC an accredited online wedding planning school?">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible consumer rating (A+) and a positive 100% consumer ranking. QC Event School is also recognized by the International Live Events Association (ILEA) for maintaining a high standard of education in the event industry.</p>
+                <p>There are many online event planning courses to choose from. When you enroll in QC Event School, you can be confident that we have been in business since 1984 and have a superb track record with students and customers. QC Event School is also recognized internationally by a wide variety of associations in the event planning industry.</p>
+              </Question>
+              <Question heading="Can I start my own business after graduating?">
+                <p>Yes! In the optional business unit of QC Event School&apos;s Destination Wedding Planning course, you&apos;ll learn how to start a destination wedding planning business, write your business plan, market your services and work successfully with clients, overseas venues and vendors.</p>
+              </Question>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Specialize as a Destination Wedding Planner" courseCodes={courseCodes} />
     <CourseStructuredData courseCode={courseCode} />
   </div>
