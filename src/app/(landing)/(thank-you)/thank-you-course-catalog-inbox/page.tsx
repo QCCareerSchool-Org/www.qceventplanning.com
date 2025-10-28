@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Header } from '../../header';
 import { CurrentPromotion } from '../_components/currentPromotion';
-import { ThankYouSection } from '.';
+import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
