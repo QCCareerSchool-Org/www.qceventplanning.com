@@ -3,7 +3,6 @@ import { cookies, headers } from 'next/headers';
 import Link from 'next/link';
 
 import { Header } from '../../header';
-import { CurrentPromotion } from '../_components/currentPromotion';
 import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
@@ -36,8 +35,6 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
-  const date = new Date().getTime();
-
   try {
     if (leadId && emailAddress) {
       await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
@@ -60,7 +57,6 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <ThankYouSection heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection />
