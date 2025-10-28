@@ -18,7 +18,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog',
-  alternates: { canonical: '/thank-you-course-catalog' },
+  alternates: { canonical: '/download-floral-design-course-catalog' },
   robots: { index: false },
 };
 

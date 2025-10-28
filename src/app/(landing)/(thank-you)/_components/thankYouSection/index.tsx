@@ -15,7 +15,7 @@ type Props = {
   emailAddress?: string;
 };
 
-export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
+export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc }) => {
   const downloadUrl = course === 'fd'
     ? '/floral.pdf'
     : '/catalog.pdf';
@@ -36,7 +36,7 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
                 </div>
                 <h1 className="h4 mb-4 text-navy">Catalog Unlocked!</h1>
                 <FormWrapper>
-                  <p className="lead mb-4">Your catalog is ready! We'll also email a copy{emailAddress ? <> to <strong>{emailAddress}</strong></> : <></>} with insider tips and insights about our school&mdash;check your inbox (and Promotions or Spam folder) so you don't miss it.</p>
+                  <p className="lead mb-4">Your catalog is ready! Download your copy and start exploring course details, career paths, and exclusive student benefits.</p>
                   <a href={downloadUrl}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> Download Catalog Now</button></a>
                 </FormWrapper>
               </div>
