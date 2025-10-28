@@ -12,8 +12,11 @@ import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
 import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
+import type { CourseCode } from '@/domain/courseCode';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
+
+const courseCode: CourseCode = 'fd';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog',
@@ -57,7 +60,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <ThankYouSection heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} emailAddress={emailAddress} course="fd" />
-      <GoogleReviewSection className="bg-light" />
+      <GoogleReviewSection className="bg-light" courseCode={courseCode} />
       <ILEASection />
       <SupportSection />
       <section className="bg-navy text-white">
