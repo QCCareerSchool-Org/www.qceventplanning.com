@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 import Link from 'next/link';
 
+import HeroImage from '../../free-floral-design-course-catalog/hero.jpg';
 import { Header } from '../../header';
 import { ThankYouSection } from '../_components/thankYouSection';
-import HeroLgImage from './cert-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -58,7 +58,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <ThankYouSection heroSrc={HeroLgImage} emailAddress={emailAddress} course="fd" />
+      <ThankYouSection heroSrc={HeroImage} emailAddress={emailAddress} course="fd" />
       <GoogleReviewSection className="bg-light" courseCode={courseCode} />
       <ILEASection />
       <SupportSection />
