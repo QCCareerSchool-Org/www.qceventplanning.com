@@ -10,6 +10,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -17,7 +18,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { Question } from '@/components/questionCourseFAQ';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -109,13 +109,13 @@ const AccelerateYourBusinessPage: PageComponent = () => (
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
-              <Question heading="What will QC’s Accelerate Your Business course teach me?">
+              <AccordionFAQ heading="What will QC’s Accelerate Your Business course teach me?" className="mb-3">
                 <p>Once you have your event planning certification, QC&apos;s Accelerate Your Business course will teach you how to build your business with the marketing, project management and communications tools you need for success. Your course materials, approved by QC&apos;s event planning experts and entrepreneurs, will tell you how to register your business, build your brand, create promotions and find your future clients.</p>
-              </Question>
-              <Question heading="Do I need a degree to start my own event planning design business?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to start my own event planning design business?" className="mb-3">
                 <p>No! QC Event Planning&apos;s Accelerate Your Business course will build on your event planning courses by teaching you how to register your event planning business, write a business plan, market your services, and work with any client.  QC provides a full pathway for you to progress from beginner to business owner with its online event planning and business training courses.</p>
-              </Question>
-              <Question heading="Can this course help me grow an existing design business?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="Can this course help me grow an existing design business?" className="mb-3">
                 <p>Yes! If you already run an event planning business, QC&apos;s Accelerate Your Business course can help you scale it more effectively.</p>
                 <p>You&apos;ll learn how to:</p>
                 <ul>
@@ -126,7 +126,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
                   <li>Optimize your marketing and branding efforts</li>
                 </ul>
                 <p>This course is ideal for design professionals looking to grow their revenue, expand services, or build a team. Our Student Support Team can also help you bundle this course with additional design certifications for a more competitive edge.</p>
-              </Question>
+              </AccordionFAQ>
             </div>
           </div>
         </div>
