@@ -4,20 +4,22 @@ import Link from 'next/link';
 
 import HeroImage from '../../free-floral-design-course-catalog/hero.jpg';
 import { Header } from '../../header';
-import { CurrentPromotion } from '../_components/currentPromotion';
-import { ThankYouSection } from '../_components/thankYouSection';
+import { DownloadSection } from '../_components/downloadSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
+import type { CourseCode } from '@/domain/courseCode';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
+const courseCode: CourseCode = 'fd';
+
 export const metadata: Metadata = {
-  title: 'Your Floral Design Course Catalog',
-  alternates: { canonical: '/thank-you-floral-design-course-catalog' },
+  title: 'Your Course Catalog',
+  alternates: { canonical: '/download-floral-design-course-catalog' },
   robots: { index: false },
 };
 
@@ -34,8 +36,6 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   const cookieStore = cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
-
-  const date = new Date().getTime();
 
   try {
     if (leadId && emailAddress) {
@@ -58,9 +58,8 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <ThankYouSection heroSrc={HeroImage} course="fd" emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
-      <GoogleReviewSection className="bg-light" />
+      <DownloadSection heroSrc={HeroImage} emailAddress={emailAddress} course="fd" />
+      <GoogleReviewSection className="bg-light" courseCode={courseCode} />
       <ILEASection />
       <SupportSection />
       <section className="bg-navy text-white">
