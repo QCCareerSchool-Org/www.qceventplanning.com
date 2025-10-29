@@ -5,16 +5,14 @@ import { Accordion } from './accordion';
 
 type Props = {
   heading: string;
+  className?: string;
 };
 
-export const AccordionFAQ: FC<PropsWithChildren<Props>> = ({ heading, children }) => {
+export const AccordionFAQ: FC<PropsWithChildren<Props>> = ({ heading, children, className }) => {
   const schemaHeading = `<span itemProp="name">${heading}</span>`;
   return (
     <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
-      <Accordion title={schemaHeading}>
-        {/* <div itemProp="name">
-        {heading}
-      </div> */}
+      <Accordion title={schemaHeading} className={className}>
         <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
           <div itemProp="text">
             {children}
