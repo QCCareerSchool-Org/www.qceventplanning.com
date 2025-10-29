@@ -11,6 +11,7 @@ import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IFDPImage from '@/components/certifications/ifdp.svg';
@@ -20,7 +21,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { Question } from '@/components/questionCourseFAQ';
 import { SAFPartnerSection } from '@/components/safPartnerSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
@@ -154,17 +154,17 @@ const FloralDesignPage: PageComponent = () => {
             <div className="row justify-content-center">
               <div className="col-12 col-lg-10">
                 <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
-                <Question heading="How much does a floral designer typically earn?">
-                  <p>The average floral designer salary is over $37,000 per year* Your earnings could vary depending on several factors such as your location, level of experience, and whether you work for yourself or in a floral chain or an independent shop. You can increase your income and professional opportunities by enrolling in a floral design course that provides hands-on training and business education. QC Event School&apos;s online Floral Design certification program prepares you with both creative and entrepreneurial skills to help you succeed faster in the industry</p>
-                  <p className="small">* &ldquo;<a href="http://ziprecruiter.com/Salaries/What-Is-the-Average-Floral-Design-Salary-by-State" target="_blank" rel="noreferrer">What is the average floral design salary by state</a>.&rdquo; <i>ZipRecruiter.</i> May 2025</p>
-                </Question>
-                <Question heading="Do I need a degree or diploma to become a floral designer?">
+                <AccordionFAQ heading="How much does a floral designer typically earn?" className="mb-3">
+                  <p>The average floral designer salary is over $37,000 per year{/* * */} Your earnings could vary depending on several factors such as your location, level of experience, and whether you work for yourself or in a floral chain or an independent shop. You can increase your income and professional opportunities by enrolling in a floral design course that provides hands-on training and business education. QC Event School&apos;s online Floral Design certification program prepares you with both creative and entrepreneurial skills to help you succeed faster in the industry</p>
+                  {/* <p className="small">* &ldquo;<a href="http://ziprecruiter.com/Salaries/What-Is-the-Average-Floral-Design-Salary-by-State" target="_blank" rel="noreferrer">What is the average floral design salary by state</a>.&rdquo; <i>ZipRecruiter.</i> May 2025</p> */}
+                </AccordionFAQ>
+                <AccordionFAQ heading="Do I need a degree or diploma to become a floral designer?" className="mb-3">
                   <p>You don&apos;t need a license or degree to work as a florist or floral designer. QC&apos;s Floral Design course will teach you how to become a floral designer by providing you with personalized feedback and advice from our top industry experts and providing you with business training to help you launch your career. When you graduate from QC Event School&apos;s Floral Design course, you will receive a certification and be able to use the designation of International Floral Design Professional (IFDP). This prestigious certification showcases your skills and credibility for your clients and colleagues in the floral design industry.</p>
-                </Question>
-                <Question heading="How long does it take to become a floral designer?">
+                </AccordionFAQ>
+                <AccordionFAQ heading="How long does it take to become a floral designer?" className="mb-3">
                   <p>You can become a floral designer and start booking clients in under 3 months! When you take QC&apos;s Floral Design course, you can work at your own pace and according to your own schedule. You&apos;ll have a full year to complete your training, giving you the flexibility to study around your personal schedule.</p>
-                </Question>
-                <Question heading="Can I start my own floral design or florist shop after graduating?">
+                </AccordionFAQ>
+                <AccordionFAQ heading="Can I start my own floral design or florist shop after graduating?" className="mb-3">
                   <p>Yes, absolutely! QC Design School&apos;s Floral Design course includes an optional business training unit that walks you through the process of launching your own floral design business or florist shop. You&apos;ll learn how to:</p>
                   <ul>
                     <li>Register your floral business</li>
@@ -174,7 +174,7 @@ const FloralDesignPage: PageComponent = () => {
                     <li>Build relationships with vendors and clients</li>
                   </ul>
                   <p>With your IFDP certification and business training, you&apos;ll be ready to start offering services such as custom floral arrangements for weddings, events, retail, or everyday occasions.</p>
-                </Question>
+                </AccordionFAQ>
               </div>
             </div>
           </div>
