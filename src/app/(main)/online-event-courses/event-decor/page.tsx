@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Suspense } from 'react';
 
 import { CourseStructuredData } from '../courseStructuredData';
@@ -20,6 +21,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { Question } from '@/components/questionCourseFAQ';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -122,6 +124,35 @@ const EventDecorPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <Question heading="What will I learn in QC's Event Decor course?">
+                <p>Event decor services are a great way to add value to your services and reach a broader audience of clients in need of design services. With QC's Event Decor course, you'll learn all the components that make an event unique, including florals, lighting, layout and fabric. You'll gain all the skills you need to design stunning, cohesive events. You'll also <strong>develop your client consultation skills</strong> and explore the <strong>business side of event decorating</strong>, including how to price your services and build a brand. Graduates earn the <strong>International Event Decorating Professional&trade; (IEDP&trade;) certification</strong>—an industry-recognized credential that showcases your training and credibility.</p>
+              </Question>
+              <Question heading="How much does an event decorator earn?">
+                <p>An <strong>event decorator's salary</strong> varies based on experience, location, and the services you offer. On average, event decorators earn between <strong>$32,459 and $42,500 per year*</strong>, with opportunities to charge more for consultations and full-service packages as your reputation grows. Many successful event decorators work as freelancers, with event planning companies or run their own event decor businesses.</p>
+                <p>Our <Link href="/contact-us">student support team</Link> will be happy to tell you about the QC Event & Wedding Planning course and how it can accelerate your event decorating career after graduation!</p>
+                <p className="small">* &ldquo;<a href="https://www.ziprecruiter.com/Salaries/Event-Decorator-And-Designer-Salary#Yearly" target="_blank" rel="noreferrer">Event Decorator and Designer Salary</a>.&rdquo; <i>Zip Recruiter.</i> May 2025</p>
+              </Question>
+              <Question heading="Do I need a degree to become an event decorator?">
+                <p>A license, degree, or certification is NOT required to work as an event decorator. With QC's Event Decor course, you'll earn an industry-recognized certification as an International Event Decorating Professional (IEDP).  This designation gives you a competitive edge by proving your qualifications and building client trust, so that you can stand out in this lucrative industry. The IEDP certification shows clients that you have the skills and knowledge required to decorate beautiful and memorable events.</p>
+              </Question>
+              <Question heading="How long does it take to become an event decorator?">
+                <p>You can become a certified event decorator in just a <strong>few short months</strong>! QC's <strong>self-paced online course</strong> allows you to study on your schedule. Most students complete the course in <strong>3 to 6 months</strong>, but you'll have <strong>up to 2 full years</strong> to finish your assignments.</p>
+                <p>You can start booking <strong>event decorator jobs</strong> as soon as you're certified.</p>
+              </Question>
+              <Question heading="Can I start my own event decor business after graduating?">
+                <p>Yes! The Event Decor course includes an <strong>optional business training</strong> unit that teaches you how to start and grow your own <strong>event decorating business</strong>. You'll learn how to register your own business, write a business plan, market your services and work successfully with any client or vendor. By graduation, you'll have the confidence and tools to launch your career or business.</p>
+              </Question>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Become a Professionally Certified Event Decorator" courseCodes={courseCodes} />
     <CourseStructuredData courseCode={courseCode} />
   </div>
