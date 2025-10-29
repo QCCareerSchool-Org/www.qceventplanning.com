@@ -12,6 +12,7 @@ import ProductLaunchImage from './product-launch.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import PESImage from '@/components/certifications/pes.svg';
 import { CourseType } from '@/components/courseType';
@@ -20,7 +21,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { Question } from '@/components/questionCourseFAQ';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
@@ -148,7 +148,7 @@ const EventPlanningPage: PageComponent = () => (
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
-              <Question heading="What does a promotional event planner do?">
+              <AccordionFAQ heading="What does a promotional event planner do?" className="mb-3">
                 <p>A promotional event planner specializes in organizing events that market or promote a product, service, brand, or organization. These events are designed to boost visibility, attract new customers, and drive sales. As a promotional event planner, you may coordinate:</p>
                 <ul>
                   <li>Product launches</li>
@@ -159,25 +159,25 @@ const EventPlanningPage: PageComponent = () => (
                   <li>Pop-up experiences and influencer events</li>
                 </ul>
                 <p>You&apos;ll be responsible for planning the event concept, managing logistics, coordinating vendors and brand reps, and ensuring the experience aligns with the client&apos;s marketing goals. Your work helps create memorable brand impressions that generate real business results.</p>
-              </Question>
-              <Question heading="How much does a promotional event planner typically earn?">
-                <p>According to the Bureau of Labor Statistics, the average promotional event planner salary is over $62,280 per year*. The global corporate event industry is estimated to be worth over $325 billion**. With the right training, you can start building your career and claim your share of the industry in under 1 month!</p>
-                <p className="small mb-0">* &ldquo;<a href="https://www.bls.gov/oes/2023/may/oes131121.htm" target="_blank" rel="noreferrer">Occupational Employment and Wages, May 2023, 13-1121 Meeting, Convention, and Event Planners</a>.&rdquo; <i>U.S. Bureau of Labour Statistics.</i></p>
-                <p className="small mb-0">** &ldquo;<a href="https://www.cvent.com/en/blog/events/event-statistics" target="_blank" rel="noreferrer">116 Event Statistics Shaping the Industry in 2025</a>.&rdquo; <i>Cvent.</i></p>
-              </Question>
-              <Question heading="Do I need a degree to become a promotional event planner?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="How much does a promotional event planner typically earn?" className="mb-3">
+                <p>According to the Bureau of Labor Statistics, the average promotional event planner salary is over $62,280 per year{/* * */}. The global corporate event industry is estimated to be worth over $325 billion{/* ** */}. With the right training, you can start building your career and claim your share of the industry in under 1 month!</p>
+                {/* <p className="small mb-0">* &ldquo;<a href="https://www.bls.gov/oes/2023/may/oes131121.htm" target="_blank" rel="noreferrer">Occupational Employment and Wages, May 2023, 13-1121 Meeting, Convention, and Event Planners</a>.&rdquo; <i>U.S. Bureau of Labour Statistics.</i></p>
+                <p className="small mb-0">** &ldquo;<a href="https://www.cvent.com/en/blog/events/event-statistics" target="_blank" rel="noreferrer">116 Event Statistics Shaping the Industry in 2025</a>.&rdquo; <i>Cvent.</i></p> */}
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to become a promotional event planner?" className="mb-3">
                 <p>No degree or license is required! QC&apos;s Promotional Event Planning course teaches you how to manage brand activations, product launches, and high-impact promotional events&mdash;without the cost of a college degree.</p>
                 <p>To enroll, you&apos;ll need either prior training or relevant experience in corporate event planning, as this advanced course builds on foundational event planning skills.</p>
                 <p>Upon graduation, you&apos;ll earn the Promotional Events Specialist (PES) certificate&mdash;an industry-recognized credential that shows clients and employers you have the expertise to plan exciting, results-driven promotional events and stand out from the competition.</p>
-              </Question>
-              <Question heading="How long does it take to become a promotional event planner?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become a promotional event planner?" className="mb-3">
                 <p>QC&apos;s online Promotional Event Planning course is completely self-paced, so you can learn on your own schedule. Many students complete the course and earn their certification in less than one month!</p>
                 <p>Prefer to move more slowly? You&apos;ll have a full year to complete your assignments and graduate with confidence.</p>
-              </Question>
-              <Question heading="Is QC an accredited online event planning school?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online event planning school?" className="mb-3">
                 <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible A+ rating and a 100% positive consumer ranking. QC Event School is also recognized by the International Live Events Association (ILEA) for maintaining a high standard of education in the event industry.</p>
                 <p>With more than 40 years of experience in distance education, QC is trusted by students around the world. Our event planning programs are recognized by several respected industry associations, making QC a reliable choice for building your career in event management.</p>
-              </Question>
+              </AccordionFAQ>
             </div>
           </div>
         </div>
