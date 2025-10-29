@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Header } from '../../header';
 import { CurrentPromotion } from '../_components/currentPromotion';
-import { ThankYouSection } from '.';
+import { ThankYouSection } from './thank-you-section';
 import type { PageComponent } from '@/app/serverComponent';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';

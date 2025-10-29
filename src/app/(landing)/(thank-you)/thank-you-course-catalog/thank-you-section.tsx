@@ -14,7 +14,7 @@ type Props = {
   emailAddress?: string;
 };
 
-export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc }) => {
+export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress }) => {
   return (
     <section className="text-white">
       {mobileHeroSrc
@@ -31,7 +31,7 @@ export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc }) => {
                 </div>
                 <h1 className="h4 mb-4 text-navy">Your Catalog Is Waiting in Your Inbox!</h1>
                 <FormWrapper>
-                  <p className="lead mb-4">Congratulations&mdash;you&apos;ve unlocked your catalog along with a special offer just for you! Be sure to check your junk/spam folder and add us to your safe sender's list if you don&apos;t see it in your inbox!</p>
+                  <p className="lead mb-4">Congratulations—you've unlocked your catalog! We've sent your catalog along with a special offer to {emailAddress ? <strong>{emailAddress}</strong> : 'your inbox'}. Be sure to check your junk/spam folder and add us to your safe sender's list if you don't see it in the next few minutes!</p>
                 </FormWrapper>
               </div>
             </FormCard>

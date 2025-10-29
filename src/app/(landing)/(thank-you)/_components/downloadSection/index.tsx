@@ -15,7 +15,7 @@ type Props = {
   emailAddress?: string;
 };
 
-export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc }) => {
+export const DownloadSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc }) => {
   const downloadUrl = course === 'fd'
     ? '/floral.pdf'
     : '/catalog.pdf';
