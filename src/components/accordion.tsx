@@ -10,7 +10,7 @@ type Props = {
 export const Accordion: FC<PropsWithChildren<Props>> = ({ title, children, open, className }) => (
   <BootstrapAccordion className={className} defaultActiveKey={open ? '0' : undefined}>
     <BootstrapAccordion.Item eventKey="0">
-      <BootstrapAccordion.Header><span className="lead fw-bold">{title}</span></BootstrapAccordion.Header>
+      <BootstrapAccordion.Header><span className="lead fw-bold" dangerouslySetInnerHTML={{ __html: title }} /></BootstrapAccordion.Header>
       <BootstrapAccordion.Body>
         {children}
       </BootstrapAccordion.Body>
