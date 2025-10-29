@@ -4,7 +4,6 @@ import type { FC } from 'react';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
-import DownloadIcon from '@/components/icons/download.svg';
 import LockIcon from '@/components/icons/q-lock.svg';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -15,11 +14,7 @@ type Props = {
   emailAddress?: string;
 };
 
-export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
-  const downloadUrl = course === 'fd'
-    ? '/floral.pdf'
-    : '/catalog.pdf';
-
+export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress }) => {
   return (
     <section className="text-white">
       {mobileHeroSrc
@@ -34,10 +29,9 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
                 <div className="text-primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 100, height: 100, borderRadius: 50, border: '1px solid #E5E7EB', background: 'white', margin: '0 auto 2rem' }}>
                   <LockIcon height="50" />
                 </div>
-                <h1 className="h4 mb-4 text-navy">Catalog Unlocked!</h1>
+                <h1 className="h4 mb-4 text-navy">Your Catalog Is Waiting in Your Inbox!</h1>
                 <FormWrapper>
-                  <p className="lead mb-4">Your catalog is ready! We'll also email a copy{emailAddress ? <> to <strong>{emailAddress}</strong></> : <></>} with insider tips and insights about our school&mdash;check your inbox (and Promotions or Spam folder) so you don't miss it.</p>
-                  <a href={downloadUrl}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> Download Catalog Now</button></a>
+                  <p className="lead mb-4">Congratulations—you've unlocked your catalog! We've sent your catalog along with a special offer to {emailAddress ? <strong>{emailAddress}</strong> : 'your inbox'}. Be sure to check your junk/spam folder and add us to your safe sender's list if you don't see it in the next few minutes!</p>
                 </FormWrapper>
               </div>
             </FormCard>
