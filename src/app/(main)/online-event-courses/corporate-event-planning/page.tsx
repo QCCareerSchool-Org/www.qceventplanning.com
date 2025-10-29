@@ -11,6 +11,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import ICPPImage from '@/components/certifications/icpp.svg';
 import { CourseType } from '@/components/courseType';
@@ -19,7 +20,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { Question } from '@/components/questionCourseFAQ';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
@@ -147,28 +147,28 @@ const CorporateEventPlanningPage: PageComponent = () => (
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
-              <Question heading="How much does a corporate event planner typically earn?">
-                <p>According to Salary.com, the average salary for a corporate event planner in North America is approximately $76,850 per year*, with top earners making even more depending on experience and specialization. The North American corporate events industry is valued at over $325 billion USD&mdash;and** you can build your career in this booming field in less than a year!</p>
+              <AccordionFAQ heading="How much does a corporate event planner typically earn?" className="mb-3">
+                <p>According to Salary.com, the average salary for a corporate event planner in North America is approximately $76,850 per year{/* * */}, with top earners making even more depending on experience and specialization. The North American corporate events industry is valued at over $325 billion USD&mdash;and{/* ** */} you can build your career in this booming field in less than a year!</p>
                 <p>You can boost your income further by adding complementary training. Courses such as Promotional Event Planning or Accelerate Your Business can expand your services and help grow your client base. Our Student Support Team is here to guide you in planning the best path for your success.</p>
-                <p className="small mb-0">* &ldquo;<a href="https://www.salary.com/research/salary/recruiting/corporate-event-planner-salary" target="_blank" rel="noreferrer">Corporate Event Planner Salary in the United States</a>.&rdquo; <i>Salary.com.</i></p>
-                <p className="small mb-0">** &ldquo;<a href="https://www.businesswire.com/news/home/20250214107073/en/Corporate-Event-Market-Forecast-Report-to-2029-with-Key-Player-Profiles-for-American-Meetings-Creative-Group-Freeman-and-360-Destination-Group---ResearchAndMarkets.com" target="_blank" rel="noreferrer">Corporate Event Market Forecast Report to 2029, with Key Player Profiles for American Meetings, Creative Group, Freeman and 360 Destination Group - ResearchAndMarkets.com</a>.&rdquo; <i>BusinessWire.</i></p>
-              </Question>
-              <Question heading="Do I need a degree to become a corporate event planner?">
+                {/* <p className="small mb-0">* &ldquo;<a href="https://www.salary.com/research/salary/recruiting/corporate-event-planner-salary" target="_blank" rel="noreferrer">Corporate Event Planner Salary in the United States</a>.&rdquo; <i>Salary.com.</i></p>
+                <p className="small mb-0">** &ldquo;<a href="https://www.businesswire.com/news/home/20250214107073/en/Corporate-Event-Market-Forecast-Report-to-2029-with-Key-Player-Profiles-for-American-Meetings-Creative-Group-Freeman-and-360-Destination-Group---ResearchAndMarkets.com" target="_blank" rel="noreferrer">Corporate Event Market Forecast Report to 2029, with Key Player Profiles for American Meetings, Creative Group, Freeman and 360 Destination Group - ResearchAndMarkets.com</a>.&rdquo; <i>BusinessWire.</i></p> */}
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to become a corporate event planner?" className="mb-3">
                 <p>No degree or license is required! QC&apos;s online Corporate Event Planning course equips you with all the skills and strategies you need&mdash;without the high cost of a traditional education. Upon graduation, you&apos;ll receive the International Corporate Event Planning Professional (ICPP) certification.</p>
                 <p>This professional designation tells clients and employers that you&apos;re trained, qualified, and ready to deliver impressive corporate events&mdash;whether they&apos;re conferences, product launches, fundraisers, or executive retreats.</p>
-              </Question>
-              <Question heading="How long does it take to become a corporate event planner?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become a corporate event planner?" className="mb-3">
                 <p>QC Event School&apos;s online Corporate Event Planning course is flexible and self-paced, so you can learn on your schedule. Many students complete the program and earn their certification in as little as two months.</p>
                 <p>Need more time? No problem&mdash;you&apos;ll have a full year to finish your course and assignments.</p>
-              </Question>
-              <Question heading="Is QC an accredited online event planning school?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online event planning school?" className="mb-3">
                 <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB) with an A+ rating and a 100% positive consumer ranking. Additionally, QC Event School&apos;s programs are approved by the International Live Events Association (ILEA), recognizing our commitment to high-quality training and industry standards in event education.</p>
                 <p>We&apos;ve been a trusted leader in distance education since 1984, and thousands of students worldwide have launched successful careers through our training. QC is also recognized by respected professional associations in the event industry.</p>
-              </Question>
-              <Question heading="Do I need prior training or experience before taking QC's online courses?">
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need prior training or experience before taking QC's online courses?" className="mb-3">
                 <p>No, you don&apos;t need any prior training to succeed at QC Event School. Our Corporate Event Planning course starts with the fundamentals and builds your skills in planning, logistics, client communication, budgeting, venue coordination, and more.</p>
                 <p>Whether you're entering the field for the first time or adding corporate events to your existing planning services, this course is designed to help you thrive.</p>
-              </Question>
+              </AccordionFAQ>
             </div>
           </div>
         </div>
