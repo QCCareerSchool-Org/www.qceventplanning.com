@@ -132,9 +132,7 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
             <div className="col-12 col-lg-10">
               <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
               <AccordionFAQ heading="How much does a destination wedding planner typically earn?" className="mb-3">
-                <p>According to ZipRecruiter, the average destination wedding planner salary is around $45,958 per year{/* * */}. The destination wedding planning industry is estimated to generate $47.69 billion annually{/* ** */}. With the right training, you can begin booking clients and claim a part of that industry in under two months!</p>
-                {/* <p className="small mb-0">* &ldquo;<a href="https://www.ziprecruiter.com/Salaries/Destination-Wedding-Planner-Salary" target="_blank" rel="noreferrer">Destination Wedding Planner Salary</a>.&rdquo; <i>ZipRecruiter.</i></p>
-                <p className="small">** &ldquo;<a href="https://www.thebusinessresearchcompany.com/report/destination-wedding-global-market-report#:~:text=What%20Is%20The%20Destination%20Wedding,tourism%2C%20cultural%20and%20exotic%20appeal" target="_blank" rel="noreferrer">Destination Wedding Global Market Report 2025</a>.&rdquo; <i>The Business Research Company.</i></p> */}
+                <p>According to ZipRecruiter, the average destination wedding planner salary is around $45,958 per year. The destination wedding planning industry is estimated to generate $47.69 billion annually. With the right training, you can begin booking clients and claim a part of that industry in under two months!</p>
               </AccordionFAQ>
               <AccordionFAQ heading="Do I need prior experience to take this course?" className="mb-3">
                 <p>Yes. The Destination Wedding Planning course is an advanced-level specialization. You&apos;ll need previous training or professional experience in event or wedding planning to succeed. If you&apos;re just starting out, we recommend completing the Event & Wedding Planning course first to build your foundational skills.</p>

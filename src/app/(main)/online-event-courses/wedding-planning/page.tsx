@@ -152,10 +152,8 @@ const WeddingPlanningPage: PageComponent = () => {
               <div className="col-12 col-lg-10">
                 <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
                 <AccordionFAQ heading="How much does a wedding planner make?" className="mb-3">
-                  <p>According to Career Explorer, the average entry-level wedding planner salary is about $35,000 per year{/* * */} Your income will increase as you gain experience and add additional services such as Event Decor or Floral Design.</p>
-                  <p>The global wedding planning industry is estimated to generate USD 899.64 billion annually{/* ** */}, according to Grand View Research. You can claim a part of that industry and start booking clients in under two months!</p>
-                  {/* <p className="small mb-0">* &ldquo;<a href="https://www.careerexplorer.com/careers/wedding-planner/salary/" target="_blank" rel="noreferrer">Wedding planner salary</a>.&rdquo; <i>Career Explorer.</i></p>
-                  <p className="small mb-0">** &ldquo;<a href="https://www.grandviewresearch.com/industry-analysis/wedding-services-market-report" target="_blank" rel="noreferrer">Wedding Services Market Size & Share | Industry Report, 2030</a>.&rdquo; <i>Grand View Research.</i></p> */}
+                  <p>According to Career Explorer, the average entry-level wedding planner salary is about $35,000 per year. Your income will increase as you gain experience and add additional services such as Event Decor or Floral Design.</p>
+                  <p>The global wedding planning industry is estimated to generate USD 899.64 billion annually, according to Grand View Research. You can claim a part of that industry and start booking clients in under two months!</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading="Do I need a degree to become a wedding planner?" className="mb-3">
                   <p>No! Your QC course will teach you how to become a wedding planner without a license or an expensive degree. When you graduate, you&apos;ll receive your International Wedding Planning Professional (IWPP) certification. This industry-recognized credential proves you have the training, skills, and expertise to plan unforgettable weddings and stand out in the competitive wedding industry.</p>

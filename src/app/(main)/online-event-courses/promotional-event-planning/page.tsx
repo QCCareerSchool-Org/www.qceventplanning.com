@@ -161,9 +161,7 @@ const EventPlanningPage: PageComponent = () => (
                 <p>You&apos;ll be responsible for planning the event concept, managing logistics, coordinating vendors and brand reps, and ensuring the experience aligns with the client&apos;s marketing goals. Your work helps create memorable brand impressions that generate real business results.</p>
               </AccordionFAQ>
               <AccordionFAQ heading="How much does a promotional event planner typically earn?" className="mb-3">
-                <p>According to the Bureau of Labor Statistics, the average promotional event planner salary is over $62,280 per year{/* * */}. The global corporate event industry is estimated to be worth over $325 billion{/* ** */}. With the right training, you can start building your career and claim your share of the industry in under 1 month!</p>
-                {/* <p className="small mb-0">* &ldquo;<a href="https://www.bls.gov/oes/2023/may/oes131121.htm" target="_blank" rel="noreferrer">Occupational Employment and Wages, May 2023, 13-1121 Meeting, Convention, and Event Planners</a>.&rdquo; <i>U.S. Bureau of Labour Statistics.</i></p>
-                <p className="small mb-0">** &ldquo;<a href="https://www.cvent.com/en/blog/events/event-statistics" target="_blank" rel="noreferrer">116 Event Statistics Shaping the Industry in 2025</a>.&rdquo; <i>Cvent.</i></p> */}
+                <p>According to the Bureau of Labor Statistics, the average promotional event planner salary is over $62,280 per year. The global corporate event industry is estimated to be worth over $325 billion. With the right training, you can start building your career and claim your share of the industry in under 1 month!</p>
               </AccordionFAQ>
               <AccordionFAQ heading="Do I need a degree to become a promotional event planner?" className="mb-3">
                 <p>No degree or license is required! QC&apos;s Promotional Event Planning course teaches you how to manage brand activations, product launches, and high-impact promotional events&mdash;without the cost of a college degree.</p>
