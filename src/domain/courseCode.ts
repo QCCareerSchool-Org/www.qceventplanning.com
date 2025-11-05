@@ -19,8 +19,29 @@ const descriptions: Record<CourseCode, string> = {
   ve: 'Expand your services, plan engaging online events and reach clients all over the world with QC\'s Virtual Event Planning training.',
 };
 
+const certifications: Partial<Record<CourseCode, string>> = {
+  ep: 'International Event and Wedding Planning Professional™',
+  wp: 'International Wedding Planning Professional™',
+  ce: 'International Event Planning Professional™',
+  cp: 'International Corporate Event Planning Professional™',
+  lw: 'Luxury Wedding and Event Specialist',
+  dw: 'Destination Wedding Specialist',
+  ed: 'International Event Decorating Professional™',
+  fd: 'International Floral Design Professional™',
+  fl: 'International Festivals and Live Events Planning Professional™',
+  pe: 'Promotional Events Specialist',
+};
+
 export const getCourseDescription = (courseCode: CourseCode): string => {
   return descriptions[courseCode];
+};
+
+export const getCourseCertificate = (courseCode: CourseCode): string | null => {
+  const certificate = certifications[courseCode];
+  if(certificate) {
+    return certificate;
+  }
+  return null;
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
