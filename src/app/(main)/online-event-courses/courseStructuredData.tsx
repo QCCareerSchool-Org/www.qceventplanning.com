@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
-import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import type { CourseCode } from '@/domain/courseCode';
 
 import type { PriceQuery } from '@/lib/fetch';
@@ -28,21 +28,29 @@ const getCourseJsonLD = (courseCode: CourseCode, price: number): WithContext<Cou
   'url': getCourseUrl(courseCode),
   'name': getCourseName(courseCode),
   'description': getCourseDescription(courseCode),
+  'educationalCredentialAwarded': getCourseCertificate(courseCode) ?? undefined,
   'provider': {
     '@type': 'EducationalOrganization',
     '@id': 'https://www.qceventplanning.com/#school',
     'url': 'https://www.qceventplanning.com',
     'name': 'QC Event School',
+    'sameAs': [
+      'https://www.linkedin.com/company/qc-career-school',
+      'https://www.facebook.com/QCEventPlanning',
+      'https://www.instagram.com/qceventschool',
+      'https://www.youtube.com/@QCEvent',
+    ],
   },
-  'offers': [ {
-    '@type': 'Offer',
-    'category': 'Paid',
-    'priceCurrency': 'USD',
-    'price': price.toFixed(2),
-  } ],
-  'hasCourseInstance': [ {
+  'hasCourseInstance': {
     '@type': 'CourseInstance',
     'courseMode': 'Online',
     'courseWorkload': 'PT40H',
-  } ],
+    'offers': {
+      '@type': 'Offer',
+      'category': 'Course',
+      'url': 'https://enroll.qceventplanning.com/',
+      'priceCurrency': 'USD',
+      'price': price.toFixed(2),
+    },
+  },
 });
