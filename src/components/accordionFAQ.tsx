@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const AccordionFAQ: FC<PropsWithChildren<Props>> = ({ heading, children, className }) => {
-  const schemaHeading = `<span itemProp="name">${heading}</span>`;
+  const schemaHeading = <span itemProp="name" className="lead fw-bold">{heading}</span>;
   return (
     <div itemScope itemType="https://schema.org/Question" itemProp="mainEntity">
       <Accordion title={schemaHeading} className={className}>
