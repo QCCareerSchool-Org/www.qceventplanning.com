@@ -11,6 +11,7 @@ import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IWPPImage from '@/components/certifications/iwpp.svg';
@@ -144,6 +145,35 @@ const WeddingPlanningPage: PageComponent = () => {
       <Suspense>
         <PaymentPlanSection courseCodes={courseCodes} />
       </Suspense>
+      <section>
+        <div itemScope itemType="https://schema.org/FAQPage">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-10">
+                <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+                <AccordionFAQ heading="How much does a wedding planner make?" className="mb-3">
+                  <p>According to Career Explorer, the average entry-level wedding planner salary is about $35,000 per year. Your income will increase as you gain experience and add additional services such as Event Decor or Floral Design.</p>
+                  <p>The global wedding planning industry is estimated to generate USD 899.64 billion annually, according to Grand View Research. You can claim a part of that industry and start booking clients in under two months!</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Do I need a degree to become a wedding planner?" className="mb-3">
+                  <p>No! Your QC course will teach you how to become a wedding planner without a license or an expensive degree. When you graduate, you&apos;ll receive your International Wedding Planning Professional (IWPP) certification. This industry-recognized credential proves you have the training, skills, and expertise to plan unforgettable weddings and stand out in the competitive wedding industry.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="How long does it take to become a wedding planner?" className="mb-3">
+                  <p>When you take QC&apos;s Wedding Planning course, you can work at your own pace and according to your own schedule. You can become a certified wedding planner and start booking clients in as little as two months!</p>
+                  <p>If you want to take your time, you have a full year to complete your lessons and assignments and earn your wedding planning certification.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Is QC an accredited online event planning school?" className="mb-3">
+                  <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible consumer rating (A+) and a positive 100% consumer ranking.</p>
+                  <p>There are many online event planning courses to choose from. When you enroll in QC Event School, you can be confident that we have been in business since 1984 and have a superb track record with students and customers. QC Event School is also recognized internationally by a wide variety of associations in the event planning industry.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Do I need prior training or experience before taking QC's online courses?" className="mb-3">
+                  <p>No, you do not need any previous experience in the wedding planning industry to succeed in QC's Wedding Planning course! You&apos;ll learn everything you need to know, from consulting with clients to selecting venues and vendors, in order to become a qualified wedding planning professional. If you have questions at any stage in your progress, you can reach out to our Student Support team, who are standing by to help you on your journey to becoming a wedding planner.</p>
+                </AccordionFAQ>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Wedding Memories?" text="Become a Professionally Certified Wedding Planner" courseCodes={courseCodes} />
       <CourseStructuredData courseCode={courseCode} />
     </div>
