@@ -11,6 +11,7 @@ import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IEWPImage from '@/components/certifications/iewp.svg';
@@ -143,6 +144,34 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="How much does an event planner typically earn?" className="mb-3">
+                <p>The average event planner salary is around $50,000 to $60,000 per year. Top earners in the industry can make even more depending on their experience, niche, and client base. According to Allied Market Research, the global events industry is booming, valued at over <strong>$736.8 billion</strong> annually. With QC&apos;s training, you can launch your career in under three months and start earning a share of this exciting market.</p>
+                <p>Many successful event planners increase their income by offering multiple services. After completing QC&apos;s Event & Wedding Planning course, you can expand your business by taking additional courses in <strong>Floral Design</strong>, <strong>Event Decor</strong> or <strong>Luxury Wedding Planning</strong>.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to become an event planner?" className="mb-3">
+                <p>No! QC&apos;s Event & Wedding Planning course will teach you how to become an event and wedding planner without an expensive event planning degree. When you graduate, you will receive a certificate designating you as an Event and Wedding Planning Professional (IEWP). Your event and wedding planner certification will show clients that you have all the skills and knowledge you need to plan spectacular events, and set you apart in the event planning industry.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become an event planner?" className="mb-3">
+                <p>When you take QC&apos;s Event & Wedding Planning course, you can work at your own pace and according to your own schedule. You can become a certified event and wedding planner and start booking clients in under three months! If you want to take your time, you have a full year to complete your lessons and assignments and earn your event planning certification.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online event school?" className="mb-3">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible consumer rating (A+) and a positive 100% consumer ranking. Additionally, QC Event School&apos;s programs are approved by the International Live Events Association (ILEA), recognizing our commitment to high-quality training and industry standards in event education.</p>
+                <p>When you enroll in QC Event School, you can be confident that we have been in business since 1984 and have a superb track record with students and customers.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need prior training or experience before taking QC's online courses?" className="mb-3">
+                <p>Not at all! QC's online event planning courses are designed for event planners of all levels, from beginners to seasoned pros. Whether you&apos;re starting from scratch or changing careers, you&apos;ll learn everything you need to become a professional event and wedding planner&mdash;from client consultations and budgeting to sourcing venues, vendors, and managing timelines.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to Start Your Event & Wedding Planning Career?" text="Become Professionally Certified with QC's Online Event Planning Training" courseCodes={courseCodes} />
     <CourseStructuredData courseCode={courseCode} />
   </div>

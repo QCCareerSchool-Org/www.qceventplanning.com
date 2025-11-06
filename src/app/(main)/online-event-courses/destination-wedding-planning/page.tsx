@@ -10,6 +10,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Candice } from '@/components/candice';
@@ -124,6 +125,34 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="How much does a destination wedding planner typically earn?" className="mb-3">
+                <p>According to ZipRecruiter, the average destination wedding planner salary is around $45,958 per year. The destination wedding planning industry is estimated to generate $47.69 billion annually. With the right training, you can begin booking clients and claim a part of that industry in under two months!</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need prior experience to take this course?" className="mb-3">
+                <p>Yes. The Destination Wedding Planning course is an advanced-level specialization. You&apos;ll need previous training or professional experience in event or wedding planning to succeed. If you&apos;re just starting out, we recommend completing the Event & Wedding Planning course first to build your foundational skills.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become a destination wedding planner?" className="mb-3">
+                <p>When you take QC&apos;s Destination Wedding Planning course, you can work at your own pace and according to your own schedule. You can become a certified destination wedding planner and start booking clients in under two months!</p>
+                <p>If you want to take your time, you have a full year to complete your lessons and assignments and earn your destination wedding planner certification.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online wedding planning school?" className="mb-3">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible consumer rating (A+) and a positive 100% consumer ranking. QC Event School is also recognized by the International Live Events Association (ILEA) for maintaining a high standard of education in the event industry.</p>
+                <p>There are many online event planning courses to choose from. When you enroll in QC Event School, you can be confident that we have been in business since 1984 and have a superb track record with students and customers. QC Event School is also recognized internationally by a wide variety of associations in the event planning industry.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Can I start my own business after graduating?" className="mb-3">
+                <p>Yes! In the optional business unit of QC Event School&apos;s Destination Wedding Planning course, you&apos;ll learn how to start a destination wedding planning business, write your business plan, market your services and work successfully with clients, overseas venues and vendors.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Memories?" text="Specialize as a Destination Wedding Planner" courseCodes={courseCodes} />
     <CourseStructuredData courseCode={courseCode} />
   </div>
