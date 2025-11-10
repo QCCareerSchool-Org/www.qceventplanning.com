@@ -1,9 +1,7 @@
 import type { FC } from 'react';
 
-import type { Course, ItemList, WithContext } from 'schema-dts';
 import EBImage from './accelerate-your-business/hero.jpg';
 import CPImage from './corporate-event-planning/hero.jpg';
-import { courses } from './courseSchemaData';
 import DWImage from './destination-wedding-planning/hero.jpg';
 import EPImage from './event-and-wedding-planning/hero.jpg';
 import EDImage from './event-decor/hero.jpg';
@@ -20,40 +18,8 @@ type Props = {
   className?: string;
 };
 
-const jsonLD: WithContext<ItemList> = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  'itemListElement': Object.values(courses).map((course, index) => {
-    return {
-      '@type': 'ListItem',
-      'position': index + 1,
-      'item': {
-        '@type': 'Course',
-        'url': course.url,
-        'name': course.name,
-        'description': course.description,
-        'educationalCredentialAwarded': course.certificate ? {
-          '@type': 'EducationalCredential',
-          'name': course.certificate,
-        } : undefined,
-        'provider': {
-          '@type': 'EducationalOrganization',
-          'name': 'QC Design School',
-          'sameAs': [
-            'https://www.linkedin.com/company/qc-career-school',
-            'https://www.facebook.com/QCDesign',
-            'https://www.instagram.com/qcdesignschool',
-            'https://www.youtube.com/@QCDesign',
-          ],
-        },
-      } as Course,
-    };
-  }),
-};
-
 export const OnlineCourseSection: FC<Props> = ({ className }) => (
   <div>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }} />
     <section id="courses" className={className}>
       <div className="container">
         <div className="row justify-content-center mb-s">
