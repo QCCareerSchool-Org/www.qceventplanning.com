@@ -47,7 +47,7 @@ export const getCourseCertificate = (courseCode: CourseCode): string | null => {
 export const getCourseName = (courseCode: CourseCode): string => {
   switch (courseCode) {
     case 'ep':
-      return 'Event & Wedding Planning Course';
+      return 'Event and Wedding Planning Course';
     case 'ce':
       return 'Event Planning Course';
     case 'wp':
@@ -57,7 +57,7 @@ export const getCourseName = (courseCode: CourseCode): string => {
     case 'ed':
       return 'Event Decor Course';
     case 'lw':
-      return 'Luxury Wedding Planning Course';
+      return 'Luxury Wedding and Event Planning Course';
     case 'dw':
       return 'Destination Wedding Planning Course';
     case 'fd':
@@ -86,7 +86,7 @@ export const getCourseUrl = (courseCode: CourseCode): string => {
     case 'ed':
       return 'https://www.qceventplanning.com/online-event-courses/event-decor';
     case 'lw':
-      return 'https://www.qceventplanning.com/online-event-courses/luxury-wedding-planning';
+      return 'https://www.qceventplanning.com/online-event-courses/luxury-wedding-and-event-planning';
     case 'dw':
       return 'https://www.qceventplanning.com/online-event-courses/destination-wedding-planning.';
     case 'fd':

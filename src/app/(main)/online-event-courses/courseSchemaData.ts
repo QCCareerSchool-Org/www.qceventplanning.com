@@ -46,7 +46,7 @@ export const courses: Record<string, Course> = {
     certificate: getCourseCertificate('ed') ?? undefined,
     courseCode: 'ed',
   },
-  'luxury-wedding-planning': {
+  'luxury-event-wedding-planning': {
     name: getCourseName('lw'),
     url: getCourseUrl('lw'),
     description: getCourseDescription('lw'),
@@ -66,13 +66,6 @@ export const courses: Record<string, Course> = {
     description: getCourseDescription('fd'),
     certificate: getCourseCertificate('fd') ?? undefined,
     courseCode: 'fd',
-  },
-  'virtual-event-planning': {
-    name: getCourseName('ve'),
-    url: getCourseUrl('ve'),
-    description: getCourseDescription('ve'),
-    certificate: getCourseCertificate('ve') ?? undefined,
-    courseCode: 've',
   },
   'accelerate-your-business': {
     name: getCourseName('eb'),
