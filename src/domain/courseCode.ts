@@ -1,7 +1,9 @@
 export type CourseCode = 'ep' | 'ce' | 'wp' | 'cp' | 'ed' | 'lw' | 'dw' | 'fd' | 've' | 'eb' | 'fl' | 'pe';
 
+export const courseCodes: CourseCode[] = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ];
+
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ].includes(obj);
+  return typeof obj === 'string' && courseCodes.includes(obj as CourseCode);
 };
 
 const descriptions: Record<CourseCode, string> = {

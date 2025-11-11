@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 import type { Course, ItemList, WithContext } from 'schema-dts';
-import { courses } from './courseSchemaData';
 import { OnlineCourseSection } from './onlineCourseSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
+import { courseCodes, getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses',
@@ -18,18 +18,19 @@ export const metadata: Metadata = {
 const jsonLD: WithContext<ItemList> = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  'itemListElement': Object.values(courses).map((course, index) => {
+  'itemListElement': courseCodes.map((c, i) => {
+    const courseCertificate = getCourseCertificate(c);
     return {
       '@type': 'ListItem',
-      'position': index + 1,
+      'position': i + 1,
       'item': {
         '@type': 'Course',
-        'url': course.url,
-        'name': course.name,
-        'description': course.description,
-        'educationalCredentialAwarded': course.certificate ? {
+        'url': getCourseUrl(c),
+        'name': getCourseName(c),
+        'description': getCourseDescription(c),
+        'educationalCredentialAwarded': courseCertificate ? {
           '@type': 'EducationalCredential',
-          'name': course.certificate,
+          'name': courseCertificate,
         } : undefined,
         'provider': {
           '@type': 'EducationalOrganization',
