@@ -16,18 +16,16 @@ export const metadata: Metadata = {
   },
 };
 
-const providerJsonLD: WithContext<EducationalOrganization> = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  '@id': '#provider',
-  'name': 'QC Event School',
-  'sameAs': [
-    'https://www.linkedin.com/company/qc-career-school',
-    'https://www.facebook.com/QCEventPlanning',
-    'https://www.instagram.com/qceventschool',
-    'https://www.youtube.com/@QCEvent',
-  ],
-};
+const CoursesPage: PageComponent = () => (
+  <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(providerJsonLD) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListjsonLD) }} />
+    <ILEASection />
+    <OnlineCourseSection />
+    <GoogleReviewSection className="bg-light" />
+    <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
+  </>
+);
 
 const getCourseSchema = (c: CourseCode): Course => {
   const courseCertificate = getCourseCertificate(c);
@@ -43,6 +41,19 @@ const getCourseSchema = (c: CourseCode): Course => {
   };
 };
 
+const providerJsonLD: WithContext<EducationalOrganization> = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  '@id': '#provider',
+  'name': 'QC Event School',
+  'sameAs': [
+    'https://www.linkedin.com/company/qc-career-school',
+    'https://www.facebook.com/QCEventPlanning',
+    'https://www.instagram.com/qceventschool',
+    'https://www.youtube.com/@QCEvent',
+  ],
+};
+
 const itemListjsonLD: WithContext<ItemList> = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -52,17 +63,5 @@ const itemListjsonLD: WithContext<ItemList> = {
     'item': getCourseSchema(c),
   })),
 };
-
-const CoursesPage: PageComponent = () => (
-  <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(providerJsonLD) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListjsonLD) }} />
-    <section className="p-0" />
-    <ILEASection />
-    <OnlineCourseSection />
-    <GoogleReviewSection className="bg-light" />
-    <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
-  </>
-);
 
 export default CoursesPage;
