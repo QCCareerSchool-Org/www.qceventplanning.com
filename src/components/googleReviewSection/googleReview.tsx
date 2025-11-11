@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import { type FC, Suspense } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { CourseMicrodata } from '../microdata/course';
@@ -18,7 +18,7 @@ export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundCol
         <link itemProp="itemReviewed" href={schemaCourseId} />
       )
       : courseCodes && courseCodes.length > 0
-        ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />
+        ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} /></Suspense>
         : (
           <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
             <meta itemProp="url" content="https://www.qceventplanning.com" />

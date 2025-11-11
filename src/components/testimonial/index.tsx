@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { memo, useMemo } from 'react';
+import { memo, Suspense, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { CourseMicrodata } from '../microdata/course';
@@ -62,7 +62,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
           <link itemProp="itemReviewed" href={schemaCourseId} />
         )
         : testimonial.courses.length > 0
-          ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
+          ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} /></Suspense>
           : (
             <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
               <meta itemProp="url" content="https://www.qceventplanning.com" />
