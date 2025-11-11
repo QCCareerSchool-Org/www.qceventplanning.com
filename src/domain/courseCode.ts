@@ -40,10 +40,7 @@ export const getCourseDescription = (courseCode: CourseCode): string => {
 
 export const getCourseCertificate = (courseCode: CourseCode): string | null => {
   const certificate = certifications[courseCode];
-  if(certificate) {
-    return certificate;
-  }
-  return null;
+  return certificate ?? null;
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
@@ -76,30 +73,31 @@ export const getCourseName = (courseCode: CourseCode): string => {
 };
 
 export const getCourseUrl = (courseCode: CourseCode): string => {
+  const baseUrl = 'https://www.qceventplanning.com';
   switch (courseCode) {
     case 'ep':
-      return 'https://www.qceventplanning.com/online-event-courses/event-and-wedding-planning';
+      return `${baseUrl}/online-event-courses/event-and-wedding-planning`;
     case 'ce':
-      return 'https://www.qceventplanning.com/online-event-courses/wedding-planning';
+      return `${baseUrl}/online-event-courses/wedding-planning`;
     case 'wp':
-      return 'https://www.qceventplanning.com/online-event-courses/event-planning';
+      return `${baseUrl}/online-event-courses/event-planning`;
     case 'cp':
-      return 'https://www.qceventplanning.com/online-event-courses/corporate-event-planning';
+      return `${baseUrl}/online-event-courses/corporate-event-planning`;
     case 'ed':
-      return 'https://www.qceventplanning.com/online-event-courses/event-decor';
+      return `${baseUrl}/online-event-courses/event-decor`;
     case 'lw':
-      return 'https://www.qceventplanning.com/online-event-courses/luxury-wedding-and-event-planning';
+      return `${baseUrl}/online-event-courses/luxury-wedding-and-event-planning`;
     case 'dw':
-      return 'https://www.qceventplanning.com/online-event-courses/destination-wedding-planning.';
+      return `${baseUrl}/online-event-courses/destination-wedding-planning.`;
     case 'fd':
-      return 'https://www.qceventplanning.com/online-event-courses/floral-design.';
+      return `${baseUrl}/online-event-courses/floral-design.`;
     case 've':
-      return 'https://www.qceventplanning.com/online-event-courses/virtual-event-planning.';
+      return `${baseUrl}/online-event-courses/virtual-event-planning.`;
     case 'eb':
-      return 'https://www.qceventplanning.com/online-event-courses/accelerate-your-business';
+      return `${baseUrl}/online-event-courses/accelerate-your-business`;
     case 'fl':
-      return 'https://www.qceventplanning.com/online-event-courses/festivals-and-live-events';
+      return `${baseUrl}/online-event-courses/festivals-and-live-events`;
     case 'pe':
-      return 'https://www.qceventplanning.com/online-event-courses/promotional-event-planning';
+      return `${baseUrl}/online-event-courses/promotional-event-planning`;
   }
 };

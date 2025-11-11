@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -15,6 +14,7 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IWPPImage from '@/components/certifications/iwpp.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 const WeddingPlanningPage: PageComponent = () => {
   return (
     <div className={styles.page}>
+      <Suspense><CourseSchema courseCode={courseCode} /></Suspense>
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -175,7 +176,6 @@ const WeddingPlanningPage: PageComponent = () => {
         </div>
       </section>
       <GetStartedSection title="Ready to Help Your Clients Create Breathtaking Wedding Memories?" text="Become a Professionally Certified Wedding Planner" courseCodes={courseCodes} />
-      <CourseStructuredData courseCode={courseCode} />
     </div>
   );
 };

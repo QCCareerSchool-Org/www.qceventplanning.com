@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { Suspense } from 'react';
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -15,6 +14,7 @@ import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Candice } from '@/components/candice';
 import IEWPImage from '@/components/certifications/lwes.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 
 const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
+    <Suspense><CourseSchema courseCode={courseCode} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -150,7 +151,6 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
       </div>
     </section>
     <GetStartedSection title="Ready to Help Your Clients Create Incredible Memories?" text="Specialize as a Luxury Wedding & Event Planner" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 

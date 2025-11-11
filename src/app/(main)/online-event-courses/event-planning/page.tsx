@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -14,6 +13,7 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Candice } from '@/components/candice';
 import IEPPImage from '@/components/certifications/iepp.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -39,6 +39,7 @@ export const metadata: Metadata = {
 
 const EventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
+    <Suspense><CourseSchema courseCode={courseCode} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -152,7 +153,6 @@ const EventPlanningPage: PageComponent = () => (
       </div>
     </section>
     <GetStartedSection title="Ready to start your event planning career?" text="Become professionally certified with QC's online event planning training" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 

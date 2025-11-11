@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import DesktopImage from './desktop.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -12,6 +11,7 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
 
 const AccelerateYourBusinessPage: PageComponent = () => (
   <div className={styles.page}>
+    <Suspense><CourseSchema courseCode={courseCode} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -133,7 +134,6 @@ const AccelerateYourBusinessPage: PageComponent = () => (
       </div>
     </section>
     <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 
