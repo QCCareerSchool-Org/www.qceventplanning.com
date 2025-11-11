@@ -4,6 +4,7 @@ import type { Course, WithContext } from 'schema-dts';
 import { getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import type { CourseCode } from '@/domain/courseCode';
 
+import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
@@ -18,10 +19,10 @@ export const CourseStructuredData: FC<Props> = async ({ courseCode }) => {
     return null;
   }
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode, price.cost)) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode, price)) }} />;
 };
 
-const getCourseJsonLD = (courseCode: CourseCode, price: number): WithContext<Course> => ({
+const getCourseJsonLD = (courseCode: CourseCode, price: Price): WithContext<Course> => ({
   '@context': 'https://schema.org',
   '@type': 'Course',
   '@id': `https://www.qceventplanning.com/courses/#${courseCode}`,
@@ -50,7 +51,7 @@ const getCourseJsonLD = (courseCode: CourseCode, price: number): WithContext<Cou
       'category': 'Course',
       'url': 'https://enroll.qceventplanning.com/',
       'priceCurrency': 'USD',
-      'price': price.toFixed(2),
+      'price': price.discountedCost.toFixed(2),
     },
   },
 });
