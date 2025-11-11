@@ -19,7 +19,6 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp }) => {
 
   return (
     <span itemProp={itemProp} itemScope itemType="https://schema.org/Course">
-      <meta itemProp="@id" content="#course" />
       <meta itemProp="url" content={getCourseUrl(courseCode)} />
       <meta itemProp="name" content={getCourseName(courseCode)} />
       <meta itemProp="description" content={getCourseDescription(courseCode)} />

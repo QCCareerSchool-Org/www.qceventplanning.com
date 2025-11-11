@@ -141,7 +141,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
     <VirtualCommunitySection />
     <OutlineSection />
     <AislePlannerSection />
-    <GoogleReviewSection courseCode={courseCode} />
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

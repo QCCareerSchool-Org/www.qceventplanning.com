@@ -7,17 +7,27 @@ import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
 
-export const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes }) => (
+type Props = {
+  schemaCourseId?: string;
+} & ReviewData;
+
+export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes, schemaCourseId }) => (
   <div itemScope itemType="https://schema.org/Review" className={styles.wrapper}>
-    {courseCodes && courseCodes.length > 0
-      ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />
-      : (
-        <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
-          <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
-          <meta itemProp="url" content="https://www.qceventplanning.com" />
-          <meta itemProp="name" content="QC Event School" />
+    {schemaCourseId
+      ? (
+        <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course">
+          <span itemProp="@id" content={schemaCourseId} />
         </span>
-      )}
+      )
+      : courseCodes && courseCodes.length > 0
+        ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />
+        : (
+          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
+            <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
+            <meta itemProp="url" content="https://www.qceventplanning.com" />
+            <meta itemProp="name" content="QC Event School" />
+          </span>
+        )}
     <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
       <meta itemProp="ratingValue" content={rating.toString()} />
       <meta itemProp="worstRating" content="0" />

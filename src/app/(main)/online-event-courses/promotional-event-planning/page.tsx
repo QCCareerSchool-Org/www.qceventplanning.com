@@ -139,7 +139,7 @@ const EventPlanningPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <OutlineSection />
-    <GoogleReviewSection courseCode={courseCode} />
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>

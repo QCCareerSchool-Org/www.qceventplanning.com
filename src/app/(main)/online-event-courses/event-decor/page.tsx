@@ -121,7 +121,7 @@ const EventDecorPage: PageComponent = () => (
     <OutlineSection />
     <VirtualCommunitySection />
     <AislePlannerSection />
-    <GoogleReviewSection courseCode={courseCode} />
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
