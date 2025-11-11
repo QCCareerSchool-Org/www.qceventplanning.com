@@ -10,7 +10,7 @@ import type { CourseCode } from '@/domain/courseCode';
 type Props = {
   courseCode?: CourseCode;
   className?: string;
-  /** a structured data @id to pass through to the Course's provider */
+  /** a structured data \@id to pass through to the Course's provider */
   schemaCourseId?: string;
 };
 
