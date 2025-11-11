@@ -11,9 +11,10 @@ type Props = {
   testimonialIds: string[];
   className?: string;
   hideHeading?: boolean;
+  schemaCourseId?: string;
 };
 
-export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialIds, className, hideHeading }) => (
+export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialIds, className, hideHeading, schemaCourseId }) => (
   <section className={className}>
     <div className="container">
       {!hideHeading && (
@@ -27,7 +28,7 @@ export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialI
       <div className="row justify-content-center g-5">
         {testimonialIds.map(id => (
           <div key={id} className="col-12 col-sm-8 col-lg-4">
-            <Testimonial id={id} courseCodes={courseCodes} />
+            <Testimonial id={id} courseCodes={courseCodes} schemaCourseId={schemaCourseId} />
           </div>
         ))}
       </div>
