@@ -12,6 +12,7 @@ import type { CourseCode } from '@/domain/courseCode';
 type Props = {
   id: string;
   courseCodes?: string[];
+  schemaCourseId?: string;
 };
 
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
@@ -27,7 +28,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -56,15 +57,18 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
 
   return (
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
-      {testimonial.courses.length > 0
-        ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
-        : (
-          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
-            <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
-            <meta itemProp="url" content="https://www.qceventplanning.com" />
-            <meta itemProp="name" content="QC Event School" />
-          </span>
-        )}
+      {schemaCourseId
+        ? (
+          <link itemProp="itemReviewed" href={schemaCourseId} />
+        )
+        : testimonial.courses.length > 0
+          ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
+          : (
+            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
+              <meta itemProp="url" content="https://www.qceventplanning.com" />
+              <meta itemProp="name" content="QC Event School" />
+            </span>
+          )}
       <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
         <meta itemProp="ratingValue" content={testimonial.stars.toString()} />
         <meta itemProp="worstRating" content="0" />

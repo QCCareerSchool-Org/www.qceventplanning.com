@@ -70,7 +70,7 @@ const EventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -120,7 +120,7 @@ const EventPlanningPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <VirtualCommunitySection />
-    <GoogleReviewSection courseCode={courseCode} />
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
     <Suspense>
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
