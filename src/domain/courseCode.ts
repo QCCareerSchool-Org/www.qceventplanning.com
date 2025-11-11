@@ -1,7 +1,9 @@
 export type CourseCode = 'ep' | 'ce' | 'wp' | 'cp' | 'ed' | 'lw' | 'dw' | 'fd' | 've' | 'eb' | 'fl' | 'pe';
 
+export const courseCodes: CourseCode[] = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ];
+
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ].includes(obj);
+  return typeof obj === 'string' && courseCodes.includes(obj as CourseCode);
 };
 
 const descriptions: Record<CourseCode, string> = {
@@ -19,14 +21,35 @@ const descriptions: Record<CourseCode, string> = {
   ve: 'Expand your services, plan engaging online events and reach clients all over the world with QC\'s Virtual Event Planning training.',
 };
 
+const certifications: Partial<Record<CourseCode, string>> = {
+  ep: 'International Event and Wedding Planning Professional™',
+  wp: 'International Wedding Planning Professional™',
+  ce: 'International Event Planning Professional™',
+  cp: 'International Corporate Event Planning Professional™',
+  lw: 'Luxury Wedding and Event Specialist',
+  dw: 'Destination Wedding Specialist',
+  ed: 'International Event Decorating Professional™',
+  fd: 'International Floral Design Professional™',
+  fl: 'International Festivals and Live Events Planning Professional™',
+  pe: 'Promotional Events Specialist',
+};
+
 export const getCourseDescription = (courseCode: CourseCode): string => {
   return descriptions[courseCode];
+};
+
+export const getCourseCertificate = (courseCode: CourseCode): string | null => {
+  const certificate = certifications[courseCode];
+  if(certificate) {
+    return certificate;
+  }
+  return null;
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
   switch (courseCode) {
     case 'ep':
-      return 'Event & Wedding Planning Course';
+      return 'Event and Wedding Planning Course';
     case 'ce':
       return 'Event Planning Course';
     case 'wp':
@@ -36,7 +59,7 @@ export const getCourseName = (courseCode: CourseCode): string => {
     case 'ed':
       return 'Event Decor Course';
     case 'lw':
-      return 'Luxury Wedding Planning Course';
+      return 'Luxury Wedding and Event Planning Course';
     case 'dw':
       return 'Destination Wedding Planning Course';
     case 'fd':
@@ -65,7 +88,7 @@ export const getCourseUrl = (courseCode: CourseCode): string => {
     case 'ed':
       return 'https://www.qceventplanning.com/online-event-courses/event-decor';
     case 'lw':
-      return 'https://www.qceventplanning.com/online-event-courses/luxury-wedding-planning';
+      return 'https://www.qceventplanning.com/online-event-courses/luxury-wedding-and-event-planning';
     case 'dw':
       return 'https://www.qceventplanning.com/online-event-courses/destination-wedding-planning.';
     case 'fd':

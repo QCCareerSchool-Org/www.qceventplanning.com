@@ -1,9 +1,10 @@
 import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
-import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import type { CourseCode } from '@/domain/courseCode';
 
+import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
@@ -18,31 +19,39 @@ export const CourseStructuredData: FC<Props> = async ({ courseCode }) => {
     return null;
   }
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode, price.cost)) }} />;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(getCourseJsonLD(courseCode, price)) }} />;
 };
 
-const getCourseJsonLD = (courseCode: CourseCode, price: number): WithContext<Course> => ({
+const getCourseJsonLD = (courseCode: CourseCode, price: Price): WithContext<Course> => ({
   '@context': 'https://schema.org',
   '@type': 'Course',
   '@id': `https://www.qceventplanning.com/courses/#${courseCode}`,
   'url': getCourseUrl(courseCode),
   'name': getCourseName(courseCode),
   'description': getCourseDescription(courseCode),
+  'educationalCredentialAwarded': getCourseCertificate(courseCode) ?? undefined,
   'provider': {
     '@type': 'EducationalOrganization',
     '@id': 'https://www.qceventplanning.com/#school',
     'url': 'https://www.qceventplanning.com',
     'name': 'QC Event School',
+    'sameAs': [
+      'https://www.linkedin.com/company/qc-career-school',
+      'https://www.facebook.com/QCEventPlanning',
+      'https://www.instagram.com/qceventschool',
+      'https://www.youtube.com/@QCEvent',
+    ],
   },
-  'offers': [ {
-    '@type': 'Offer',
-    'category': 'Paid',
-    'priceCurrency': 'USD',
-    'price': price.toFixed(2),
-  } ],
-  'hasCourseInstance': [ {
+  'hasCourseInstance': {
     '@type': 'CourseInstance',
     'courseMode': 'Online',
     'courseWorkload': 'PT40H',
-  } ],
+    'offers': {
+      '@type': 'Offer',
+      'category': 'Course',
+      'url': 'https://enroll.qceventplanning.com/',
+      'priceCurrency': 'USD',
+      'price': price.discountedCost.toFixed(2),
+    },
+  },
 });
