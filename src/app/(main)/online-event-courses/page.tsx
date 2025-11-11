@@ -29,16 +29,6 @@ const providerJsonLD: WithContext<EducationalOrganization> = {
   ],
 };
 
-const itemListjsonLD: WithContext<ItemList> = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  'itemListElement': courseCodes.map((c, i) => ({
-    '@type': 'ListItem',
-    'position': i + 1,
-    'item': getCourseSchema(c),
-  })),
-};
-
 const getCourseSchema = (c: CourseCode): Course => {
   const courseCertificate = getCourseCertificate(c);
   return {
@@ -51,6 +41,16 @@ const getCourseSchema = (c: CourseCode): Course => {
       'name': courseCertificate,
     } : undefined,
   };
+};
+
+const itemListjsonLD: WithContext<ItemList> = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  'itemListElement': courseCodes.map((c, i) => ({
+    '@type': 'ListItem',
+    'position': i + 1,
+    'item': getCourseSchema(c),
+  })),
 };
 
 const CoursesPage: PageComponent = () => (
