@@ -1,12 +1,12 @@
 export type CourseCode = 'ep' | 'ce' | 'wp' | 'cp' | 'ed' | 'lw' | 'dw' | 'fd' | 've' | 'eb' | 'fl' | 'pe';
 
-export const courseCodes: CourseCode[] = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ];
+export const courseCodes: readonly CourseCode[] = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ];
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && courseCodes.includes(obj as CourseCode);
+  return typeof obj === 'string' && (courseCodes as string[]).includes(obj);
 };
 
-const descriptions: Record<CourseCode, string> = {
+const descriptions: Readonly<Record<CourseCode, string | undefined>> = {
   ep: 'Become a certified event and wedding planner with QC Event School\'s online course! Learn to plan any event, gain industry skills and launch a successful career. Start today!',
   wp: 'Master everything from the planning process to day-of wedding coordination with QC Event School\'s online course. Sign up today to become a certified wedding planner!',
   ce: 'Become a certified event planner with QC Event School! Learn to plan successful industry events, milestone parties and build a thriving career in the event industry. Start now! ',
@@ -21,7 +21,7 @@ const descriptions: Record<CourseCode, string> = {
   ve: 'Expand your services, plan engaging online events and reach clients all over the world with QC\'s Virtual Event Planning training.',
 };
 
-const certifications: Partial<Record<CourseCode, string>> = {
+const certifications: Readonly<Record<CourseCode, string | undefined>> = {
   ep: 'International Event and Wedding Planning Professional™',
   wp: 'International Wedding Planning Professional™',
   ce: 'International Event Planning Professional™',
@@ -29,18 +29,111 @@ const certifications: Partial<Record<CourseCode, string>> = {
   lw: 'Luxury Wedding and Event Specialist',
   dw: 'Destination Wedding Specialist',
   ed: 'International Event Decorating Professional™',
+  eb: undefined,
   fd: 'International Floral Design Professional™',
   fl: 'International Festivals and Live Events Planning Professional™',
   pe: 'Promotional Events Specialist',
+  ve: undefined,
 };
 
-export const getCourseDescription = (courseCode: CourseCode): string => {
+const subjects: Readonly<Record<CourseCode, readonly string[] | undefined>> = {
+  ep: [
+    'The Fundamentals of Event Planning',
+    'Event Venues and Vendors',
+    'The Planning Process',
+    'Risk Management and Contingency Planning',
+  ],
+  wp: [
+    'The Ins and Outs of Wedding Planning',
+    'Wedding Day Coordination',
+    'Running Your Event Planning Business',
+  ],
+  ce: [
+    'The Fundamentals of Event Planning',
+    'Event Venues and Vendors',
+    'The Planning Process',
+    'Risk Management and Contingency Planning',
+  ],
+  cp: [
+    'Introduction to Corporate Event Planning',
+    'Working with Venues and Technology',
+    'Designing and Executing Corporate Events',
+    'Event Types and Evaluation',
+    'Hands-On Training',
+    'Business Training',
+  ],
+  lw: [
+    'The Fundamentals of Luxury Event Planning',
+    'Marketing Strategies for Luxury Services',
+    'Luxury Clients and Budgets',
+    'High-End Vendors and Trends',
+  ],
+  dw: [
+    'Introduction to Planning Destination Weddings',
+    'The Planning Process',
+    'Communication Strategies',
+    'Running Your Business',
+  ],
+  ed: [
+    'Introduction to Event Decor',
+    'Components of Event Decor',
+    'Build Your Career in Event Decor',
+  ],
+  eb: [
+    'Branding and Promotions',
+    'Your Online Presence',
+    'Attract Your Target Clients',
+    'Successful Project Management',
+  ],
+  fd: [
+    'The Floral Design Industry',
+    'The Fundamentals of Floral Design',
+    'Running Your Floral Design Business',
+    'Decorative Arrangements',
+    'Flowers to Wear & Carry',
+    'Advanced Floral Designs',
+  ],
+  fl: [
+    'The Fundamentals of Festivals and Live Events',
+    'The Planning Process for Live Events',
+    'Partnerships and Working with Vendors',
+  ],
+  pe: [
+    'Introduction to Promotional Events',
+    'Promotional Event Marketing and Execution',
+    'Trends and Technology',
+  ],
+  ve: undefined,
+};
+
+const workloads: Readonly<Record<string, string | undefined>> = {
+  ep: undefined,
+  wp: undefined,
+  ce: undefined,
+  cp: undefined,
+  lw: undefined,
+  dw: undefined,
+  ed: undefined,
+  fd: undefined,
+  fl: undefined,
+  pe: undefined,
+  vd: undefined,
+};
+
+export const getCourseDescription = (courseCode: CourseCode): string | undefined => {
   return descriptions[courseCode];
 };
 
-export const getCourseCertificate = (courseCode: CourseCode): string | null => {
-  const certificate = certifications[courseCode];
-  return certificate ?? null;
+export const getCourseSubjects = (courseCode: CourseCode): readonly string[] | undefined => {
+  return subjects[courseCode];
+};
+
+export const getCourseWorkload = (courseCode: CourseCode): string | undefined => {
+  return workloads[courseCode];
+};
+
+export const getCourseCertificate = (courseCode: CourseCode): string | undefined => {
+  return certifications[courseCode];
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
