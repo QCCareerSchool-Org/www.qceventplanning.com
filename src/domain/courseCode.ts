@@ -153,8 +153,20 @@ const workloads = {
   ve: '91 minutes of reading, 51 minutes of assignments, and 39 minutes of quizzes, usually completed over 4 to 6 months',
 } as const satisfies { readonly [c in CourseCode]: string | undefined };
 
+export const getCourseName = (courseCode: CourseCode): string => {
+  return names[courseCode];
+};
+
+export const getCourseUrl = (courseCode: CourseCode): string => {
+  return urls[courseCode];
+};
+
 export const getCourseDescription = (courseCode: CourseCode): string | undefined => {
   return descriptions[courseCode];
+};
+
+export const getCourseCertification = (courseCode: CourseCode): string | undefined => {
+  return certifications[courseCode];
 };
 
 export const getCourseSubjects = (courseCode: CourseCode): readonly string[] | undefined => {
@@ -163,16 +175,4 @@ export const getCourseSubjects = (courseCode: CourseCode): readonly string[] | u
 
 export const getCourseWorkload = (courseCode: CourseCode): string | undefined => {
   return workloads[courseCode];
-};
-
-export const getCourseCertificate = (courseCode: CourseCode): string | undefined => {
-  return certifications[courseCode];
-};
-
-export const getCourseName = (courseCode: CourseCode): string => {
-  return names[courseCode];
-};
-
-export const getCourseUrl = (courseCode: CourseCode): string => {
-  return urls[courseCode];
 };

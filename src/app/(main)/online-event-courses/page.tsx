@@ -7,7 +7,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import type { CourseCode } from '@/domain/courseCode';
-import { courseCodes, getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses',
@@ -28,7 +28,7 @@ const CoursesPage: PageComponent = () => (
 );
 
 const getCourseSchema = (c: CourseCode): Course => {
-  const courseCertificate = getCourseCertificate(c);
+  const courseCertificate = getCourseCertification(c);
   return {
     '@type': 'Course',
     'url': getCourseUrl(c),

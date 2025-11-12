@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
-import { getCourseCertificate, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl } from '@/domain/courseCode';
+import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
@@ -20,6 +20,8 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
     return null;
   }
 
+  const certification = getCourseCertification(courseCode);
+
   const courseJsonLD: WithContext<Course> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -28,7 +30,10 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
     'url': getCourseUrl(courseCode),
     'name': getCourseName(courseCode),
     'description': getCourseDescription(courseCode),
-    'educationalCredentialAwarded': getCourseCertificate(courseCode),
+    'educationalCredentialAwarded': certification ? {
+      '@type': 'EducationalOccupationalCredential',
+      'name': certification,
+    } : undefined,
     'availableLanguage': 'en',
     'teaches': getCourseSubjects(courseCode),
     'hasCourseInstance': {
