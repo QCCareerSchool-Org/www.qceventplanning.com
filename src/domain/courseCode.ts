@@ -107,17 +107,17 @@ const subjects: Readonly<Record<CourseCode, readonly string[] | undefined>> = {
 };
 
 const workloads: Readonly<Record<string, string | undefined>> = {
-  ep: undefined,
-  wp: undefined,
-  ce: undefined,
-  cp: undefined,
-  lw: undefined,
-  dw: undefined,
-  ed: undefined,
-  fd: undefined,
-  fl: undefined,
-  pe: undefined,
-  vd: undefined,
+  ep: '20 hours of reading, 6 hours of video, and 6 hours of assignments, usually completed over 4 to 6 months',
+  wp: '3 hours of reading and assignments, and 4 hours of video, usually completed over 4 to 6 months',
+  ce: '5 hours of reading and assignments, and 2 hours of video, usually completed over 4 to 6 months',
+  cp: '23 hours of reading and 8 hours of assignments, usually completed over 4 to 6 months',
+  lw: '10 hours of reading and assignments, usually completed over 4 to 6 months',
+  dw: '8 hours of reading and assignments, usually completed over 4 to 6 months',
+  ed: '9 hours of reading and assignments, usually completed over 4 to 6 months',
+  fd: '7 hours of reading, 5 hours of video, 8 hours of assignments, and 2 hours of quizzes, usually completed over 4 to 6 months',
+  fl: '7 hours of reading and 5 hours of assignments, usually completed over 4 to 6 months',
+  pe: 'usually completed over 4 to 6 months',
+  vd: '91 minutes of reading, 51 minutes of assignments, and 39 minutes of quizzes, usually completed over 4 to 6 months',
 };
 
 export const getCourseDescription = (courseCode: CourseCode): string | undefined => {
