@@ -24,7 +24,7 @@ export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundCol
         ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} /></Suspense>
         : (
           <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qceventplanning.com/#school">
-            <meta itemProp="url" content="https://www.qceventplanning.com" />
+            <link itemProp="url" href="https://www.qceventplanning.com" />
             <meta itemProp="name" content="QC Event School" />
           </span>
         )}

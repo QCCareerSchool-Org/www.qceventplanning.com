@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
-import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl } from '@/domain/courseCode';
+import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
@@ -38,14 +38,15 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
     'teaches': getCourseSubjects(courseCode),
     'hasCourseInstance': {
       '@type': 'CourseInstance',
-      'courseMode': 'Online',
-      'courseWorkload': 'PT40H',
-      'offers': {
-        '@type': 'Offer',
-        'category': 'Course',
-        'priceCurrency': price.currency.code,
-        'price': price.discountedCost.toFixed(2),
-      },
+      'courseMode': 'online',
+      'courseWorkload': getCourseWorkload(courseCode),
+    },
+    'offers': {
+      '@type': 'Offer',
+      'priceCurrency': price.currency.code,
+      'price': price.discountedCost.toFixed(2),
+      'url': 'https://enroll.qceventplanning.com',
+      'availability': 'https://schema.org/InStock',
     },
     'provider': providerId
       ? { '@id': providerId }

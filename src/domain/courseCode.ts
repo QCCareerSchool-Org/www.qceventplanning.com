@@ -1,9 +1,11 @@
-export type CourseCode = 'ep' | 'ce' | 'wp' | 'cp' | 'ed' | 'lw' | 'dw' | 'fd' | 've' | 'eb' | 'fl' | 'pe';
+export const courseCodes = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ] as const;
 
-export const courseCodes: readonly CourseCode[] = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ];
+export type CourseCode = typeof courseCodes[number];
+
+const courseCodeSet = new Set<CourseCode>(courseCodes);
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && (courseCodes as string[]).includes(obj);
+  return typeof obj === 'string' && courseCodeSet.has(obj as CourseCode);
 };
 
 const names = {
@@ -153,26 +155,26 @@ const workloads = {
   ve: '91 minutes of reading, 51 minutes of assignments, and 39 minutes of quizzes, usually completed over 4 to 6 months',
 } as const satisfies { readonly [c in CourseCode]: string | undefined };
 
-export const getCourseName = (courseCode: CourseCode): string => {
-  return names[courseCode];
+export const getCourseName = (c: CourseCode): string => {
+  return names[c];
 };
 
-export const getCourseUrl = (courseCode: CourseCode): string => {
-  return urls[courseCode];
+export const getCourseUrl = (c: CourseCode): string => {
+  return urls[c];
 };
 
-export const getCourseDescription = (courseCode: CourseCode): string | undefined => {
-  return descriptions[courseCode];
+export const getCourseDescription = (c: CourseCode): string | undefined => {
+  return descriptions[c];
 };
 
-export const getCourseCertification = (courseCode: CourseCode): string | undefined => {
-  return certifications[courseCode];
+export const getCourseCertification = (c: CourseCode): string | undefined => {
+  return certifications[c];
 };
 
-export const getCourseSubjects = (courseCode: CourseCode): readonly string[] | undefined => {
-  return subjects[courseCode];
+export const getCourseSubjects = (c: CourseCode): readonly string[] | undefined => {
+  return subjects[c];
 };
 
-export const getCourseWorkload = (courseCode: CourseCode): string | undefined => {
-  return workloads[courseCode];
+export const getCourseWorkload = (c: CourseCode): string | undefined => {
+  return workloads[c];
 };
