@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { memo, useMemo } from 'react';
+import { memo, Suspense, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { CourseMicrodata } from '../microdata/course';
@@ -8,13 +8,15 @@ import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
 import type { CourseCode } from '@/domain/courseCode';
+import { getCourseName } from '@/domain/courseCode';
 
 type Props = {
   id: string;
-  courseCodes?: string[];
+  courseCodes?: CourseCode[];
   schemaCourseId?: string;
 };
 
+/** sort in alphabetical order, except ep is always first */
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
   if (a === b) {
     return 0;
@@ -59,12 +61,14 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
       {schemaCourseId
         ? (
-          <link itemProp="itemReviewed" href={schemaCourseId} />
+          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId}>
+            <meta itemProp="name" content={getCourseName(courseCodes?.[0] ?? 'ep')} />
+          </span>
         )
         : testimonial.courses.length > 0
-          ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
+          ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} /></Suspense>
           : (
-            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization">
+            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qceventplanning.com/#school">
               <meta itemProp="url" content="https://www.qceventplanning.com" />
               <meta itemProp="name" content="QC Event School" />
             </span>

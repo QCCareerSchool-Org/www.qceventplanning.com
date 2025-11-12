@@ -9,9 +9,10 @@ import { fetchPrice } from '@/lib/fetch';
 
 type Props = {
   courseCode: CourseCode;
+  id?: string;
 };
 
-export const CourseSchema: FC<Props> = async ({ courseCode }) => {
+export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course' }) => {
   const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -21,7 +22,7 @@ export const CourseSchema: FC<Props> = async ({ courseCode }) => {
   const courseJsonLD: WithContext<Course> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    '@id': '#course',
+    '@id': id,
     'url': getCourseUrl(courseCode),
     'name': getCourseName(courseCode),
     'description': getCourseDescription(courseCode),
