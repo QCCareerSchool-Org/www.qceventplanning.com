@@ -27,8 +27,8 @@ const baseUrl = 'https://www.qceventplanning.com';
 
 const urls = {
   ep: `${baseUrl}/online-event-courses/event-and-wedding-planning`,
-  ce: `${baseUrl}/online-event-courses/wedding-planning`,
-  wp: `${baseUrl}/online-event-courses/event-planning`,
+  ce: `${baseUrl}/online-event-courses/event-planning`,
+  wp: `${baseUrl}/online-event-courses/wedding-planning`,
   cp: `${baseUrl}/online-event-courses/corporate-event-planning`,
   ed: `${baseUrl}/online-event-courses/event-decor`,
   lw: `${baseUrl}/online-event-courses/luxury-wedding-and-event-planning`,
