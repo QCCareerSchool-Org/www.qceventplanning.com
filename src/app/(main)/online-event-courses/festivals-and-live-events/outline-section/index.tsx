@@ -1,3 +1,6 @@
+/**
+ * Make sure to update @/domain/courseCode.ts if the subjects change.
+ */
 'use client';
 
 import Link from 'next/link';
