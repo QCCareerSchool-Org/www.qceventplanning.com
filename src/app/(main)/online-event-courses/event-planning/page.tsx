@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -10,9 +8,11 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Candice } from '@/components/candice';
 import IEPPImage from '@/components/certifications/iepp.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -38,6 +38,7 @@ export const metadata: Metadata = {
 
 const EventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
+    <CourseSchema courseCode={courseCode} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -68,7 +69,7 @@ const EventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -118,12 +119,37 @@ const EventPlanningPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <VirtualCommunitySection />
-    <GoogleReviewSection courseCode={courseCode} />
-    <Suspense>
-      <PaymentPlanSection courseCodes={courseCodes} />
-    </Suspense>
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
+    <PaymentPlanSection courseCodes={courseCodes} />
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="How much will I make as an event planner?" className="mb-3">
+                <p>The average event planner salary is around $50,000 to $60,000 per year. Top earners in the industry can make even more depending on their experience, niche, and client base. According to Allied Market Research, the global events industry is booming, valued at over <strong>$736.8 billion</strong> annually. With QC&apos;s training, you can launch your career in under three months and start earning a share of this exciting market.</p>
+                <p>Many successful event planners increase their income by offering multiple services. After completing QC&apos;s Event & Wedding Planning course, you can expand your business by taking additional courses in <strong>Floral Design</strong>, <strong>Event Decor</strong> or <strong>Corporate Event Planning</strong>.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to become an event planner?" className="mb-3">
+                <p>No! Your Event Planning course will teach you how to become an event planner without a license or an expensive event planning degree. When you graduate, you will receive a certificate designating you an International Event Planning Professional™ (IEPP™). Your event planner certification will show your colleagues and clients that you have all the skills and knowledge required to plan and transform spaces, and set you apart in the event planning industry.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become an event planner?" className="mb-3">
+                <p>When you take QC&apos;s Event Planning course, you can work at your own pace and according to your own schedule. You can become a certified event planner and start booking clients in under two months! If you want to take your time, you have a full year to complete your lessons and assignments and earn your event planning certification.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online event school?" className="mb-3">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible consumer rating (A+) and a positive 100% consumer ranking. Additionally, QC Event School&apos;s programs are approved by the International Live Events Association (ILEA), recognizing our commitment to high-quality training and industry standards in event education.</p>
+                <p>When you enroll in QC Event School, you can be confident that we have been in business since 1984 and have a superb track record with students and customers.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need prior training or experience before taking QC's online courses?" className="mb-3">
+                <p>No, you do not need any previous experience in the event industry to succeed in QC's event planning courses! Whatever career path you choose, QC's courses will teach you everything you need to know, from consulting with clients to selecting venues and vendors, in order to become a qualified event and wedding planning professional.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to start your event planning career?" text="Become professionally certified with QC's online event planning training" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -11,9 +9,11 @@ import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IFDPImage from '@/components/certifications/ifdp.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -46,6 +46,7 @@ const FloralDesignPage: PageComponent = () => {
 
   return (
     <div className={styles.page}>
+      <CourseSchema courseCode={courseCode} showPrice />
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -76,7 +77,7 @@ const FloralDesignPage: PageComponent = () => {
         </div>
       </section>
       {countryCode !== 'CA' && <SAFPartnerSection />}
-      <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
+      <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" schemaCourseId="#course" />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
@@ -143,12 +144,40 @@ const FloralDesignPage: PageComponent = () => {
       <VirtualCommunitySection />
       <OutlineSection />
       <AislePlannerSection />
-      <GoogleReviewSection courseCode={courseCode} />
-      <Suspense>
-        <PaymentPlanSection courseCodes={courseCodes} />
-      </Suspense>
+      <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
+      <PaymentPlanSection courseCodes={courseCodes} />
+      <section>
+        <div itemScope itemType="https://schema.org/FAQPage">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-10">
+                <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+                <AccordionFAQ heading="How much does a floral designer typically earn?" className="mb-3">
+                  <p>According to ZipRecruiter, the average floral designer salary is over $37,000 per year Your earnings could vary depending on several factors such as your location, level of experience, and whether you work for yourself or in a floral chain or an independent shop. You can increase your income and professional opportunities by enrolling in a floral design course that provides hands-on training and business education. QC Event School&apos;s online Floral Design certification program prepares you with both creative and entrepreneurial skills to help you succeed faster in the industry</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Do I need a degree or diploma to become a floral designer?" className="mb-3">
+                  <p>You don&apos;t need a license or degree to work as a florist or floral designer. QC&apos;s Floral Design course will teach you how to become a floral designer by providing you with personalized feedback and advice from our top industry experts and providing you with business training to help you launch your career. When you graduate from QC Event School&apos;s Floral Design course, you will receive a certification and be able to use the designation of International Floral Design Professional (IFDP). This prestigious certification showcases your skills and credibility for your clients and colleagues in the floral design industry.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="How long does it take to become a floral designer?" className="mb-3">
+                  <p>You can become a floral designer and start booking clients in under 3 months! When you take QC&apos;s Floral Design course, you can work at your own pace and according to your own schedule. You&apos;ll have a full year to complete your training, giving you the flexibility to study around your personal schedule.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Can I start my own floral design or florist shop after graduating?" className="mb-3">
+                  <p>Yes, absolutely! QC Design School&apos;s Floral Design course includes an optional business training unit that walks you through the process of launching your own floral design business or florist shop. You&apos;ll learn how to:</p>
+                  <ul>
+                    <li>Register your floral business</li>
+                    <li>Create a professional business plan</li>
+                    <li>Price and package your floral services</li>
+                    <li>Market your business both online and offline</li>
+                    <li>Build relationships with vendors and clients</li>
+                  </ul>
+                  <p>With your IFDP certification and business training, you&apos;ll be ready to start offering services such as custom floral arrangements for weddings, events, retail, or everyday occasions.</p>
+                </AccordionFAQ>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} />
-      <CourseStructuredData courseCode={courseCode} />
     </div>
   );
 };

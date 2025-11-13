@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import ConcertImage from './concert.jpg';
 import HeroImage from './hero.jpg';
@@ -12,8 +10,10 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IFLPImage from '@/components/certifications/iflp.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -41,6 +41,7 @@ export const metadata: Metadata = {
 
 const EventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
+    <CourseSchema courseCode={courseCode} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -70,7 +71,7 @@ const EventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -136,12 +137,42 @@ const EventPlanningPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <OutlineSection />
-    <GoogleReviewSection courseCode={courseCode} />
-    <Suspense>
-      <PaymentPlanSection courseCodes={courseCodes} />
-    </Suspense>
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
+    <PaymentPlanSection courseCodes={courseCodes} />
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="What types of events will I learn to plan in the Festivals and Live Events course?" className="mb-3">
+                <p>In QC&apos;s Festivals and Live Events Planning course, you'll learn how to organize a wide variety of large-scale public and ticketed events. These include:</p>
+                <ul>
+                  <li>Music festivals and concerts</li>
+                  <li>Sporting events and fan experiences</li>
+                  <li>Trade shows and consumer expos</li>
+                  <li>Charity fundraisers and community events</li>
+                </ul>
+                <p>You&apos;ll gain the skills to manage complex logistics, crowd control, permits, vendor coordination, health and safety, and marketing strategies&mdash;so you&apos;re fully prepared to plan unforgettable live events.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How much does a festival and live event planner typically earn?" className="mb-3">
+                <p>According to ZipRecruiter, the average festival and large event planner salary is over $60,000 per year. With the global festival and live events industry estimated at over $736.8 billion, the earning potential in this field is significant. With the right training, you can start your career and tap into this booming industry in under 1 month.</p>
+                <p>Want to boost your income even further? Taking additional QC Event School courses like Promotional Event Planning or Accelerate Your Business can help you expand your services and increase your client base.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online event planning school?" className="mb-3">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB) with an A+ rating and a 100% positive consumer ranking. QC Event School is also recognized by the International Live Events Association (ILEA) for maintaining a high standard of education in the event industry.</p>
+                <p>We&apos;ve been delivering professional online training since 1984, with thousands of graduates around the world. QC Event School&apos;s courses are recognized by respected associations in the event planning industry, so you can feel confident in your education and future career.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need prior training or experience before taking QC's online Festival and Live Event Planning course?" className="mb-3">
+                <p>Yes. QC&apos;s Festivals and Live Events Planning course is a specialized, advanced-level program, designed for students who already have foundational knowledge or experience in event planning.</p>
+                <p>To succeed in this course, we recommend first completing or pairing it with QC&apos;s Corporate Event Planning course. This will give you the essential skills and context needed to confidently manage large-scale festivals, concerts, trade shows, and public events.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to expand your event planning career?" text="Become professionally certified with QC's festivals and live events training" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 

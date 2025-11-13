@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -12,8 +10,10 @@ import ProductLaunchImage from './product-launch.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import PESImage from '@/components/certifications/pes.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -41,6 +41,7 @@ export const metadata: Metadata = {
 
 const EventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
+    <CourseSchema courseCode={courseCode} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -70,7 +71,7 @@ const EventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -137,12 +138,48 @@ const EventPlanningPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <OutlineSection />
-    <GoogleReviewSection courseCode={courseCode} />
-    <Suspense>
-      <PaymentPlanSection courseCodes={courseCodes} />
-    </Suspense>
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
+    <PaymentPlanSection courseCodes={courseCodes} />
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="What does a promotional event planner do?" className="mb-3">
+                <p>A promotional event planner specializes in organizing events that market or promote a product, service, brand, or organization. These events are designed to boost visibility, attract new customers, and drive sales. As a promotional event planner, you may coordinate:</p>
+                <ul>
+                  <li>Product launches</li>
+                  <li>Store openings and brand activations</li>
+                  <li>Press and media events</li>
+                  <li>Corporate sponsorship events</li>
+                  <li>Trade show exhibits and promotional booths</li>
+                  <li>Pop-up experiences and influencer events</li>
+                </ul>
+                <p>You&apos;ll be responsible for planning the event concept, managing logistics, coordinating vendors and brand reps, and ensuring the experience aligns with the client&apos;s marketing goals. Your work helps create memorable brand impressions that generate real business results.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How much does a promotional event planner typically earn?" className="mb-3">
+                <p>According to the Bureau of Labor Statistics, the average promotional event planner salary is over $62,280 per year. The global corporate event industry is estimated to be worth over $325 billion. With the right training, you can start building your career and claim your share of the industry in under 1 month!</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to become a promotional event planner?" className="mb-3">
+                <p>No degree or license is required! QC&apos;s Promotional Event Planning course teaches you how to manage brand activations, product launches, and high-impact promotional events&mdash;without the cost of a college degree.</p>
+                <p>To enroll, you&apos;ll need either prior training or relevant experience in corporate event planning, as this advanced course builds on foundational event planning skills.</p>
+                <p>Upon graduation, you&apos;ll earn the Promotional Events Specialist (PES) certificate&mdash;an industry-recognized credential that shows clients and employers you have the expertise to plan exciting, results-driven promotional events and stand out from the competition.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become a promotional event planner?" className="mb-3">
+                <p>QC&apos;s online Promotional Event Planning course is completely self-paced, so you can learn on your own schedule. Many students complete the course and earn their certification in less than one month!</p>
+                <p>Prefer to move more slowly? You&apos;ll have a full year to complete your assignments and graduate with confidence.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online event planning school?" className="mb-3">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB), holding the highest possible A+ rating and a 100% positive consumer ranking. QC Event School is also recognized by the International Live Events Association (ILEA) for maintaining a high standard of education in the event industry.</p>
+                <p>With more than 40 years of experience in distance education, QC is trusted by students around the world. Our event planning programs are recognized by several respected industry associations, making QC a reliable choice for building your career in event management.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to start your event planning career?" text="Become professionally certified with QC's online event planning training" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 

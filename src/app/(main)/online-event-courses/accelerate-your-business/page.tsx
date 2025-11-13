@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
-import { CourseStructuredData } from '../courseStructuredData';
 import DesktopImage from './desktop.jpg';
 import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
@@ -10,7 +8,9 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 
 const AccelerateYourBusinessPage: PageComponent = () => (
   <div className={styles.page}>
+    <CourseSchema courseCode={courseCode} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -76,7 +77,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -98,12 +99,38 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <VirtualCommunitySection />
-    <GoogleReviewSection courseCode={courseCode} />
-    <Suspense>
-      <PaymentPlanSection courseCodes={courseCodes} />
-    </Suspense>
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
+    <PaymentPlanSection courseCodes={courseCodes} />
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="What will QC’s Accelerate Your Business course teach me?" className="mb-3">
+                <p>Once you have your event planning certification, QC&apos;s Accelerate Your Business course will teach you how to build your business with the marketing, project management and communications tools you need for success. Your course materials, approved by QC&apos;s event planning experts and entrepreneurs, will tell you how to register your business, build your brand, create promotions and find your future clients.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to start my own event planning design business?" className="mb-3">
+                <p>No! QC Event Planning&apos;s Accelerate Your Business course will build on your event planning courses by teaching you how to register your event planning business, write a business plan, market your services, and work with any client.  QC provides a full pathway for you to progress from beginner to business owner with its online event planning and business training courses.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Can this course help me grow an existing design business?" className="mb-3">
+                <p>Yes! If you already run an event planning business, QC&apos;s Accelerate Your Business course can help you scale it more effectively.</p>
+                <p>You&apos;ll learn how to:</p>
+                <ul>
+                  <li>Identify new target markets</li>
+                  <li>Improve client acquisition and retention</li>
+                  <li>Set and adjust your pricing strategies</li>
+                  <li>Streamline your workflow and client process</li>
+                  <li>Optimize your marketing and branding efforts</li>
+                </ul>
+                <p>This course is ideal for design professionals looking to grow their revenue, expand services, or build a team. Our Student Support Team can also help you bundle this course with additional design certifications for a more competitive edge.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to Grow a Successful Event Planning Business?" text="Take the Accelerate Your Business Workshop" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 

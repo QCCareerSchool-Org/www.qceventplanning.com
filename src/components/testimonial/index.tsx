@@ -11,9 +11,11 @@ import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
   id: string;
-  courseCodes?: string[];
+  courseCodes?: CourseCode[];
+  schemaCourseId?: string;
 };
 
+/** sort in alphabetical order, except ep is always first */
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
   if (a === b) {
     return 0;
@@ -27,7 +29,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -60,7 +62,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
     <blockquote className={styles.testimonial}>
       <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} /></Suspense>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
-      <div>
+      <div itemProp="reviewBody">
         {testimonial.short.map((q, i, a) => {
           if (i < a.length - 1) {
             return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;

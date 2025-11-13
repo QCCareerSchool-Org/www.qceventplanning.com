@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
-import { Suspense } from 'react';
-import { CourseStructuredData } from '../courseStructuredData';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import ModernEventImage from './modern-event.jpg';
@@ -11,8 +9,10 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import ICPPImage from '@/components/certifications/icpp.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 
 const CorporateEventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
+    <CourseSchema courseCode={courseCode} />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -69,7 +70,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection courseCodes={courseCodes} testimonialIds={testimonialIds} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -136,12 +137,40 @@ const CorporateEventPlanningPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <OutlineSection />
-    <GoogleReviewSection courseCode={courseCode} />
-    <Suspense>
-      <PaymentPlanSection courseCodes={courseCodes} />
-    </Suspense>
+    <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
+    <PaymentPlanSection courseCodes={courseCodes} />
+    <section>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="How much does a corporate event planner typically earn?" className="mb-3">
+                <p>According to Salary.com, the average salary for a corporate event planner in North America is approximately $76,850 per year, with top earners making even more depending on experience and specialization. The North American corporate events industry is valued at over $325 billion USD&mdash;and you can build your career in this booming field in less than a year!</p>
+                <p>You can boost your income further by adding complementary training. Courses such as Promotional Event Planning or Accelerate Your Business can expand your services and help grow your client base. Our Student Support Team is here to guide you in planning the best path for your success.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to become a corporate event planner?" className="mb-3">
+                <p>No degree or license is required! QC&apos;s online Corporate Event Planning course equips you with all the skills and strategies you need&mdash;without the high cost of a traditional education. Upon graduation, you&apos;ll receive the International Corporate Event Planning Professional (ICPP) certification.</p>
+                <p>This professional designation tells clients and employers that you&apos;re trained, qualified, and ready to deliver impressive corporate events&mdash;whether they&apos;re conferences, product launches, fundraisers, or executive retreats.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become a corporate event planner?" className="mb-3">
+                <p>QC Event School&apos;s online Corporate Event Planning course is flexible and self-paced, so you can learn on your schedule. Many students complete the program and earn their certification in as little as two months.</p>
+                <p>Need more time? No problem&mdash;you&apos;ll have a full year to finish your course and assignments.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Is QC an accredited online event planning school?" className="mb-3">
+                <p>Yes! QC Event School is accredited by the Better Business Bureau (BBB) with an A+ rating and a 100% positive consumer ranking. Additionally, QC Event School&apos;s programs are approved by the International Live Events Association (ILEA), recognizing our commitment to high-quality training and industry standards in event education.</p>
+                <p>We&apos;ve been a trusted leader in distance education since 1984, and thousands of students worldwide have launched successful careers through our training. QC is also recognized by respected professional associations in the event industry.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need prior training or experience before taking QC's online courses?" className="mb-3">
+                <p>No, you don&apos;t need any prior training to succeed at QC Event School. Our Corporate Event Planning course starts with the fundamentals and builds your skills in planning, logistics, client communication, budgeting, venue coordination, and more.</p>
+                <p>Whether you're entering the field for the first time or adding corporate events to your existing planning services, this course is designed to help you thrive.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection title="Ready to Help Your Clients Create Memorable Events?" text="Become a Professionally Certified Corporate Event Planner" courseCodes={courseCodes} />
-    <CourseStructuredData courseCode={courseCode} />
   </div>
 );
 
