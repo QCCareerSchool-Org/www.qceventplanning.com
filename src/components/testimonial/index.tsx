@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { memo, Suspense, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
-import { ReviewSchemaData } from '../microdata/course';
+import { ReviewSchemaData } from '../testimonialJsonLD/course';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';

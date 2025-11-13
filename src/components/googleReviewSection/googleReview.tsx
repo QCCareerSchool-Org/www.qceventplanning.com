@@ -2,8 +2,8 @@ import { Suspense } from 'react';
 import type { FC } from 'react';
 
 import { ImageCircle } from '../imageCircle';
-import { ReviewSchemaData } from '../microdata/course';
 import { Star } from '../testimonial/star';
+import { ReviewSchemaData } from '../testimonialJsonLD/course';
 import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
