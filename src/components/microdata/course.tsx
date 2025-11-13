@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import type { Course, EducationalOrganization, Review, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
@@ -6,37 +7,73 @@ import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
 type Props = {
-  courseCode: CourseCode;
-  itemProp?: string;
+  courseCode: CourseCode | undefined;
+  name: string;
+  rating: number;
+  reviewText: string;
+  schemaCourseId?: string;
 };
 
-export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp }) => {
-  const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
-    return null;
+export const ReviewSchemaData: FC<Props> = async props => {
+
+  let itemReviewed: Course | EducationalOrganization | undefined;
+
+  if (props.courseCode) {
+    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ props.courseCode ] };
+    const price = await fetchPrice(priceQuery);
+    if (!price) {
+      return null;
+    }
+
+    itemReviewed = {
+      '@type': 'Course',
+      '@id': props.schemaCourseId ?? `https://www.qceventplanning.com/#course-${props.courseCode}`,
+      'url': getCourseUrl(props.courseCode),
+      'name': getCourseName(props.courseCode),
+      'description': getCourseDescription(props.courseCode),
+      'provider': {
+        '@type': 'EducationalOrganization',
+        '@id': 'https://www.qceventplanning.com/#school',
+        'url': 'https://www.qceventplanning.com',
+        'name': 'QC Event School',
+      },
+      'offers': {
+        '@type': 'Offer',
+        'category': 'Paid',
+        'priceCurrency': 'USD',
+        'price': price.discountedCost.toFixed(2),
+      },
+      'hasCourseInstance': {
+        '@type': 'CourseInstance',
+        'courseMode': 'Online',
+        'courseWorkload': 'PT40H',
+      },
+    };
+  } else {
+    itemReviewed = {
+      '@type': 'EducationalOrganization',
+      '@id': 'https://www.qcdesignschool.com/#school',
+      'name': 'QC Design School',
+      'url': 'https://www.qcdesignschool.com',
+    };
   }
 
-  return (
-    <span itemProp={itemProp} itemScope itemType="https://schema.org/Course">
-      <meta itemProp="@id" content={`https://www.qceventplanning.com/courses/#${courseCode}`} />
-      <meta itemProp="url" content={getCourseUrl(courseCode)} />
-      <meta itemProp="name" content={getCourseName(courseCode)} />
-      <meta itemProp="description" content={getCourseDescription(courseCode)} />
-      <span itemProp="provider" itemScope itemType="https://schema.org/EducationalOrganization">
-        <meta itemProp="@id" content="https://www.qceventplanning.com/#school" />
-        <meta itemProp="url" content="https://www.qceventplanning.com" />
-        <meta itemProp="name" content="QC Event School" />
-      </span>
-      <span itemProp="offers" itemScope itemType="https://schema.org/Offer">
-        <meta itemProp="category" content="Paid" />
-        <meta itemProp="priceCurrency" content="USD" />
-        <meta itemProp="price" content={price.cost.toFixed(2)} />
-      </span>
-      <span itemProp="hasCourseInstance" itemScope itemType="https://schema.org/CourseInstance">
-        <meta itemProp="courseMode" content="Online" />
-        <meta itemProp="courseWorkload" content="PT40H" />
-      </span>
-    </span>
-  );
+  const reviewSchema: WithContext<Review> = {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    'author': {
+      '@type': 'Person',
+      'name': props.name,
+    },
+    'reviewBody': props.reviewText,
+    'reviewRating': {
+      '@type': 'Rating',
+      'ratingValue': props.rating.toString(),
+      'worstRating': '0',
+      'bestRating': '5',
+    },
+    itemReviewed,
+  };
+
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />;
 };
