@@ -60,7 +60,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
 
   return (
     <blockquote className={styles.testimonial}>
-      <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} /></Suspense>
+      <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} schemaCourseId={schemaCourseId} /></Suspense>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div itemProp="reviewBody">
         {testimonial.short.map((q, i, a) => {
