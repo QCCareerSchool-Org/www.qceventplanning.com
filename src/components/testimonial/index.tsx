@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { memo, Suspense, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { CourseMicrodata } from '../microdata/course';
@@ -66,7 +66,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
           </span>
         )
         : testimonial.courses.length > 0
-          ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} /></Suspense>
+          ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
           : (
             <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qceventplanning.com/#school">
               <link itemProp="url" href="https://www.qceventplanning.com" />
@@ -79,7 +79,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
         <meta itemProp="bestRating" content="5" />
       </span>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
-      <div>
+      <div itemProp="reviewBody">
         {testimonial.short.map((q, i, a) => {
           if (i < a.length - 1) {
             return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;

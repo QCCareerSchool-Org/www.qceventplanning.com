@@ -8,13 +8,14 @@ import type { CourseCode } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
+import { withSuspense } from '@/withSuspense';
 
 type Props = {
   courseCodes: CourseCode[];
   className?: string;
 };
 
-export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) => {
+const PaymentPlanSectionBase: FC<Props> = async ({ courseCodes, className }) => {
   const { countryCode, provinceCode } = getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
@@ -47,3 +48,5 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) 
     </section>
   );
 };
+
+export const PaymentPlanSection = withSuspense(PaymentPlanSectionBase);

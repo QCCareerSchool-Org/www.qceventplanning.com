@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
 
 const EventAndWeddingPlanningPage: PageComponent = () => (
   <div className={styles.page}>
-    <Suspense><CourseSchema courseCode={courseCode} /></Suspense>
+    <CourseSchema courseCode={courseCode} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -142,9 +141,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
     <OutlineSection />
     <AislePlannerSection />
     <GoogleReviewSection courseCode={courseCode} schemaCourseId="#course" />
-    <Suspense>
-      <PaymentPlanSection courseCodes={courseCodes} />
-    </Suspense>
+    <PaymentPlanSection courseCodes={courseCodes} />
     <section>
       <div itemScope itemType="https://schema.org/FAQPage">
         <div className="container">
