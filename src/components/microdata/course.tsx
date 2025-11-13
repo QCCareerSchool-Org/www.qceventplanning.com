@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import type { CourseCode } from '@/domain/courseCode';
-import { getCourseDescription, getCourseName, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
@@ -23,6 +23,10 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPri
     }
   }
 
+  const certification = getCourseCertification(courseCode);
+
+  const subjects = getCourseSubjects(courseCode);
+
   const workload = getCourseWorkload(courseCode);
 
   return (
@@ -30,6 +34,13 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPri
       <link itemProp="url" href={getCourseUrl(courseCode)} />
       <meta itemProp="name" content={getCourseName(courseCode)} />
       <meta itemProp="description" content={getCourseDescription(courseCode)} />
+      {certification && (
+        <span itemProp="educationalCredentialAwarded" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+          <meta itemProp="name" content={certification} />
+        </span>
+      )}
+      <meta itemProp="availableLanguage" content="en" />
+      {subjects?.map((s, i) => (<span key={i} itemProp="teaches" content={s} />))}
       <span itemProp="provider" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qceventplanning.com/#school">
         <link itemProp="url" href="https://www.qceventplanning.com" />
         <meta itemProp="name" content="QC Event School" />
