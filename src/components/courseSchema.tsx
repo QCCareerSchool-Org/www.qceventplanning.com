@@ -3,6 +3,7 @@ import type { Course, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
@@ -11,13 +12,17 @@ type Props = {
   courseCode: CourseCode;
   id?: string;
   providerId?: string;
+  showPrice?: boolean;
 };
 
-export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId }) => {
-  const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
-    return null;
+export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
+  let price: Price | undefined;
+  if (showPrice) {
+    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
+    price = await fetchPrice(priceQuery);
+    if (!price) {
+      return null;
+    }
   }
 
   const certification = getCourseCertification(courseCode);
@@ -41,13 +46,6 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
       'courseMode': 'online',
       'courseWorkload': getCourseWorkload(courseCode),
     },
-    'offers': {
-      '@type': 'Offer',
-      'priceCurrency': price.currency.code,
-      'price': price.discountedCost.toFixed(2),
-      'url': 'https://enroll.qceventplanning.com',
-      'availability': 'https://schema.org/InStock',
-    },
     'provider': providerId
       ? { '@id': providerId }
       : {
@@ -58,6 +56,16 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
         'sameAs': 'sameAs' in qcEventSchoolEducationalOrganization ? qcEventSchoolEducationalOrganization.sameAs : undefined,
       },
   };
+
+  if (price) {
+    courseJsonLD.offers = {
+      '@type': 'Offer',
+      'priceCurrency': price.currency.code,
+      'price': price.discountedCost.toFixed(2),
+      'url': 'https://enroll.qceventplanning.com',
+      'availability': 'https://schema.org/InStock',
+    };
+  }
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;
 };

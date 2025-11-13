@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 import { Header } from '../header';
 import CertificationBackgroundImage from './cert-bg.jpg';
@@ -49,7 +48,7 @@ const FloralDesignPage: PageComponent = () => {
 
   return (
     <div className={styles.page}>
-      <Suspense><CourseSchema courseCode={courseCode} /></Suspense>
+      <CourseSchema courseCode={courseCode} showPrice />
       <Header logoLink buttonContent={<>Enroll <span className="d-none d-sm-inline"> Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
@@ -170,9 +169,7 @@ const FloralDesignPage: PageComponent = () => {
       <OutlineSection />
       <AislePlannerSection />
       <GoogleReviewSection courseCode={courseCode} />
-      <Suspense>
-        <PaymentPlanSection courseCodes={courseCodes} />
-      </Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
       <CourseCardsSection />
       <GetStartedSection title="Ready to Start Your Dream Career?" text="Become a Professionally Certified Floral Designer" courseCodes={courseCodes} buttonHref={enrollUrl} />
     </div>
