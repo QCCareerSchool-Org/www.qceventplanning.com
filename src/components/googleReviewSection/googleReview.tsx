@@ -8,11 +8,15 @@ import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
 
-export const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes }) => {
+type Props = {
+  schemaCourseId?: string;
+} & ReviewData;
+
+export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes, schemaCourseId }) => {
   const reviewCourseCode = courseCodes && courseCodes.length > 0 ? courseCodes[0] : undefined;
   return (
     <div className={styles.wrapper}>
-      <Suspense><TestimonialSchemaData courseCode={reviewCourseCode} name={name} rating={rating} reviewText={reviewText} /></Suspense>
+      <Suspense><TestimonialSchemaData courseCode={reviewCourseCode} name={name} rating={rating} reviewText={reviewText} schemaCourseId={schemaCourseId} /></Suspense>
       <div>
         <div className="mb-3">{Array(5).fill(null).map((_, i) => <Star key={i} filled={rating > i} />)}</div>
         <p className="fw-bold mb-4" style={size ? { fontSize: `${size}rem` } : undefined}>&quot;{reviewText}&quot;</p>
