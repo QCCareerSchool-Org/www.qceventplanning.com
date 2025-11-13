@@ -14,7 +14,7 @@ type Props = {
   schemaCourseId?: string;
 };
 
-export const ReviewSchemaData: FC<Props> = async props => {
+export const TestimonialSchemaData: FC<Props> = async props => {
 
   let itemReviewed: Course | EducationalOrganization | undefined;
 

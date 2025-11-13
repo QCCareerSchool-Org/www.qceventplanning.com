@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { memo, Suspense, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
-import { ReviewSchemaData } from '../testimonialJsonLD/course';
+import { TestimonialSchemaData } from '../testimonialJsonLD';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
@@ -58,7 +58,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
 
   return (
     <blockquote className={styles.testimonial}>
-      <Suspense><ReviewSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} /></Suspense>
+      <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} /></Suspense>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div>
         {testimonial.short.map((q, i, a) => {
