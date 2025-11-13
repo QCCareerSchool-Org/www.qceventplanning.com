@@ -6,7 +6,6 @@ import { Star } from '../testimonial/star';
 import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
-import { getCourseName } from '@/domain/courseCode';
 
 type Props = {
   schemaCourseId?: string;
@@ -16,9 +15,7 @@ export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundCol
   <div itemScope itemType="https://schema.org/Review" className={styles.wrapper}>
     {schemaCourseId
       ? (
-        <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId}>
-          <meta itemProp="name" content={getCourseName(courseCodes?.[0] ?? 'ep')} />
-        </span>
+        <meta itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId} />
       )
       : courseCodes && courseCodes.length > 0
         ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />
