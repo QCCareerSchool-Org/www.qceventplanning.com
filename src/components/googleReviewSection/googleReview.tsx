@@ -15,7 +15,7 @@ export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundCol
   <div itemScope itemType="https://schema.org/Review" className={styles.wrapper}>
     {schemaCourseId
       ? (
-        <meta itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId} />
+        <meta itemProp="itemReviewed" itemScope itemID={schemaCourseId} />
       )
       : courseCodes && courseCodes.length > 0
         ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />

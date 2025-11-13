@@ -60,7 +60,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
       {schemaCourseId
         ? (
-          <meta itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId} />
+          <meta itemProp="itemReviewed" itemScope itemID={schemaCourseId} />
         )
         : testimonial.courses.length > 0
           ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
