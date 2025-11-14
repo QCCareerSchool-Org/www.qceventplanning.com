@@ -43,6 +43,8 @@
 
     { "source": "/download-course-catalog", "destination": "/thank-you-course-catalog" },
 
-    { "source": "/blog/2021/09/how-to-become-a-wedding-planner-a-step-by-step-guide", "destination": "/blog/2025/08/how-to-become-a-wedding-planner-2025-guide" }
+    { "source": "/blog/2021/09/how-to-become-a-wedding-planner-a-step-by-step-guide", "destination": "/blog/2025/08/how-to-become-a-wedding-planner-2025-guide" },
+    { "source": "/event-planning-vs-wedding-planning", "destination": "/blog/2015/12/event-planning-vs-wedding-planning-is-there-a-difference" },
+    { "source": "/online-event-courses/travel-and-tourism", "destination": "/online-event-courses" }
   ]
 }
