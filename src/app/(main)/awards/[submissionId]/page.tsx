@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import AwardImage from './award-of-excellence.png';
 import { fetchAward } from './fetchAward';
+import { fetchOldAward } from './fetchOldAward';
 import { formatDate } from './formatDate';
 import { SuggestedText } from './suggestedText';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
@@ -21,7 +22,9 @@ const schooolName: School = 'QC Event School';
 export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }) => {
   const { submissionId } = await params;
 
-  const award = await fetchAward(submissionId);
+  const submissionIdNumber = parseInt(submissionId, 10);
+
+  const award = !isNaN(submissionIdNumber) ? await fetchOldAward(submissionIdNumber) : await fetchAward(submissionId);
 
   if (award.schoolName !== schooolName) {
     return { robots: { index: false } };
@@ -53,7 +56,9 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
 const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
   const { submissionId } = await params;
 
-  const award = await fetchAward(submissionId);
+  const submissionIdNumber = parseInt(submissionId, 10);
+
+  const award = !isNaN(submissionIdNumber) ? await fetchOldAward(submissionIdNumber) : await fetchAward(submissionId);
 
   if (award.schoolName !== schooolName) {
     throw Error('Bad request');
@@ -71,7 +76,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
               <h1 className="mb-2">You Did It!</h1>
               <p className="lead fw-bold text-primary mb-2">Congratulations, {award.name}! 🎉</p>
               <p className="lead mb-2 fw-bold">Grade: {award.grade}</p>
-              <p className="lead mb-4">You've earned an Award of Excellence from {award.schoolName} for your amazing performance in {award.courseName}. Your grade places you among the top achievers in your program. This badge recognizes your hard work, dedication, and commitment to excellence. It was issued for Submission {award.unitLetter} on {formatDate(award.created)}.</p>
+              <p className="lead mb-4">You've earned an Award of Excellence from {award.schoolName} for your amazing performance in {award.courseName}. Your grade places you among the top achievers in your program. This badge recognizes your hard work, dedication, and commitment to excellence. It was issued for Submission {award.unitLetter}{award.created ? <> on {formatDate(award.created)}</> : <></>}.</p>
               <Image src={AwardImage} alt={`${schooolName} Award of Excellence`} style={{ maxWidth: 200, height: 'auto' }} />
             </div>
           </div>
