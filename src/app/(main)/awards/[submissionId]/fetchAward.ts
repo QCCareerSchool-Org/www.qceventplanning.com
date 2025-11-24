@@ -2,7 +2,6 @@ import type { Award } from './submission';
 import { isRawAward } from './submission';
 
 export const fetchAward = async (submissionId: string): Promise<Award> => {
-  console.log('here');
   const url = `https://studentcenter.qccareerschool.com/api/sc/v1/awards/${encodeURIComponent(submissionId)}`;
   const response = await fetch(url);
   if (!response.ok) {
