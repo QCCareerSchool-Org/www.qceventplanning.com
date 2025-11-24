@@ -4,6 +4,7 @@ import AwardImage from './award-of-excellence.png';
 import { fetchAward } from './fetchAward';
 import { fetchOldAward } from './fetchOldAward';
 import { formatDate } from './formatDate';
+import type { Award } from './submission';
 import { SuggestedText } from './suggestedText';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BlueskyShare } from '@/components/share/bluesky';
@@ -22,9 +23,7 @@ const schooolName: School = 'QC Event School';
 export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }) => {
   const { submissionId } = await params;
 
-  const submissionIdNumber = parseInt(submissionId, 10);
-
-  const award = !isNaN(submissionIdNumber) ? await fetchOldAward(submissionIdNumber) : await fetchAward(submissionId);
+  const award = await getAward(submissionId);
 
   if (award.schoolName !== schooolName) {
     return { robots: { index: false } };
@@ -56,9 +55,7 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
 const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
   const { submissionId } = await params;
 
-  const submissionIdNumber = parseInt(submissionId, 10);
-
-  const award = !isNaN(submissionIdNumber) ? await fetchOldAward(submissionIdNumber) : await fetchAward(submissionId);
+  const award = await getAward(submissionId);
 
   if (award.schoolName !== schooolName) {
     throw Error('Bad request');
@@ -116,3 +113,12 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
 };
 
 export default AwardPage;
+
+const getAward = async (submissionId: string): Promise<Award> => {
+  if (/^\d+$/u.test(submissionId)) {
+    const submissionIdNumber = parseInt(submissionId, 10);
+    return fetchOldAward(submissionIdNumber);
+  }
+
+  return fetchAward(submissionId);
+};
