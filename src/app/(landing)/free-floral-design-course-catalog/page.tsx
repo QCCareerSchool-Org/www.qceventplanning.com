@@ -34,7 +34,6 @@ export const metadata: Metadata = {
 
 const brevoListId = 12;
 const brevoEmailTemplateId = 1998;
-const brevoTelephoneListId = 53;
 const courseCodes: CourseCode[] = [ 'fd' ];
 const testimonialIds = [ 'TE-0020', 'TE-0021', 'TE-0012', 'TE-0022', 'TE-0004', 'TE-0003' ];
 
@@ -67,7 +66,6 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
                     <BrevoForm
                       successLocation={`${process.env.HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
                       listId={brevoListId}
-                      telephoneListId={brevoTelephoneListId}
                       emailTemplateId={brevoEmailTemplateId}
                       gclid={gclid}
                       msclkid={msclkid}
