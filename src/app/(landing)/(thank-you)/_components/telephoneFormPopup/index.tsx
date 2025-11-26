@@ -29,9 +29,10 @@ export const TelephoneFormPopup: FC<Props> = ({ countryCode, leadId, telephoneLi
 
   return (
     <Modal show={show} onHide={handleHide} style={{ zIndex: 2000 }}>
-      <Modal.Header closeButton><strong>Want Special Offers & Course Updates?</strong></Modal.Header>
+      <Modal.Header closeButton><strong>Your Future in Event Planning Starts Here</strong></Modal.Header>
       <Modal.Body>
         <div className="p-2">
+          <h2 className="h6 mb-3 fw-bold">Want Special Offers & Course Updates?</h2>
           <TelephoneForm countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} />
         </div>
       </Modal.Body>
