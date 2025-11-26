@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Header } from '../../header';
 import { CurrentPromotion } from '../_components/currentPromotion';
-import { ThankYouSection } from './thank-you-section';
+import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
@@ -58,7 +58,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
       <Header logoLink showBanner />
-      <ThankYouSection heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} emailAddress={emailAddress} />
+      <ThankYouSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={emailAddress} telephoneListId={53} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />

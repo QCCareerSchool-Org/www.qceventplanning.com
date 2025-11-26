@@ -58,7 +58,7 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <DownloadSection heroSrc={HeroImage} emailAddress={emailAddress} course="fd" />
+      <DownloadSection countryCode={countryCode} heroSrc={HeroImage} course="fd" leadId={leadId} telephoneListId={53} />
       <GoogleReviewSection className="bg-light" courseCode={courseCode} />
       <ILEASection />
       <SupportSection />
