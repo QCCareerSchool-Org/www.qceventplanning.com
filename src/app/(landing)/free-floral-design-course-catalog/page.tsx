@@ -53,7 +53,7 @@ const FreeFloralDesignCatalogPage: PageComponent = ({ searchParams }) => {
 
   return (
     <div className={`${styles.freeCatalog}`}>
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
+      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} />
         <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />
