@@ -49,7 +49,7 @@ const FloralDesignPage: PageComponent = () => {
   return (
     <div className={styles.page}>
       <CourseSchema courseCode={courseCode} showPrice />
-      <Header logoLink buttonContent={<>Enroll <span className="d-none d-sm-inline"> Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+      <Header logoLink buttonContent={<>Enroll <span className="d-none d-sm-inline"> Now</span></>} buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
