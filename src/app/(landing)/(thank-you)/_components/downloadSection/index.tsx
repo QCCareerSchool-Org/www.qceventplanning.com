@@ -26,7 +26,7 @@ export const DownloadSection: FC<Props> = ({ countryCode, course, heroSrc, mobil
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
 
   return (
-    <section className="text-white">
+    <section id="download" className="text-white">
       {mobileHeroSrc
         ? <BackgroundImage src={heroSrc} mobile={{ src: mobileHeroSrc, breakpoint: 'lg', objectPosition: '50% 100%' }} priority />
         : <BackgroundImage src={heroSrc} priority />
