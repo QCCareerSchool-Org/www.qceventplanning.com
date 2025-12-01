@@ -1,6 +1,6 @@
 import type { LayoutComponent } from '@/app/serverComponent';
-import { Layout } from '@/components/layout';
+import { SiteLayout } from '@/components/siteLayout';
 
-const MainLayout: LayoutComponent = ({ children }) => <Layout>{children}</Layout>;
+const MainLayout: LayoutComponent = ({ children }) => <SiteLayout>{children}</SiteLayout>;
 
 export default MainLayout;
