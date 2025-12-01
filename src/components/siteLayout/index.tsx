@@ -7,7 +7,7 @@ import { BrevoConversations } from '@/scripts/brevoCoversations';
 
 import '@/app/bootstrap.scss';
 
-export const Layout: FC<PropsWithChildren> = ({ children }) => {
+export const SiteLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Header />
