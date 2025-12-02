@@ -8,6 +8,7 @@ import type { Country, DefaultInputComponentProps, Value } from 'react-phone-num
 import PhoneInput from 'react-phone-number-input/input';
 import { v1 } from 'uuid';
 
+import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/download.svg';
 
@@ -34,57 +35,41 @@ type Props = {
 
 export const BrevoForm: FC<Props> = props => {
   const id = useId();
-  const emailAddressRef = useRef<HTMLInputElement>(null);
-  const [ firstName, setFirstName ] = useState('');
-  const [ lastName, setLastName ] = useState('');
-  const [ city, setCity ] = useState('');
+  const [ nonce, setNonce ] = useState(() => v1());
+  const randomName = useId();
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
-  const [ emailAddress, setEmailAddress ] = useState('');
   const [ token, setToken ] = useState<string>();
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
-  const [ telephoneNumberE164, setTelephoneNumberE164 ] = useState('');
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
-  const handleFirstNameChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setFirstName(e.target.value);
-  };
-
-  const handleLastNameChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setLastName(e.target.value);
-  };
-
-  const handleCityChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setCity(e.target.value);
-  };
-
   const handleTelephoneNumberChange = (value?: Value): void => {
     setTelephoneNumber(value);
-  };
-
-  const handleEmailAddressChange: ChangeEventHandler<HTMLInputElement> = e => {
-    const input = e.target;
-    input.setCustomValidity('');
-    setEmailAddress(input.value);
   };
 
   const handleVerify = useCallback((t: string): void => {
     setToken(t);
   }, []);
 
-  // Google reCaptcha token expires after 2 minutes
+  // periodically refresh the token because it expires after 2 minutes
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const updateToken = (): void => {
       setRefreshReCaptcha(r => !r);
-    }, 90_000); // 90 seconds
+    };
+
+    const intervalId = setInterval(updateToken, 90_000); // every 90 seconds
+
+    window.addEventListener('focus', updateToken); // whenever the window regains focus
 
     return (): void => {
       clearInterval(intervalId);
+      window.removeEventListener('focus', updateToken);
     };
   }, []);
 
+  // enable the submit button after 1 second
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setDisabled(false);
@@ -95,23 +80,8 @@ export const BrevoForm: FC<Props> = props => {
     };
   }, []);
 
-  const validForm = (): boolean => {
-    if (submitting.current || disabled) {
-      return false;
-    }
-
-    if (!/^[^@\s]+@(?:[^@\s]+\.)+[^@\s]+$/ug.test(emailAddress)) {
-      emailAddressRef.current?.setCustomValidity('Please ensure that your email address includes the TLD, such as .com or .org.');
-      emailAddressRef.current?.focus();
-      emailAddressRef.current?.reportValidity();
-      return false;
-    }
-
-    return true;
-  };
-
   const handleSubmit: FormEventHandler = e => {
-    if (!validForm()) {
+    if (submitting.current || disabled) {
       e.preventDefault();
       return;
     }
@@ -120,27 +90,25 @@ export const BrevoForm: FC<Props> = props => {
 
     setTimeout(() => { submitting.current = false; }, 10_000);
 
-    return true;
+    setNonce(v1());
   };
 
   // neeed so that we send the telephone number in the correct format
   // if we try to use telephoneNumber directly there is an issue:
   // removing the telephone number from the visible field doesn't remove the value from the hidden field
   // if we try to use the <PhoneInput /> component directly, we don't get the correct format in the back end
-  useEffect(() => {
-    setTelephoneNumberE164(telephoneNumber ?? '');
-  }, [ telephoneNumber ]);
+  const telephoneNumberE164 = telephoneNumber ?? '';
 
   return (
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
-      <input type="hidden" name="nonce" value={v1()} />
+      <CurrentPageInput />
+      <input type="hidden" name="nonce" value={nonce} />
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Event School" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
       <input type="hidden" name="listId" value={props.listId} />
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
-      {props.telephoneListId && <input type="hidden" name="telephoneListId" value={props.telephoneListId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
       {props.utmSource && <input type="hidden" name="utmSource" value={props.utmSource} />}
@@ -151,20 +119,23 @@ export const BrevoForm: FC<Props> = props => {
       {props.referrer && <input type="hidden" name="referrer" value={props.referrer} />}
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}firstName`} className="form-label">Name</label>}
-        <input onChange={handleFirstNameChange} value={firstName} type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
+        <input type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
       </div>
-      <input onChange={handleLastNameChange} value={lastName} type="hidden" name="lastName" id={`${id}lastName`} />
-      <input onChange={handleCityChange} value={city} type="text" name="hp_city" id={`${id}city`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="new-password" />
+      <input type="hidden" name="lastName" id={`${id}lastName`} />
+      <input type="text" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="new-password" />
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
-        <input ref={emailAddressRef} onChange={handleEmailAddressChange} value={emailAddress} type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
+        <input type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
       </div>
       {showTelephone && typeof props.telephoneListId !== 'undefined' && (
-        <div className="mb-3">
-          <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
-          <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
-          {telephoneNumberE164.length > 0 && <p className="p-1"><small>By providing your phone number, you agree to receive exclusive offers from QC Event School. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank" rel="noreferrer">Terms & Privacy</Link>.</small></p>}
-        </div>
+        <>
+          <input type="hidden" name="telephoneListId" value={props.telephoneListId} />
+          <div className="mb-3">
+            <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
+            <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
+            {telephoneNumberE164.length > 0 && <p className="p-1"><small>By providing your phone number, you agree to receive exclusive offers from QC Event School. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank" rel="noreferrer">Terms & Privacy</Link>.</small></p>}
+          </div>
+        </>
       )}
       <div className="mb-3">
         <div className="form-check">
