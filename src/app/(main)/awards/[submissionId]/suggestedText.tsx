@@ -3,9 +3,9 @@
 import type { FC, MouseEventHandler } from 'react';
 import { useEffect, useState } from 'react';
 
-type Params = {
+interface Params {
   text: string;
-};
+}
 
 export const SuggestedText: FC<Params> = ({ text }) => {
   const [ clicks, setClicks ] = useState(0);

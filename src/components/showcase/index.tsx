@@ -6,19 +6,19 @@ import { ImageCircle } from '../imageCircle';
 import { Portfolio } from './portfolio';
 import SeeMyWorkIcon from './see-my-work.svg';
 
-type PortfolioImage = {
+interface PortfolioImage {
   src: StaticImageData;
   description?: string;
-};
+}
 
-type Props = {
+interface Props {
   name: string;
   credentials: string;
   showcaseImageSrc: StaticImageData;
   iconImageSrc?: StaticImageData;
   description: string;
   portfolioImages?: PortfolioImage[];
-};
+}
 
 export const Showcase: FC<Props> = props => {
   const [ show, toggle ] = useReducer(x => !x, false);
@@ -48,7 +48,7 @@ export const Showcase: FC<Props> = props => {
             </div>
           </div>
           <p className="mb-0">{props.description}</p>
-          {props.portfolioImages && <div onClick={handleHide} className="d-flex align-items-center mt-3" style={{ cursor: 'pointer' }}><small style={{ color: 'black', fontWeight: 500 }}><div className="d-inline-block me-2"><SeeMyWorkIcon alt="" /></div>See My Work</small></div>}
+          {props.portfolioImages && <div onClick={handleHide} className="d-flex align-items-center mt-3" style={{ cursor: 'pointer' }}><small style={{ color: 'black', fontWeight: 500 }}><div className="d-inline-block me-2"><SeeMyWorkIcon /></div>See My Work</small></div>}
         </div>
       </div>
       {props.portfolioImages && <Portfolio name={props.name} show={show} onHide={handleHide} images={props.portfolioImages} />}

@@ -96,7 +96,7 @@ const EventDecorPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <IEDPImage height="166" className="mb-3" alt="International Event Decorating Professional certification logo" />
+            <IEDPImage height="166" className="mb-3" title="International Event Decorating Professional certification logo" />
             <h2 className="text-white mb-3">QC's Event Decor Certification</h2>
             <p className="mb-3">When you graduate from the Event Decor course, you'll receive a professional certificate and the designation of International Event Decorating Professional (IEDP). This certification provides you with credibility in the event and wedding industry, and will help you gain both clients and employment.</p>
             <p className="mb-0 small gold">International Event Decorating Professional (IEDP)™</p>

@@ -28,8 +28,9 @@ export const metadata: Metadata = {
 const brevoListId = 2;
 const brevoEmailTemplateId = 32;
 
-const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode } = getData();
+const FreeEventAndWeddingPlanningCatalogPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
+  const { countryCode } = await getData();
   const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -38,11 +39,11 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = ({ searchParams })
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
+  const headerList = await headers();
   const referrer = headerList.get('referer');
 
   return (
-    <div className={`${styles.freeCatalog}`}>
+    <div className={styles.freeCatalog}>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <HomeHeroImage />

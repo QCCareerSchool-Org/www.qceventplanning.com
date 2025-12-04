@@ -1,18 +1,18 @@
-import { useMemo } from 'react';
 import type { FC } from 'react';
+import { useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { courseSort } from '../testimonial';
-import { testimonials } from '../testimonial/data';
 import styles from './index.module.css';
 import { Title } from './title';
+import { testimonials } from '../testimonial/data';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   id: string;
   courseCodes?: CourseCode[];
   className?: string;
-};
+}
 
 export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) => {
   const testimonial = useMemo(() => {
@@ -23,7 +23,7 @@ export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) =>
     return {
       ...found,
       courses: found.courses.sort((a, b) => {
-        if (courseCodes?.includes(a) && courseCodes?.includes(b)) {
+        if (courseCodes?.includes(a) && courseCodes.includes(b)) {
           return courseSort(a, b);
         }
         if (courseCodes?.includes(a)) {

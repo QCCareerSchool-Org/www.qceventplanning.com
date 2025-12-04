@@ -18,8 +18,8 @@ import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
 import { getData } from '@/lib/getData';
 
-export const Footer: FC = () => {
-  const { countryCode } = getData();
+export const Footer: FC = async () => {
+  const { countryCode } = await getData();
   const address = getAddress(countryCode);
 
   return (
@@ -80,12 +80,12 @@ export const Footer: FC = () => {
             </div>
           </div>
           <div className="d-flex">
-            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer"><TiktokIcon alt="Tiktok" /></a></div>
-            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer"><InstagramIcon alt="Instagram" /></a></div>
-            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer"><FacebookIcon alt="Facebook" /></a></div>
-            <div className="me-3"><a href="https://www.youtube.com/@QCEvent" target="_blank" rel="noreferrer"><YoutubeIcon alt="Youtube" /></a></div>
-            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer"><LinkedinIcon alt="LinkedIn" /></a></div>
-            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer"><PinterestIcon alt="Pinterest" /></a></div>
+            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer"><TiktokIcon title="Tiktok" /></a></div>
+            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer"><InstagramIcon title="Instagram" /></a></div>
+            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer"><FacebookIcon title="Facebook" /></a></div>
+            <div className="me-3"><a href="https://www.youtube.com/@QCEvent" target="_blank" rel="noreferrer"><YoutubeIcon title="Youtube" /></a></div>
+            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer"><LinkedinIcon title="LinkedIn" /></a></div>
+            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer"><PinterestIcon title="Pinterest" /></a></div>
           </div>
         </div>
       </div>

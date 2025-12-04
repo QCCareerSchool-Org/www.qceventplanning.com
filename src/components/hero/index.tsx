@@ -4,11 +4,11 @@ import type { CSSProperties, FC, PropsWithChildren } from 'react';
 
 import styles from './index.module.css';
 
-type Props = {
+interface Props {
   src: StaticImageData;
   priority?: boolean;
   objectPosition?: CSSProperties['objectPosition'];
-};
+}
 
 export const Hero: FC<PropsWithChildren<Props>> = ({ src, priority, objectPosition, children }) => (
   <div className={styles.wrapper}>

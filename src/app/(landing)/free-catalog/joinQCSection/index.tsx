@@ -8,13 +8,13 @@ import CoinsIcon from './coins.svg';
 import { FadeUpAnimation } from './fadeUpAnimation';
 import InfinityIcon from './infinity.svg';
 
-type Props = {
+interface Props {
   heading?: string | ReactNode;
   subheading?: string | ReactNode;
   feedbackText?: string | ReactNode;
   trainingText?: string | ReactNode;
   exercisesText?: string | ReactNode;
-};
+}
 
 export const JoinQCSection: FC<Props> = ({ heading, subheading, feedbackText, trainingText, exercisesText }) => (
   <section className="bg-light">

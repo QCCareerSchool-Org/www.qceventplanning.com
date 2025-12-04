@@ -3,10 +3,10 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
 
-type Props = {
+interface Props {
   videoId: string;
   wrapper: string;
-};
+}
 
 export const WistiaPlayer: FC<Props> = ({ videoId, wrapper }) => {
   useEffect(() => {
@@ -33,5 +33,5 @@ export const WistiaPlayer: FC<Props> = ({ videoId, wrapper }) => {
     };
   }, [ videoId, wrapper ]);
 
-  return <div id={`${wrapper}`} className="rounded-4" style={{ overflow: 'hidden' }} />;
+  return <div id={wrapper} className="rounded-4" style={{ overflow: 'hidden' }} />;
 };

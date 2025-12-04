@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import { AccountsEmailAddress } from '../accountsEmailAddress';
 import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';

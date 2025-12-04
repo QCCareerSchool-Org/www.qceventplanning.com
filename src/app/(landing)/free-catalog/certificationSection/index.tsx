@@ -9,9 +9,9 @@ import IEWPCertification from '@/components/certifications/iewp.svg';
 import IFDPCertification from '@/components/certifications/ifdp.svg';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   courseCode?: CourseCode;
-};
+}
 
 export const CertificationSection: FC<Props> = ({ courseCode }) => (
   <section className={`bg-dark text-white ${styles.certificationSection}`}>

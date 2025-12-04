@@ -4,12 +4,12 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { Accordion } from './accordion';
 
-type Props = {
+interface Props {
   title: string;
   src: StaticImageData;
   open?: boolean;
   className?: string;
-};
+}
 
 export const CourseOutline: FC<PropsWithChildren<Props>> = ({ title, src, children, open, className }) => (
   <Accordion title={title} open={open} className={className}>

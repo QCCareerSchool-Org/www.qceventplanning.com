@@ -98,7 +98,7 @@ const EventPlanningPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <PESImage height="166" className="mb-3" alt="Promotional Events Specialist certification logo" />
+            <PESImage height="166" className="mb-3" title="Promotional Events Specialist certification logo" />
             <h2 className="text-white mb-3">Promotional Events Specialist</h2>
             <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of Promotional Events Specialist.</p>
             <p>The certification cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>

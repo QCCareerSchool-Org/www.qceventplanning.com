@@ -1,11 +1,11 @@
 import type { StaticImageData } from 'next/image';
 import type { CSSProperties } from 'react';
+
 import AprilImage from './images/april.png';
 import AshleyImage from './images/ashley.png';
 import BrianneImage from './images/brianne.png';
 import DarleneImage from './images/darlene.png';
 import PatriciaImage from './images/patricia.png';
-
 import type { CourseCode } from '@/domain/courseCode';
 
 export enum Priority {
@@ -14,7 +14,7 @@ export enum Priority {
   LOW = 1,
 }
 
-export type ReviewData = {
+export interface ReviewData {
   name: string;
   reviewText: string;
   initial: string;
@@ -25,7 +25,7 @@ export type ReviewData = {
   rating: 1 | 2 | 3 | 4 | 5;
   courseCodes?: CourseCode[];
   priority?: Priority;
-};
+}
 
 export const reviewData: ReviewData[] = [
   {

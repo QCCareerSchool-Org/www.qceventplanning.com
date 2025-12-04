@@ -4,10 +4,10 @@ import ElispseOver from './images/ellipse-over.svg';
 import Elispse from './images/ellipse.svg';
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   current: boolean;
   onClick: () => void;
-};
+}
 
 export const CarouselNavCircle: FC<Props> = props => {
   return (

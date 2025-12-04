@@ -4,9 +4,9 @@ import type { FC } from 'react';
 import HeroUKImage from './desktop-uk.jpg';
 import HeroImage from './desktop.jpg';
 
-type Props = {
+interface Props {
   countryCode: string;
-};
+}
 
 export const FreeSpecialty100: FC<Props> = ({ countryCode }) => {
   const [ discount, imgSrc ] = countryCode === 'GB'

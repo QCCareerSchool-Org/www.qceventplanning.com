@@ -7,9 +7,9 @@ import OnlineCommunityImage from './online-community.jpg';
 import OnlineStudentCenter from './online-student-center.jpg';
 import PointersForPlannersImage from './pointers.jpg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const PerksSection: FC<Props> = ({ className }) => (
   <section className={className}>

@@ -1,10 +1,11 @@
 import type { FC } from 'react';
+
 import { Animation } from './animation';
 import ChartIcon from './chart.svg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const IndustrySection: FC<Props> = ({ className }) => (
   <section className={className}>

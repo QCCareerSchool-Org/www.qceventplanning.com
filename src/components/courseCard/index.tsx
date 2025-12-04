@@ -1,12 +1,12 @@
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 
 import ChevronIcon from './chevron-right.svg';
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   type: 'foundation' | 'specialty';
   name: string | JSX.Element;
   description: string;
@@ -15,7 +15,7 @@ type Props = {
   certification: JSX.Element;
   message?: string;
   buttons?: 'course' | 'courseSmall' | 'courseAndTuition' | 'enroll' | 'none';
-};
+}
 
 export const CourseCard: FC<Props> = ({ type, name, description, href, backgroundSrc, certification, message, buttons = 'courseAndTuition' }) => (
   <div className={`${styles.courseCard} card`}>

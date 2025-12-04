@@ -5,8 +5,8 @@ import styles from './footer.module.scss';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
 
-export const Footer: FC = () => {
-  const { countryCode } = getData();
+export const Footer: FC = async () => {
+  const { countryCode } = await getData();
   return (
     <footer className={styles.footer}>
       <div className="container text-center">

@@ -14,9 +14,9 @@ import WPImage from './wedding-planning/hero.jpg';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const OnlineCourseSection: FC<Props> = ({ className }) => (
   <div>

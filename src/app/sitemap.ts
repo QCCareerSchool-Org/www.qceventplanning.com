@@ -1,10 +1,10 @@
 import { promises as fs } from 'fs';
-import path from 'path';
 import type { MetadataRoute } from 'next';
+import path from 'path';
 
 const prefix = 'https://www.qceventplanning.com';
 
-const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<MetadataRoute.Sitemap> => {
+const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
   const files = await fs.readdir(filePath);
   for (const f of files) {

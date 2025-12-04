@@ -23,8 +23,9 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
-const WebinarPage: PageComponent = ({ searchParams }) => {
-  const { countryCode } = getData();
+const WebinarPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
+  const { countryCode } = await getData();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -32,7 +33,7 @@ const WebinarPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
+  const headerList = await headers();
   const referrer = headerList.get('referer');
 
   return (

@@ -100,7 +100,7 @@ const WeddingPlanningPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-              <IWPPImage height="166" className="mb-3" alt="International Wedding Planning Professional certification logo" />
+              <IWPPImage height="166" className="mb-3" title="International Wedding Planning Professional certification logo" />
               <h2 className="text-white mb-3">QC's Wedding Planning Certification</h2>
               <p className="mb-3">Once you graduate from your online wedding planning course, you'll receive a certification and be able to use the designation of International Wedding Planning Professional (IWPP). Your designation demonstrates your credibility as a wedding planner and will help you develop positive relationships with clients and industry professionals.</p>
               <p className="mb-0 small gold">International Wedding Planning Professional (IWPP)™</p>

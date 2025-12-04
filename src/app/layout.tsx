@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
-
 import { ToastContainer } from 'react-toastify';
+
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';

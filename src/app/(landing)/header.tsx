@@ -1,18 +1,18 @@
 import Link from 'next/link';
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 
 import { ButtonWrapper } from './buttonWrapper';
 import styles from './header.module.scss';
 import { Logo } from '@/components/logo';
 
-type Props = {
+interface Props {
   logoLink?: boolean;
   buttonHref?: string;
   buttonContent?: JSX.Element | string;
   buttonAlwaysVisible?: boolean;
   buttonClass?: string;
   showBanner?: boolean;
-};
+}
 
 export const Header: FC<Props> = ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, buttonClass = `btn btn-navy ${styles.button}` }) => (
   <div className={styles.headerComponent}>

@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
  * @param once Whether to track only once, the first time the element is intersected; or to keep track of its current intersected state
  * @returns The state of the intersection
  */
-export const useIntersectionObserver = (ref: RefObject<HTMLElement>, options?: IntersectionObserverInit, once?: boolean): boolean => {
+export const useIntersectionObserver = (ref: RefObject<HTMLElement | null>, options?: IntersectionObserverInit, once?: boolean): boolean => {
   const [ intersected, setIntersected ] = useState(false);
 
   useEffect(() => {

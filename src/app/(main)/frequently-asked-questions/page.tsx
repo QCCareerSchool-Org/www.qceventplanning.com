@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   },
 };
 
-const FAQPage: PageComponent = () => {
-  const { countryCode } = getData();
+const FAQPage: PageComponent = async () => {
+  const { countryCode } = await getData();
   const telephoneNumber = getTelephoneNumber(countryCode);
 
   return (

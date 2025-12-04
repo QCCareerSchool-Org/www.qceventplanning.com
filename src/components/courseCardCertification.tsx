@@ -1,6 +1,7 @@
 'use client';
 
 import type { FC } from 'react';
+
 import DWS from '@/components/certifications/dws.svg';
 import ICPP from '@/components/certifications/icpp.svg';
 import IEDP from '@/components/certifications/iedp.svg';
@@ -12,11 +13,12 @@ import IWPP from '@/components/certifications/iwpp.svg';
 import LWES from '@/components/certifications/lwes.svg';
 import PES from '@/components/certifications/pes.svg';
 import type { CourseCode } from '@/domain/courseCode';
+import { getCourseCertification } from '@/domain/courseCode';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 
-type Props = {
+interface Props {
   courseCode: CourseCode;
-};
+}
 
 export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
   const screenWidth = useScreenWidth();
@@ -24,36 +26,36 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
     return;
   }
 
-  const Certification = getCertification(courseCode);
-  if (Certification) {
-    return <Certification height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
-  }
+  return <Certification courseCode={courseCode} height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
 };
 
-type ImageComponent = FC<{ height: number }>;
+interface CertificationProps {
+  courseCode: CourseCode;
+  height: number;
+}
 
-export const getCertification = (courseCode: CourseCode): ImageComponent | null => {
+export const Certification: FC<CertificationProps> = ({ courseCode, height }) => {
   switch (courseCode) {
     case 'ep':
-      return IEWP as ImageComponent;
+      return <IEWP height={height} title={getCourseCertification(courseCode)} />;
     case 'wp':
-      return IWPP as ImageComponent;
+      return <IWPP height={height} title={getCourseCertification(courseCode)} />;
     case 'cp':
-      return ICPP as ImageComponent;
+      return <ICPP height={height} title={getCourseCertification(courseCode)} />;
     case 'ce':
-      return IEPP as ImageComponent;
+      return <IEPP height={height} title={getCourseCertification(courseCode)} />;
     case 'ed':
-      return IEDP as ImageComponent;
+      return <IEDP height={height} title={getCourseCertification(courseCode)} />;
     case 'fd':
-      return IFDP as ImageComponent;
+      return <IFDP height={height} title={getCourseCertification(courseCode)} />;
     case 'dw':
-      return DWS as ImageComponent;
+      return <DWS height={height} title={getCourseCertification(courseCode)} />;
     case 'lw':
-      return LWES as ImageComponent;
+      return <LWES height={height} title={getCourseCertification(courseCode)} />;
     case 'pe':
-      return PES as ImageComponent;
+      return <PES height={height} title={getCourseCertification(courseCode)} />;
     case 'fl':
-      return IFLP as ImageComponent;
+      return <IFLP height={height} title={getCourseCertification(courseCode)} />;
     default:
       return null;
   }

@@ -99,7 +99,7 @@ const EventAndWeddingPlanningPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <IEWPImage height="166" className="mb-3" alt="International Event and Wedding Planning Professional certification logo" />
+            <IEWPImage height="166" className="mb-3" title="International Event and Wedding Planning Professional certification logo" />
             <h2 className="text-white mb-3">Event &amp; Wedding Planning Certification</h2>
             <p className="mb-3">Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Event and Wedding Planning Professional (IEWP). The IEWP Event &amp; Wedding Planning certification is approved by the International Live Events Association and cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>
             <p className="mb-0 small gold">International Event and Wedding Planning Professional™</p>
