@@ -20,22 +20,22 @@ export const Title: FC<Props> = ({ testimonial }) => {
     return <div className={styles.title}>{getCourseName(testimonial.courses[0])}</div>;
   }
 
-  const tooltip: FC = props => (
-    <Tooltip id="button-tooltip" {...props}>
-      Also a graduate of:
-      <ul className="m-0 ps-3">
-        {testimonial.courses.filter((c, i) => i >= 1).map(c => <li className="small" style={{ whiteSpace: 'nowrap' }} key={c}>{getCourseName(c)}</li>)}
-      </ul>
-    </Tooltip>
-  );
-
   return (
     <>
       {testimonial.courses.length > 0 && (
-        <OverlayTrigger placement="right" overlay={tooltip}>
+        <OverlayTrigger placement="right" overlay={<CustomTooltip testimonial={testimonial} />}>
           <div className={styles.title}>{getCourseName(testimonial.courses[0])}</div>
         </OverlayTrigger>
       )}
     </>
   );
 };
+
+const CustomTooltip: FC<{ testimonial: Testimonial }> = ({ testimonial, ...props }) => (
+  <Tooltip id="button-tooltip" {...props}>
+    Also a graduate of:
+    <ul className="m-0 ps-3">
+      {testimonial.courses.filter((c, i) => i >= 1).map(c => <li className="small" style={{ whiteSpace: 'nowrap' }} key={c}>{getCourseName(c)}</li>)}
+    </ul>
+  </Tooltip>
+);

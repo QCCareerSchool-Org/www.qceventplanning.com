@@ -37,7 +37,7 @@ export const Portfolio: FC<Props> = props => {
           <div className="d-flex align-items-center w-100">
             {props.images.length > 1 && (
               <div className="flex-shrink-1">
-                <NavArrowIcon onClick={handlePrevClick} alt="Prev" className="me-3" />
+                <NavArrowIcon onClick={handlePrevClick} title="Prev" className="me-3" />
               </div>
             )}
             <div className="flex-grow-1">
@@ -45,7 +45,7 @@ export const Portfolio: FC<Props> = props => {
             </div>
             {props.images.length > 1 && (
               <div className="flex-shrink-1">
-                <NavArrowIcon onClick={handleNextClick} alt="Next" className="ms-3" style={{ transform: 'scaleX(-1)' }} />
+                <NavArrowIcon onClick={handleNextClick} title="Next" className="ms-3" style={{ transform: 'scaleX(-1)' }} />
               </div>
             )}
           </div>

@@ -6,4 +6,4 @@ interface Props {
   height: number;
 }
 
-export const Logo: FC<Props> = ({ height }) => <LogoImage alt="QC Event School" style={{ height, width: 'auto' }} />;
+export const Logo: FC<Props> = ({ height }) => <LogoImage title="QC Event School" style={{ height, width: 'auto' }} />;

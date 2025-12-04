@@ -97,7 +97,7 @@ const DestinationWeddingPlanningPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <DWSImage height="166" className="mb-3" alt="Destination Wedding Specialist certification logo" />
+            <DWSImage height="166" className="mb-3" title="Destination Wedding Specialist certification logo" />
             <h2 className="text-white mb-3">QC's Destination Wedding Planning Certification</h2>
             <p className="mb-3">Once you graduate from this course, you'll receive a certificate of completion and the professional designation of Destination Wedding Specialist. Your certificate will reassure clients and employers that you can successfully meet their expectations during the process of planning any destination wedding.</p>
             <p className="mb-0 small gold">Destination Wedding Specialist (DWS)</p>

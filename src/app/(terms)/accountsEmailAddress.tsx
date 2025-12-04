@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
-export const InfoEmailAddress: FC = () => {
+export const AccountsEmailAddress: FC = () => {
   const ref = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {

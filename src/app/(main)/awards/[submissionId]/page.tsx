@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import AwardImage from './award-of-excellence.png';
@@ -14,13 +15,14 @@ import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
 
-interface RouteParams {
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+type RouteParams = {
   submissionId: string;
-}
+};
 
 const schooolName: School = 'QC Event School';
 
-export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }) => {
+export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }): Promise<Metadata> => {
   const { submissionId } = await params;
 
   const award = await getAward(submissionId);
