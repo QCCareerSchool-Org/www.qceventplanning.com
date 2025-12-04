@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-type Props = {
+interface Props {
   courseCodes: string[];
-};
+}
 
 export const EnrollButton: FC<Props> = ({ courseCodes }) => {
   let href = 'https://enroll.qceventplanning.com?';

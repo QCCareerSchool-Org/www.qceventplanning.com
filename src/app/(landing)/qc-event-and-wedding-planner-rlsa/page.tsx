@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-
 import Link from 'next/link';
+
 import EBImage from '../../(main)/online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from '../../(main)/online-event-courses/corporate-event-planning/hero.jpg';
 import EPImage from '../../(main)/online-event-courses/event-and-wedding-planning/hero.jpg';

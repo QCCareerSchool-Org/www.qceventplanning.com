@@ -14,9 +14,9 @@ import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
 
-type RouteParams = {
+interface RouteParams {
   submissionId: string;
-};
+}
 
 const schooolName: School = 'QC Event School';
 

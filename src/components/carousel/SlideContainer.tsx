@@ -5,11 +5,11 @@ import { useEffect, useRef } from 'react';
 
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   show: boolean;
   index: number;
   onHeightChange: (index: number, height: number) => void;
-};
+}
 
 export const SlideContainer: FC<PropsWithChildren<Props>> = ({ show, index, onHeightChange, children }) => {
   const ref = useRef<HTMLDivElement>(null);

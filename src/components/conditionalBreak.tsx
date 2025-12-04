@@ -4,14 +4,14 @@ import type { FC } from 'react';
 
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 
-type Props = {
+interface Props {
   xs?: boolean;
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
   xl?: boolean;
   xxl?: boolean;
-};
+}
 
 export const ConditionalBreak: FC<Props> = ({ xs, sm, md, lg, xl, xxl }) => {
   const screenWidth = useScreenWidth();

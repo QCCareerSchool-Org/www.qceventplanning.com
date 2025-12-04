@@ -9,10 +9,10 @@ import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 import { tightNumber } from '@/lib/tightNumber';
 
-type Props = {
+interface Props {
   price: Price;
   href: string;
-};
+}
 
 export const Full: FC<Props> = ({ price, href }) => (
   <div className={`${commonStyles.card} ${styles.full} card`}>

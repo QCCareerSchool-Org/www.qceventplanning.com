@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
 };
 
-const FloralDesignPage: PageComponent = () => {
-  const { countryCode } = getData();
+const FloralDesignPage: PageComponent = async () => {
+  const { countryCode } = await getData();
 
   return (
     <div className={styles.page}>

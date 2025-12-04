@@ -8,12 +8,12 @@ import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
 
-type Props = {
+interface Props {
   courseCode: CourseCode;
   id?: string;
   providerId?: string;
   showPrice?: boolean;
-};
+}
 
 export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
   let price: Price | undefined;

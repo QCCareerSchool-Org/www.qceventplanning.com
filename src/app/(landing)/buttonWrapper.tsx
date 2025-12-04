@@ -1,12 +1,13 @@
 'use client';
 
 import type { FC, PropsWithChildren } from 'react';
+
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
-type Props = {
+interface Props {
   alwaysVisible: boolean;
-};
+}
 
 export const ButtonWrapper: FC<PropsWithChildren<Props>> = ({ alwaysVisible, children }) => {
   const scrollPosition = useScrollPosition();

@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 
 import { ImageCircle } from '../imageCircle';
-import { CourseMicrodata } from '../microdata/course';
-import { Star } from '../testimonial/star';
 import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
+import { CourseMicrodata } from '../microdata/course';
+import { Star } from '../testimonial/star';
 
 type Props = {
   schemaCourseId?: string;

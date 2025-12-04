@@ -2,18 +2,18 @@ import type { FC } from 'react';
 import { memo, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
-import { CourseMicrodata } from '../microdata/course';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
+import { CourseMicrodata } from '../microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   id: string;
   courseCodes?: CourseCode[];
   schemaCourseId?: string;
-};
+}
 
 /** sort in alphabetical order, except ep is always first */
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
@@ -38,7 +38,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
     return {
       ...found,
       courses: found.courses.sort((a, b) => {
-        if (courseCodes?.includes(a) && courseCodes?.includes(b)) {
+        if (courseCodes?.includes(a) && courseCodes.includes(b)) {
           return courseSort(a, b);
         }
         if (courseCodes?.includes(a)) {

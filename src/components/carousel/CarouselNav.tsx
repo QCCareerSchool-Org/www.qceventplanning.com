@@ -4,13 +4,13 @@ import { CarouselNavCircle } from './CarouselNavCircle';
 import ArrowImage from './images/nav-arrow-icon.svg';
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   numPages: number;
   currentPage: number;
   onNext: () => void;
   onPrev: () => void;
   onClick: (index: number) => void;
-};
+}
 
 export const CarouselNav: FC<Props> = memo(props => (
   <div style={{ scale: '0.8' }}>

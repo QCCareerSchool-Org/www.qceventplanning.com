@@ -6,9 +6,9 @@ import styles from './index.module.scss';
 import StudentSupportImage from './student-support.jpg';
 import ChatIcon from '@/components/chat.svg';
 
-type Props = {
+interface Props {
   showLink?: boolean;
-};
+}
 
 export const SupportSection: FC<Props> = ({ showLink }) => (
   <section className={`${styles.section} text-white`}>

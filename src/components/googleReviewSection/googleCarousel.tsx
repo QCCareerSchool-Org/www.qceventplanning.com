@@ -7,9 +7,9 @@ import Carousel from 'react-multi-carousel';
 
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
-type Props = {
+interface Props {
   mobile: boolean;
-};
+}
 
 const responsive: ResponsiveType = {
   all: {

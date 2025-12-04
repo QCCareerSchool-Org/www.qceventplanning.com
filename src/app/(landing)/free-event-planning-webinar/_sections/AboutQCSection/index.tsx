@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import AboutQCImage from './about-qc.png';
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   showCoursesButton?: boolean;
-};
+}
 
 export const AboutQCSection: FC<Props> = ({ showCoursesButton }) => (
   <section className="bg-light">

@@ -6,12 +6,12 @@ import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
-type Props = {
+interface Props {
   courseCode: CourseCode;
   itemProp?: string;
   showPrice?: boolean;
   itemID?: string;
-};
+}
 
 export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPrice, itemID = '#course' }) => {
   let price: Price | undefined;

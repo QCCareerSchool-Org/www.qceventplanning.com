@@ -6,19 +6,19 @@ import { ImageCircle } from '../imageCircle';
 import { Portfolio } from './portfolio';
 import SeeMyWorkIcon from './see-my-work.svg';
 
-type PortfolioImage = {
+interface PortfolioImage {
   src: StaticImageData;
   description?: string;
-};
+}
 
-type Props = {
+interface Props {
   name: string;
   credentials: string;
   showcaseImageSrc: StaticImageData;
   iconImageSrc?: StaticImageData;
   description: string;
   portfolioImages?: PortfolioImage[];
-};
+}
 
 export const Showcase: FC<Props> = props => {
   const [ show, toggle ] = useReducer(x => !x, false);

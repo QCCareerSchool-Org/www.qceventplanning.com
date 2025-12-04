@@ -22,17 +22,18 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
+const ThankYouCourseCatalogPage: PageComponent = async props => {
+  const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
   const countryCode = getParam(searchParams.countryCode) ?? 'US';
   const provinceCode = getParam(searchParams.provinceCode);
-  const headerList = headers();
+  const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
   const userAgent = headerList.get('user-agent') ?? undefined;
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 

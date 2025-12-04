@@ -11,9 +11,9 @@ import { TazmanBakerShowcase } from '@/components/showcase/tazman-baker';
 
 const slides = [ CherelleJosephShowcase, JennaPelcherShowcase, MadysonBellShowcase, TazmanBakerShowcase, GiannaLucheseShowcase ];
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const CarouselSection: FC<Props> = ({ className }) => (
   <section className={className}>

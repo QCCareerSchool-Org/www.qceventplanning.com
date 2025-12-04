@@ -69,10 +69,10 @@ export const TelephoneForm: FC<Props> = ({ countryCode, leadId, telephoneListId 
   );
 };
 
-type InputProps = {
+interface InputProps {
   value: Value;
   onChange: ChangeEventHandler;
-};
+}
 
 const InputComponent = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   return <input ref={ref} type="tel" value={props.value} onChange={props.onChange} className="form-control" placeholder="Telephone Number" required />;

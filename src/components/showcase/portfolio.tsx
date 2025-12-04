@@ -5,15 +5,15 @@ import { Modal } from 'react-bootstrap';
 
 import NavArrowIcon from './nav-arrow.svg';
 
-type Props = {
+interface Props {
   name: string;
   show: boolean;
   onHide: () => void;
-  images: Array<{
+  images: {
     src: StaticImageData;
     description?: string;
-  }>;
-};
+  }[];
+}
 
 export const Portfolio: FC<Props> = props => {
   const [ index, setIndex ] = useState(0);

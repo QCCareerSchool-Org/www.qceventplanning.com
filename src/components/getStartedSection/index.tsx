@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   title: string;
   text?: string;
   courseCodes?: string[];
   buttonText?: string | JSX.Element;
   buttonHref?: string;
-};
+}
 
 export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today', buttonHref }) => {
   let href: string;
@@ -18,7 +18,7 @@ export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonT
   } else {
     href = 'https://enroll.qceventplanning.com';
     if (courseCodes) {
-      href += '?' + courseCodes?.map(c => `c=${encodeURIComponent(c)}`).join('&');
+      href += '?' + courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&');
     }
   }
   return (

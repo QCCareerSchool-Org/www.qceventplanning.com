@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import styles from './index.module.scss';
 import ShieldIcon from './shield.svg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const AboutSection: FC<Props> = ({ className }) => (
   <section className={`${styles.aboutSection} ${className}`}>

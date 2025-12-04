@@ -11,14 +11,14 @@ import LucieDemersImage from '@/components/employees/lucie-demers.jpg';
 // import MalcolmAsselinImage from '@/components/employees/malcolm-asselin.jpg';
 import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 
-export type Employee = {
+export interface Employee {
   src: StaticImageData;
   imagePositionX?: number;
   imagePositionY?: number;
   name: string;
   heading: string;
   description: string;
-};
+}
 
 export const employees: Employee[] = [
   {

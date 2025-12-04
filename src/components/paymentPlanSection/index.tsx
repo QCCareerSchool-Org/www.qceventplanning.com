@@ -10,13 +10,13 @@ import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
 import { withSuspense } from '@/withSuspense';
 
-type Props = {
+interface Props {
   courseCodes: CourseCode[];
   className?: string;
-};
+}
 
 const PaymentPlanSectionBase: FC<Props> = async ({ courseCodes, className }) => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

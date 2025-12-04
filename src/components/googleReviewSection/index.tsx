@@ -7,12 +7,12 @@ import { reviewData } from './reviewData';
 import { getCompareFunction } from './sortReviewData';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   courseCode?: CourseCode;
   className?: string;
   /** a structured data \@id to pass through to the Course's provider */
   schemaCourseId?: string;
-};
+}
 
 export const GoogleReviewSection: FC<Props> = ({ courseCode, className, schemaCourseId }) => {
   const sortedReviewData = reviewData.sort(getCompareFunction(courseCode));

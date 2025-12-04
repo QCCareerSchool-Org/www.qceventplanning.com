@@ -5,9 +5,9 @@ import { useCountUp } from 'react-use-count-up';
 
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
-type Props = {
+interface Props {
   value: number;
-};
+}
 
 const duration = 2_000; // 2 seconds
 

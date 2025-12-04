@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react';
 import styles from './banner.module.scss';
 import { CountDownElement } from './countDownElement';
 
-type Props = {
+interface Props {
   url: string;
   message: ReactNode;
   showTimer: boolean;
@@ -11,7 +11,7 @@ type Props = {
   hours: number;
   minutes: number;
   seconds: number;
-};
+}
 
 export const Banner: FC<Props> = props => {
   const daysDisabled = props.days === 0;

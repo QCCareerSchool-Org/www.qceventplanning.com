@@ -4,9 +4,9 @@ import { EnrollButton } from '../enrollButton';
 import styles from './heroButtons.module.css';
 import { PaymentPlanButton } from './paymentPlanButton';
 
-type Props = {
+interface Props {
   courseCodes: string[];
-};
+}
 
 export const HeroButtons: FC<Props> = props => {
   return (
