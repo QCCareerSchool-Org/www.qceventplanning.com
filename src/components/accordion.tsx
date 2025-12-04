@@ -1,11 +1,11 @@
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { Accordion as BootstrapAccordion } from 'react-bootstrap';
 
-type Props = {
+interface Props {
   title: string | ReactNode;
   open?: boolean;
   className?: string;
-};
+}
 
 export const Accordion: FC<PropsWithChildren<Props>> = ({ title, children, open, className }) => (
   <BootstrapAccordion className={className} defaultActiveKey={open ? '0' : undefined}>

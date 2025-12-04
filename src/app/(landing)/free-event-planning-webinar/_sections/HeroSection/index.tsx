@@ -8,7 +8,7 @@ import styles from './index.module.scss';
 import { BrevoForm } from '@/components/brevoForm';
 import CheckIcon from '@/components/check.svg';
 
-type Props = {
+interface Props {
   gclid?: string;
   msclkid?: string;
   utmSource?: string;
@@ -18,7 +18,7 @@ type Props = {
   utmTerm?: string;
   referrer: string | null;
   countryCode: string;
-};
+}
 
 const brevoListId = 10;
 const brevoEmailTemplateId = 35;

@@ -98,7 +98,7 @@ const EventPlanningPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <IFLPImage height="166" className="mb-3" alt="Festivals and Live Events certification logo" />
+            <IFLPImage height="166" className="mb-3" title="Festivals and Live Events certification logo" />
             <h2 className="text-white mb-3">Festivals and Live Events Certification</h2>
             <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Festivals and Live Events Planning Professional&trade; (IFLP&trade;). The certification cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>
           </div>

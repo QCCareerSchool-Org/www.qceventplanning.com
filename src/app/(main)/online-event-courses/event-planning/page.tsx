@@ -96,7 +96,7 @@ const EventPlanningPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <IEPPImage height="166" className="mb-3" alt="International Event Planning Professional certification logo" />
+            <IEPPImage height="166" className="mb-3" title="International Event Planning Professional certification logo" />
             <h2 className="text-white mb-3">Event Planning Certification</h2>
             <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Event Planning Professional™ (IEPP™).</p>
             <p className="mb-0">The IEPP certification is approved by the International Live Events Association and cements your credibility as an established industry professional giving you a competitive edge in your local industry!</p>

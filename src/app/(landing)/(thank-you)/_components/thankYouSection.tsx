@@ -8,7 +8,7 @@ import { FormWrapper } from '@/components/formWrapper';
 import LockIcon from '@/components/icons/q-lock.svg';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   course?: CourseCode;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
@@ -16,7 +16,7 @@ type Props = {
   emailAddress?: string;
   telephoneListId?: number;
   countryCode: string;
-};
+}
 
 export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, emailAddress, telephoneListId, countryCode }) => {
 

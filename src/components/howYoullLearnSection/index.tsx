@@ -9,9 +9,9 @@ import styles from './index.module.scss';
 
 const iconHeight = '1.5rem';
 
-type Props = {
+interface Props {
   graduateTitle: string;
-};
+}
 
 export const HowYoullLearnSection: FC<Props> = ({ graduateTitle }) => (
   <section>

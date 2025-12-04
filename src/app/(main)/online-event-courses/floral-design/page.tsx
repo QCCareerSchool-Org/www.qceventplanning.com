@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
 };
 
-const FloralDesignPage: PageComponent = () => {
-  const { countryCode } = getData();
+const FloralDesignPage: PageComponent = async () => {
+  const { countryCode } = await getData();
 
   return (
     <div className={styles.page}>
@@ -103,7 +103,7 @@ const FloralDesignPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-              <IFDPImage height="166" className="mb-3" alt="International Floral Design Professional certification logo" />
+              <IFDPImage height="166" className="mb-3" title="International Floral Design Professional certification logo" />
               <h2 className="text-white mb-3">QC's Floral Design Certification</h2>
               <p className="mb-3">Once you graduate from your online Floral Design course, you'll receive the International Floral Design Professional (IFDP) certification. Your training and certification will cement your credibility as an industry professional and give you an advantage over other floral designers in your local industry.</p>
               <p className="mb-0 small gold">International Floral Design Professional (IFDP)™</p>

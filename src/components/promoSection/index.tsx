@@ -5,10 +5,10 @@ import BlackFridayBadge from './bf-label.png';
 import styles from './index.module.css';
 import TagIcon from '@/components/icons/tag.svg';
 
-type Props = {
+interface Props {
   countryCode: string;
   date: number;
-};
+}
 
 const startDate = Date.UTC(2024, 10, 26);
 const endDate = Date.UTC(2024, 10, 30, 8); // 2024-11-30T03:00 (08:00 UTC)

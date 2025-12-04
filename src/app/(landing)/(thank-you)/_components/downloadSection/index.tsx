@@ -9,14 +9,14 @@ import DownloadIcon from '@/components/icons/download.svg';
 import LockIcon from '@/components/icons/q-lock.svg';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   countryCode: string;
   course?: CourseCode;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   leadId?: string;
   telephoneListId?: number;
-};
+}
 
 export const DownloadSection: FC<Props> = ({ countryCode, course, heroSrc, mobileHeroSrc, leadId, telephoneListId }) => {
   const downloadUrl = course === 'fd'

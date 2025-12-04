@@ -11,7 +11,7 @@ export const ILEASection: FC = () => (
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12 col-lg-9 col-xl-7 col-xxl-6 text-center">
-          <ILEALogoImage className="mb-3" alt="ILEA logo" />
+          <ILEALogoImage className="mb-3" title="ILEA logo" />
           <h2 className="mb-3">ILEA Approved</h2>
           <p className="mb-0">Every professional event certification meets the rigorous standards and is approved by the International Live Events Association.</p>
         </div>

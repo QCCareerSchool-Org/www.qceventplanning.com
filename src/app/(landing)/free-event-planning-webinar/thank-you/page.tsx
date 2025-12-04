@@ -143,11 +143,11 @@ const WebinarThankYouPage: PageComponent = () => {
       <div className="bg-navy text-white">
         <div className="container">
           <div className="d-flex justify-content-center">
-            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><TiktokIcon alt="Tiktok" /></a></div>
-            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><InstagramIcon alt="Instagram" /></a></div>
-            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FacebookIcon alt="Facebook" /></a></div>
-            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><LinkedinIcon alt="LinkedIn" /></a></div>
-            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><PinterestIcon alt="Pinterest" style={{ color: 'inherit' }} /></a></div>
+            <div className="me-3"><a href="https://www.tiktok.com/@qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><TiktokIcon title="Tiktok" /></a></div>
+            <div className="me-3"><a href="https://www.instagram.com/qceventschool" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><InstagramIcon title="Instagram" /></a></div>
+            <div className="me-3"><a href="https://www.facebook.com/QCEventPlanning" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><FacebookIcon title="Facebook" /></a></div>
+            <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><LinkedinIcon title="LinkedIn" /></a></div>
+            <div><a href="https://www.pinterest.com/QCEventSchool/" target="_blank" rel="noreferrer" style={{ color: 'inherit' }}><PinterestIcon title="Pinterest" style={{ color: 'inherit' }} /></a></div>
           </div>
         </div>
       </div>

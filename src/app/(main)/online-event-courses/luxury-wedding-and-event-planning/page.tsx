@@ -96,7 +96,7 @@ const LuxuryWeddingAndEventPlanningPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <IEWPImage height="166" className="mb-3" alt="Luxury Wedding and Event Specialist certification logo" />
+            <IEWPImage height="166" className="mb-3" title="Luxury Wedding and Event Specialist certification logo" />
             <h2 className="text-white mb-3">QC's Luxury Wedding &amp; Event Planning Certification</h2>
             <p className="mb-3">When you graduate from the Luxury Wedding and Event Planning course, you'll receive a certificate of completion and the professional designation of Luxury Wedding and Event Specialist. This certificate will assure your credibility in the industry to future clients and employers.</p>
             <p className="mb-0 small gold">Luxury Wedding and Event Specialist (LWES)</p>

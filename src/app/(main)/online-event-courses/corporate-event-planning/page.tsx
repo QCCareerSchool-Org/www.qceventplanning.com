@@ -97,7 +97,7 @@ const CorporateEventPlanningPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <ICPPImage height="166" className="mb-3" alt="International Corporate Event Planning Professional certification logo" />
+            <ICPPImage height="166" className="mb-3" title="International Corporate Event Planning Professional certification logo" />
             <h2 className="text-white mb-3">Corporate Event Planning Certification</h2>
             <p className="mb-3">Graduate from your Corporate Event Planning course and receive the designation of International Corporate Event Planning Professional (ICPP). Your certification improves your credibility as an event planner, and gives you a competitive edge over other professionals in your area.</p>
             <p className="mb-0 small gold">International Corporate Event Planning Professional (ICPP)™</p>

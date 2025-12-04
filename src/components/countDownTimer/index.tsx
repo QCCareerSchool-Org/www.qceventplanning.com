@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { Banner } from './banner';
 import { getParts } from './getParts';
 
-type Props = {
+interface Props {
   date: number;
   startDate: number;
   countdownStartDate: number;
@@ -14,7 +14,7 @@ type Props = {
   message: ReactNode;
   lastChanceMessage?: ReactNode;
   url?: string;
-};
+}
 
 export const CountDownTimer: FC<Props> = props => {
   if (props.endDate < props.countdownStartDate) {

@@ -12,7 +12,7 @@ import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/download.svg';
 
-type Props = {
+interface Props {
   successLocation: string;
   listId: number;
   telephoneListId?: number;
@@ -31,7 +31,7 @@ type Props = {
   button?: ReactElement;
   referrer: string | null;
   countryCode: string;
-};
+}
 
 export const BrevoForm: FC<Props> = props => {
   const id = useId();
@@ -156,11 +156,11 @@ export const BrevoForm: FC<Props> = props => {
   );
 };
 
-type InputProps = {
+interface InputProps {
   value: Value;
   onChange: ChangeEventHandler;
   name: string;
-};
+}
 
 const InputComponent = forwardRef<HTMLInputElement, DefaultInputComponentProps>((props, ref) => {
   const { value, onChange, name } = props as InputProps;

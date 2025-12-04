@@ -7,9 +7,9 @@ import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 
-type Props = {
+interface Props {
   countryCode: string;
-};
+}
 
 export const FooterColumn3: FC<Props> = ({ countryCode }) => (
   <>

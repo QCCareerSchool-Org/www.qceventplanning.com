@@ -7,9 +7,9 @@ import { CarouselNav } from './CarouselNav';
 import styles from './index.module.scss';
 import { SlideContainer } from './SlideContainer';
 
-type Props = {
+interface Props {
   slides: FC[];
-};
+}
 
 export const Carousel: FC<Props> = memo(({ slides }) => {
   const numPages = slides.length;

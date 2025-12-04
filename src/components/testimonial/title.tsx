@@ -1,15 +1,15 @@
 'use client';
 
 import type { FC } from 'react';
-
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+
 import type { Testimonial } from './data';
 import styles from './index.module.css';
 import { getCourseName } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   testimonial: Testimonial;
-};
+}
 
 export const Title: FC<Props> = ({ testimonial }) => {
   if (testimonial.courses.length === 0) {
@@ -20,18 +20,18 @@ export const Title: FC<Props> = ({ testimonial }) => {
     return <span className={styles.title}>{getCourseName(testimonial.courses[0])}</span>;
   }
 
-  const tooltip: FC = props => (
-    <Tooltip id="button-tooltip" {...props}>
-      Also a graduate of:
-      <ul className="m-0 ps-3">
-        {testimonial.courses.filter((c, i) => i >= 1).map(c => <li className="small" style={{ whiteSpace: 'nowrap' }} key={c}>{getCourseName(c)}</li>)}
-      </ul>
-    </Tooltip>
-  );
-
   return (
-    <OverlayTrigger placement="bottom" overlay={tooltip}>
+    <OverlayTrigger placement="bottom" overlay={<CustomTooltip testimonial={testimonial} />}>
       <span className={styles.title}>{getCourseName(testimonial.courses[0])}</span>
     </OverlayTrigger>
   );
 };
+
+const CustomTooltip: FC<{ testimonial: Testimonial }> = ({ testimonial, ...props }) => (
+  <Tooltip id="button-tooltip" {...props}>
+    Also a graduate of:
+    <ul className="m-0 ps-3">
+      {testimonial.courses.filter((c, i) => i >= 1).map(c => <li className="small" style={{ whiteSpace: 'nowrap' }} key={c}>{getCourseName(c)}</li>)}
+    </ul>
+  </Tooltip>
+);

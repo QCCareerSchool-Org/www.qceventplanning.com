@@ -3,7 +3,7 @@ import type { StaticImageData } from 'next/image';
 import * as Images from './images';
 import type { CourseCode } from '@/domain/courseCode';
 
-export type Testimonial = {
+export interface Testimonial {
   name: string;
   courses: CourseCode[];
   short: string[];
@@ -12,9 +12,9 @@ export type Testimonial = {
   imagePositionX?: number;
   imagePositionY?: number;
   stars: 0 | 1 | 2 | 3 | 4 | 5;
-};
+}
 
-export const testimonials: Record<string, Testimonial> = {
+export const testimonials: Record<string, Testimonial | undefined> = {
   'TE-0001': {
     name: 'Ayla Otto',
     courses: [ 'ep', 'ed' ],

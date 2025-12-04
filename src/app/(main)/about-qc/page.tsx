@@ -7,7 +7,6 @@ import BBBIcon from './bbb.svg';
 import { CoreValuesSection } from './coreValuesSection';
 import { MeetOurTeamSection } from './meetOurTeamSection';
 import styles from './page.module.scss';
-
 import ShieldIcon from './shield.svg';
 import type { PageComponent } from '@/app/serverComponent';
 import { ILEASection } from '@/components/ileaSection';

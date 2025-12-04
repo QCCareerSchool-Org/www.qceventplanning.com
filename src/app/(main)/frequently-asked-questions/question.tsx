@@ -1,8 +1,8 @@
 import type { FC, PropsWithChildren } from 'react';
 
-type Props = {
+interface Props {
   heading: string;
-};
+}
 
 export const Question: FC<PropsWithChildren<Props>> = ({ heading, children }) => (
   <>

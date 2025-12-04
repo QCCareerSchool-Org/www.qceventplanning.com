@@ -21,7 +21,7 @@ const names = {
   eb: 'Accelerate Your Business Workshop',
   fl: 'Festivals and Live Events Course',
   pe: 'Promotional Event Planning',
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const baseUrl = 'https://www.qceventplanning.com';
 
@@ -38,7 +38,7 @@ const urls = {
   eb: `${baseUrl}/online-event-courses/accelerate-your-business`,
   fl: `${baseUrl}/online-event-courses/festivals-and-live-events`,
   pe: `${baseUrl}/online-event-courses/promotional-event-planning`,
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const descriptions = {
   ep: 'Become a certified event and wedding planner with QC Event School\'s online course! Learn to plan any event, gain industry skills and launch a successful career. Start today!',
@@ -53,7 +53,7 @@ const descriptions = {
   fl: 'Build a career in the exciting world of live events with QC Event School\'s online course. Learn to plan concerts, sports entertainment, festivals and more. Start today! ',
   pe: 'With QC Event School\'s online course, you\'ll learn to plan impactful promotional events that impress corporate clients, from product launches to sales campaigns. Start today!',
   ve: 'Expand your services, plan engaging online events and reach clients all over the world with QC\'s Virtual Event Planning training.',
-} as const satisfies { readonly [c in CourseCode]: string | undefined };
+} as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 const certifications = {
   ep: 'International Event and Wedding Planning Professional™',
@@ -68,7 +68,7 @@ const certifications = {
   fl: 'International Festivals and Live Events Planning Professional™',
   pe: 'Promotional Events Specialist',
   ve: undefined,
-} as const satisfies { readonly [c in CourseCode]: string | undefined };
+} as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 const subjects = {
   ep: [
@@ -138,7 +138,7 @@ const subjects = {
     'Trends and Technology',
   ],
   ve: undefined,
-} as const satisfies { readonly [c in CourseCode]: readonly string[] | undefined };
+} as const satisfies Readonly<Record<CourseCode, readonly string[] | undefined>>;
 
 const workloads = {
   ep: '20 hours of reading, 6 hours of video, and 6 hours of assignments, usually completed over 4 to 6 months',
@@ -153,7 +153,7 @@ const workloads = {
   fl: '7 hours of reading and 5 hours of assignments, usually completed over 4 to 6 months',
   pe: 'usually completed over 4 to 6 months',
   ve: '91 minutes of reading, 51 minutes of assignments, and 39 minutes of quizzes, usually completed over 4 to 6 months',
-} as const satisfies { readonly [c in CourseCode]: string | undefined };
+} as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 export const getCourseName = (c: CourseCode): string => {
   return names[c];

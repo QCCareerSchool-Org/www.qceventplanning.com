@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
 };
 
-const ContactUsPage: PageComponent = () => {
-  const { countryCode } = getData();
+const ContactUsPage: PageComponent = async () => {
+  const { countryCode } = await getData();
   const telephoneNumber = getTelephoneNumber(countryCode);
 
   return (

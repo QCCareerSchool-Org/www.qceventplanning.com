@@ -2,10 +2,10 @@ import type { CSSProperties, FC } from 'react';
 
 import styles from './initialCircle.module.css';
 
-type Props = {
+interface Props {
   initial: string;
   backgroundColor: CSSProperties['backgroundColor'];
-};
+}
 
 export const InitialCircle: FC<Props> = ({ initial, backgroundColor }) => {
   if (initial.length > 1) {

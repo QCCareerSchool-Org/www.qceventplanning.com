@@ -34,8 +34,8 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
-const HomePage: PageComponent = () => {
-  const { countryCode } = getData();
+const HomePage: PageComponent = async () => {
+  const { countryCode } = await getData();
   const date = new Date().getTime();
 
   return (

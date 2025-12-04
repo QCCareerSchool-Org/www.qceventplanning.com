@@ -8,9 +8,9 @@ import LucieDemersImage from '@/components/employees/lucie-demers.jpg';
 import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 import { ImageCircle } from '@/components/imageCircle';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 const imageSize = 200;
 

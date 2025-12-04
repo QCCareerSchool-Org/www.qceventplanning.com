@@ -5,9 +5,9 @@ import BriefcaseIcon from './icons/briefcase.svg';
 import RulerIcon from './icons/ruler.svg';
 import styles from './page.module.scss';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 const iconHeight = 32;
 

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-
 import type { Course, EducationalOrganization, ItemList, WithContext } from 'schema-dts';
+
 import { OnlineCourseSection } from './onlineCourseSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
