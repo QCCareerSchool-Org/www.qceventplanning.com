@@ -1,5 +1,5 @@
 import type { NextConfig } from 'next';
-import type { Configuration } from 'webpack'
+import type { Configuration } from 'webpack';
 
 const nextConfig: NextConfig = {
   webpack(config: Configuration) {
@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
 
     return config;
   },
-   sassOptions: {
+  sassOptions: {
     quietDeps: true, // hide deprecation warnings from node_modules
     // If your sass-loader / Sass version supports it, you can also do:
     silenceDeprecations: [ 'import', 'global-builtin' ],

@@ -29,17 +29,15 @@
     }
   },
   "include": [
-    "svg-override.d.ts",
     "next-env.d.ts",
+    "svg-override.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
     "**/*.mts",
-    "eslint.config.mjs",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "next.config.ts"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",

@@ -10,8 +10,8 @@ import { v1 } from 'uuid';
 
 import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
-import DownloadIcon from '@/components/download.svg';
 import { JavasciptInput } from './javascriptInput';
+import DownloadIcon from '@/components/download.svg';
 
 interface Props {
   successLocation: string;
