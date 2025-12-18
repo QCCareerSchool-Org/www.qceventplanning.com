@@ -27,6 +27,8 @@ export const metadata: Metadata = {
 const BogoOfferPage: PageComponent = async () => {
   const { countryCode } = await getData();
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
+  const now = Date.now();
+  const isHolidayPromo = now >= Date.UTC(2025, 11, 22, 8) && now < Date.UTC(2026, 1, 1, 8);
 
   return (
     <>
@@ -39,7 +41,13 @@ const BogoOfferPage: PageComponent = async () => {
             <div className="col-12 col-md-10 col-lg-9 col-xl-8 text-center">
               <div className="mb-3"><Subtitle>Limited-Time Offer</Subtitle></div>
               <h1 className="h2 mb-4">Get Two Specialty Courses Free!</h1>
-              <p className="lead mb-4">Enroll in any event planning course and get <strong>{discount} off your tuition plus two specialty courses free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 30,000+ students and graduates start their own successful event planning businesses!</strong></p>
+              <p className="lead mb-4">
+                {isHolidayPromo ? (
+                  <>When you enroll in any event planning course, you&apos;ll get two specialty courses free&mdash;giving you the power to design the career path that inspires you. This is your moment to take control of your future and step into the industry with confidence. More than 30,000 QC graduates have done it, and you&apos;re just one decision away from joining them.</>
+                ) : (
+                  <>Enroll in any event planning course and get <strong>{discount} off your tuition plus two specialty courses free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 30,000+ students and graduates start their own successful event planning businesses!</strong></>
+                )}
+              </p>
               <Link href="#courses" className="btn btn-outline-light"><QIcon height="16" style={{ position: 'relative', top: -1, marginRight: '0.5rem' }} />View Courses</Link>
             </div>
           </div>
