@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { CyberMonday2025 } from '@/components/promos/cyberWeek2025';
+import { BoxingDay2025 } from '@/components/promos/boxingDay2025';
 
 interface Props {
   date: number;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const CurrentPromotion: FC<Props> = ({ date, countryCode }) => {
-  if (date >= Date.UTC(2025, 11, 1, 5) && date < Date.UTC(2025, 11, 6, 8)) { // 2025-12-01T00:00 (05:00 UTC) to 2025-12-06T03:00 (08:00 UTC)
-    return <CyberMonday2025 countryCode={countryCode} />;
+  if (date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8)) { // 2025-12-26T03:00 (8:00 UTC) to 2026-01-03T03:00 (8:00 UTC)
+    return <BoxingDay2025 countryCode={countryCode} />;
   }
 };
