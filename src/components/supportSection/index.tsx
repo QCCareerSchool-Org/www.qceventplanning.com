@@ -8,9 +8,14 @@ import ChatIcon from '@/components/chat.svg';
 
 interface Props {
   showLink?: boolean;
+  isNewYearsPromo?: boolean;
 }
 
-export const SupportSection: FC<Props> = ({ showLink }) => (
+const defaultCopy = "QC's dedicated team is here to help you select the right course, navigate your materials, and stay on track to reach your career goals. Available seven days a week by phone, email, or live chat, we are here to ensure you get the support you need\u2014whether it's advice, troubleshooting, or planning your next step.";
+
+const newYearsCopy = "QC's dedicated team is here to help you take control of your future—guiding you toward the right course, navigating your materials, and staying on track with your goals. Available seven days a week by phone, email, or live chat, we make sure you always have the support you need to keep moving forward.";
+
+export const SupportSection: FC<Props> = ({ showLink, isNewYearsPromo }) => (
   <section className={`${styles.section} text-white`}>
     <div className="container">
       <div className="row align-items-center justify-content-center g-5 g-xl-s">
@@ -19,7 +24,7 @@ export const SupportSection: FC<Props> = ({ showLink }) => (
         </div>
         <div className="col-12 col-lg-7">
           <h2 className="mb-4">Real Support &amp; Guidance, Every Step of the Way</h2>
-          <p className="lead mb-0">QC's dedicated team is here to help you select the right course, navigate your materials, and stay on track to reach your career goals. Available seven days a week by phone, email, or live chat, we are here to ensure you get the support you need&mdash;whether it's advice, troubleshooting, or planning your next step.</p>
+          <p className="lead mb-0">{isNewYearsPromo ? newYearsCopy : defaultCopy}</p>
           {showLink && <Link href="/contact-us" className="btn btn-primary mt-4"><ChatIcon height="16" className="me-2" />Talk to Us Today</Link>}
         </div>
       </div>

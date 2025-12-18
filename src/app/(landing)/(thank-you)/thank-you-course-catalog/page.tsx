@@ -37,6 +37,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   const fbp = cookieStore.get('_fbp')?.value;
 
   const date = new Date().getTime();
+  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8);
 
   try {
     if (leadId && emailAddress) {
@@ -63,7 +64,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
-      <SupportSection />
+      <SupportSection isNewYearsPromo={isNewYearsPromo} />
       <section className="bg-navy text-white">
         <div className="container">
           <div className="row justify-content-center text-center">
