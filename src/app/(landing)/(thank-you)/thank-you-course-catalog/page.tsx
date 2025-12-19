@@ -37,7 +37,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   const fbp = cookieStore.get('_fbp')?.value;
 
   const date = new Date().getTime();
-  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8);
+  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 17, 8);
 
   try {
     if (leadId && emailAddress) {

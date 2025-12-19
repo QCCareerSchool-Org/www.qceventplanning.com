@@ -13,7 +13,7 @@ interface Props {
 
 const defaultCopy = "QC's dedicated team is here to help you select the right course, navigate your materials, and stay on track to reach your career goals. Available seven days a week by phone, email, or live chat, we are here to ensure you get the support you need\u2014whether it's advice, troubleshooting, or planning your next step.";
 
-const newYearsCopy = "QC's dedicated team is here to help you take control of your future—guiding you toward the right course, navigating your materials, and staying on track with your goals. Available seven days a week by phone, email, or live chat, we make sure you always have the support you need to keep moving forward.";
+const newYearsCopy = "QC's dedicated team is here to help you take control of your future\u2014guiding you toward the right course, navigating your materials, and staying on track with your goals. Available seven days a week by phone, email, or live chat, we make sure you always have the support you need to keep moving forward.";
 
 export const SupportSection: FC<Props> = ({ showLink, isNewYearsPromo }) => (
   <section className={`${styles.section} text-white`}>
