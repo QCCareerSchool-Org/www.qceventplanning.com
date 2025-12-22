@@ -1,23 +1,39 @@
 import 'server-only';
 
-import { randomInt } from 'crypto';
-import { cookies, headers } from 'next/headers';
+import { headers } from 'next/headers';
 
-interface Data {
-  testGroup: number;
+import { getParam } from './getParam';
+
+interface BaseData {
   countryCode: string;
   provinceCode: string | null;
 }
 
-export const getData = async (): Promise<Data> => {
-  const [ headerList, cookieStore ] = await Promise.all([ headers(), cookies() ]);
+interface DataWithDate extends BaseData {
+  date: number;
+}
 
+export function getServerData(): Promise<BaseData>;
+
+export function getServerData(
+  searchParams: Promise<Record<string, string | string[] | undefined>>,
+): Promise<DataWithDate>;
+
+export async function getServerData(
+  searchParams?: Promise<Record<string, string | string[] | undefined>>,
+): Promise<BaseData | DataWithDate> {
+  const headerList = await headers();
   const countryCode = headerList.get('x-vercel-ip-country') ?? 'US';
   const provinceCode = headerList.get('x-vercel-ip-country-region');
+  let date = Date.now();
 
-  const testGroupCookie = parseInt(cookieStore.get('testGroup')?.value ?? '', 10);
+  if (searchParams) {
+    const parameters = await searchParams;
+    const dateOverrideParameter = getParam(parameters.date);
+    if (dateOverrideParameter) {
+      date = Date.parse(dateOverrideParameter);
+    }
+  }
 
-  const testGroup = isNaN(testGroupCookie) ? randomInt(1, 12) : testGroupCookie;
-
-  return { testGroup, countryCode, provinceCode };
+  return { countryCode, provinceCode, date };
 };

@@ -3,10 +3,10 @@ import type { FC } from 'react';
 
 import styles from './footer.module.scss';
 import { TelephoneLink } from '@/components/telephoneLink';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 
 export const Footer: FC = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getServerData();
   return (
     <footer className={styles.footer}>
       <div className="container text-center">

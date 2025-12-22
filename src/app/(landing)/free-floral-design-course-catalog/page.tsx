@@ -22,7 +22,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { DarcieGarcia } from '@/components/tutorImages/darcieGarcia';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import type { CourseCode } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -39,8 +39,7 @@ const testimonialIds = [ 'TE-0020', 'TE-0021', 'TE-0012', 'TE-0022', 'TE-0004', 
 
 const FreeFloralDesignCatalogPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
-  const { countryCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, date } = await getServerData(props.searchParams);
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);

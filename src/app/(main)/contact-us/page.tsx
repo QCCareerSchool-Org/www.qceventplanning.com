@@ -8,7 +8,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 import { getTelephoneNumber } from '@/lib/telephone';
 
 export const metadata: Metadata = {
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
 };
 
-const ContactUsPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+const ContactUsPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
   const telephoneNumber = getTelephoneNumber(countryCode);
 
   return (

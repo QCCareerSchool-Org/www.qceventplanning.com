@@ -16,10 +16,10 @@ import TiktokIcon from './icons/tiktok.svg';
 import YoutubeIcon from './icons/youtube.svg';
 import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 
 export const Footer: FC = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getServerData();
   const address = getAddress(countryCode);
 
   return (

@@ -7,7 +7,7 @@ import { Part } from './part';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 import { withSuspense } from '@/withSuspense';
 
 interface Props {
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const PaymentPlanSectionBase: FC<Props> = async ({ courseCodes, className }) => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getServerData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

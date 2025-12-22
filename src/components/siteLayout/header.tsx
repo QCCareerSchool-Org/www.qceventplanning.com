@@ -4,7 +4,7 @@ import { MainNav } from '../../app/(main)/mainNav';
 // import { CanadaHeader } from '@/components/canadaHeader';
 import { CountDownTimer } from '@/components/countDownTimer';
 import { gbpCountry } from '@/domain/currency';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 
 const bannerStartDate = Date.UTC(2025, 11, 1, 5); // 2025-12-01T00:00 (05:00 UTC)
 const bannerCountdownStartDate = Date.UTC(2025, 11, 5, 8); // 2025-12-05T03:00 (08:00 UTC)
@@ -12,7 +12,7 @@ const bannerEndDate = Date.UTC(2025, 11, 6, 8); // 2025-12-06T03:00 (8:00 UTC)
 
 export const Header: FC = async () => {
   const date = new Date().getTime();
-  const { countryCode } = await getData();
+  const { countryCode } = await getServerData();
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
   return (
