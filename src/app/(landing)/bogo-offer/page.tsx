@@ -13,7 +13,7 @@ import { Subtitle } from '@/components/subtitle';
 import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
@@ -24,12 +24,11 @@ export const metadata: Metadata = {
   },
 };
 
-const BogoOfferPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+const BogoOfferPage: PageComponent = async props => {
+  const { countryCode, date } = await getServerData(props.searchParams);
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
-  const now = Date.now();
-  const holidayWindow = now >= Date.UTC(2025, 11, 26, 8) && now < Date.UTC(2026, 0, 3, 8);
-  const januaryPromoWindow = now >= Date.UTC(2026, 0, 7, 8) && now < Date.UTC(2026, 0, 17, 8);
+  const holidayWindow = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8);
+  const januaryPromoWindow = date >= Date.UTC(2026, 0, 7, 8) && date < Date.UTC(2026, 0, 17, 8);
   const promoBenefit = januaryPromoWindow ? 'two specialty courses free plus $100 off' : 'two specialty courses free';
 
   return (

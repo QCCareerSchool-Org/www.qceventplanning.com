@@ -17,7 +17,7 @@ import { HowYoullLearnSection } from '@/components/howYoullLearnSection';
 import { PromoSection } from '@/components/promoSection';
 import { StatsSection } from '@/components/statsSection/statsSection';
 import { SupportSection } from '@/components/supportSection';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -32,8 +32,7 @@ const brevoEmailTemplateId = 32;
 
 const FreeCatalogPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
-  const { countryCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, date } = await getServerData(props.searchParams);
 
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);

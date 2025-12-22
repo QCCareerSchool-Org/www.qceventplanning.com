@@ -11,7 +11,7 @@ import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import CheckIcon from '@/components/check.svg';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 
 
 const WebinarPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
-  const { countryCode } = await getData();
+  const { countryCode } = await getServerData(props.searchParams);
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);

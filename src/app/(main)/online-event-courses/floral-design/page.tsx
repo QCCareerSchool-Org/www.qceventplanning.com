@@ -27,7 +27,7 @@ import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
 };
 
-const FloralDesignPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+const FloralDesignPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
 
   return (
     <div className={styles.page}>

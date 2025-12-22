@@ -25,7 +25,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getData';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
 
 export const metadata: Metadata = {
@@ -34,9 +34,8 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
-const HomePage: PageComponent = async () => {
-  const { countryCode } = await getData();
-  const date = new Date().getTime();
+const HomePage: PageComponent = async props => {
+  const { countryCode, date } = await getServerData(props.searchParams);
 
   return (
     <>

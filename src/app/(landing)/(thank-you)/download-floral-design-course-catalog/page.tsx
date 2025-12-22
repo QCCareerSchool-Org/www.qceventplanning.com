@@ -13,6 +13,7 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
+import { getServerData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 const courseCode: CourseCode = 'fd';
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
+  const { date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
@@ -40,7 +42,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   try {
     if (leadId && emailAddress) {
-      await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+      await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
     }
   } catch (err) {
     console.error(err);
