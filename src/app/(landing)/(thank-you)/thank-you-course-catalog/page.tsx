@@ -58,7 +58,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         leadId={leadId}
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
-      <Header logoLink showBanner />
+      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
       <ThankYouSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={emailAddress} telephoneListId={53} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />

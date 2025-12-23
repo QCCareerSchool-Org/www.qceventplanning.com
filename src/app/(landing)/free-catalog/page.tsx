@@ -85,7 +85,7 @@ const FreeCatalogPage: PageComponent = async props => {
       <JoinQCSection />
       <GoogleReviewSection />
       <CertificationSection />
-      <SupportSection />
+      <SupportSection date={date} />
       <BottomSection>
         <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
         <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>
