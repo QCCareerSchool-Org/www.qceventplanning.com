@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import HeroImageDefault from './desktop.jpg';
 import HeroImageHundredUK from './100-desktop-uk.jpg';
 import HeroImageHundredDefault from './100-off-desktop.jpg';
+import HeroImageDefault from './desktop.jpg';
 import { gbpCountry } from '@/domain/currency';
+import { newYear2026 } from '@/lib/promotionPeriods';
 
 interface Props {
   countryCode: string;
@@ -12,8 +13,7 @@ interface Props {
 }
 
 export const NewYears2025: FC<Props> = ({ countryCode, date }) => {
-  const hundredOffWindow = date >= Date.UTC(2026, 0, 7, 8) && date < Date.UTC(2026, 0, 17, 8);
-  const heroImageSrc = hundredOffWindow
+  const heroImageSrc = newYear2026.contains(date)
     ? (gbpCountry(countryCode) ? HeroImageHundredUK : HeroImageHundredDefault)
     : HeroImageDefault;
 
