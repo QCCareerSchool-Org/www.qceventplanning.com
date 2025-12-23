@@ -40,7 +40,10 @@ export const Header: FC<Props> = ({ countryCode, date }) => {
         endDate={dates[2]}
         message={(
           <span style={{ textTransform: 'uppercase' }}>
-            <span className="d-none d-lg-inline">Don't Miss Out—</span> Get <strong>TWO</strong> Free Specialty Courses Plus {discount} Off<br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
+            {endOfYear2025.contains(date)
+              ? <><span className="d-none d-lg-inline">Don't Miss Out—</span> Get <strong>two free courses</strong><br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button></>
+              : <><span className="d-none d-lg-inline">Don't Miss Out—</span> Get <strong>two free courses</strong> and {discount} Off<br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button></>
+            }
           </span>
         )}
       />}
