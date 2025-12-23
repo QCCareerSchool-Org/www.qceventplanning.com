@@ -41,7 +41,7 @@ const BogoOfferPage: PageComponent = async props => {
               <p className="lead mb-4">
                 {(endOfYear2025.contains(date) || newYear2026.contains(date))
                   ? (
-                    <>When you enroll in any event planning course, you&apos;ll get
+                    <>When you enroll in any event planning course, you&apos;ll get{' '}
                       <strong>
                         {newYear2026.contains(date)
                           ? 'two specialty courses free plus $100 off'
