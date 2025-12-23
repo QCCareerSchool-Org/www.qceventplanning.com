@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { NewYears2025 } from '@/components/promos/newYears2025';
-import { PromotionPeriod } from '@/lib/promotionPeriod';
+import { EndOfYear2025 } from '@/components/promos/endOfYear2025';
+import { NewYear2026 } from '@/components/promos/newYear2026';
 import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 interface Props {
@@ -9,10 +9,10 @@ interface Props {
   countryCode: string;
 }
 
-const span = PromotionPeriod.span(endOfYear2025, newYear2026);
-
 export const CurrentPromotion: FC<Props> = ({ date, countryCode }) => {
-  if (span.contains(date)) {
-    return <NewYears2025 countryCode={countryCode} date={date} />;
+  if (endOfYear2025.contains(date)) {
+    return <NewYear2026 countryCode={countryCode} />;
+  } else if (newYear2026.contains(date)) {
+    return <EndOfYear2025 />;
   }
 };

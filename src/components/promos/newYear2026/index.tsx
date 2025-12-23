@@ -3,19 +3,16 @@ import type { FC } from 'react';
 
 import HeroImageHundredUK from './100-desktop-uk.jpg';
 import HeroImageHundredDefault from './100-off-desktop.jpg';
-import HeroImageDefault from './desktop.jpg';
 import { gbpCountry } from '@/domain/currency';
-import { newYear2026 } from '@/lib/promotionPeriods';
 
 interface Props {
   countryCode: string;
-  date: number;
 }
 
-export const NewYears2025: FC<Props> = ({ countryCode, date }) => {
-  const heroImageSrc = newYear2026.contains(date)
-    ? (gbpCountry(countryCode) ? HeroImageHundredUK : HeroImageHundredDefault)
-    : HeroImageDefault;
+export const NewYear2026: FC<Props> = ({ countryCode }) => {
+  const heroImageSrc = gbpCountry(countryCode)
+    ? HeroImageHundredUK
+    : HeroImageHundredDefault;
 
   return (
     <section>
