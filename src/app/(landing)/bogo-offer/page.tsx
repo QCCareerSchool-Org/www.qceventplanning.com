@@ -54,7 +54,7 @@ const BogoOfferPage: PageComponent = async props => {
                   <>Enroll in any event planning course and get <strong>{discount} off your tuition plus two specialty courses free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 30,000+ students and graduates start their own successful event planning businesses!</strong></>
                 )}
               </p>
-              <Link href="#courses" className="btn btn-outline-light"><QIcon height="16" style={{ position: 'relative', top: -1, marginRight: '0.5rem' }} />View Courses</Link>
+              <Link href={bogoEnrollLink} className="btn btn-outline-light"><QIcon height="16" style={{ position: 'relative', top: -1, marginRight: '0.5rem' }} />Enroll Now</Link>
             </div>
           </div>
         </div>
