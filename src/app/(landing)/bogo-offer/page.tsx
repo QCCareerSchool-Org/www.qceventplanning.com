@@ -16,13 +16,11 @@ import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getData';
 import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
-const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
+const bogoEnrollLink = 'https://enroll.qceventplanning.com/bogo-1';
 
 export const metadata: Metadata = {
   title: 'Get Two Specialty Courses Free!',
-  alternates: {
-    canonical: '/bogo-offer',
-  },
+  alternates: { canonical: '/bogo-offer' },
 };
 
 const BogoOfferPage: PageComponent = async props => {
