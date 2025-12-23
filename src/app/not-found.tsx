@@ -4,14 +4,16 @@ import Link from 'next/link';
 import styles from './not-found.module.scss';
 import type { PageComponent } from './serverComponent';
 import { SiteLayout } from '@/components/siteLayout';
+import { getServerData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
 };
 
-const NotFoundPage: PageComponent = () => {
+const NotFoundPage: PageComponent = async props => {
+  const { countryCode, date } = await getServerData(props.searchParams);
   return (
-    <SiteLayout>
+    <SiteLayout date={date} countryCode={countryCode}>
       <div className={styles.wrapper}>
         <h1>Page Not Found</h1>
         <p>Sorry, we could not find the requested page</p>

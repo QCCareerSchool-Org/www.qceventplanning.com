@@ -5,7 +5,8 @@ import type { FC } from 'react';
 import styles from './index.module.scss';
 import StudentSupportImage from './student-support.jpg';
 import ChatIcon from '@/components/chat.svg';
-import { endOfYear2025, newYear2026, PromotionPeriod } from '@/lib/promotionPeriods';
+import { PromotionPeriod } from '@/lib/promotionPeriod';
+import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 interface Props {
   showLink?: boolean;

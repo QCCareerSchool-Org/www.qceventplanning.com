@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 
 import { NewYears2025 } from '@/components/promos/newYears2025';
-import { endOfYear2025, newYear2026, PromotionPeriod } from '@/lib/promotionPeriods';
+import { PromotionPeriod } from '@/lib/promotionPeriod';
+import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 interface Props {
   date: number;

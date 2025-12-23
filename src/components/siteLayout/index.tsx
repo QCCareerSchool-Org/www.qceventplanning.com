@@ -7,10 +7,15 @@ import { BrevoConversations } from '@/scripts/brevoCoversations';
 
 import '@/app/bootstrap.scss';
 
-export const SiteLayout: FC<PropsWithChildren> = ({ children }) => {
+interface Props {
+  countryCode: string;
+  date: number;
+}
+
+export const SiteLayout: FC<PropsWithChildren<Props>> = ({ countryCode, date, children }) => {
   return (
     <>
-      <Header />
+      <Header countryCode={countryCode} date={date} />
       <main className="flex-shrink-0">{children}</main>
       <Footer />
       {process.env.BREVO_CONVERSATIONS_ID && <BrevoConversations conversationsId={process.env.BREVO_CONVERSATIONS_ID} />}
