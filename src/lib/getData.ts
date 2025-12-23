@@ -27,7 +27,7 @@ export async function getServerData(
   const provinceCode = headerList.get('x-vercel-ip-country-region');
   let date = Date.now();
 
-  if (searchParams) {
+  if (searchParams && process.env.VERCEL_ENV !== 'production') {
     const parameters = await searchParams;
     const dateOverrideParameter = getParam(parameters.date);
     if (dateOverrideParameter) {

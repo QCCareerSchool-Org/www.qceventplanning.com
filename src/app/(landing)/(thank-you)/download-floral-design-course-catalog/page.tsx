@@ -64,7 +64,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <DownloadSection countryCode={countryCode} heroSrc={HeroImage} course="fd" leadId={leadId} telephoneListId={53} />
       <GoogleReviewSection className="bg-light" courseCode={courseCode} />
       <ILEASection />
-      <SupportSection />
+      <SupportSection date={date} />
       <section className="bg-navy text-white">
         <div className="container">
           <div className="row justify-content-center text-center">

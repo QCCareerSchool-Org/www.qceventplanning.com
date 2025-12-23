@@ -38,8 +38,6 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
-  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 17, 8);
-
   try {
     if (leadId && emailAddress) {
       await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
@@ -60,12 +58,12 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         leadId={leadId}
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
-      <Header logoLink showBanner />
+      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
       <ThankYouSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={emailAddress} telephoneListId={53} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
-      <SupportSection isNewYearsPromo={isNewYearsPromo} />
+      <SupportSection date={date} />
       <section className="bg-navy text-white">
         <div className="container">
           <div className="row justify-content-center text-center">

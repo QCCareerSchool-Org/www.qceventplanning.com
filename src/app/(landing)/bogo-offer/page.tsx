@@ -14,6 +14,7 @@ import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getData';
+import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
@@ -27,9 +28,6 @@ export const metadata: Metadata = {
 const BogoOfferPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
-  const holidayWindow = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8);
-  const januaryPromoWindow = date >= Date.UTC(2026, 0, 7, 8) && date < Date.UTC(2026, 0, 17, 8);
-  const promoBenefit = januaryPromoWindow ? 'two specialty courses free plus $100 off' : 'two specialty courses free';
 
   return (
     <>
@@ -43,13 +41,23 @@ const BogoOfferPage: PageComponent = async props => {
               <div className="mb-3"><Subtitle>Limited-Time Offer</Subtitle></div>
               <h1 className="h2 mb-4">Get Two Specialty Courses Free!</h1>
               <p className="lead mb-4">
-                {(holidayWindow || januaryPromoWindow) ? (
-                  <>When you enroll in any event planning course, you&apos;ll get <strong>{promoBenefit}</strong>&mdash;giving you the power to design the career path that inspires you. This is your moment to take control of your future and step into the industry with confidence. More than 30,000 QC graduates have done it, and you&apos;re just one decision away from joining them.</>
-                ) : (
-                  <>Enroll in any event planning course and get <strong>{discount} off your tuition plus two specialty courses free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 30,000+ students and graduates start their own successful event planning businesses!</strong></>
-                )}
+                {(endOfYear2025.contains(date) || newYear2026.contains(date))
+                  ? (
+                    <>When you enroll in any event planning course, you&apos;ll get
+                      <strong>
+                        {newYear2026.contains(date)
+                          ? 'two specialty courses free plus $100 off'
+                          : 'two specialty courses free'
+                        }
+                      </strong>
+                      &mdash;giving you the power to design the career path that inspires you. This is your moment to take control of your future and step into the industry with confidence. More than 30,000 QC graduates have done it, and you&apos;re just one decision away from joining them.
+                    </>
+                  )
+                  : (
+                    <>Enroll in any event planning course and get <strong>{discount} off your tuition plus two specialty courses free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 30,000+ students and graduates start their own successful event planning businesses!</strong></>
+                  )}
               </p>
-              <Link href="#courses" className="btn btn-outline-light"><QIcon height="16" style={{ position: 'relative', top: -1, marginRight: '0.5rem' }} />View Courses</Link>
+              <Link href={bogoEnrollLink} className="btn btn-outline-light"><QIcon height="16" style={{ position: 'relative', top: -1, marginRight: '0.5rem' }} />Enroll Now</Link>
             </div>
           </div>
         </div>
@@ -70,7 +78,7 @@ const BogoOfferPage: PageComponent = async props => {
         </div>
       </section>
       <OnlineCourseSection className="bg-light" />
-      <SupportSection />
+      <SupportSection date={date} />
       <GetStartedSection
         title="Get Started Today"
         text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner"

@@ -139,7 +139,7 @@ const HomePage: PageComponent = async props => {
         </div>
       </section>
       <VirtualCommunitySection />
-      <SupportSection showLink />
+      <SupportSection date={date} showLink />
       <GoogleReviewSection />
       <GetStartedSection
         title="Ready to Start Your Event & Wedding Planning Career?"
