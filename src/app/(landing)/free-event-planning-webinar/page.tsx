@@ -38,7 +38,7 @@ const WebinarPage: PageComponent = async props => {
 
   return (
     <>
-      <Header logoLink buttonContent={<><span className={styles.headerButtonSmallText}>Watch Now</span><span className={styles.headerButtonLargeText}><span className="text-primary"><CheckIcon height="16" className="me-2" style={{ position: 'relative', top: -1 }} /></span>Watch the Webinar</span></>} />
+      <Header buttonContent={<><span className={styles.headerButtonSmallText}>Watch Now</span><span className={styles.headerButtonLargeText}><span className="text-primary"><CheckIcon height="16" className="me-2" style={{ position: 'relative', top: -1 }} /></span>Watch the Webinar</span></>} />
       <HeroSection gclid={gclid} msclkid={msclkid} utmSource={utmSource} utmMedium={utmMedium} utmCampaign={utmCampaign} utmContent={utmContent} utmTerm={utmTerm} referrer={referrer} countryCode={countryCode} />
       <MeetInstructorSection />
       <WhatYoullLearnSection />

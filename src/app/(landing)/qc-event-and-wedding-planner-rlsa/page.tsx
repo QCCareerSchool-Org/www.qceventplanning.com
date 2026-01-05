@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const RSLAPage: PageComponent = () => {
   return (
     <>
-      <Header logoLink buttonHref="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
+      <Header buttonHref="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
       <section className="p-0" />
       <section className="text-white">
         <Image src={HeroImage} alt="" priority fill placeholder="blur" style={{ objectFit: 'cover' }} />
@@ -257,10 +257,9 @@ const RSLAPage: PageComponent = () => {
         </div>
       </section>
       <TestimonialSection id="TE-0002" />
-      <BottomSection>
+      <BottomSection buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com">
         <h2 className="mb-4">Ready to Start Your Event & Wedding Planning Career?</h2>
         <p className="lead mb-4">Become Professionally Certified with QC's Online Event Planning Training</p>
-        <Link href="https://enroll.qceventplanning.com" className="btn btn-lg btn-primary">Enroll Now</Link>
       </BottomSection>
     </>
   );

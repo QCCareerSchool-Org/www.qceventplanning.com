@@ -39,7 +39,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ nonce, setNonce ] = useState(() => v1());
   const randomName = useId();
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
-  const [ token, setToken ] = useState<string>();
+  const [ token, setToken ] = useState('');
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
