@@ -146,7 +146,7 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
       )}
       <AboutSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <BottomSection buttonContent="Get Your Free Catalog">
+      <BottomSection>
         <h2 className="mb-3">Start Your Floral Design Career Today!</h2>
         <p className="lead mb-5">Request a free course preview today to learn more about how you can become a professional Floral Designer with QC's online training! The preview includes a course curriculum, tuition information and your career outlook.</p>
       </BottomSection>

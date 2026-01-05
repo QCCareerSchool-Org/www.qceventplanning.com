@@ -85,7 +85,7 @@ const FreeCatalogPage: PageComponent = async props => {
       <GoogleReviewSection />
       <CertificationSection />
       <SupportSection date={date} />
-      <BottomSection buttonContent="Get Your Free Catalog">
+      <BottomSection>
         <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
       </BottomSection>
     </div>

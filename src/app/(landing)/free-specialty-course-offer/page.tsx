@@ -145,7 +145,7 @@ const FreeSpecialtyCourseOfferPage: PageComponent = () => (
     </section>
     <ILEASection />
     <TestimonialSection id="TE-0006" />
-    <BottomSection buttonContent="Get Your Free Catalog" buttonHref={enrollLink}>
+    <BottomSection buttonHref={enrollLink}>
       <h2 className="mb-4">Get Started Today</h2>
       <p className="lead mb-4">Enroll Online and Start on Your Path to Becoming a Certified Event Planner</p>
     </BottomSection>
