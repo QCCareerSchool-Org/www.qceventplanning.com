@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import Link from 'next/link';
 
 import { BottomSection } from '../bottomSection';
 import { Header } from '../header';
@@ -46,7 +45,7 @@ const FreeCatalogPage: PageComponent = async props => {
 
   return (
     <div className={styles.freeCatalog}>
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <HomeHeroImage />
         <div className="container">
@@ -86,9 +85,8 @@ const FreeCatalogPage: PageComponent = async props => {
       <GoogleReviewSection />
       <CertificationSection />
       <SupportSection date={date} />
-      <BottomSection>
+      <BottomSection buttonContent="Get Your Free Catalog">
         <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
-        <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>
       </BottomSection>
     </div>
   );

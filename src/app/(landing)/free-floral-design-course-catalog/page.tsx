@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { BottomSection } from '../bottomSection';
 import { CertificationSection } from '../free-catalog//certificationSection';
@@ -52,7 +51,7 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
 
   return (
     <div className={styles.freeCatalog}>
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} />
         <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />
@@ -147,10 +146,9 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
       )}
       <AboutSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <BottomSection>
+      <BottomSection buttonContent="Get Your Free Catalog">
         <h2 className="mb-3">Start Your Floral Design Career Today!</h2>
         <p className="lead mb-5">Request a free course preview today to learn more about how you can become a professional Floral Designer with QC's online training! The preview includes a course curriculum, tuition information and your career outlook.</p>
-        <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>
       </BottomSection>
     </div>
   );

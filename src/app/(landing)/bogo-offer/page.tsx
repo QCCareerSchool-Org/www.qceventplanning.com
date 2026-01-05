@@ -29,7 +29,7 @@ const BogoOfferPage: PageComponent = async props => {
 
   return (
     <>
-      <Header logoLink />
+      <Header />
       <DeadlineFunnelScript />
       <section className="bg-dark text-white text-shadow">
         <BackgroundImage src={HeroImage} priority />

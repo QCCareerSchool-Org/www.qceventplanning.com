@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 import EBImage from '../../(main)/online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from '../../(main)/online-event-courses/corporate-event-planning/hero.jpg';
@@ -146,10 +145,9 @@ const FreeSpecialtyCourseOfferPage: PageComponent = () => (
     </section>
     <ILEASection />
     <TestimonialSection id="TE-0006" />
-    <BottomSection>
+    <BottomSection buttonContent="Get Your Free Catalog" buttonHref={enrollLink}>
       <h2 className="mb-4">Get Started Today</h2>
       <p className="lead mb-4">Enroll Online and Start on Your Path to Becoming a Certified Event Planner</p>
-      <Link href={enrollLink} className="btn btn-lg btn-primary">Enroll Now</Link>
     </BottomSection>
   </>
 );
