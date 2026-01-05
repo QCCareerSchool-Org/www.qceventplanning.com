@@ -80,7 +80,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = async props => {
       <TestimonialSection id="TE-0006" />
       <CertificationSection />
       <AboutSection />
-      <BottomSection buttonContent="Get Your Free Catalog">
+      <BottomSection>
         <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
       </BottomSection>
     </div>

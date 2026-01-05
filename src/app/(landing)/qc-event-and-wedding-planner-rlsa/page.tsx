@@ -32,10 +32,12 @@ export const metadata: Metadata = {
   },
 };
 
+const href = 'https://enroll.qceventplanning.com';
+
 const RSLAPage: PageComponent = () => {
   return (
     <>
-      <Header buttonHref="https://enroll.qceventplanning.com" buttonContent="Enroll Now" buttonAlwaysVisible />
+      <Header buttonHref={href} buttonContent="Enroll Now" buttonAlwaysVisible />
       <section className="p-0" />
       <section className="text-white">
         <Image src={HeroImage} alt="" priority fill placeholder="blur" style={{ objectFit: 'cover' }} />
@@ -257,7 +259,7 @@ const RSLAPage: PageComponent = () => {
         </div>
       </section>
       <TestimonialSection id="TE-0002" />
-      <BottomSection buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com">
+      <BottomSection buttonContent="Enroll Now" buttonHref={href}>
         <h2 className="mb-4">Ready to Start Your Event & Wedding Planning Career?</h2>
         <p className="lead mb-4">Become Professionally Certified with QC's Online Event Planning Training</p>
       </BottomSection>
