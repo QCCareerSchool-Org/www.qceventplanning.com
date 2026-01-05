@@ -18,7 +18,7 @@ export const BottomSection: FC<PropsWithChildren<Props>> = ({ buttonHref, button
           {children}
           {buttonHref
             ? <Link href={buttonHref} className={`btn btn-lg ${buttonClass}`}>{buttonContent}</Link>
-            : <ScrollLink smooth="linear" to="top" className={`btn btn-lg ${buttonClass}`}>{buttonContent}</ScrollLink>
+            : <ScrollLink smooth to="top" duration={300} className={`btn btn-lg ${buttonClass}`}>{buttonContent}</ScrollLink>
           }
         </div>
       </div>
