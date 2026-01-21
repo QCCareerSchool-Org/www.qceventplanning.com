@@ -9,3 +9,8 @@ export const newYear2026 = new PromotionPeriod(
   Date.UTC(2026, 0, 5, 8), // 2026-01-07T03:00:00-0500
   Date.UTC(2026, 0, 17, 8), // 2026-01-17T03:00:00-0500
 );
+
+export const jan21Period = new PromotionPeriod(
+  Date.UTC(2026, 0, 21, 8), // 2026-01-21T03:00-0500 (08:00 UTC)
+  Date.UTC(2026, 0, 31, 8), // 2026-01-31T03:00-0500 (08:00 UTC)
+);
