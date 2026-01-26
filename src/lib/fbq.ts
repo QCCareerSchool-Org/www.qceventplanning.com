@@ -30,9 +30,9 @@ export const fbqPageview = (url?: string): void => {
 export const fbqLead = (eventId?: string): void => {
   if (typeof eventId !== 'undefined') {
     window.fbq?.('track', 'Lead', undefined, { eventID: eventId });
-  } else {
-    window.fbq?.('track', 'Lead');
+    return;
   }
+  window.fbq?.('track', 'Lead');
 };
 
 // log a sale
