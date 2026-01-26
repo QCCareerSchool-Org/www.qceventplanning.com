@@ -18,9 +18,6 @@ const EnrollmentAgreementPage: PageComponent = () => {
   return (
     <div className={styles.terms}>
       <h1>Enrollment Agreement</h1>
-      <h2>{i++}. Shipping Policy</h2>
-      <p>QC Career School's course lessons are fully online.</p>
-      <p>Some courses include supplementary physical items. All applicable items will be shipped within two business days of the date of enrollment. Items will be shipped via courier, and are expected to be delivered within 10 business days.</p>
       <h2>{i++}. 21-Day Money-Back Guarantee</h2>
       <p>You have 21 days from the date of enrollment to examine the course. If you are not entirely satisfied or choose not to complete the course, please notify the School by emailing <AccountsEmailAddress /> within 21 days of your date of enrollment. Within two business days the School will review your account and provide you with your options.</p>
       <p>A full refund cannot be granted if you have already submitted course work to your tutor for grading. A partial refund may be offered instead.</p>
