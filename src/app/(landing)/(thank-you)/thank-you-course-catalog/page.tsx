@@ -14,6 +14,7 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getServerData } from '@/lib/getData';
+import { getLead } from '@/lib/getLead';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -26,17 +27,18 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   const { date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
-  const firstName = getParam(searchParams.firstName);
-  const lastName = getParam(searchParams.lastName);
-  const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? 'US';
-  const provinceCode = getParam(searchParams.provinceCode);
   const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
   const userAgent = headerList.get('user-agent') ?? undefined;
   const cookieStore = await cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
+
+  const lead = leadId ? await getLead(leadId) : undefined;
+
+  const [ emailAddress, firstName, lastName, countryCode, provinceCode ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.countryCode ?? 'US', lead.value.provinceCode ?? undefined ]
+    : [];
 
   try {
     if (leadId && emailAddress) {
@@ -59,8 +61,8 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
-      <ThankYouSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={emailAddress} telephoneListId={53} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <ThankYouSection countryCode={countryCode ?? 'US'} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={emailAddress} telephoneListId={53} />
+      <CurrentPromotion date={date} countryCode={countryCode ?? 'US'} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection date={date} />
