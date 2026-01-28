@@ -12,7 +12,6 @@ import { Brevo } from '@/scripts/brevo';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
-import { PerfectAudience } from '@/scripts/perfectAudience';
 import { Tiktok } from '@/scripts/tiktok';
 import { VWO } from '@/scripts/vwo';
 
