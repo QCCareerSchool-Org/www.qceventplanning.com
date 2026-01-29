@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use client';
 
 import type { FC } from 'react';
@@ -10,11 +11,12 @@ import { uetUserData } from '@/lib/uet';
 
 interface Props {
   emailAddress?: string;
-  countryCode?: string;
+  telephoneNumber?: string;
+  city?: string;
   provinceCode?: string;
+  countryCode?: string;
   firstName?: string;
   lastName?: string;
-  ipAddress?: string;
   leadId?: string;
   conversionId: string;
 }
@@ -30,13 +32,12 @@ export const LeadProcessing: FC<Props> = props => {
       return;
     }
     effectCalled.current = true;
-    gaUserData({ email: props.emailAddress });
+    gaUserData(props.emailAddress, props.telephoneNumber, props.firstName, props.lastName, props.city, props.provinceCode, props.countryCode);
     uetUserData(props.emailAddress);
-    fbqLead(props.leadId, { emailAddress: props.emailAddress, firstName: props.firstName, lastName: props.lastName });
-    // eslint-disable-next-line camelcase
+    fbqLead(props.leadId, { emailAddress: props.emailAddress, telephoneNumber: props.telephoneNumber, city: props.city, province: props.provinceCode, country: props.countryCode, firstName: props.firstName, lastName: props.lastName });
     gaEvent('conversion', { send_to: props.conversionId });
     brevoIdentifyLead(props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName);
-  }, [ props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.ipAddress, props.leadId, props.conversionId ]);
+  }, [ props.emailAddress, props.telephoneNumber, props.city, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.leadId, props.conversionId ]);
 
   return null;
 };

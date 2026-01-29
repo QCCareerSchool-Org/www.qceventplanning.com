@@ -1,11 +1,15 @@
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
 import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
+import { isUserValues } from '@/domain/userValues';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
+import { getServerData } from '@/lib/getData';
+import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
 import { Bing } from '@/scripts/bing';
 import { Brevo } from '@/scripts/brevo';
@@ -22,19 +26,25 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.qceventplanning.com'),
 };
 
-const RootLayout: LayoutComponent = ({ children }) => {
+const RootLayout: LayoutComponent = async ({ children }) => {
+  const { serverIp } = await getServerData();
+  const jwt = (await cookies()).get('user')?.value;
+  const result = jwt ? await decodeJwt(jwt) : undefined;
+  const raw = result?.success ? result.value : undefined;
+  const userValues = raw && isUserValues(raw) ? raw : undefined;
+
   return (
     <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`}>
       <head>
-        {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} />}
+        {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
         {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
-        {process.env.FACEBOOK_ID && <Facebook id={process.env.FACEBOOK_ID} />}
+        {process.env.FACEBOOK_ID && <Facebook id={process.env.FACEBOOK_ID} userValues={userValues} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
       </head>
       <body className="d-flex flex-column">
-        <Provider>
+        <Provider userValues={userValues} serverIp={serverIp}>
           {children}
         </Provider>
         <OptInMonster />
