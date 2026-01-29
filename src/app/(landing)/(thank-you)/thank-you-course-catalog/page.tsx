@@ -39,16 +39,16 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   const lead = leadId ? await getLead(leadId) : undefined;
 
-  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode, ip ] = lead?.success
-    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US', lead.value.ip ]
+  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode, ip, created ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US', lead.value.ip, lead.value.created ]
     : [];
 
-  try {
-    if (leadId && emailAddress) {
-      await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ip ?? data.serverIp, data.userAgent, fbc, fbp);
+  if (leadId && emailAddress) {
+    try {
+      await fbPostLead(leadId, new Date(created ?? date), emailAddress, firstName, lastName, countryCode, provinceCode, ip ?? data.serverIp, data.userAgent, fbc, fbp);
+    } catch (err) {
+      console.error(err);
     }
-  } catch (err) {
-    console.error(err);
   }
 
   const userValues: UserValues = { emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode };
