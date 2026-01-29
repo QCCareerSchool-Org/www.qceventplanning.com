@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { cookies, headers } from 'next/headers';
+import { cookies } from 'next/headers';
 import Link from 'next/link';
 
 import HeroImage from '../../free-floral-design-course-catalog/hero.jpg';
@@ -10,12 +10,15 @@ import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import type { CourseCode } from '@/domain/courseCode';
+import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getServerData } from '@/lib/getData';
 import { getLead } from '@/lib/getLead';
 import { getParam } from '@/lib/getParam';
+import { createJwt } from '@/lib/jwt';
 
 const courseCode: CourseCode = 'fd';
 
@@ -26,39 +29,42 @@ export const metadata: Metadata = {
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const { date } = await getServerData(props.searchParams);
-  const searchParams = await props.searchParams;
+  const [ data, searchParams, cookieStore ] = await Promise.all([
+    getServerData(props.searchParams),
+    props.searchParams,
+    cookies(),
+  ]);
+  const date = data.date;
   const leadId = getParam(searchParams.leadId);
-  const headerList = await headers();
-  const ipAddress = headerList.get('x-real-ip') ?? undefined;
-  const userAgent = headerList.get('user-agent') ?? undefined;
-  const cookieStore = await cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
   const lead = leadId ? await getLead(leadId) : undefined;
 
-  const [ emailAddress, firstName, lastName, countryCode, provinceCode ] = lead?.success
-    ? [ lead.value.emailAddress, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.countryCode ?? 'US', lead.value.provinceCode ?? undefined ]
+  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode, ip ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US', lead.value.ip ]
     : [];
 
   try {
     if (leadId && emailAddress) {
-      await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+      await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ip ?? data.serverIp, data.userAgent, fbc, fbp);
     }
   } catch (err) {
     console.error(err);
   }
 
+  const userValues: UserValues = { emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode };
+  const jwt = await createJwt(userValues);
+
   return (
     <>
+      <SetCookie name="user" value={jwt} />
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
         provinceCode={provinceCode}
         firstName={firstName}
         lastName={lastName}
-        ipAddress={ipAddress}
         leadId={leadId}
         conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
       />

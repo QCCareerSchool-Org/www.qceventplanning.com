@@ -7,6 +7,8 @@ import { getParam } from './getParam';
 interface BaseData {
   countryCode: string;
   provinceCode: string | null;
+  serverIp: string | null;
+  userAgent: string | null;
 }
 
 interface DataWithDate extends BaseData {
@@ -25,8 +27,11 @@ export async function getServerData(
   const headerList = await headers();
   const countryCode = headerList.get('x-vercel-ip-country') ?? 'US';
   const provinceCode = headerList.get('x-vercel-ip-country-region');
+  const serverIp = headerList.get('x-vercel-ip');
+  const userAgent = headerList.get('user-agent');
   let date = Date.now();
 
+  // allow overriding the date when not in production
   if (searchParams && process.env.VERCEL_ENV !== 'production') {
     const parameters = await searchParams;
     const dateOverrideParameter = getParam(parameters.date);
@@ -35,5 +40,5 @@ export async function getServerData(
     }
   }
 
-  return { countryCode, provinceCode, date };
+  return { countryCode, provinceCode, date, serverIp, userAgent };
 };
