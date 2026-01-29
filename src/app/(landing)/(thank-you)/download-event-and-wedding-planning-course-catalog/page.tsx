@@ -57,7 +57,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
-      <SetCookie name="user" value={jwt} />
+      <SetCookie name="user" value={jwt} domain="qceventplanning.com" />
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
