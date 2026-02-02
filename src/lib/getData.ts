@@ -9,6 +9,7 @@ interface BaseData {
   provinceCode: string | null;
   serverIp: string | null;
   userAgent: string | null;
+  url: string | null;
 }
 
 interface DataWithDate extends BaseData {
@@ -24,11 +25,12 @@ export function getServerData(
 export async function getServerData(
   searchParams?: Promise<Record<string, string | string[] | undefined>>,
 ): Promise<BaseData | DataWithDate> {
-  const headerList = await headers();
-  const countryCode = headerList.get('x-vercel-ip-country') ?? 'US';
-  const provinceCode = headerList.get('x-vercel-ip-country-region');
-  const serverIp = headerList.get('x-vercel-ip');
-  const userAgent = headerList.get('user-agent');
+  const headersList = await headers();
+  const countryCode = headersList.get('x-vercel-ip-country') ?? 'US';
+  const provinceCode = headersList.get('x-vercel-ip-country-region');
+  const serverIp = headersList.get('x-vercel-ip');
+  const userAgent = headersList.get('user-agent');
+  const url = headersList.get('next-url');
   let date = Date.now();
 
   // allow overriding the date when not in production
@@ -40,5 +42,5 @@ export async function getServerData(
     }
   }
 
-  return { countryCode, provinceCode, date, serverIp, userAgent };
+  return { countryCode, provinceCode, date, serverIp, userAgent, url };
 };

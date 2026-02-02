@@ -38,13 +38,13 @@ export const fbqPageview = (url?: string): void => {
 };
 
 interface AdditionalData {
-  emailAddress?: string;
-  telephoneNumber?: string;
-  firstName?: string;
-  lastName?: string;
-  city?: string;
-  province?: string;
-  country?: string;
+  emailAddress: string;
+  telephoneNumber: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  city: string | null;
+  province: string | null;
+  country: string | null;
 }
 
 export const fbqLead = (eventId?: string, additionalData?: AdditionalData): void => {

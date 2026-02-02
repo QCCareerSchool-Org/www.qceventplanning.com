@@ -10,14 +10,14 @@ import { gaEvent, gaUserData } from '@/lib/gtag';
 import { uetUserData } from '@/lib/uet';
 
 interface Props {
-  emailAddress?: string;
-  telephoneNumber?: string;
-  city?: string;
-  provinceCode?: string;
-  countryCode?: string;
-  firstName?: string;
-  lastName?: string;
-  leadId?: string;
+  emailAddress: string;
+  telephoneNumber: string | null;
+  city: string | null;
+  provinceCode: string | null;
+  countryCode: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  leadId: string;
   conversionId: string;
 }
 

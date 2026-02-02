@@ -35,7 +35,7 @@ export interface GAUserData {
   };
 }
 
-export const gaUserData = (emailAddress: string, telephoneNumber?: string, firstName?: string, lastName?: string, city?: string, provinceCode?: string, countryCode?: string) => {
+export const gaUserData = (emailAddress: string, telephoneNumber: string | null, firstName: string | null, lastName: string | null, city: string | null, provinceCode: string | null, countryCode: string | null) => {
   const userData: GAUserData = {
     email: emailAddress,
   };
@@ -90,7 +90,7 @@ export const gaSale = (enrollment: Enrollment): void => {
     userData.address.region = enrollment.provinceCode.toLowerCase();
   }
 
-  gaUserData(enrollment.emailAddress, undefined, enrollment.firstName, enrollment.lastName, enrollment.city, enrollment.provinceCode ?? undefined, enrollment.countryCode);
+  gaUserData(enrollment.emailAddress, null, enrollment.firstName, enrollment.lastName, enrollment.city, enrollment.provinceCode, enrollment.countryCode);
 
   // Google Analtytics e-commerce event
   gaEvent('purchase', {
