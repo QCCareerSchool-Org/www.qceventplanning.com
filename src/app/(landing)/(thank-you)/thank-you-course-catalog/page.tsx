@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { cookies } from 'next/headers';
 import Link from 'next/link';
 
 import { Header } from '../../header';
@@ -27,16 +26,12 @@ export const metadata: Metadata = {
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const [ data, searchParams, cookieStore ] = await Promise.all([
+  const [ data, searchParams ] = await Promise.all([
     getServerData(props.searchParams),
     props.searchParams,
-    cookies(),
   ]);
   const date = data.date;
   const leadId = getParam(searchParams.leadId);
-  const fbc = cookieStore.get('_fbc')?.value;
-  const fbp = cookieStore.get('_fbp')?.value;
-
   const lead = leadId ? await getLead(leadId) : undefined;
 
   let jwt: string | null = null;
@@ -45,14 +40,15 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   if (lead?.success) {
     recent = lead.value.created < date + 604_800_000; // 7 days
-    if (recent) {
+    if (!recent) {
       try {
-        await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, fbc, fbp);
+        await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, data.fbc, data.fbp);
       } catch (err) {
         console.error(err);
       }
     }
     const userValues: UserValues = {
+      ...data.userValues,
       emailAddress: lead.value.emailAddress,
     };
     if (lead.value.telephoneNumber) {
@@ -76,6 +72,8 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     jwt = await createJwt(userValues);
   }
 
+  const countryCode = lead?.success ? lead.value.countryCode ?? 'US' : 'US';
+
   return (
     <>
       {jwt && <SetCookie name="user" value={jwt} domain="qceventplanning.com" />}
@@ -90,11 +88,11 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           lastName={lead.value.lastName}
           leadId={lead.value.leadId}
           conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
-        />)
-      }
+        />
+      )}
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
-      <ThankYouSection countryCode={lead?.success ? lead.value.countryCode ?? 'US' : 'US'} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={lead?.success ? lead.value.emailAddress : undefined} telephoneListId={53} />
-      <CurrentPromotion date={date} countryCode={lead?.success ? lead.value.countryCode ?? 'US' : 'US'} />
+      <ThankYouSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={lead?.success ? lead.value.emailAddress : undefined} telephoneListId={53} />
+      <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection date={date} />
