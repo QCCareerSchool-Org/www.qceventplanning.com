@@ -39,36 +39,62 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   const lead = leadId ? await getLead(leadId) : undefined;
 
-  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode, ip, created ] = lead?.success
-    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US', lead.value.ip, lead.value.created ]
-    : [];
+  let jwt: string | null = null;
 
-  if (leadId && emailAddress) {
-    try {
-      await fbPostLead(leadId, new Date(created ?? date), emailAddress, firstName, lastName, countryCode, provinceCode, ip ?? data.serverIp, data.userAgent, fbc, fbp);
-    } catch (err) {
-      console.error(err);
+  let recent = false;
+
+  if (lead?.success) {
+    recent = lead.value.created < date + 604_800_000; // 7 days
+    if (recent) {
+      try {
+        await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, fbc, fbp);
+      } catch (err) {
+        console.error(err);
+      }
     }
+    const userValues: UserValues = {
+      emailAddress: lead.value.emailAddress,
+    };
+    if (lead.value.telephoneNumber) {
+      userValues.telephoneNumber = lead.value.telephoneNumber;
+    }
+    if (lead.value.firstName) {
+      userValues.firstName = lead.value.firstName;
+    }
+    if (lead.value.lastName) {
+      userValues.lastName = lead.value.lastName;
+    }
+    if (lead.value.city) {
+      userValues.city = lead.value.city;
+    }
+    if (lead.value.provinceCode) {
+      userValues.provinceCode = lead.value.provinceCode;
+    }
+    if (lead.value.countryCode) {
+      userValues.countryCode = lead.value.countryCode;
+    }
+    jwt = await createJwt(userValues);
   }
-
-  const userValues: UserValues = { emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode };
-  const jwt = await createJwt(userValues);
 
   return (
     <>
-      <SetCookie name="user" value={jwt} domain="qceventplanning.com" />
-      <LeadProcessing
-        emailAddress={emailAddress}
-        countryCode={countryCode}
-        provinceCode={provinceCode}
-        firstName={firstName}
-        lastName={lastName}
-        leadId={leadId}
-        conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
-      />
+      {jwt && <SetCookie name="user" value={jwt} domain="qceventplanning.com" />}
+      {lead?.success && recent && (
+        <LeadProcessing
+          emailAddress={lead.value.emailAddress}
+          telephoneNumber={lead.value.telephoneNumber}
+          city={lead.value.city}
+          countryCode={lead.value.countryCode}
+          provinceCode={lead.value.provinceCode}
+          firstName={lead.value.firstName}
+          lastName={lead.value.lastName}
+          leadId={lead.value.leadId}
+          conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
+        />)
+      }
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
-      <ThankYouSection countryCode={countryCode ?? 'US'} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={emailAddress} telephoneListId={53} />
-      <CurrentPromotion date={date} countryCode={countryCode ?? 'US'} />
+      <ThankYouSection countryCode={lead?.success ? lead.value.countryCode ?? 'US' : 'US'} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={lead?.success ? lead.value.emailAddress : undefined} telephoneListId={53} />
+      <CurrentPromotion date={date} countryCode={lead?.success ? lead.value.countryCode ?? 'US' : 'US'} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection date={date} />
