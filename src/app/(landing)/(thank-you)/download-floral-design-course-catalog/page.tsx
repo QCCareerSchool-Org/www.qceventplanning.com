@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { cookies } from 'next/headers';
 import Link from 'next/link';
 
 import HeroImage from '../../free-floral-design-course-catalog/hero.jpg';
@@ -29,16 +28,12 @@ export const metadata: Metadata = {
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const [ data, searchParams, cookieStore ] = await Promise.all([
+  const [ data, searchParams ] = await Promise.all([
     getServerData(props.searchParams),
     props.searchParams,
-    cookies(),
   ]);
   const date = data.date;
   const leadId = getParam(searchParams.leadId);
-  const fbc = cookieStore.get('_fbc')?.value;
-  const fbp = cookieStore.get('_fbp')?.value;
-
   const lead = leadId ? await getLead(leadId) : undefined;
 
   let jwt: string | null = null;
@@ -47,14 +42,15 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   if (lead?.success) {
     recent = lead.value.created < date + 604_800_000; // 7 days
-    if (recent) {
+    if (!recent) {
       try {
-        await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, fbc, fbp);
+        await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, data.fbc, data.fbp);
       } catch (err) {
         console.error(err);
       }
     }
     const userValues: UserValues = {
+      ...data.userValues,
       emailAddress: lead.value.emailAddress,
     };
     if (lead.value.telephoneNumber) {
@@ -78,6 +74,8 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     jwt = await createJwt(userValues);
   }
 
+  const countryCode = lead?.success ? lead.value.countryCode ?? 'US' : 'US';
+
   return (
     <>
       {jwt && <SetCookie name="user" value={jwt} domain="qceventplanning.com" />}
@@ -92,10 +90,10 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           lastName={lead.value.lastName}
           leadId={lead.value.leadId}
           conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
-        />)
-      }
+        />
+      )}
       <Header logoLink buttonHref="#download" buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <DownloadSection countryCode={lead?.success ? lead.value.countryCode ?? 'US' : 'US'} heroSrc={HeroImage} course="fd" leadId={leadId} telephoneListId={53} />
+      <DownloadSection countryCode={countryCode} heroSrc={HeroImage} course="fd" leadId={leadId} telephoneListId={53} />
       <GoogleReviewSection className="bg-light" courseCode={courseCode} />
       <ILEASection />
       <SupportSection date={date} />
