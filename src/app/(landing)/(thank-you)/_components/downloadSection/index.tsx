@@ -10,6 +10,7 @@ import LockIcon from '@/components/icons/q-lock.svg';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
+  emailAddress?: string;
   countryCode: string;
   course?: CourseCode;
   heroSrc: StaticImageData;
