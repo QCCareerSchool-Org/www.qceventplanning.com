@@ -1,6 +1,6 @@
 import type { LayoutComponent } from '@/app/serverComponent';
 import { SiteLayout } from '@/components/siteLayout';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const MainLayout: LayoutComponent = async ({ children }) => {
   // eslint-disable-next-line react-hooks/purity

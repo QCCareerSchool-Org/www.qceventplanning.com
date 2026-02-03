@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import type { PageComponent } from '@/app/serverComponent';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Canadian Tax Credits',

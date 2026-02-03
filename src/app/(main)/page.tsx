@@ -25,7 +25,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
 
 export const metadata: Metadata = {

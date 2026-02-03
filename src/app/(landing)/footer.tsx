@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import styles from './footer.module.scss';
 import { TelephoneLink } from '@/components/telephoneLink';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const Footer: FC = async () => {
   const { countryCode } = await getServerData();

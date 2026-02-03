@@ -13,7 +13,7 @@ import { Subtitle } from '@/components/subtitle';
 import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 const bogoEnrollLink = 'https://enroll.qceventplanning.com/bogo-1';

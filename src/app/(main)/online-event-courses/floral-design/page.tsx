@@ -27,7 +27,7 @@ import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];

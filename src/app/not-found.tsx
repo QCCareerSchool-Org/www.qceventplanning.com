@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './not-found.module.scss';
 import type { PageComponent } from './serverComponent';
 import { SiteLayout } from '@/components/siteLayout';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',

@@ -2,7 +2,7 @@ import type { PageProps } from '@/app/serverComponent';
 import type { Lead } from '@/domain/lead';
 import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getLead } from '@/lib/getLead';
 import { createJwt } from '@/lib/jwt';
 

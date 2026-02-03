@@ -14,7 +14,7 @@ import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { PromoSection } from '@/components/promoSection';
 import { TestimonialSection } from '@/components/testimonialSection';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
