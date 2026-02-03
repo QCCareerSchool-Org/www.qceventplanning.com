@@ -41,7 +41,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
         {process.env.FACEBOOK_ID && <Facebook id={process.env.FACEBOOK_ID} userValues={userValues} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
-        {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
+        {process.env.BING_ID && <Bing id={process.env.BING_ID} userValues={userValues} />}
       </head>
       <body className="d-flex flex-column">
         <Provider userValues={userValues} serverIp={serverIp}>
