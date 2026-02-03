@@ -2,8 +2,8 @@ import type { PageProps } from '@/app/serverComponent';
 import type { Lead } from '@/domain/lead';
 import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
-import { getServerData } from '@/lib/getServerData';
 import { getLead } from '@/lib/getLead';
+import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 
 interface ThankyouPageData {
@@ -24,7 +24,7 @@ export const getThankyouData = async (props: PageProps): Promise<ThankyouPageDat
   let recent = false;
 
   if (lead?.success) {
-    recent = lead.value.created < date + 604800000; // 7 days
+    recent = lead.value.created > date - 604800000; // 7 days
     if (recent) {
       try {
         await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, data.fbc, data.fbp);
