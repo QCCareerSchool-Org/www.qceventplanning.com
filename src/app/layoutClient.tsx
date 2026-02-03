@@ -12,18 +12,21 @@ export const LayoutClient: FC = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (countRef.current > 0) { // don't run the first time because it's already tracked
-      if (pathname) {
-        let url = `https://www.qceventplanning.com${pathname}`;
-        if (searchParams.toString().length) {
-          url += `?${searchParams.toString()}`;
-        }
-        const title = document.title;
-        brevoPageview(title, url, pathname);
-      }
+    const { protocol, host } = window.location;
+    const domain = `${protocol}//${host}`;
+
+    let url = `${domain}${pathname}`;
+    const stringSearchParams = searchParams.toString();
+    if (stringSearchParams) {
+      url += `?${stringSearchParams}`;
     }
+
+    if (countRef.current > 0) { // don't run the first time because it's already being tracked in the snippet
+      const title = document.title;
+      brevoPageview(title, url, pathname);
+    }
+
     countRef.current++;
   }, [ pathname, searchParams ]);
-
   return null;
 };
