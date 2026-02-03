@@ -11,7 +11,7 @@ import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import CheckIcon from '@/components/check.svg';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {

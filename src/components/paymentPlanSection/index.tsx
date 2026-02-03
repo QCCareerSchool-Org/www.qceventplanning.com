@@ -7,7 +7,7 @@ import { Part } from './part';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { withSuspense } from '@/withSuspense';
 
 interface Props {

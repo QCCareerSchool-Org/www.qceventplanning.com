@@ -8,7 +8,7 @@ import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
 import { isUserValues } from '@/domain/userValues';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
 import { Bing } from '@/scripts/bing';

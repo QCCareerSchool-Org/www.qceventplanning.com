@@ -16,7 +16,7 @@ import { HowYoullLearnSection } from '@/components/howYoullLearnSection';
 import { PromoSection } from '@/components/promoSection';
 import { StatsSection } from '@/components/statsSection/statsSection';
 import { SupportSection } from '@/components/supportSection';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {

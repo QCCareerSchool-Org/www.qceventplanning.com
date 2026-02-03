@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './page.module.scss';
 import { Question } from './question';
 import type { PageComponent } from '@/app/serverComponent';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getTelephoneNumber } from '@/lib/telephone';
 
 export const metadata: Metadata = {

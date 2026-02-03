@@ -21,7 +21,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { DarcieGarcia } from '@/components/tutorImages/darcieGarcia';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import type { CourseCode } from '@/domain/courseCode';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {

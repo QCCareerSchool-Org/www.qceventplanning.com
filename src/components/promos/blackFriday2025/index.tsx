@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import HeroImageUK from './desktop-uk.jpg';
 import HeroImageDefault from './desktop.jpg';
 import { gbpCountry } from '@/domain/currency';
-import { getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const BlackFriday2025: FC = async () => {
   const { countryCode } = await getServerData();
