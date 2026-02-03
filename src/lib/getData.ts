@@ -19,6 +19,7 @@ interface BaseData {
 
 interface DataWithDate extends BaseData {
   date: number;
+  leadId?: string;
 }
 
 export function getServerData(): Promise<BaseData>;
@@ -43,14 +44,20 @@ export async function getServerData(
   const userCookie = cookieStore.get('user')?.value;
   const userValues = isUserValues(userCookie) ? userCookie : null;
 
+  if (!searchParams) {
+    return { countryCode, provinceCode, serverIp, userAgent, url, userValues, fbc, fbp };
+  }
+
+  const parameters = await searchParams;
+  const leadId = getParam(parameters.leadId);
+
   // allow overriding the date when not in production
-  if (searchParams && process.env.VERCEL_ENV !== 'production') {
-    const parameters = await searchParams;
+  if (process.env.VERCEL_ENV !== 'production') {
     const dateOverrideParameter = getParam(parameters.date);
     if (dateOverrideParameter) {
       date = Date.parse(dateOverrideParameter);
     }
   }
 
-  return { countryCode, provinceCode, date, serverIp, userAgent, url, userValues, fbc, fbp };
+  return { countryCode, provinceCode, serverIp, userAgent, url, userValues, fbc, fbp, date, leadId };
 };

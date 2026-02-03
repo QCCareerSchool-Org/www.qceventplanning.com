@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { getThankyouData } from '..';
 import { Header } from '../../header';
 import { CurrentPromotion } from '../_components/currentPromotion';
 import { ThankYouSection } from '../_components/thankYouSection';
@@ -12,12 +13,6 @@ import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
-import type { UserValues } from '@/domain/userValues';
-import { fbPostLead } from '@/lib/facebookConversionAPI';
-import { getServerData } from '@/lib/getData';
-import { getLead } from '@/lib/getLead';
-import { getParam } from '@/lib/getParam';
-import { createJwt } from '@/lib/jwt';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog',
@@ -26,71 +21,26 @@ export const metadata: Metadata = {
 };
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const [ data, searchParams ] = await Promise.all([
-    getServerData(props.searchParams),
-    props.searchParams,
-  ]);
-  const date = data.date;
-  const leadId = getParam(searchParams.leadId);
-  const lead = leadId ? await getLead(leadId) : undefined;
-  let jwt: string | null = null;
-
-  let recent = false;
-
-  if (lead?.success) {
-    recent = lead.value.created < date + 604_800_000; // 7 days
-    if (recent) {
-      try {
-        await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, data.fbc, data.fbp);
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    const userValues: UserValues = {
-      ...data.userValues,
-      emailAddress: lead.value.emailAddress,
-    };
-    if (lead.value.telephoneNumber) {
-      userValues.telephoneNumber = lead.value.telephoneNumber;
-    }
-    if (lead.value.firstName) {
-      userValues.firstName = lead.value.firstName;
-    }
-    if (lead.value.lastName) {
-      userValues.lastName = lead.value.lastName;
-    }
-    if (lead.value.city) {
-      userValues.city = lead.value.city;
-    }
-    if (lead.value.provinceCode) {
-      userValues.provinceCode = lead.value.provinceCode;
-    }
-    if (lead.value.countryCode) {
-      userValues.countryCode = lead.value.countryCode;
-    }
-    jwt = await createJwt(userValues);
-  }
-
-  const countryCode = lead?.success ? lead.value.countryCode ?? 'US' : 'US';
+  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
 
   return (
     <>
       {jwt && <SetCookie name="user" value={jwt} domain="qceventplanning.com" />}
-      {lead?.success && recent && (
+      {lead && recent && (
         <LeadProcessing
-          emailAddress={lead.value.emailAddress}
-          telephoneNumber={lead.value.telephoneNumber}
-          city={lead.value.city}
-          countryCode={lead.value.countryCode}
-          provinceCode={lead.value.provinceCode}
-          firstName={lead.value.firstName}
-          lastName={lead.value.lastName}
-          leadId={lead.value.leadId}
+          emailAddress={lead.emailAddress}
+          telephoneNumber={lead.telephoneNumber}
+          city={lead.city}
+          countryCode={lead.countryCode}
+          provinceCode={lead.provinceCode}
+          firstName={lead.firstName}
+          lastName={lead.lastName}
+          leadId={lead.leadId}
           conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
         />
       )}
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
-      <ThankYouSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={leadId} emailAddress={lead?.success ? lead.value.emailAddress : undefined} telephoneListId={53} />
+      <ThankYouSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={53} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
