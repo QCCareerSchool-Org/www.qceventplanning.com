@@ -33,14 +33,13 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   const date = data.date;
   const leadId = getParam(searchParams.leadId);
   const lead = leadId ? await getLead(leadId) : undefined;
-
   let jwt: string | null = null;
 
   let recent = false;
 
   if (lead?.success) {
     recent = lead.value.created < date + 604_800_000; // 7 days
-    if (!recent) {
+    if (recent) {
       try {
         await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, data.fbc, data.fbp);
       } catch (err) {
