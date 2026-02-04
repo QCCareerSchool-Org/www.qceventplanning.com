@@ -4,7 +4,7 @@ import { hash, normalizeCity, normalizeEmailAddress, normalizeName, normalizeSta
 import type { Enrollment } from '@/domain/enrollment';
 
 const apiVersion = 'v24.0';
-const datasetId = '520626392908502';
+const datasetId = process.env.NEXT_PUBLIC_FACEBOOK_ID;
 const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
 
 if (!accessToken) {

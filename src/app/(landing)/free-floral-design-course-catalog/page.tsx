@@ -21,8 +21,8 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { DarcieGarcia } from '@/components/tutorImages/darcieGarcia';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import type { CourseCode } from '@/domain/courseCode';
-import { getServerData } from '@/lib/getServerData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Free Floral Design Course Catalog',
@@ -63,7 +63,7 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
                   <h1 className="h4 mb-3 text-navy">Get a Free Floral Design Course Catalog</h1>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation={`${process.env.HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
+                      successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
                       listId={brevoListId}
                       emailTemplateId={brevoEmailTemplateId}
                       gclid={gclid}
