@@ -19,7 +19,7 @@ export const Header: FC<Props> = ({ date }) => {
         endDate={feb04.end}
         message={(
           <span style={{ textTransform: 'uppercase' }}>
-            <span className="d-none d-lg-inline">Don't Miss Out—</span> Enroll Today and Get 2 Free Specialty Courses!<br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
+            <span className="d-none d-lg-inline">Don't Miss Out—</span>Enroll Today and Get 2 Free Specialty Courses!<br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
           </span>
         )}
       />
