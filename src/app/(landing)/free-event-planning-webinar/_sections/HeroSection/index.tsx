@@ -38,7 +38,7 @@ export const HeroSection: FC<Props> = props => {
                 <h1 className={`h4 ${styles.cardHeader} mb-3 mb-md-2`}>Ready to Launch Your Event Planning Career?</h1>
                 <p className="d-none d-md-block">Get insider tips from QC's renowned event planning expert, Lisa Forbes.</p>
                 <BrevoForm
-                  successLocation={`${process.env.HOST ?? 'https://www.qceventplanning.com'}/free-event-planning-webinar/thank-you`}
+                  successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/free-event-planning-webinar/thank-you`}
                   listId={brevoListId}
                   emailTemplateId={brevoEmailTemplateId}
                   gclid={props.gclid}

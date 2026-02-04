@@ -14,8 +14,8 @@ import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { PromoSection } from '@/components/promoSection';
 import { TestimonialSection } from '@/components/testimonialSection';
-import { getServerData } from '@/lib/getServerData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Free Event & Wedding Planning Course Catalog',
@@ -53,7 +53,7 @@ const FreeEventAndWeddingPlanningCatalogPage: PageComponent = async props => {
                   <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation={`${process.env.HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
+                      successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
                       listId={brevoListId}
                       emailTemplateId={brevoEmailTemplateId}
                       gclid={gclid}
