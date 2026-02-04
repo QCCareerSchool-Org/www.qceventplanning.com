@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import type { ChangeEventHandler, FC, SubmitEventHandler, ReactElement } from 'react';
+import type { ChangeEventHandler, FC, ReactElement, SubmitEventHandler } from 'react';
 import { forwardRef, useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import type { Country, DefaultInputComponentProps, Value } from 'react-phone-number-input';
