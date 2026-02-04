@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { FreeEventAndWeddingPlanningCatalog } from '.';
+import { FreeEventAndWeddingPlanningCatalog } from '..';
 import type { PageComponent } from '@/app/serverComponent';
 
 export const metadata: Metadata = {
@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   },
 };
 
-const FreeEventAndWeddingPlanningCatalogPage: PageComponent = props => (
-  <FreeEventAndWeddingPlanningCatalog {...props} telephone={false} />
+const FreeEventAndWeddingPlanning2CatalogPage: PageComponent = props => (
+  <FreeEventAndWeddingPlanningCatalog {...props} telephone={true} />
 );
 
-export default FreeEventAndWeddingPlanningCatalogPage;
+export default FreeEventAndWeddingPlanning2CatalogPage;

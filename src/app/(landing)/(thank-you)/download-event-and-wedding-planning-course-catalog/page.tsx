@@ -21,8 +21,12 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
+const telephoneListId = 53;
+
 const ThankYouCourseCatalogPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+  const searchParams = await props.searchParams;
+  const alreadyPrompted = searchParams.t;
 
   return (
     <>
@@ -41,7 +45,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         />
       )}
       <Header buttonHref="#download" logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <DownloadSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={53} />
+      <DownloadSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={alreadyPrompted ? undefined : telephoneListId} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
