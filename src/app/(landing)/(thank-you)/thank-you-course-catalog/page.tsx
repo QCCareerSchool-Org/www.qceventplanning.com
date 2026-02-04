@@ -20,8 +20,12 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
+const telephoneListId = 53;
+
 const ThankYouCourseCatalogPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+  const searchParams = await props.searchParams;
+  const alreadyPrompted = searchParams.t;
 
   return (
     <>
@@ -40,7 +44,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         />
       )}
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
-      <ThankYouSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={53} />
+      <ThankYouSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={alreadyPrompted ? undefined : telephoneListId} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
