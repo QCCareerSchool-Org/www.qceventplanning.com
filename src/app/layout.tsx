@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: LayoutComponent = async ({ children }) => {
-  const { serverIp } = await getServerData();
+  const { clientIp } = await getServerData();
   const jwt = (await cookies()).get('user')?.value;
   const result = jwt ? await decodeJwt(jwt) : undefined;
   const raw = result?.success ? result.value : undefined;
@@ -44,7 +44,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
         {process.env.BING_ID && <Bing id={process.env.BING_ID} userValues={userValues} />}
       </head>
       <body className="d-flex flex-column">
-        <Provider userValues={userValues} serverIp={serverIp}>
+        <Provider userValues={userValues} clientIp={clientIp}>
           {children}
         </Provider>
         <OptInMonster />
