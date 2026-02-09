@@ -23,8 +23,8 @@
     }
   },
   "include": [
-    "next-env.d.ts",
     "svg-override.d.ts",
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
