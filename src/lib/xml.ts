@@ -1,5 +1,10 @@
+const stripInvalidXmlChars = (unsafe: string): string => {
+  // eslint-disable-next-line no-control-regex
+  return unsafe.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/gu, '');
+};
+
 export const escapeXmlString = (unsafe: string): string => {
-  return unsafe.replace(/[<>&'"]/gu, function (match) {
+  return stripInvalidXmlChars(unsafe).replace(/[<>&'"]/gu, match => {
     switch (match) {
       case '<': return '&lt;';
       case '>': return '&gt;';
@@ -11,14 +16,13 @@ export const escapeXmlString = (unsafe: string): string => {
   });
 };
 
-export const escapeXmlObject = <T extends object>(v: T) => {
-  for (const k in v) {
-    if (Object.hasOwn(v, k)) {
-      const key = k as keyof T;
-      if (typeof v[key] === 'string') {
-        (v[key] as string) = escapeXmlString(v[key]);
+export const escapeXmlObject = <T extends object>(video: T): T => {
+  for (const key in video) {
+    if (Object.hasOwn(video, key)) {
+      if (typeof video[key] === 'string') {
+        (video[key] as string) = escapeXmlString(video[key]);
       }
     }
   }
-  return v;
+  return video;
 };
