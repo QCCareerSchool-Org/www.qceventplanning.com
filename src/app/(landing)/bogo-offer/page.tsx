@@ -14,7 +14,7 @@ import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
-import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
+import { endOfYear2025, newYear2026 } from '@/lib/periods';
 
 const bogoEnrollLink = 'https://enroll.qceventplanning.com/bogo-1';
 
