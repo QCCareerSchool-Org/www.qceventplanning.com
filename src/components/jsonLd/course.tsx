@@ -3,10 +3,10 @@ import type { Course, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
-import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
+import { withSuspense } from '@/withSuspense';
 
 interface Props {
   courseCode: CourseCode;
@@ -15,19 +15,18 @@ interface Props {
   showPrice?: boolean;
 }
 
-export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
-  let price: Price | undefined;
-  if (showPrice) {
-    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-    price = await fetchPrice(priceQuery);
-    if (!price) {
-      return null;
-    }
-  }
+const CourseJsonLdBase: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
+  const jsonLd = await getCourse(courseCode, id, providerId, showPrice);
 
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
+};
+
+export const CourseJsonLd = withSuspense(CourseJsonLdBase);
+
+export const getCourse = async (courseCode: CourseCode, id?: string, providerId?: string, showPrice?: boolean): Promise<Course> => {
   const certification = getCourseCertification(courseCode);
 
-  const courseJsonLD: WithContext<Course> = {
+  const course: WithContext<Course> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
     '@id': id,
@@ -57,15 +56,21 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
       },
   };
 
-  if (price) {
-    courseJsonLD.offers = {
-      '@type': 'Offer',
-      'priceCurrency': price.currency.code,
-      'price': price.discountedCost.toFixed(2),
-      'url': 'https://enroll.qceventplanning.com',
-      'availability': 'https://schema.org/InStock',
+  if (showPrice) {
+    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
+    const price = await fetchPrice(priceQuery);
+
+    if (price) {
+      course.offers = {
+        '@type': 'Offer',
+        'priceCurrency': price.currency.code,
+        'price': price.discountedCost.toFixed(2),
+        'url': 'https://enroll.qceventplanning.com',
+        'availability': 'https://schema.org/InStock',
+      };
     };
+
   }
 
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;
+  return course;
 };

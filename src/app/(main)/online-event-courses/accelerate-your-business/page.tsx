@@ -10,12 +10,12 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 const AccelerateYourBusinessPage: PageComponent = () => (
   <div className={styles.page}>
-    <CourseSchema courseCode={courseCode} showPrice />
+    <CourseJsonLd courseCode={courseCode} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

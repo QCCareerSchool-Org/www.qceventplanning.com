@@ -12,7 +12,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import ICPPImage from '@/components/certifications/icpp.svg';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 const CorporateEventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
-    <CourseSchema courseCode={courseCode} />
+    <CourseJsonLd courseCode={courseCode} />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

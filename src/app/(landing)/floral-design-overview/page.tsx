@@ -17,7 +17,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IFDPImage from '@/components/certifications/ifdp.svg';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -48,7 +48,7 @@ const FloralDesignPage: PageComponent = async props => {
 
   return (
     <div className={styles.page}>
-      <CourseSchema courseCode={courseCode} showPrice />
+      <CourseJsonLd courseCode={courseCode} showPrice />
       <Header buttonContent={<>Enroll <span className="d-none d-sm-inline"> Now</span></>} buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
