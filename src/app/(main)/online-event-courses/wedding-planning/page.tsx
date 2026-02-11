@@ -13,7 +13,7 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IWPPImage from '@/components/certifications/iwpp.svg';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const WeddingPlanningPage: PageComponent = () => {
   return (
     <div className={styles.page}>
-      <CourseSchema courseCode={courseCode} showPrice />
+      <CourseJsonLd courseCode={courseCode} showPrice />
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">

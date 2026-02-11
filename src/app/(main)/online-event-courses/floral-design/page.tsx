@@ -13,12 +13,12 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import IFDPImage from '@/components/certifications/ifdp.svg';
-import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { SAFPartnerSection } from '@/components/safPartnerSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -46,7 +46,7 @@ const FloralDesignPage: PageComponent = async props => {
 
   return (
     <div className={styles.page}>
-      <CourseSchema courseCode={courseCode} showPrice />
+      <CourseJsonLd courseCode={courseCode} showPrice />
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">

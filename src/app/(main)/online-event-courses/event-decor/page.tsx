@@ -14,7 +14,7 @@ import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Candice } from '@/components/candice';
 import IEDPImage from '@/components/certifications/iedp.svg';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 const EventDecorPage: PageComponent = () => (
   <div className={styles.page}>
-    <CourseSchema courseCode={courseCode} showPrice />
+    <CourseJsonLd courseCode={courseCode} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
