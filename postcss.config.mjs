@@ -10,7 +10,7 @@ const purgeCssOptions = {
   ],
   safelist: {
     standard: [ 'html', 'body' ],
-    deep: [ /modal-/u, /show/u, /fade/u ],
+    deep: [ /modal-/u, /show/u, /fade/u, /nav/u ],
   },
   defaultExtractor: content => content.match(/[\w\-/:]+(?<!:)/gu) ?? [],
 };
