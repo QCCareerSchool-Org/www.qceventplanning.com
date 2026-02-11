@@ -1,14 +1,11 @@
-import type { UserDefinedOptions as PurgeCssOptions } from '@fullhuman/postcss-purgecss';
-import type { Config as PostCSSConfig } from 'postcss-load-config';
-import type { pluginOptions as PostCSSPresetEnvOptions } from 'postcss-preset-env';
-
 const isProd = process.env.NODE_ENV === 'production';
 
-const purgeCssOptions: PurgeCssOptions = {
+/** @type {import('@fullhuman/postcss-purgecss').UserDefinedOptions} */
+const purgeCssOptions = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
     './node_modules/react-bootstrap/**/*.js',
   ],
   safelist: {
@@ -18,13 +15,15 @@ const purgeCssOptions: PurgeCssOptions = {
   defaultExtractor: content => content.match(/[\w\-/:]+(?<!:)/gu) ?? [],
 };
 
-const postCSSPresetEnvOptions: PostCSSPresetEnvOptions = {
+/** @type {import('postcss-preset-env').pluginOptions} */
+const postCSSPresetEnvOptions = {
   autoprefixer: { flexbox: 'no-2009' },
   stage: 3,
   features: { 'custom-properties': false },
 };
 
-const postCSSConfig: PostCSSConfig = {
+/** @type {import('postcss-load-config').Config} */
+const postCSSConfig = {
   plugins: {
     'postcss-flexbugs-fixes': {},
     'postcss-preset-env': postCSSPresetEnvOptions,
