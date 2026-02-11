@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
-import { feb04, feb13 } from '@/lib/promotionPeriods';
+import { feb04, feb13 } from '@/lib/periods';
 
 interface Props {
   countryCode: string;
