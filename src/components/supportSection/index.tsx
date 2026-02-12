@@ -16,7 +16,7 @@ interface Props {
 const span = Period.span(endOfYear2025, newYear2026);
 
 export const SupportSection: FC<Props> = ({ showLink, date }) => (
-  <section className={`${styles.section} bg-dark text-white`}>
+  <section className={`${styles.section} text-white`}>
     <div className="container">
       <div className="row align-items-center justify-content-center g-5 g-xl-s">
         <div className="col-12 col-sm-10 col-md-8 col-lg-5 text-center">
