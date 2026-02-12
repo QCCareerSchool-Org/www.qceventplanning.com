@@ -1,19 +1,19 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import { CountDownTimer } from '../countDownTimer';
-import type { BaseLastChancePeriod } from '@/lib/period';
+import type { LastChancePeriodDTO } from '@/lib/period';
 
 interface Props {
   date: number;
-  promotionPeriod: BaseLastChancePeriod;
+  period: LastChancePeriodDTO;
 }
 
-export const PromoBanner: FC<PropsWithChildren<Props>> = ({ date, promotionPeriod, children }) => (
+export const PromoBanner: FC<PropsWithChildren<Props>> = ({ date, period, children }) => (
   <CountDownTimer
     date={date}
-    startDate={promotionPeriod.start}
-    countdownStartDate={promotionPeriod.lastChance}
-    endDate={promotionPeriod.end}
+    startDate={period.start}
+    countdownStartDate={period.lastChance}
+    endDate={period.end}
     message={(
       <span style={{ textTransform: 'uppercase' }}>
         {children}<button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
