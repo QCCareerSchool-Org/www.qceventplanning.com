@@ -39,7 +39,7 @@ const HomePage: PageComponent = async props => {
 
   return (
     <>
-      <section className="text-white">
+      <section className="bg-dark text-white">
         <HomeHeroImage />
         <div className="container">
           <div className="row g-0">
