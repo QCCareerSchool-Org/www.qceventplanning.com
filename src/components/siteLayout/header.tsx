@@ -2,29 +2,26 @@ import type { FC } from 'react';
 
 import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
-import { feb04, feb13 } from '@/periods';
+import { gbpCountry } from '@/domain/currency';
+import { feb19 } from '@/periods';
 
 interface Props {
   countryCode: string;
   date: number;
 }
 
-export const Header: FC<Props> = ({ date }) => {
+export const Header: FC<Props> = ({ date, countryCode }) => {
+  const discount = gbpCountry(countryCode) ? '£100' : '$100';
+
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
-      {feb04.contains(date)
+      {feb19.contains(date)
         ? (
-          <PromoBanner date={date} period={feb04.toDTO()}>
-            <span className="d-none d-lg-inline">Don't Miss Out—</span>Enroll Today and Get 2 Free Specialty Courses!
+          <PromoBanner date={date} period={feb19.toDTO()}>
+            <span className="d-none d-lg-inline">Don't Miss Out—</span>BOGO + {discount} OFF
           </PromoBanner>
         )
-        : feb13.contains(date)
-          ? (
-            <PromoBanner date={date} period={feb13.toDTO()}>
-              <span className="d-none d-lg-inline">Limited-Time Offer—</span>Get Two <strong>Free</strong> Specialty Courses
-            </PromoBanner>
-          )
-          : null
+        : null
       }
       <MainNav />
     </header>
