@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import Check from './check.svg';
 import { Client } from './client';
-import IMPP from './imp.cert.svg';
+import MPC from './imp.cert.svg';
 import styles from './main.module.scss';
 import Star from './star.svg';
 import type { Price } from '@/domain/price';
@@ -21,7 +21,7 @@ export const Main: FC<Props> = ({ price, originalPrice, href }) => {
         <div className={styles.pane}>
           <div className={styles.eyebrow}>
             <div className={styles.badge}>Best Value</div>
-            <span>Earn Your Master Planner Certificate</span>
+            <span>Earn Your Master Planner Certificate™</span>
           </div>
           <h2 className={styles.h2}>All-Access Program</h2>
           <h3 className={styles.h3}>Build a Full-Service Business & Maximize Your Earning Potential</h3>
@@ -39,7 +39,7 @@ export const Main: FC<Props> = ({ price, originalPrice, href }) => {
       <div className={styles.pricePane}>
         <div className={styles.pane}>
           <div className={styles.logoWrapper}>
-            <IMPP title="IMPP" className={styles.logo} />
+            <MPC title="MPC™" className={styles.logo} />
           </div>
           <Client price={price} originalPrice={originalPrice} href={href} />
         </div>
