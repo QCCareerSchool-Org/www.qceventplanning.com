@@ -6,6 +6,7 @@ import styles from './main.module.scss';
 import MPC from './mpc.svg';
 import Star from './star.svg';
 import type { Price } from '@/domain/price';
+import { repeat } from '@/lib/repeat';
 
 interface Props {
   price: Price;
@@ -33,7 +34,7 @@ export const Main: FC<Props> = ({ price, originalPrice, href }) => {
             <li><div><Check /></div><span><strong>Graduate in under a year</strong>, fully prepared to serve every type of client</span></li>
             <li><div><Check /></div><span><strong>Save up to 75%</strong> on total course fees</span></li>
           </ul>
-          <p className={styles.trusted}><span className={styles.stars}>{Array(5).fill(undefined).map((_, i) => <Star key={i} />)}</span><span>Trusted by 30,000+ Students & Grads</span></p>
+          <p className={styles.trusted}><span className={styles.stars}>{repeat(5, () => <Star />)}</span><span>Trusted by 30,000+ Students & Grads</span></p>
         </div>
       </div>
       <div className={styles.pricePane}>
