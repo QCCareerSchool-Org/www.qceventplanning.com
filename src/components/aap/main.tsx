@@ -2,8 +2,8 @@ import type { FC } from 'react';
 
 import Check from './check.svg';
 import { Client } from './client';
-import MPC from './imp.cert.svg';
 import styles from './main.module.scss';
+import MPC from './mpc.svg';
 import Star from './star.svg';
 import type { Price } from '@/domain/price';
 
