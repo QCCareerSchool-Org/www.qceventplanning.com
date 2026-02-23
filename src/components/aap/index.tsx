@@ -10,11 +10,16 @@ interface Props {
   href?: string;
 }
 
+/** Won't show in Ontario */
 export const AAP: FC<Props> = async ({ countryCode, provinceCode, href = 'https://enroll.qceventplanning.com/all-access-program' }) => {
   const [ price, combinedPrice ] = await Promise.all([
     fetchPrice([ 'aa' ], countryCode, provinceCode),
     fetchPrice([ 'ep', 'cp', 'ed', 'dw', 'lw', 'pe', 'fl', 'eb', 've' ], countryCode, provinceCode),
   ]);
+
+  if (countryCode === 'CA' && provinceCode === 'ON') {
+    return;
+  }
 
   if (!price.success || !combinedPrice.success) {
     return;
