@@ -20,14 +20,14 @@ export const Main: FC<Props> = ({ price, originalPrice, href }) => {
       <div className={styles.detailsPane}>
         <div className={styles.pane}>
           <div className={styles.eyebrow}>
-            <div className={styles.badge}>New</div>
+            <div className={styles.badge}>Best Value</div>
             <span>Earn Your Master Planner Certificate</span>
           </div>
           <h2 className={styles.h2}>All-Access Program</h2>
           <h3 className={styles.h3}>Build a Full-Service Business & Maximize Your Earning Potential</h3>
           <p>Get full access to every event planning course, so you can:</p>
           <ul className={styles.checkList}>
-            <li><div><Check /></div><span><strong>Master the fundamentals and learn advanced skills</strong> like event decor, luxury planning, floral design, and more</span></li>
+            <li><div><Check /></div><span><strong>Master the fundamentals and learn advanced skills</strong> like event decor, corporate events, luxury planning, destination weddings, and more</span></li>
             <li><div><Check /></div><span><strong>Earn a certificate for each course completed</strong>, proving your full range of skills</span></li>
             <li><div><Check /></div><span><strong>Receive your Master Planner Certificate</strong>, the ultimate credential to showcase your expertise</span></li>
             <li><div><Check /></div><span><strong>Graduate in under a year</strong>, fully prepared to serve every type of client</span></li>
