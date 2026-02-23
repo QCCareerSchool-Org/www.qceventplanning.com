@@ -12,6 +12,20 @@ interface Props {
 }
 
 export const Buttons: FC<Props> = props => {
+  const handleFullClick: MouseEventHandler = e => {
+    if ('vibrate' in navigator) {
+      navigator.vibrate(200);
+    }
+    props.onFullClick(e);
+  };
+
+  const handlePartClick: MouseEventHandler = e => {
+    if ('vibrate' in navigator) {
+      navigator.vibrate(200);
+    }
+    props.onPartClick(e);
+  };
+
   return (
     <>
       {/* Pricing Stack with Toggle */}
@@ -22,9 +36,9 @@ export const Buttons: FC<Props> = props => {
           {/* The Sliding Glass Background */}
           <div className={`${styles.slide} ${props.plan === 'full' ? styles.right : styles.left}`} />
 
-          <button onClick={props.onFullClick} className={`${styles.button} ${props.plan === 'full' ? styles.selected : styles.deselected}`}>One-Time</button>
+          <button onClick={handleFullClick} className={`${styles.button} ${props.plan === 'full' ? styles.selected : styles.deselected}`}>One-Time</button>
 
-          <button onClick={props.onPartClick} className={`${styles.button} ${props.plan === 'part' ? styles.selected : styles.deselected}`}>Monthly</button>
+          <button onClick={handlePartClick} className={`${styles.button} ${props.plan === 'part' ? styles.selected : styles.deselected}`}>Monthly</button>
         </div>
       </div>
     </>
