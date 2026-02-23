@@ -11,17 +11,19 @@ interface Props {
   onPartClick: MouseEventHandler;
 }
 
+const VIBRATE_MS = 50;
+
 export const Buttons: FC<Props> = props => {
   const handleFullClick: MouseEventHandler = e => {
     if ('vibrate' in navigator) {
-      navigator.vibrate(200);
+      navigator.vibrate(VIBRATE_MS);
     }
     props.onFullClick(e);
   };
 
   const handlePartClick: MouseEventHandler = e => {
     if ('vibrate' in navigator) {
-      navigator.vibrate(200);
+      navigator.vibrate(VIBRATE_MS);
     }
     props.onPartClick(e);
   };
