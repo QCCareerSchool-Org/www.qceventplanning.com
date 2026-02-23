@@ -8,6 +8,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses',
@@ -16,16 +17,19 @@ export const metadata: Metadata = {
   },
 };
 
-const CoursesPage: PageComponent = () => (
-  <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(providerJsonLD) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListjsonLD) }} />
-    <ILEASection />
-    <OnlineCourseSection />
-    <GoogleReviewSection className="bg-light" />
-    <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
-  </>
-);
+const CoursesPage: PageComponent = async ({ searchParams }) => {
+  const { countryCode, provinceCode } = await getServerData(searchParams);
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(providerJsonLD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListjsonLD) }} />
+      <ILEASection />
+      <OnlineCourseSection countryCode={countryCode} provinceCode={provinceCode} />
+      <GoogleReviewSection className="bg-light" />
+      <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
+    </>
+  );
+};
 
 const getCourseSchema = (c: CourseCode): Course => {
   const courseCertificate = getCourseCertification(c);

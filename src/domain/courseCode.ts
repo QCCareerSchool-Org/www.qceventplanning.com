@@ -1,4 +1,4 @@
-export const courseCodes = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe' ] as const;
+export const courseCodes = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe', 'aa' ] as const;
 
 export type CourseCode = typeof courseCodes[number];
 
@@ -21,6 +21,7 @@ const names = {
   eb: 'Accelerate Your Business Workshop',
   fl: 'Festivals and Live Events Course',
   pe: 'Promotional Event Planning',
+  aa: 'All Access Pass',
 } as const satisfies Readonly<Record<CourseCode, string>>;
 
 const baseUrl = 'https://www.qceventplanning.com';
@@ -38,6 +39,7 @@ const urls = {
   eb: `${baseUrl}/online-event-courses/accelerate-your-business`,
   fl: `${baseUrl}/online-event-courses/festivals-and-live-events`,
   pe: `${baseUrl}/online-event-courses/promotional-event-planning`,
+  aa: `${baseUrl}/online-event-courses/all-access-pass`,
 } as const satisfies Readonly<Record<CourseCode, string>>;
 
 const descriptions = {
@@ -53,6 +55,7 @@ const descriptions = {
   fl: 'Build a career in the exciting world of live events with QC Event School\'s online course. Learn to plan concerts, sports entertainment, festivals and more. Start today! ',
   pe: 'With QC Event School\'s online course, you\'ll learn to plan impactful promotional events that impress corporate clients, from product launches to sales campaigns. Start today!',
   ve: 'Expand your services, plan engaging online events and reach clients all over the world with QC\'s Virtual Event Planning training.',
+  aa: '',
 } as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 const certifications = {
@@ -68,6 +71,7 @@ const certifications = {
   fl: 'International Festivals and Live Events Planning Professional™',
   pe: 'Promotional Events Specialist',
   ve: undefined,
+  aa: undefined,
 } as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 const subjects = {
@@ -138,6 +142,7 @@ const subjects = {
     'Trends and Technology',
   ],
   ve: undefined,
+  aa: undefined,
 } as const satisfies Readonly<Record<CourseCode, readonly string[] | undefined>>;
 
 const workloads = {
@@ -153,6 +158,7 @@ const workloads = {
   fl: '7 hours of reading and 5 hours of assignments, usually completed over 4 to 6 months',
   pe: 'usually completed over 4 to 6 months',
   ve: '91 minutes of reading, 51 minutes of assignments, and 39 minutes of quizzes, usually completed over 4 to 6 months',
+  aa: undefined,
 } as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 export const getCourseName = (c: CourseCode): string => {

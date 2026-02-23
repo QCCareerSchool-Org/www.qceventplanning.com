@@ -1,9 +1,9 @@
+import type { Result } from 'generic-result-type';
 import type { FC } from 'react';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
 interface Props {
@@ -14,11 +14,10 @@ interface Props {
 }
 
 export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPrice, itemID = '#course' }) => {
-  let price: Price | undefined;
+  let price: Result<Price> | undefined;
   if (showPrice) {
-    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-    price = await fetchPrice(priceQuery);
-    if (!price) {
+    price = await fetchPrice([ courseCode ], 'US', 'MD');
+    if (!price.success) {
       return null;
     }
   }
@@ -45,10 +44,10 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPri
         <link itemProp="url" href="https://www.qceventplanning.com" />
         <meta itemProp="name" content="QC Event School" />
       </span>
-      {price && (
+      {price && price.success && (
         <span itemProp="offers" itemScope itemType="https://schema.org/Offer">
           <meta itemProp="priceCurrency" content="USD" />
-          <meta itemProp="price" content={price.cost.toFixed(2)} />
+          <meta itemProp="price" content={price.value.cost.toFixed(2)} />
           <link itemProp="url" href="https://enroll.qceventplanning.com" />
           <meta itemProp="availability" content="https://schema.org/InStock" />
         </span>

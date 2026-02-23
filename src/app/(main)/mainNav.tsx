@@ -44,6 +44,8 @@ export const MainNav: FC = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <NavDropdown title="Courses" id="courses-nav-dropdown">
+                <Link href="/online-event-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
+                <li><hr className="dropdown-divider" /></li>
                 <li style={{ paddingLeft: '1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0' }}>Foundation Courses</li>
                 <Link href="/online-event-courses/event-and-wedding-planning" className="dropdown-item" onClick={handleClick}>Event &amp; Wedding Planning</Link>
                 <Link href="/online-event-courses/corporate-event-planning" className="dropdown-item" onClick={handleClick}>Corporate Event Planning</Link>
@@ -58,15 +60,13 @@ export const MainNav: FC = () => {
                 <Link href="/online-event-courses/promotional-event-planning" className="dropdown-item" onClick={handleClick}>Promotional Event Planning</Link>
                 <Link href="/online-event-courses/festivals-and-live-events" className="dropdown-item" onClick={handleClick}>Festivals and Live Events</Link>
                 <Link href="/online-event-courses/accelerate-your-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
-                <li><hr className="dropdown-divider" /></li>
-                <Link href="/online-event-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
-                <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Event Planning Online</Link>
               </NavDropdown>
               <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
               <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
               <Link href="/tutors" className="nav-link d-lg-none d-xl-block" onClick={handleClick}>Tutors</Link>
               <NavDropdown title="About" id="about-nav-dropdown">
                 <Link href="/about-qc" className="dropdown-item" onClick={handleClick}>About the School</Link>
+                <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Event Planning Online</Link>
                 <Link href="/about-qc/meet-the-team" className="dropdown-item" onClick={handleClick}>Meet the Team</Link>
                 <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
               </NavDropdown>

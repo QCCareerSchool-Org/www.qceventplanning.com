@@ -3,7 +3,6 @@ import type { Course, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
-import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
 import { withSuspense } from '@/withSuspense';
@@ -57,14 +56,13 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
   };
 
   if (showPrice) {
-    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-    const price = await fetchPrice(priceQuery);
+    const price = await fetchPrice([ courseCode ], 'US', 'MD');
 
-    if (price) {
+    if (price.success) {
       course.offers = {
         '@type': 'Offer',
-        'priceCurrency': price.currency.code,
-        'price': price.discountedCost.toFixed(2),
+        'priceCurrency': price.value.currency.code,
+        'price': price.value.discountedCost.toFixed(2),
         'url': 'https://enroll.qceventplanning.com',
         'availability': 'https://schema.org/InStock',
       };
