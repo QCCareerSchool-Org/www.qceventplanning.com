@@ -1,56 +1,60 @@
 import 'server-only';
 
+import type { Brevo } from '@getbrevo/brevo';
 import { BrevoClient } from '@getbrevo/brevo';
 
 const apiKey = process.env.BREVO_API_KEY ?? '';
 
 const brevo = new BrevoClient({ apiKey });
 
-interface Attributes {
+interface CustomAttributes {
   STATUS_EVENT_LEAD?: boolean;
   STATUS_EVENT_STUDENT?: boolean;
 }
 
-export const createBrevoContact = async (emailAddress: string, firstName?: string, lastName?: string, countryCode?: string, provinceCode?: string | null, attributes?: Attributes, listIds?: number[]): Promise<boolean> => {
-  console.log('adding brevo contact', emailAddress);
-
-  const body = {
+export const createBrevoContact = async (
+  emailAddress: string,
+  firstName?: string,
+  lastName?: string,
+  countryCode?: string,
+  provinceCode?: string | null,
+  attributes?: CustomAttributes,
+  listIds?: number[],
+  abortSignal?: AbortSignal,
+): Promise<boolean> => {
+  const request: Brevo.CreateContactRequest = {
     email: emailAddress,
     listIds,
     updateEnabled: true,
     attributes: {
       ...attributes,
+      ...(typeof firstName !== 'undefined' ? { FIRSTNAME: firstName } : undefined),
+      ...(typeof lastName !== 'undefined' ? { LASTNAME: lastName } : undefined),
+      ...(typeof countryCode !== 'undefined' ? { COUNTRY_CODE: countryCode.toLocaleUpperCase() } : undefined),
+      ...(typeof provinceCode !== 'undefined' ? { PROVINCE_CODE: provinceCode?.toLocaleUpperCase() ?? '' } : undefined),
     },
   };
 
-  if (typeof firstName !== 'undefined') {
-    (body.attributes as Record<string, unknown>).FIRSTNAME = firstName;
-  }
-  if (typeof lastName !== 'undefined') {
-    (body.attributes as Record<string, unknown>).LASTNAME = lastName;
-  }
-  if (typeof countryCode !== 'undefined') {
-    (body.attributes as Record<string, unknown>).COUNTRY_CODE = countryCode.toLocaleUpperCase();
-  }
-  if (typeof provinceCode !== 'undefined') {
-    (body.attributes as Record<string, unknown>).PROVINCE_CODE = provinceCode === null ? '' : provinceCode.toLocaleUpperCase();
-  }
+  const response = await brevo.contacts.createContact(request, { abortSignal });
 
-  const createContactResponse = await brevo.contacts.createContact(body);
-
-  return typeof createContactResponse.id !== 'undefined';
+  return typeof response.id !== 'undefined';
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const sendBrevoEmail = async (templateId: number, emailAddress: string, firstName?: string, lastName?: string): Promise<void> => {
-  console.log('sending brevo email', emailAddress);
+export const sendBrevoEmail = async (
+  templateId: number,
+  emailAddress: string,
+  firstName?: string,
+  lastName?: string,
+  abortSignal?: AbortSignal,
+): Promise<string | undefined> => {
+  const name = firstName && `${firstName}${lastName ? ` ${lastName}` : ''}`;
 
-  await brevo.transactionalEmails.sendTransacEmail({
-    to: firstName ? [ { email: emailAddress, name: firstName } ] : [ { email: emailAddress } ],
+  const request: Brevo.SendTransacEmailRequest = {
+    to: [ { email: emailAddress, name } ],
     templateId,
-    // params: { name: firstName, surname: lastName },
-    // headers: {
-    //   'X-Mailin-custom': 'custom_header_1:custom_value_1|custom_header_2:custom_value_2',
-    // },
-  });
+  };
+
+  const response = await brevo.transactionalEmails.sendTransacEmail(request, { abortSignal });
+
+  return response.messageId;
 };
