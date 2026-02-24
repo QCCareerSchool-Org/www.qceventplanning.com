@@ -24,7 +24,7 @@ export const AAP: FC<Props> = async ({ countryCode, provinceCode, href = 'https:
   if (!price.success || !combinedPrice.success) {
     return;
   }
-  const originalPrice = combinedPrice.value.courses.reduce((prev, course) => { return prev.plus(course.cost); }, Big(0)).toNumber();
+  const originalPrice = parseFloat(combinedPrice.value.courses.reduce((prev, course) => { return prev.plus(course.cost); }, Big(0)).toFixed(2));
 
   return <Main price={price.value} originalPrice={originalPrice} href={href} />;
 };
