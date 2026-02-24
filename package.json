@@ -33,8 +33,7 @@
     "react-toastify": "^11.0.5",
     "react-use-count-up": "^1.0.2",
     "server-only": "^0.0.1",
-    "uuid": "^13.0.0",
-    "vwo-smartcode-nextjs": "^1.4.2"
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
