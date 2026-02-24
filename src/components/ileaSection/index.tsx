@@ -13,7 +13,7 @@ export const ILEASection: FC = () => (
         <div className="col-12 col-lg-9 col-xl-7 col-xxl-6 text-center">
           <ILEALogoImage className="mb-3" title="ILEA logo" />
           <h2 className="mb-3">ILEA Approved</h2>
-          <p className="mb-0">Every professional event certification meets the rigorous standards and is approved by the International Live Events Association.</p>
+          <p className="mb-0">Each of QC's professional event certifications meets the rigorous standards needed to be approved by the International Live Events Association.</p>
         </div>
       </div>
     </div>
