@@ -11,24 +11,30 @@ import FDImage from './floral-design/hero.jpg';
 import LWImage from './luxury-wedding-and-event-planning/hero.jpg';
 import PEImage from './promotional-event-planning/hero.jpg';
 import WPImage from './wedding-planning/hero.jpg';
+import { AAP } from '@/components/aap';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 
 interface Props {
   className?: string;
+  countryCode: string;
+  provinceCode: string | null;
 }
 
-export const OnlineCourseSection: FC<Props> = ({ className }) => (
+export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinceCode }) => (
   <div>
     <section id="courses" className={className}>
       <div className="container">
-        <div className="row justify-content-center mb-s">
+        <div className="row justify-content-center mb-5">
           <div className="col-12 col-lg-7 col-xl-6 col-xxl-5 text-center">
             <h1 className="mb-4">Online Event Planning Courses</h1>
           </div>
           <div className="col-12 col-lg-11 col-xl-9 col-xxl-8 text-center">
             <p className="lead mb-0">Discover a wide range of foundation and specialty courses offered by our online event school.</p>
           </div>
+        </div>
+        <div className="mb-5">
+          <AAP countryCode={countryCode} provinceCode={provinceCode} />
         </div>
         <div className="row justify-content-center g-4">
           <div className="col-12 col-sm-10 col-lg-6 d-flex">

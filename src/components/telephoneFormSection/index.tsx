@@ -2,7 +2,7 @@
 
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
-import type { ChangeEventHandler, FC, FormEventHandler } from 'react';
+import type { ChangeEventHandler, FC, SubmitEventHandler } from 'react';
 import { forwardRef, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import type { Country, Value } from 'react-phone-number-input';
@@ -32,7 +32,7 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
     setTelephoneNumber(value);
   };
 
-  const handleSubmit: FormEventHandler = e => {
+  const handleSubmit: SubmitEventHandler = e => {
     e.preventDefault();
     const url = 'https://leads.qccareerschool.com/telephoneNumber';
     const body = JSON.stringify({ leadId, telephoneNumber, listId: brevoListId });

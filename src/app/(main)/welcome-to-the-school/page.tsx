@@ -14,8 +14,8 @@ import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
-import { getServerData } from '@/lib/getServerData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 

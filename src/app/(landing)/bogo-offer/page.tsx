@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 const BogoOfferPage: PageComponent = async props => {
-  const { countryCode, date } = await getServerData(props.searchParams);
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
   return (
@@ -60,7 +60,7 @@ const BogoOfferPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <OnlineCourseSection className="bg-light" />
+      <OnlineCourseSection className="bg-light" countryCode={countryCode} provinceCode={provinceCode} />
       <SupportSection date={date} />
       <GetStartedSection
         title="Get Started Today"
