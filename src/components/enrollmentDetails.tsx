@@ -51,6 +51,7 @@ export const EnrollmentDetails: FC<Props> = ({ enrollment }) => {
                     </tr>
                   </>
                 )}
+                {/** If AA in included, hide all non-AA courses */}
                 {enrollment.courses.filter((c, i, a) => (a.findIndex(c2 => c2.code === 'AA') !== -1 ? c.code === 'AA' : true)).map((c, i) => (
                   <Fragment key={i}>
                     <tr>
