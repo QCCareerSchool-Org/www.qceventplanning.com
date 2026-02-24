@@ -51,7 +51,8 @@ export const EnrollmentDetails: FC<Props> = ({ enrollment }) => {
                     </tr>
                   </>
                 )}
-                {enrollment.courses.map((c, i) => (
+                {/** If AA in included, hide all non-AA courses */}
+                {enrollment.courses.filter((c, i, a) => (a.findIndex(c2 => c2.code === 'AA') !== -1 ? c.code === 'AA' : true)).map((c, i) => (
                   <Fragment key={i}>
                     <tr>
                       <td colSpan={2}><h6 className="mt-4 mb-0">{c.name}</h6></td>
