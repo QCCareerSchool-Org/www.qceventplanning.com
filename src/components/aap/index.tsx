@@ -17,10 +17,6 @@ export const AAP: FC<Props> = async ({ countryCode, provinceCode, href = 'https:
     fetchPrice([ 'ep', 'cp', 'ed', 'dw', 'lw', 'pe', 'fl', 'eb', 've' ], countryCode, provinceCode),
   ]);
 
-  if (countryCode === 'CA' && provinceCode === 'ON') {
-    return;
-  }
-
   if (!price.success || !combinedPrice.success) {
     return;
   }
