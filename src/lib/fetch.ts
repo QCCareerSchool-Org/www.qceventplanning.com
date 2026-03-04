@@ -14,14 +14,14 @@ import type { School } from '@/domain/school';
 
 const pricesUrl = process.env.PRICES_ENDPOINT;
 
-export const fetchPrice = async (courses: CourseCode[], countryCode: string, provinceCode: string | null, controller?: AbortController): Promise<Result<Price>> => {
+export const fetchPrice = async (courses: CourseCode[], countryCode: string, provinceCode: string | null, signal?: AbortSignal): Promise<Result<Price>> => {
   try {
     const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses };
 
     const url = `${pricesUrl}?${qs.stringify(priceQuery)}`;
     const response = await fetch(url, {
       headers: { 'X-API-Version': '2' },
-      signal: controller?.signal,
+      signal,
     });
 
     if (!response.ok) {
@@ -30,13 +30,12 @@ export const fetchPrice = async (courses: CourseCode[], countryCode: string, pro
 
     const responseBody: unknown = await response.json();
     if (!isPrice(responseBody)) {
-      console.log(responseBody);
       throw Error('Unexpected response');
     }
 
     return success(responseBody);
   } catch (err) {
-    if (!controller?.signal.aborted) {
+    if (!signal?.aborted) {
       console.error(err);
     }
     return failure(err instanceof Error ? err : Error(String(err)));
