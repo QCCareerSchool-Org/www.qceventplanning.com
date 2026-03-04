@@ -4,6 +4,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { ILEASection } from '@/components/ileaSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -45,16 +46,44 @@ const AllAccessProgramPage: PageComponent = () => (
     <section>
       <div className="container">
         <h2>What You'll Learn</h2>
+        <p className="lead">Get the Most Comprehensive Training Available—with Expert Mentorship Included</p>
+        <p>Unlock our complete library of online, self-paced event planning courses. Engage with interactive lessons and expert-led video training, complete practical assignments, and receive personalized mentor feedback as you develop confident, career-ready skills.</p>
+        <p><strong>Courses include:</strong></p>
+        <ul>
+          <li><strong>Event & Wedding Planning:</strong> Plan seamless weddings and events from concept to execution, mastering timelines, budgets, vendors, and client experience.</li>
+          <li><strong>Corporate Event Planning:</strong> Lead professional events from company functions to public gatherings, mastering event logistics and risk management.</li>
+          <li><strong>Event Decor:</strong> Elevate the guest experience by designing unforgettable event aesthetics.</li>
+          <li><strong>Luxury Wedding & Event Planning:</strong> Attract high-end clients and confidently plan upscale weddings and celebrations.</li>
+          <li><strong>Destination Wedding Planning:</strong> Manage travel, remote venues, and international logistics with expertise.</li>
+          <li><strong>Promotional Event Planning:</strong> Design high-impact product launches, industry events and brand experiences that command attention.</li>
+          <li><strong>Festivals & Live Events:</strong> Coordinate complex live productions and large-scale public events from start to finish.</li>
+          <li><strong>Accelerate Your Business:</strong> Achieve your business goals faster with proven strategies and guidance from a professional planner.</li>
+        </ul>
       </div>
     </section>
+    <ILEASection />
     <section>
       <div className="container">
         <h2>Certifications That Prove Your Expertise</h2>
+        <p className="lead">Build Trust with Professional Credentials</p>
+        <p>Prove your range of skills and expertise to prospective clients and your professional network.</p>
+        <ul>
+          <li><strong>Individual Course Certificates:</strong> Demonstrate your mastery in 9 specific niche areas.</li>
+          <li><strong>The Master Planner Certificate:</strong> A prestigious capstone credential that signals you are a full-service expert.</li>
+        </ul>
       </div>
     </section>
     <section>
       <div className="container">
         <h2>Who This Program Is For</h2>
+        <p className="lead">The Strategic Choice for Planners</p>
+        <p>This program is designed for aspiring and professional planners who want to build a career that lasts. Instead of training for one path, you'll graduate prepared to serve <strong>any client, at any stage of your career</strong>.</p>
+        <p>The All-Access Program is ideal if you want to:</p>
+        <ul>
+          <li><strong>Capture every opportunity</strong> and stop leaving revenue on the table.</li>
+          <li><strong>Establish credibility quickly</strong> with professional certifications.</li>
+          <li><strong>Build a business that can grow.</strong> Choose your specialty later—without being limited now</li>
+        </ul>
       </div>
     </section>
     <PaymentPlanSection courseCodes={courseCodes} />

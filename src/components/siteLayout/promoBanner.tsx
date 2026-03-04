@@ -10,7 +10,7 @@ interface Props {
   date: number;
   period: LastChancePeriodDTO;
 }
-const excludedPaths = [
+const excludedPaths: RegExp[] = [
   /^\/online-event-courses\/all-access-program/u,
 ];
 
