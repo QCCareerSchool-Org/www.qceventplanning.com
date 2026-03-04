@@ -21,7 +21,7 @@ const names = {
   eb: 'Accelerate Your Business Workshop',
   fl: 'Festivals and Live Events Course',
   pe: 'Promotional Event Planning',
-  aa: 'All Access Pass',
+  aa: 'All Access Program',
 } as const satisfies Readonly<Record<CourseCode, string>>;
 
 const baseUrl = 'https://www.qceventplanning.com';
@@ -39,7 +39,7 @@ const urls = {
   eb: `${baseUrl}/online-event-courses/accelerate-your-business`,
   fl: `${baseUrl}/online-event-courses/festivals-and-live-events`,
   pe: `${baseUrl}/online-event-courses/promotional-event-planning`,
-  aa: `${baseUrl}/online-event-courses/all-access-pass`,
+  aa: `${baseUrl}/online-event-courses/all-access-program`,
 } as const satisfies Readonly<Record<CourseCode, string>>;
 
 const descriptions = {
