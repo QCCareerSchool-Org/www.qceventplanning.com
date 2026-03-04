@@ -1,12 +1,18 @@
 import Link from 'next/link';
 
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
+import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
 
 const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
 
 const courseCodes: CourseCode[] = [ 'aa' ];
+
+const testimonialIds = [ 'TE-0017', 'TE-0025', 'TE-0026', 'TE-0027', 'TE-0028', 'TE-0015' ];
 
 const AllAccessProgramPage: PageComponent = () => (
   <>
@@ -23,21 +29,19 @@ const AllAccessProgramPage: PageComponent = () => (
         <h2>Build a Full-Service Event Business</h2>
         <p>Get instant access to the complete QC Event Planning online curriculum and earn up to ten certifications at your own pace. Complete the courses that align with your goals—or finish them all to graduate with your Master Planner Certificate.</p>
         <ul>
-          <li>Master Every Type of Event. Develop the specialized planning expertise to confidently handle weddings, corporate events, luxury celebrations, live events, and more.</li>
-          <li>Say Yes to More Opportunities. Expand your services and build an adaptable business so you never have to turn away a client.</li>
-          <li>Fast-Track Your Career. Graduate in under a year, and move quickly from training to booking paid projects.</li>
-          <li>Command Higher Fees. Deliver a polished, professional, full-service experience that justifies premium pricing.</li>
-          <li>Earn Recognized Credentials. Prove your expertise and graduate with a certification for every course completed—plus your Master Planner Certificate.</li>
-          <li>Build confidence through comprehensive training. Complete hands-on assignments and receive personalized expert feedback so you're fully prepared for any event.</li>
+          <li><strong>Master Every Type of Event.</strong> Develop the specialized planning expertise to confidently handle weddings, corporate events, luxury celebrations, live events, and more.</li>
+          <li><strong>Say Yes to More Opportunities.</strong> Expand your services and build an adaptable business so you never have to turn away a client.</li>
+          <li><strong>Fast-Track Your Career.</strong> Graduate in under a year, and move quickly from training to booking paid projects.</li>
+          <li><strong>Command Higher Fees.</strong> Deliver a polished, professional, full-service experience that justifies premium pricing.</li>
+          <li><strong>Earn Recognized Credentials.</strong> Prove your expertise and graduate with a certification for every course completed—plus your Master Planner Certificate.</li>
+          <li><strong>Build confidence through comprehensive training.</strong> Complete hands-on assignments and receive personalized expert feedback so you're fully prepared for any event.</li>
         </ul>
         <Link href={enrollHref} className="btn btn-primary">Become a Master Planner</Link>
+
+        <p className="mb-0">10 Professional Certifications • Graduate in Under a Year • Enjoy Lifetime Access</p>
       </div>
     </section>
-    <section>
-      <div className="container">
-        <h2>Testimonials</h2>
-      </div>
-    </section>
+    <TestimonialWallSection testimonialIds={testimonialIds} />
     <section>
       <div className="container">
         <h2>What You'll Learn</h2>
@@ -55,10 +59,39 @@ const AllAccessProgramPage: PageComponent = () => (
     </section>
     <PaymentPlanSection courseCodes={courseCodes} />
     <section>
-      <div className="container">
-        <h2>Frequently Asked Questions</h2>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="mb-5 text-center">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="How do QC Event School's courses work?" className="mb-3">
+                <p>QC Event School courses are fully online and self-paced, so you can learn whenever it fits your schedule. Each course combines interactive lessons with expert-led videos, guiding you through the concepts step by step. You'll complete practical assignments that let you apply what you've learned in real-world scenarios. After each assignment, an experienced industry mentor provides personalized feedback to help you refine your skills. This step-by-step approach ensures you graduate confident and ready to plan events for real clients.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Who will be my course mentor?" className="mb-3">
+                <p>You'll learn directly from our team of experienced tutors and industry mentors who have planned weddings, corporate events, luxury celebrations, and more. You'll be paired with a dedicated program for each course that you complete in the All-Access Program. Your mentors will review your work, provide personalized audio feedback on your assignments, and share real-world insights from their careers. With their support, you'll build practical skills, gain confidence, and be ready to succeed in the event industry.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long do I have to complete the program?" className="mb-3">
+                <p>You have a full year to complete the program. However, because the program is entirely self-paced, you'll be able to graduate well before that. If you prefer to take your time, simply reach out to the school—we'll be happy to arrange an extension.</p>
+                <p>Plus, your access doesn't end at graduation. You'll also enjoy <strong>lifetime access</strong> to all course materials and any future updates to the curriculum.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Are there payment plans?" className="mb-3">
+                <p>Yes. You can choose to pay in full today and receive an additional discount, or select an interest-free installment plan at checkout.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="What is the refund policy?" className="mb-3">
+                <p>We offer a <strong>21-day money-back guarantee</strong>. If the program isn't the right fit for your goals, we will provide a full refund.</p>
+              </AccordionFAQ>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+    <GoogleReviewSection />
+    <GetStartedSection
+      title="Ready to start your event planning career?"
+      text="Gain complete access to every QC Event Planning course and graduate ready to launch a professional event business that can handle any client or occasion."
+      buttonText="Become a Master Planner"
+      buttonHref={enrollHref}
+    />
   </>
 );
 
