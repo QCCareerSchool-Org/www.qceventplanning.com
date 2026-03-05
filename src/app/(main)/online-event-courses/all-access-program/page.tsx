@@ -1,7 +1,11 @@
 import Link from 'next/link';
 
+import { Card } from './_components/card';
+import HeroDesktop from './hero-desktop.jpg';
+import HeroMobile from './hero-mobile.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
@@ -20,29 +24,67 @@ const AllAccessProgramPage: PageComponent = () => {
   return (
     <>
       <CourseJsonLd courseCode="aa" />
-      <section>
+      <section className="bg-navy text-white text-center">
+        <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'md' }} priority />
         <div className="container">
-          <h1>Join the All-Access Program</h1>
-          <p className="lead">Maximize Your Earning Potential</p>
-          <Link href={enrollHref} className="btn btn-primary">Enroll Now</Link>
-          <Link href="#includede" className="btn btn-secondary">See What's Included</Link>
+          <div className="eyebrow text-shadow mb-3"><strong>Best Value</strong> Earn Your Master Planner Certificate</div>
+          <h1 className="text-shadow mb-4">Join the All-Access Program</h1>
+          <p className="lead fw-medium text-shadow mb-5">Maximize Your Earning Potential</p>
+          <div className="d-flex justify-content-center gap-4">
+            <Link href={enrollHref} className="btn btn-primary shadow">Enroll Now</Link>
+            <Link href="#includede" className="btn btn-outline-light shadow">See What's Included</Link>
+          </div>
         </div>
       </section>
-      <section>
+      <section className="text-center">
         <div className="container">
-          <h2>Build a Full-Service Event Business</h2>
-          <p>Get instant access to the complete QC Event Planning online curriculum and earn up to ten certifications at your own pace. Complete the courses that align with your goals—or finish them all to graduate with your Master Planner Certificate.</p>
-          <ul>
-            <li><strong>Master Every Type of Event.</strong> Develop the specialized planning expertise to confidently handle weddings, corporate events, luxury celebrations, live events, and more.</li>
-            <li><strong>Say Yes to More Opportunities.</strong> Expand your services and build an adaptable business so you never have to turn away a client.</li>
-            <li><strong>Fast-Track Your Career.</strong> Graduate in under a year, and move quickly from training to booking paid projects.</li>
-            <li><strong>Command Higher Fees.</strong> Deliver a polished, professional, full-service experience that justifies premium pricing.</li>
-            <li><strong>Earn Recognized Credentials.</strong> Prove your expertise and graduate with a certification for every course completed—plus your Master Planner Certificate.</li>
-            <li><strong>Build confidence through comprehensive training.</strong> Complete hands-on assignments and receive personalized expert feedback so you're fully prepared for any event.</li>
-          </ul>
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-md-10 col-lg-8">
+              <h2 className="mb-3">Build a Full-Service Event Business</h2>
+              <p className="mb-0">Get instant access to the complete QC Event Planning online curriculum and earn up to ten certifications at your own pace. Complete the courses that align with your goals—or finish them all to graduate with your Master Planner Certificate.</p>
+            </div>
+          </div>
+          <div className="text-start row g-4 mb-5">
+            <div className="col-12 col-md-6 col-xl-4 d-flex">
+              <Card>
+                <h3 className="h6">Master Every Type of Event.</h3>
+                Develop the specialized planning expertise to confidently handle weddings, corporate events, luxury celebrations, live events, and more.
+              </Card>
+            </div>
+            <div className="col-12 col-md-6 col-xl-4 d-flex">
+              <Card>
+                <h3 className="h6">Say Yes to More Opportunities.</h3>
+                Expand your services and build an adaptable business so you never have to turn away a client.
+              </Card>
+            </div>
+            <div className="col-12 col-md-6 col-xl-4 d-flex">
+              <Card>
+                <h3 className="h6">Fast-Track Your Career.</h3>
+                Graduate in under a year, and move quickly from training to booking paid projects.
+              </Card>
+            </div>
+            <div className="col-12 col-md-6 col-xl-4 d-flex">
+              <Card>
+                <h3 className="h6">Command Higher Fees.</h3>
+                Deliver a polished, professional, full-service experience that justifies premium pricing.
+              </Card>
+            </div>
+            <div className="col-12 col-md-6 col-xl-4 d-flex">
+              <Card>
+                <h3 className="h6">Earn Recognized Credentials.</h3>
+                Prove your expertise and graduate with a certification for every course completed—plus your Master Planner Certificate.
+              </Card>
+            </div>
+            <div className="col-12 col-md-6 col-xl-4 d-flex">
+              <Card>
+                <h3 className="h6">Build confidence through comprehensive training.</h3>
+                Complete hands-on assignments and receive personalized expert feedback so you're fully prepared for any event.
+              </Card>
+            </div>
+          </div>
           <Link href={enrollHref} className="btn btn-primary">Become a Master Planner</Link>
 
-          <p className="mb-0">10 Professional Certifications • Graduate in Under a Year • Enjoy Lifetime Access</p>
+          <p className="mt-3 text-center text-black text-uppercase small fw-bold" style={{ letterSpacing: '1px' }}>10 Professional Certifications • Graduate in Under a Year • Enjoy Lifetime Access</p>
         </div>
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} />
