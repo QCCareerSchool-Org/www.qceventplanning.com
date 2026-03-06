@@ -19,7 +19,7 @@ export const SuccessStoriesSection: FC<Props> = ({ className }) => (
           <p>Prove your range of skills and expertise to prospective clients and your professional network.</p>
           <div className="d-flex flex-column gap-3">
             <div className={`${styles.box} ms-2`}>
-              <div className="d-flex gap-2">
+              <div className="d-flex gap-3">
                 <div className="flex-shrink pt-1"><TrophyIcon width="28" /></div>
                 <div className="flex-grow">
                   <h3 className="h6 mb-0">Individual Course Certificates</h3>
@@ -28,7 +28,7 @@ export const SuccessStoriesSection: FC<Props> = ({ className }) => (
               </div>
             </div>
             <div className={`${styles.box} ${styles.inverse}`}>
-              <div className="d-flex gap-2">
+              <div className="d-flex gap-3">
                 <div className="flex-shrink text-primary pt-1"><AwardIcon width="32" /></div>
                 <div className="flex-grow">
                   <h3 className="h6 mb-0">The Master Planner Certificate</h3>
