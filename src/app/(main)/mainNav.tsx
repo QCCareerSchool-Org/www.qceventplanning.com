@@ -10,10 +10,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './mainNav.module.css';
 import Toggle from './toggle.svg';
 import { Logo } from '@/components/logo';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
 
 export const MainNav: FC = () => {
-  const scrollPosition = useScrollPosition();
+  const scrollPosition = useScrollPositionContext();
   const [ key, setKey ] = useState(0);
 
   const handleClick = (): void => {

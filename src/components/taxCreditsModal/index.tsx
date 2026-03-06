@@ -5,10 +5,10 @@ import { Modal } from 'react-bootstrap';
 
 import styles from './index.module.scss';
 import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
-import { useTaxCreditPopup } from '@/hooks/useTaxCreditPopup';
+import { useTaxCreditPopupContext } from '@/hooks/useTaxCreditPopupContext';
 
 export const TaxCreditsModal: FC = () => {
-  const [ show, toggle ] = useTaxCreditPopup();
+  const [ show, toggle ] = useTaxCreditPopupContext();
 
   const handleHide = (): void => {
     toggle();

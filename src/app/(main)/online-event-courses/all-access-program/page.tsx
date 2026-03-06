@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 import { Card } from './_components/card';
+import { CourseDescription } from './_components/courseDescription';
+import { SuccessStoriesSection } from './_components/successStories';
 import HeroDesktop from './hero-desktop.jpg';
 import HeroMobile from './hero-mobile.jpg';
 import type { PageComponent } from '@/app/serverComponent';
@@ -20,6 +22,9 @@ const courseCodes: CourseCode[] = [ 'aa' ];
 
 const testimonialIds = [ 'TE-0017', 'TE-0025', 'TE-0026', 'TE-0027', 'TE-0028', 'TE-0015' ];
 
+const col1 = 'col-12 col-md-6 col-xl-4 d-flex';
+const col2 = 'col-12 col-lg-6';
+
 const AllAccessProgramPage: PageComponent = () => {
   return (
     <>
@@ -32,11 +37,11 @@ const AllAccessProgramPage: PageComponent = () => {
           <p className="lead fw-medium text-shadow mb-5">Maximize Your Earning Potential</p>
           <div className="d-flex justify-content-center gap-4">
             <Link href={enrollHref} className="btn btn-primary shadow">Enroll Now</Link>
-            <Link href="#includede" className="btn btn-outline-light shadow">See What's Included</Link>
+            <Link href="#included" className="btn btn-outline-light shadow">See What's Included</Link>
           </div>
         </div>
       </section>
-      <section className="text-center">
+      <section id="included" className="text-center">
         <div className="container">
           <div className="row justify-content-center mb-5">
             <div className="col-12 col-md-10 col-lg-8">
@@ -45,37 +50,37 @@ const AllAccessProgramPage: PageComponent = () => {
             </div>
           </div>
           <div className="text-start row g-4 mb-5">
-            <div className="col-12 col-md-6 col-xl-4 d-flex">
+            <div className={col1}>
               <Card>
                 <h3 className="h6">Master Every Type of Event.</h3>
                 Develop the specialized planning expertise to confidently handle weddings, corporate events, luxury celebrations, live events, and more.
               </Card>
             </div>
-            <div className="col-12 col-md-6 col-xl-4 d-flex">
+            <div className={col1}>
               <Card>
                 <h3 className="h6">Say Yes to More Opportunities.</h3>
                 Expand your services and build an adaptable business so you never have to turn away a client.
               </Card>
             </div>
-            <div className="col-12 col-md-6 col-xl-4 d-flex">
+            <div className={col1}>
               <Card>
                 <h3 className="h6">Fast-Track Your Career.</h3>
                 Graduate in under a year, and move quickly from training to booking paid projects.
               </Card>
             </div>
-            <div className="col-12 col-md-6 col-xl-4 d-flex">
+            <div className={col1}>
               <Card>
                 <h3 className="h6">Command Higher Fees.</h3>
                 Deliver a polished, professional, full-service experience that justifies premium pricing.
               </Card>
             </div>
-            <div className="col-12 col-md-6 col-xl-4 d-flex">
+            <div className={col1}>
               <Card>
                 <h3 className="h6">Earn Recognized Credentials.</h3>
                 Prove your expertise and graduate with a certification for every course completed—plus your Master Planner Certificate.
               </Card>
             </div>
-            <div className="col-12 col-md-6 col-xl-4 d-flex">
+            <div className={col1}>
               <Card>
                 <h3 className="h6">Build confidence through comprehensive training.</h3>
                 Complete hands-on assignments and receive personalized expert feedback so you're fully prepared for any event.
@@ -83,41 +88,70 @@ const AllAccessProgramPage: PageComponent = () => {
             </div>
           </div>
           <Link href={enrollHref} className="btn btn-primary">Become a Master Planner</Link>
-
           <p className="mt-3 text-center text-black text-uppercase small fw-bold" style={{ letterSpacing: '1px' }}>10 Professional Certifications • Graduate in Under a Year • Enjoy Lifetime Access</p>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={testimonialIds} />
+      <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <section>
         <div className="container">
-          <h2>What You'll Learn</h2>
-          <p className="lead">Get the Most Comprehensive Training Available—with Expert Mentorship Included</p>
-          <p>Unlock our complete library of online, self-paced event planning courses. Engage with interactive lessons and expert-led video training, complete practical assignments, and receive personalized mentor feedback as you develop confident, career-ready skills.</p>
-          <p><strong>Courses include:</strong></p>
-          <ul>
-            <li><strong>Event & Wedding Planning:</strong> Plan seamless weddings and events from concept to execution, mastering timelines, budgets, vendors, and client experience.</li>
-            <li><strong>Corporate Event Planning:</strong> Lead professional events from company functions to public gatherings, mastering event logistics and risk management.</li>
-            <li><strong>Event Decor:</strong> Elevate the guest experience by designing unforgettable event aesthetics.</li>
-            <li><strong>Luxury Wedding & Event Planning:</strong> Attract high-end clients and confidently plan upscale weddings and celebrations.</li>
-            <li><strong>Destination Wedding Planning:</strong> Manage travel, remote venues, and international logistics with expertise.</li>
-            <li><strong>Promotional Event Planning:</strong> Design high-impact product launches, industry events and brand experiences that command attention.</li>
-            <li><strong>Festivals & Live Events:</strong> Coordinate complex live productions and large-scale public events from start to finish.</li>
-            <li><strong>Accelerate Your Business:</strong> Achieve your business goals faster with proven strategies and guidance from a professional planner.</li>
-          </ul>
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-lg-11 col-xl-10 text-center">
+              <div className="eyebrow text-primary mb-4">What You'll Learn</div>
+              <h2 className="h3 mb-4">Get the Most Comprehensive Training Available—with Expert Mentorship Included</h2>
+              <p className="mb-0">Unlock our complete library of online, self-paced event planning courses. Engage with interactive lessons and expert-led video training, complete practical assignments, and receive personalized mentor feedback as you develop confident, career-ready skills.</p>
+            </div>
+          </div>
+          <div className="row mb-4">
+            <div className="col-12 col-md-6">
+              <h3 className="h5 pb-2 mb-0" style={{ borderBottom: '1px solid #ccc' }}><strong>Courses include:</strong></h3>
+            </div>
+          </div>
+          <div className="row g-4">
+            <div className={col2}>
+              <CourseDescription heading="Event & Wedding Planning">
+                Plan seamless weddings and events from concept to execution, mastering timelines, budgets, vendors, and client experience.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Corporate Event Planning">
+                Lead professional events from company functions to public gatherings, mastering event logistics and risk management.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Event Decor">
+                Elevate the guest experience by designing unforgettable event aesthetics.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Luxury Wedding & Event Planning">
+                Attract high-end clients and confidently plan upscale weddings and celebrations.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Destination Wedding Planning">
+                Manage travel, remote venues, and international logistics with expertise.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Promotional Event Planning">
+                Design high-impact product launches, industry events and brand experiences that command attention.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Festivals & Live Events">
+                Coordinate complex live productions and large-scale public events from start to finish.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Accelerate Your Business">
+                Achieve your business goals faster with proven strategies and guidance from a professional planner.
+              </CourseDescription>
+            </div>
+          </div>
         </div>
       </section>
       <ILEASection />
-      <section>
-        <div className="container">
-          <h2>Certifications That Prove Your Expertise</h2>
-          <p className="lead">Build Trust with Professional Credentials</p>
-          <p>Prove your range of skills and expertise to prospective clients and your professional network.</p>
-          <ul>
-            <li><strong>Individual Course Certificates:</strong> Demonstrate your mastery in 9 specific niche areas.</li>
-            <li><strong>The Master Planner Certificate:</strong> A prestigious capstone credential that signals you are a full-service expert.</li>
-          </ul>
-        </div>
-      </section>
+      <SuccessStoriesSection className="bg-light" />
       <section>
         <div className="container">
           <h2>Who This Program Is For</h2>
@@ -159,7 +193,7 @@ const AllAccessProgramPage: PageComponent = () => {
           </div>
         </div>
       </section>
-      <GoogleReviewSection />
+      <GoogleReviewSection className="bg-light" />
       <GetStartedSection
         title="Ready to start your event planning career?"
         text="Gain complete access to every QC Event Planning course and graduate ready to launch a professional event business that can handle any client or occasion."

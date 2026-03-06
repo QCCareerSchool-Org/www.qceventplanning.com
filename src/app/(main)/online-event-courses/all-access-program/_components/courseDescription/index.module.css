@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.left {
+  width: 9.75px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  color: var(--qc-color-gold)
+}
+
+.right {
+  flex-grow: 1;
+}
