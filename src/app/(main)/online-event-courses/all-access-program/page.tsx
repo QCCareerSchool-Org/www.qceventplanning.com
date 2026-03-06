@@ -3,8 +3,12 @@ import Link from 'next/link';
 import { Card } from './_components/card';
 import { CourseDescription } from './_components/courseDescription';
 import { SuccessStoriesSection } from './_components/successStories';
+import CheckShieldIcon from './check-shield.svg';
 import HeroDesktop from './hero-desktop.jpg';
 import HeroMobile from './hero-mobile.jpg';
+import { IconCircle } from './iconCircle';
+import LineChartIcon from './line-chart.svg';
+import RocketIcon from './rocket.svg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -153,16 +157,25 @@ const AllAccessProgramPage: PageComponent = () => {
       <ILEASection />
       <SuccessStoriesSection className="bg-light" />
       <section>
-        <div className="container">
-          <h2>Who This Program Is For</h2>
-          <p className="lead">The Strategic Choice for Planners</p>
-          <p>This program is designed for aspiring and professional planners who want to build a career that lasts. Instead of training for one path, you'll graduate prepared to serve <strong>any client, at any stage of your career</strong>.</p>
-          <p>The All-Access Program is ideal if you want to:</p>
-          <ul>
-            <li><strong>Capture every opportunity</strong> and stop leaving revenue on the table.</li>
-            <li><strong>Establish credibility quickly</strong> with professional certifications.</li>
-            <li><strong>Build a business that can grow.</strong> Choose your specialty later—without being limited now</li>
-          </ul>
+        <div className="container text-center">
+          <div className="eyebrow text-primary mb-3">Who This Program Is For</div>
+          <h2 className="mb-3">The Strategic Choice for Planners</h2>
+          <p className="mb-5">This program is designed for aspiring and professional planners who want to build a career that lasts. Instead of training for one path, you'll graduate prepared to serve <strong>any client, at any stage of your career</strong>.</p>
+          <p className="fw-bold">The All-Access Program is ideal if you want to:</p>
+          <div className="row justify-content-center g-4">
+            <div className="col-12 col-md-10 col-lg-4">
+              <div className="mb-3"><IconCircle><LineChartIcon /></IconCircle></div>
+              <strong>Capture every opportunity and stop leaving revenue on the table.</strong>
+            </div>
+            <div className="col-12 col-md-10 col-lg-4">
+              <div className="mb-3"><IconCircle><CheckShieldIcon /></IconCircle></div>
+              <strong>Establish credibility quickly with professional certifications.</strong>
+            </div>
+            <div className="col-12 col-md-10 col-lg-4">
+              <div className="mb-3"><IconCircle><RocketIcon /></IconCircle></div>
+              <strong>Build a business that can grow. Choose your specialty later—without being limited now.</strong>
+            </div>
+          </div>
         </div>
       </section>
       <PaymentPlanSection courseCodes={courseCodes} />

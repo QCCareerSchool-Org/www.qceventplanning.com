@@ -7,4 +7,8 @@ interface Props {
   name: string;
 }
 
-export const CertSlide: FC<Props> = ({ src, name }) => <Image src={src} alt={name} className="rounded-5 img-fluid" />;
+export const CertSlide: FC<Props> = ({ src, name }) => (
+  <div className="p-2 mb-4">
+    <Image src={src} alt={name} className="w-100 rounded-5 img-fluid" />
+  </div>
+);

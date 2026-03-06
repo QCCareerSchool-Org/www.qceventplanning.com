@@ -28,10 +28,10 @@ export const CertCarousel: FC = () => {
   return (
     <div ref={ref}>
       <Carousel ssr responsive={responsive} infinite arrows={!mobile} showDots={mobile} autoPlay={intersected} autoPlaySpeed={autoPlaySpeed}>
+        <CertSlide src={AppCert} name="" />
         <CertSlide src={DouniaSaikaley} name="Dounia Saikaley" />
         <CertSlide src={BessyLopez} name="Bessy Lopez" />
         <CertSlide src={JorginaTeles} name="Jorgina Teles" />
-        <CertSlide src={AppCert} name="" />
         <CertSlide src={NoName} name="" />
       </Carousel>
     </div>
