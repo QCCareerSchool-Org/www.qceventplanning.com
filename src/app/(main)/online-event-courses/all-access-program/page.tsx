@@ -167,10 +167,10 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
             </div>
           </div>
           {price.success && originalPrice.success && (
-            <div className="text-black text-center mt-5" style={{ fontSize: '1.125rem' }}>
-              <div><strong>Total Value:</strong> <span style={{ textDecoration: '2px rgba(255, 34, 74, 0.7) line-through' }}>{originalPrice.value.currency.symbol}{formatPrice(originalPrice.value.cost)}</span></div>
-              <div><strong>Your Price:</strong> {price.value.currency.symbol}{formatPrice(price.value.plans.full.total)}</div>
-              <div className="fst-italic">Or Get Started for Only {price.value.currency.symbol}{formatPrice(price.value.plans.part.deposit)}</div>
+            <div className="text-center mt-5 pt-5" style={{ borderTop: '1px solid #ccc' }}>
+              <div className="text-black" style={{ fontSize: '1.375rem' }}><strong>Total Value:</strong> <span style={{ textDecoration: '2px rgba(255, 34, 74, 0.7) line-through' }}>{originalPrice.value.currency.symbol}{formatPrice(originalPrice.value.cost)}</span></div>
+              <div className="d-inline-block bg-primary text-black rounded-pill py-2 px-4 mt-2 mb-2" style={{ fontSize: '1.375rem' }}>Your Price: {price.value.currency.symbol}{formatPrice(price.value.plans.full.total)}</div>
+              <div className="fst-italic mt-1">Or Get Started for Only {price.value.currency.symbol}{formatPrice(price.value.plans.part.deposit)}</div>
             </div>
           )}
         </div>
