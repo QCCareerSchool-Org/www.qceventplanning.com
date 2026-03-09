@@ -52,21 +52,23 @@ export const MainNav: FC = () => {
             <Nav className="ms-auto">
               <NavDropdown title="Courses" id="courses-nav-dropdown">
                 <Link href="/online-event-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
-                <li><hr className="dropdown-divider" /></li>
-                <li style={{ paddingLeft: '1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0' }}>Foundation Courses</li>
+                <hr className="dropdown-divider" />
+                <div style={{ paddingLeft: '1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0' }}>Foundation Courses</div>
                 <Link href="/online-event-courses/event-and-wedding-planning" className="dropdown-item" onClick={handleClick}>Event &amp; Wedding Planning</Link>
                 <Link href="/online-event-courses/corporate-event-planning" className="dropdown-item" onClick={handleClick}>Corporate Event Planning</Link>
                 <Link href="/online-event-courses/event-planning" className="dropdown-item" onClick={handleClick}>Event Planning</Link>
                 <Link href="/online-event-courses/floral-design" className="dropdown-item" onClick={handleClick}>Floral Design</Link>
                 <Link href="/online-event-courses/wedding-planning" className="dropdown-item" onClick={handleClick}>Wedding Planning</Link>
                 <Link href="/online-event-courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
-                <li><hr className="dropdown-divider" /></li>
-                <li style={{ paddingLeft: '1rem', fontWeight: 'bold', margin: '1rem 0 0.5rem 0' }}>Specialty Courses</li>
+                <hr className="dropdown-divider" />
+                <div style={{ paddingLeft: '1rem', fontWeight: 'bold', margin: '1rem 0 0.5rem 0' }}>Specialty Courses</div>
                 <Link href="/online-event-courses/luxury-wedding-and-event-planning" className="dropdown-item" onClick={handleClick}>Luxury Wedding &amp; Event Planning</Link>
                 <Link href="/online-event-courses/destination-wedding-planning" className="dropdown-item" onClick={handleClick}>Destination Wedding Planning</Link>
                 <Link href="/online-event-courses/promotional-event-planning" className="dropdown-item" onClick={handleClick}>Promotional Event Planning</Link>
                 <Link href="/online-event-courses/festivals-and-live-events" className="dropdown-item" onClick={handleClick}>Festivals and Live Events</Link>
                 <Link href="/online-event-courses/accelerate-your-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
+                <hr className="dropdown-divider" />
+                <Link href="/online-event-courses/all-access-program" className="dropdown-item fw-bold" style={{ marginLeft: '-0.375rem' }} onClick={handleClick}><span className="badge bg-primary">New</span>&nbsp; All-Access Program</Link>
               </NavDropdown>
               <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
               <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
