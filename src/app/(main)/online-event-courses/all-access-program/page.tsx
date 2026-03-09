@@ -167,9 +167,10 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
             </div>
           </div>
           {price.success && originalPrice.success && (
-            <div className="text-center text-black mt-5" style={{ fontSize: '1.25rem' }}>
-              <div>Total Value: <strong><span style={{ textDecoration: '2px rgba(255, 34, 74, 0.7) line-through' }}>{originalPrice.value.currency.symbol}{formatPrice(originalPrice.value.cost)}</span></strong></div>
-              <div>Your Price: <strong>{price.value.currency.symbol}{formatPrice(price.value.plans.full.total)}</strong> or Get Started for only <strong>{price.value.currency.symbol}{formatPrice(price.value.plans.part.deposit)}</strong></div>
+            <div className="text-black text-center mt-5" style={{ fontSize: '1.125rem' }}>
+              <div><strong>Total Value:</strong> <span style={{ textDecoration: '2px rgba(255, 34, 74, 0.7) line-through' }}>{originalPrice.value.currency.symbol}{formatPrice(originalPrice.value.cost)}</span></div>
+              <div><strong>Your Price:</strong> {price.value.currency.symbol}{formatPrice(price.value.plans.full.total)}</div>
+              <div className="fst-italic">Or Get Started for Only {price.value.currency.symbol}{formatPrice(price.value.plans.part.deposit)}</div>
             </div>
           )}
         </div>
