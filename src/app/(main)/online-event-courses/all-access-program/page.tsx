@@ -22,10 +22,12 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { aapCourseCodes, type CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
+import { BrevoEvent } from '@/scripts/brevoEvent';
 
 const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
 
-const courseCodes: CourseCode[] = [ 'aa' ];
+const courseCode: CourseCode = 'aa';
+const courseCodes: CourseCode[] = [ courseCode ];
 
 const testimonialIds = [ 'TE-0017', 'TE-0025', 'TE-0026', 'TE-0027', 'TE-0028', 'TE-0015' ];
 
@@ -42,6 +44,7 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
   return (
     <>
       <CourseJsonLd courseCode="aa" />
+      <BrevoEvent name="course_viewed" data={{ courseCode }} />
       <section className="bg-navy text-white text-center">
         <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'md' }} priority />
         <div className="container">
