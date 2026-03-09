@@ -18,7 +18,10 @@ import { ILEASection } from '@/components/ileaSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import type { CourseCode } from '@/domain/courseCode';
+import { aapCourseCodes, type CourseCode } from '@/domain/courseCode';
+import { fetchPrice } from '@/lib/fetch';
+import { formatPrice } from '@/lib/formatPrice';
+import { getServerData } from '@/lib/getServerData';
 
 const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
 
@@ -29,7 +32,13 @@ const testimonialIds = [ 'TE-0017', 'TE-0025', 'TE-0026', 'TE-0027', 'TE-0028', 
 const col1 = 'col-12 col-md-6 col-xl-4 d-flex';
 const col2 = 'col-12 col-lg-6';
 
-const AllAccessProgramPage: PageComponent = () => {
+const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
+  const { countryCode, provinceCode } = await getServerData(searchParams);
+  const [ price, originalPrice ] = await Promise.all([
+    fetchPrice(courseCodes, countryCode, provinceCode),
+    fetchPrice(aapCourseCodes, countryCode, provinceCode),
+  ]);
+
   return (
     <>
       <CourseJsonLd courseCode="aa" />
@@ -152,6 +161,12 @@ const AllAccessProgramPage: PageComponent = () => {
               </CourseDescription>
             </div>
           </div>
+          {price.success && originalPrice.success && (
+            <div className="text-center text-black mt-5" style={{ fontSize: '1.25rem' }}>
+              <div>Total Value: <strong><span style={{ textDecoration: '2px rgba(255, 34, 74, 0.7) line-through' }}>{originalPrice.value.currency.symbol}{formatPrice(originalPrice.value.cost)}</span></strong></div>
+              <div>Your Price: <strong>{price.value.currency.symbol}{formatPrice(price.value.plans.full.total)}</strong> or Get Started for only <strong>{price.value.currency.symbol}{formatPrice(price.value.plans.part.deposit)}</strong></div>
+            </div>
+          )}
         </div>
       </section>
       <ILEASection />

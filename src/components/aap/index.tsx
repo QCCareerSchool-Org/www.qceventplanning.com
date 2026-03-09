@@ -2,6 +2,7 @@ import Big from 'big.js';
 import type { FC } from 'react';
 
 import { Main } from './main';
+import { aapCourseCodes } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 export const AAP: FC<Props> = async ({ countryCode, provinceCode, href = '/online-event-courses/all-access-program' }) => {
   const [ price, combinedPrice ] = await Promise.all([
     fetchPrice([ 'aa' ], countryCode, provinceCode),
-    fetchPrice([ 'ep', 'cp', 'ed', 'dw', 'lw', 'pe', 'fl', 'eb', 've' ], countryCode, provinceCode),
+    fetchPrice(aapCourseCodes, countryCode, provinceCode),
   ]);
 
   if (!price.success || !combinedPrice.success) {

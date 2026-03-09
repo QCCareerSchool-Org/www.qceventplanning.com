@@ -1,4 +1,5 @@
 export const courseCodes = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe', 'aa' ] as const;
+export const aapCourseCodes: CourseCode[] = [ 'ep', 'cp', 'ed', 'lw', 'dw', 'fl', 'eb', 've' ] as const;
 
 export type CourseCode = typeof courseCodes[number];
 
