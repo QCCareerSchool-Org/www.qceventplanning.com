@@ -1,7 +1,7 @@
 import Big from 'big.js';
 import type { FC } from 'react';
 
-import { Main } from './main';
+import { AAPMain } from './main';
 import { aapCourseCodes } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 
@@ -22,5 +22,5 @@ export const AAP: FC<Props> = async ({ countryCode, provinceCode, href = '/onlin
   }
   const originalPrice = parseFloat(combinedPrice.value.courses.reduce((prev, course) => { return prev.plus(course.cost); }, Big(0)).toFixed(2));
 
-  return <Main price={price.value} originalPrice={originalPrice} href={href} />;
+  return <AAPMain price={price.value} originalPrice={originalPrice} href={href} />;
 };

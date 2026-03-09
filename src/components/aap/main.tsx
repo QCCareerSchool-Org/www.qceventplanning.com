@@ -1,7 +1,9 @@
+import Link from 'next/link';
 import type { FC } from 'react';
 
+import Arrow from './arrow.svg';
 import Check from './check.svg';
-import { Client } from './client';
+import { AAPClient } from './client';
 import styles from './main.module.scss';
 import MPC from './mpc.svg';
 import Star from './star.svg';
@@ -14,7 +16,7 @@ interface Props {
   href: string;
 }
 
-export const Main: FC<Props> = ({ price, originalPrice, href }) => {
+export const AAPMain: FC<Props> = ({ price, originalPrice, href }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.overlay} />
@@ -42,7 +44,10 @@ export const Main: FC<Props> = ({ price, originalPrice, href }) => {
           <div className={styles.logoWrapper}>
             <MPC title="MPC™" className={styles.logo} />
           </div>
-          <Client price={price} originalPrice={originalPrice} href={href} />
+          <AAPClient price={price} originalPrice={originalPrice} href={href} />
+          <div className="mt-2">
+            <Link href={href} style={{ textDecoration: 'none' }}><button className={styles.enrollButton}>Explore the Program <Arrow className={styles.icon} /></button></Link>
+          </div>
         </div>
       </div>
     </div>
