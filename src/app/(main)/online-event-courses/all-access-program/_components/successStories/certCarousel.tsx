@@ -7,10 +7,11 @@ import Carousel from 'react-multi-carousel';
 
 import { CertSlide } from './certSlide';
 import BessyLopez from './images/success-storie-bessy-lopez.jpg';
+import Antonia from './images/success-stories-antonia-mcclure.jpg';
 import AppCert from './images/success-stories-app-cert.jpg';
 import DouniaSaikaley from './images/success-stories-dounia-saikaley.jpg';
 import JorginaTeles from './images/success-stories-jorgina-teles.jpg';
-import NoName from './images/success-stories-no-name.jpg';
+;
 import { useScreenSizeContext } from '@/hooks/useScreenSizeContext';
 
 const responsive: ResponsiveType = {
@@ -32,7 +33,7 @@ export const CertCarousel: FC = () => {
         <CertSlide src={DouniaSaikaley} name="Dounia Saikaley" />
         <CertSlide src={BessyLopez} name="Bessy Lopez" />
         <CertSlide src={JorginaTeles} name="Jorgina Teles" />
-        <CertSlide src={NoName} name="" />
+        <CertSlide src={Antonia} name="Antonia McClure" />
       </Carousel>
     </div>
   );
