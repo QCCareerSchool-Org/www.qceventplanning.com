@@ -7,10 +7,11 @@ import styles from './guarantee.module.css';
 import ShieldIcon from './shield-check.svg';
 
 const iconHeight = 24;
+const intersectionOptions: IntersectionObserverInit = { threshold: 1, rootMargin: '10px' };
 
 export const PaymentSectionGuarantee: FC = () => (
   <div className="text-center">
-    <h3 className="mb-5">Trusted by <CountUp value={30} />,000+ Students and Graduates</h3>
+    <h3 className="mb-5">Trusted by <CountUp value={30} options={intersectionOptions} />,000+ Students and Graduates</h3>
     <div className="row justify-content-center g-5">
       <div className="col-12 col-md-8 col-lg-4 text-center">
         <CertificateIcon height={iconHeight} className={`mb-3 ${styles.contactIcon}`} />

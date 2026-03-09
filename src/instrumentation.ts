@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_MODE === 'production';
+const isProd = process.env.NODE_MODE === 'production';
 
 const expectedVariables = [
   // Google
@@ -24,7 +24,7 @@ export const register = async () => {
   for (const variable of expectedVariables) {
     const message = `Environment variable ${variable} not found`;
     if (!process.env[variable]) {
-      if (isDev) {
+      if (isProd) {
         throw Error(message);
       } else {
         console.warn(message);

@@ -4,6 +4,10 @@ const isProd = process.env.NODE_ENV === 'production';
 const purgeCssOptions = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/app/\\(landing\\)/**/*.{js,ts,jsx,tsx}',
+    './src/app/\\(landing\\)//\\(thank-you\\)**/*.{js,ts,jsx,tsx}',
+    './src/app/\\(main\\)/**/*.{js,ts,jsx,tsx}',
+    './src/app/\\(terms\\)/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
     './node_modules/react-bootstrap/**/*.js',

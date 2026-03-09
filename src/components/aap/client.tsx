@@ -42,7 +42,7 @@ export const Client: FC<Props> = ({ price, originalPrice, href }) => {
         ? <>One-time payment</>
         : <>{price.plans.part.installments} Monthly Installments</>
       } • Lifetime Access</p>
-      <Link href={href}><button className={styles.enrollButton}>Become a Master Planner <Arrow className={styles.icon} /></button></Link>
+      <Link href={href}><button className={styles.enrollButton}>Explore the Program <Arrow className={styles.icon} /></button></Link>
     </div>
   );
 };

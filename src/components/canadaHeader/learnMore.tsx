@@ -2,11 +2,11 @@
 
 import type { FC, MouseEventHandler } from 'react';
 
-import { useTaxCreditPopup } from '@/hooks/useTaxCreditPopup';
+import { useTaxCreditPopupContext } from '@/hooks/useTaxCreditPopupContext';
 import { gaEvent } from '@/lib/gtag';
 
 export const LearnMore: FC = () => {
-  const [ , toggle ] = useTaxCreditPopup();
+  const [ , toggle ] = useTaxCreditPopupContext();
 
   const handleClick: MouseEventHandler = e => {
     e.preventDefault();

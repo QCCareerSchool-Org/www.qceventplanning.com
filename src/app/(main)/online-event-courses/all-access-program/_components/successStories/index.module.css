@@ -1,0 +1,22 @@
+.box {
+  background-color: white;
+  color: var(--qc-color-navy);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border-left: 0.25rem solid var(--qc-color-primary);
+  line-height: 1;
+}
+
+.box h3 {
+  color: var(--qc-color-navy);
+}
+
+.inverse {
+  background-color: var(--qc-color-navy);
+  color: var(--qc-color-light);
+  border-left: none;
+}
+
+.inverse h3 {
+  color: var(--qc-color-light);
+}

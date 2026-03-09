@@ -14,19 +14,19 @@ import LWES from '@/components/certifications/lwes.svg';
 import PES from '@/components/certifications/pes.svg';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification } from '@/domain/courseCode';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
+import { useScreenSizeContext } from '@/hooks/useScreenSizeContext';
 
 interface Props {
   courseCode: CourseCode;
 }
 
 export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
-  const screenWidth = useScreenWidth();
-  if (screenWidth === 0) {
+  const { gt, ready } = useScreenSizeContext();
+  if (!ready) {
     return;
   }
 
-  return <Certification courseCode={courseCode} height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
+  return <Certification courseCode={courseCode} height={gt('xl') ? 120 : gt('lg') ? 110 : gt('md') ? 100 : 90} />;
 };
 
 interface CertificationProps {
