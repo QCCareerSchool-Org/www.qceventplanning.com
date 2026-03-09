@@ -161,7 +161,7 @@ const AllAccessProgramPage: PageComponent = () => {
           <div className="eyebrow text-primary mb-3">Who This Program Is For</div>
           <h2 className="mb-3">The Strategic Choice for Planners</h2>
           <p className="mb-5">This program is designed for aspiring and professional planners who want to build a career that lasts. Instead of training for one path, you'll graduate prepared to serve <strong>any client, at any stage of your career</strong>.</p>
-          <h3 className="h4">The All-Access Program is ideal if you want to:</h3>
+          <h3 className="h4 mb-3">The All-Access Program is ideal if you want to:</h3>
           <div className="row justify-content-center g-4">
             <div className="col-12 col-md-10 col-lg-4">
               <div className="mb-3"><IconCircle><LineChartIcon /></IconCircle></div>
