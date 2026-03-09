@@ -9,6 +9,6 @@ interface Props {
 
 export const CertSlide: FC<Props> = ({ src, name }) => (
   <div className="p-2 mb-4">
-    <Image src={src} alt={name} className="w-100 rounded-5 img-fluid" />
+    <Image src={src} alt={name} className="w-100 rounded-5 img-fluid" quality={100} />
   </div>
 );
