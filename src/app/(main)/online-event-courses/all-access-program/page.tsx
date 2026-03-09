@@ -36,7 +36,7 @@ const AllAccessProgramPage: PageComponent = () => {
       <section className="bg-navy text-white text-center">
         <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'md' }} priority />
         <div className="container">
-          <div className="eyebrow text-shadow mb-3"><strong>Best Value</strong> Earn Your Master Planner Certificate</div>
+          <div className="eyebrow text-shadow mb-3"><strong>Best Value:</strong> Earn Your Master Planner Certificate</div>
           <h1 className="text-shadow mb-4">Join the All-Access Program</h1>
           <p className="lead fw-medium text-shadow mb-5">Maximize Your Earning Potential</p>
           <div className="d-flex justify-content-center gap-4">
