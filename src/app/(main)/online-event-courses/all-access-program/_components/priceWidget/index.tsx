@@ -15,7 +15,6 @@ export const PriceWidget: FC<Props> = ({ price, combinedPrice, href }) => {
   const originalPrice = parseFloat(combinedPrice.courses.reduce((prev, course) => { return prev.plus(course.cost); }, Big(0)).toFixed(2));
   return (
     <div className={styles.wrapper}>
-      <h3 className="h4 mb-3">Start Your Journey Today</h3>
       <AAPClient
         originalPrice={originalPrice}
         price={price}
