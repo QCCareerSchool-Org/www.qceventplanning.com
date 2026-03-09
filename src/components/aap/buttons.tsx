@@ -9,6 +9,7 @@ interface Props {
   plan: Plan;
   onFullClick: MouseEventHandler;
   onPartClick: MouseEventHandler;
+  inverse?: boolean;
 }
 
 const VIBRATE_MS = 50;
@@ -31,7 +32,7 @@ export const Buttons: FC<Props> = props => {
   return (
     <>
       {/* Pricing Stack with Toggle */}
-      <div className={styles.wrapper}>
+      <div className={`${styles.wrapper} ${props.inverse ? styles.inverse : ''}`}>
         {/* The Toggle - Apple Glass Style */}
         <div className={styles.glass}>
 

@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { Card } from './_components/card';
 import { CourseDescription } from './_components/courseDescription';
+import { PriceWidget } from './_components/priceWidget';
 import { SuccessStoriesSection } from './_components/successStories';
 import CheckShieldIcon from './check-shield.svg';
 import HeroDesktop from './hero-desktop.jpg';
@@ -20,7 +21,6 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { aapCourseCodes, type CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
-import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
 
 const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
@@ -34,7 +34,7 @@ const col2 = 'col-12 col-lg-6';
 
 const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
   const { countryCode, provinceCode } = await getServerData(searchParams);
-  const [ price, originalPrice ] = await Promise.all([
+  const [ price, combinedPrice ] = await Promise.all([
     fetchPrice(courseCodes, countryCode, provinceCode),
     fetchPrice(aapCourseCodes, countryCode, provinceCode),
   ]);
@@ -166,13 +166,7 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
               </CourseDescription>
             </div>
           </div>
-          {price.success && originalPrice.success && (
-            <div className="text-center mt-5 pt-5" style={{ borderTop: '1px solid #ccc' }}>
-              <div className="text-black" style={{ fontSize: '1.375rem' }}><strong>Total Value:</strong> <span style={{ textDecoration: '2px rgba(255, 34, 74, 0.7) line-through' }}>{originalPrice.value.currency.symbol}{formatPrice(originalPrice.value.cost)}</span></div>
-              <div className="d-inline-block bg-primary text-black rounded-pill py-2 px-4 mt-2 mb-2" style={{ fontSize: '1.375rem' }}>Your Price: {price.value.currency.symbol}{formatPrice(price.value.plans.full.total)}</div>
-              <div className="fst-italic mt-1">Or Get Started for Only {price.value.currency.symbol}{formatPrice(price.value.plans.part.deposit)}</div>
-            </div>
-          )}
+          {price.success && combinedPrice.success && <PriceWidget price={price.value} combinedPrice={combinedPrice.value} href={enrollHref} />}
         </div>
       </section>
       <ILEASection />
