@@ -160,6 +160,11 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
                 Achieve your business goals faster with proven strategies and guidance from a professional planner.
               </CourseDescription>
             </div>
+            <div className={col2}>
+              <CourseDescription heading="Virtual Events Training">
+                Master virtual platforms, audience engagement, and virtual event logistics to plan and deliver online events.
+              </CourseDescription>
+            </div>
           </div>
           {price.success && originalPrice.success && (
             <div className="text-center text-black mt-5" style={{ fontSize: '1.25rem' }}>
