@@ -35,6 +35,7 @@ export const reviewData: ReviewData[] = [
     imageSrc: PatriciaImage,
     reviewText: 'My 1st online seminar was really helpful. It got my brain thinking about what exactly it is I want to do as an event planner, and look forward to more of the seminars while continuing to learn and my own pace.',
     rating: 5,
+    size: 1.5,
   },
   {
     name: 'Sylvina Mcleod',
@@ -42,6 +43,7 @@ export const reviewData: ReviewData[] = [
     backgroundColor: '#0097a7',
     reviewText: 'It was amazing so much to work with and informative.',
     rating: 5,
+    size: 2.5,
   },
   {
     name: 'April Jordan',
@@ -49,7 +51,7 @@ export const reviewData: ReviewData[] = [
     backgroundColor: 'green',
     imageSrc: AprilImage,
     reviewText: 'Very Informative Experience',
-    size: 1.25,
+    size: 2.5,
     rating: 5,
   },
   {
@@ -59,6 +61,7 @@ export const reviewData: ReviewData[] = [
     reviewText: 'I have been a student of QC Events since 2019. I have enjoyed all the online classes/assignments! It was hard to find a college that does certification that focuses only on (Events, Weddings, or Floral Design.) Thanks to QC Events School, I was able to get certified in all three areas that I was looking.',
     rating: 5,
     courseCodes: [ 'fl', 'wp', 'ep' ],
+    size: 1.5,
   },
   {
     name: 'Angela Pitton',
@@ -66,6 +69,7 @@ export const reviewData: ReviewData[] = [
     backgroundColor: '#0097a7',
     reviewText: 'Absolutely love the interaction from this school. The interactive webinars are so helpful. Very professional. Would recommend for sure!!',
     rating: 5,
+    size: 2,
   },
   {
     name: 'Diane Gorewitz',
@@ -74,6 +78,7 @@ export const reviewData: ReviewData[] = [
     reviewText: 'For years I was interested in wedding and event planning. I did my research and chose QC Event School, which was a great decision. This particular course had me thinking outside the box, thinking of unique ways to stay within a budget, incorporating the clients interests into their theme. I love how thorough the course is and the communication through the school is fantastic! I now have two weddings booked for 2025! Thank you QC Events!!',
     rating: 5,
     courseCodes: [ 'wp', 'ep', 'lw', 'dw' ],
+    size: 1.25,
   },
   {
     name: 'Darlene Dungey',
@@ -83,6 +88,7 @@ export const reviewData: ReviewData[] = [
     reviewText: 'I have completed the Corporate Event Planning Course. I have found QC to very inciteful, well worth the money and time spent.',
     rating: 5,
     courseCodes: [ 'cp' ],
+    size: 1.5,
   },
   {
     name: 'Ashley Walker',
@@ -92,6 +98,7 @@ export const reviewData: ReviewData[] = [
     reviewText: 'I have thoroughly enjoyed taking my wedding planning and event planning courses through the QC Event School! The community of other students is so supportive and so are the staff/tutors! The webinars that are offered are so influential as it helps you think creatively when completing homework assignments and planning.',
     rating: 5,
     courseCodes: [ 'ep', 'wp', 'ce' ],
+    size: 1.125,
   },
   {
     name: 'M',
