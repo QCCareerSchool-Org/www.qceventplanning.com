@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { FC } from 'react';
-import { useState } from 'react';
+import { startTransition, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -12,14 +13,20 @@ import Toggle from './toggle.svg';
 import { Logo } from '@/components/logo';
 import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
 
+/** Pages that need a different URL for the enroll button */
+const enrollUrls = [
+  { pattern: /^\/online-event-courses\/all-access-program/u, url: 'https://enroll.qceventplanning.com/all-access-program' },
+] as const;
+
 export const MainNav: FC = () => {
+  const path = usePathname();
   const scrollPosition = useScrollPositionContext();
   const [ key, setKey ] = useState(0);
 
+  const url = enrollUrls.find(x => x.pattern.test(path))?.url ?? 'https://enroll.qceventplanning.com';
+
   const handleClick = (): void => {
-    setTimeout(() => {
-      setKey(k => (k < Number.MAX_SAFE_INTEGER ? k + 1 : 0));
-    }, 0);
+    startTransition(() => { setKey(k => k + 1); });
   };
 
   return (
@@ -35,8 +42,8 @@ export const MainNav: FC = () => {
             </div>
           </Link>
           <div className="d-flex">
-            <div className="d-none d-sm-block d-lg-none me-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-navy">Enroll Now</Link></div>
-            <div className="d-sm-none me-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-sm btn-navy">Enroll Now</Link></div>
+            <div className="d-none d-sm-block d-lg-none me-3"><Link href={url} className="btn btn-navy">Enroll Now</Link></div>
+            <div className="d-sm-none me-3"><Link href={url} className="btn btn-sm btn-navy">Enroll Now</Link></div>
             <Navbar.Toggle aria-controls="basic-navbar-nav">
               <Toggle />
             </Navbar.Toggle>
