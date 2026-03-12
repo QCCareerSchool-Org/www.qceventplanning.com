@@ -1,3 +1,4 @@
+import Big from 'big.js';
 import Link from 'next/link';
 
 import { Card } from './_components/card';
@@ -20,7 +21,9 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { aapCourseCodes, type CourseCode } from '@/domain/courseCode';
+import type { CoursePrice } from '@/domain/price';
 import { fetchPrice } from '@/lib/fetch';
+import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
 import { BrevoEvent } from '@/scripts/brevoEvent';
 
@@ -34,12 +37,18 @@ const testimonialIds = [ 'TE-0017', 'TE-0025', 'TE-0026', 'TE-0027', 'TE-0028', 
 const col1 = 'col-12 col-md-6 col-xl-4 d-flex';
 const col2 = 'col-12 col-lg-6';
 
+const sumPrices = (coursePrices: CoursePrice[]) => coursePrices.reduce((prev, cur) => prev.plus(cur.cost), Big(0));
+
 const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
   const { countryCode, provinceCode } = await getServerData(searchParams);
   const [ price, combinedPrice ] = await Promise.all([
     fetchPrice(courseCodes, countryCode, provinceCode),
     fetchPrice(aapCourseCodes, countryCode, provinceCode),
   ]);
+
+  const savings = price.success && combinedPrice.success
+    ? price.value.currency.symbol + formatPrice(parseFloat(sumPrices(combinedPrice.value.courses).minus(price.value.plans.full.total).toFixed(2)))
+    : undefined;
 
   return (
     <>
@@ -50,7 +59,7 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
         <div className="container">
           <div className="eyebrow text-shadow mb-3"><strong>Best Value:</strong> Earn Your Master Planner Certificate</div>
           <h1 className="text-shadow mb-4">Join the All-Access Program</h1>
-          <p className="lead fw-medium text-shadow mb-5">Maximize Your Earning Potential</p>
+          <p className="lead fw-medium text-shadow mb-5">{typeof savings !== 'undefined' && <>Save {savings}+ on Tuition & </>}Maximize Your Earning Potential</p>
           <div className="d-flex justify-content-center gap-4">
             <Link href={enrollHref} className="btn btn-primary shadow">Enroll Now</Link>
             <Link href="#included" className="btn btn-outline-light shadow">See What's Included</Link>
