@@ -8,8 +8,8 @@ import { CoreValuesSection } from './coreValuesSection';
 import { MeetOurTeamSection } from './meetOurTeamSection';
 import styles from './page.module.scss';
 import ShieldIcon from './shield.svg';
-import type { PageComponent } from '@/app/serverComponent';
 import { ILEASection } from '@/components/ileaSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'About QC Event School',

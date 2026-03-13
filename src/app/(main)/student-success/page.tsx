@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 import { CarouselSection } from './carouselSection';
-import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Student Success',

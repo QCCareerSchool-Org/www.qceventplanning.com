@@ -12,7 +12,6 @@ import EPImage from './online-event-courses/event-and-wedding-planning/hero.jpg'
 import FDImage from './online-event-courses/floral-design/hero.jpg';
 import OpenBookIcon from './open-book.svg';
 import UserVoiceIcon from './user-voice.svg';
-import type { PageComponent } from '@/app/serverComponent';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -27,6 +26,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
 import { getServerData } from '@/lib/getServerData';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Event School' },

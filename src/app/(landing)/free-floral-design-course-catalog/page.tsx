@@ -11,7 +11,6 @@ import ChartIcon from './chart.svg';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import SAFLogo from './saf-logo.png';
-import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
@@ -23,6 +22,7 @@ import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import type { CourseCode } from '@/domain/courseCode';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Floral Design Course Catalog',

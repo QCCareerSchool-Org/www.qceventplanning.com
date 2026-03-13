@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import type { Course, EducationalOrganization, ItemList, WithContext } from 'schema-dts';
 
 import { OnlineCourseSection } from './onlineCourseSection';
-import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses',

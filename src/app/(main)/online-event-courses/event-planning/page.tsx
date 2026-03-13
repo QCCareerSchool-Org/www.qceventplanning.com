@@ -7,7 +7,6 @@ import { OutlineSection } from './outline-section';
 import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Candice } from '@/components/candice';
@@ -24,6 +23,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
 import { BrevoEvent } from '@/scripts/brevoEvent';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'ce';
 const courseCodes: CourseCode[] = [ courseCode ];

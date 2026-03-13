@@ -9,7 +9,6 @@ import { IndustrySection } from '../free-catalog/industrySection';
 import { JoinQCSection } from '../free-catalog/joinQCSection';
 import { Header } from '../header';
 import styles from './index.module.scss';
-import type { PageProps } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
@@ -17,6 +16,7 @@ import { PromoSection } from '@/components/promoSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageProps } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Event & Wedding Planning Course Catalog',

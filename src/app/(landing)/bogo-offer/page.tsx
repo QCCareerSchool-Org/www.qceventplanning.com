@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Header } from '../header';
 import HeroImage from './hero.jpg';
 import { OnlineCourseSection } from '@/app/(main)/online-event-courses/onlineCourseSection';
-import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -14,6 +13,7 @@ import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const bogoEnrollLink = 'https://enroll.qceventplanning.com/bogo-1';
 

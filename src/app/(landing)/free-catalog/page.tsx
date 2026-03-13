@@ -7,7 +7,6 @@ import { CertificationSection } from './certificationSection';
 import { IndustrySection } from './industrySection';
 import { JoinQCSection } from './joinQCSection';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -18,6 +17,7 @@ import { StatsSection } from '@/components/statsSection/statsSection';
 import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Course Catalog',

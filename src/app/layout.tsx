@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
-import type { LayoutComponent } from './serverComponent';
 import { isUserValues } from '@/domain/userValues';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { getServerData } from '@/lib/getServerData';
@@ -18,6 +17,7 @@ import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { Tiktok } from '@/scripts/tiktok';
+import type { LayoutComponent } from '@/serverComponent';
 
 import './global.scss';
 

@@ -5,7 +5,6 @@ import { getThankyouData } from '..';
 import HeroImage from '../../free-floral-design-course-catalog/hero.jpg';
 import { Header } from '../../header';
 import { DownloadSection } from '../_components/downloadSection';
-import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
@@ -13,6 +12,7 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import type { CourseCode } from '@/domain/courseCode';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'fd';
 

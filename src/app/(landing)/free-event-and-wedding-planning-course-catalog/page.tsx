@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { FreeEventAndWeddingPlanningCatalog } from '.';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Event & Wedding Planning Course Catalog',

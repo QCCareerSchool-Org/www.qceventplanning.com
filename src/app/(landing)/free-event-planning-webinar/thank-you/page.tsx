@@ -11,7 +11,6 @@ import EDImage from '../../../(main)/online-event-courses/event-decor/hero.jpg';
 import UserVoiceIcon from '../../../(main)/user-voice.svg';
 import { Header } from '../../header';
 import { AboutQCSection } from '../_sections/AboutQCSection';
-import type { PageComponent } from '@/app/serverComponent';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import BookIcon from '@/components/book.svg';
 import CheckIcon from '@/components/check.svg';
@@ -28,6 +27,7 @@ import MagnifyingGlassIcon from '@/components/magnifying-glass.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 import WhyQCImage from '@/components/why-qc.jpg';
 import { WistiaPlayer } from '@/components/wistiaPlayer';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Thank You for Joining the Webinar',

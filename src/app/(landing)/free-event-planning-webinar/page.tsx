@@ -8,11 +8,11 @@ import { HeroSection } from './_sections/HeroSection';
 import { MeetInstructorSection } from './_sections/MeetInstructorSection';
 import { WhatYoullLearnSection } from './_sections/WhatYoullLearnSection';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
 import CheckIcon from '@/components/check.svg';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Join the Free Webinar with Lisa Forbes',

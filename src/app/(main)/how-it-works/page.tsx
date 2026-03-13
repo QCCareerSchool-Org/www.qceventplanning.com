@@ -6,9 +6,9 @@ import HowItWorksImage from './how-it-works.jpg';
 import BookReaderIcon from './icons/book-reader.svg';
 import FeedbackIcon from './icons/check-speech.svg';
 import CheckIcon from './icons/list-check.svg';
-import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'How It Works',

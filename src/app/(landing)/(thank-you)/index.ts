@@ -1,10 +1,10 @@
-import type { PageProps } from '@/app/serverComponent';
 import type { Lead } from '@/domain/lead';
 import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getLead } from '@/lib/getLead';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
+import type { PageProps } from '@/serverComponent';
 
 interface ThankyouPageData {
   emailAddress?: string;

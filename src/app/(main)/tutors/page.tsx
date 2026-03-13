@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { Blurb } from './blurb';
-import type { PageComponent } from '@/app/serverComponent';
 import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import AlyssaPernaImage from '@/components/tutorImages/images/alyssa-perna.jpg';
@@ -11,6 +10,7 @@ import AnitaDiPaoloImage from '@/components/tutorImages/images/anita-dipaolo.jpg
 import HeatherHawesImage from '@/components/tutorImages/images/heather-hawes.jpg';
 import KimberlyJerkinsImage from '@/components/tutorImages/images/kimberly-jerkins.jpg';
 import SarahWebbImage from '@/components/tutorImages/images/sarah-webb.jpg';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Tutors',
