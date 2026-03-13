@@ -11,9 +11,9 @@ import WPImage from '../../(main)/online-event-courses/wedding-planning/hero.jpg
 import { BottomSection } from '../bottomSection';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
-import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
+import { DeadlineFunnel } from '@/scripts/deadlineFunnel';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const enrollLink = 'https://enroll.qceventplanning.com/free-specialty';
 
 const FreeSpecialtyCourseOfferPage: PageComponent = () => (
   <>
-    <DeadlineFunnelScript />
+    <DeadlineFunnel />
     <section style={{ paddingBottom: 0 }}>
       <div className="container">
         <div className="row justify-content-center mb-s">

@@ -5,7 +5,6 @@ import { Header } from '../header';
 import HeroImage from './hero.jpg';
 import { OnlineCourseSection } from '@/app/(main)/online-event-courses/onlineCourseSection';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { GetStartedSection } from '@/components/getStartedSection';
 import QIcon from '@/components/q-logo.svg';
 import { Subtitle } from '@/components/subtitle';
@@ -13,6 +12,7 @@ import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
+import { DeadlineFunnel } from '@/scripts/deadlineFunnel';
 import type { PageComponent } from '@/serverComponent';
 
 const bogoEnrollLink = 'https://enroll.qceventplanning.com/bogo-1';
@@ -29,7 +29,7 @@ const BogoOfferPage: PageComponent = async props => {
   return (
     <>
       <Header />
-      <DeadlineFunnelScript />
+      <DeadlineFunnel />
       <section className="bg-dark text-white text-shadow">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
