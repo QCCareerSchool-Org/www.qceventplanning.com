@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
-// import { VWOScript } from 'vwo-smartcode-nextjs';
 
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
@@ -37,7 +36,6 @@ const RootLayout: LayoutComponent = async ({ children }) => {
     <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`}>
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
-        {/* {process.env.VWO_ID && <VWOScript accountId={process.env.VWO_ID} />} */}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} userValues={userValues} />}
         {process.env.NEXT_PUBLIC_FACEBOOK_ID && <Facebook id={process.env.NEXT_PUBLIC_FACEBOOK_ID} userValues={userValues} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
