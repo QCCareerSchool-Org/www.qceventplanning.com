@@ -5,7 +5,6 @@ import { getThankyouData } from '..';
 import { Header } from '../../header';
 import { CurrentPromotion } from '../_components/currentPromotion';
 import { DownloadSection } from '../_components/downloadSection';
-import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
@@ -14,6 +13,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog',

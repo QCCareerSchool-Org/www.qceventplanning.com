@@ -2,8 +2,8 @@ import type { FC } from 'react';
 import type { EducationalOrganization, Review, WithContext } from 'schema-dts';
 
 import { getCourse } from './course';
+import { withSuspense } from '../withSuspense';
 import type { CourseCode } from '@/domain/courseCode';
-import { withSuspense } from '@/withSuspense';
 
 interface Props {
   name: string;

@@ -3,13 +3,13 @@ import Link from 'next/link';
 
 import { InfoSection } from './infoSection';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import HeroImageDesktop from '@/components/homeHeroImage/hero-large.jpg';
 import HeroImageMobile from '@/components/homeHeroImage/hero-small.jpg';
 import { PerksSection } from '@/components/perksSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Your Event & Wedding Planning Career',

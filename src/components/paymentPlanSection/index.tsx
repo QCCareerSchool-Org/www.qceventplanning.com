@@ -4,10 +4,10 @@ import { CanadianTax } from './canadianTax';
 import { Full } from './full';
 import { PaymentSectionGuarantee } from './guarantee';
 import { Part } from './part';
+import { withSuspense } from '@/components/withSuspense';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
-import { withSuspense } from '@/withSuspense';
 
 interface Props {
   courseCodes: CourseCode[];

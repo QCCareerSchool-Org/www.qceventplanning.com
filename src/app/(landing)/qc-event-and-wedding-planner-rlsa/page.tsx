@@ -16,7 +16,6 @@ import CheckCircleIcon from './check-circle.svg';
 import EventCareersImage from './event-careers.jpg';
 import HeroImage from './hero.jpg';
 import ShieldIcon from './shield.svg';
-import type { PageComponent } from '@/app/serverComponent';
 import { Candice } from '@/components/candice';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
@@ -24,6 +23,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { AylaOtto, TylerReid } from '@/components/testimonial/images';
 import { TestimonialSection } from '@/components/testimonialSection';
 import WhyQCImage from '@/components/why-qc.jpg';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Event & Wedding Planner Certification',

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import type { PageComponent } from '../serverComponent';
 import styles from './not-found.module.scss';
-import type { PageComponent } from './serverComponent';
 import { SiteLayout } from '@/components/siteLayout';
 import { getServerData } from '@/lib/getServerData';
 

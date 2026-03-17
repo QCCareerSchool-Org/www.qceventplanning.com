@@ -1,7 +1,11 @@
 import Script from 'next/script';
 import type { FC } from 'react';
 
-export const script = `
+export const DeadlineFunnel: FC = () => (
+  <Script id="deadlineFunnel" strategy="lazyOnload" data-cfasync="false" dangerouslySetInnerHTML={{ __html: getScript() }} />
+);
+
+const getScript = () => `
 function SendUrlToDeadlineFunnel(e){
   var r,t,c,a,h,n,o,A,i = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",d=0,l=0,s="",u=[];
   if(!e)return e;
@@ -33,7 +37,3 @@ var dfParentUrl = (parent !== window) ? ("/" + SendUrlToDeadlineFunnel(dfParentU
   s2.parentNode.insertBefore(s, s2);
 })();
 `;
-
-export const DeadlineFunnelScript: FC = () => (
-  <Script id="deadlineFunnel" strategy="lazyOnload" data-cfasync="false" dangerouslySetInnerHTML={{ __html: script }} />
-);

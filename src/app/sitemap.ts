@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import type { MetadataRoute } from 'next';
 import path from 'path';
 
-import { siteVideos } from './videos';
+import { siteVideos } from '../videos';
 import { escapeXmlObject } from '@/lib/xml';
 
 const prefix = 'https://www.qceventplanning.com';

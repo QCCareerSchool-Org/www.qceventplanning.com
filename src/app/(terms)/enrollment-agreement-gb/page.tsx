@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { AccountsEmailAddress } from '../accountsEmailAddress';
 import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Enrollment Agreement',

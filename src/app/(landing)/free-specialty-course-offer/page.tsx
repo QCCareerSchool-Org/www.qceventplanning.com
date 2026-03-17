@@ -9,12 +9,12 @@ import FDImage from '../../(main)/online-event-courses/floral-design/hero.jpg';
 import LWImage from '../../(main)/online-event-courses/luxury-wedding-and-event-planning/hero.jpg';
 import WPImage from '../../(main)/online-event-courses/wedding-planning/hero.jpg';
 import { BottomSection } from '../bottomSection';
-import type { PageComponent } from '@/app/serverComponent';
 import { CourseCard } from '@/components/courseCard';
 import { CourseCardCertifcation } from '@/components/courseCardCertification';
-import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
+import { DeadlineFunnel } from '@/scripts/deadlineFunnel';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Specialty Course Offer',
@@ -27,7 +27,7 @@ const enrollLink = 'https://enroll.qceventplanning.com/free-specialty';
 
 const FreeSpecialtyCourseOfferPage: PageComponent = () => (
   <>
-    <DeadlineFunnelScript />
+    <DeadlineFunnel />
     <section style={{ paddingBottom: 0 }}>
       <div className="container">
         <div className="row justify-content-center mb-s">

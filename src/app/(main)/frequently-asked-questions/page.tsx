@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import styles from './page.module.scss';
 import { Question } from './question';
-import type { PageComponent } from '@/app/serverComponent';
 import { getServerData } from '@/lib/getServerData';
 import { getTelephoneNumber } from '@/lib/telephone';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',

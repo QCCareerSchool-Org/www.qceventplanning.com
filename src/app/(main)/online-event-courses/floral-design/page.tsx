@@ -8,7 +8,6 @@ import styles from './page.module.scss';
 import PlaceSettingImage from './place-setting.jpg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { AislePlannerSection } from '@/components/aislePlannerSection';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -29,6 +28,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { BrevoEvent } from '@/scripts/brevoEvent';
+import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];

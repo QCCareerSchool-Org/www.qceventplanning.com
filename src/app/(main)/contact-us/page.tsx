@@ -4,12 +4,12 @@ import ChatIcon from './chat.svg';
 import EmailIcon from './email.svg';
 import styles from './page.module.scss';
 import PhoneIcon from './phone.svg';
-import type { PageComponent } from '@/app/serverComponent';
 import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
 import { getTelephoneNumber } from '@/lib/telephone';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Contact Us',

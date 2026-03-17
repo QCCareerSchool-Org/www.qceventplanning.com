@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation';
 
 import AlexSignatureImage from './alex-myers.png';
 import { Processing } from './processing';
-import type { PageComponent } from '@/app/serverComponent';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
 import { SetCookie } from '@/components/setCookie';
 import { TelephoneLink } from '@/components/telephoneLink';
@@ -18,6 +17,7 @@ import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
+import type { PageComponent } from '@/serverComponent';
 
 const brevoStudentListId = 14;
 

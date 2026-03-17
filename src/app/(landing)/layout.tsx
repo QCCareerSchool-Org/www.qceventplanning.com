@@ -1,5 +1,5 @@
 import { Footer } from './footer';
-import type { LayoutComponent } from '@/app/serverComponent';
+import type { LayoutComponent } from '@/serverComponent';
 
 import '@/app/bootstrap.scss';
 import './landing.scss';

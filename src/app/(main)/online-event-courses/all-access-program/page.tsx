@@ -11,7 +11,6 @@ import HeroMobile from './hero-mobile.jpg';
 import { IconCircle } from './iconCircle';
 import LineChartIcon from './line-chart.svg';
 import RocketIcon from './rocket.svg';
-import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -26,6 +25,7 @@ import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
 import { BrevoEvent } from '@/scripts/brevoEvent';
+import type { PageComponent } from '@/serverComponent';
 
 const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
 
