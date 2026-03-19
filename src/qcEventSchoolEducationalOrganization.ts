@@ -1,5 +1,6 @@
 import type { EducationalOrganization, WithContext } from 'schema-dts';
 
+import addresses from './lib/emailAddress';
 import { getTelephoneNumber } from './lib/telephone';
 
 export const qcEventSchoolEducationalOrganization: WithContext<EducationalOrganization> = {
@@ -9,7 +10,7 @@ export const qcEventSchoolEducationalOrganization: WithContext<EducationalOrgani
   'url': 'https://www.qceventplanning.com',
   'name': 'QC Event School',
   'logo': 'https://www.qceventplanning.com/logo.svg',
-  'email': 'info@qceventplanning.com',
+  'email': addresses.info,
   'foundingDate': '2007-01-19T09:00:00-05:00',
   'parentOrganization': {
     '@id': 'https://www.qccareerschool.com/#school',

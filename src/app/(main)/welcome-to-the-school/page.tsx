@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 
 import AlexSignatureImage from './alex-myers.png';
 import { Processing } from './processing';
+import { EmailLink } from '@/components/emailLink';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
 import { SetCookie } from '@/components/setCookie';
 import { TelephoneLink } from '@/components/telephoneLink';
@@ -12,7 +13,7 @@ import type { UserValues } from '@/domain/userValues';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
-import { getEnrollment } from '@/lib/fetch';
+import { fetchEnrollment } from '@/lib/fetchEnrollment';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
@@ -43,7 +44,13 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     redirect('/');
   }
 
-  const enrollment = await getEnrollment(enrollmentId, codeParam);
+  const enrollmentResult = await fetchEnrollment(enrollmentId, codeParam);
+
+  if (!enrollmentResult.success) {
+    redirect('/');
+  }
+
+  const enrollment = enrollmentResult.value;
 
   if (!enrollment.success) {
     redirect('/');
@@ -111,7 +118,7 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
             <div className="col-12 col-lg-10">
               <h1 className="mb-3">Thank You for Enrolling with QC Event School!</h1>
               <p>Your enrollment has been received and will be processed quickly. You will receive an email within the next business day containing login information to your online student center. If you don't see an email from us, please check your spam folder.</p>
-              <p>If you have any questions regarding the course, or if you want to discuss your goals, our friendly and knowledgeable student support advisors are available 7 days a week by email at <a href="mailto:info@qceventplanning.com">info@qceventplanning.com</a> or by phone at <span style={{ whiteSpace: 'nowrap' }}><TelephoneLink countryCode={enrollment.countryCode} /></span>. We would be delighted to speak with you and assist you in any way we can. We hope your learning experience with us will be enjoyable, interesting, and valuable.</p>
+              <p>If you have any questions regarding the course, or if you want to discuss your goals, our friendly and knowledgeable student support advisors are available 7 days a week by email at <EmailLink /> or by phone at <span style={{ whiteSpace: 'nowrap' }}><TelephoneLink countryCode={enrollment.countryCode} /></span>. We would be delighted to speak with you and assist you in any way we can. We hope your learning experience with us will be enjoyable, interesting, and valuable.</p>
               <p>Remember, we want to develop a personal relationship with you and be readily available for you whenever you need us.</p>
               <p><strong>Best of luck with your studies!</strong></p>
               <p>Sincerely,</p>

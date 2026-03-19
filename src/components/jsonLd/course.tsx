@@ -4,7 +4,7 @@ import type { Course, WithContext } from 'schema-dts';
 import { withSuspense } from '../withSuspense';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
 
 interface Props {

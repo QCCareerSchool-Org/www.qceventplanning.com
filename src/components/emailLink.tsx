@@ -1,19 +1,15 @@
-'use client';
+import type { CSSProperties, FC } from 'react';
 
-import type { FC } from 'react';
-import { useEffect, useRef } from 'react';
+import addresses from '@/lib/emailAddress';
 
-export const EmailLink: FC = () => {
-  const ref = useRef<HTMLAnchorElement>(null);
+interface Props {
+  className?: string;
+  style?: CSSProperties;
+  text?: string;
+}
 
-  useEffect(() => {
-    if (ref.current) {
-      // eslint-disable-next-line no-useless-concat
-      const emailAddress = 'info' + '@' + 'qceventplanning.com';
-      ref.current.href = `mailto:${emailAddress}`;
-      ref.current.innerHTML = emailAddress;
-    }
-  }, []);
+export const EmailLink: FC<Props> = ({ className, style, text }) => {
+  const emailAddress = addresses.info;
 
-  return <a ref={ref} />;
+  return <a className={className} style={style} href={`mailto:${emailAddress}`}>{text ?? emailAddress}</a>;
 };
