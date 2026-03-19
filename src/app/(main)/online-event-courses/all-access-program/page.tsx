@@ -21,7 +21,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { aapCourseCodes, type CourseCode } from '@/domain/courseCode';
 import type { CoursePrice } from '@/domain/price';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
 import { BrevoEvent } from '@/scripts/brevoEvent';

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import { AAPMain } from './main';
 import { aapCourseCodes } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 
 interface Props {
   countryCode: string;

@@ -6,15 +6,18 @@ import qs from 'qs';
 
 import type { CourseCode } from '@/domain/courseCode';
 import type { CurrencyCode } from '@/domain/currencyCode';
-import type { Enrollment } from '@/domain/enrollment';
-import { isRawEnrollment } from '@/domain/enrollment';
 import type { Price } from '@/domain/price';
 import { isPrice } from '@/domain/price';
 import type { School } from '@/domain/school';
 
 const pricesUrl = process.env.PRICES_ENDPOINT;
 
-export const fetchPrice = async (courses: CourseCode[], countryCode: string, provinceCode: string | null, signal?: AbortSignal): Promise<Result<Price>> => {
+export const fetchPrice = async (
+  courses: CourseCode[],
+  countryCode: string,
+  provinceCode: string | null,
+  signal?: AbortSignal,
+): Promise<Result<Price>> => {
   try {
     const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses };
 
@@ -61,20 +64,3 @@ interface PriceQueryOptions {
   promoCode?: string;
   dateOverride?: Date;
 }
-
-export const getEnrollment = async (id: number, code: string): Promise<Enrollment> => {
-  const url = `${process.env.ENROLLMENT_ENDPOINT}/${id}?code=${encodeURIComponent(code)}`;
-  const response = await fetch(url, { cache: 'no-cache' });
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  const responseBody: unknown = await response.json();
-  if (!isRawEnrollment(responseBody)) {
-    throw Error('Invalid reponse');
-  }
-  return {
-    ...responseBody,
-    transactionTime: responseBody.transactionTime === null ? null : new Date(responseBody.transactionTime),
-    paymentDate: new Date(responseBody.paymentDate),
-  };
-};

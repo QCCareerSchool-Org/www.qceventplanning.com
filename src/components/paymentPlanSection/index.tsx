@@ -6,7 +6,7 @@ import { PaymentSectionGuarantee } from './guarantee';
 import { Part } from './part';
 import { withSuspense } from '@/components/withSuspense';
 import type { CourseCode } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 interface Props {
