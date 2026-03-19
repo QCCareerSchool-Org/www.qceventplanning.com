@@ -17,7 +17,7 @@ export const fetchIpAddress = async (signal?: AbortSignal): Promise<Result<strin
 
     return success(json.ip);
 
-  } catch (err: unknown) {
+  } catch (err) {
     if (!signal?.aborted) {
       console.error(err);
     }

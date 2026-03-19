@@ -42,7 +42,6 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           firstName={lead.firstName}
           lastName={lead.lastName}
           leadId={lead.leadId}
-          conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
         />
       )}
       <Header logoLink buttonHref="#download" buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />

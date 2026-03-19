@@ -40,7 +40,6 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           firstName={lead.firstName}
           lastName={lead.lastName}
           leadId={lead.leadId}
-          conversionId="AW-1071836607/9wB_CNvknggQv9uL_wM"
         />
       )}
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
