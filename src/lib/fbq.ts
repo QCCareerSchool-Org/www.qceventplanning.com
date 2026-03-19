@@ -99,6 +99,7 @@ export const fbqSale = (enrollment: Enrollment): void => {
     if (enrollment.provinceCode) {
       initParams.st = normalizeState(enrollment.provinceCode);
     }
+
     window.fbq?.('init', facebookId, initParams);
   }
   window.fbq?.('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode }, { eventID: enrollment.id.toString() });

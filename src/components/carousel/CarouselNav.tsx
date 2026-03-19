@@ -1,4 +1,5 @@
-import { type FC, memo } from 'react';
+import type { FC } from 'react';
+import { memo } from 'react';
 
 import { CarouselNavCircle } from './CarouselNavCircle';
 import ArrowImage from './images/nav-arrow-icon.svg';

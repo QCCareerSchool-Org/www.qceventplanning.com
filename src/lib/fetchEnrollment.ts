@@ -11,7 +11,6 @@ export const fetchEnrollment = async (id: number, code: string, signal?: AbortSi
     const url = `${enrollmentsUrl}/${id}?code=${encodeURIComponent(code)}`;
 
     const response = await fetch(url, { signal });
-
     if (!response.ok) {
       throw Error(response.statusText);
     }
