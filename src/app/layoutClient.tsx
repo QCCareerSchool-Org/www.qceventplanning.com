@@ -5,6 +5,7 @@ import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
 import { brevoPageview } from '@/lib/brevo';
+import { resetOptInMonster } from '@/lib/optInMonster';
 
 export const LayoutClient: FC = () => {
   const countRef = useRef(0);
@@ -24,6 +25,8 @@ export const LayoutClient: FC = () => {
     if (countRef.current > 0) { // don't run the first time because it's already being tracked in the snippet
       const title = document.title;
       brevoPageview(title, url, pathname);
+
+      resetOptInMonster();
     }
 
     countRef.current++;

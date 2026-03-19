@@ -1,6 +1,8 @@
-export const formatPrice = (price: number): string => {
+const defaultPrecision = 2;
+
+export const formatPrice = (price: number, precision = defaultPrecision): string => {
   if (Math.floor(price) === price) {
     return price.toString();
   }
-  return price.toFixed(2);
+  return price.toFixed(precision);
 };

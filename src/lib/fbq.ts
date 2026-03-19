@@ -20,7 +20,6 @@ interface FBQ {
   (action: 'track', type: 'Lead', params?: Record<never, string>, options?: Options): void;
   (action: 'track', type: 'PageView', params?: { page_url?: string }, options?: Options): void;
   (action: 'track', type: 'Purchase', params: { value: number; currency: string }, options: Options): void;
-  (action: 'trackCustom', type: 'VirtualPageView', params: { url: string }): void;
 }
 
 declare global {
@@ -99,6 +98,7 @@ export const fbqSale = (enrollment: Enrollment): void => {
     if (enrollment.provinceCode) {
       initParams.st = normalizeState(enrollment.provinceCode);
     }
+
     window.fbq?.('init', facebookId, initParams);
   }
   window.fbq?.('track', 'Purchase', { value: enrollment.cost, currency: enrollment.currencyCode }, { eventID: enrollment.id.toString() });
