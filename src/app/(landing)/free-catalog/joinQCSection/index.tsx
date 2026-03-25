@@ -21,7 +21,7 @@ export const JoinQCSection: FC<Props> = ({ heading, subheading, feedbackText, tr
     <div className="container text-center">
       <FadeUpAnimation>
         <h2 className="h3 mb-4">{heading ?? 'Join QC Event School'}</h2>
-        <p className="lead mb-4">{subheading ?? 'QC\'s event &amp; wedding planning courses provide you with:'}</p>
+        <p className="lead mb-4">{subheading ?? 'QC\'s event & wedding planning courses provide you with:'}</p>
       </FadeUpAnimation>
       <div className="row justify-content-center g-4">
         <div className="col-12 col-md-6 col-lg-4">
