@@ -1,6 +1,5 @@
 'use client';
 
-import 'react-phone-number-input/style.css';
 import Link from 'next/link';
 import type { ChangeEventHandler, FC, SubmitEventHandler } from 'react';
 import { forwardRef, useState } from 'react';
@@ -14,6 +13,8 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import { Overlay } from '@/components/overlay';
+
+import 'react-phone-number-input/style.css';
 
 interface Props {
   countryCode?: string;
