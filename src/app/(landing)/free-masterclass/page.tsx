@@ -49,7 +49,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                   <p>Find out how expert planner Lisa Forbes turned her business into a sought-after luxury brand booking $100k+ clients.</p>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-free-master-class`}
+                      successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-free-masterclass`}
                       listId={brevoListId}
                       emailTemplateId={brevoEmailTemplateId}
                       gclid={gclid}
