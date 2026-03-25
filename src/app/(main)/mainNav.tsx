@@ -20,7 +20,7 @@ const enrollUrls = [
 
 export const MainNav: FC = () => {
   const path = usePathname();
-  const scrollPosition = useScrollPositionContext();
+  const scrollPosition = useScrollPositionContext() ?? 0;
   const [ key, setKey ] = useState(0);
 
   const url = enrollUrls.find(x => x.pattern.test(path))?.url ?? 'https://enroll.qceventplanning.com';
