@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ButtonWrapper: FC<PropsWithChildren<Props>> = ({ alwaysVisible, children }) => {
-  const scrollPosition = useScrollPositionContext();
+  const scrollPosition = useScrollPositionContext() ?? 0;
   const { gte } = useScreenSizeContext();
 
   return (alwaysVisible || show(gte, scrollPosition)) && <>{children}</>;
