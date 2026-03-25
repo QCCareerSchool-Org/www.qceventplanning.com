@@ -5,7 +5,7 @@ const purgeCssOptions = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/app/\\(landing\\)/**/*.{js,ts,jsx,tsx}',
-    './src/app/\\(landing\\)//\\(thank-you\\)**/*.{js,ts,jsx,tsx}',
+    './src/app/\\(landing\\)/\\(thank-you\\)**/*.{js,ts,jsx,tsx}',
     './src/app/\\(main\\)/**/*.{js,ts,jsx,tsx}',
     './src/app/\\(terms\\)/**/*.{js,ts,jsx,tsx}',
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -13,7 +13,8 @@ const purgeCssOptions = {
     './node_modules/react-bootstrap/**/*.js',
   ],
   safelist: {
-    deep: [ /modal-/u, /show/u, /fade/u, /nav/u, /^PhoneInput/u ],
+    standard: [ 'html', 'body', /^PhoneInput/u ],
+    deep: [ /modal-/u, /show/u, /fade/u, /nav/u ],
     greedy: [ /^Toastify/u, /^react-multi-carousel/u, /^react-multiple-carousel/u ],
   },
   defaultExtractor: content => content.match(/[\w\-/:]+(?<!:)/gu) ?? [],
