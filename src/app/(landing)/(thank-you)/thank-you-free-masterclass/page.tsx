@@ -14,8 +14,8 @@ import { SupportSection } from '@/components/supportSection';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Your Course Catalog',
-  alternates: { canonical: '/thank-you-course-catalog' },
+  title: 'Your Masterclass Registration',
+  alternates: { canonical: '/thank-you-free-masterclass' },
   robots: { index: false },
 };
 
