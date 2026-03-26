@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaAward, FaChartLine, FaDollarSign, FaGraduationCap, FaHandshake, FaUserTie } from 'react-icons/fa';
 
 import { Header } from '../header';
@@ -19,7 +20,8 @@ import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Join the Free Masterclass',
+  title: 'Free Masterclass: How to Book $100K+ Luxury Event Clients',
+  description: 'Ready to transition into the luxury event industry? Learn the exact branding and pricing strategies Lisa Forbes used to build an award-winning brand. Perfect for established and aspiring event planners.',
   alternates: {
     canonical: '/free-masterclass',
   },
@@ -48,16 +50,16 @@ const MasterClassRegistrationPage: PageComponent = async props => {
   return (
     <div className={styles.freeCatalog}>
       <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
-      <section className="text-white">
+      <section id="#top" className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
               <div className={`card bg-light ${styles.card}`}>
                 <div className="card-body">
-                  <div className="text-primary fw-bold mb-2">How to Attract and Book $100K+ Clients</div>
-                  <h1 className="h3 mb-3 text-navy">Join the Free Masterclass!</h1>
-                  <p>Find out how expert planner Lisa Forbes turned her business into a sought-after luxury brand booking $100k+ clients.</p>
+                  <div className="text-primary fw-bold mb-2">Free Masterclass</div>
+                  <h1 className="h4 mb-3 text-navy">Profit Pivot: How to Attract & Book $100K+ Clients</h1>
+                  <p>Learn directly from expert event planner <strong>Lisa Forbes</strong>, who turned her business into a sought-after luxury brand serving $100K+ clients—and now she's ready to show you how to do the same.</p>
                   <div className={styles.formWrapper}>
                     <BrevoForm
                       successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-free-masterclass`}
@@ -73,6 +75,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                       placeholders
                       referrer={referrer}
                       countryCode={countryCode}
+                      buttonText="Get Instant Access"
                     />
                   </div>
                 </div>
@@ -195,7 +198,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
               <div className={`${styles.stageBox} text-white rounded-5 py-5 px-s`}>
                 <h3 className="h4 mb-4">Whatever stage you're at, you'll walk away with a clear roadmap and the confidence to start booking $100K+ events.</h3>
                 <p className={`${styles.stageBoxText} mb-5 mx-auto`}>Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry.</p>
-                <p className="mb-5"><button type="button" className="btn btn-primary btn-lg">Watch the Masterclass Now</button></p>
+                <p className="mb-5"><Link href="#top" className="btn btn-primary btn-lg">Watch the Masterclass Now</Link></p>
                 <div className="d-flex gap-2 flex-column flex-lg-row justify-content-between"><strong>100% Free</strong> <span className="d-none d-lg-inline">|</span> <strong>Instant Access</strong> <span className="d-none d-lg-inline">|</span> <strong>No Credit Card Required</strong></div>
               </div>
             </div>
