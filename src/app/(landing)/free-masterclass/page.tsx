@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import Image from 'next/image';
 
 import { Header } from '../header';
+import LisaProfileImage from './lisa-profile.jpg';
 import styles from './page.module.scss';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
 const brevoListId = 93;
 const brevoEmailTemplateId = 2938;
 const testimonialIds = [ 'TE-0012', 'TE-0014', 'TE-0003' ];
+const listIconWidth = 100;
 
 const MasterClassRegistrationPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
@@ -75,23 +78,42 @@ const MasterClassRegistrationPage: PageComponent = async props => {
       </section>
       <section className="bg-light">
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2 className="h3 mb-2 text-navy">Meet Your Instructor: Lisa Forbes</h2>
+          <div className="row justify-content-center g-5">
+            <div className="col-12 col-md-8 col-lg-5 col-xl-6 order-2 order-lg-1">
+              <Image src={LisaProfileImage} alt="Lisa Forbes" className="img-fluid rounded-5" />
+            </div>
+            <div className="col-12 col-lg-7 col-xl-6 order-1 order-lg-2">
+              <div className="eyebrow text-primary mb-2">Meet Your Instructor</div>
+              <h2 className="h3 mb-3 text-navy">Lisa Forbes</h2>
               <h3 className="h5 mb-3">From QC Graduate to Award-Winning Luxury Planner</h3>
               <p>Lisa Forbes, founder of White Aspen Weddings, is a nationally recognized luxury event planner and QC Graduate. Now, with over 15 years of experience, she's partnered with QC Event School to show you exactly how she used her training to break into the luxury market and build a thriving career producing high-end events.</p>
-              <ul className="mb-0">
+              <ul className="list-unstyled mb-0">
                 <li>
-                  <h4 className="h6 mb-1">A QC Success Story</h4>
-                  As a former student, Lisa knows how to turn QC's training into a profitable event business.
+                  <div className="d-flex gap-3">
+                    <div className="flex-shrink-0" style={{ width: listIconWidth }}>icon here</div>
+                    <div>
+                      <h4 className="h6 mb-1">A QC Success Story</h4>
+                      As a former student, Lisa knows how to turn QC's training into a profitable event business.
+                    </div>
+                  </div>
                 </li>
                 <li className="mt-3">
-                  <h4 className="h6 mb-1">15 Years of Luxury Expertise</h4>
-                  She brings over a decade of experience managing everything from intimate ceremonies to extravagant, large-scale luxury productions.
+                  <div className="d-flex gap-3">
+                    <div className="flex-shrink-0" style={{ width: listIconWidth }}>icon here</div>
+                    <div>
+                      <h4 className="h6 mb-1">15 Years of Luxury Expertise</h4>
+                      She brings over a decade of experience managing everything from intimate ceremonies to extravagant, large-scale luxury productions.
+                    </div>
+                  </div>
                 </li>
                 <li className="mt-3">
-                  <h4 className="h6 mb-1">Trusted Industry Authority</h4>
-                  Lisa is a nationally recognized, award-winning planner and a trusted mentor within the professional planning community.
+                  <div className="d-flex gap-3">
+                    <div className="flex-shrink-0" style={{ width: listIconWidth }}>icon here</div>
+                    <div>
+                      <h4 className="h6 mb-1">Trusted Industry Authority</h4>
+                      Lisa is a nationally recognized, award-winning planner and a trusted mentor within the professional planning community.
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -103,18 +125,33 @@ const MasterClassRegistrationPage: PageComponent = async props => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10">
               <h2 className="h3 mb-3 text-navy">In This 45-Minute Masterclass, You'll Walk Away With:</h2>
-              <ul className="mb-0">
+              <ul className="list-unstyled mb-0">
                 <li>
-                  <h3 className="h6 mb-1">A Proven Path to $100K+ Event Budgets</h3>
-                  Learn how to position your planning business to attract high-net-worth clients and book larger, more profitable events.
+                  <div className="d-flex gap-3">
+                    <div className="flex-shrink-0" style={{ width: listIconWidth }}>icon here</div>
+                    <div>
+                      <h3 className="h6 mb-1">A Proven Path to $100K+ Event Budgets</h3>
+                      Learn how to position your planning business to attract high-net-worth clients and book larger, more profitable events.
+                    </div>
+                  </div>
                 </li>
                 <li className="mt-3">
-                  <h3 className="h6 mb-1">A Luxury Pricing Playbook</h3>
-                  Structure premium service packages, protect your margins, and present your fees with clarity and confidence.
+                  <div className="d-flex gap-3">
+                    <div className="flex-shrink-0" style={{ width: listIconWidth }}>icon here</div>
+                    <div>
+                      <h3 className="h6 mb-1">A Luxury Pricing Playbook</h3>
+                      Structure premium service packages, protect your margins, and present your fees with clarity and confidence.
+                    </div>
+                  </div>
                 </li>
                 <li className="mt-3">
-                  <h3 className="h6 mb-1">Insider Strategies for Elite Clients &amp; Vendors</h3>
-                  Ask the right discovery questions, build instant trust with affluent clientele, and partner with top-tier vendors who match your standards.
+                  <div className="d-flex gap-3">
+                    <div className="flex-shrink-0" style={{ width: listIconWidth }}>icon here</div>
+                    <div>
+                      <h3 className="h6 mb-1">Insider Strategies for Elite Clients &amp; Vendors</h3>
+                      Ask the right discovery questions, build instant trust with affluent clientele, and partner with top-tier vendors who match your standards.
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
