@@ -51,6 +51,8 @@ export const MainNav: FC = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <NavDropdown title="Courses" id="courses-nav-dropdown">
+                <Link href="/online-event-courses/all-access-program" className="dropdown-item fw-bold" style={{ marginLeft: '-0.375rem' }} onClick={handleClick}><span className="badge bg-primary">New</span>&nbsp; All-Access Program</Link>
+                <hr className="dropdown-divider" />
                 <Link href="/online-event-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
                 <hr className="dropdown-divider" />
                 <div style={{ paddingLeft: '1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0' }}>Foundation Courses</div>
@@ -67,8 +69,6 @@ export const MainNav: FC = () => {
                 <Link href="/online-event-courses/promotional-event-planning" className="dropdown-item" onClick={handleClick}>Promotional Event Planning</Link>
                 <Link href="/online-event-courses/festivals-and-live-events" className="dropdown-item" onClick={handleClick}>Festivals and Live Events</Link>
                 <Link href="/online-event-courses/accelerate-your-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
-                <hr className="dropdown-divider" />
-                <Link href="/online-event-courses/all-access-program" className="dropdown-item fw-bold" style={{ marginLeft: '-0.375rem' }} onClick={handleClick}><span className="badge bg-primary">New</span>&nbsp; All-Access Program</Link>
               </NavDropdown>
               <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
               <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>

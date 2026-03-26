@@ -1,4 +1,17 @@
 .freeCatalog {
+  .pivotIcon {
+    color: #e1bc93;
+  }
+
+  .stageBox {
+    background-color: #0b003c;
+  }
+
+  .stageBoxText {
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
   .card {
     @media only screen and (max-width: 767.98px) {
       background-color: transparent !important;

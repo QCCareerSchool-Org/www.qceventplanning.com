@@ -32,6 +32,7 @@ interface Props {
   button?: ReactElement;
   referrer: string | null;
   countryCode: string;
+  implicitOptIn?: boolean;
 }
 
 export const BrevoForm: FC<Props> = props => {
@@ -140,14 +141,18 @@ export const BrevoForm: FC<Props> = props => {
           </div>
         </>
       )}
-      <div className="mb-3">
-        <div className="form-check">
-          <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" />
-          <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
-            I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions, </span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
-          </label>
-        </div>
-      </div>
+      {props.implicitOptIn
+        ? <input type="hidden" name="emailOptIn" value="on" />
+        : (
+          <div className="mb-3">
+            <div className="form-check">
+              <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" />
+              <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
+                I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions, </span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
+              </label>
+            </div>
+          </div>
+        )}
       {props.button
         ? <>{props.button}</>
         : (
