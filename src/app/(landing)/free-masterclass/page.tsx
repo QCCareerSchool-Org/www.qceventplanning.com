@@ -3,7 +3,8 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 
 import { Header } from '../header';
-import LisaProfileImage from './lisa-profile.jpg';
+import DeskLaptopImage from './_images/desk-laptop.jpg';
+import LisaProfileImage from './_images/lisa-profile.jpg';
 import styles from './page.module.scss';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
@@ -122,8 +123,8 @@ const MasterClassRegistrationPage: PageComponent = async props => {
       </section>
       <section>
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
+          <div className="row align-items-center justify-content-center g-5">
+            <div className="col-12 col-lg-6 order-1">
               <h2 className="h3 mb-3 text-navy">In This 45-Minute Masterclass, You'll Walk Away With:</h2>
               <ul className="list-unstyled mb-0">
                 <li>
@@ -154,6 +155,9 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                   </div>
                 </li>
               </ul>
+            </div>
+            <div className="col-12 col-md-8 col-lg-6 order-2">
+              <Image src={DeskLaptopImage} alt="" className="img-fluid rounded-5" />
             </div>
           </div>
         </div>
