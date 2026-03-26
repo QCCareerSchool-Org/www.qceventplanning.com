@@ -5,7 +5,7 @@ import { FaPlayCircle } from 'react-icons/fa';
 
 import { getThankyouData } from '..';
 import { Header } from '../../header';
-import { FeaturedCourseCard } from '../_components/featuredCourseCard';
+import { ChoosePathSection } from '../_components/choosePathSection';
 import ChooseYourPath1Image from './_images/choose-your-path-1.jpg';
 import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
 import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
@@ -95,39 +95,43 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="lead mb-0">Explore our most popular event courses and use the same professional foundation Lisa used to launch her award-winning event business.</p>
             </div>
           </div>
-          <div className="row justify-content-center">
-            <div className="col-12 col-xl-10">
-              <FeaturedCourseCard
-                title="Event & Wedding Planning"
-                subtitle="Build Your Foundation"
-                description="Back your talent with a professional certification that commands client trust and premium fees."
-                bestFor="Planners at any stage who want strong fundamentals and professional credibility."
-                careerOutcome="Confidently launch & manage full-service events."
-                href="/online-event-courses/event-and-wedding-planning"
-                imageSrc={ChooseYourPath1Image}
-              />
-              <FeaturedCourseCard
-                className="d-none"
-                title="Luxury Event Planning"
-                subtitle="Multiply Your Income"
-                description="Pivot into the high-net-worth market and command $100K+ budgets."
-                bestFor="Planners ready to increase profitability and secure high-budget events."
-                careerOutcome="Master high-end budgets and the elite client experience."
-                href="/online-event-courses/luxury-wedding-and-event-planning"
-                imageSrc={ChooseYourPath2Image}
-              />
-              <FeaturedCourseCard
-                className="d-none"
-                title="Event Decor"
-                subtitle="Gain a Visual Edge"
-                description="Master the design and aesthetics that impress elite clients."
-                bestFor="Creative professionals looking to enhance their services."
-                careerOutcome="Coordinate lighting, florals, and floor plans for unforgettable events."
-                href="/online-event-courses/event-decor"
-                imageSrc={ChooseYourPath3Image}
-              />
-            </div>
-          </div>
+          <ChoosePathSection
+            items={[
+              {
+                id: 'event-wedding',
+                label: 'The Foundation',
+                title: 'Event & Wedding Planning',
+                subtitle: 'Build Your Foundation',
+                description: 'Back your talent with a professional certification that commands client trust and premium fees.',
+                bestFor: 'Planners at any stage who want strong fundamentals and professional credibility.',
+                careerOutcome: 'Confidently launch & manage full-service events.',
+                href: '/online-event-courses/event-and-wedding-planning',
+                imageSrc: ChooseYourPath1Image,
+              },
+              {
+                id: 'The Income Multiplier',
+                label: 'Luxury Event Planning',
+                title: 'Luxury Event Planning',
+                subtitle: 'Multiply Your Income',
+                description: 'Pivot into the high-net-worth market and command $100K+ budgets.',
+                bestFor: 'Planners ready to increase profitability and secure high-budget events.',
+                careerOutcome: 'Master high-end budgets and the elite client experience.',
+                href: '/online-event-courses/luxury-wedding-and-event-planning',
+                imageSrc: ChooseYourPath2Image,
+              },
+              {
+                id: 'event-decor',
+                label: 'The Visual Edge',
+                title: 'Event Decor',
+                subtitle: 'Gain a Visual Edge',
+                description: 'Master the design and aesthetics that impress elite clients.',
+                bestFor: 'Creative professionals looking to enhance their services.',
+                careerOutcome: 'Coordinate lighting, florals, and floor plans for unforgettable events.',
+                href: '/online-event-courses/event-decor',
+                imageSrc: ChooseYourPath3Image,
+              },
+            ]}
+          />
         </div>
       </section>
       <GoogleReviewSection className="bg-light" />
