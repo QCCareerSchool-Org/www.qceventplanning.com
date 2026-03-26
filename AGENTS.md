@@ -17,11 +17,57 @@ Use npm scripts from the repo root:
 ## Coding Style & Naming Conventions
 TypeScript is `strict`, and the repo uses the `@/*` path alias for `src/*`. Follow the existing ESLint rules in `eslint.config.ts`: 2-space indentation, single quotes, semicolons, spaced braces, and grouped imports with `import/order`. Prefer `type` imports when possible. Keep React component filenames consistent with the surrounding codebase, which commonly uses lower camel case file names such as `layoutClient.tsx` and `chatLink.tsx`. Use PascalCase for component identifiers and `handle...` for event handlers.
 
+### HTML
+
+#### <br /> Tags
+Avoid <br /> tags for anything other than a line break, such as <address>123 Main St<br />SomeCity</address>. I.e., don't use it for spacing.
+
+Prefer
+
+```
+<li>
+  <hx className="hy">A QC Success Story</hx>
+  As a former student, Lisa knows how to turn QC&apos;s training into a profitable event business.
+</li>
+```
+
+over
+
+```
+<li>
+  <strong>A QC Success Story</strong>
+  <br />
+  As a former student, Lisa knows how to turn QC&apos;s training into a profitable event business.
+</li>
+```
+
+where hx is the appropriate semantic level, and hy is a suitable visual style, usually on the smaller side.
+
+#### <p>, <li>, <button>, etc. Tags
+Keep <p> tags with their text. Prefer
+
+```
+<p>Some text</p>
+```
+
+over
+
+```
+<p>
+  Some text
+</p>
+
+We want to see at a glance the overal structure of the page without extra line breaks in the html. Long lines are what the scrollbar is for.
+
+#### Apostrophes
+Use straight apostrophes.
+
 ## Testing Guidelines
 Jest runs in `jsdom` via `next/jest`. Add tests under `__tests__/` or beside the feature using `.test.ts(x)` or `.spec.ts(x)` naming. Use Testing Library for React behavior and `jest-axe` where accessibility checks matter. No coverage threshold is enforced in config, but new UI and logic changes should include targeted tests before review.
 
 ## Commit & Pull Request Guidelines
-Recent history shows short imperative subjects (`Added implicit opt in feature`, `Fixed purgecss rules`) plus version tags such as `1.0.95` on releases. Keep commit messages brief, imperative, and focused on one change. For pull requests, include a concise summary, linked issue or ticket when available, test/lint status, and screenshots for visual changes.
+Recent history shows short imperative subjects (`Added implicit opt-in feature`, `Fixed purgecss rules`) plus version tags such as `1.0.95` on releases. Keep commit messages brief, imperative, and focused on one change. For pull requests, include a concise summary, linked issue or ticket when available, test/lint status, and screenshots for visual changes. The project uses the Git Flow flow, with `main`, `develop`, `feature/*`, `release/*`, and `bugfix/*` branches. Releases typically use patch-level version bumps.
+
 
 ## Security & Configuration Tips
 Keep secrets in `.env.local` only; never commit environment-specific values. Review `vercel.json`, `next.config.ts`, and metadata routes like `src/app/robots.ts` when changing deployment or SEO behavior.
