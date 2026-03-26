@@ -67,7 +67,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                 <div className="card-body">
                   <div className="text-primary fw-bold mb-2">Free Masterclass</div>
                   <h1 className="h4 mb-3 text-navy">Profit Pivot: How to Attract & Book $100K+ Clients</h1>
-                  <p>Learn directly from expert event planner <strong>Lisa Forbes</strong>, who turned her business into a sought-after luxury brand serving $100K+ clients—and now she's ready to show you how to do the same.</p>
+                  <p>Learn directly from expert event planner <strong>Lisa Forbes</strong>, who turned her business into a sought-after luxury brand serving $100K+ clients. Now she'll show you how to do the same.</p>
                   <div className={styles.formWrapper}>
                     <BrevoForm
                       successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-free-masterclass`}
@@ -102,7 +102,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
               <div className="eyebrow text-primary mb-2">Meet Your Instructor</div>
               <h2 className="h3 mb-3 text-navy">Lisa Forbes</h2>
               <h3 className="h5 mb-3">From QC Graduate to Award-Winning Luxury Planner</h3>
-              <p>Lisa Forbes, founder of White Aspen Weddings, is a nationally recognized luxury event planner and QC Graduate. Now, with over 15 years of experience, she's partnered with QC Event School to show you exactly how she used her training to break into the luxury market and build a thriving career producing high-end events.</p>
+              <p>Lisa Forbes, lead planner at Hitched Planning & Design, is a nationally recognized luxury event planner and QC Graduate. Now, with over 15 years of experience, she's partnered with QC Event School to show you exactly how she used her training to break into the luxury market and build a thriving career producing high-end events.</p>
               <ul className="list-unstyled mb-0">
                 <li>
                   <div className="d-flex align-items-center gap-3">
@@ -118,7 +118,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                     <div className="flex-shrink-0 text-primary text-center" style={{ width: listIconWidth }}><DiamondIcon height={listIconHeight} /></div>
                     <div>
                       <h4 className="h6 mb-1">15 Years of Luxury Expertise</h4>
-                      She brings over a decade of experience managing everything from intimate ceremonies to extravagant, large-scale luxury productions.
+                      Lisa brings over a decade of experience managing everything from intimate ceremonies to extravagant luxury productions.
                     </div>
                   </div>
                 </li>
@@ -140,14 +140,14 @@ const MasterClassRegistrationPage: PageComponent = async props => {
         <div className="container">
           <div className="row align-items-center justify-content-center g-5">
             <div className="col-12 col-lg-6 order-1">
-              <h2 className="h3 mb-3 text-navy">In This 45-Minute Masterclass, You'll Walk Away With:</h2>
+              <h2 className="h3 mb-3 text-navy">In This 35-Minute Masterclass, You'll Get:</h2>
               <ul className="list-unstyled mb-0">
                 <li>
                   <div className="d-flex align-items-center gap-3">
                     <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><MoneyWithdrawIcon height={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">A Proven Path to $100K+ Event Budgets</h3>
-                      Learn how to position your planning business to attract high-net-worth clients and book larger, more profitable events.
+                      Learn to position your planning business to attract high-net-worth clients and book larger, more profitable events.
                     </div>
                   </div>
                 </li>
@@ -156,7 +156,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                     <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><BookBookmarkIcon height={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">A Luxury Pricing Playbook</h3>
-                      Structure premium service packages, protect your margins, and present your fees with clarity and confidence.
+                      Gain the confidence to structure premium service packages that protect your margins and present your fees with clarity.
                     </div>
                   </div>
                 </li>
@@ -165,7 +165,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                     <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><ShieldAlt2Icon height={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">Insider Strategies for Elite Clients &amp; Vendors</h3>
-                      Ask the right discovery questions, build instant trust with affluent clientele, and partner with top-tier vendors who match your standards.
+                      Build instant trust with affluent clientele, and partner with top-tier vendors who match your standards.
                     </div>
                   </div>
                 </li>
@@ -184,30 +184,30 @@ const MasterClassRegistrationPage: PageComponent = async props => {
           <div className="row justify-content-center mb-5">
             <div className="col-12 col-lg-10">
               <h2 className="h3 mb-3 text-navy">Is this the Profit Pivot Masterclass Right for You?</h2>
-              <p className="mb-0">This 45-minute masterclass is for event planners ready to grow a profitable, high-end business. Whether you're:</p>
+              <p className="mb-0">This 35-minute masterclass is for event planners ready to grow a profitable, high-end business. You're in the right place, if you're:</p>
             </div>
           </div>
           <div className="row justify-content-center g-5 mb-5">
             <div className="col-12 col-lg-4">
               <p className={`${styles.pivotIcon} mb-3`}><BriefcaseIcon height="48" /></p>
-              <h3 className="h6 mb-1">The Established Planner</h3>
+              <h3 className="h6 mb-1">An Established Planner</h3>
               You have a solid event business and are ready to grow and command higher fees.
             </div>
             <div className="col-12 col-lg-4">
               <p className={`${styles.pivotIcon} mb-3`}><BarChartAltIcon height="48" /></p>
-              <h3 className="h6 mb-1">The Aspiring Professional</h3>
-              You're just starting out and want to do it right—you want to build a profitable, high-end brand from day one.
+              <h3 className="h6 mb-1">An Aspiring Professional</h3>
+              You're just starting out and want to build a profitable, high-end brand from day one.
             </div>
             <div className="col-12 col-lg-4">
               <p className={`${styles.pivotIcon} mb-3`}><PaletteIcon height="48" /></p>
-              <h3 className="h6 mb-1">The Creative Upskiller</h3>
+              <h3 className="h6 mb-1">A Creative Upskiller</h3>
               You have a talent for planning and an eye for luxury, but you struggle to communicate your value and charge the fees your work deserves.
             </div>
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9">
               <div className={`${styles.stageBox} text-white rounded-5 py-5 px-s`}>
-                <h3 className="h4 mb-4">Whatever stage you're at, you'll walk away with a clear roadmap and the confidence to start booking $100K+ events.</h3>
+                <h3 className="h4 mb-4">Whatever stage you're at, you'll walk away with a clear roadmap to start booking $100K+ events.</h3>
                 <p className={`${styles.stageBoxText} mb-5 mx-auto`}>Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry.</p>
                 <p className="mb-5"><Link href="#top" className="btn btn-primary btn-lg">Watch the Masterclass Now</Link></p>
                 <div className="d-flex gap-2 flex-column flex-lg-row justify-content-between"><strong>100% Free</strong> <span className="d-none d-lg-inline">|</span> <strong>Instant Access</strong> <span className="d-none d-lg-inline">|</span> <strong>No Credit Card Required</strong></div>
