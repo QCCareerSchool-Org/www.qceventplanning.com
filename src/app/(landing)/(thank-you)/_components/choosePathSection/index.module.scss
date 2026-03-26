@@ -1,0 +1,33 @@
+.toggleGroup {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  background: #f0f1f6;
+  border-radius: 999px;
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+.toggleButton {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: var(--qc-color-navy);
+  cursor: pointer;
+  flex: 1 1 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.toggleButtonActive {
+  background: var(--qc-color-navy);
+  color: white;
+}
