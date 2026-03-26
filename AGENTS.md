@@ -59,8 +59,15 @@ over
 
 We want to see at a glance the overal structure of the page without extra line breaks in the html. Long lines are what the scrollbar is for.
 
-#### Apostrophes
-Use straight apostrophes.
+#### Apostrophes and Quotation Marks
+Use straight apostrophes and quotation marks.
+
+#### Dashes
+Use "to" for ranges, e.g. "6 to 9 months" instead of using any kind of dash or hyphen for the range. Fix existing copy to follow this rule.
+                                                                                                                                                   
+When text uses a spaced hyphen as punctuation, standardize it to an em-dash: "—" with no spaces around it. If any em-dashes are present with space around them, remove the space to follow this rule.
+                                                                                                                                                   
+Do not rewrite sentences to add dashes where none existed unless explicitly requested.
 
 ## Testing Guidelines
 Jest runs in `jsdom` via `next/jest`. Add tests under `__tests__/` or beside the feature using `.test.ts(x)` or `.spec.ts(x)` naming. Use Testing Library for React behavior and `jest-axe` where accessibility checks matter. No coverage threshold is enforced in config, but new UI and logic changes should include targeted tests before review.
