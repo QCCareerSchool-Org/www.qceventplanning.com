@@ -2,11 +2,19 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaAward, FaChartLine, FaDollarSign, FaGraduationCap, FaHandshake, FaUserTie } from 'react-icons/fa';
 
 import { Header } from '../header';
 import DeskLaptopImage from './_images/desk-laptop.jpg';
 import HeroImage from './_images/hero.jpg';
+import BarChartAltIcon from './_images/icons/bar-chart-alt.svg';
+import BookBookmarkIcon from './_images/icons/book-bookmark.svg';
+import BriefcaseIcon from './_images/icons/briefcase.svg';
+import CertificationIcon from './_images/icons/certification.svg';
+import DiamondIcon from './_images/icons/diamond.svg';
+import BookIcon from './_images/icons/icon-book.svg';
+import MoneyWithdrawIcon from './_images/icons/money-withdraw.svg';
+import PaletteIcon from './_images/icons/palette.svg';
+import ShieldAlt2Icon from './_images/icons/shield-alt-2.svg';
 import ILEABgImage from './_images/ilea-bg.jpg';
 import LisaProfileImage from './_images/lisa-profile.jpg';
 import styles from './page.module.scss';
@@ -30,8 +38,8 @@ export const metadata: Metadata = {
 const brevoListId = 93;
 const brevoEmailTemplateId = 2938;
 const testimonialIds = [ 'TE-0012', 'TE-0014', 'TE-0003' ];
-const listIconWidth = 64;
-const listIconSize = 36;
+const listIconWidth = 32;
+const listIconHeight = 24;
 
 const MasterClassRegistrationPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
@@ -98,7 +106,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
               <ul className="list-unstyled mb-0">
                 <li>
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-primary text-center" style={{ width: listIconWidth }}><FaGraduationCap size={listIconSize} /></div>
+                    <div className="flex-shrink-0 text-primary text-center" style={{ width: listIconWidth }}><BookIcon height={listIconHeight} /></div>
                     <div>
                       <h4 className="h6 mb-1">A QC Success Story</h4>
                       As a former student, Lisa knows how to turn QC's training into a profitable event business.
@@ -107,7 +115,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                 </li>
                 <li className="mt-3">
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-primary text-center" style={{ width: listIconWidth }}><FaAward size={listIconSize} /></div>
+                    <div className="flex-shrink-0 text-primary text-center" style={{ width: listIconWidth }}><DiamondIcon height={listIconHeight} /></div>
                     <div>
                       <h4 className="h6 mb-1">15 Years of Luxury Expertise</h4>
                       She brings over a decade of experience managing everything from intimate ceremonies to extravagant, large-scale luxury productions.
@@ -116,7 +124,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                 </li>
                 <li className="mt-3">
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-primary text-center" style={{ width: listIconWidth }}><FaUserTie size={listIconSize} /></div>
+                    <div className="flex-shrink-0 text-primary text-center" style={{ width: listIconWidth }}><CertificationIcon height={listIconHeight} /></div>
                     <div>
                       <h4 className="h6 mb-1">Trusted Industry Authority</h4>
                       Lisa is a nationally recognized, award-winning planner and a trusted mentor within the professional planning community.
@@ -136,7 +144,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
               <ul className="list-unstyled mb-0">
                 <li>
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><FaChartLine size={listIconSize} /></div>
+                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><MoneyWithdrawIcon height={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">A Proven Path to $100K+ Event Budgets</h3>
                       Learn how to position your planning business to attract high-net-worth clients and book larger, more profitable events.
@@ -145,7 +153,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                 </li>
                 <li className="mt-3">
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><FaDollarSign size={listIconSize} /></div>
+                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><BookBookmarkIcon height={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">A Luxury Pricing Playbook</h3>
                       Structure premium service packages, protect your margins, and present your fees with clarity and confidence.
@@ -154,7 +162,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                 </li>
                 <li className="mt-3">
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><FaHandshake size={listIconSize} /></div>
+                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><ShieldAlt2Icon height={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">Insider Strategies for Elite Clients &amp; Vendors</h3>
                       Ask the right discovery questions, build instant trust with affluent clientele, and partner with top-tier vendors who match your standards.
@@ -181,14 +189,17 @@ const MasterClassRegistrationPage: PageComponent = async props => {
           </div>
           <div className="row justify-content-center g-5 mb-5">
             <div className="col-12 col-lg-4">
+              <p className={`${styles.pivotIcon} mb-3`}><BriefcaseIcon height="48" /></p>
               <h3 className="h6 mb-1">The Established Planner</h3>
               You have a solid event business and are ready to grow and command higher fees.
             </div>
             <div className="col-12 col-lg-4">
+              <p className={`${styles.pivotIcon} mb-3`}><BarChartAltIcon height="48" /></p>
               <h3 className="h6 mb-1">The Aspiring Professional</h3>
               You're just starting out and want to do it right—you want to build a profitable, high-end brand from day one.
             </div>
             <div className="col-12 col-lg-4">
+              <p className={`${styles.pivotIcon} mb-3`}><PaletteIcon height="48" /></p>
               <h3 className="h6 mb-1">The Creative Upskiller</h3>
               You have a talent for planning and an eye for luxury, but you struggle to communicate your value and charge the fees your work deserves.
             </div>
