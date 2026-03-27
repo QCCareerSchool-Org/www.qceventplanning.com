@@ -183,7 +183,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
         <div className="container text-center">
           <div className="row justify-content-center mb-5">
             <div className="col-12 col-lg-10">
-              <h2 className="h3 mb-3 text-navy">Is this the Profit Pivot Masterclass Right for You?</h2>
+              <h2 className="h3 mb-3 text-navy">Is the Profit Pivot Masterclass Right for You?</h2>
               <p className="mb-0">This 35-minute masterclass is for event planners ready to grow a profitable, high-end business. You're in the right place, if you're:</p>
             </div>
           </div>
