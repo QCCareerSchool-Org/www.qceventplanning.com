@@ -5,6 +5,7 @@ import { FaPlayCircle } from 'react-icons/fa';
 
 import { getThankyouData } from '..';
 import { Header } from '../../header';
+import type { CoursePath } from '../_components/choosePathSection';
 import { ChoosePathSection } from '../_components/choosePathSection';
 import ChooseYourPath1Image from './_images/choose-your-path-1.jpg';
 import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
@@ -17,6 +18,7 @@ import { Overlay } from '@/components/overlay';
 import { SetCookie } from '@/components/setCookie';
 import { StatsSection } from '@/components/statsSection/statsSection';
 import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -95,45 +97,56 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="lead mb-0">Explore our most popular event courses and use the same professional foundation Lisa used to launch her award-winning event business.</p>
             </div>
           </div>
-          <ChoosePathSection
-            items={[
-              {
-                id: 'event-wedding',
-                label: 'The Foundation',
-                title: 'Event & Wedding Planning',
-                subtitle: 'Build Your Foundation',
-                description: 'Back your talent with a professional certification that commands client trust and premium fees.',
-                bestFor: 'Planners at any stage who want strong fundamentals and professional credibility.',
-                careerOutcome: 'Confidently launch & manage full-service events.',
-                href: '/online-event-courses/event-and-wedding-planning',
-                imageSrc: ChooseYourPath1Image,
-              },
-              {
-                id: 'The Income Multiplier',
-                label: 'Luxury Event Planning',
-                title: 'Luxury Event Planning',
-                subtitle: 'Multiply Your Income',
-                description: 'Pivot into the high-net-worth market and command $100K+ budgets.',
-                bestFor: 'Planners ready to increase profitability and secure high-budget events.',
-                careerOutcome: 'Master high-end budgets and the elite client experience.',
-                href: '/online-event-courses/luxury-wedding-and-event-planning',
-                imageSrc: ChooseYourPath2Image,
-              },
-              {
-                id: 'event-decor',
-                label: 'The Visual Edge',
-                title: 'Event Decor',
-                subtitle: 'Gain a Visual Edge',
-                description: 'Master the design and aesthetics that impress elite clients.',
-                bestFor: 'Creative professionals looking to enhance their services.',
-                careerOutcome: 'Coordinate lighting, florals, and floor plans for unforgettable events.',
-                href: '/online-event-courses/event-decor',
-                imageSrc: ChooseYourPath3Image,
-              },
-            ]}
-          />
+          <ChoosePathSection paths={choosePathItems} />
         </div>
       </section>
+      <section className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-12 col-lg-10 col-xl-8">
+              <h2 className="mb-0">Everything You Need to Succeed</h2>
+            </div>
+          </div>
+          <div className="row justify-content-center g-4 text-center">
+            <div className="col-12 col-md-6 col-lg-4">
+              <h3 className="h6 mb-2">Industry-Recognized Designations</h3>
+              <p className="mb-0">Earn the authority needed to gain instant credibility.</p>
+            </div>
+            <div className="col-12 col-md-6 col-lg-4">
+              <h3 className="h6 mb-2">Ready-to-Use Templates</h3>
+              <p className="mb-0">Access scripts, budgets, and templates that ensure flawless execution.</p>
+            </div>
+            <div className="col-12 col-md-6 col-lg-4">
+              <h3 className="h6 mb-2">1-on-1 Expert Feedback</h3>
+              <p className="mb-0">Every assignment is reviewed by expert event planners.</p>
+            </div>
+            <div className="col-12 col-md-6 col-lg-4">
+              <h3 className="h6 mb-2">ILEA-Approved Curriculum</h3>
+              <p className="mb-0">Graduate with a certification that meets rigorous global standards.</p>
+            </div>
+            <div className="col-12 col-md-6 col-lg-4">
+              <h3 className="h6 mb-2">Aisle Planner Access</h3>
+              <p className="mb-0">Enjoy a 6-month free subscription to the industry-leading event management software.</p>
+            </div>
+            <div className="col-12 col-md-6 col-lg-4">
+              <h3 className="h6 mb-2">Bonus Business Training</h3>
+              <p className="mb-0">Learn to run a profitable event business—from contracts to marketing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row justify-content-center text-center">
+            <div className="col-12 col-lg-10 col-xl-8">
+              <h2 className="mb-3">Explore More Event Planning Certifications</h2>
+              <p className="lead mb-4">Looking for a different specialty? Browse our full catalog—your $100 discount applies to every professional certification.</p>
+              <p className="mb-0"><Link href="/online-event-courses" className="btn btn-primary btn-lg">Explore Courses</Link></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <TestimonialWallSection testimonialIds={[ 'TE-0017', 'TE-0015', 'TE-0027' ]} className="bg-light" />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection date={date} />
@@ -142,3 +155,39 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
 };
 
 export default ThankYouMasterclassRegistrationPage;
+
+const choosePathItems: CoursePath[] = [
+  {
+    id: 'event-wedding',
+    label: 'The Foundation',
+    title: 'Event & Wedding Planning',
+    subtitle: 'Build Your Foundation',
+    description: 'Back your talent with a professional certification that commands client trust and premium fees.',
+    bestFor: 'Planners at any stage who want strong fundamentals and professional credibility.',
+    careerOutcome: 'Confidently launch & manage full-service events.',
+    href: '/online-event-courses/event-and-wedding-planning',
+    imageSrc: ChooseYourPath1Image,
+  },
+  {
+    id: 'The Income Multiplier',
+    label: 'Luxury Event Planning',
+    title: 'Luxury Event Planning',
+    subtitle: 'Multiply Your Income',
+    description: 'Pivot into the high-net-worth market and command $100K+ budgets.',
+    bestFor: 'Planners ready to increase profitability and secure high-budget events.',
+    careerOutcome: 'Master high-end budgets and the elite client experience.',
+    href: '/online-event-courses/luxury-wedding-and-event-planning',
+    imageSrc: ChooseYourPath2Image,
+  },
+  {
+    id: 'event-decor',
+    label: 'The Visual Edge',
+    title: 'Event Decor',
+    subtitle: 'Gain a Visual Edge',
+    description: 'Master the design and aesthetics that impress elite clients.',
+    bestFor: 'Creative professionals looking to enhance their services.',
+    careerOutcome: 'Coordinate lighting, florals, and floor plans for unforgettable events.',
+    href: '/online-event-courses/event-decor',
+    imageSrc: ChooseYourPath3Image,
+  },
+];

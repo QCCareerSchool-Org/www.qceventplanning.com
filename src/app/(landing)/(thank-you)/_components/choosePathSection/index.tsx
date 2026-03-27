@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { FeaturedCourseCard } from '../featuredCourseCard';
 import styles from './index.module.scss';
 
-interface CourseItem {
+export interface CoursePath {
   id: string;
   label: string;
   title: string;
@@ -20,15 +20,15 @@ interface CourseItem {
 }
 
 interface Props {
-  items: CourseItem[];
+  paths: CoursePath[];
 }
 
-export const ChoosePathSection: FC<Props> = ({ items }) => {
-  const [ selectedId, setSelectedId ] = useState(items[0].id);
-  const selectedItem = items.find(item => item.id === selectedId) ?? items[0];
+export const ChoosePathSection: FC<Props> = ({ paths }) => {
+  const [ selectedId, setSelectedId ] = useState(paths[0].id);
+  const selectedItem = paths.find(p => p.id === selectedId) ?? paths[0];
 
-  const handleClick = (itemId: string) => {
-    setSelectedId(itemId);
+  const handleClick = (pathId: string) => {
+    setSelectedId(pathId);
   };
 
   return (
@@ -36,7 +36,7 @@ export const ChoosePathSection: FC<Props> = ({ items }) => {
       <div className="row justify-content-center mb-4">
         <div className="col-12 text-center">
           <div className={styles.toggleGroup}>
-            {items.map(item => <button key={item.id} onClick={() => handleClick(item.id)} type="button" className={`${styles.toggleButton} ${item.id === selectedId ? styles.toggleButtonActive : ''}`}>{item.label}</button>)}
+            {paths.map(p => <button key={p.id} onClick={() => handleClick(p.id)} type="button" className={`${styles.toggleButton} ${p.id === selectedId ? styles.toggleButtonActive : ''}`}>{p.label}</button>)}
           </div>
         </div>
       </div>
