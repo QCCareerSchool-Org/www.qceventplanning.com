@@ -1,6 +1,7 @@
 'use client';
 
 import { useIntersectionObserverRatio } from '@davewelsh79/use-intersection-observer';
+import type { StaticImageData } from 'next/image';
 import type { FC } from 'react';
 import { useCountUp } from 'react-use-count-up';
 
@@ -14,9 +15,10 @@ const observerOptions: IntersectionObserverInit = { threshold: Array.from({ leng
 interface Props {
   heading?: string;
   body?: string;
+  background?: StaticImageData;
 }
 
-export const StatsSection: FC<Props> = ({ heading, body }) => {
+export const StatsSection: FC<Props> = ({ heading, body, background }) => {
   const [ studentsStart, studentsRatio, studentsRef ] = useIntersectionObserverRatio(true, observerOptions);
   const [ yearsStart, yearsRatio, yearsRef ] = useIntersectionObserverRatio(true, observerOptions);
   const [ expertsStart, expertsRatio, expertsRef ] = useIntersectionObserverRatio(true, observerOptions);
@@ -27,7 +29,7 @@ export const StatsSection: FC<Props> = ({ heading, body }) => {
 
   return (
     <section className={`${styles.section} text-white`}>
-      <BackgroundImage src={CounterBackgroundImage} />
+      <BackgroundImage src={background ?? CounterBackgroundImage} />
       <div className="container">
         {heading && (
           <div className="row justify-content-center text-center mb-4">

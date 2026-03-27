@@ -11,6 +11,7 @@ import BarChartIcon from './_images/bar-chart-alt.svg';
 import ChooseYourPath1Image from './_images/choose-your-path-1.jpg';
 import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
 import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
+import StaticBackgroundImage from './_images/stats-background.jpg';
 import VideoImage from './_images/video.jpg';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { Overlay } from '@/components/overlay';
@@ -44,7 +45,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           leadId={lead.leadId}
         />
       )}
-      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
+      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com/master-class-offer" />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-5">
@@ -69,6 +70,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
       <StatsSection
         heading="QC Event School—Global Authority in Event Education"
         body="A QC certification enhances your credibility, reinforces your premium positioning, and opens the door to higher-value events and trusted industry partnerships."
+        background={StaticBackgroundImage}
       />
       <section className="bg-light">
         <div className="container">
@@ -165,8 +167,7 @@ export default ThankYouMasterclassRegistrationPage;
 
 const choosePathItems: CoursePath[] = [
   {
-    id: 'event-wedding',
-    label: 'The Foundation',
+    id: 'event-and-wedding',
     title: 'Event & Wedding Planning',
     subtitle: 'Build Your Foundation',
     description: 'Back your talent with a professional certification that commands client trust and premium fees.',
@@ -176,8 +177,7 @@ const choosePathItems: CoursePath[] = [
     imageSrc: ChooseYourPath1Image,
   },
   {
-    id: 'The Income Multiplier',
-    label: 'Luxury Event Planning',
+    id: 'luxury-wedding',
     title: 'Luxury Event Planning',
     subtitle: 'Multiply Your Income',
     description: 'Pivot into the high-net-worth market and command $100K+ budgets.',
@@ -188,7 +188,6 @@ const choosePathItems: CoursePath[] = [
   },
   {
     id: 'event-decor',
-    label: 'The Visual Edge',
     title: 'Event Decor',
     subtitle: 'Gain a Visual Edge',
     description: 'Master the design and aesthetics that impress elite clients.',

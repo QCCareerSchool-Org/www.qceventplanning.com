@@ -9,7 +9,6 @@ import styles from './index.module.scss';
 
 export interface CoursePath {
   id: string;
-  label: string;
   title: string;
   subtitle: string;
   description: string;
@@ -36,7 +35,7 @@ export const ChoosePathSection: FC<Props> = ({ paths }) => {
       <div className="row justify-content-center mb-4">
         <div className="col-12 text-center">
           <div className={styles.toggleGroup}>
-            {paths.map(p => <button key={p.id} onClick={() => handleClick(p.id)} type="button" className={`${styles.toggleButton} ${p.id === selectedId ? styles.toggleButtonActive : ''}`}>{p.label}</button>)}
+            {paths.map(p => <button key={p.id} onClick={() => handleClick(p.id)} type="button" className={`${styles.toggleButton} ${p.id === selectedId ? styles.toggleButtonActive : ''}`}>{p.title}</button>)}
           </div>
         </div>
       </div>

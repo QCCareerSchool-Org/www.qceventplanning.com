@@ -17,7 +17,7 @@ export const Header: FC<Props> = ({ countryCode, provinceCode, date }) => {
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
-      {mar18.contains(date)
+      {!mar18.contains(date)
         ? (
           <PromoBanner date={date} period={mar18.toDTO()}>
             <span className="d-none d-lg-inline">Don't Miss Out—</span>Get 2 free specialty courses <strong>+ {discount} OFF</strong>
@@ -25,10 +25,10 @@ export const Header: FC<Props> = ({ countryCode, provinceCode, date }) => {
         )
         : (
           <Banner
-            url="https://enroll.qceventplanning.com"
+            url="https://enroll.qceventplanning.com/master-class-offer"
             message={(
               <span style={{ textTransform: 'uppercase' }}>
-                <strong>BEST VALUE:</strong> Join the All-Access Program & Save <AAPSavings countryCode={countryCode} provinceCode={provinceCode} />+ on Tuition
+                <strong>BEST VALUE:</strong> Join the All-Access Program & Save <AAPSavings countryCode={countryCode} provinceCode={provinceCode} />+ <button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
               </span>
             )}
             showTimer={false}
