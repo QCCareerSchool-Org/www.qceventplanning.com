@@ -25,7 +25,7 @@ export const Header: FC<Props> = ({ countryCode, provinceCode, date }) => {
         )
         : (
           <Banner
-            url="https://enroll.qceventplanning.com/master-class-offer"
+            url="https://enroll.qceventplanning.com/masterclass-offer"
             message={(
               <span style={{ textTransform: 'uppercase' }}>
                 <strong>BEST VALUE:</strong> Join the All-Access Program & Save <AAPSavings countryCode={countryCode} provinceCode={provinceCode} />+ <button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>

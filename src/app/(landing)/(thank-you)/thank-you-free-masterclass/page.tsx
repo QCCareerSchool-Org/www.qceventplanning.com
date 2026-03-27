@@ -13,6 +13,15 @@ import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
 import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
 import StaticBackgroundImage from './_images/stats-background.jpg';
 import VideoImage from './_images/video.jpg';
+import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
+import BookBookmarkIcon from '@/components/icons/book-bookmark.svg';
+import BriefcaseIcon from '@/components/icons/briefcase.svg';
+import CertificationIcon from '@/components/icons/certification.svg';
+import DiamondIcon from '@/components/icons/diamond.svg';
+import BookIcon from '@/components/icons/icon-book.svg';
+import MoneyWithdrawIcon from '@/components/icons/money-withdraw.svg';
+import PaletteIcon from '@/components/icons/palette.svg';
+import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { Overlay } from '@/components/overlay';
 import { SetCookie } from '@/components/setCookie';
@@ -26,6 +35,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/thank-you-free-masterclass' },
   robots: { index: false },
 };
+
+const iconSize = 32;
 
 const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
   const { lead, jwt, recent } = await getThankyouData(props);
@@ -45,7 +56,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           leadId={lead.leadId}
         />
       )}
-      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com/master-class-offer" />
+      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com/masterclass-offer" />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-5">
@@ -108,26 +119,32 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           </div>
           <div className="row justify-content-center g-4 text-center">
             <div className="col-12 col-md-6 col-lg-4">
+              <div className="mb-1"><CertificationIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Industry-Recognized Designations</h3>
               <p className="mb-0">Earn the authority needed to gain instant credibility.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
+              <div className="mb-1"><BookIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Ready-to-Use Templates</h3>
               <p className="mb-0">Access scripts, budgets, and templates that ensure flawless execution.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
+              <div className="mb-1"><BarChartAltIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">1-on-1 Expert Feedback</h3>
               <p className="mb-0">Every assignment is reviewed by expert event planners.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
+              <div className="mb-1"><ShieldAlt2Icon height={iconSize} /></div>
               <h3 className="h6 mb-2">ILEA-Approved Curriculum</h3>
               <p className="mb-0">Graduate with a certification that meets rigorous global standards.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
+              <div className="mb-1"><DiamondIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Aisle Planner Access</h3>
               <p className="mb-0">Enjoy a 6-month free subscription to the industry-leading event management software.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
+              <div className="mb-1"><BriefcaseIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Bonus Business Training</h3>
               <p className="mb-0">Learn to run a profitable event business—from contracts to marketing.</p>
             </div>

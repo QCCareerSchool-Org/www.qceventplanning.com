@@ -1,24 +1,26 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
+import { FaPlay } from 'react-icons/fa';
+import { TbMoneybag } from 'react-icons/tb';
 
 import { Header } from '../header';
 import DeskLaptopImage from './_images/desk-laptop.jpg';
 import HeroImage from './_images/hero.jpg';
-import BarChartAltIcon from './_images/icons/bar-chart-alt.svg';
-import BookBookmarkIcon from './_images/icons/book-bookmark.svg';
-import BriefcaseIcon from './_images/icons/briefcase.svg';
-import CertificationIcon from './_images/icons/certification.svg';
-import DiamondIcon from './_images/icons/diamond.svg';
-import BookIcon from './_images/icons/icon-book.svg';
-import MoneyWithdrawIcon from './_images/icons/money-withdraw.svg';
-import PaletteIcon from './_images/icons/palette.svg';
-import ShieldAlt2Icon from './_images/icons/shield-alt-2.svg';
 import ILEABgImage from './_images/ilea-bg.jpg';
 import LisaProfileImage from './_images/lisa-profile.jpg';
 import styles from './page.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
+import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
+import BookBookmarkIcon from '@/components/icons/book-bookmark.svg';
+import BriefcaseIcon from '@/components/icons/briefcase.svg';
+import CertificationIcon from '@/components/icons/certification.svg';
+import DiamondIcon from '@/components/icons/diamond.svg';
+import BookIcon from '@/components/icons/icon-book.svg';
+import MoneyWithdrawIcon from '@/components/icons/money-withdraw.svg';
+import PaletteIcon from '@/components/icons/palette.svg';
+import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
 import { ILEASection } from '@/components/ileaSection';
 import { StageBox } from '@/components/stageBox';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -56,7 +58,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
 
   return (
     <div className={styles.freeCatalog}>
-      <Header buttonContent={<>Get Instant Access</>} buttonHref="#top" />
+      <Header buttonContent={<><span style={{ position: 'relative', top: -1, marginRight: '0.5rem' }}><FaPlay /></span> Get Instant Access</>} buttonHref="#top" />
       <section id="#top" className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
@@ -170,7 +172,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                 </li>
                 <li className="mt-3">
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><ShieldAlt2Icon height={listIconHeight} /></div>
+                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><TbMoneybag size={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">An Exclusive Offer from QC Event School</h3>
                       Unlock a limited-time opportunity to fast-track your career with professional training designed to help you break into the luxury market and increase your income.
