@@ -3,30 +3,18 @@
     color: #e1bc93;
   }
 
-  .stageBox {
-    background-color: #0b003c;
-  }
-
-  .stageBoxText {
-    max-width: 560px;
-    color: rgba(255, 255, 255, 0.75);
-  }
-
   .card {
-    @media only screen and (max-width: 767.98px) {
-      background-color: transparent !important;
-      --bs-card-spacer-y: 0;
-      --bs-card-spacer-x: 0;
-      --bs-card-border-width: 0;
-      --bs-card-box-shadow: none;
+    --bs-card-spacer-y: 0;
+    --bs-card-spacer-x: 0;
+    --bs-card-border-width: 0;
+    --bs-card-box-shadow: none;
+    color: white;
+    * {
       color: white;
-      * {
-        color: white;
-      }
-      label, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-        color: white !important;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-      }
+    }
+    label, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: white !important;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
     .formWrapper {
       @media only screen and (max-width: 439.98px) { max-width: 240px; }

@@ -1,27 +1,28 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
+import { FaPlay } from 'react-icons/fa';
+import { PiGift } from 'react-icons/pi';
 
 import { Header } from '../header';
 import DeskLaptopImage from './_images/desk-laptop.jpg';
 import HeroImage from './_images/hero.jpg';
-import BarChartAltIcon from './_images/icons/bar-chart-alt.svg';
-import BookBookmarkIcon from './_images/icons/book-bookmark.svg';
-import BriefcaseIcon from './_images/icons/briefcase.svg';
-import CertificationIcon from './_images/icons/certification.svg';
-import DiamondIcon from './_images/icons/diamond.svg';
-import BookIcon from './_images/icons/icon-book.svg';
-import MoneyWithdrawIcon from './_images/icons/money-withdraw.svg';
-import PaletteIcon from './_images/icons/palette.svg';
-import ShieldAlt2Icon from './_images/icons/shield-alt-2.svg';
 import ILEABgImage from './_images/ilea-bg.jpg';
 import LisaProfileImage from './_images/lisa-profile.jpg';
 import styles from './page.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
-import DownloadIcon from '@/components/download.svg';
+import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
+import BookBookmarkIcon from '@/components/icons/book-bookmark.svg';
+import BriefcaseIcon from '@/components/icons/briefcase.svg';
+import CertificationIcon from '@/components/icons/certification.svg';
+import DiamondIcon from '@/components/icons/diamond.svg';
+import BookIcon from '@/components/icons/icon-book.svg';
+import MoneyWithdrawIcon from '@/components/icons/money-withdraw.svg';
+import PaletteIcon from '@/components/icons/palette.svg';
+import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
 import { ILEASection } from '@/components/ileaSection';
+import { StageBox } from '@/components/stageBox';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -57,15 +58,15 @@ const MasterClassRegistrationPage: PageComponent = async props => {
 
   return (
     <div className={styles.freeCatalog}>
-      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header buttonContent={<><span style={{ position: 'relative', top: -1, marginRight: '0.5rem' }}><FaPlay /></span> Get Instant Access</>} buttonHref="#top" />
       <section id="#top" className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
-              <div className={`card bg-light ${styles.card}`}>
+              <div className="card shadow-lg border-0">
                 <div className="card-body">
-                  <div className="text-primary fw-bold mb-2">Free Masterclass</div>
+                  <div className="h6 text-primary fw-bold mb-2">Free Masterclass</div>
                   <h1 className="h4 mb-3 text-navy">Profit Pivot: How to Attract & Book $100K+ Clients</h1>
                   <p>Learn directly from expert event planner <strong>Lisa Forbes</strong>, who turned her business into a sought-after luxury brand serving $100K+ clients. Now she'll show you how to do the same.</p>
                   <div className={styles.formWrapper}>
@@ -83,7 +84,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                       placeholders
                       referrer={referrer}
                       countryCode={countryCode}
-                      buttonText="Get Instant Access"
+                      buttonText={<><span style={{ position: 'relative', top: -1, marginRight: '0.5rem' }}><FaPlay /></span>Get Instant Access</>}
                     />
                   </div>
                 </div>
@@ -169,6 +170,15 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                     </div>
                   </div>
                 </li>
+                <li className="mt-3">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><PiGift size={listIconHeight} /></div>
+                    <div>
+                      <h3 className="h6 mb-1">An Exclusive Offer from QC Event School</h3>
+                      Unlock a limited-time offer valued at over $1,200—designed to help you break into the luxury market, and boost your income.
+                    </div>
+                  </div>
+                </li>
               </ul>
             </div>
             <div className="col-12 col-md-8 col-lg-6 order-2">
@@ -204,14 +214,15 @@ const MasterClassRegistrationPage: PageComponent = async props => {
               You have a talent for planning and an eye for luxury, but you struggle to communicate your value and charge the fees your work deserves.
             </div>
           </div>
+          <h3 className="lead mb-5">Whatever stage you're at, you'll walk away with a clear roadmap to start booking $100K+ events.</h3>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9">
-              <div className={`${styles.stageBox} text-white rounded-5 py-5 px-s`}>
-                <h3 className="h4 mb-4">Whatever stage you're at, you'll walk away with a clear roadmap to start booking $100K+ events.</h3>
-                <p className={`${styles.stageBoxText} mb-5 mx-auto`}>Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry.</p>
-                <p className="mb-5"><Link href="#top" className="btn btn-primary btn-lg">Watch the Masterclass Now</Link></p>
-                <div className="d-flex gap-2 flex-column flex-lg-row justify-content-between"><strong>100% Free</strong> <span className="d-none d-lg-inline">|</span> <strong>Instant Access</strong> <span className="d-none d-lg-inline">|</span> <strong>No Credit Card Required</strong></div>
-              </div>
+              <StageBox
+                text="Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry."
+                buttonHref="#top"
+                buttonText="Watch the Masterclass Now"
+                footerItems={[ '100% Free', 'Instant Access', 'No Credit Card Required' ]}
+              />
             </div>
           </div>
         </div>

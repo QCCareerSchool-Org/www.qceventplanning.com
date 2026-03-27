@@ -16,7 +16,7 @@ const excludedPaths: RegExp[] = [
 
 export const PromoBanner: FC<PropsWithChildren<Props>> = ({ date, period, children }) => {
   const path = usePathname();
-  console.log(path);
+
   if (excludedPaths.some(regex => regex.test(path))) {
     return null;
   }

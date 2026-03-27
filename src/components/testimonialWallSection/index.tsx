@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { Testimonial } from '@/components/testimonial';
 import type { CourseCode } from '@/domain/courseCode';
@@ -14,7 +14,7 @@ interface Props {
   schemaCourseId?: string;
 }
 
-export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialIds, className, hideHeading, schemaCourseId }) => (
+export const TestimonialWallSection: FC<PropsWithChildren<Props>> = ({ h, courseCodes, testimonialIds, className, hideHeading, schemaCourseId, children }) => (
   <section className={className}>
     <div className="container">
       {!hideHeading && (
@@ -32,6 +32,7 @@ export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialI
           </div>
         ))}
       </div>
+      {children}
     </div>
   </section>
 );
