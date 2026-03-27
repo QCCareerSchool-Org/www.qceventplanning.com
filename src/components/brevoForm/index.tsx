@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import type { ChangeEventHandler, FC, ReactElement, SubmitEventHandler } from 'react';
+import type { ChangeEventHandler, FC, ReactElement, ReactNode, SubmitEventHandler } from 'react';
 import { forwardRef, useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import type { Country, DefaultInputComponentProps, Value } from 'react-phone-number-input';
@@ -18,7 +18,7 @@ interface Props {
   listId: number;
   telephoneListId?: number;
   emailTemplateId?: number;
-  buttonText?: string;
+  buttonText?: string | ReactNode;
   buttonClassName?: string;
   placeholders?: boolean;
   gclid?: string;
@@ -156,7 +156,12 @@ export const BrevoForm: FC<Props> = props => {
       {props.button
         ? <>{props.button}</>
         : (
-          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-navy'}`} disabled={disabled}><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} />{props.buttonText ?? 'Get Your Free Catalog'}</button>
+          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-navy'}`} disabled={disabled}>
+            {typeof props.buttonText === 'string'
+              ? <><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} />{props.buttonText ?? 'Get Your Free Catalog'}</>
+              : <>{props.buttonText}</>
+            }
+          </button>
         )
       }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />

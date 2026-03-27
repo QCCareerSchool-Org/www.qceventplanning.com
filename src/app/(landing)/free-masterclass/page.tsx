@@ -84,7 +84,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                       placeholders
                       referrer={referrer}
                       countryCode={countryCode}
-                      buttonText="Get Instant Access"
+                      buttonText={<><span style={{ position: 'relative', top: -1, marginRight: '0.5rem' }}><FaPlay /></span>Get Instant Access</>}
                     />
                   </div>
                 </div>

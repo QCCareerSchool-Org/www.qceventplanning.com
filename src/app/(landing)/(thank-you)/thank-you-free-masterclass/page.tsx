@@ -182,6 +182,7 @@ export default ThankYouMasterclassRegistrationPage;
 const choosePathItems: CoursePath[] = [
   {
     id: 'event-and-wedding',
+    label: 'Event & Wedding',
     title: 'Event & Wedding Planning',
     subtitle: 'Build Your Foundation',
     description: 'Back your talent with a professional certification that commands client trust and premium fees.',
@@ -192,6 +193,7 @@ const choosePathItems: CoursePath[] = [
   },
   {
     id: 'luxury-wedding',
+    label: 'Luxury Wedding',
     title: 'Luxury Event Planning',
     subtitle: 'Multiply Your Income',
     description: 'Pivot into the high-net-worth market and command $100K+ budgets.',
@@ -202,6 +204,7 @@ const choosePathItems: CoursePath[] = [
   },
   {
     id: 'event-decor',
+    label: 'Event Decor',
     title: 'Event Decor',
     subtitle: 'Gain a Visual Edge',
     description: 'Master the design and aesthetics that impress elite clients.',
