@@ -19,7 +19,6 @@ import LisaProfileImage from './_images/lisa-profile.jpg';
 import styles from './page.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
-import DownloadIcon from '@/components/download.svg';
 import { ILEASection } from '@/components/ileaSection';
 import { StageBox } from '@/components/stageBox';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -57,15 +56,15 @@ const MasterClassRegistrationPage: PageComponent = async props => {
 
   return (
     <div className={styles.freeCatalog}>
-      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header buttonContent={<>Get Instant Access</>} buttonHref="#top" />
       <section id="#top" className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
-              <div className={`card bg-light ${styles.card}`}>
+              <div className="card shadow-lg border-0">
                 <div className="card-body">
-                  <div className="text-primary fw-bold mb-2">Free Masterclass</div>
+                  <div className="h6 text-primary fw-bold mb-2">Free Masterclass</div>
                   <h1 className="h4 mb-3 text-navy">Profit Pivot: How to Attract & Book $100K+ Clients</h1>
                   <p>Learn directly from expert event planner <strong>Lisa Forbes</strong>, who turned her business into a sought-after luxury brand serving $100K+ clients. Now she'll show you how to do the same.</p>
                   <div className={styles.formWrapper}>
@@ -166,6 +165,15 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                     <div>
                       <h3 className="h6 mb-1">Insider Strategies for Elite Clients &amp; Vendors</h3>
                       Build instant trust with affluent clientele, and partner with top-tier vendors who match your standards.
+                    </div>
+                  </div>
+                </li>
+                <li className="mt-3">
+                  <div className="d-flex align-items-center gap-3">
+                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><ShieldAlt2Icon height={listIconHeight} /></div>
+                    <div>
+                      <h3 className="h6 mb-1">An Exclusive Offer from QC Event School</h3>
+                      Unlock a limited-time opportunity to fast-track your career with professional training designed to help you break into the luxury market and increase your income.
                     </div>
                   </div>
                 </li>
