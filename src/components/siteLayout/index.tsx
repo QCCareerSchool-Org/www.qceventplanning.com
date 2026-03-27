@@ -9,13 +9,14 @@ import '@/app/bootstrap.scss';
 
 interface Props {
   countryCode: string;
+  provinceCode: string | null;
   date: number;
 }
 
-export const SiteLayout: FC<PropsWithChildren<Props>> = ({ countryCode, date, children }) => {
+export const SiteLayout: FC<PropsWithChildren<Props>> = ({ countryCode, provinceCode, date, children }) => {
   return (
     <>
-      <Header countryCode={countryCode} date={date} />
+      <Header countryCode={countryCode} provinceCode={provinceCode} date={date} />
       <main className="flex-shrink-0">{children}</main>
       <Footer />
       {process.env.BREVO_CONVERSATIONS_ID && process.env.BREVO_GROUP_ID && <BrevoConversations conversationsId={process.env.BREVO_CONVERSATIONS_ID} groupId={process.env.BREVO_GROUP_ID} />}

@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 };
 
 const NotFoundPage: PageComponent = async props => {
-  const { countryCode, date } = await getServerData(props.searchParams);
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   return (
-    <SiteLayout date={date} countryCode={countryCode}>
+    <SiteLayout date={date} countryCode={countryCode} provinceCode={provinceCode}>
       <div className={styles.wrapper}>
         <h1>Page Not Found</h1>
         <p>Sorry, we could not find the requested page</p>
