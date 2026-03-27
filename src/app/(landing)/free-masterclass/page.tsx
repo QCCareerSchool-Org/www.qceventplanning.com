@@ -204,11 +204,11 @@ const MasterClassRegistrationPage: PageComponent = async props => {
               You have a talent for planning and an eye for luxury, but you struggle to communicate your value and charge the fees your work deserves.
             </div>
           </div>
+          <h3 className="lead mb-5">Whatever stage you're at, you'll walk away with a clear roadmap to start booking $100K+ events.</h3>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9">
               <div className={`${styles.stageBox} text-white rounded-5 py-5 px-s`}>
-                <h3 className="h4 mb-4">Whatever stage you're at, you'll walk away with a clear roadmap to start booking $100K+ events.</h3>
-                <p className={`${styles.stageBoxText} mb-5 mx-auto`}>Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry.</p>
+                <p className="h5 mb-4 mx-auto">Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry.</p>
                 <p className="mb-5"><Link href="#top" className="btn btn-primary btn-lg">Watch the Masterclass Now</Link></p>
                 <div className="d-flex gap-2 flex-column flex-lg-row justify-content-between"><strong>100% Free</strong> <span className="d-none d-lg-inline">|</span> <strong>Instant Access</strong> <span className="d-none d-lg-inline">|</span> <strong>No Credit Card Required</strong></div>
               </div>
