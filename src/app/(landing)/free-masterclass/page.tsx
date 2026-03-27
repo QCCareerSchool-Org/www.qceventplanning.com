@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { Header } from '../header';
 import DeskLaptopImage from './_images/desk-laptop.jpg';
@@ -22,6 +21,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { ILEASection } from '@/components/ileaSection';
+import { StageBox } from '@/components/stageBox';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -207,11 +207,12 @@ const MasterClassRegistrationPage: PageComponent = async props => {
           <h3 className="lead mb-5">Whatever stage you're at, you'll walk away with a clear roadmap to start booking $100K+ events.</h3>
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9">
-              <div className={`${styles.stageBox} text-white rounded-5 py-5 px-s`}>
-                <p className="h5 mb-4 mx-auto">Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry.</p>
-                <p className="mb-5"><Link href="#top" className="btn btn-primary btn-lg">Watch the Masterclass Now</Link></p>
-                <div className="d-flex gap-2 flex-column flex-lg-row justify-content-between"><strong>100% Free</strong> <span className="d-none d-lg-inline">|</span> <strong>Instant Access</strong> <span className="d-none d-lg-inline">|</span> <strong>No Credit Card Required</strong></div>
-              </div>
+              <StageBox
+                text="Don't leave your profit to chance. Join Lisa Forbes and learn how to claim your space in the luxury industry."
+                buttonHref="#top"
+                buttonText="Watch the Masterclass Now"
+                footerItems={[ '100% Free', 'Instant Access', 'No Credit Card Required' ]}
+              />
             </div>
           </div>
         </div>

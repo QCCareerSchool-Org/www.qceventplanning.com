@@ -7,17 +7,16 @@ import { getThankyouData } from '..';
 import { Header } from '../../header';
 import type { CoursePath } from '../_components/choosePathSection';
 import { ChoosePathSection } from '../_components/choosePathSection';
+import BarChartIcon from './_images/bar-chart-alt.svg';
 import ChooseYourPath1Image from './_images/choose-your-path-1.jpg';
 import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
 import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
 import VideoImage from './_images/video.jpg';
-import { GoogleReviewSection } from '@/components/googleReviewSection';
-import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { Overlay } from '@/components/overlay';
 import { SetCookie } from '@/components/setCookie';
+import { StageBox } from '@/components/stageBox';
 import { StatsSection } from '@/components/statsSection/statsSection';
-import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
-  const { lead, jwt, recent, date } = await getThankyouData(props);
+  const { lead, jwt, recent } = await getThankyouData(props);
 
   return (
     <>
@@ -50,9 +49,12 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
         <div className="container">
           <div className="row align-items-center justify-content-center g-5">
             <div className="col-12 col-lg-6 text-center text-lg-start">
-              <h2 className="mb-2">Ready to Build a Profitable Event Planning Business?</h2>
-              <h3 className="h4 mb-3 text-primary">Start Now.</h3>
-              <p className="lead mb-0">Watch the masterclass and discover the exact strategies Lisa used to go from QC graduate to premier luxury planner, consistently booking $100K+ events.</p>
+              <div className="text-primary">
+                <BarChartIcon height={48} />
+              </div>
+              <h2 className="mb-1">Ready to Build a Profitable Event Planning Business?</h2>
+              <h3 className="h4 mb-4 text-primary fst-italic">Start Now.</h3>
+              <p className="lead mb-0">Watch the masterclass and discover the exact strategies Lisa used to go from QC graduate to premier luxury planner, consistently <strong>booking $100K+ events.</strong></p>
             </div>
             <div className="col-12 col-lg-6">
               <div className="rounded-5 overflow-hidden position-relative">
@@ -60,11 +62,6 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
                 <Overlay backgroundColor="rgba(0,0,0,0.4)" />
                 <FaPlayCircle size={80} className="position-absolute top-50 start-50 translate-middle text-white" />
               </div>
-            </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-12 text-center">
-              <p className="h5 mt-3 mb-0">Profit Pivot: How to Book $100K+ Clients</p>
             </div>
           </div>
         </div>
@@ -146,10 +143,20 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={[ 'TE-0017', 'TE-0015', 'TE-0027' ]} className="bg-light" />
-      <GoogleReviewSection className="bg-light" />
-      <ILEASection />
-      <SupportSection date={date} />
+      <TestimonialWallSection className="bg-light" testimonialIds={[ 'TE-0017', 'TE-0015', 'TE-0027' ]}>
+        <div className="row justify-content-center mt-5">
+          <div className="col-12 col-lg-9">
+            <StageBox
+              eyebrow="Stop leaving your profit to chance."
+              heading="Limited-time offer: Get 2 Free Specialty Certifications + $100 OFF"
+              text={<>Whether you're starting out or ready to pivot your business into the luxury market, your journey begins with a <strong>professional credential</strong>.</>}
+              buttonHref="https://enroll.qceventplanning.com/masterclass-offer"
+              buttonText="Enroll Now"
+              footerItems={[ 'Flexible Payment Plans', 'Instant Course Access', 'ILEA Approved' ]}
+            />
+          </div>
+        </div>
+      </TestimonialWallSection>
     </>
   );
 };
