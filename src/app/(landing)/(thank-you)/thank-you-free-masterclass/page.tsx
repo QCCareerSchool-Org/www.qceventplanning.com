@@ -85,7 +85,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           <div className="row justify-content-center text-center">
             <div className="col-12 col-lg-10 col-xl-8">
               <h2 className="mb-2">Your Masterclass Exclusive Offer</h2>
-              <h3 className="h4 mb-4 text-primary">Save $100 + Get Up to Two Specialized Certifications FREE</h3>
+              <h3 className="h4 mb-4 text-primary">Save $100 + Two Specialized Certifications FREE</h3>
               <p className="lead mb-4">To command $100K budgets, you need to master logistics, strategy, and aesthetics. Your masterclass exclusive offer gives you the tools to do all three.</p>
               <p className="mb-2"><strong>Get $100 OFF your tuition instantly</strong></p>
               <p className="mb-4"><strong>Enroll in Event &amp; Wedding Planning, and get up to TWO specialized certifications FREE</strong></p>
@@ -128,12 +128,12 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="mb-1"><BarChartAltIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">1-on-1 Expert Feedback</h3>
-              <p className="mb-0">Every assignment is reviewed by expert event planners.</p>
+              <p className="mb-0">Every assignment is reviewed by an expert event planner.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
               <div className="mb-1"><ShieldAlt2Icon height={iconSize} /></div>
               <h3 className="h6 mb-2">ILEA-Approved Curriculum</h3>
-              <p className="mb-0">Graduate with a certification that meets rigorous global standards.</p>
+              <p className="mb-0">Graduate with certifications that meet rigorous global standards.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
               <div className="mb-1"><DiamondIcon height={iconSize} /></div>
@@ -153,7 +153,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           <div className="row justify-content-center text-center">
             <div className="col-12 col-lg-10 col-xl-8">
               <h2 className="mb-3">Explore More Event Planning Certifications</h2>
-              <p className="lead mb-4">Looking for a different specialty? Browse our full catalog—your $100 discount applies to every professional certification.</p>
+              <p className="lead mb-4">Looking for a different specialty? Browse our full catalog—your Masterclass Exclusive Offer applies to every professional certification.</p>
               <p className="mb-0"><Link href="/online-event-courses" className="btn btn-primary btn-lg">Explore Courses</Link></p>
             </div>
           </div>
