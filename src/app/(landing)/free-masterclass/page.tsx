@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
 import { FaPlay } from 'react-icons/fa';
-import { TbMoneybag } from 'react-icons/tb';
+import { PiGift } from 'react-icons/pi';
 
 import { Header } from '../header';
 import DeskLaptopImage from './_images/desk-laptop.jpg';
@@ -172,10 +172,10 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                 </li>
                 <li className="mt-3">
                   <div className="d-flex align-items-center gap-3">
-                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><TbMoneybag size={listIconHeight} /></div>
+                    <div className="flex-shrink-0 text-body-tertiary text-center" style={{ width: listIconWidth }}><PiGift size={listIconHeight} /></div>
                     <div>
                       <h3 className="h6 mb-1">An Exclusive Offer from QC Event School</h3>
-                      Unlock a limited-time opportunity to fast-track your career with professional training designed to help you break into the luxury market and increase your income.
+                      Unlock a limited-time offer valued at over $1,200—designed to help you break into the luxury market, and boost your income.
                     </div>
                   </div>
                 </li>
