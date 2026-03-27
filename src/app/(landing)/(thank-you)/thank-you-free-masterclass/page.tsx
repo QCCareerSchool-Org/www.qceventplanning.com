@@ -193,7 +193,7 @@ const choosePathItems: CoursePath[] = [
   },
   {
     id: 'luxury-wedding',
-    label: 'Luxury Wedding',
+    label: 'Luxury Events',
     title: 'Luxury Event Planning',
     subtitle: 'Multiply Your Income',
     description: 'Pivot into the high-net-worth market and command $100K+ budgets.',
