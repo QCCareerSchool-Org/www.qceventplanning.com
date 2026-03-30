@@ -157,7 +157,7 @@ export const BrevoForm: FC<Props> = props => {
         ? <>{props.button}</>
         : (
           <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-navy'}`} disabled={disabled}>
-            {typeof props.buttonText === 'string'
+            {typeof props.buttonText === 'string' || typeof props.buttonText === 'undefined'
               ? <><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} />{props.buttonText ?? 'Get Your Free Catalog'}</>
               : <>{props.buttonText}</>
             }
