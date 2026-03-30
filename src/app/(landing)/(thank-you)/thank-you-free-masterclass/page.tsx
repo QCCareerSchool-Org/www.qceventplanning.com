@@ -82,7 +82,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           <div className="row justify-content-center text-center">
             <div className="col-12 col-lg-10 col-xl-8">
               <h2 className="mb-2">Your Masterclass Exclusive Offer</h2>
-              <h3 className="h4 mb-4 text-primary">Save $100 + Get Up to Two Specialized Certifications FREE</h3>
+              <h3 className="h5 mb-4">Save $100 + Get Up to Two Specialized Certifications FREE</h3>
               <p className="lead mb-4">To command $100K budgets, you need to master logistics, strategy, and aesthetics. Your masterclass exclusive offer gives you the tools to do all three.</p>
               <StageBox
                 heading="Get $100 OFF your tuition instantly"
@@ -91,7 +91,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
                 buttonText="Claim My Discount"
                 subText="Your savings are automatically applied at checkout."
                 backgroundSrc={ILEABackgroundImage}
-                overlayBackground="rgba(0,0,0,0.3)"
+                overlayBackground="rgba(0,0,0,0.4)"
                 textShadow
               />
             </div>
