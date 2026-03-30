@@ -9,6 +9,7 @@ import BarChartIcon from './_images/bar-chart-alt.svg';
 import ChooseYourPath1Image from './_images/choose-your-path-1.jpg';
 import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
 import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
+import ILEABackgroundImage from './_images/ilea-bg.jpg';
 import StaticBackgroundImage from './_images/stats-background.jpg';
 import { Video } from './video';
 import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 const iconSize = 32;
-const testimonialIds = [ 'TE-0027', 'TE-0017', 'TE-0015' ];
+const testimonialIds = [ 'TE-0017', 'TE-0027', 'TE-0015' ];
 const enrollHref = 'https://enroll.qceventplanning.com/masterclass-offer';
 const videoSrc = 'https://1dd0e6d86897811cfe72-83c5c038180be94646a3ee670e882f09.ssl.cf1.rackcdn.com/profit-pivot-webinar.mp4';
 
@@ -83,10 +84,16 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <h2 className="mb-2">Your Masterclass Exclusive Offer</h2>
               <h3 className="h4 mb-4 text-primary">Save $100 + Get Up to Two Specialized Certifications FREE</h3>
               <p className="lead mb-4">To command $100K budgets, you need to master logistics, strategy, and aesthetics. Your masterclass exclusive offer gives you the tools to do all three.</p>
-              <p className="mb-2"><strong>Get $100 OFF your tuition instantly</strong></p>
-              <p className="mb-4"><strong>Enroll in Event &amp; Wedding Planning, and get up to TWO specialized certifications FREE</strong></p>
-              <p className="mb-3"><Link href={enrollHref} className="btn btn-primary btn-lg">Claim My Discount</Link></p>
-              <p className="mb-0">Your savings are automatically applied at checkout.</p>
+              <StageBox
+                heading="Get $100 OFF your tuition instantly"
+                text={<strong>Enroll in Event &amp; Wedding Planning, and get up to TWO specialized certifications FREE</strong>}
+                buttonHref={enrollHref}
+                buttonText="Claim My Discount"
+                subText="Your savings are automatically applied at checkout."
+                backgroundSrc={ILEABackgroundImage}
+                overlayBackground="rgba(0,0,0,0.3)"
+                textShadow
+              />
             </div>
           </div>
         </div>
