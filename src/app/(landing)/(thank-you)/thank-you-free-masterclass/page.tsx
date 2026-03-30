@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FaPlayCircle } from 'react-icons/fa';
 
 import { getThankyouData } from '..';
 import { Header } from '../../header';
@@ -11,16 +9,16 @@ import BarChartIcon from './_images/bar-chart-alt.svg';
 import ChooseYourPath1Image from './_images/choose-your-path-1.jpg';
 import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
 import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
+import ILEABackgroundImage from './_images/ilea-bg.jpg';
 import StaticBackgroundImage from './_images/stats-background.jpg';
-import VideoImage from './_images/video.jpg';
-import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
+import { Video } from './video';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
-import DiamondIcon from '@/components/icons/diamond.svg';
-import BookIcon from '@/components/icons/icon-book.svg';
-import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
+import CheckShieldIcon from '@/components/icons/check-shield.svg';
+import FileIcon from '@/components/icons/file.svg';
+import GroupIcon from '@/components/icons/group.svg';
+import RulerIcon from '@/components/icons/ruler.svg';
 import { LeadProcessing } from '@/components/leadProcessing';
-import { Overlay } from '@/components/overlay';
 import { SetCookie } from '@/components/setCookie';
 import { StageBox } from '@/components/stageBox';
 import { StatsSection } from '@/components/statsSection/statsSection';
@@ -34,6 +32,9 @@ export const metadata: Metadata = {
 };
 
 const iconSize = 32;
+const testimonialIds = [ 'TE-0017', 'TE-0027', 'TE-0015' ];
+const enrollHref = 'https://enroll.qceventplanning.com/masterclass-offer';
+const videoSrc = 'https://1dd0e6d86897811cfe72-83c5c038180be94646a3ee670e882f09.ssl.cf1.rackcdn.com/profit-pivot-webinar.mp4';
 
 const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
   const { lead, jwt, recent } = await getThankyouData(props);
@@ -53,7 +54,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           leadId={lead.leadId}
         />
       )}
-      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com/masterclass-offer" />
+      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref={enrollHref} />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-5">
@@ -66,16 +67,9 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="lead mb-0">Watch the masterclass and discover the exact strategies Lisa used to go from QC graduate to premier luxury planner, consistently <strong>booking $100K+ events.</strong></p>
             </div>
             <div className="col-12 col-lg-6">
-              <div className="rounded-5 overflow-hidden position-relative">
-                <Image src={VideoImage} alt="" className="img-fluid" />
-                <Overlay backgroundColor="rgba(0,0,0,0.4)" />
-                <FaPlayCircle size={80} className="position-absolute top-50 start-50 translate-middle text-white" />
-              </div>
+              <Video src={videoSrc} />
             </div>
-          </div>
-        </div>
-      </section>
-      <StatsSection
+    <StatsSection
         heading="QC Event School—Global Authority in Event Education"
         body="A QC certification enhances your credibility, reinforces your premium positioning, and opens the door to higher-value events and trusted industry partnerships."
         background={StaticBackgroundImage}
@@ -85,12 +79,18 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           <div className="row justify-content-center text-center">
             <div className="col-12 col-lg-10 col-xl-8">
               <h2 className="mb-2">Your Masterclass Exclusive Offer</h2>
-              <h3 className="h4 mb-4 text-primary">Save $100 + Two Specialized Certifications FREE</h3>
+              <h3 className="h4 mb-4">Save $100 + Two Specialized Certifications FREE</h3>
               <p className="lead mb-4">To command $100K budgets, you need to master logistics, strategy, and aesthetics. Your masterclass exclusive offer gives you the tools to do all three.</p>
-              <p className="mb-2"><strong>Get $100 OFF your tuition instantly</strong></p>
-              <p className="mb-4"><strong>Enroll in Event &amp; Wedding Planning, and get up to TWO specialized certifications FREE</strong></p>
-              <p className="mb-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-primary btn-lg">Claim My Discount</Link></p>
-              <p className="mb-0">Your savings are automatically applied at checkout.</p>
+              <StageBox
+                heading="Get $100 OFF your tuition instantly"
+                text={<strong>Enroll in Event &amp; Wedding Planning, and get up to TWO specialized certifications FREE</strong>}
+                buttonHref={enrollHref}
+                buttonText="Claim My Discount"
+                subText="Your savings are automatically applied at checkout."
+                backgroundSrc={ILEABackgroundImage}
+                overlayBackground="rgba(0,0,0,0.6)"
+                textShadow
+              />
             </div>
           </div>
         </div>
@@ -121,22 +121,22 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="mb-0">Earn the authority needed to gain instant credibility.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><BookIcon height={iconSize} /></div>
+              <div className="mb-1"><FileIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Ready-to-Use Templates</h3>
               <p className="mb-0">Access scripts, budgets, and templates that ensure flawless execution.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><BarChartAltIcon height={iconSize} /></div>
+              <div className="mb-1"><GroupIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">1-on-1 Expert Feedback</h3>
               <p className="mb-0">Every assignment is reviewed by an expert event planner.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><ShieldAlt2Icon height={iconSize} /></div>
+              <div className="mb-1"><CheckShieldIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">ILEA-Approved Curriculum</h3>
               <p className="mb-0">Graduate with certifications that meet rigorous global standards.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><DiamondIcon height={iconSize} /></div>
+              <div className="mb-1"><RulerIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Aisle Planner Access</h3>
               <p className="mb-0">Enjoy a 6-month free subscription to the industry-leading event management software.</p>
             </div>
@@ -159,14 +159,14 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection className="bg-light" testimonialIds={[ 'TE-0017', 'TE-0015', 'TE-0027' ]}>
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds}>
         <div className="row justify-content-center mt-5">
           <div className="col-12 col-lg-9">
             <StageBox
               eyebrow="Stop leaving your profit to chance."
               heading="Limited-time offer: Get 2 Free Specialty Certifications + $100 OFF"
               text={<>Whether you're starting out or ready to pivot your business into the luxury market, your journey begins with a <strong>professional credential</strong>.</>}
-              buttonHref="https://enroll.qceventplanning.com/masterclass-offer"
+              buttonHref={enrollHref}
               buttonText="Enroll Now"
               footerItems={[ 'Flexible Payment Plans', 'Instant Course Access', 'ILEA Approved' ]}
             />
