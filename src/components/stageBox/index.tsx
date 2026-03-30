@@ -28,7 +28,7 @@ export const StageBox: FC<StageBoxProps> = props => (
       {props.eyebrow && <div className="mb-3">{props.eyebrow}</div>}
       {props.heading && <Heading text={props.heading} />}
       {props.text && <p className="lead mb-4 mx-auto">{props.text}</p>}
-      <p className="mb-5"><Link href={props.buttonHref} className="btn btn-primary btn-lg">{props.buttonText}</Link></p>
+      <p className="mb-5"><Link href={props.buttonHref} className="btn btn-primary btn-lg" style={{ textShadow: 'none' }}>{props.buttonText}</Link></p>
       {props.subText && <p className="small mb-0 mx-auto">{props.subText}</p>}
       {props.footerItems && (
         <div className={`${styles.footer} d-flex gap-3 flex-column flex-lg-row mx-auto justify-content-center`}>
