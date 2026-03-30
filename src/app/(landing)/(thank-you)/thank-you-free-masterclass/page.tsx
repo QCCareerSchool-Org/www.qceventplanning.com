@@ -97,7 +97,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <section>
+      <section id="certifications">
         <div className="container">
           <div className="row justify-content-center text-center mb-5">
             <div className="col-12 col-lg-10 col-xl-8">
@@ -109,7 +109,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           <ChoosePathSection paths={choosePathItems} />
         </div>
       </section>
-      <section className="bg-light">
+      <section className="bg-light" id="toolkit">
         <div className="container">
           <div className="row justify-content-center text-center mb-5">
             <div className="col-12 col-lg-10 col-xl-8">
