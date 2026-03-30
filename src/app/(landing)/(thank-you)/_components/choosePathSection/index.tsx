@@ -1,7 +1,7 @@
 'use client';
 
 import type { StaticImageData } from 'next/image';
-import type { FC } from 'react';
+import type { CSSProperties, FC } from 'react';
 import { useState } from 'react';
 
 import { FeaturedCourseCard } from '../featuredCourseCard';
@@ -26,6 +26,11 @@ interface Props {
 export const ChoosePathSection: FC<Props> = ({ paths }) => {
   const [ selectedId, setSelectedId ] = useState(paths[0].id);
   const selectedItem = paths.find(p => p.id === selectedId) ?? paths[0];
+  const selectedIndex = Math.max(paths.findIndex(p => p.id === selectedId), 0);
+  const toggleStyle = {
+    '--active-index': selectedIndex,
+    '--button-count': paths.length,
+  } as CSSProperties;
 
   const handleClick = (pathId: string) => {
     setSelectedId(pathId);
@@ -35,7 +40,8 @@ export const ChoosePathSection: FC<Props> = ({ paths }) => {
     <>
       <div className="row justify-content-center mb-4">
         <div className="col-12 text-center">
-          <div className={styles.toggleGroup}>
+          <div className={styles.toggleGroup} style={toggleStyle}>
+            <div aria-hidden="true" className={styles.toggleIndicator} />
             {paths.map(p => <button key={p.id} onClick={() => handleClick(p.id)} type="button" className={`${styles.toggleButton} ${p.id === selectedId ? styles.toggleButtonActive : ''}`}>{p.label}</button>)}
           </div>
         </div>
