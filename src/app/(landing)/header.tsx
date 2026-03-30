@@ -17,7 +17,7 @@ interface Props {
   showBanner?: boolean;
 }
 
-export const Header: FC<Props> = ({ logoLink, buttonHref, buttonContent, buttonAlwaysVisible, buttonClass = `btn btn-navy ${styles.button}` }) => (
+export const Header: FC<Props> = ({ logoLink, buttonHref, buttonContent, buttonAlwaysVisible, buttonClass = 'btn btn-navy' }) => (
   <>
     <ScrollElement name="top" />
     <div className={styles.headerComponent}>
