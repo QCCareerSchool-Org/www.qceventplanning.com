@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { FaPlayCircle } from 'react-icons/fa';
 
 import { getThankyouData } from '..';
 import { Header } from '../../header';
@@ -12,7 +10,7 @@ import ChooseYourPath1Image from './_images/choose-your-path-1.jpg';
 import ChooseYourPath2Image from './_images/choose-your-path-2.jpg';
 import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
 import StaticBackgroundImage from './_images/stats-background.jpg';
-import VideoImage from './_images/video.jpg';
+import { Video } from './video';
 import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
@@ -20,7 +18,6 @@ import DiamondIcon from '@/components/icons/diamond.svg';
 import BookIcon from '@/components/icons/icon-book.svg';
 import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
 import { LeadProcessing } from '@/components/leadProcessing';
-import { Overlay } from '@/components/overlay';
 import { SetCookie } from '@/components/setCookie';
 import { StageBox } from '@/components/stageBox';
 import { StatsSection } from '@/components/statsSection/statsSection';
@@ -35,6 +32,8 @@ export const metadata: Metadata = {
 
 const iconSize = 32;
 const testimonialIds = [ 'TE-0027', 'TE-0017', 'TE-0015' ];
+const enrollHref = 'https://enroll.qceventplanning.com/masterclass-offer';
+const videoSrc = 'https://1dd0e6d86897811cfe72-83c5c038180be94646a3ee670e882f09.ssl.cf1.rackcdn.com/profit-pivot-webinar.mp4';
 
 const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
   const { lead, jwt, recent } = await getThankyouData(props);
@@ -54,7 +53,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           leadId={lead.leadId}
         />
       )}
-      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com/masterclass-offer" />
+      <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref={enrollHref} />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-5">
@@ -67,11 +66,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="lead mb-0">Watch the masterclass and discover the exact strategies Lisa used to go from QC graduate to premier luxury planner, consistently <strong>booking $100K+ events.</strong></p>
             </div>
             <div className="col-12 col-lg-6">
-              <div className="rounded-5 overflow-hidden position-relative">
-                <Image src={VideoImage} alt="" className="img-fluid" />
-                <Overlay backgroundColor="rgba(0,0,0,0.4)" />
-                <FaPlayCircle size={80} className="position-absolute top-50 start-50 translate-middle text-white" />
-              </div>
+              <Video src={videoSrc} />
             </div>
           </div>
         </div>
@@ -90,7 +85,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="lead mb-4">To command $100K budgets, you need to master logistics, strategy, and aesthetics. Your masterclass exclusive offer gives you the tools to do all three.</p>
               <p className="mb-2"><strong>Get $100 OFF your tuition instantly</strong></p>
               <p className="mb-4"><strong>Enroll in Event &amp; Wedding Planning, and get up to TWO specialized certifications FREE</strong></p>
-              <p className="mb-3"><Link href="https://enroll.qceventplanning.com" className="btn btn-primary btn-lg">Claim My Discount</Link></p>
+              <p className="mb-3"><Link href={enrollHref} className="btn btn-primary btn-lg">Claim My Discount</Link></p>
               <p className="mb-0">Your savings are automatically applied at checkout.</p>
             </div>
           </div>
@@ -167,7 +162,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               eyebrow="Stop leaving your profit to chance."
               heading="Limited-time offer: Get 2 Free Specialty Certifications + $100 OFF"
               text={<>Whether you're starting out or ready to pivot your business into the luxury market, your journey begins with a <strong>professional credential</strong>.</>}
-              buttonHref="https://enroll.qceventplanning.com/masterclass-offer"
+              buttonHref={enrollHref}
               buttonText="Enroll Now"
               footerItems={[ 'Flexible Payment Plans', 'Instant Course Access', 'ILEA Approved' ]}
             />
