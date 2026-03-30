@@ -14,10 +14,10 @@ import StaticBackgroundImage from './_images/stats-background.jpg';
 import { Video } from './video';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
+import CheckShieldIcon from '@/components/icons/check-shield.svg';
 import FileIcon from '@/components/icons/file.svg';
 import GroupIcon from '@/components/icons/group.svg';
 import RulerIcon from '@/components/icons/ruler.svg';
-import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { StageBox } from '@/components/stageBox';
@@ -134,7 +134,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="mb-0">Every assignment is reviewed by expert event planners.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><ShieldAlt2Icon height={iconSize} /></div>
+              <div className="mb-1"><CheckShieldIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">ILEA-Approved Curriculum</h3>
               <p className="mb-0">Graduate with a certification that meets rigorous global standards.</p>
             </div>
