@@ -17,7 +17,7 @@ export const Header: FC<Props> = ({ countryCode, provinceCode, date }) => {
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
-      {!mar18.contains(date)
+      {mar18.contains(date)
         ? (
           <PromoBanner date={date} period={mar18.toDTO()}>
             <span className="d-none d-lg-inline">Don't Miss Out—</span>Get 2 free specialty courses <strong>+ {discount} OFF</strong>
