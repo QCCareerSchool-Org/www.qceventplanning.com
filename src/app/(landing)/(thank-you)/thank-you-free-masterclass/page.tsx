@@ -69,7 +69,10 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
             <div className="col-12 col-lg-6">
               <Video src={videoSrc} />
             </div>
-    <StatsSection
+          </div>
+        </div>
+      </section>
+      <StatsSection
         heading="QC Event School—Global Authority in Event Education"
         body="A QC certification enhances your credibility, reinforces your premium positioning, and opens the door to higher-value events and trusted industry partnerships."
         background={StaticBackgroundImage}
