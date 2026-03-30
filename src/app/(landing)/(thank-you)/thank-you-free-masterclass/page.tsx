@@ -12,11 +12,11 @@ import ChooseYourPath3Image from './_images/choose-your-path-3.jpg';
 import ILEABackgroundImage from './_images/ilea-bg.jpg';
 import StaticBackgroundImage from './_images/stats-background.jpg';
 import { Video } from './video';
-import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
-import DiamondIcon from '@/components/icons/diamond.svg';
-import BookIcon from '@/components/icons/icon-book.svg';
+import FileIcon from '@/components/icons/file.svg';
+import GroupIcon from '@/components/icons/group.svg';
+import RulerIcon from '@/components/icons/ruler.svg';
 import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
@@ -91,7 +91,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
                 buttonText="Claim My Discount"
                 subText="Your savings are automatically applied at checkout."
                 backgroundSrc={ILEABackgroundImage}
-                overlayBackground="rgba(0,0,0,0.4)"
+                overlayBackground="rgba(0,0,0,0.6)"
                 textShadow
               />
             </div>
@@ -124,12 +124,12 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="mb-0">Earn the authority needed to gain instant credibility.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><BookIcon height={iconSize} /></div>
+              <div className="mb-1"><FileIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Ready-to-Use Templates</h3>
               <p className="mb-0">Access scripts, budgets, and templates that ensure flawless execution.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><BarChartAltIcon height={iconSize} /></div>
+              <div className="mb-1"><GroupIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">1-on-1 Expert Feedback</h3>
               <p className="mb-0">Every assignment is reviewed by expert event planners.</p>
             </div>
@@ -139,7 +139,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
               <p className="mb-0">Graduate with a certification that meets rigorous global standards.</p>
             </div>
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="mb-1"><DiamondIcon height={iconSize} /></div>
+              <div className="mb-1"><RulerIcon height={iconSize} /></div>
               <h3 className="h6 mb-2">Aisle Planner Access</h3>
               <p className="mb-0">Enjoy a 6-month free subscription to the industry-leading event management software.</p>
             </div>
