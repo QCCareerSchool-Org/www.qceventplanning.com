@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 };
 
 const iconSize = 32;
+const testimonialIds = [ 'TE-0027', 'TE-0017', 'TE-0015' ];
 
 const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
   const { lead, jwt, recent } = await getThankyouData(props);
@@ -159,7 +160,7 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection className="bg-light" testimonialIds={[ 'TE-0017', 'TE-0015', 'TE-0027' ]}>
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds}>
         <div className="row justify-content-center mt-5">
           <div className="col-12 col-lg-9">
             <StageBox
