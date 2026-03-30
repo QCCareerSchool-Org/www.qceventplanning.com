@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 const iconSize = 32;
-const testimonialIds = [ 'TE-0027', 'TE-0017', 'TE-0015' ];
+const testimonialIds = [ 'TE-0017', 'TE-0027', 'TE-0015' ];
 const enrollHref = 'https://enroll.qceventplanning.com/masterclass-offer';
 const videoSrc = 'https://1dd0e6d86897811cfe72-83c5c038180be94646a3ee670e882f09.ssl.cf1.rackcdn.com/profit-pivot-webinar.mp4';
 

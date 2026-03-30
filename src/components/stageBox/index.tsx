@@ -19,7 +19,7 @@ export const StageBox = ({ eyebrow, heading, text, buttonHref, buttonText, foote
     {heading && <Heading text={heading} />}
     {text && <p className="lead mb-4 mx-auto">{text}</p>}
     <p className="mb-5"><Link href={buttonHref} className="btn btn-primary btn-lg">{buttonText}</Link></p>
-    <div className={`${styles.footer} d-flex gap-2 flex-column flex-lg-row justify-content-between`}>
+    <div className={`${styles.footer} d-flex gap-3 flex-column flex-lg-row mx-auto justify-content-center`}>
       <strong>{footerItems[0]}</strong>
       <span className="d-none d-lg-inline">|</span>
       <strong>{footerItems[1]}</strong>
