@@ -82,11 +82,10 @@ const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
           <div className="row justify-content-center text-center">
             <div className="col-12 col-lg-10 col-xl-8">
               <h2 className="mb-2">Your Masterclass Exclusive Offer</h2>
-              <h3 className="h4 mb-4">Save $100 + Two Specialized Certifications FREE</h3>
-              <p className="lead mb-4">To command $100K budgets, you need to master logistics, strategy, and aesthetics. Your masterclass exclusive offer gives you the tools to do all three.</p>
+              <h3 className="h4 mb-4">To command $100K budgets, you need to master logistics, strategy, and aesthetics. Your masterclass exclusive offer gives you the tools to do all three.</h3>
               <StageBox
-                heading="Get $100 OFF your tuition instantly"
-                text={<strong>Enroll in Event &amp; Wedding Planning, and get up to TWO specialized certifications FREE</strong>}
+                heading="Save $100 Instantly"
+                text={<strong>+ Enroll in Event & Wedding Planning and Get Two Specialized Certifications FREE</strong>}
                 buttonHref={enrollHref}
                 buttonText="Claim My Discount"
                 subText="Your savings are automatically applied at checkout."
