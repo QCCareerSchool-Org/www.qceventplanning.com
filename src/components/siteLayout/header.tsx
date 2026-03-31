@@ -5,7 +5,7 @@ import { MainNav } from '../../app/(main)/mainNav';
 import { AAPSavings } from '../aapSavings';
 import { Banner } from '../countDownTimer/banner';
 import { gbpCountry } from '@/domain/currency';
-import { mar18 } from '@/periods';
+import { april1 } from '@/periods';
 
 interface Props {
   countryCode: string;
@@ -17,10 +17,10 @@ export const Header: FC<Props> = ({ countryCode, provinceCode, date }) => {
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
-      {mar18.contains(date)
+      {april1.contains(date)
         ? (
-          <PromoBanner date={date} period={mar18.toDTO()}>
-            <span className="d-none d-lg-inline">Don't Miss Out—</span>Get 2 free specialty courses <strong>+ {discount} OFF</strong>
+          <PromoBanner date={date} period={april1.toDTO()}>
+            <span className="d-none d-lg-inline">Don't Miss Out—</span>BOGO <strong>+ {discount} OFF</strong>
           </PromoBanner>
         )
         : (
