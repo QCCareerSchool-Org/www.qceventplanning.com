@@ -2,9 +2,7 @@ import type { FC } from 'react';
 
 import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
-import { AAPSavings } from '../aapSavings';
 import { Banner } from '../countDownTimer/banner';
-import { gbpCountry } from '@/domain/currency';
 import { april1 } from '@/periods';
 
 interface Props {
@@ -13,14 +11,13 @@ interface Props {
   date: number;
 }
 
-export const Header: FC<Props> = ({ countryCode, provinceCode, date }) => {
-  const discount = gbpCountry(countryCode) ? '£100' : '$100';
+export const Header: FC<Props> = ({ date }) => {
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
       {april1.contains(date)
         ? (
           <PromoBanner date={date} period={april1.toDTO()}>
-            <span className="d-none d-lg-inline">Don't Miss Out—</span>BOGO <strong>+ {discount} OFF</strong>
+            <span className="d-none d-lg-inline">Ends Soon—</span>xxxxx
           </PromoBanner>
         )
         : (
@@ -28,7 +25,7 @@ export const Header: FC<Props> = ({ countryCode, provinceCode, date }) => {
             url="https://enroll.qceventplanning.com/all-access-program"
             message={(
               <span style={{ textTransform: 'uppercase' }}>
-                <strong>BEST VALUE:</strong> Join the All-Access Program & Save <AAPSavings countryCode={countryCode} provinceCode={provinceCode} />+ <button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
+                <strong>BEST VALUE:</strong> Join the All-Access Program & Save <button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
               </span>
             )}
             showTimer={false}
