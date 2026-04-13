@@ -16,4 +16,4 @@ export type PageComponent<RouteParams extends Record<string, string> = EmptyReco
 
 export type LayoutComponent = FC<LayoutProps>;
 
-export type GenerateMetadata<RouteParams extends Record<string, string> = EmptyRecord> = (props: PageProps<RouteParams>, parent: ResolvingMetadata) => Metadata | Promise<Metadata>;
+export type GenerateMetadata<RouteParams extends Record<string, string> = EmptyRecord> = (props: PageProps<RouteParams>, parent: ResolvingMetadata) => Promise<Metadata>;
