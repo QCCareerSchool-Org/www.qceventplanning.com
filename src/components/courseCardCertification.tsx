@@ -21,8 +21,8 @@ interface Props {
 }
 
 export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
-  const { gt, ready } = useScreenSizeContext();
-  if (!ready) {
+  const { gt, screenSize } = useScreenSizeContext();
+  if (!screenSize) {
     return;
   }
 
