@@ -2,9 +2,9 @@
 
 import type { FC, PropsWithChildren } from 'react';
 
-import type { ScreenSizeComparisonFunction } from '@/hooks/useScreenSizeContext';
 import { useScreenSizeContext } from '@/hooks/useScreenSizeContext';
 import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
+import type { ScreenSizeComparisonFunction } from '@/providers/screenSizeProvider';
 
 interface Props {
   alwaysVisible: boolean;
