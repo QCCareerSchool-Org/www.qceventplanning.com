@@ -12,8 +12,8 @@ interface Props {
 
 export const AAPSavings: FC<Props> = async ({ countryCode, provinceCode }) => {
   const [ price, combinedPrice ] = await Promise.all([
-    fetchPrice([ 'aa' ], countryCode, provinceCode),
-    fetchPrice(aapCourseCodes, countryCode, provinceCode),
+    fetchPrice([ 'aa' ], countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice(aapCourseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
 
   if (!price.success || !combinedPrice.success) {

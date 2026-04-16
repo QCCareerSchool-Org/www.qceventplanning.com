@@ -56,7 +56,7 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
   };
 
   if (showPrice) {
-    const price = await fetchPrice([ courseCode ], 'US', 'MD');
+    const price = await fetchPrice([ courseCode ], 'US', 'MD', undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
 
     if (price.success) {
       course.offers = {

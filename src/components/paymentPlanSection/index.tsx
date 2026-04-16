@@ -16,7 +16,7 @@ interface Props {
 
 const PaymentPlanSectionBase: FC<Props> = async ({ courseCodes, className }) => {
   const { countryCode, provinceCode } = await getServerData();
-  const price = await fetchPrice(courseCodes, countryCode, provinceCode);
+  const price = await fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET);
   if (!price.success) {
     return null;
   }

@@ -43,8 +43,8 @@ const sumPrices = (coursePrices: CoursePrice[]) => coursePrices.reduce((prev, cu
 const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
   const { countryCode, provinceCode } = await getServerData(searchParams);
   const [ price, combinedPrice ] = await Promise.all([
-    fetchPrice(courseCodes, countryCode, provinceCode),
-    fetchPrice(aapCourseCodes, countryCode, provinceCode),
+    fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice(aapCourseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
 
   const savings = price.success && combinedPrice.success
