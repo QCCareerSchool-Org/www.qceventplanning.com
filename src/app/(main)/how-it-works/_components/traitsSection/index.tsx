@@ -17,7 +17,7 @@ export const TraitsSection: FC = () => (
           <div className="d-grid gap-4">
             {plannerTraits.map(trait => (
               <div className="d-flex gap-3" key={trait.title}>
-                <BiCheckCircle aria-hidden="true" className="text-primary flex-shrink-0 mt-1" />
+                <BiCheckCircle aria-hidden="true" className="text-primary fs-3 flex-shrink-0" />
                 <div>
                   <h3 className="h6 mb-1">{trait.title}</h3>
                   <p className="mb-0">{trait.text}</p>

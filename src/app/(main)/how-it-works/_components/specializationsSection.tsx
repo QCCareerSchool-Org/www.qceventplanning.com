@@ -23,7 +23,7 @@ export const SpecializationsSection: FC = () => (
           <div className="col-12 col-md-6 col-lg-4 d-flex" key={item.title}>
             <div className="card h-100 shadow">
               <div className="card-body">
-                <item.icon aria-hidden="true" className="text-primary fs-3 mb-4" />
+                <item.icon aria-hidden="true" className="text-primary display-6 mb-4" />
                 <h3 className="h5 mb-3">{item.title}</h3>
                 <p className="mb-0">{item.text}</p>
               </div>

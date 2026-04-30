@@ -15,7 +15,7 @@ export const ResponsibilitiesSection: FC = () => (
             <h3 className="h6 text-uppercase mb-0">Core responsibilities and professional impact</h3>
             {responsibilities.map(item => (
               <div className="d-flex gap-3" key={item.title}>
-                <BiCheckCircle aria-hidden="true" className="text-primary flex-shrink-0 mt-1" />
+                <BiCheckCircle aria-hidden="true" className="text-primary fs-3 flex-shrink-0" />
                 <div>
                   <h4 className="h6 mb-1">{item.title}</h4>
                   <p className="mb-0">{item.text}</p>
