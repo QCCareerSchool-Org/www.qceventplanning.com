@@ -3,6 +3,8 @@
 ## Project Structure & Module Organization
 This repository is a Next.js 16 app using the App Router and TypeScript. Main application code lives in `src/`. Use `src/app/` for routes, layouts, metadata files, and global styles; `src/components/` for reusable UI; `src/hooks/`, `src/providers/`, `src/lib/`, and `src/domain/` for shared logic and domain code. Keep simple one-file route sections as lower camel case files in the route's `_components/` folder. When a section needs local styles, repeated subcomponents, helper components, or multiple files, folderize it as `sectionName/index.tsx` with sibling files such as `index.module.scss` and `sectionCard.tsx`. Keep images next to the route or component that imports them. Do not put images in `public/` unless explicitly requested; reserve `public/` for assets that must be served directly by URL. Tests currently live in `__tests__/`. Custom lint rules are defined in `eslint-rules/`.
 
+Local design references and generated prototypes belong in the git-ignored root-level `_mockups/` folder. Mockups may be screenshots, exported images, static HTML/markup, or an alternate generated page from tools such as Gemini. Treat `_mockups/` as reference material only: inspect it when matching a design, but do not import app code from it or move it into `src/`.
+
 ## Build, Test, and Development Commands
 Use npm scripts from the repo root:
 
