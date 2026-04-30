@@ -5,7 +5,7 @@
   --text-color: #4a5565;
   --heading-color: black;
   // border: var(--qc-border);
-  border-radius: var(--qc-border-radius);
+  border-radius: var(--chos-border-radius);
 }
 
 .mobileSwitcherSticky {
@@ -83,7 +83,7 @@
   tbody tr {
     overflow: hidden;
     border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
-    border-radius: 1rem;
+    border-radius: var(--chos-border-radius);
     background-color: #fff;
     box-shadow: var(--bs-box-shadow-sm);
   }
