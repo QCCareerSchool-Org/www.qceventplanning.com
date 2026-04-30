@@ -19,6 +19,7 @@ import { Tiktok } from '@/scripts/tiktok';
 import type { LayoutComponent } from '@/serverComponent';
 
 import './global.scss';
+import './chos.scss';
 
 export const metadata: Metadata = {
   title: { default: 'QC Event School', template: '%s - QC Event School' },

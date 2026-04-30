@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import type { FC } from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
+import { BiCheckCircle } from 'react-icons/bi';
 
 import DesignImage from '../images/design.png';
-import styles from '../page.module.scss';
 
 const plannerTraits = [
   {
@@ -35,15 +34,13 @@ export const TraitsSection: FC = () => (
         <div className="col-12 col-lg-6">
           <h2 className="mb-4">Is Event Planning Right for You?</h2>
           <p className="lead mb-5">You do not need a specific background to succeed in this industry. If you recognize yourself in these traits, you already have the foundation of a great event planner.</p>
-          <div className={styles.imageFrame}>
-            <Image src={DesignImage} alt="" fill placeholder="blur" sizes="(min-width: 992px) 50vw, 100vw" className={styles.coverImage} />
-          </div>
+          <Image src={DesignImage} alt="" placeholder="blur" sizes="(min-width: 992px) 50vw, 100vw" className="img-fluid rounded shadow" />
         </div>
         <div className="col-12 col-lg-6">
-          <div className={styles.traitsList}>
+          <div className="d-grid gap-4">
             {plannerTraits.map(trait => (
-              <div className={styles.traitItem} key={trait.title}>
-                <FaCheckCircle aria-hidden="true" className={styles.checkIcon} />
+              <div className="d-flex gap-3" key={trait.title}>
+                <BiCheckCircle aria-hidden="true" className="text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="h6 mb-1">{trait.title}</h3>
                   <p className="mb-0">{trait.text}</p>
@@ -51,7 +48,7 @@ export const TraitsSection: FC = () => (
               </div>
             ))}
           </div>
-          <div className={styles.traitCallout}>
+          <div className="bg-light border-start border-primary border-4 mt-5 p-4">
             <h3 className="h5 mb-2">Does this sound like you?</h3>
             <p className="mb-0">If you have the passion, QC has the professional roadmap to help you turn it into a career.</p>
           </div>

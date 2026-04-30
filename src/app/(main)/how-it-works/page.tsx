@@ -8,11 +8,10 @@ import { JourneySection } from './_components/journeySection';
 import { ResponsibilitiesSection } from './_components/responsibilitiesSection';
 import { SpecializationsSection } from './_components/specializationsSection';
 import { TraitsSection } from './_components/traitsSection';
-import { TrustSection } from './_components/trustSection';
 import { WhyQCSection } from './_components/whyQCSection';
-import styles from './page.module.scss';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { StatsSection } from '@/components/statsSection/statsSection';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -24,13 +23,13 @@ export const metadata: Metadata = {
 };
 
 const HowItWorksPage: PageComponent = () => (
-  <div className={styles.page}>
+  <div className="chos">
     <HeroSection />
     <CareerStatsSection />
     <ResponsibilitiesSection />
     <JourneySection />
     <ComparisonSection />
-    <TrustSection />
+    <StatsSection />
     <WhyQCSection />
     <SpecializationsSection />
     <TraitsSection />

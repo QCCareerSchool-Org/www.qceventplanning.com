@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import { SectionHeader } from './sectionHeader';
-import styles from '../page.module.scss';
+import { JourneyCard } from './journeyCard';
+import { SectionHeader } from '../sectionHeader';
 
 const journeySteps = [
   {
@@ -23,20 +23,17 @@ const journeySteps = [
 ];
 
 export const JourneySection: FC = () => (
-  <section id="career-pathways" className={styles.journeySection}>
+  <section id="career-pathways">
     <div className="container">
       <SectionHeader
         eyebrow="Your Journey to Success"
         title="4 Steps to Becoming an Event Planner"
         text="You do not need years of university to start your career. Follow a practical path that turns your passion into a professional brand."
       />
-      <div className={styles.stepsGrid}>
+      <div className="row g-4">
         {journeySteps.map((step, index) => (
-          <div className={styles.stepCard} key={step.title}>
-            <div className={styles.stepNumber}>{index + 1}</div>
-            <p className="eyebrow mb-2">Step {index + 1}</p>
-            <h3 className="h5 mb-3">{step.title}</h3>
-            <p className="mb-0">{step.text}</p>
+          <div className="col-12 col-md-6 col-lg-3 d-flex" key={step.title}>
+            <JourneyCard number={index + 1} title={step.title} text={step.text} />
           </div>
         ))}
       </div>

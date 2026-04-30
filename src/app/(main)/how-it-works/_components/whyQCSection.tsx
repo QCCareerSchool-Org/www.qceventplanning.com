@@ -1,9 +1,8 @@
 import type { FC, ReactNode } from 'react';
 import type { IconType } from 'react-icons';
-import { FaAward, FaGlobe, FaHandshake, FaRocket } from 'react-icons/fa';
+import { BiAward, BiGlobe, BiRocket, BiSupport } from 'react-icons/bi';
 
 import { IconBadge } from './iconBadge';
-import styles from '../page.module.scss';
 
 interface Pillar {
   icon: IconType;
@@ -13,22 +12,22 @@ interface Pillar {
 
 const whyQCPillars: Pillar[] = [
   {
-    icon: FaHandshake,
+    icon: BiSupport,
     title: 'Personalized Mentorship',
     text: 'Every assignment is reviewed by a professional planner who provides targeted feedback.',
   },
   {
-    icon: FaRocket,
+    icon: BiRocket,
     title: 'A Professional Launchpad',
     text: 'Graduate with templates, business guidance, and planning tools you can use with clients.',
   },
   {
-    icon: FaAward,
+    icon: BiAward,
     title: 'Specialization Mastery',
     text: 'Add skills in weddings, corporate events, luxury celebrations, floral design, decor, and more.',
   },
   {
-    icon: FaGlobe,
+    icon: BiGlobe,
     title: 'A Global Network',
     text: 'Connect with fellow planners and stay part of the QC community after graduation.',
   },
@@ -47,10 +46,12 @@ export const WhyQCSection: FC = () => (
           <div className="row g-4">
             {whyQCPillars.map(item => (
               <div className="col-12 col-md-6 d-flex" key={item.title}>
-                <div className={styles.pillarCard}>
-                  <IconBadge icon={item.icon} />
-                  <h3 className="h5 mb-3">{item.title}</h3>
-                  <p className="mb-0">{item.text}</p>
+                <div className="card h-100">
+                  <div className="card-body">
+                    <IconBadge icon={item.icon} />
+                    <h3 className="h5 mb-3">{item.title}</h3>
+                    <p className="mb-0">{item.text}</p>
+                  </div>
                 </div>
               </div>
             ))}
