@@ -14,7 +14,9 @@ export interface Testimonial {
   stars: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
-export const testimonials: Record<string, Testimonial | undefined> = {
+type ID = `TE-${number}`;
+
+export const testimonials = {
   'TE-0001': {
     name: 'Ayla Otto',
     courses: [ 'ep', 'ed' ],
@@ -240,4 +242,4 @@ export const testimonials: Record<string, Testimonial | undefined> = {
     image: Images.NicoleZeman,
     stars: 5,
   },
-};
+} as const satisfies Record<ID, Testimonial | undefined>;
