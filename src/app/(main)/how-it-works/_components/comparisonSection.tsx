@@ -14,7 +14,7 @@ export const ComparisonSection: FC = () => (
         text="Whether you want to work in corporate event management or start your own business, the right training should fit your life, timeline, and ambitions."
       />
       <EventPlanningEducationComparisonTable />
-      <div className="card mt-5">
+      <div className="card shadow mt-5">
         <div className="card-body">
           <div className="row align-items-center g-4">
             <div className="col-12 col-lg">

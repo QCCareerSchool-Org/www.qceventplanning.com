@@ -21,7 +21,7 @@ export const WhyQCSection: FC = () => (
           <div className="row g-4">
             {whyQCPillars.map(item => (
               <div className="col-12 col-md-6 d-flex" key={item.title}>
-                <div className="card h-100">
+                <div className="card h-100 shadow">
                   <div className="card-body">
                     <item.icon aria-hidden="true" className="text-primary fs-3 mb-4" />
                     <h3 className="h5 mb-3">{item.title}</h3>
