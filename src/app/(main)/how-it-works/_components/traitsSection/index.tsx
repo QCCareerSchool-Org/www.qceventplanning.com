@@ -25,7 +25,7 @@ export const TraitsSection: FC = () => (
               </div>
             ))}
           </div>
-          <div className="bg-light border-start border-primary border-4 mt-5 p-4">
+          <div className="bg-light border-start border-primary border-4 rounded mt-5 p-4">
             <h3 className="h5 mb-2">Does this sound like you?</h3>
             <p className="mb-0">If you have the passion, QC has the professional roadmap to help you turn it into a career.</p>
           </div>

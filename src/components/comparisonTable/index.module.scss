@@ -127,7 +127,7 @@
 @media (min-width: 992px) {
   .tableWrapper {
     box-shadow: var(--bs-box-shadow-sm);
-    border: var(--qc-border);
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   }
 
   .table {
