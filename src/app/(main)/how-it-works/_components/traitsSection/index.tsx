@@ -2,30 +2,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { BiCheckCircle } from 'react-icons/bi';
 
-import DesignImage from '../images/design.png';
-
-const plannerTraits = [
-  {
-    title: 'The Organized Dreamer',
-    text: 'You love big ideas, and you also enjoy building the list that makes them real.',
-  },
-  {
-    title: 'The Natural Connector',
-    text: 'You enjoy working with people and building relationships with clients, venues, and vendors.',
-  },
-  {
-    title: 'The Creative Problem-Solver',
-    text: 'When plans change, you can think quickly and keep the experience moving forward.',
-  },
-  {
-    title: 'The Detail Enthusiast',
-    text: 'You notice lighting, timing, flow, and the small touches that create memorable events.',
-  },
-  {
-    title: 'The Goal-Oriented Learner',
-    text: 'You are ready to turn natural instincts into professional standards and a portfolio you can show proudly.',
-  },
-];
+import DesignImage from './design.png';
 
 export const TraitsSection: FC = () => (
   <section>
@@ -57,3 +34,26 @@ export const TraitsSection: FC = () => (
     </div>
   </section>
 );
+
+const plannerTraits = [
+  {
+    title: 'The Organized Dreamer',
+    text: 'You love big ideas, and you also enjoy building the list that makes them real.',
+  },
+  {
+    title: 'The Natural Connector',
+    text: 'You enjoy working with people and building relationships with clients, venues, and vendors.',
+  },
+  {
+    title: 'The Creative Problem-Solver',
+    text: 'When plans change, you can think quickly and keep the experience moving forward.',
+  },
+  {
+    title: 'The Detail Enthusiast',
+    text: 'You notice lighting, timing, flow, and the small touches that create memorable events.',
+  },
+  {
+    title: 'The Goal-Oriented Learner',
+    text: 'You are ready to turn natural instincts into professional standards and a portfolio you can show proudly.',
+  },
+];

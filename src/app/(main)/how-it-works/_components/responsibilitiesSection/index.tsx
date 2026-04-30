@@ -2,30 +2,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 import { BiCheckCircle } from 'react-icons/bi';
 
-import DetailImage from '../images/detail.png';
-
-const responsibilities = [
-  {
-    title: 'Creative Concepting',
-    text: 'Design the visual story, guest experience, and overall atmosphere for each event.',
-  },
-  {
-    title: 'Expert Curation',
-    text: 'Source venues, vendors, rentals, and partners that match the client brief and budget.',
-  },
-  {
-    title: 'Strategic Budgeting',
-    text: 'Track costs, compare options, and help clients make confident planning decisions.',
-  },
-  {
-    title: 'Detailed Timelines',
-    text: 'Build production schedules that keep vendors, clients, and event-day teams aligned.',
-  },
-  {
-    title: 'On-Site Leadership',
-    text: 'Guide the event day with steady communication and quick solutions when plans shift.',
-  },
-];
+import DetailImage from './detail.png';
 
 export const ResponsibilitiesSection: FC = () => (
   <section className="bg-light">
@@ -54,3 +31,26 @@ export const ResponsibilitiesSection: FC = () => (
     </div>
   </section>
 );
+
+const responsibilities = [
+  {
+    title: 'Creative Concepting',
+    text: 'Design the visual story, guest experience, and overall atmosphere for each event.',
+  },
+  {
+    title: 'Expert Curation',
+    text: 'Source venues, vendors, rentals, and partners that match the client brief and budget.',
+  },
+  {
+    title: 'Strategic Budgeting',
+    text: 'Track costs, compare options, and help clients make confident planning decisions.',
+  },
+  {
+    title: 'Detailed Timelines',
+    text: 'Build production schedules that keep vendors, clients, and event-day teams aligned.',
+  },
+  {
+    title: 'On-Site Leadership',
+    text: 'Guide the event day with steady communication and quick solutions when plans shift.',
+  },
+];

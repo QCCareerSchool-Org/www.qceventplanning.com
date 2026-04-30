@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
+import HeroImage from './hero.png';
 import styles from './index.module.scss';
-import HeroImage from '../../images/hero.png';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Overlay } from '@/components/overlay';
 

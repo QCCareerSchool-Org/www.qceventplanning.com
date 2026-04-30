@@ -2,8 +2,8 @@ import Link from 'next/link';
 import type { FC } from 'react';
 import { BiRightArrowAlt } from 'react-icons/bi';
 
-import { SectionHeader } from './sectionHeader';
 import { EventPlanningEducationComparisonTable } from '@/components/comparisonTable/eventPlanningEducation';
+import { SectionHeader } from '@/components/sectionHeader';
 
 export const ComparisonSection: FC = () => (
   <section className="bg-light">

@@ -2,14 +2,38 @@ import type { FC, ReactNode } from 'react';
 import type { IconType } from 'react-icons';
 import { BiBriefcase, BiParty, BiWine } from 'react-icons/bi';
 
-import { IconBadge } from './iconBadge';
-import { SectionHeader } from './sectionHeader';
+import { SectionHeader } from '@/components/sectionHeader';
 
 interface Specialization {
   icon: IconType;
   title: string;
   text: ReactNode;
 }
+
+export const SpecializationsSection: FC = () => (
+  <section className="bg-light">
+    <div className="container">
+      <SectionHeader
+        eyebrow="Expand Your Skills"
+        title="Event Planning Specializations"
+        text="The most successful planners build signature services by developing advanced skills in the areas their clients value most."
+      />
+      <div className="row g-4">
+        {specializations.map(item => (
+          <div className="col-12 col-md-6 col-lg-4 d-flex" key={item.title}>
+            <div className="card h-100">
+              <div className="card-body">
+                <item.icon aria-hidden="true" className="text-primary fs-3 mb-4" />
+                <h3 className="h5 mb-3">{item.title}</h3>
+                <p className="mb-0">{item.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 const specializations: Specialization[] = [
   {
@@ -28,28 +52,3 @@ const specializations: Specialization[] = [
     text: 'Coordinate festivals, public gatherings, and live events with complex logistics and vendor teams.',
   },
 ];
-
-export const SpecializationsSection: FC = () => (
-  <section className="bg-light">
-    <div className="container">
-      <SectionHeader
-        eyebrow="Expand Your Skills"
-        title="Event Planning Specializations"
-        text="The most successful planners build signature services by developing advanced skills in the areas their clients value most."
-      />
-      <div className="row g-4">
-        {specializations.map(item => (
-          <div className="col-12 col-md-6 col-lg-4 d-flex" key={item.title}>
-            <div className="card h-100">
-              <div className="card-body">
-                <IconBadge icon={item.icon} />
-                <h3 className="h5 mb-3">{item.title}</h3>
-                <p className="mb-0">{item.text}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
