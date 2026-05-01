@@ -29,7 +29,7 @@ const faqItems = [
   },
   {
     question: 'What is the best event planning school?',
-    answer: 'The best program depends on your career goals. If you want to build a successful event planning business, you need a program that doesn't just teach theory but offers hands-on mentorship and business foundations. QC Event School is a leader because we bridge the gap between technical planning skills and the entrepreneurial tools needed to launch your own practice.',
+    answer: 'The best program depends on your career goals. If you want to build a successful event planning business, you need a program that doesn\'t just teach theory but offers hands-on mentorship and business foundations. QC Event School is a leader because we bridge the gap between technical planning skills and the entrepreneurial tools needed to launch your own practice.',
   },
   {
     question: 'How much do event planners make?',
