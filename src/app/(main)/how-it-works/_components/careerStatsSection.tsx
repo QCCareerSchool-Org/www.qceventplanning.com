@@ -46,11 +46,11 @@ const careerStats: CareerStat[] = [
   {
     icon: BiStar,
     title: 'Top Skills:',
-    text: 'Budgeting, AI-assisted logistics, vendor negotiation, and creative problem solving',
+    text: 'Master budgeting, AI-assisted logistics, vendor negotiation, and creative problem solving.',
   },
   {
     icon: BiWallet,
     title: 'Fastest Path to Revenue:',
-    text: 'Online Certification',
+    text: 'Earn an industry-recognized online certification.',
   },
 ];
