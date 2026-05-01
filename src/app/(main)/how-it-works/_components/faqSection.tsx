@@ -29,7 +29,7 @@ const faqItems = [
   },
   {
     question: 'What is the best event planning school?',
-    answer: 'The best program depends on your career goals. If you want to build a successful event planning business, you need a program that doesn\'t just teach theory but offers hands-on mentorship and business foundations. QC Event School is a leader because we bridge the gap between technical planning skills and the entrepreneurial tools needed to launch your own practice.',
+    answer: 'The best program depends on your career goals. If you want to build a successful event planning business, you need a program that doesn't just teach theory but offers hands-on mentorship and business foundations. QC Event School is a leader because we bridge the gap between technical planning skills and the entrepreneurial tools needed to launch your own practice.',
   },
   {
     question: 'How much do event planners make?',
@@ -37,6 +37,6 @@ const faqItems = [
   },
   {
     question: 'How long does it take to get certified?',
-    answer: 'Our certification is designed to be completed in 3 to 6 months. This allows you to enter the professional market and start building your business much faster than a multi-year academic path.',
+    answer: 'Our certification is designed to be completed in 3 to 6 months working on the course part time. This allows you to enter the professional market and start building your business much faster than a multi-year academic path.',
   },
 ];
