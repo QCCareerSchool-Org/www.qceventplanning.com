@@ -1,7 +1,9 @@
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import type { ComparisonTableColumn, ComparisonTableRow } from '.';
 import { ComparisonTable } from '.';
+
+const Heading: FC<PropsWithChildren> = ({ children }) => <div className="fw-bold mb-1" style={{ color: 'oklch(0.21 0.034 264.665)' }}>{children}</div>;
 
 const columns = [
   {
@@ -11,15 +13,15 @@ const columns = [
   },
   {
     key: 'university',
-    mobileLabel: 'University/College Degree (E.g. JWU, UCF)',
+    mobileLabel: 'University or College Degree',
     navLabel: 'vs. University',
-    heading: <h3>University/College Degree (E.g. JWU, UCF)</h3>,
+    heading: <><h3>University/College Degree</h3>(E.g., JWU, UCF)</>,
   },
   {
     key: 'certificate',
-    mobileLabel: 'Career Diplomas & Certificates (E.g. Penn Foster, IAP, Stratford Career Institute)',
+    mobileLabel: 'Career Diplomas & Certificates',
     navLabel: 'vs. Diplomas',
-    heading: <h3>Career Diplomas &amp; Certificates (E.g. Penn Foster, IAP, Stratford Career Institute)</h3>,
+    heading: <><h3>Career Diplomas &amp; Certificates</h3>(E.g., Penn Foster, IAP, Stratford Career Institute)</>,
   },
 ] as const satisfies readonly ComparisonTableColumn[];
 
@@ -40,9 +42,9 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   },
   {
     feature: 'Career Outcome',
-    qc: 'Direct Entry: Launch your own business or become a lead planner for an existing company',
-    university: 'Hospitality route: Gain experience in entry-level positions',
-    certificate: 'Support Roles: Foundational knowledge for assistant positions; additional training preferred for business ownership',
+    qc: <><Heading>Direct Entry:</Heading> Launch your own business or become a lead planner for an existing company</>,
+    university: <><Heading>Hospitality route:</Heading> Gain experience in entry-level positions</>,
+    certificate: <><Heading>Support Roles:</Heading> Foundational knowledge for assistant positions; additional training preferred for business ownership</>,
   },
   {
     feature: 'Course Format',
@@ -65,14 +67,14 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   {
     feature: 'Credential',
     qc: 'Globally recognized professional certification',
-    university: 'Bachelor’s Degree',
+    university: 'Bachelor\'s Degree',
     certificate: 'Career Diploma / Certificate',
   },
   {
     feature: 'Duration',
-    qc: '3–6 Months (*With up to a year to complete your course)',
-    university: '2–4 Years',
-    certificate: 'Varies by program (2 weeks - 6 months)',
+    qc: '3 to 6 Months (*with up to a year to complete your course)',
+    university: '2 to 4 Years',
+    certificate: 'Varies by program (2 weeks to 6 months)',
   },
   {
     feature: 'Planning Software',
@@ -82,9 +84,9 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   },
   {
     feature: 'Total Investment',
-    qc: 'High Value: $789–$2,998 (Flexible Payment Plans Available)',
-    university: 'High Cost: $20,000–$80,000+',
-    certificate: 'Low Cost: $149–$1,500 (Varies by School, Limited Payment Plans)',
+    qc: 'High Value: $789 to $2,998 (Flexible Payment Plans Available)',
+    university: 'High Cost: $20,000 to $80,000+',
+    certificate: 'Low Cost: $149 to $1,500 (Varies by School, Limited Payment Plans)',
   },
 ];
 
