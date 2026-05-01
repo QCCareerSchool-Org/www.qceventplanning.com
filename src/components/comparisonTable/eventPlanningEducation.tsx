@@ -85,9 +85,9 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   },
   {
     feature: 'Total Investment',
-    qc: 'High Value: $789 to $2,998 (Flexible Payment Plans Available)',
-    university: 'High Cost: $20,000 to $80,000+',
-    certificate: 'Low Cost: $149 to $1,500 (Varies by School, Limited Payment Plans)',
+    qc: <><Heading>High Value:</Heading> $789 to $2,998 (Flexible Payment Plans Available)</>,
+    university: <><Heading>High Cost:</Heading> $20,000 to $80,000+</>,
+    certificate: <><Heading>Low Cost:</Heading> $149 to $1,500 (Varies by School, Limited Payment Plans)</>,
   },
 ];
 
