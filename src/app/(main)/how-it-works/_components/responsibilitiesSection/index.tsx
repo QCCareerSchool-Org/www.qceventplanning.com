@@ -10,9 +10,9 @@ export const ResponsibilitiesSection: FC = () => (
       <div className="row align-items-center g-s">
         <div className="col-12 col-lg-6">
           <h2 className="mb-4">What Does a Professional Event Planner Do?</h2>
-          <p className="lead mb-5">As a planner, you are the creative strategist behind each celebration. You coordinate logistics, vendors, budgets, timelines, and the details that bring an event to life.</p>
+          <p className="lead mb-5">As a planner, you are the creative strategist behind every celebration. You&rsquo;ll organize and manage events from concept to completion, coordinating the logistics, vendors, budget, and timeline needed to bring an event to life.</p>
           <div className="d-grid gap-4">
-            <h3 className="h6 text-uppercase mb-0">Core responsibilities and professional impact</h3>
+            <h3 className="h6 mb-0">Your Core Responsibilities &amp; Professional Impact</h3>
             {responsibilities.map(item => (
               <div className="d-flex gap-3" key={item.title}>
                 <BiCheckCircle aria-hidden="true" className="text-primary fs-3 flex-shrink-0" />
@@ -34,23 +34,23 @@ export const ResponsibilitiesSection: FC = () => (
 
 const responsibilities = [
   {
-    title: 'Creative Concepting',
-    text: 'Design the visual story, guest experience, and overall atmosphere for each event.',
+    title: 'Creative Concepting:',
+    text: 'Designing the visual "story" and aesthetic flow of the event.',
   },
   {
-    title: 'Expert Curation',
-    text: 'Source venues, vendors, rentals, and partners that match the client brief and budget.',
+    title: 'Expert Curation:',
+    text: 'Scouting the perfect venues and hand-picking an elite team of partners.',
   },
   {
-    title: 'Strategic Budgeting',
-    text: 'Track costs, compare options, and help clients make confident planning decisions.',
+    title: 'Strategic Budgeting:',
+    text: 'Making every dollar work harder to deliver high-end results without the stress.',
   },
   {
-    title: 'Detailed Timelines',
-    text: 'Build production schedules that keep vendors, clients, and event-day teams aligned.',
+    title: 'Seamless Choreography:',
+    text: 'Developing a precise timeline so the event feels effortless for the host.',
   },
   {
-    title: 'On-Site Leadership',
-    text: 'Guide the event day with steady communication and quick solutions when plans shift.',
+    title: 'On-Site Leadership:',
+    text: 'Serving as the calm, confident director on event day—solving challenges before anyone else notices.',
   },
 ];

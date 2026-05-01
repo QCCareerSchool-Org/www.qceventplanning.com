@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import type { IconType } from 'react-icons';
-import { BiAward, BiGlobe, BiRocket, BiSupport } from 'react-icons/bi';
+import { PiGlobe, PiHandshake, PiMedal, PiRocketLaunch } from 'react-icons/pi';
 
 interface Pillar {
   icon: IconType;
@@ -13,15 +13,14 @@ export const WhyQCSection: FC = () => (
     <div className="container">
       <div className="row align-items-center g-s">
         <div className="col-12 col-lg-5">
-          <p className="eyebrow mb-3">The QC Advantage</p>
           <h2 className="mb-4">Why Aspiring Professionals Choose QC</h2>
-          <p className="lead mb-0">QC does more than explain event planning theory. Our online courses are designed to help you build professional judgment, business confidence, and the practical skills to serve real clients.</p>
+          <p className="lead mb-0">We don&rsquo;t just teach event planning; we launch careers. Our pillars are designed to give you a competitive edge:</p>
         </div>
         <div className="col-12 col-lg-7">
           <div className="row g-4">
             {whyQCPillars.map(item => (
               <div className="col-12 col-md-6 d-flex" key={item.title}>
-                <div className="card h-100 shadow">
+                <div className="card h-100 border-0 shadow">
                   <div className="card-body">
                     <item.icon aria-hidden="true" className="text-primary display-6 mb-4" />
                     <h3 className="h5 mb-3">{item.title}</h3>
@@ -39,23 +38,23 @@ export const WhyQCSection: FC = () => (
 
 const whyQCPillars: Pillar[] = [
   {
-    icon: BiSupport,
-    title: 'Personalized Mentorship',
-    text: 'Every assignment is reviewed by a professional planner who provides targeted feedback.',
+    icon: PiHandshake,
+    title: 'Personalized 1-on-1 Mentorship:',
+    text: 'You are never alone. Every assignment is reviewed by a professional planner who provides tailored feedback.',
   },
   {
-    icon: BiRocket,
-    title: 'A Professional Launchpad',
-    text: 'Graduate with templates, business guidance, and planning tools you can use with clients.',
+    icon: PiRocketLaunch,
+    title: 'Your Professional Launchpad:',
+    text: 'Graduate with the industry-standard templates, contracts, and pricing strategies you need to book clients immediately.',
   },
   {
-    icon: BiAward,
-    title: 'Specialization Mastery',
-    text: 'Add skills in weddings, corporate events, luxury celebrations, floral design, decor, and more.',
+    icon: PiMedal,
+    title: 'Specialization Mastery:',
+    text: 'Master niche services in Weddings, Corporate Events, or Luxury Celebrations to command higher professional fees.',
   },
   {
-    icon: BiGlobe,
-    title: 'A Global Network',
-    text: 'Connect with fellow planners and stay part of the QC community after graduation.',
+    icon: PiGlobe,
+    title: 'A Global Network:',
+    text: 'Join a community of planning professionals and stay connected long after you graduate.',
   },
 ];

@@ -9,9 +9,8 @@ export const ComparisonSection: FC = () => (
   <section className="bg-light">
     <div className="container">
       <SectionHeader
-        eyebrow="Choosing Your Path"
-        title="The Right Education for Your Goals"
-        text="Whether you want to work in corporate event management or start your own business, the right training should fit your life, timeline, and ambitions."
+        title="Choosing Your Path: The Right Education for Your Goals"
+        text="Your journey is unique. Whether you want to work in corporate event management or start your own business, the right training should fit your life, your timeline, and your ambitions."
       />
       <EventPlanningEducationComparisonTable />
       <div className="card shadow mt-5">
@@ -19,7 +18,7 @@ export const ComparisonSection: FC = () => (
           <div className="row align-items-center g-4">
             <div className="col-12 col-lg">
               <h3 className="h4 mb-2">Have Questions? Speak with a Career Advisor.</h3>
-              <p className="mb-0">Our team can help you choose the training path that fits your goals and schedule.</p>
+              <p className="mb-0">Our dedicated team is here to provide the guidance you need to launch your firm. Your professional success is our priority—reach out today.</p>
             </div>
             <div className="col-12 col-lg-auto d-flex flex-column flex-sm-row gap-3">
               <Link href="/contact-us" className="btn btn-outline-grey">Contact Us</Link>

@@ -35,22 +35,22 @@ export const CareerStatsSection: FC = () => (
 const careerStats: CareerStat[] = [
   {
     icon: BiCertification,
-    title: 'Entry Requirements',
-    text: 'Professional certification, practical training, and a polished portfolio help establish client trust.',
+    title: 'Entry Requirements:',
+    text: 'A professional certification and a digital portfolio—the modern standards for building client trust.',
   },
   {
     icon: BiLineChart,
-    title: 'Earning Potential',
-    text: 'Specialized planners can grow their income as their expertise, niche, and client list expand.',
+    title: 'Average Salary:',
+    text: 'From a median of $59,493 to over $101,310 for specialized experts. Your income grows with your expertise.',
   },
   {
     icon: BiStar,
-    title: 'Top Skills',
-    text: 'Budgeting, vendor negotiation, logistics, design thinking, and calm creative problem solving.',
+    title: 'Top Skills:',
+    text: 'Budgeting, AI-assisted logistics, vendor negotiation, and creative problem solving',
   },
   {
     icon: BiWallet,
-    title: 'Fastest Path',
-    text: 'Online certification lets you learn career-ready skills without pausing the rest of your life.',
+    title: 'Fastest Path to Revenue:',
+    text: 'Online Certification',
   },
 ];

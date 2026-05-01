@@ -1,4 +1,4 @@
-import type { FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
 
 import type { ComparisonTableColumn, ComparisonTableRow } from '.';
 import { ComparisonTable } from '.';
@@ -6,88 +6,85 @@ import { ComparisonTable } from '.';
 const columns = [
   {
     key: 'qc',
-    eyebrow: 'QC Event School',
-    mobileLabel: 'QC Event School',
-    heading: <h3>Professional Certification</h3>,
+    mobileLabel: 'QC Event School IEWP™ Certification',
+    heading: <h3>QC Event School IEWP™ Certification</h3>,
   },
   {
     key: 'university',
-    mobileLabel: 'University or College',
+    mobileLabel: 'University/College Degree (E.g. JWU, UCF)',
     navLabel: 'vs. University',
-    heading: <><h3>University or College</h3>Traditional degree route</>,
+    heading: <h3>University/College Degree (E.g. JWU, UCF)</h3>,
   },
   {
     key: 'certificate',
-    mobileLabel: 'Career Diplomas',
+    mobileLabel: 'Career Diplomas & Certificates (E.g. Penn Foster, IAP, Stratford Career Institute)',
     navLabel: 'vs. Diplomas',
-    heading: <><h3>Career Diplomas</h3>General certificate route</>,
+    heading: <h3>Career Diplomas &amp; Certificates (E.g. Penn Foster, IAP, Stratford Career Institute)</h3>,
   },
 ] as const satisfies readonly ComparisonTableColumn[];
 
 type ColumnKey = typeof columns[number]['key'];
 
-const Heading: FC<PropsWithChildren> = ({ children }) => <div className="fw-bold mb-1">{children}</div>;
-
 const rows: ComparisonTableRow<ColumnKey>[] = [
   {
     feature: 'School Specialization',
-    qc: 'Focused event education and business training',
-    university: 'Broad hospitality or event management study',
-    certificate: 'General training across multiple industries',
+    qc: 'Expertise in event education & business training',
+    university: 'Broad focus in hospitality',
+    certificate: 'Generalized training across multiple industries',
   },
   {
     feature: 'Program Focus',
-    qc: 'Professional planning skills, entrepreneurship, and career building',
-    university: 'Academic theory and broader business concepts',
-    certificate: 'General skills overview with some business basics',
+    qc: 'Professional planning skills, entrepreneurship and career building',
+    university: 'Academic theory',
+    certificate: 'General skills overview with some business training',
   },
   {
     feature: 'Career Outcome',
-    qc: <><Heading>Direct entry</Heading>Launch your own business or become a lead planner for an existing company</>,
-    university: <><Heading>Hospitality route</Heading>Gain experience in entry-level positions</>,
-    certificate: <><Heading>Support roles</Heading>Foundational knowledge for assistant positions</>,
+    qc: 'Direct Entry: Launch your own business or become a lead planner for an existing company',
+    university: 'Hospitality route: Gain experience in entry-level positions',
+    certificate: 'Support Roles: Foundational knowledge for assistant positions; additional training preferred for business ownership',
   },
   {
     feature: 'Course Format',
-    qc: 'Flexible online lessons, expert-led videos, self-paced assignments, and mentor feedback',
-    university: 'Set class schedules with in-person requirements',
-    certificate: 'Often self-guided online lessons',
+    qc: 'Total flexibility with 100% online lessons, expert-led videos, self-paced practical assignments and mentor feedback',
+    university: 'Primarily in-person with some online options; set class schedules & rigid schedules',
+    certificate: 'Self-guided format with online lessons',
   },
   {
     feature: 'Mentorship',
-    qc: 'Personalized one-on-one reviews from an industry expert',
-    university: 'Limited individual interaction',
-    certificate: 'Email or video support varies by provider',
+    qc: '7 personalized 1-on-1 reviews from an industry expert',
+    university: 'Limited Interaction',
+    certificate: 'Self-Guided (Email / Video Support)',
   },
   {
     feature: 'Business Training',
-    qc: 'Contract templates, business tools, pricing guidance, and planning software included',
-    university: 'General business theory',
-    certificate: 'Basic overview',
+    qc: 'Complete Business Training (Contract templates, business tools & planning software included)',
+    university: 'General Business Theory',
+    certificate: 'Basic Overview',
   },
   {
     feature: 'Credential',
     qc: 'Globally recognized professional certification',
-    university: 'Degree or diploma',
-    certificate: 'Career diploma or certificate',
+    university: 'Bachelor’s Degree',
+    certificate: 'Career Diploma / Certificate',
   },
   {
     feature: 'Duration',
-    qc: <><Heading>3 to 6 months</Heading>With up to a year to complete your course</>,
-    university: '2 to 4 years',
-    certificate: 'Varies by program',
+    qc: '3–6 Months (*With up to a year to complete your course)',
+    university: '2–4 Years',
+    certificate: 'Varies by program (2 weeks - 6 months)',
   },
   {
     feature: 'Planning Software',
-    qc: 'Aisle Planner access included with select courses',
-    university: 'Not typically included',
-    certificate: 'Not typically included',
+    qc: 'AisplePlanner Included: 6 months free access',
+    university: 'Not included',
+    certificate: 'Not included; student discounts may be available',
   },
   {
     feature: 'Total Investment',
-    qc: <><Heading>High value</Heading>Flexible tuition and payment plans available</>,
-    university: 'Higher cost and longer timeline',
-    certificate: 'Lower cost, with less mentorship and business support',
+    qc: 'High Value: $789–$2,998 (Flexible Payment Plans Available)',
+    university: 'High Cost: $20,000–$80,000+',
+    certificate: 'Low Cost: $149–$1,500 (Varies by School, Limited Payment Plans)',
   },
 ];
 

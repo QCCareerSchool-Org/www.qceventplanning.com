@@ -8,8 +8,8 @@ export const JourneySection: FC = () => (
     <div className="container">
       <SectionHeader
         eyebrow="Your Journey to Success"
-        title="4 Steps to Becoming an Event Planner"
-        text="You do not need years of university to start your career. Follow a practical path that turns your passion into a professional brand."
+        title="4-Steps to Becoming an Event Planner"
+        text="You don’t need years of university to start your career. Follow this proven path to transform your passion into a professional brand."
       />
       <div className="row g-4">
         {journeySteps.map((step, index) => (
@@ -24,19 +24,19 @@ export const JourneySection: FC = () => (
 
 const journeySteps = [
   {
-    title: 'Obtain Professional Certification',
-    text: 'Master event design, contracts, client management, and the professional standards clients expect from a planner.',
+    title: 'Obtain Professional Certification:',
+    text: 'Master industry-standard fundamentals and high-impact skills like event design, contracts, and client management. Focused certification programs provide the technical authority clients demand.',
   },
   {
-    title: 'Gain Real-World Skills',
-    text: 'Complete practical assignments, receive tutor feedback, and learn how to make planning decisions with confidence.',
+    title: 'Gain Real-World Skills:',
+    text: 'Build your "event intuition" through mentorship, practical assignments through your course, and assisting local planners.',
   },
   {
-    title: 'Build a Digital Portfolio',
-    text: 'Create a showcase of concepts, mood boards, timelines, and planning work that helps clients understand your style.',
+    title: 'Build a Digital Portfolio:',
+    text: 'Curate a signature showcase of your event concepts and mood boards. A professional portfolio proves your vision to potential clients before they book their first consultation.',
   },
   {
-    title: 'Establish Your Network',
-    text: 'Connect with venues, vendors, peers, and professional associations so you can become a trusted local resource.',
+    title: 'Establish Your Professional Network:',
+    text: 'Connect with local venues and vendors. By building a trusted network, you become an invaluable resource for your clients.',
   },
 ];

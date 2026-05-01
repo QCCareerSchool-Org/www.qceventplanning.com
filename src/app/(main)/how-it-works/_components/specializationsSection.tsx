@@ -15,8 +15,8 @@ export const SpecializationsSection: FC = () => (
     <div className="container">
       <SectionHeader
         eyebrow="Expand Your Skills"
-        title="Event Planning Specializations"
-        text="The most successful planners build signature services by developing advanced skills in the areas their clients value most."
+        title="Event Planning Specialization & Income Potential"
+        text="The most successful planners master advanced specializations to build a signature brand and maximize earning potential."
       />
       <div className="row g-4">
         {specializations.map(item => (
@@ -38,17 +38,17 @@ export const SpecializationsSection: FC = () => (
 const specializations: Specialization[] = [
   {
     icon: BiBriefcase,
-    title: 'Corporate and Business',
-    text: 'Plan brand launches, conferences, company celebrations, and high-impact professional events.',
+    title: 'Corporate & Business ($62,000 – $110,000+):',
+    text: 'Partner with brands for high-impact launches and conferences. Focus on brand storytelling and professional results.',
   },
   {
     icon: BiWine,
-    title: 'Weddings and Social',
-    text: 'Blend creative design, timeline management, and thoughtful client service for personal celebrations.',
+    title: 'Weddings & Social ($53,000 – $95,000+):',
+    text: 'Blend unrivaled design creativity with personal service to bring celebrations to life.',
   },
   {
     icon: BiParty,
-    title: 'Public and Large-Scale',
-    text: 'Coordinate festivals, public gatherings, and live events with complex logistics and vendor teams.',
+    title: 'Public & Large-Scale ($57,000 – $105,000+):',
+    text: 'Lead the crowd at festivals and concerts. Master complex logistics, permits, and safety planning.',
   },
 ];

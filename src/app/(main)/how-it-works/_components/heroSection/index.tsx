@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { FC } from 'react';
 
 import HeroImage from './hero.png';
@@ -13,13 +12,8 @@ export const HeroSection: FC = () => (
     <div className="container">
       <div className="row">
         <div className="col-12 col-lg-8 col-xl-7">
-          <p className="eyebrow mb-3">Career Guide</p>
           <h1 className="mb-4">How to Become an Event Planner</h1>
-          <p className="lead text-shadow mb-5">Launch your career with flexible online training, professional certification, and the practical standards you need to plan memorable events with confidence.</p>
-          <div className="d-flex flex-column flex-sm-row gap-3">
-            <Link href="/online-event-courses" className="btn btn-lg btn-primary">Explore Courses</Link>
-            <Link href="#career-pathways" className="btn btn-lg btn-outline-light">See the Path</Link>
-          </div>
+          <p className="lead text-shadow mb-0">Launch your career with the professional certification and industry standards required to maximize your earning potential. Discover the 2026 benchmarks for salary, education, and accelerated career paths.</p>
         </div>
       </div>
     </div>

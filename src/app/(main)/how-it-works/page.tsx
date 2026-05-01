@@ -9,8 +9,8 @@ import { ResponsibilitiesSection } from './_components/responsibilitiesSection';
 import { SpecializationsSection } from './_components/specializationsSection';
 import { TraitsSection } from './_components/traitsSection';
 import { WhyQCSection } from './_components/whyQCSection';
+import { EventTestimonialCarousel } from '@/components/eventTestimonialCarousel';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { StatsSection } from '@/components/statsSection/statsSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -33,11 +33,11 @@ const HowItWorksPage: PageComponent = () => (
     <WhyQCSection />
     <SpecializationsSection />
     <TraitsSection />
-    <GoogleReviewSection className="bg-light" />
+    <EventTestimonialCarousel className="bg-light" />
     <FAQSection />
     <GetStartedSection
-      title="Ready to Launch Your Event Planning Career?"
-      text="Gain professional certification through QC's mentored online courses and start building the skills, portfolio, and confidence to plan real events."
+      title="Ready to Launch Your Event & Wedding Planning Career?"
+      text="Gain the industry-standard IEWP™ certification through QC’s mentored online programs. Start building your portfolio and booking clients in as little as 12 weeks."
       buttonText="Explore Certification Programs"
       buttonHref="/online-event-courses"
     />
