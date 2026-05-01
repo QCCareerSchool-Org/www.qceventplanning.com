@@ -9,11 +9,11 @@ export const JourneySection: FC = () => (
       <SectionHeader
         eyebrow="Your Journey to Success"
         title="4-Steps to Becoming an Event Planner"
-        text="You don’t need years of university to start your career. Follow this proven path to transform your passion into a professional brand."
+        text="You don't need years of university to start your career. Follow this proven path to transform your passion into a professional brand."
       />
-      <div className="row g-4">
+      <div className="row g-5 g-xl-4">
         {journeySteps.map((step, index) => (
-          <div className="col-12 col-md-6 col-lg-3 d-flex" key={step.title}>
+          <div className="col-12 col-md-6 col-xl-3 d-flex" key={step.title}>
             <JourneyCard number={index + 1} title={step.title} text={step.text} />
           </div>
         ))}
