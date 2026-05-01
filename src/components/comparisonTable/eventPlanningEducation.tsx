@@ -8,8 +8,9 @@ const Heading: FC<PropsWithChildren> = ({ children }) => <div className="fw-bold
 const columns = [
   {
     key: 'qc',
+    eyebrow: 'QC Event School',
     mobileLabel: 'QC Event School IEWP™ Certification',
-    heading: <h3>QC Event School IEWP™ Certification</h3>,
+    heading: <h3>IEWP&trade; Certification</h3>,
   },
   {
     key: 'university',
