@@ -18,7 +18,7 @@ export const CareerStatsSection: FC = () => (
       <div className="row g-4">
         {careerStats.map(item => (
           <div className="col-12 col-md-6 col-xl-3 d-flex" key={item.title}>
-            <div className="card h-100 shadow">
+            <div className="card h-100 w-100 shadow">
               <div className="card-body">
                 <item.icon aria-hidden="true" className="text-primary display-6 mb-4" />
                 <h2 className="h5 mb-3">{item.title}</h2>
