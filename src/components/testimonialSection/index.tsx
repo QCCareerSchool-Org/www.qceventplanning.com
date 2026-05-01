@@ -2,14 +2,14 @@ import type { FC } from 'react';
 import { useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
-import { courseSort } from '../testimonial';
 import styles from './index.module.css';
 import { Title } from './title';
+import type { TestimonialId } from '../testimonial/data';
 import { testimonials } from '../testimonial/data';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
-  id: string;
+  id: TestimonialId;
   courseCodes?: CourseCode[];
   className?: string;
 }
@@ -17,14 +17,12 @@ interface Props {
 export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
-    if (!found) {
-      return;
-    }
+
     return {
       ...found,
       courses: found.courses.sort((a, b) => {
         if (courseCodes?.includes(a) && courseCodes.includes(b)) {
-          return courseSort(a, b);
+          return a.localeCompare(b);
         }
         if (courseCodes?.includes(a)) {
           return -1;
@@ -32,14 +30,10 @@ export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) =>
         if (courseCodes?.includes(b)) {
           return 1;
         }
-        return courseSort(a, b);
+        return a.localeCompare(b);
       }),
     };
   }, [ id, courseCodes ]);
-
-  if (!testimonial) {
-    return;
-  }
 
   return (
     <section className={className}>

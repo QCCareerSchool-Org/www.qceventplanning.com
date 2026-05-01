@@ -19,6 +19,7 @@ import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -28,7 +29,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'lw';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0012', 'TE-0014', 'TE-0003', 'TE-0002', 'TE-0001', 'TE-0019' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0012', 'TE-0014', 'TE-0003', 'TE-0002', 'TE-0001', 'TE-0019' ];
 
 export const metadata: Metadata = {
   title: 'Luxury Wedding & Event Planning Course',

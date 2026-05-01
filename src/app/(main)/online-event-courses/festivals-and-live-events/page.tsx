@@ -19,6 +19,7 @@ import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
@@ -30,7 +31,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'fl';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0003', 'TE-0016', 'TE-0013', 'TE-0010', 'TE-0015', 'TE-0008' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0003', 'TE-0016', 'TE-0013', 'TE-0010', 'TE-0015', 'TE-0008' ];
 
 export const metadata: Metadata = {
   title: 'Festivals and Live Events Course',

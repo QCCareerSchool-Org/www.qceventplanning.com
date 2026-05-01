@@ -1,8 +1,10 @@
 import type { FC, ReactNode } from 'react';
 import type { IconType } from 'react-icons';
-import { PiGlobe, PiHandshake, PiMedal, PiRocketLaunch } from 'react-icons/pi';
+import { BiGlobe, BiMedal, BiMessageSquareEdit, BiRocket } from 'react-icons/bi';
 
-interface Pillar {
+import { Pillar } from './pillar';
+
+interface PillarItem {
   icon: IconType;
   title: string;
   text: ReactNode;
@@ -20,13 +22,7 @@ export const WhyQCSection: FC = () => (
           <div className="row g-4">
             {whyQCPillars.map(item => (
               <div className="col-12 col-md-6 d-flex" key={item.title}>
-                <div className="card h-100 border-0 shadow">
-                  <div className="card-body">
-                    <item.icon aria-hidden="true" className="text-primary display-6 mb-4" />
-                    <h3 className="h5 mb-3">{item.title}</h3>
-                    <p className="mb-0">{item.text}</p>
-                  </div>
-                </div>
+                <Pillar icon={item.icon} title={item.title} text={item.text} />
               </div>
             ))}
           </div>
@@ -36,24 +32,24 @@ export const WhyQCSection: FC = () => (
   </section>
 );
 
-const whyQCPillars: Pillar[] = [
+const whyQCPillars: PillarItem[] = [
   {
-    icon: PiHandshake,
+    icon: BiMessageSquareEdit,
     title: 'Personalized 1-on-1 Mentorship:',
     text: 'You are never alone. Every assignment is reviewed by a professional planner who provides tailored feedback.',
   },
   {
-    icon: PiRocketLaunch,
+    icon: BiRocket,
     title: 'Your Professional Launchpad:',
     text: 'Graduate with the industry-standard templates, contracts, and pricing strategies you need to book clients immediately.',
   },
   {
-    icon: PiMedal,
+    icon: BiMedal,
     title: 'Specialization Mastery:',
     text: 'Master niche services in Weddings, Corporate Events, or Luxury Celebrations to command higher professional fees.',
   },
   {
-    icon: PiGlobe,
+    icon: BiGlobe,
     title: 'A Global Network:',
     text: 'Join a community of planning professionals and stay connected long after you graduate.',
   },

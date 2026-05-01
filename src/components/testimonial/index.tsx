@@ -1,45 +1,30 @@
 import type { FC } from 'react';
 import { memo, useMemo } from 'react';
 
-import { ImageCircle } from '../imageCircle';
+import type { TestimonialId, Testimonial as TestimonialType } from './data';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import { CourseMicrodata } from '../microdata/course';
+import { ImageCircle } from '@/components/imageCircle';
+import { CourseMicrodata } from '@/components/microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
-  id: string;
+  id: TestimonialId;
   courseCodes?: CourseCode[];
+  showProvinceCode?: boolean;
   schemaCourseId?: string;
+  small?: boolean;
 }
 
-/** sort in alphabetical order, except ep is always first */
-export const courseSort = (a: CourseCode, b: CourseCode): number => {
-  if (a === b) {
-    return 0;
-  }
-  if (a === 'ep') {
-    return -1;
-  }
-  if (b === 'ep') {
-    return 1;
-  }
-  return a.localeCompare(b);
-};
-
-export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId }) => {
-  const testimonial = useMemo(() => {
-    const found = testimonials[id];
-    if (!found) {
-      return;
-    }
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId, small = false }) => {
+  const testimonial: TestimonialType = useMemo(() => {
     return {
-      ...found,
-      courses: found.courses.sort((a, b) => {
+      ...testimonials[id],
+      courses: testimonials[id].courses.sort((a, b) => {
         if (courseCodes?.includes(a) && courseCodes.includes(b)) {
-          return courseSort(a, b);
+          return a.localeCompare(b);
         }
         if (courseCodes?.includes(a)) {
           return -1;
@@ -47,14 +32,10 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
         if (courseCodes?.includes(b)) {
           return 1;
         }
-        return courseSort(a, b);
+        return a.localeCompare(b);
       }),
     };
   }, [ id, courseCodes ]);
-
-  if (!testimonial) {
-    return;
-  }
 
   return (
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
@@ -65,9 +46,9 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
         : testimonial.courses.length > 0
           ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
           : (
-            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qceventplanning.com/#school">
-              <link itemProp="url" href="https://www.qceventplanning.com" />
-              <meta itemProp="name" content="QC Event School" />
+            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcdesignschool.com/#school">
+              <link itemProp="url" href="https://www.qcdesignschool.com" />
+              <meta itemProp="name" content="QC Design School" />
             </span>
           )}
       <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
@@ -78,10 +59,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div itemProp="reviewBody">
         {testimonial.short.map((q, i, a) => {
-          if (i < a.length - 1) {
-            return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;
-          }
-          return <p key={i} className={styles.quotation}>&ldquo;{q}&rdquo;</p>;
+          return <p key={i} className={`${styles.quotation} ${small ? styles.small : ''}`}>&ldquo;{q}{i === a.length - 1 && <>&rdquo;</>}</p>;
         })}
       </div>
       <footer className={styles.footer} itemProp="author" itemScope itemType="https://schema.org/Person">
@@ -89,7 +67,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, schemaCourseId })
           <ImageCircle itemProp src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
         </div>
         <cite>
-          <span className={styles.attribution} itemProp="name">{testimonial.name}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
+          <span className={styles.attribution} itemProp="name">{testimonial.name}</span>{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
         </cite>
       </footer>
     </blockquote>

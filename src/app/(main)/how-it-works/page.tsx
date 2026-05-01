@@ -9,9 +9,9 @@ import { ResponsibilitiesSection } from './_components/responsibilitiesSection';
 import { SpecializationsSection } from './_components/specializationsSection';
 import { TraitsSection } from './_components/traitsSection';
 import { WhyQCSection } from './_components/whyQCSection';
-import { EventTestimonialCarousel } from '@/components/eventTestimonialCarousel';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { StatsSection } from '@/components/statsSection/statsSection';
+import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -33,7 +33,9 @@ const HowItWorksPage: PageComponent = () => (
     <WhyQCSection />
     <SpecializationsSection />
     <TraitsSection />
-    <EventTestimonialCarousel className="bg-light" />
+    <section className="bg-light">
+      <TestimonialCarousel />
+    </section>
     <FAQSection />
     <GetStartedSection
       title="Ready to Launch Your Event & Wedding Planning Career?"

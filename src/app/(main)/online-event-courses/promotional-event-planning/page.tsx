@@ -19,6 +19,7 @@ import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
@@ -30,7 +31,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'pe';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0008', 'TE-0013', 'TE-0003', 'TE-0015', 'TE-0006', 'TE-0012' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0008', 'TE-0013', 'TE-0003', 'TE-0015', 'TE-0006', 'TE-0012' ];
 
 export const metadata: Metadata = {
   title: 'Promotional Event Planning Course',

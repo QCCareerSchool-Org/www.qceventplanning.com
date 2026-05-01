@@ -21,6 +21,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { PromoSection } from '@/components/promoSection';
 import { StatsSection } from '@/components/statsSection/statsSection';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   title: { absolute: 'QC Event School' },
 };
 
-const testimonialIds = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
 const HomePage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);

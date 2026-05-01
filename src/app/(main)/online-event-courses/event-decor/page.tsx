@@ -20,6 +20,7 @@ import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -29,7 +30,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'ed';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0019', 'TE-0008', 'TE-0002', 'TE-0011', 'TE-0004', 'TE-0014' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0019', 'TE-0008', 'TE-0002', 'TE-0011', 'TE-0004', 'TE-0014' ];
 
 export const metadata: Metadata = {
   title: 'Event Decor Course',
