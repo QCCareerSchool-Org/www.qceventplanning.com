@@ -20,6 +20,7 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { SAFPartnerSection } from '@/components/safPartnerSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
@@ -32,7 +33,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0008', 'TE-0018', 'TE-0016', 'TE-0015', 'TE-0014', 'TE-0012' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0008', 'TE-0018', 'TE-0016', 'TE-0015', 'TE-0014', 'TE-0012' ];
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',

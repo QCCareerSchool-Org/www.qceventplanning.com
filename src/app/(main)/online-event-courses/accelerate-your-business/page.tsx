@@ -16,6 +16,7 @@ import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -25,7 +26,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'eb';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0004', 'TE-0007', 'TE-0003', 'TE-0009', 'TE-0010', 'TE-0011' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0004', 'TE-0007', 'TE-0003', 'TE-0009', 'TE-0010', 'TE-0011' ];
 
 export const metadata: Metadata = {
   title: 'Accelerate Your Business Workshop',

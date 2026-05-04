@@ -1,5 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
+import type { TestimonialId } from '../testimonial/data';
 import { Testimonial } from '@/components/testimonial';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -8,7 +9,7 @@ type HeaderSize = 1 | 2 | 3 | 4 | 5 | 6;
 interface Props {
   h?: HeaderSize;
   courseCodes?: CourseCode[];
-  testimonialIds: string[];
+  testimonialIds: TestimonialId[];
   className?: string;
   hideHeading?: boolean;
   schemaCourseId?: string;

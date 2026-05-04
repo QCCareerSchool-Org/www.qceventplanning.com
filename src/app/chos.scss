@@ -1,0 +1,262 @@
+@use "sass:map";
+
+$foreground-colors: (
+  "text": #454565,
+  "muted": #889,
+  "headings": #09093f,
+  "inverted-text": #dadada,
+  "inverted-muted": #aaa,
+  "inverted-headings": #f8f8fb,
+  "primary": #23d7bc,
+  "blue": #1c398e,
+  "gold": #f6d779,
+  "green":#029A67,
+  "red": #EC4B9D,
+  "purple": #A629FB,
+);
+
+$background-colors: (
+  "green": #ecfdf5,
+  "red": #fdf2f8,
+  "purple": #faf5fd,
+  "light": #f8f8fb,
+  "dark": #010025,
+);
+
+$spacer: 1rem;
+
+$sizes: (
+  "0": 0,
+  "1": $spacer * 0.25,
+  "2": $spacer * 0.5,
+  "3": $spacer,
+  "4": $spacer * 1.5,
+  "5": $spacer * 3,
+);
+
+$headings: "h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6";
+
+/////////////////////////////////////////////
+
+@mixin sm { @media (min-width: 576px) { @content; } }
+@mixin md { @media (min-width: 768px) { @content; } }
+@mixin lg { @media (min-width: 992px) { @content; } }
+@mixin xl { @media (min-width: 1200px) { @content; } }
+@mixin xxl { @media (min-width: 1400px) { @content; } }
+
+/////////////////////////////////////////////
+
+.chos {
+  @each $name, $color in $foreground-colors {
+    --chos-color-#{$name}: #{$color};
+  }
+  @each $name, $color in $background-colors {
+    --chos-bg-color-#{$name}: #{$color};
+  }
+
+  --chos-font-text: var(--qc-inter);
+  --chos-font-headings: var(--qc-inter);
+
+  --chos-current-body-color: var(--chos-color-text);
+  --chos-current-headings-color: var(--chos-color-headings);
+  --chos-current-muted-color: var(--chos-color-muted);
+
+  .inverted {
+    --chos-current-body-color: var(--chos-color-inverted-text);
+    --chos-current-headings-color: var(--chos-color-inverted-headings);
+    --chos-current-muted-color: var(--chos-color-inverted-muted);
+  }
+
+  .muted {
+    --chos-current-body-color: var(--chos-current-muted-color);
+  }
+
+  --chos-border-radius: 1rem;
+  --chos-border-width: 1px;
+  --chos-border-style: solid;
+  --chos-border-color: rgba(0, 0, 0, 0.125);
+  --chos-border: var(--chos-border-width) var(--chos-border-style) var(--chos-border-color);
+
+  --chos-text-shadow: 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.25);
+  --chos-box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.125);
+
+  --chos-padding: 2rem;
+
+  --chos-section-padding: 4rem;
+  @include md {
+    --chos-section-padding: 5rem;
+  }
+  @include lg {
+    --chos-section-padding: 6rem;
+  }
+  @include xl {
+    --chos-section-padding: 7rem;
+  }
+
+  font-family: var(--chos-font-text);
+  font-weight: normal;
+
+  #{$headings} {
+    font-family: var(--chos-font-headings);
+    font-weight: bold;
+    color: var(--chos-current-headings-color);
+  }
+
+  &, .inverted, .muted {
+    color: var(--chos-current-body-color);
+  }
+
+  :is(#{$headings}).inverted {
+    color: var(--chos-current-headings-color);
+  }
+
+  th, td { color: inherit !important; }
+
+  @each $name, $color in $foreground-colors {
+    .text-#{$name} {
+      color: $color !important;
+    }
+  }
+
+  @each $name, $color in $background-colors {
+    .bg-#{$name} {
+      background-color: $color !important;
+    }
+  }
+
+  .rounded { border-radius: var(--chos-border-radius) !important; }
+  .rounded-top { border-top-left-radius: var(--chos-border-radius) !important; border-top-right-radius: var(--chos-border-radius) !important; }
+  .rounded-bottom { border-bottom-left-radius: var(--chos-border-radius) !important; border-bottom-right-radius: var(--chos-border-radius) !important; }
+
+  .shadow { box-shadow: var(--chos-box-shadow); }
+  .text-shadow { text-shadow: var(--chos-text-shadow); }
+
+  @each $name, $size in $sizes {
+    .p-#{$name} { padding: #{$size} !important; }
+    .px-#{$name} { padding-left: #{$size} !important; padding-right: #{$size} !important; }
+    .ps-#{$name} { padding-left: #{$size} !important; }
+    .pe-#{$name} { padding-right: #{$size} !important; }
+    .py-#{$name} { padding-top: #{$size} !important; padding-bottom: #{$size} !important; }
+    .pt-#{$name} { padding-top: #{$size} !important; }
+    .pb-#{$name} { padding-bottom: #{$size} !important; }
+
+    .m-#{$name} { margin: #{$size} !important; }
+    .mx-#{$name} { margin-left: #{$size} !important; margin-right: #{$size} !important; }
+    .ms-#{$name} { margin-left: #{$size} !important; }
+    .me-#{$name} { margin-right: #{$size} !important; }
+    .my-#{$name} { margin-top: #{$size} !important; margin-bottom: #{$size} !important; }
+    .mt-#{$name} { margin-top: #{$size} !important; }
+    .mb-#{$name} { margin-bottom: #{$size} !important; }
+  }
+    
+  @include sm {
+    @each $name, $size in $sizes {
+      .p-sm-#{$name} { padding: #{$size} !important; }
+      .px-sm-#{$name} { padding-left: #{$size} !important; padding-right: #{$size} !important; }
+      .ps-sm-#{$name} { padding-left: #{$size} !important; }
+      .pe-sm-#{$name} { padding-right: #{$size} !important; }
+      .py-sm-#{$name} { padding-top: #{$size} !important; padding-bottom: #{$size} !important; }
+      .pt-sm-#{$name} { padding-top: #{$size} !important; }
+      .pb-sm-#{$name} { padding-bottom: #{$size} !important; }
+
+      .m-sm-#{$name} { margin: #{$size} !important; }
+      .mx-sm-#{$name} { margin-left: #{$size} !important; margin-right: #{$size} !important; }
+      .ms-sm-#{$name} { margin-left: #{$size} !important; }
+      .me-sm-#{$name} { margin-right: #{$size} !important; }
+      .my-sm-#{$name} { margin-top: #{$size} !important; margin-bottom: #{$size} !important; }
+      .mt-sm-#{$name} { margin-top: #{$size} !important; }
+      .mb-sm-#{$name} { margin-bottom: #{$size} !important; }
+    }
+  }
+
+  @include md {
+    @each $name, $size in $sizes {
+      .p-md-#{$name} { padding: #{$size} !important; }
+      .px-md-#{$name} { padding-left: #{$size} !important; padding-right: #{$size} !important; }
+      .ps-md-#{$name} { padding-left: #{$size} !important; }
+      .pe-md-#{$name} { padding-right: #{$size} !important; }
+      .py-md-#{$name} { padding-top: #{$size} !important; padding-bottom: #{$size} !important; }
+      .pt-md-#{$name} { padding-top: #{$size} !important; }
+      .pb-md-#{$name} { padding-bottom: #{$size} !important; }
+
+      .m-md-#{$name} { margin: #{$size} !important; }
+      .mx-md-#{$name} { margin-left: #{$size} !important; margin-right: #{$size} !important; }
+      .ms-md-#{$name} { margin-left: #{$size} !important; }
+      .me-md-#{$name} { margin-right: #{$size} !important; }
+      .my-md-#{$name} { margin-top: #{$size} !important; margin-bottom: #{$size} !important; }
+      .mt-md-#{$name} { margin-top: #{$size} !important; }
+      .mb-md-#{$name} { margin-bottom: #{$size} !important; }
+    }
+  }
+
+  @include lg {
+    @each $name, $size in $sizes {
+      .p-lg-#{$name} { padding: #{$size} !important; }
+      .px-lg-#{$name} { padding-left: #{$size} !important; padding-right: #{$size} !important; }
+      .ps-lg-#{$name} { padding-left: #{$size} !important; }
+      .pe-lg-#{$name} { padding-right: #{$size} !important; }
+      .py-lg-#{$name} { padding-top: #{$size} !important; padding-bottom: #{$size} !important; }
+      .pt-lg-#{$name} { padding-top: #{$size} !important; }
+      .pb-lg-#{$name} { padding-bottom: #{$size} !important; }
+
+      .m-lg-#{$name} { margin: #{$size} !important; }
+      .mx-lg-#{$name} { margin-left: #{$size} !important; margin-right: #{$size} !important; }
+      .ms-lg-#{$name} { margin-left: #{$size} !important; }
+      .me-lg-#{$name} { margin-right: #{$size} !important; }
+      .my-lg-#{$name} { margin-top: #{$size} !important; margin-bottom: #{$size} !important; }
+      .mt-lg-#{$name} { margin-top: #{$size} !important; }
+      .mb-lg-#{$name} { margin-bottom: #{$size} !important; }
+    }
+  }
+  
+  @include xl {
+    @each $name, $size in $sizes {
+      .p-xl-#{$name} { padding: #{$size} !important; }
+      .px-xl-#{$name} { padding-left: #{$size} !important; padding-right: #{$size} !important; }
+      .ps-xl-#{$name} { padding-left: #{$size} !important; }
+      .pe-xl-#{$name} { padding-right: #{$size} !important; }
+      .py-xl-#{$name} { padding-top: #{$size} !important; padding-bottom: #{$size} !important; }
+      .pt-xl-#{$name} { padding-top: #{$size} !important; }
+      .pb-xl-#{$name} { padding-bottom: #{$size} !important; }
+
+      .m-xl-#{$name} { margin: #{$size} !important; }
+      .mx-xl-#{$name} { margin-left: #{$size} !important; margin-right: #{$size} !important; }
+      .ms-xl-#{$name} { margin-left: #{$size} !important; }
+      .me-xl-#{$name} { margin-right: #{$size} !important; }
+      .my-xl-#{$name} { margin-top: #{$size} !important; margin-bottom: #{$size} !important; }
+      .mt-xl-#{$name} { margin-top: #{$size} !important; }
+      .mb-xl-#{$name} { margin-bottom: #{$size} !important; }
+    }
+  }
+
+  @include xxl {
+    @each $name, $size in $sizes {
+      .p-xxl-#{$name} { padding: #{$size} !important; }
+      .px-xxl-#{$name} { padding-left: #{$size} !important; padding-right: #{$size} !important; }
+      .ps-xxl-#{$name} { padding-left: #{$size} !important; }
+      .pe-xxl-#{$name} { padding-right: #{$size} !important; }
+      .py-xxl-#{$name} { padding-top: #{$size} !important; padding-bottom: #{$size} !important; }
+      .pt-xxl-#{$name} { padding-top: #{$size} !important; }
+      .pb-xxl-#{$name} { padding-bottom: #{$size} !important; }
+
+      .m-xxl-#{$name} { margin: #{$size} !important; }
+      .mx-xxl-#{$name} { margin-left: #{$size} !important; margin-right: #{$size} !important; }
+      .ms-xxl-#{$name} { margin-left: #{$size} !important; }
+      .me-xxl-#{$name} { margin-right: #{$size} !important; }
+      .my-xxl-#{$name} { margin-top: #{$size} !important; margin-bottom: #{$size} !important; }
+      .mt-xxl-#{$name} { margin-top: #{$size} !important; }
+      .mb-xxl-#{$name} { margin-bottom: #{$size} !important; }
+    }
+  }
+ 
+  section {
+    position: relative;
+    overflow: hidden;
+    padding: var(--chos-section-padding) 0;
+  }
+
+
+  section > div.container {
+    position: relative;  /* so that if we use a cover image, the content will display on top */
+  }
+}

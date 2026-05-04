@@ -23,6 +23,7 @@ import PaletteIcon from '@/components/icons/palette.svg';
 import ShieldAlt2Icon from '@/components/icons/shield-alt-2.svg';
 import { ILEASection } from '@/components/ileaSection';
 import { StageBox } from '@/components/stageBox';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 93;
 const brevoEmailTemplateId = 2938;
-const testimonialIds = [ 'TE-0012', 'TE-0003', 'TE-0014' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0012', 'TE-0003', 'TE-0014' ];
 const listIconWidth = 32;
 const listIconHeight = 24;
 

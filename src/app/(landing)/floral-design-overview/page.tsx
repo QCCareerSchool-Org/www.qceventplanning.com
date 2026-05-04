@@ -23,6 +23,7 @@ import { Hero } from '@/components/hero';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { SAFPartnerSection } from '@/components/safPartnerSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
@@ -34,7 +35,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0023', 'TE-0024', 'TE-0022', 'TE-0004', 'TE-0020', 'TE-0008' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0023', 'TE-0024', 'TE-0022', 'TE-0004', 'TE-0020', 'TE-0008' ];
 const enrollUrl = 'https://enroll.qceventplanning.com/floral-design-overview?c=fd';
 
 export const metadata: Metadata = {

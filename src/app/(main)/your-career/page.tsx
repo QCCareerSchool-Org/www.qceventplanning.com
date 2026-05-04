@@ -8,6 +8,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import HeroImageDesktop from '@/components/homeHeroImage/hero-large.jpg';
 import HeroImageMobile from '@/components/homeHeroImage/hero-small.jpg';
 import { PerksSection } from '@/components/perksSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-const testimonialIds = [ 'TE-0001', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0001', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
 const YourCareerPage: PageComponent = () => (
   <>

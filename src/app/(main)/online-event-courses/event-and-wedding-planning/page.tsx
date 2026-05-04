@@ -19,6 +19,7 @@ import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { AlyssaPerna } from '@/components/tutorImages/alyssaPerna';
 import { MwaiYeboah } from '@/components/tutorImages/mwaiYeboah';
@@ -30,7 +31,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'ep';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0006', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0002', 'TE-0017' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0006', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0002', 'TE-0017' ];
 
 export const metadata: Metadata = {
   title: 'Event & Wedding Planning Course',

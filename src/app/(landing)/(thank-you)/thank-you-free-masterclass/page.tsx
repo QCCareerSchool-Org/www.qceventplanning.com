@@ -22,6 +22,7 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { StageBox } from '@/components/stageBox';
 import { StatsSection } from '@/components/statsSection/statsSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const iconSize = 32;
-const testimonialIds = [ 'TE-0017', 'TE-0027', 'TE-0015' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0017', 'TE-0027', 'TE-0015' ];
 const enrollHref = 'https://enroll.qceventplanning.com/masterclass-offer';
 const videoSrc = 'https://cdn.qccareerschool.com/event/profit-pivot-webinar.mp4';
 
