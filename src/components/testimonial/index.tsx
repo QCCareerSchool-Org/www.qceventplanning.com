@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 
-import type { TestimonialId, Testimonial as TestimonialType } from './data';
+import type { TestimonialId } from './data';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
@@ -19,23 +19,12 @@ interface Props {
 }
 
 export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId, small = false }) => {
-  const testimonial: TestimonialType = useMemo(() => {
-    return {
-      ...testimonials[id],
-      courses: testimonials[id].courses.sort((a, b) => {
-        if (courseCodes?.includes(a) && courseCodes.includes(b)) {
-          return a.localeCompare(b);
-        }
-        if (courseCodes?.includes(a)) {
-          return -1;
-        }
-        if (courseCodes?.includes(b)) {
-          return 1;
-        }
-        return a.localeCompare(b);
-      }),
-    };
-  }, [ id, courseCodes ]);
+  const testimonial = {
+    ...testimonials[id],
+    courses: courseCodes
+      ? [ ...testimonials[id].courses ].sort(createSortFunction(courseCodes))
+      : [ ...testimonials[id].courses ],
+  };
 
   return (
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
@@ -75,3 +64,16 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
 });
 
 Testimonial.displayName = 'Testimonial';
+
+const createSortFunction = (courseCodes: CourseCode[]) => (a: CourseCode, b: CourseCode): number => {
+  if (!courseCodes.includes(a) && !courseCodes.includes(b)) {
+    return a.localeCompare(b);
+  }
+  if (courseCodes.includes(a)) {
+    return -1;
+  }
+  if (courseCodes.includes(b)) {
+    return 1;
+  }
+  return a.localeCompare(b);
+};
