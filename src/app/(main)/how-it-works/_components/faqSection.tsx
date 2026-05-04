@@ -37,6 +37,6 @@ const faqItems = [
   },
   {
     question: 'How long does it take to get certified?',
-    answer: 'Our certification is designed to be completed in 3 to 6 months. This allows you to enter the professional market and start building your business much faster than a multi-year academic path.',
+    answer: 'Our certification is designed to be completed in 3 to 6 months working on the course part time. This allows you to enter the professional market and start building your business much faster than a multi-year academic path.',
   },
 ];
