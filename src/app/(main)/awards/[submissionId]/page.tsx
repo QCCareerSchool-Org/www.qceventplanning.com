@@ -22,7 +22,7 @@ type RouteParams = {
 
 const schooolName: School = 'QC Event School';
 
-export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }): Promise<Metadata> => {
+export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }: PageProps<'/awards/[submissionId]'>): Promise<Metadata> => {
   const { submissionId } = await params;
 
   const award = await getAward(submissionId);
@@ -54,7 +54,7 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
   };
 };
 
-const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
+const AwardPage: PageComponent<RouteParams> = async ({ params }: PageProps<'/awards/[submissionId]'>) => {
   const { submissionId } = await params;
 
   const award = await getAward(submissionId);

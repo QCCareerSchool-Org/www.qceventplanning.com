@@ -19,6 +19,7 @@ import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -28,7 +29,7 @@ import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'dw';
 const courseCodes: CourseCode[] = [ courseCode ];
-const testimonialIds = [ 'TE-0003', 'TE-0014', 'TE-0019', 'TE-0017', 'TE-0016', 'TE-0001' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0003', 'TE-0014', 'TE-0019', 'TE-0017', 'TE-0016', 'TE-0001' ];
 
 export const metadata: Metadata = {
   title: 'Destination Wedding Planning Course',

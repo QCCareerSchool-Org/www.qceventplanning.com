@@ -16,6 +16,7 @@ import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { DarcieGarcia } from '@/components/tutorImages/darcieGarcia';
 import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
 const brevoListId = 12;
 const brevoEmailTemplateId = 1998;
 const courseCodes: CourseCode[] = [ 'fd' ];
-const testimonialIds = [ 'TE-0020', 'TE-0021', 'TE-0012', 'TE-0022', 'TE-0004', 'TE-0003' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0020', 'TE-0021', 'TE-0012', 'TE-0022', 'TE-0004', 'TE-0003' ];
 
 const FreeFloralDesignCatalogPage: PageComponent = async props => {
   const searchParams = await props.searchParams;

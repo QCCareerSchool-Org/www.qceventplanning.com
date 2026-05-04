@@ -6,11 +6,12 @@ import type { CourseCode } from '@/domain/courseCode';
 export interface Testimonial {
   name: string;
   courses: CourseCode[];
+  provinceCode?: string;
   short: string[];
   long: string[];
   image: StaticImageData;
-  imagePositionX?: number;
-  imagePositionY?: number;
+  imagePositionX: number | undefined;
+  imagePositionY: number | undefined;
   stars: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
@@ -23,6 +24,8 @@ export const testimonials = {
     short: [ 'I loved the convenience of doing training online—rather than in-person—because you can do the course a little bit at a time, whenever it\'s convenient for your schedule.' ],
     long: [ 'The support you receive from people on the back end of QC Event School is unmatched! Just take the leap! There\'s never going to be the \'perfect time\' in your life when every single thing is lined up and \'ready\'. In reality, you\'ll learn as you go.' ],
     image: Images.AylaOtto,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0002': {
@@ -31,6 +34,8 @@ export const testimonials = {
     short: [ 'The coursework was pertinent to the industry and it was super convenient to do it online! The ﬂexibility fit into my life perfectly.' ],
     long: [ 'While I\'m a big advocate for getting your feet wet and getting real-life experience, I feel the certification is something you can physically show clients to show them your qualifications. The coursework was pertinent to the industry and it was super convenient to do online!' ],
     image: Images.CarisaLockery,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0003': {
@@ -39,6 +44,8 @@ export const testimonials = {
     short: [ 'My experiences were 10/10 overall. As a QC Event School graduate, I would definitely recommend these courses!' ],
     long: [ 'This online certification has given me the networks that will last a lifetime! I\'m thankful for the recommendation that led me to QC Event School and I am eternally grateful for the knowledge I\'ve retained.' ],
     image: Images.TylerReid,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0004': {
@@ -47,6 +54,8 @@ export const testimonials = {
     short: [ 'I decided that this was the school for me and took the chance! Looking back, I can confirm that this was the BEST. DECISION. EVER!' ],
     long: [ 'This school offers so many options and provides so many resources. Their courses have 0 deadlines, so you can train on your own time. I also liked that there was always someone to answer all of my questions, whenever I had any.' ],
     image: Images.CarliLewis,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0005': {
@@ -55,6 +64,8 @@ export const testimonials = {
     short: [ 'I discovered a whole new creative insight I never even knew I had! One of my favorite sections was learning about different religions and cultures, and how they celebrate special events differently.' ],
     long: [ 'I will ALWAYS recommend QC Event School\'s event planning certification training to anyone interested in weddings and events. Professional training increases your knowledge base and betters your reputation within the planning industry.' ],
     image: Images.AftonRomrel,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0006': {
@@ -63,6 +74,8 @@ export const testimonials = {
     short: [ 'I can definitely say that I would not have gotten off to nearly as strong of a start, had it not been for my training through QC.' ],
     long: [ 'I can definitely say that I would not have gotten off to nearly as strong of a start, had it not been for my training through QC. I learned a lot about how to portray myself as a professional, how to deal with difficult situations, and how to make a space look beautiful and molded to a client\'s needs.' ],
     image: Images.MadysonBell,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0007': {
@@ -71,6 +84,8 @@ export const testimonials = {
     short: [ 'These certifications will give me a definite advantage! Having these courses attached to my name and business shows the dedication I have for this industry; that I\'m a true wedding and event professional.' ],
     long: [ 'I\'m continually referring back to my course content for advice and information! I also valued the fact that QC provides each student with a tutor who actually takes the time to not only grade each assignment but give valuable feedback and criticism.' ],
     image: Images.SydneySchatz,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0008': {
@@ -79,6 +94,8 @@ export const testimonials = {
     short: [ 'Attending an online school allowed me to learn at my own pace in the comfort of my own home. I was able to work full-time, train a young puppy, plan my own wedding, and travel with my now-husband.' ],
     long: [ 'This course offers hands-on experience, from the comfort of your own home. You’ll also be provided with real-life client scenarios that will help you when you branch out into the industry. I highly recommend this QC Event School course to any aspiring florist.' ],
     image: Images.NeenaMcConnell,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0009': {
@@ -87,6 +104,8 @@ export const testimonials = {
     short: [ 'QC\'s Event & Wedding Planning Course provided me with useful knowledge and skills to start my own planning company. It gave me the confidence to work with clients from the first meeting right up to the day of their wedding.' ],
     long: [ 'Not only did the course teach me about event and wedding planning but it also walked me through the process of starting my own wedding planning business. I learned how to write a business plan and received valuable information on how to price my planning services.' ],
     image: Images.CherelleJoseph,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0010': {
@@ -95,6 +114,8 @@ export const testimonials = {
     short: [ 'It took me less than an hour chatting with Student Support to convince me of the professionalism of this planning school was at the caliber I was looking for.' ],
     long: [ 'Enrolling in a program mentored by professionals in the field absolutely trumps the lecture-style event planning courses I was taking at university. The courses contain information that\'s current and can be tailored to use in any specific situation.' ],
     image: Images.KaloniJensen,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0011': {
@@ -103,6 +124,8 @@ export const testimonials = {
     short: [ 'I wish someone would have told me to do it earlier because it is an awesome starting point.' ],
     long: [ 'QC Event School has prepared me so much for the event planning business because they don\'t miss a detail. I know that they have laid an outstanding foundation for my business to help it continue and grow.' ],
     image: Images.SarahCristopher,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0012': {
@@ -111,6 +134,8 @@ export const testimonials = {
     short: [ 'Having this background and knowledge really prepared me and made me more confident about my decision to start a business.' ],
     long: [ 'I did not have time to actually go to a physical event school. I loved how QC\'s online event and wedding planning courses were affordable and I could complete them on my own schedule.' ],
     image: Images.JennaPelcher,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0013': {
@@ -119,6 +144,8 @@ export const testimonials = {
     short: [ 'The payment plans definitely made things easier for me. The tutors I had were great, helpful, and knowledgeable. I really enjoyed my time!' ],
     long: [ 'I chose QC because it had great reviews and I liked how professional the website was. The tutors were reputable, and I was able to add to my education. I liked that I was able to continue my education through easy payments and still be able to keep moving forward. It definitely made things easier for me. The tutors I had were great, helpful, and knowledgeable. I really enjoyed my time!' ],
     image: Images.KateherineSnow,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0014': {
@@ -127,6 +154,8 @@ export const testimonials = {
     short: [ 'I started taking my event and wedding planning course shortly after I had my baby. It fits into my lifestyle and my schedule.' ],
     long: [ 'I wanted to earn my event planner certification because I wanted to do it the correct way and get the proper training from professionals with expertise and experience. I also wanted to earn my clients trust. My certification says that I went through the training and am qualified. QC is the only event planning school that offers International Event Planning, which is something that I was interested in.' ],
     image: Images.CamashaIsaac,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0015': {
@@ -135,6 +164,8 @@ export const testimonials = {
     short: [ 'It\'s a nice feeling to be able to hang both my certificates on my wall for clients to see. I think people get a sense of ease when they know you\'re a certified professional.' ],
     long: [ 'As I began running my event planning company alongside my full-time job, having enough time was always an issue for me. I was not able to attend a physical wedding planning school, so was very happy to be able to study online in my own time. Doing online event planning courses enabled me to juggle my time efficiently and achieve my goals. It\'s a very nice feeling to be able to hang both my certificates on my wall for clients to see when we meet for consultations.' ],
     image: Images.JeanetteSpencer,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0016': {
@@ -143,6 +174,8 @@ export const testimonials = {
     short: [ 'I found it incredibly fun and exciting. I think anyone who decides to take the course would enjoy it very much!' ],
     long: [ 'I was very pleased. QC taught me the basic, overall logistics of being an event and wedding planner. I found it incredibly fun and exciting. I think anyone who decides to take the course would enjoy it very much.' ],
     image: Images.FencesSteiner,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0017': {
@@ -151,6 +184,8 @@ export const testimonials = {
     short: [ 'The statement that these credentials add to my resume is invaluable. It gives clients reassurance that they\'re in capable hands.' ],
     long: [ 'I wanted to be able to study on my lunch break, on the couch, at my parents\' house when I visit them, etc. I wanted access to a mentor when I needed it, at my own convenience—and that\'s what I got! I got real feedback, just like I would in an in-person classroom. I also needed the flexible payments that I worked into my budget. Not to mention, I loved the associations partnered with QC. As an event and wedding planner, you\'re absolutely going to benefit from that!' ],
     image: Images.TazmanBaker,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0018': {
@@ -159,6 +194,8 @@ export const testimonials = {
     short: [ 'I like that QC has a community you can connect with and get help from while working on the course. It\'s also very valuable to have a reputable certification that I can now hand to clients.' ],
     long: [ 'I like that QC has a community you can connect with and get help from while working on the course. It\'s also very valuable to have a reputable certification that I can now hand to clients.' ],
     image: Images.JennyAlperin,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0019': {
@@ -167,6 +204,8 @@ export const testimonials = {
     short: [ 'The IEDP™ certification is amazing and definitely has a competitive edge. Being connected to thousands of thriving and inspiring professionals has been the biggest perk for me!' ],
     long: [ 'The IEDP™ certification is amazing and definitely has a competitive edge. Being connected to thousands of thriving and inspiring professionals has been the biggest perk for me!' ],
     image: Images.TamesaSquire,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0020': {
@@ -175,6 +214,8 @@ export const testimonials = {
     short: [ 'The courses were easy to follow while also being challenging. My tutor was very helpful and I enjoyed her feedback.' ],
     long: [ 'The courses were easy to follow while also being challenging. My tutor was very helpful and I enjoyed her feedback.' ],
     image: Images.CaitlynBaldini,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0021': {
@@ -183,6 +224,8 @@ export const testimonials = {
     short: [ 'The courses were thorough. They weren\'t easy but not overwhelming either. The staff was very helpful. My tutor was encouraging and helpful. I\'m proud to receive my certificates from QC Event School.' ],
     long: [ 'The courses were thorough. They weren\'t easy but not overwhelming either. The staff was very helpful. My tutor was encouraging and helpful. I\'m proud to receive my certificates from QC Event School.' ],
     image: Images.JaymeSmith,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0022': {
@@ -191,6 +234,8 @@ export const testimonials = {
     short: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
     long: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
     image: Images.Placeholder, // update image
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0023': {
@@ -199,6 +244,8 @@ export const testimonials = {
     short: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
     long: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
     image: Images.Placeholder, // update image
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0024': {
@@ -207,15 +254,18 @@ export const testimonials = {
     short: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it\'s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
     long: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it\'s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
     image: Images.TerryRussell,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
-
   'TE-0025': {
     name: 'Marie Thamar Vixama',
     courses: [],
     short: [ 'As a stay-at-home mom of 4, including a 2-year-old, this program gives me the flexibility to study at my own pace while caring for my kids as my husband works. I truly love how QC Event School explains every course, it\'s clear, inspiring, and keeps me motivated. I would recommend it to everyone!' ],
     long: [ 'As a stay-at-home mom of 4, including a 2-year-old, this program gives me the flexibility to study at my own pace while caring for my kids as my husband works. I truly love how QC Event School explains every course, it\'s clear, inspiring, and keeps me motivated. I would recommend it to everyone!' ],
     image: Images.MarieThamarVixama,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0026': {
@@ -224,6 +274,8 @@ export const testimonials = {
     short: [ 'This program gave me everything I needed to confidently step into the world of professional event planning. From the very first module, I was immersed in real-world scenarios, practical tools, and expert guidance that helped me build a strong foundation.' ],
     long: [ 'This program gave me everything I needed to confidently step into the world of professional event planning. From the very first module, I was immersed in real-world scenarios, practical tools, and expert guidance that helped me build a strong foundation.' ],
     image: Images.RashaunHaste,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0027': {
@@ -232,6 +284,8 @@ export const testimonials = {
     short: [ 'Enrolling with QC Career School has truly been one of the best decisions I\'ve made for my career. Since starting the course, I\'ve had the opportunity to coordinate multiple weddings and even participate in wedding expos—and I truly credit QC for giving me the foundation and confidence to do it all.' ],
     long: [ 'Enrolling with QC Career School has truly been one of the best decisions I\'ve made for my career. Since starting the course, I\'ve had the opportunity to coordinate multiple weddings and even participate in wedding expos—and I truly credit QC for giving me the foundation and confidence to do it all.' ],
     image: Images.SoniaMichienzi,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
   'TE-0028': {
@@ -240,6 +294,8 @@ export const testimonials = {
     short: [ 'Proud fire wife, boy mom, and now a QC Event School graduate-I booked my first two weddings in 2025 and am excited to create six more unforgettable celebrations in 2026.' ],
     long: [ 'Proud fire wife, boy mom, and now a QC Event School graduate-I booked my first two weddings in 2025 and am excited to create six more unforgettable celebrations in 2026.' ],
     image: Images.NicoleZeman,
+    imagePositionX: undefined,
+    imagePositionY: undefined,
     stars: 5,
   },
-} as const satisfies Record<ID, Testimonial | undefined>;
+};

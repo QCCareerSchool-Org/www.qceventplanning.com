@@ -18,6 +18,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { ILEASection } from '@/components/ileaSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { aapCourseCodes } from '@/domain/courseCode';
@@ -33,7 +34,7 @@ const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
 const courseCode: CourseCode = 'aa';
 const courseCodes: CourseCode[] = [ courseCode ];
 
-const testimonialIds = [ 'TE-0017', 'TE-0025', 'TE-0026', 'TE-0027', 'TE-0028', 'TE-0015' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0017', 'TE-0025', 'TE-0026', 'TE-0027', 'TE-0028', 'TE-0015' ];
 
 const col1 = 'col-12 col-md-6 col-xl-4 d-flex';
 const col2 = 'col-12 col-lg-6';

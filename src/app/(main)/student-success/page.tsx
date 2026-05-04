@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { CarouselSection } from './carouselSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-const testimonialIds = [ 'TE-0006', 'TE-0008', 'TE-0019', 'TE-0018', 'TE-0016', 'TE-0003' ];
+const testimonialIds: TestimonialId[] = [ 'TE-0006', 'TE-0008', 'TE-0019', 'TE-0018', 'TE-0016', 'TE-0003' ];
 
 const StudentSuccessPage: PageComponent = () => {
   return (
