@@ -99,6 +99,7 @@ const qc: WithContext<Product> = {
   'offers': [
     {
       '@type': 'Offer',
+      'url': 'https://enroll.qceventplanning.com',
       'priceSpecification': {
         '@type': 'PriceSpecification',
         'minPrice': 789,
