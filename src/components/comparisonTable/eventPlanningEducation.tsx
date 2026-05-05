@@ -114,7 +114,7 @@ const degree: WithContext<Product> = {
 const online: WithContext<Product> = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  'name': 'Other Online Courses',
+  'name': 'Career Diplomas',
   'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 149, 'maxPrice': 1500, 'priceCurrency': 'USD' } } ],
 };
 
@@ -123,6 +123,6 @@ export const EventPlanningEducationComparisonTable: FC = () => (
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qc) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(degree) }} />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(online) }} />
-    <ComparisonTable columns={columns} rows={rows} />
+    <ComparisonTable columns={columns} rows={rows} caption="Comparison of Event Planning Education Paths: QC Event School vs. Universities vs. Career Diplomas" />
   </>
 );
