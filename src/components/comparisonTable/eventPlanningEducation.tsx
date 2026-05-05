@@ -95,7 +95,7 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
 const qc: WithContext<Product> = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  'name': 'QC Event School Interior Decorating Course',
+  'name': 'QC Event School Event Planning Course',
   'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 789, 'maxPrice': 2998, 'priceCurrency': 'USD' } } ],
 };
 const degree: WithContext<Product> = {
