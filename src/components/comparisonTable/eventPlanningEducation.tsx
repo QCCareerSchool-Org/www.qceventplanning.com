@@ -97,6 +97,13 @@ const qc: WithContext<Product> = {
   '@type': 'Product',
   'name': 'QC Event School Event Planning Course',
   'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 789, 'maxPrice': 2998, 'priceCurrency': 'USD' } } ],
+  'brand': {
+    '@type': 'Brand',
+    '@id': 'https://www.qceventplanning.com/#school',
+    'url': 'https://www.qceventplanning.com',
+    'name': 'QC Event School',
+    'logo': 'https://www.qceventplanning.com/logo.svg',
+  },
 };
 const degree: WithContext<Product> = {
   '@context': 'https://schema.org',
