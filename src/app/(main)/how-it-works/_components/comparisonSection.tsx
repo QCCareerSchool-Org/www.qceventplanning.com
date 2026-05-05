@@ -10,7 +10,7 @@ export const ComparisonSection: FC = () => (
     <div className="container">
       <SectionHeader
         title="Choosing Your Path: Event Planning School Comparison Chart"
-        text="Your journey is unique. Whether you want to work in corporate event management or start your own business, the right training should fit your life, your timeline, and your ambitions."
+        text="Compare the fastest path to becoming an event planner with traditional degrees and standard online courses. Whether you want to work in corporate event management or start your own business, the right training should fit your life, your timeline, and your ambitions."
       />
       <EventPlanningEducationComparisonTable />
       <div className="card shadow mt-5">

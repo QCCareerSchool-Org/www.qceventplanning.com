@@ -92,71 +92,8 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   },
 ];
 
-const qc: WithContext<Product> = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  'name': 'QC Event School Event Planning Course',
-  'offers': [
-    {
-      '@type': 'Offer',
-      'url': 'https://enroll.qceventplanning.com',
-      'priceSpecification': {
-        '@type': 'PriceSpecification',
-        'minPrice': 789,
-        'maxPrice': 2998,
-        'price': 2998,
-        'priceCurrency': 'USD',
-      },
-    },
-  ],
-  'brand': {
-    '@type': 'Brand',
-    '@id': 'https://www.qceventplanning.com/#school',
-    'url': 'https://www.qceventplanning.com',
-    'name': 'QC Event School',
-    'logo': 'https://www.qceventplanning.com/logo.svg',
-  },
-};
-const degree: WithContext<Product> = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  'name': 'University or College Programs',
-  'offers': [
-    {
-      '@type': 'Offer',
-      'priceSpecification': {
-        '@type': 'PriceSpecification',
-        'minPrice': 20000,
-        'maxPrice': 80000,
-        'price': 80000,
-        'priceCurrency': 'USD',
-      },
-    },
-  ],
-};
-const online: WithContext<Product> = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  'name': 'Other Online Courses',
-  'offers': [
-    {
-      '@type': 'Offer',
-      'priceSpecification': {
-        '@type': 'PriceSpecification',
-        'minPrice': 149,
-        'maxPrice': 1500,
-        'price': 1500,
-        'priceCurrency': 'USD',
-      },
-    },
-  ],
-};
+const caption = 'Comparison of Event Planning Education Paths: QC Event School vs. Universities vs. Career Diplomas';
 
 export const EventPlanningEducationComparisonTable: FC = () => (
-  <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qc) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(degree) }} />
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(online) }} />
-    <ComparisonTable columns={columns} rows={rows} caption="Comparison of Event Planning Education Paths: QC Event School vs. Universities vs. Career Diplomas" />
-  </>
+  <ComparisonTable columns={columns} rows={rows} caption={caption} />
 );
