@@ -75,7 +75,7 @@ export const MainNav: FC = () => {
               <Link href="/tutors" className="nav-link d-lg-none d-xl-block" onClick={handleClick}>Tutors</Link>
               <NavDropdown title="About" id="about-nav-dropdown">
                 <Link href="/about-qc" className="dropdown-item" onClick={handleClick}>About the School</Link>
-                <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Event Planning Online</Link>
+                <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>How to Become an Event Planner</Link>
                 <Link href="/about-qc/meet-the-team" className="dropdown-item" onClick={handleClick}>Meet the Team</Link>
                 <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
               </NavDropdown>

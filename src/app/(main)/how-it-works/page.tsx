@@ -16,7 +16,7 @@ import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'How to Become an Event Planner',
-  description: 'Learn how QC Event School helps aspiring event planners build practical skills, earn professional certification, and start a flexible career in event planning.',
+  description: 'Learn how to become an event planner in 2026. Compare certification vs. degrees and see why QC Event School\'s 3- to 6-month program offers the best value for launching a business with 1-on-1 mentorship and industry-recognized credentials.',
   alternates: {
     canonical: '/how-it-works',
   },
@@ -39,7 +39,7 @@ const HowItWorksPage: PageComponent = () => (
     <FAQSection />
     <GetStartedSection
       title="Ready to Launch Your Event & Wedding Planning Career?"
-      text="Gain the industry-standard IEWP™ certification through QC’s mentored online programs. Start building your portfolio and booking clients in as little as 12 weeks."
+      text="Gain the industry-standard IEWP™ certification through QC's mentored online programs. Start building your portfolio and booking clients in as little as 12 weeks."
       buttonText="Explore Certification Programs"
       buttonHref="/online-event-courses"
     />

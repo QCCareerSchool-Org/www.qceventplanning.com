@@ -1,4 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
+import type { Product, WithContext } from 'schema-dts';
 
 import type { ComparisonTableColumn, ComparisonTableRow } from '.';
 import { ComparisonTable } from '.';
@@ -91,4 +92,30 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
   },
 ];
 
-export const EventPlanningEducationComparisonTable: FC = () => <ComparisonTable columns={columns} rows={rows} />;
+const qc: WithContext<Product> = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  'name': 'QC Event School Interior Decorating Course',
+  'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 789, 'maxPrice': 2998, 'priceCurrency': 'USD' } } ],
+};
+const degree: WithContext<Product> = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  'name': 'University or College Programs',
+  'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 20000, 'maxPrice': 80000, 'priceCurrency': 'USD' } } ],
+};
+const online: WithContext<Product> = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  'name': 'Other Online Courses',
+  'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 149, 'maxPrice': 1500, 'priceCurrency': 'USD' } } ],
+};
+
+export const EventPlanningEducationComparisonTable: FC = () => (
+  <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(qc) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(degree) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(online) }} />
+    <ComparisonTable columns={columns} rows={rows} />
+  </>
+);
