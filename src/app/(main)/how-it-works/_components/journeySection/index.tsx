@@ -51,6 +51,8 @@ const journeySteps: JourneyStep[] = [
 const howTo: WithContext<HowTo> = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
+  '@id': 'https://www.qceventplanning.com/how-it-works#how-to-become-an-event-planner',
+  'url': 'https://www.qceventplanning.com/how-it-works#career-pathways',
   'name': 'How to Become an Event Planner',
   'description': 'Follow this proven path to transform your passion into a professional event planning brand.',
   'step': journeySteps.map((step, i) => ({
