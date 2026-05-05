@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import type { HowTo, WithContext } from 'schema-dts';
 
 import { JourneyCard } from './journeyCard';
 import { SectionHeader } from '@/components/sectionHeader';
@@ -19,24 +20,43 @@ export const JourneySection: FC = () => (
         ))}
       </div>
     </div>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howTo) }} />
   </section>
 );
 
-const journeySteps = [
+interface JourneyStep {
+  title: string;
+  text: string;
+}
+
+const journeySteps: JourneyStep[] = [
   {
-    title: 'Obtain Professional Certification:',
+    title: 'Obtain Professional Certification',
     text: 'Master industry-standard fundamentals and high-impact skills like event design, contracts, and client management. Focused certification programs provide the technical authority clients demand.',
   },
   {
-    title: 'Gain Real-World Skills:',
+    title: 'Gain Real-World Skills',
     text: 'Build your "event intuition" through mentorship, practical assignments through your course, and assisting local planners.',
   },
   {
-    title: 'Build a Digital Portfolio:',
+    title: 'Build a Digital Portfolio',
     text: 'Curate a signature showcase of your event concepts and mood boards. A professional portfolio proves your vision to potential clients before they book their first consultation.',
   },
   {
-    title: 'Establish Your Professional Network:',
+    title: 'Establish Your Professional Network',
     text: 'Connect with local venues and vendors. By building a trusted network, you become an invaluable resource for your clients.',
   },
 ];
+
+const howTo: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  'name': 'How to Become an Event Planner',
+  'description': 'Follow this proven path to transform your passion into a professional event planning brand.',
+  'step': journeySteps.map((step, i) => ({
+    '@type': 'HowToStep',
+    'position': i + 1,
+    'name': step.title,
+    'text': step.text,
+  })),
+};
