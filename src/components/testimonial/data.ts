@@ -100,7 +100,7 @@ export const testimonials = {
     courses: [ 'ep', 'ed' ],
     provinceCode: undefined,
     short: [ 'Attending an online school allowed me to learn at my own pace in the comfort of my own home. I was able to work full-time, train a young puppy, plan my own wedding, and travel with my now-husband.' ],
-    long: [ 'This course offers hands-on experience, from the comfort of your own home. You’ll also be provided with real-life client scenarios that will help you when you branch out into the industry. I highly recommend this QC Event School course to any aspiring florist.' ],
+    long: [ 'This course offers hands-on experience, from the comfort of your own home. You\'ll also be provided with real-life client scenarios that will help you when you branch out into the industry. I highly recommend this QC Event School course to any aspiring florist.' ],
     image: Images.NeenaMcConnell,
     imagePositionX: undefined,
     imagePositionY: undefined,
