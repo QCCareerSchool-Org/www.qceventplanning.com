@@ -47,7 +47,7 @@ export const ComparisonTable: FC<Props> = <T extends string = string,>({ columns
       )}
       <div className={`${styles.tableWrapper} table-responsive ${caption ? 'caption-top' : ''}`}>
         <table className={`${styles.table} table align-middle mb-0`}>
-          {caption && <caption className="visually-hidden">{caption}</caption>}
+          {caption && <caption className="d-none">{caption}</caption>}
           <thead>
             <tr>
               <th scope="col">Feature</th>
