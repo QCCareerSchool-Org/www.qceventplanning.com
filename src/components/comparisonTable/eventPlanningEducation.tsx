@@ -96,7 +96,18 @@ const qc: WithContext<Product> = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   'name': 'QC Event School Event Planning Course',
-  'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 789, 'maxPrice': 2998, 'priceCurrency': 'USD' } } ],
+  'offers': [
+    {
+      '@type': 'Offer',
+      'priceSpecification': {
+        '@type': 'PriceSpecification',
+        'minPrice': 789,
+        'maxPrice': 2998,
+        'price': 2998,
+        'priceCurrency': 'USD',
+      },
+    },
+  ],
   'brand': {
     '@type': 'Brand',
     '@id': 'https://www.qceventplanning.com/#school',
@@ -109,13 +120,35 @@ const degree: WithContext<Product> = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   'name': 'University or College Programs',
-  'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 20000, 'maxPrice': 80000, 'priceCurrency': 'USD' } } ],
+  'offers': [
+    {
+      '@type': 'Offer',
+      'priceSpecification': {
+        '@type': 'PriceSpecification',
+        'minPrice': 20000,
+        'maxPrice': 80000,
+        'price': 80000,
+        'priceCurrency': 'USD',
+      },
+    },
+  ],
 };
 const online: WithContext<Product> = {
   '@context': 'https://schema.org',
   '@type': 'Product',
   'name': 'Career Diplomas',
-  'offers': [ { '@type': 'Offer', 'priceSpecification': { '@type': 'PriceSpecification', 'minPrice': 149, 'maxPrice': 1500, 'priceCurrency': 'USD' } } ],
+  'offers': [
+    {
+      '@type': 'Offer',
+      'priceSpecification': {
+        '@type': 'PriceSpecification',
+        'minPrice': 149,
+        'maxPrice': 1500,
+        'price': 1500,
+        'priceCurrency': 'USD',
+      },
+    },
+  ],
 };
 
 export const EventPlanningEducationComparisonTable: FC = () => (
