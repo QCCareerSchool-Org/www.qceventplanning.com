@@ -21,6 +21,7 @@
     "bootstrap": "^5.3.8",
     "generic-result-type": "^2.3.0",
     "jose": "^6.2.2",
+    "lottie-react": "^2.4.1",
     "next": "16.2.3",
     "qs": "^6.15.1",
     "react": "19.2.5",

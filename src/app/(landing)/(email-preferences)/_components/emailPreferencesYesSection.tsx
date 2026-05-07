@@ -1,3 +1,5 @@
+'use client';
+
 import type { StaticImageData } from 'next/image';
 import type { FC } from 'react';
 
@@ -6,7 +8,6 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import EmailIcon from '@/components/siteLayout/icons/email.svg';
-import PhoneIcon from '@/components/siteLayout/icons/phone.svg';
 import { TelephoneLink } from '@/components/telephoneLink';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -41,7 +42,7 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
                     If you ever have questions about our courses or career training, our team is always happy to help.
                   </p>
                 </FormWrapper>
-                <a><button className="btn btn-primary"><TelephoneLink countryCode={countryCode} className="text-white" /> <PhoneIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></button></a>
+                <TelephoneLink countryCode={countryCode} className="btn btn-primary" />
               </div>
             </FormCard>
           </div>

@@ -1,12 +1,16 @@
+'use client';
+
+import Lottie from 'lottie-react';
 import type { StaticImageData } from 'next/image';
 import type { FC } from 'react';
 
+import EmailIcon from './Email Notification.json';
 import { TelephoneFormPopup } from '../../(thank-you)/_components/telephoneFormPopup';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
-import EmailIcon from '@/components/siteLayout/icons/email.svg';
 import type { CourseCode } from '@/domain/courseCode';
+import { getTelephoneNumber } from '@/lib/telephone';
 
 interface Props {
   emailAddress?: string;
@@ -19,6 +23,7 @@ interface Props {
 }
 
 export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, telephoneListId, countryCode }) => {
+  const telephoneNumber = getTelephoneNumber(countryCode ?? 'US');
 
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
 
@@ -31,7 +36,7 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, l
             <FormCard>
               <div style={{ margin: '2rem 0' }}>
                 <div className="text-primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 80, height: 80, borderRadius: 50, border: '1px solid #E5E7EB', background: 'white', margin: '0 auto 2rem' }}>
-                  <EmailIcon />
+                  <Lottie animationData={EmailIcon} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
                 </div>
                 <h1 className="h4 mb-4 text-navy">No problem, we'll update your email preferences!</h1>
                 <FormWrapper>
