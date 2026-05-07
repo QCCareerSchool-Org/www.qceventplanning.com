@@ -12,6 +12,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
+import { addToBrevoList, getBrevoContactId } from '@/lib/brevoAPI';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -25,6 +26,18 @@ const telephoneListId = 53;
 const EmailPreferencesNoPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
   const searchParams = await props.searchParams;
+  const listId = 102;
+  const sc = searchParams._sc;
+
+  if (typeof sc === 'string') {
+    const contactId = getBrevoContactId(sc) ?? 0;
+    try {
+      await addToBrevoList(contactId, listId);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   const alreadyPrompted = searchParams.t;
 
   return (
