@@ -1,13 +1,15 @@
 'use client';
 
+import Lottie from 'lottie-react';
 import type { StaticImageData } from 'next/image';
 import type { FC } from 'react';
 
+import EmailIcon from './Email Notification.json';
 import { TelephoneFormPopup } from '../../(thank-you)/_components/telephoneFormPopup';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
-import EmailIcon from '@/components/siteLayout/icons/email.svg';
+import PhoneIcon from '@/components/siteLayout/icons/phone.svg';
 import { TelephoneLink } from '@/components/telephoneLink';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -34,7 +36,7 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
             <FormCard>
               <div style={{ margin: '2rem 0' }}>
                 <div className="text-primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 80, height: 80, borderRadius: 50, border: '1px solid #E5E7EB', background: 'white', margin: '0 auto 2rem' }}>
-                  <EmailIcon height="40" />
+                  <Lottie animationData={EmailIcon} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
                 </div>
                 <h1 className="h4 mb-4 text-navy">You're officially back in the loop!</h1>
                 <FormWrapper>
@@ -42,7 +44,7 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
                     If you ever have questions about our courses or career training, our team is always happy to help.
                   </p>
                 </FormWrapper>
-                <TelephoneLink countryCode={countryCode} className="btn btn-primary" />
+                <TelephoneLink countryCode={countryCode} className="btn btn-primary" linkText={<><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></>} />
               </div>
             </FormCard>
           </div>

@@ -10,7 +10,6 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import type { CourseCode } from '@/domain/courseCode';
-import { getTelephoneNumber } from '@/lib/telephone';
 
 interface Props {
   emailAddress?: string;
@@ -23,7 +22,6 @@ interface Props {
 }
 
 export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, telephoneListId, countryCode }) => {
-  const telephoneNumber = getTelephoneNumber(countryCode ?? 'US');
 
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
 
