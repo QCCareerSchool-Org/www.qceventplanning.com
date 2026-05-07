@@ -38,13 +38,12 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
                 <div className="text-primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 80, height: 80, borderRadius: 50, border: '1px solid #E5E7EB', background: 'white', margin: '0 auto 2rem' }}>
                   <Lottie animationData={EmailIcon} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
                 </div>
-                <h1 className="h4 mb-4 text-navy">You're officially back in the loop!</h1>
+                <h1 className="h3 mb-4 text-navy fw-bold">You're officially back in the loop!</h1>
                 <FormWrapper>
-                  <p className="lead">Thanks for updating your preferences. We'll keep sending you makeup tips, student success stories, exclusive offers, and updates from QC Makeup Academy.
-                    If you ever have questions about our courses or career training, our team is always happy to help.
-                  </p>
+                  <p className="lead"><i>Thanks for updating your preferences. We'll keep sending you makeup tips, student success stories, exclusive offers, and updates from QC Makeup Academy.</i></p>
+                  <p>If you ever have questions about our courses or career training, our team is always happy to help.</p>
                 </FormWrapper>
-                <TelephoneLink countryCode={countryCode} className="btn btn-primary" linkText={<><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></>} />
+                <TelephoneLink countryCode={countryCode} className="btn btn-lg btn-primary" linkText={<><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></>} />
               </div>
             </FormCard>
           </div>

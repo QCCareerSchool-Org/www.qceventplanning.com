@@ -38,8 +38,8 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, l
                 </div>
                 <h1 className="h4 mb-4 text-navy">No problem, we'll update your email preferences!</h1>
                 <FormWrapper>
-                  <p className="lead">Moving forward, you'll only receive information about relevant courses or offers when you engage with QC. From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC. <strong> Want to leave us for good?</strong> You can find the 'Unsubscribe' link at the bottom of your last email.
-                  </p>
+                  <p className="lead"><i>From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC.</i></p>
+                  <p><strong> Want to leave us for good?</strong> You can find the 'Unsubscribe' link at the bottom of your last email.</p>
                 </FormWrapper>
               </div>
             </FormCard>
