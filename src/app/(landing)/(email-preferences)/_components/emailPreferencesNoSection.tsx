@@ -5,7 +5,7 @@ import { TelephoneFormPopup } from '../../(thank-you)/_components/telephoneFormP
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
-import LockIcon from '@/components/icons/q-lock.svg';
+import EmailIcon from '@/components/siteLayout/icons/email.svg';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
@@ -31,7 +31,7 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, l
             <FormCard>
               <div style={{ margin: '2rem 0' }}>
                 <div className="text-primary" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 80, height: 80, borderRadius: 50, border: '1px solid #E5E7EB', background: 'white', margin: '0 auto 2rem' }}>
-                  <LockIcon height="40" />
+                  <EmailIcon />
                 </div>
                 <h1 className="h4 mb-4 text-navy">No problem, we'll update your email preferences!</h1>
                 <FormWrapper>
