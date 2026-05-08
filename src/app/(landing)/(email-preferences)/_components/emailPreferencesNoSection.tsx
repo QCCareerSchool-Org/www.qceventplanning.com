@@ -12,7 +12,6 @@ import { FormWrapper } from '@/components/formWrapper';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
-  emailAddress?: string;
   course?: CourseCode;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
@@ -24,7 +23,6 @@ interface Props {
 export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, telephoneListId, countryCode }) => {
 
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
-
   return (
     <section className="text-white">
       <BackgroundImage src={heroSrc} mobile={mobileHeroSrc ? { src: mobileHeroSrc, breakpoint: 'lg', objectPosition: '50% 100%' } : undefined} priority />

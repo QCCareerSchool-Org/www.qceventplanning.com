@@ -14,7 +14,6 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
-  emailAddress?: string;
   course?: CourseCode;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
