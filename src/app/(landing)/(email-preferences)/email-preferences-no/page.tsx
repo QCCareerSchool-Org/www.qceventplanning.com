@@ -3,13 +3,14 @@ import Link from 'next/link';
 
 import { CurrentPromotion } from '../../(thank-you)/_components/currentPromotion';
 import { Header } from '../../header';
-import { EmailPreferencesNoSection } from '../_components/emailPreferencesNoSection';
+import { EmailPreferencesNoSection } from '../_components/emailPreferencesSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
 import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
 import { ILEASection } from '@/components/ileaSection';
 import { SupportSection } from '@/components/supportSection';
-import { addToBrevoList, getBrevoContact, getBrevoContactId } from '@/lib/brevoAPI';
+import { addToBrevoList } from '@/lib/brevoAPI';
+import { getBrevoContactId } from '@/lib/getBrevoContactId';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
@@ -21,34 +22,24 @@ export const metadata: Metadata = {
 };
 
 const telephoneListId = 53;
-const listId = 102;
+const brevoListId = 102;
 
 const EmailPreferencesNoPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
-  const sc = searchParams._sc;
 
-  const getEmailAddress = async (): Promise<string | undefined> => {
-    if (typeof sc === 'string') {
-      const contactId = getBrevoContactId(sc);
-      if(contactId) {
-        const [ , contact ] = await Promise.all([
-          addToBrevoList(contactId, listId).catch((err: unknown) => console.log(err)),
-          getBrevoContact(contactId).catch((err: unknown) => console.error(err)),
-        ]);
+  if (typeof searchParams._sc !== 'string') {
+    throw new Error('Contact id missing.');
+  }
 
-        return contact?.emailAddress;
-      }
-    }
-  };
+  const contactId = getBrevoContactId(searchParams._sc);
+  if (!contactId) {
+    throw new Error('Invalid contact id.');
+  }
 
-  if (typeof sc === 'string') {
-    const contactId = getBrevoContactId(sc) ?? 0;
-    try {
-      await addToBrevoList(contactId, listId);
-    } catch (err) {
-      console.log(err);
-    }
+  const addResult = await addToBrevoList(contactId, brevoListId);
+  if (!addResult.success) {
+    console.error(addResult.error);
   }
 
   const alreadyPrompted = searchParams.t;

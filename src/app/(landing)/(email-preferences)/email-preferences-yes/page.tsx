@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { CurrentPromotion } from '../../(thank-you)/_components/currentPromotion';
 import { Header } from '../../header';
-import { EmailPreferencesYesSection } from '../_components/emailPreferencesYesSection';
+import { EmailPreferencesYesSection } from '../_components/emailPreferencesSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
 import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
