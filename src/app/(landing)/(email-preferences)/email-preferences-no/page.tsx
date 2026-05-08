@@ -9,7 +9,7 @@ import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
 import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
 import { ILEASection } from '@/components/ileaSection';
 import { SupportSection } from '@/components/supportSection';
-import { addToBrevoList, getBrevoContactId } from '@/lib/brevoAPI';
+import { addToBrevoList, getBrevoContact, getBrevoContactId } from '@/lib/brevoAPI';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
@@ -27,6 +27,20 @@ const EmailPreferencesNoPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const sc = searchParams._sc;
+
+  const getEmailAddress = async (): Promise<string | undefined> => {
+    if (typeof sc === 'string') {
+      const contactId = getBrevoContactId(sc);
+      if(contactId) {
+        const [ , contact ] = await Promise.all([
+          addToBrevoList(contactId, listId).catch((err: unknown) => console.log(err)),
+          getBrevoContact(contactId).catch((err: unknown) => console.error(err)),
+        ]);
+
+        return contact?.emailAddress;
+      }
+    }
+  };
 
   if (typeof sc === 'string') {
     const contactId = getBrevoContactId(sc) ?? 0;
