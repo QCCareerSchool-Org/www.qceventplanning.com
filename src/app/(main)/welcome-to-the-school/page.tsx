@@ -65,7 +65,7 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     }
 
     // create Brevo contact
-    const createBrevoContactResult = await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_PET_STUDENT: true }, [ brevoStudentListId ]);
+    const createBrevoContactResult = await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_EVENT_STUDENT: true }, [ brevoStudentListId ]);
     if (!createBrevoContactResult.success) {
       console.error(createBrevoContactResult.error);
     }
