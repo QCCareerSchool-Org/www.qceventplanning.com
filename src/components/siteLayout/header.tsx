@@ -17,7 +17,7 @@ export const Header: FC<Props> = ({ date }) => {
       {may06.contains(date)
         ? (
           <PromoBanner date={date} period={may06.toDTO()}>
-            <span className="d-none d-lg-inline">Ends Soon—</span>Unlock Our Entire Event Planning Course Library
+            <span className="d-none d-lg-inline">Ends Soon—</span>Join the All-Access Program & Save <button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
           </PromoBanner>
         )
         : (
