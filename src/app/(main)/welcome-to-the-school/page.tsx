@@ -65,12 +65,10 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     }
 
     // create Brevo contact
-    try {
-      await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_EVENT_STUDENT: true }, [ brevoStudentListId ]);
-    } catch (err) {
-      console.error(err);
+    const createBrevoContactResult = await createBrevoContact(enrollment.emailAddress, enrollment.firstName, enrollment.lastName, enrollment.countryCode, enrollment.provinceCode, { STATUS_PET_STUDENT: true }, [ brevoStudentListId ]);
+    if (!createBrevoContactResult.success) {
+      console.error(createBrevoContactResult.error);
     }
-
     // iDevAffiliate
     try {
       await addToIDevAffiliate(enrollment, clientIp);
