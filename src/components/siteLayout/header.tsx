@@ -14,7 +14,8 @@ interface Props {
 export const Header: FC<Props> = ({ date }) => {
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
-      {may06.contains(date)
+      {/* eslint-disable-next-line no-constant-condition, no-constant-binary-expression, @typescript-eslint/no-unnecessary-condition, custom/no-unnecessary-condition-except-window */}
+      {false && may06.contains(date)
         ? (
           <PromoBanner date={date} period={may06.toDTO()}>
             <span className="d-none d-lg-inline">Ends Soon—</span>Unlock Our Entire Event Planning Course Library
