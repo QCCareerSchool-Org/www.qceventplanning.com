@@ -49,7 +49,34 @@ export const createBrevoContact = async (
     }
     return failure(err instanceof Error ? err : Error(String(err)));
   }
+};
 
+export const sendBrevoEmail = async (
+  templateId: number,
+  emailAddress: string,
+  firstName?: string,
+  lastName?: string,
+  abortSignal?: AbortSignal,
+): Promise<Result<string>> => {
+  const name = firstName && `${firstName}${lastName ? ` ${lastName}` : ''}`;
+
+  const request: Brevo.SendTransacEmailRequest = {
+    to: [ { email: emailAddress, name } ],
+    templateId,
+  };
+
+  try {
+    const response = await brevo.transactionalEmails.sendTransacEmail(request, { abortSignal });
+    if (response.messageId) {
+      return success(response.messageId);
+    }
+    return failure(Error('Message ID is undefined'));
+  } catch (err) {
+    if (abortSignal?.aborted) {
+      return failure(Error('Aborted'));
+    }
+    return failure(err instanceof Error ? err : Error(String(err)));
+  }
 };
 
 export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<Result> => {
@@ -82,6 +109,7 @@ export const getBrevoContact = async (contactId: number, abortSignal?: AbortSign
     identifier: contactId,
     identifierType: 'contact_id',
   };
+
   try {
     const response = await brevo.contacts.getContactInfo(request, { abortSignal });
     const attributes = response.attributes as { FIRSTNAME?: string; LASTNAME?: string };
@@ -98,33 +126,4 @@ export const getBrevoContact = async (contactId: number, abortSignal?: AbortSign
     }
     return failure(err instanceof Error ? err : Error(String(err)));
   }
-};
-
-export const sendBrevoEmail = async (
-  templateId: number,
-  emailAddress: string,
-  firstName?: string,
-  lastName?: string,
-  abortSignal?: AbortSignal,
-): Promise<Result<string>> => {
-  const name = firstName && `${firstName}${lastName ? ` ${lastName}` : ''}`;
-
-  const request: Brevo.SendTransacEmailRequest = {
-    to: [ { email: emailAddress, name } ],
-    templateId,
-  };
-
-  try {
-    const response = await brevo.transactionalEmails.sendTransacEmail(request, { abortSignal });
-    if (response.messageId) {
-      return success(response.messageId);
-    }
-    return failure(Error('Message ID is undefined'));
-  } catch (err) {
-    if (abortSignal?.aborted) {
-      return failure(Error('Aborted'));
-    }
-    return failure(err instanceof Error ? err : Error(String(err)));
-  }
-
 };
