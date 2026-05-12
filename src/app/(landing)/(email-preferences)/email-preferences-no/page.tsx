@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { CurrentPromotion } from '../../(thank-you)/_components/currentPromotion';
 import { Header } from '../../header';
 import { EmailPreferencesNoSection } from '../_components/emailPreferencesSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -15,13 +14,12 @@ import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'No problem, we’ll update your email preferences!',
-  description: 'From now on, we’ll only reach out with specific course updates or offers when you’re actively engaging with QC. Want to leave us for good? You can find the \'Unsubscribe\' link at the bottom of your last email.',
+  title: 'No problem, we\'ll update your email preferences!',
+  description: 'From now on, we\'ll only reach out with specific course updates or offers when you\'re actively engaging with QC. Want to leave us for good? You can find the "Unsubscribe" link at the bottom of your last email.',
   alternates: { canonical: '/email-preferences-no' },
   robots: { index: false },
 };
 
-const telephoneListId = 53;
 const brevoListId = 102;
 
 const EmailPreferencesNoPage: PageComponent = async props => {
@@ -42,13 +40,10 @@ const EmailPreferencesNoPage: PageComponent = async props => {
     console.error(addResult.error);
   }
 
-  const alreadyPrompted = searchParams.t;
-
   return (
     <>
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
-      <EmailPreferencesNoSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} telephoneListId={alreadyPrompted ? undefined : telephoneListId} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <EmailPreferencesNoSection countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
       <SupportSection date={date} />
