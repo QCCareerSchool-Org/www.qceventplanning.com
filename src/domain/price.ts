@@ -3,6 +3,20 @@ import { isCurrency } from './currency';
 import type { NoShipping } from './noShipping';
 import { isNoShipping } from './noShipping';
 
+export type Price = {
+  countryCode: string;
+  provinceCode?: string;
+  currency: Currency;
+  disclaimers: string[];
+  notes: string[];
+  promoWarnings: string[];
+  noShipping: NoShipping;
+  noShippingMessage?: string;
+  promoCodeRecognized?: boolean;
+  promoCode?: string;
+  courses: CoursePrice[];
+} & PriceDetails;
+
 interface Plan {
   /** the discount based on the payment plan */
   discount: number;
@@ -38,20 +52,6 @@ interface PriceDetails {
   /** what our cost for shipping would be if we shipped */
   shipping: number;
 }
-
-export type Price = {
-  countryCode: string;
-  provinceCode?: string;
-  currency: Currency;
-  disclaimers: string[];
-  notes: string[];
-  promoWarnings: string[];
-  noShipping: NoShipping;
-  noShippingMessage?: string;
-  promoCodeRecognized?: boolean;
-  promoCode?: string;
-  courses: CoursePrice[];
-} & PriceDetails;
 
 export type CoursePrice = {
   code: string;
