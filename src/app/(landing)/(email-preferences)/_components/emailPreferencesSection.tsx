@@ -10,8 +10,8 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import PhoneIcon from '@/components/siteLayout/icons/phone.svg';
-import { TelephoneLink } from '@/components/telephoneLink';
 import type { CourseCode } from '@/domain/courseCode';
+import { getTelephoneNumber } from '@/lib/telephone';
 
 interface Props {
   course?: CourseCode;
@@ -23,7 +23,7 @@ interface Props {
 }
 
 export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, telephoneListId, countryCode }) => {
-
+  const telephoneNumber = getTelephoneNumber(countryCode);
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
 
   return (
@@ -42,7 +42,7 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
                   <p className="lead"><i>Thanks for updating your preferences. We'll keep sending you makeup tips, student success stories, exclusive offers, and updates from QC Makeup Academy.</i></p>
                   <p>If you ever have questions about our courses or career training, our team is always happy to help.</p>
                 </FormWrapper>
-                <TelephoneLink countryCode={countryCode} className="btn btn-lg btn-primary" linkText={<><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></>} />
+                <a href={`tel:${telephoneNumber}`} className="btn btn-lg btn-primary" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }}><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> {telephoneNumber}</a>
               </div>
             </FormCard>
           </div>
