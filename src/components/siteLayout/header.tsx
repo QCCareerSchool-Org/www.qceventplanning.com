@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
 import { Banner } from '../countDownTimer/banner';
-import { may06 } from '@/periods';
+import { may16 } from '@/periods';
 
 interface Props {
   countryCode: string;
@@ -11,14 +11,17 @@ interface Props {
   date: number;
 }
 
-export const Header: FC<Props> = ({ date }) => {
+export const Header: FC<Props> = ({ date, countryCode }) => {
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
-      {/* eslint-disable-next-line no-constant-condition, no-constant-binary-expression, @typescript-eslint/no-unnecessary-condition, custom/no-unnecessary-condition-except-window */}
-      {false && may06.contains(date)
+      { }
+      {may16.contains(date)
         ? (
-          <PromoBanner date={date} period={may06.toDTO()}>
-            <span className="d-none d-lg-inline">Ends Soon—</span>Join the All-Access Program & Save
+          <PromoBanner date={date} period={may16.toDTO()}>
+            {countryCode === 'US'
+              ? <>Memorial Week Special: 2 Free Specialy Courses</>
+              : <><span className="d-none d-lg-inline">Ends Soon—</span>2 Free Specialy Courses</>
+            }
           </PromoBanner>
         )
         : (
