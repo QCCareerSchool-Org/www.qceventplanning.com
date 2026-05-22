@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
 import { Banner } from '../countDownTimer/banner';
+import { getServerData } from '@/lib/getServerData';
 import { may06 } from '@/periods';
 
 interface Props {
@@ -11,7 +12,8 @@ interface Props {
   date: number;
 }
 
-export const Header: FC<Props> = ({ date }) => {
+export const Header: FC<Props> = async ({ date }) => {
+  const { countryCode } = await getServerData();
   return (
     <header className={`flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
       {may06.contains(date)
@@ -36,7 +38,7 @@ export const Header: FC<Props> = ({ date }) => {
           />
         )
       }
-      <MainNav />
+      <MainNav countryCode={countryCode} />
     </header>
   );
 };
