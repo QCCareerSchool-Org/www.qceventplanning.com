@@ -85,6 +85,7 @@ const CanadianTaxCreditsPage: PageComponent = async props => {
                 <hr style={{ border: 'none', borderTop: '1px solid #ccc' }} />
                 <small className="text-dark fw-bold d-block mb-2">YOU MAY BE ABLE TO CLAIM:</small>
                 <CheckCircleIcon width={20} className="text-success" /> Up to 50% of eligible tuition fees, or
+                <br />
                 <CheckCircleIcon width={20} className="text-success" /> Your available CTCL balance (whichever is lower)
               </div>
               <p>Learn more about the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html" target="_blank" rel="noreferrer">Canada Training Credit</a></p>
@@ -160,7 +161,7 @@ const CanadianTaxCreditsPage: PageComponent = async props => {
         <div className="container">
           <h3 className="text-center mb-4">Frequently Asked Questions</h3>
           <AccordionFAQ heading="How do I get my T2202 tax receipt from QC Event School?" className="mb-3">
-            <p>QC Event School provides eligible students with a T2202 Tuition and Enrolment Certificate for tax purposes.
+            <p>QC Event School provides eligible students with a T2202 Tuition and Enrolment Certificate for tax purposes,
               so you're learning strategies that actually work in the real world.</p>
             <p>Students can download their T2202 from the My Account section of the Online Student Center. QC also submits a copy to the Canada Revenue Agency (CRA).</p>
           </AccordionFAQ>
