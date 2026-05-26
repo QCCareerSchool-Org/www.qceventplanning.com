@@ -16,7 +16,7 @@ export const Header: FC<Props> = props => {
   return (
     <header className="flex-shrink-0" style={{ position: 'sticky', top: 0, zIndex: 1020, width: '100%' }}>
       <InnerBanner {...props} />
-      <MainNav />
+      <MainNav countryCode={props.countryCode} />
     </header>
   );
 };

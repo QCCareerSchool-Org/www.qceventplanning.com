@@ -18,7 +18,11 @@ const enrollUrls = [
   { pattern: /^\/online-event-courses\/all-access-program/u, url: 'https://enroll.qceventplanning.com/all-access-program' },
 ] as const;
 
-export const MainNav: FC = () => {
+interface Props {
+  countryCode: string;
+}
+
+export const MainNav: FC<Props> = ({ countryCode }) => {
   const path = usePathname();
   const scrollPosition = useScrollPositionContext() ?? 0;
   const [ key, setKey ] = useState(0);
@@ -78,6 +82,7 @@ export const MainNav: FC = () => {
                 <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>How to Become an Event Planner</Link>
                 <Link href="/about-qc/meet-the-team" className="dropdown-item" onClick={handleClick}>Meet the Team</Link>
                 <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
+                {countryCode === 'CA' && <Link href="/canadian-tax-credits" className="dropdown-item" onClick={handleClick}>Canadian Students Save</Link>}
               </NavDropdown>
               <div className="d-none d-lg-block ms-3"><Link href={url} className="btn btn-navy">Enroll Now</Link></div>
             </Nav>

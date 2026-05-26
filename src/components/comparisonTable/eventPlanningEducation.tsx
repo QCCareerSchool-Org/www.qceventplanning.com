@@ -61,8 +61,10 @@ const rows: ComparisonTableRow<ColumnKey>[] = [
     other: 'Self-Guided (Email / Video Support)',
   },
   {
-    feature: 'Business Training',
-    qc: 'Complete Business Training (Contract templates, business tools & planning software included)',
+    feature: 'Duration',
+    qc: <><p>3-6 Months</p>
+      <p> *Self-paced with up to a year to complete your course</p>
+    </>,
     university: 'General Business Theory',
     other: 'Basic Overview',
   },
