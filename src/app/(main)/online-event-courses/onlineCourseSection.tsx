@@ -33,9 +33,6 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <p className="lead mb-0">Discover a wide range of foundation and specialty courses offered by our online event school.</p>
           </div>
         </div>
-        <div className="mb-5">
-          <AAP countryCode={countryCode} provinceCode={provinceCode} />
-        </div>
         <div className="row justify-content-center g-4">
           <div className="col-12 col-sm-10 col-lg-6 d-flex">
             <CourseCard
@@ -148,6 +145,9 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
               certification={<CourseCardCertifcation courseCode="eb" />}
             />
           </div>
+        </div>
+        <div className="mt-5">
+          <AAP countryCode={countryCode} provinceCode={provinceCode} />
         </div>
       </div>
     </section>
