@@ -12,7 +12,6 @@ export const ChatGPT: FC<Props> = ({ pixelId }) => (
 );
 
 const getScript = (pixelId: string): string => `
-<script>
 !function(w, d, s, u) {
   if (w.oaiq) {
     return;
@@ -30,5 +29,4 @@ const getScript = (pixelId: string): string => `
 }(window, document, 'script', 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
 
 oaiq('init', { pixelId: ${safeJSON(pixelId)}, debug:true });
-</script>
 `;
