@@ -1,0 +1,67 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+
+import { getThankyouData } from '..';
+import { Header } from '../../header';
+import { CurrentPromotion } from '../_components/currentPromotion';
+import { DownloadSection } from '../_components/downloadSection';
+import DownloadIcon from '@/components/download.svg';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
+import HeroLgImage from '@/components/homeHeroImage/hero-large.jpg';
+import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
+import { ILEASection } from '@/components/ileaSection';
+import { LeadProcessing } from '@/components/leadProcessing';
+import { SetCookie } from '@/components/setCookie';
+import { SupportSection } from '@/components/supportSection';
+import type { PageComponent } from '@/serverComponent';
+
+export const metadata: Metadata = {
+  title: 'Your Course Catalog',
+  alternates: { canonical: '/download-event-and-wedding-planning-course-catalog' },
+  robots: { index: false },
+};
+
+const telephoneListId = 53;
+
+const ThankYouCourseCatalogPage: PageComponent = async props => {
+  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+  const searchParams = await props.searchParams;
+  const alreadyPrompted = searchParams.t;
+
+  return (
+    <>
+      {jwt && <SetCookie name="user" value={jwt} domain="qceventplanning.com" />}
+      {lead && recent && (
+        <LeadProcessing
+          emailAddress={lead.emailAddress}
+          telephoneNumber={lead.telephoneNumber}
+          city={lead.city}
+          countryCode={lead.countryCode}
+          provinceCode={lead.provinceCode}
+          firstName={lead.firstName}
+          lastName={lead.lastName}
+          leadId={lead.leadId}
+        />
+      )}
+      <Header buttonHref="#download" logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
+      <DownloadSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={alreadyPrompted ? undefined : telephoneListId} course="aap" />
+      <CurrentPromotion date={date} countryCode={countryCode} />
+      <GoogleReviewSection className="bg-light" />
+      <ILEASection />
+      <SupportSection date={date} />
+      <section className="bg-navy text-white">
+        <div className="container">
+          <div className="row justify-content-center text-center">
+            <div className="col-12 col-md-10 col-lg-8 col-xl-7">
+              <h2 className="mb-4">Get Personalized Guidance</h2>
+              <p className="lead mb-4">Need help with payment plans or course details? Our Student Support Advisors are ready to assist you. Ask us anything!</p>
+              <Link href="/contact-us" className="btn btn-lg btn-primary">Talk to an Advisor Now</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ThankYouCourseCatalogPage;

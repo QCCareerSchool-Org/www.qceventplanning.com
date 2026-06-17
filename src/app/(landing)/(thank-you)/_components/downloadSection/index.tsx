@@ -12,7 +12,8 @@ import type { CourseCode } from '@/domain/courseCode';
 interface Props {
   emailAddress?: string;
   countryCode: string;
-  course?: CourseCode;
+  course?: CourseCode | 'aap';
+  aap?: boolean;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   leadId?: string;
@@ -21,8 +22,8 @@ interface Props {
 
 export const DownloadSection: FC<Props> = ({ countryCode, course, heroSrc, mobileHeroSrc, leadId, telephoneListId }) => {
   const downloadUrl = course === 'fd'
-    ? '/floral.pdf'
-    : '/catalog.pdf';
+    ? '/floral.pdf' : course === 'aap' ? '/AAP.pdf'
+      : '/catalog.pdf';
 
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
 
