@@ -1,7 +1,7 @@
 import type { StaticImageData } from 'next/image';
 
 import AlexAndDavidImage from '@/components/employees/alex-and-david.jpg';
-import ChrisBreedykImage from '@/components/employees/chris-breedyk.jpg';
+// import ChrisBreedykImage from '@/components/employees/chris-breedyk.jpg';
 import DaveWelshImage from '@/components/employees/dave-welsh.jpg';
 import EmilySpragueImage from '@/components/employees/emily-sprague.jpg';
 import JoannePendonImage from '@/components/employees/joanne-pendon.jpg';
@@ -49,13 +49,13 @@ export const employees: Employee[] = [
     heading: 'Jojo Joseph, Director of Student Outreach',
     description: 'My role is to ensure QC has a strong online presence so that you can find the training you need to jumpstart your career. I want you to know that QC has been in business since 1984. We\'ve always adopted the most up-to-date learning technologies and we have maintained an A+ rating with the Better Business Bureau for decades. My goal is to maintain this stellar online reputation so that you feel confident in the value of your certification with QC.',
   },
-  {
-    src: ChrisBreedykImage,
-    imagePositionX: 45,
-    name: 'Chris Brooks',
-    heading: 'Chris Brooks, Head of Course Design',
-    description: 'My #1 goal is to design a learning experience that works for you. Whether you\'re studying on a computer, tablet, or smartphone, I want to ensure your experience is the best that it can be. My team continuously updates course materials to keep up with the latest technologies and trends. We design interactive course lessons complete with instructional videos and activities to create an engaging learning environment, as well as practical assignments aimed at developing your skills. I know I\'ve done my job well when you\'ve completed your course, and had fun doing it!',
-  },
+  // {
+  //   src: ChrisBreedykImage,
+  //   imagePositionX: 45,
+  //   name: 'Chris Brooks',
+  //   heading: 'Chris Brooks, Head of Course Design',
+  //   description: 'My #1 goal is to design a learning experience that works for you. Whether you\'re studying on a computer, tablet, or smartphone, I want to ensure your experience is the best that it can be. My team continuously updates course materials to keep up with the latest technologies and trends. We design interactive course lessons complete with instructional videos and activities to create an engaging learning environment, as well as practical assignments aimed at developing your skills. I know I\'ve done my job well when you\'ve completed your course, and had fun doing it!',
+  // },
   // {
   //   src: MalcolmAsselinImage,
   //   imagePositionX: 45,
