@@ -89,7 +89,7 @@ const FAQPage: PageComponent = async props => {
               <p>You are learning from home but you are in no way alone. You can <Link href="/contact-us">contact our Student Support Team</Link> for assignment help as often as you would like. Every question will be answered.</p>
             </Question>
             <Question heading="What if I decide the course isn't right for me?">
-              <p>Not to worry, we offer a no-risk <Link href="/about-qc#guarantee">21-day money-back guarantee</Link>. If you decide the course isn't suited for you, simply contact the School for a full tuition refund.</p>
+              <p>Not to worry, we offer a no-risk <Link href="/about-qc#guarantee">14-day money-back guarantee</Link>. If you decide the course isn't suited for you, simply contact the School for a full tuition refund.</p>
             </Question>
             <Question heading="Will I receive a certificate at the end of the course?">
               <p>Yes. You will receive your certificate once you complete the course with a passing grade of a C- and pay off your tuition balance.</p>

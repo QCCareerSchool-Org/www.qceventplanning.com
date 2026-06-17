@@ -18,8 +18,8 @@ const EnrollmentAgreementPage: PageComponent = () => {
   return (
     <div className={styles.terms}>
       <h1>Enrollment Agreement</h1>
-      <h2>{i++}. 21-Day Money-Back Guarantee</h2>
-      <p>You have 21 days from the date of enrollment to examine the course. If you are not entirely satisfied or choose not to complete the course, please notify the School by emailing <AccountsEmailAddress /> within 21 days of your date of enrollment. Within two business days the School will review your account and provide you with your options.</p>
+      <h2>{i++}. 14-Day Money-Back Guarantee</h2>
+      <p>You have 14 days from the date of enrollment to examine the course. If you are not entirely satisfied or choose not to complete the course, please notify the School by emailing <AccountsEmailAddress /> within 14 days of your date of enrollment. Within two business days the School will review your account and provide you with your options.</p>
       <p>A full refund cannot be granted if you have already submitted course work to your tutor for grading. A partial refund may be offered instead.</p>
       <p>If your course includes supplementary physical items, you must return them to receive a refund:</p>
       <ul>
@@ -47,11 +47,11 @@ const EnrollmentAgreementPage: PageComponent = () => {
       <h3>Communication with Your Tutor</h3>
       <p>Student advisors will be your first point of contact for all communications with the School, including questions about your course and assignments or questions specifically for your tutor. Your student advisor may answer your questions directly, or may forward your request to your tutor and relay the answer back to you.</p>
       <h2>{i++}. Withdrawal Policy</h2>
-      <p>Withdrawals after the 21-day guarantee period are evaluated on a case-by-case basis. If you wish to withdraw from your course(s) after the 21-day guarantee period, please notify the School by emailing <AccountsEmailAddress />. Within two business days the School will review your account and provide you with your options.</p>
+      <p>Withdrawals after the 14-day guarantee period are evaluated on a case-by-case basis. If you wish to withdraw from your course(s) after the 14-day guarantee period, please notify the School by emailing <AccountsEmailAddress />. Within two business days the School will review your account and provide you with your options.</p>
       <ul>
         <li>Automated tuition payments will continue to be processed, and you are responsible for meeting your tuition payment obligations until you have reached a withdrawal agreement with the School.</li>
         <li>Withdrawal fees are dependent on tuition fees paid to date, the course materials sent to you, and the amount of tutorial used. If you have completed more than half of your course, you may not be eligible to withdraw.</li>
-        <li>QC reserves the right to refuse any withdrawal request after the 21-day guarantee period. Refunds (if applicable) will only be processed within six months of your date of enrollment.</li>
+        <li>QC reserves the right to refuse any withdrawal request after the 14-day guarantee period. Refunds (if applicable) will only be processed within six months of your date of enrollment.</li>
       </ul>
       <h2>{i++}. Code of Conduct</h2>
       <p>QC's tutors and support staff are dedicated to providing a top-quality experience to all students. When you communicate with the QC Team, you will be greeted in a courteous, friendly and respectful manner.</p>

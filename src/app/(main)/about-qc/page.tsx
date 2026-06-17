@@ -52,9 +52,9 @@ const AboutQCPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <ShieldIcon height={iconSize} className={styles.goldIcon} />
-            <h2 className="h4 mb-3">21-Day Money-Back Guarantee</h2>
+            <h2 className="h4 mb-3">14-Day Money-Back Guarantee</h2>
             <p>Once you enroll with QC Event School, you'll be protected by a money-back guarantee!</p>
-            <p className="mb-0">Once your enrollment has been processed, you have 21 days to review the course materials and decide whether you want to continue. If you decide this course isn't the right course for you, simply contact the school to request a full refund. Additional information on QC's money-back guarantee is available in your enrollment agreement.</p>
+            <p className="mb-0">Once your enrollment has been processed, you have 14 days to review the course materials and decide whether you want to continue. If you decide this course isn't the right course for you, simply contact the school to request a full refund. Additional information on QC's money-back guarantee is available in your enrollment agreement.</p>
           </div>
         </div>
       </div>
