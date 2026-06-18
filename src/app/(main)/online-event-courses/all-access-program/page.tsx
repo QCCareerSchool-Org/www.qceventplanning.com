@@ -228,7 +228,7 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
                   <p>Yes. You can choose to pay in full today and receive an additional discount, or select an interest-free installment plan at checkout.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading="What is the refund policy?" className="mb-3">
-                  <p>We offer a <strong>21-day money-back guarantee</strong>. If the program isn't the right fit for your goals, we will provide a full refund.</p>
+                  <p>We offer a <strong>14-day money-back guarantee</strong>. If the program isn't the right fit for your goals, we will provide a full refund.</p>
                 </AccordionFAQ>
               </div>
             </div>

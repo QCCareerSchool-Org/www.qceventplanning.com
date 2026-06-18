@@ -71,7 +71,7 @@ const FloralDesignPage: PageComponent = async props => {
 
               <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
-              <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
+              <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>14-day</strong> money-back guarantee</p>
             </div>
           </div>
         </div>
