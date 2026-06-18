@@ -126,7 +126,7 @@ const RSLAPage: PageComponent = () => {
                 </div>
                 <div className="col-12 col-lg-6">
                   <CheckCircleIcon className="d-lg-none d-xxl-block mb-3" />
-                  <h3 className="h6 mb-3">Our 21-Day Money-Back Guarantee</h3>
+                  <h3 className="h6 mb-3">Our 14-Day Money-Back Guarantee</h3>
                   <p className="mb-0">Starting a new career can be scary. But don't worry! Once you enroll with QC Event School, you'll be protected by a money-back guarantee!</p>
                 </div>
                 <div className="col-12 col-lg-6">

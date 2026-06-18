@@ -21,7 +21,7 @@ export const PaymentSectionGuarantee: FC = () => (
       <div className="col-12 col-md-8 col-lg-4 text-center">
         <ShieldIcon height={iconHeight} className={`mb-3 ${styles.contactIcon}`} />
         <h2 className="h5">100% Money-Back Guarantee</h2>
-        <p>We offer a 21-day money-back guarantee. If you're not satisfied with the course, get a full refund, no questions asked.</p>
+        <p>We offer a 14-day money-back guarantee. If you're not satisfied with the course, get a full refund, no questions asked.</p>
       </div>
       <div className="col-12 col-md-8 col-lg-4 text-center">
         <ClockIcon height={iconHeight} className={`mb-3 ${styles.contactIcon}`} />
