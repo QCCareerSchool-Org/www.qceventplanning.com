@@ -12,8 +12,7 @@ import type { CourseCode } from '@/domain/courseCode';
 interface Props {
   emailAddress?: string;
   countryCode: string;
-  course?: CourseCode | 'aap';
-  aap?: boolean;
+  course?: CourseCode;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   leadId?: string;
@@ -21,9 +20,7 @@ interface Props {
 }
 
 export const DownloadSection: FC<Props> = ({ countryCode, course, heroSrc, mobileHeroSrc, leadId, telephoneListId }) => {
-  const downloadUrl = course === 'fd'
-    ? '/floral.pdf' : course === 'aap' ? '/AAP.pdf'
-      : '/catalog.pdf';
+  const downloadUrl = getDownloadUrl(course);
 
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
 
@@ -56,4 +53,15 @@ export const DownloadSection: FC<Props> = ({ countryCode, course, heroSrc, mobil
       )}
     </section>
   );
+};
+
+const getDownloadUrl = (courseCode?: CourseCode): string => {
+  switch (courseCode) {
+    case 'fd':
+      return '/floral.pdf';
+    case 'aa':
+      return '/AAP.pdf';
+    default:
+      return '/catalog.pdf';
+  }
 };

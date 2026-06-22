@@ -17,7 +17,7 @@ import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog',
-  alternates: { canonical: '/download-event-and-wedding-planning-course-catalog' },
+  alternates: { canonical: '/download-all-access-course-catalog' },
   robots: { index: false },
 };
 
@@ -44,7 +44,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         />
       )}
       <Header buttonHref="#download" logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <DownloadSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={alreadyPrompted ? undefined : telephoneListId} course="aap" />
+      <DownloadSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={alreadyPrompted ? undefined : telephoneListId} course="aa" />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
