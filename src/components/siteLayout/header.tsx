@@ -4,7 +4,7 @@ import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
 import { CanadaHeader } from '../canadaHeader';
 import { Banner } from '../countDownTimer/banner';
-import { june13 } from '@/periods';
+import { june13, june27 } from '@/periods';
 
 interface Props {
   countryCode: string;
@@ -32,6 +32,17 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
         {countryCode === 'US'
           ? <>Ends Soon: Enroll today & Get 2 Free Specialty Courses</>
           : <><span className="d-none d-lg-inline">Ends Soon—</span>2 Free Specialty Courses</>
+        }
+      </PromoBanner>
+    );
+  }
+
+  if (june27.contains(date)) {
+    return (
+      <PromoBanner date={date} period={june27.toDTO()}>
+        {countryCode === 'US'
+          ? <>4th of July Special:Get 2 Free Specialty Courses + $100 OFF</>
+          : <><span className="d-none d-lg-inline">Ends Soon—</span>2 Free Specialty Courses + $100 OFF</>
         }
       </PromoBanner>
     );
