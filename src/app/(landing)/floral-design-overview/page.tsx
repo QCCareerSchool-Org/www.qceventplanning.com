@@ -9,7 +9,7 @@ import HeroImage from './hero.jpg';
 import { OutlineSection } from './outline-section';
 import styles from './page.module.scss';
 import PlaceSettingImage from './place-setting.jpg';
-import RedBadge from './price-badge-$500.png';
+import RedBadge from './price-badge-$100.png';
 import ShieldIcon from './shield.svg';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
@@ -59,7 +59,7 @@ const FloralDesignPage: PageComponent = async props => {
                 <CourseType className="mb-2 mb-xl-4">Foundation Course</CourseType>
                 <h1 className="mb-2 mb-xl-4">Floral Design Course</h1>
                 <p className="h5 mb-2">Become a Certified Floral Designer</p>
-                <p className="">Enroll with Our Lowest Tuition Ever</p>
+                <p className="">Start Today & Book Paying Clients in Under 3 Months</p>
                 <div className="d-block d-md-none text-center mb-4">
                   <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
                 </div>
