@@ -15,7 +15,8 @@ import DownloadIcon from '@/components/download.svg';
 
 interface Props {
   successLocation: string;
-  listId: number;
+  requiredIds?: bigint[];
+  optionalIds?: bigint[];
   telephoneListId?: number;
   emailTemplateId?: number;
   buttonText?: string | ReactNode;
@@ -35,7 +36,7 @@ interface Props {
   implicitOptIn?: boolean;
 }
 
-export const BrevoForm: FC<Props> = props => {
+export const ActiveCampaginForm: FC<Props> = props => {
   const id = useId();
   const [ nonce, setNonce ] = useState(() => v1());
   const randomName = useId();
@@ -106,11 +107,17 @@ export const BrevoForm: FC<Props> = props => {
       <CurrentPageInput />
       <JavasciptInput />
       <input type="hidden" name="forward" value="0" />
+      <input type="hidden" name="esp" value="activeCampaign" />
       <input type="hidden" name="nonce" value={nonce} />
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Event School" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
-      <input type="hidden" name="listId" value={props.listId} />
+      {props.requiredIds?.map(automationId => (
+        <input key={automationId} type="hidden" name="requiredAutomation" value={automationId.toString()} />
+      ))}
+      {props.optionalIds?.map(automationId => (
+        <input key={automationId} type="hidden" name="optionalAutomation" value={automationId.toString()} />
+      ))}
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
