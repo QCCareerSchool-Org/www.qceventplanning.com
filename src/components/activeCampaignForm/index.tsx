@@ -120,6 +120,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
       ))}
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
+      <input type="text" defaultValue="" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="one-time-code" />
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
       {props.utmSource && <input type="hidden" name="utmSource" value={props.utmSource} />}
@@ -133,7 +134,6 @@ export const ActiveCampaginForm: FC<Props> = props => {
         <input type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
       </div>
       <input type="hidden" name="lastName" id={`${id}lastName`} />
-      <input type="text" defaultValue="" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="off" />
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
         <input type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
