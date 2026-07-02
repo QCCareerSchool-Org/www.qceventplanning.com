@@ -107,7 +107,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
       <CurrentPageInput />
       <JavasciptInput />
       <input type="hidden" name="forward" value="0" />
-      <input type="hidden" name="esp" value="activeCampaign" />
+      <input type="hidden" name="esp" value="ActiveCampaign" />
       <input type="hidden" name="nonce" value={nonce} />
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Event School" />
