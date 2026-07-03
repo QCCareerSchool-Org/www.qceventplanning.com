@@ -7,6 +7,7 @@ import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import LockIcon from '@/components/icons/q-lock.svg';
 import type { CourseCode } from '@/domain/courseCode';
+import type { ESP } from '@/domain/esp';
 
 interface Props {
   emailAddress?: string;
@@ -16,9 +17,10 @@ interface Props {
   leadId?: string;
   telephoneListId?: number;
   countryCode: string;
+  esp?: ESP;
 }
 
-export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, emailAddress, telephoneListId, countryCode }) => {
+export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, emailAddress, telephoneListId, countryCode, esp }) => {
 
   const showTelephone = countryCode === 'CA' || countryCode === 'US';
 
@@ -43,7 +45,7 @@ export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, leadId, ema
         </div>
       </div>
       {telephoneListId && leadId && showTelephone && (
-        <TelephoneFormPopup countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} delay={3000} />
+        <TelephoneFormPopup countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} delay={3000} esp={esp} />
       )}
     </section>
   );

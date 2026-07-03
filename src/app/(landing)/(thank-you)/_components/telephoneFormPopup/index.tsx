@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import { TelephoneForm } from '../telephoneForm';
+import type { ESP } from '@/domain/esp';
 import { useToggle } from '@/hooks/useToggle';
 
 interface Props {
@@ -13,9 +14,10 @@ interface Props {
   telephoneListId: number;
   /** delay before showing the popup in ms */
   delay?: number;
+  esp?: ESP;
 }
 
-export const TelephoneFormPopup: FC<Props> = ({ countryCode, leadId, telephoneListId, delay = 500 }) => {
+export const TelephoneFormPopup: FC<Props> = ({ countryCode, leadId, telephoneListId, delay = 500, esp }) => {
   const [ show, toggle ] = useToggle();
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export const TelephoneFormPopup: FC<Props> = ({ countryCode, leadId, telephoneLi
       <Modal.Body>
         <div className="p-2">
           <h2 className="h6 mb-3 fw-bold">Want Special Offers & Course Updates?</h2>
-          <TelephoneForm countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} />
+          <TelephoneForm countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} esp={esp} />
         </div>
       </Modal.Body>
     </Modal>
