@@ -41,7 +41,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
   const [ nonce, setNonce ] = useState(() => v1());
   const randomName = useId();
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
-  const [ token, setToken ] = useState('');
+  const [ token, setToken ] = useState(' ');
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
@@ -113,10 +113,10 @@ export const ActiveCampaginForm: FC<Props> = props => {
       <input type="hidden" name="school" value="QC Event School" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
       {props.requiredIds?.map(automationId => (
-        <input key={automationId} type="hidden" name="requiredAutomation" value={automationId.toString()} />
+        <input key={automationId} type="hidden" name="requiredAutomations" value={automationId.toString()} />
       ))}
       {props.optionalIds?.map(automationId => (
-        <input key={automationId} type="hidden" name="optionalAutomation" value={automationId.toString()} />
+        <input key={automationId} type="hidden" name="optionalAutomations" value={automationId.toString()} />
       ))}
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
