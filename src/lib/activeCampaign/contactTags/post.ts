@@ -2,7 +2,7 @@ import type { Result } from 'generic-result-type';
 import { failure, success } from 'generic-result-type';
 
 import { stringify } from '../../json';
-import { fetchWithRetry } from '@/lib/fetchWithRetry';
+import { activeCampaignFetch } from '../index';
 
 interface ContactTag {
   contact: bigint;
@@ -13,7 +13,7 @@ export const postContactTags = async (contactTag: ContactTag, signal?: AbortSign
   try {
     const body = { contactTag };
 
-    const response = await fetchWithRetry(`/contactTags`, {
+    const response = await activeCampaignFetch('/contactTags', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

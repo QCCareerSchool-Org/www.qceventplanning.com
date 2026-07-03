@@ -2,8 +2,7 @@ import type { Result } from 'generic-result-type';
 import { failure, success } from 'generic-result-type';
 import { z } from 'zod';
 
-import { baseUrl } from '../..';
-import { fetchWithRetry } from '@/lib/fetchWithRetry';
+import { activeCampaignFetch } from '../../index';
 
 interface Contact {
   email: string;
@@ -57,7 +56,7 @@ export const postContact = async (contact: Contact, fields?: Fields, signal?: Ab
       }
     }
 
-    const response = await fetchWithRetry(`${baseUrl}/contact/sync`, {
+    const response = await activeCampaignFetch('/contact/sync', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
