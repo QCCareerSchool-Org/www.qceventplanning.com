@@ -22,6 +22,8 @@ import type { PageComponent } from '@/serverComponent';
 
 const brevoStudentListId = 14;
 
+export const maxDuration = 60; // Timeout set to 60 seconds
+
 export const metadata: Metadata = {
   title: 'Thank You for Enrolling with QC Event School!',
   alternates: {
