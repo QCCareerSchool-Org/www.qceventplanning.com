@@ -9,7 +9,7 @@ import { EnrollmentDetails } from '@/components/enrollmentDetails';
 import { SetCookie } from '@/components/setCookie';
 import { TelephoneLink } from '@/components/telephoneLink';
 import type { UserValues } from '@/domain/userValues';
-import { addActiveCampaignStudent } from '@/lib/activeCampaign/index';
+import { addActiveCampaignStudent } from '@/lib/activeCampaign/addStudent';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
@@ -21,6 +21,8 @@ import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import type { PageComponent } from '@/serverComponent';
 
 const brevoStudentListId = 14;
+
+export const maxDuration = 60; // Timeout set to 60 seconds
 
 export const metadata: Metadata = {
   title: 'Thank You for Enrolling with QC Event School!',
