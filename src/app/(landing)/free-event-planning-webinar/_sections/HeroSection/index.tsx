@@ -37,6 +37,7 @@ export const HeroSection: FC<Props> = props => {
                 <ActiveCampaginForm
                   successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/free-event-planning-webinar/thank-you`}
                   requiredIds={[ 46n ]}
+                  optionalIds={[ 45n ]}
                   gclid={props.gclid}
                   msclkid={props.msclkid}
                   utmSource={props.utmSource}
