@@ -5,7 +5,7 @@ import HeroLgImage from './hero-large-2.jpg';
 import HeroSmImage from './hero-small-2.jpg';
 import ChartIcon from './icon-chart.svg';
 import styles from './index.module.scss';
-import { BrevoForm } from '@/components/brevoForm';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import CheckIcon from '@/components/check.svg';
 
 interface Props {
@@ -19,9 +19,6 @@ interface Props {
   referrer: string | null;
   countryCode: string;
 }
-
-const brevoListId = 10;
-const brevoEmailTemplateId = 35;
 
 export const HeroSection: FC<Props> = props => {
   return (
@@ -37,10 +34,9 @@ export const HeroSection: FC<Props> = props => {
                 <p className={`lead text-primary fw-bold text-uppercase mb-1 d-none d-md-block`}>Free Webinar <span style={{ position: 'relative', top: -2 }}><ChartIcon height={18} /></span></p>
                 <h1 className={`h4 ${styles.cardHeader} mb-3 mb-md-2`}>Ready to Launch Your Event Planning Career?</h1>
                 <p className="d-none d-md-block">Get insider tips from QC's renowned event planning expert, Lisa Forbes.</p>
-                <BrevoForm
+                <ActiveCampaginForm
                   successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/free-event-planning-webinar/thank-you`}
-                  listId={brevoListId}
-                  emailTemplateId={brevoEmailTemplateId}
+                  requiredIds={[ 46n ]}
                   gclid={props.gclid}
                   msclkid={props.msclkid}
                   utmSource={props.utmSource}

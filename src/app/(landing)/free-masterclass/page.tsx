@@ -10,8 +10,8 @@ import HeroImage from './_images/hero.jpg';
 import ILEABgImage from './_images/ilea-bg.jpg';
 import LisaProfileImage from './_images/lisa-profile.jpg';
 import styles from './page.module.scss';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrevoForm } from '@/components/brevoForm';
 import BarChartAltIcon from '@/components/icons/bar-chart-alt.svg';
 import BookBookmarkIcon from '@/components/icons/book-bookmark.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
@@ -37,8 +37,6 @@ export const metadata: Metadata = {
   },
 };
 
-const brevoListId = 93;
-const brevoEmailTemplateId = 2938;
 const testimonialIds: TestimonialId[] = [ 'TE-0012', 'TE-0003', 'TE-0014' ];
 const listIconWidth = 32;
 const listIconHeight = 24;
@@ -71,10 +69,9 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                   <h1 className="h4 mb-3 text-navy">Profit Pivot: How to Attract & Book $100K+ Clients</h1>
                   <p>Learn directly from expert event planner <strong>Lisa Forbes</strong>, who turned her business into a sought-after luxury brand serving $100K+ clients. Now she'll show you how to do the same.</p>
                   <div className={styles.formWrapper}>
-                    <BrevoForm
+                    <ActiveCampaginForm
                       successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-free-masterclass`}
-                      listId={brevoListId}
-                      emailTemplateId={brevoEmailTemplateId}
+                      requiredIds={[ 46n ]}
                       gclid={gclid}
                       msclkid={msclkid}
                       utmSource={utmSource}
