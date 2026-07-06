@@ -72,6 +72,7 @@ const MasterClassRegistrationPage: PageComponent = async props => {
                     <ActiveCampaginForm
                       successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-free-masterclass`}
                       requiredIds={[ 46n ]}
+                      optionalIds={[ 45n ]}
                       gclid={gclid}
                       msclkid={msclkid}
                       utmSource={utmSource}
