@@ -11,8 +11,8 @@ import ChartIcon from './chart.svg';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import SAFLogo from './saf-logo.png';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrevoForm } from '@/components/brevoForm';
 import DownloadIcon from '@/components/download.svg';
 import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
@@ -32,8 +32,6 @@ export const metadata: Metadata = {
   },
 };
 
-const brevoListId = 12;
-const brevoEmailTemplateId = 1998;
 const courseCodes: CourseCode[] = [ 'fd' ];
 const testimonialIds: TestimonialId[] = [ 'TE-0020', 'TE-0021', 'TE-0012', 'TE-0022', 'TE-0004', 'TE-0003' ];
 
@@ -63,10 +61,10 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
                 <div className="card-body">
                   <h1 className="h4 mb-3 text-navy">Get a Free Floral Design Course Catalog</h1>
                   <div className={styles.formWrapper}>
-                    <BrevoForm
+                    <ActiveCampaginForm
                       successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
-                      listId={brevoListId}
-                      emailTemplateId={brevoEmailTemplateId}
+                      requiredIds={[ 42n ]}
+                      optionalIds={[ 27n ]}
                       gclid={gclid}
                       msclkid={msclkid}
                       utmSource={utmSource}

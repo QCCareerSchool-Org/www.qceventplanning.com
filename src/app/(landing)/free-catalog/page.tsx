@@ -7,7 +7,7 @@ import { CertificationSection } from './certificationSection';
 import { IndustrySection } from './industrySection';
 import { JoinQCSection } from './joinQCSection';
 import styles from './page.module.scss';
-import { BrevoForm } from '@/components/brevoForm';
+import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import DownloadIcon from '@/components/download.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
@@ -25,9 +25,6 @@ export const metadata: Metadata = {
     canonical: '/free-catalog',
   },
 };
-
-const brevoListId = 2;
-const brevoEmailTemplateId = 32;
 
 const FreeCatalogPage: PageComponent = async props => {
   const searchParams = await props.searchParams;
@@ -55,10 +52,10 @@ const FreeCatalogPage: PageComponent = async props => {
                 <div className="card-body">
                   <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
                   <div className={styles.formWrapper}>
-                    <BrevoForm
+                    <ActiveCampaginForm
                       successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
-                      listId={brevoListId}
-                      emailTemplateId={brevoEmailTemplateId}
+                      requiredIds={[ 32n ]}
+                      optionalIds={[ 25n ]}
                       gclid={gclid}
                       msclkid={msclkid}
                       utmSource={utmSource}
