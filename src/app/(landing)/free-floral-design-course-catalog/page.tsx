@@ -50,7 +50,7 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
 
   return (
     <div className={styles.freeCatalog}>
-      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get the </span>Preview</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} />
         <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />
@@ -59,7 +59,8 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
               <div className={`card bg-light ${styles.card}`}>
                 <div className="card-body">
-                  <h1 className="h4 mb-3 text-navy">Get a Free Floral Design Course Catalog</h1>
+                  <h1 className="h4 mb-3 text-navy">Become a Professional Floral Designer</h1>
+                  <p>Get the Free Course Preview</p>
                   <div className={styles.formWrapper}>
                     <ActiveCampaginForm
                       successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qceventplanning.com'}/thank-you-course-catalog`}
@@ -67,6 +68,7 @@ const FreeFloralDesignCatalogPage: PageComponent = async props => {
                       optionalIds={[ 27n ]}
                       gclid={gclid}
                       msclkid={msclkid}
+                      buttonText="Get the Preview"
                       utmSource={utmSource}
                       utmMedium={utmMedium}
                       utmCampaign={utmCampaign}
