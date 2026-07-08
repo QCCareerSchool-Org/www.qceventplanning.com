@@ -2,7 +2,6 @@ import type { FC } from 'react';
 
 import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
-import { CanadaHeader } from '../canadaHeader';
 import { Banner } from '../countDownTimer/banner';
 import { july08 } from '@/periods';
 
@@ -21,11 +20,7 @@ export const Header: FC<Props> = props => {
   );
 };
 
-const InnerBanner: FC<Props> = ({ date, countryCode }) => {
-  if (countryCode === 'CA') {
-    return <CanadaHeader />;
-  }
-
+const InnerBanner: FC<Props> = ({ date }) => {
   if (july08.contains(date)) {
     return (
       <PromoBanner date={date} period={july08.toDTO()}>
