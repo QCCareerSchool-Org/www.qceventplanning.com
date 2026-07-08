@@ -29,10 +29,7 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
   if (july08.contains(date)) {
     return (
       <PromoBanner date={date} period={july08.toDTO()}>
-        {countryCode === 'US' || countryCode === 'CA'
-          ? <>Ends Soon: Enroll today & Get 2 Free Specialty Courses</>
-          : <><span className="d-none d-lg-inline">Ends Soon—</span>2 Free Specialty Courses</>
-        }
+        <span className="d-none d-lg-inline">Ends Soon—</span>Enroll Today & Get 2 Free Specialty Courses
       </PromoBanner>
     );
   }
