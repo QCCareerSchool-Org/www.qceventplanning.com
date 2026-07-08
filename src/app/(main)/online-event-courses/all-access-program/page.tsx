@@ -26,7 +26,6 @@ import type { CoursePrice } from '@/domain/price';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
-import { BrevoEvent } from '@/scripts/brevoEvent';
 import type { PageComponent } from '@/serverComponent';
 
 const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
@@ -55,7 +54,6 @@ const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
   return (
     <>
       <CourseJsonLd courseCode="aa" />
-      <BrevoEvent name="course_viewed" data={{ courseCode }} />
       <section className="bg-navy text-white text-center">
         <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'md' }} priority />
         <div className="container">
