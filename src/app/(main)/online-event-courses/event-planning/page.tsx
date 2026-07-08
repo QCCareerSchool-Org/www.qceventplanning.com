@@ -23,7 +23,6 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
-import { BrevoEvent } from '@/scripts/brevoEvent';
 import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'ce';
@@ -41,7 +40,6 @@ export const metadata: Metadata = {
 const EventPlanningPage: PageComponent = () => (
   <div className={styles.page}>
     <CourseJsonLd courseCode={courseCode} showPrice />
-    <BrevoEvent name="course_viewed" data={{ courseCode }} />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
