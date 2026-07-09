@@ -73,8 +73,7 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
                     <div className="mb-3">
                       <PhoneInput value={telephoneNumber} onChange={handleChange} defaultCountry={countryCode as Country} inputComponent={InputComponent} />
                     </div>
-                    <p><small>By providing your phone number you consent to receive marketing text messages (e.g. promos) from QC Event School. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>.</small></p>
-                    {/* <p><small>By providing your phone number you consent to receive marketing text messages (e.g. promos) from QC Event School. Message & data rates may apply. Consent is voluntary and not required to make a purchase or use our services. Message frequency varies. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>.</small></p> */}
+                    <p><small>By providing your phone number you consent to receive marketing and informational text messages (e.g. promos) from QC Event School. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>.</small></p>
                     <button type="submit" className="btn btn-primary">Stay Connected</button>
                   </form>
                 )}
