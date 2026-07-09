@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const TermsPage: PageComponent = () => (
   <div className={styles.terms}>
-    <h1>Privacy Policy</h1>
+    <h1>Privacy Policy and Terms of Service</h1>
     <h2>What information do we collect?</h2>
     <p>We collect information from you when you register on our site, place an order, subscribe to our newsletter or respond to a survey.</p>
     <p>When ordering or registering on our site, as appropriate, you may be asked to enter your: name, email address, mailing address, phone number, or credit card information. You may, however, visit our site anonymously.</p>
@@ -42,6 +42,17 @@ const TermsPage: PageComponent = () => (
     <p>As part of the California Online Privacy Protection Act, all users of our site may make any changes to their information at anytime by logging into their personal website and going to the &ldquo;Edit Profile&rdquo; page.</p>
     <h2>Children's Online Privacy Protection Act Compliance</h2>
     <p>We are in compliance with the requirements of COPPA (Children's Online Privacy Protection Act), we do not collect any information from anyone under 13 years of age. Our website, products and services are all directed to people who are at least 13 years old or older.</p>
+    <h2>SMS Terms & Conditions</h2>
+    <p>By subscribing to the text messaging program provided by QC Event School (a division of QC Career School), you agree to the following terms and conditions:</p>
+    <ul>
+      <li>The QC Event School Alerts text program provides subscribers with updates, course information and promotional materials.</li>
+      <li>SMS messages will be sent to you from our designated program phone number: 1-613-749-8248.</li>
+      <li>To join the program, users must explicitly opt in via our website forms. By opting in, you provide your express consent to receive automated marketing and informational text messages.</li>
+      <li>You may cancel the SMS service at any time. Just text STOP to 1-613-749-8248. After you send the SMS message STOP to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us.</li>
+      <li>If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly by contacting customer support at info@qccareerschool.com.</li>
+      <li>Message frequency varies based on your enrollment status and interaction level, but will not exceed 4 messages per month.</li>
+      <li>Message and Data Rates: As always, message and data rates may apply for any messages sent to you from us and to us from you. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</li>
+    </ul>
     <h2>Your Consent</h2>
     <p>By using our site, you consent to our web site privacy policy.</p>
     <h2>Changes to our Privacy Policy</h2>
