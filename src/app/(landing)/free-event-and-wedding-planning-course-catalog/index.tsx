@@ -68,7 +68,6 @@ export const FreeEventAndWeddingPlanningCatalog: FC<Props> = async props => {
                       placeholders
                       referrer={referrer}
                       countryCode={countryCode}
-                      telephoneListId={props.telephone ? 53 : undefined}
                     />
                   </div>
                 </div>
