@@ -51,7 +51,8 @@ const TermsPage: PageComponent = () => (
       <li>You may cancel the SMS service at any time. Just text STOP to 1-613-749-8248. After you send the SMS message STOP to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us.</li>
       <li>If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly by contacting customer support at info@qccareerschool.com.</li>
       <li>Message frequency varies based on your enrollment status and interaction level, but will not exceed 4 messages per month.</li>
-      <li>Message and Data Rates: As always, message and data rates may apply for any messages sent to you from us and to us from you. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</li>
+      <li>Message and Data Rates: As always, message and data rates may apply for any messages sent to you from us and to us from you. If you have any questions about your text plan or data plan, it is best to contact your wireless provider. Carriers are not liable for delayed or undelivered messages.</li>
+      <li>Mobile information will not be shared with third parties or affiliates for marketing/promotional purposes.</li>
     </ul>
     <h2>Your Consent</h2>
     <p>By using our site, you consent to our web site privacy policy.</p>
