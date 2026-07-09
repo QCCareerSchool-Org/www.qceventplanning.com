@@ -57,7 +57,7 @@ const TermsPage: PageComponent = () => (
     <p>By using our site, you consent to our web site privacy policy.</p>
     <h2>Changes to our Privacy Policy</h2>
     <p>If we decide to change our privacy policy, we will update the Privacy Policy modification date below.</p>
-    <p>This policy was last modified on October 10, 2013.</p>
+    <p>This policy was last modified on July 9, 2026.</p>
     <h2>Contacting Us</h2>
     <p>If there are any questions regarding this privacy policy you may contact us using the information below.</p>
     <p>QC Career School<br />38 McArthur Ave<br />Ottawa ON &nbsp;K1L 6R2<br />Canada</p>
