@@ -1,7 +1,7 @@
 import type { Result } from 'generic-result-type';
 import { success } from 'generic-result-type';
 
-import { postContactLists } from './contactLists/post';
+import { ContactListStatus, postContactLists } from './contactLists/post';
 import { postContact } from './contacts/sync/post';
 import { postContactTags } from './contactTags/post';
 import type { Enrollment } from '@/domain/enrollment';
@@ -38,7 +38,7 @@ export const addActiveCampaignStudent = async (enrollment: Enrollment): Promise<
   const contactList = {
     contact: contactResult.value,
     list: 32n, // Event
-    status: 1,
+    status: ContactListStatus.ACTIVE,
   };
 
   const addListResult = await postContactLists(contactList);
