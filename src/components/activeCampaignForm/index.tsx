@@ -17,8 +17,6 @@ interface Props {
   successLocation: string;
   requiredIds?: bigint[];
   optionalIds?: bigint[];
-  telephoneListId?: number;
-  emailTemplateId?: number;
   buttonText?: string | ReactNode;
   buttonClassName?: string;
   placeholders?: boolean;
@@ -119,7 +117,6 @@ export const ActiveCampaginForm: FC<Props> = props => {
         <input key={automationId} type="hidden" name="optionalAutomations" value={automationId.toString()} />
       ))}
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
-      {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       <input type="text" defaultValue="" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="one-time-code" />
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
@@ -138,15 +135,12 @@ export const ActiveCampaginForm: FC<Props> = props => {
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
         <input type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
       </div>
-      {showTelephone && typeof props.telephoneListId !== 'undefined' && (
-        <>
-          <input type="hidden" name="telephoneListId" value={props.telephoneListId} />
-          <div className="mb-3">
-            <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
-            <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
-            {telephoneNumberE164.length > 0 && <p className="p-1"><small>By providing your phone number, you agree to receive exclusive offers from QC Event School. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank" rel="noreferrer">Terms & Privacy</Link>.</small></p>}
-          </div>
-        </>
+      {showTelephone && (
+        <div className="mb-3">
+          <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
+          <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
+          {telephoneNumberE164.length > 0 && <p className="p-1"><small>By providing your phone number, you agree to receive exclusive offers from QC Event School. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank" rel="noreferrer">Terms & Privacy</Link>.</small></p>}
+        </div>
       )}
       {props.implicitOptIn
         ? <input type="hidden" name="emailOptIn" value="on" />

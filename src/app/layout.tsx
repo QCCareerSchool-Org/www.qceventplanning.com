@@ -12,7 +12,6 @@ import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
 import { ActiveCampaign } from '@/scripts/activeCampaign';
 import { Bing } from '@/scripts/bing';
-import { Brevo } from '@/scripts/brevo';
 import { ChatGPT } from '@/scripts/chatgpt';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
