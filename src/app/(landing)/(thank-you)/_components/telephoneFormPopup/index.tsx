@@ -35,7 +35,7 @@ export const TelephoneFormPopup: FC<Props> = ({ countryCode, leadId, telephoneLi
       <Modal.Header closeButton><strong>Your Future in Event Planning Starts Here</strong></Modal.Header>
       <Modal.Body>
         <div className="p-2">
-          <h2 className="h6 mb-3 fw-bold">Want Special Offers & Course Updates?</h2>
+          <h2 className="h6 mb-3 fw-bold">Want Special Offers by Text?</h2>
           <TelephoneForm countryCode={countryCode} leadId={leadId} telephoneListId={telephoneListId} esp={esp} />
         </div>
       </Modal.Body>

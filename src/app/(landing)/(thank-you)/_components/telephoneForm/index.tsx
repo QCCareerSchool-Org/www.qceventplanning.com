@@ -57,14 +57,14 @@ export const TelephoneForm: FC<Props> = ({ countryCode, leadId, telephoneListId,
 
   return (
     <>
-      <p className="mb-3">Enter your phone number below and we'll text you the details.</p>
+      <p className="mb-3">Enter your phone number below and we'll send you the details.</p>
       {state === 'ready' && (
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <PhoneInput value={telephoneNumber} onChange={handleChange} defaultCountry={countryCode as Country} inputComponent={InputComponent} />
           </div>
-          <p><small>By providing your phone number you consent to receive marketing and informational text messages (e.g. promos) from QC Event School. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>.</small></p>
-          <button type="submit" className="btn btn-primary">Stay Connected</button>
+          <p><small>By providing your phone number you consent to receive marketing text messages (e.g. promos) from QC Event School. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Reply HELP for help. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>.</small></p>
+          <button type="submit" className="btn btn-primary">Sign Up For Texts</button>
         </form>
       )}
       {state === 'submitting' && <div className="mt-4"><Spinner /></div>}
