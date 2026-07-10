@@ -45,9 +45,9 @@ const TermsPage: PageComponent = () => (
     <h2>SMS Terms & Conditions</h2>
     <p>By subscribing to the text messaging program provided by QC Event School (a division of QC Career School), you agree to the following terms and conditions:</p>
     <ul>
-      <li>The QC Event School Alerts text program provides subscribers with updates, course information and promotional materials.</li>
+      <li>The QC Event School Alerts text program provides subscribers with promotional materials.</li>
       <li>SMS messages will be sent to you from our designated program phone number: 1-613-749-8248.</li>
-      <li>To join the program, users must explicitly opt in via our website forms. By opting in, you provide your express consent to receive automated marketing and informational text messages.</li>
+      <li>To join the program, users must explicitly opt in via our website forms. By opting in, you provide your express consent to receive automated marketing text messages.</li>
       <li>You may cancel the SMS service at any time. Just text STOP to 1-613-749-8248. After you send the SMS message STOP to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us.</li>
       <li>If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly by contacting customer support at info@qccareerschool.com.</li>
       <li>Message frequency varies based on your enrollment status and interaction level, but will not exceed 4 messages per month.</li>
