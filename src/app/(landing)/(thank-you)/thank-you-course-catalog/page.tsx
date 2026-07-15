@@ -12,8 +12,6 @@ import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
-import { isEsp } from '@/domain/esp';
-import { getParam } from '@/lib/getParam';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -22,13 +20,8 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const telephoneListId = 53;
-
 const ThankYouCourseCatalogPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
-  const searchParams = await props.searchParams;
-  const alreadyPrompted = searchParams.t;
-  const esp = getParam(searchParams.esp);
 
   return (
     <>
@@ -46,7 +39,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         />
       )}
       <Header logoLink showBanner buttonAlwaysVisible buttonContent="Enroll Now" buttonHref="https://enroll.qceventplanning.com" />
-      <ThankYouSection emailAddress={emailAddress} countryCode={countryCode} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} leadId={lead?.leadId} telephoneListId={alreadyPrompted ? undefined : telephoneListId} esp={isEsp(esp) ? esp : undefined} />
+      <ThankYouSection emailAddress={emailAddress} heroSrc={HeroLgImage} mobileHeroSrc={HeroSmImage} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <GoogleReviewSection className="bg-light" />
       <ILEASection />
