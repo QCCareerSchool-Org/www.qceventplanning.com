@@ -100,8 +100,10 @@ export const ActiveCampaginForm: FC<Props> = props => {
   // if we try to use the <PhoneInput /> component directly, we don't get the correct format in the back end
   const telephoneNumberE164 = telephoneNumber ?? '';
 
+  // <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
+
   return (
-    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
+    <form action="http://localhost:8080" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <CurrentPageInput />
       <JavasciptInput />
       <input type="hidden" name="forward" value="0" />
@@ -139,7 +141,6 @@ export const ActiveCampaginForm: FC<Props> = props => {
         <div className="mb-3">
           <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
           <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
-          {telephoneNumberE164.length > 0 && <p className="p-1"><small>By providing your phone number, you agree to receive exclusive offers from QC Event School. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank" rel="noreferrer">Terms & Privacy</Link>.</small></p>}
         </div>
       )}
       {props.implicitOptIn
@@ -154,6 +155,16 @@ export const ActiveCampaginForm: FC<Props> = props => {
             </div>
           </div>
         )}
+      {showTelephone && (
+        <div className="mb-3">
+          <div className="form-check">
+            <input type="checkbox" name="smsOptIn" id={`${id}smsOptIn`} className="form-check-input" />
+            <label htmlFor={`${id}smsOptIn`} className="form-check-label small">
+              I agree to receive marketing text messages (e.g. promos) from QC Event School. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Reply HELP for help. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>
+            </label>
+          </div>
+        </div>
+      )}
       {props.button
         ? <>{props.button}</>
         : (
