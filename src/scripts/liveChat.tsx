@@ -4,8 +4,8 @@ import type { FC } from 'react';
 import { safeJSON } from '@/lib/safeJSON';
 
 interface Props {
-  license: number;
-  group: number;
+  license: string;
+  group?: string;
 }
 
 export const LiveChat: FC<Props> = ({ license, group }) => (
@@ -17,10 +17,12 @@ export const LiveChat: FC<Props> = ({ license, group }) => (
   </>
 );
 
-const getScript = (license: number, group: number): string => `
+const getScript = (license: string, group?: string): string => `
 window.__lc = window.__lc || {};
 window.__lc.license = ${safeJSON(license)};
-window.__lc.group = ${safeJSON(group)};
+${group ? `window.__lc.group = ${safeJSON(group)};` : ''}
+window.__lc.integration_name = "manual_onboarding";
+window.__lc.product_name = "livechat";
 window.__lc.chat_between_groups = false;
 window.__lc.ga_version = 'gtag';
 window.__lc.params = window.__lc.params || [];
