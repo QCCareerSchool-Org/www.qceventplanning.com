@@ -36,13 +36,13 @@ interface Props {
 
 export const ActiveCampaginForm: FC<Props> = props => {
   const id = useId();
-  const [ nonce, setNonce ] = useState(() => v1());
+  const [nonce, setNonce] = useState(() => v1());
   const randomName = useId();
-  const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
-  const [ token, setToken ] = useState(' ');
-  const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
+  const [telephoneNumber, setTelephoneNumber] = useState<Value>();
+  const [token, setToken] = useState(' ');
+  const [refreshReCaptcha, setRefreshReCaptcha] = useState(false);
   const submitting = useRef(false);
-  const [ disabled, setDisabled ] = useState(true);
+  const [disabled, setDisabled] = useState(true);
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
@@ -100,10 +100,9 @@ export const ActiveCampaginForm: FC<Props> = props => {
   // if we try to use the <PhoneInput /> component directly, we don't get the correct format in the back end
   const telephoneNumberE164 = telephoneNumber ?? '';
 
-  // <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
 
   return (
-    <form action="http://localhost:8080" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
+    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <CurrentPageInput />
       <JavasciptInput />
       <input type="hidden" name="forward" value="0" />
