@@ -49,7 +49,7 @@ const ThankYouForSubmittingPage: PageComponent = async props => {
                   </div>
                   <h1 className="h4 mb-4 text-navy">Thank You!</h1>
                   <FormWrapper>
-                    <p className="lead">You will receive a follow-up email in one day! Be sure to check your junk/spam folder and add us to your safe sender's list if you don't see it in the next few minutes!</p>
+                    <p className="lead">You will receive a follow-up email in one day! Be sure to check your junk/spam folder and add us to your safe sender's list if you don't see it in the next day or two!</p>
                   </FormWrapper>
                 </div>
               </FormCard>
