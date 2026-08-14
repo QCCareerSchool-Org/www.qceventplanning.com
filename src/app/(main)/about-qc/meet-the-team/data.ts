@@ -2,14 +2,13 @@ import type { StaticImageData } from 'next/image';
 
 import AlexAndDavidImage from '@/components/employees/alex-and-david.jpg';
 // import ChrisBreedykImage from '@/components/employees/chris-breedyk.jpg';
+import AshliScaleImage from '@/components/employees/ashli-scale.jpg';
 import DaveWelshImage from '@/components/employees/dave-welsh.jpg';
 import EmilySpragueImage from '@/components/employees/emily-sprague.jpg';
 import JoannePendonImage from '@/components/employees/joanne-pendon.jpg';
-import JojoJosephImage from '@/components/employees/jojo-joseph.jpg';
 import KaylaCuggyImage from '@/components/employees/kayla-cuggy.jpg';
 import LucieDemersImage from '@/components/employees/lucie-demers.jpg';
 // import MalcolmAsselinImage from '@/components/employees/malcolm-asselin.jpg';
-import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 
 export interface Employee {
   src: StaticImageData;
@@ -43,11 +42,11 @@ export const employees: Employee[] = [
     description: 'At QC, my team develops the systems that make your learning experience run seamlessly. We have created a custom online learning portal designed specifically to meet your needs as a QC student. When you log in to your course, you\'ll find everything you need right at your fingertips. You\'ll have access to interactive course lessons and videos, assignments, feedback from expert tutors, special discounts, and important account details. My job is to make sure your online experience is straightforward and enjoyable so that you can focus on your studies.',
   },
   {
-    src: JojoJosephImage,
+    src: EmilySpragueImage,
     imagePositionX: 45,
-    name: 'Jojo Joseph',
-    heading: 'Jojo Joseph, Director of Student Outreach',
-    description: 'My role is to ensure QC has a strong online presence so that you can find the training you need to jumpstart your career. I want you to know that QC has been in business since 1984. We\'ve always adopted the most up-to-date learning technologies and we have maintained an A+ rating with the Better Business Bureau for decades. My goal is to maintain this stellar online reputation so that you feel confident in the value of your certification with QC.',
+    name: 'Emily Sprague',
+    heading: 'Emily Sprague, Director of Student Outreach',
+    description: 'My role is to make sure you can easily find the information you need when exploring your career training options. I help connect you with useful, relevant information at every stage of your decision, so you can see why thousands of students have chosen QC to prepare for their careers. From our long history of innovation in online learning to our decades-long A+ rating with the Better Business Bureau, I want to make sure QC’s online presence reflects the quality and credibility we’ve built since 1984.',
   },
   // {
   //   src: ChrisBreedykImage,
@@ -64,17 +63,11 @@ export const employees: Employee[] = [
   //   description: 'My top priority at QC is to enrich your learning experience by fostering a strong, supportive community where you can connect with fellow students and graduates, and learn from industry experts. I want to make sure you have every resource you need right at your fingertips. That\'s why you\'ll have access to live webinars, exclusive bonus materials, and active community discussions—all designed to enhance your course and guide you toward success.',
   // },
   {
-    src: EmilySpragueImage,
+    src: AshliScaleImage,
     imagePositionX: 40,
-    name: 'Emily Sprague',
-    heading: 'Emily Sprague, Head of Student Services',
-    description: 'My job is to support your education. My team and I are here to help you every step of the way. We can help you choose the best course to meet your needs, develop a plan to achieve your career goals, walkthrough your course materials and celebrate your graduation! You can reach us 7 days a week by phone, email and livechat.',
-  },
-  {
-    src: ShannonCooperImage,
-    name: 'Shannon Cooper',
-    heading: 'Shannon Cooper, Teaching Assistant',
-    description: 'As a teaching assistant at QC, I am here to help you excel in your course. I\'m ready to answer any questions you might have about your course materials and coordinate with your expert instructor so that you get the most out of your learning experience. You\'ll also find me answering questions in QC\'s Virtual Community, where you have the opportunity to exchange ideas and interact with other students. We want to do everything we can to help you succeed in your course.',
+    name: 'Ashli Scale',
+    heading: 'Ashli Scale, Head of Student Services',
+    description: 'My job is to support you throughout your education. My team and I are here to help every step of the way, from choosing the right course and planning for your career to answering questions about your course materials and preparing for graduation. No matter where you are in your journey, you can reach us 7 days a week by phone, email, or live chat. We\'re here to make sure you always have the support you need to succeed.',
   },
   {
     src: LucieDemersImage,
