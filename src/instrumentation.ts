@@ -14,6 +14,8 @@ const expectedVariables = [
   // 'TIKTOK_ID',
   // Microsoft Ads
   'BING_ID',
+  // Pinterest
+  'PINTEREST_ID',
   // ActiveCampaign
   'ACTIVE_CAMPAIGN_ACCOUNT',
   'ACTIVE_CAMPAIGN_API_TOKEN',
