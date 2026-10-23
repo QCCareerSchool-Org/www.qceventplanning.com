@@ -29,10 +29,10 @@ const AboutQCPage: PageComponent = () => (
             <Image src={AboutQCImage} className="img-fluid" style={{ marginBottom: -48 }} alt="" />
           </div>
           <div className="col-12 col-lg-6 col-xxl-7">
-            <p className={`${styles.years} mb-3`}>Celebrating 40 Years</p>
+            <p className={`${styles.years} mb-3`}>Celebrating Over 40 Years</p>
             <h1 className="mb-3">About QC Event School</h1>
-            <p className="mb-3">QC Career School has been at the forefront of distance education, training aspiring professionals worldwide for over four decades. As a faculty of QC Career School, QC Event School offers flexible, high-quality online training to ensure students can receive a top-tier education in event planning from the comfort of their homes. QC Event School has had thousands of dedicated students graduate and begin their careers in the event planning industry.</p>
-            <p className="mb-5">Each year, QC improves the student experience by updating course content to reflect the latest industry trends. QC Event School is proud to provide students with an industry-leading support system with the goal of developing a personal relationship with each and every student. With continuous innovation and a genuine commitment to students' success, QC will always provide a world-class learning experience.</p>
+            <p className="mb-3">QC Career School, the parent company of QC Event School, has trained aspiring professionals worldwide through distance education since 1984. As part of QC Career School, QC Event School offers flexible, high-quality online training that helps students develop professional event planning skills from home, at their own pace. Thousands of QC Event School graduates have gone on to pursue careers in the event planning industry.</p>
+            <p className="mb-5">QC continually updates its course content to reflect evolving industry trends and practices. Students also receive dedicated support throughout their studies, with personalized guidance to help them succeed. Through ongoing innovation and a genuine commitment to student success, QC Event School provides a supportive learning experience that prepares students to pursue their career goals.</p>
             <Link href="/online-event-courses" className="btn btn-outline-dark">View Courses</Link>
           </div>
         </div>
@@ -47,7 +47,7 @@ const AboutQCPage: PageComponent = () => (
           <div className="col-12 col-lg-6">
             <BBBIcon height={iconSize} className={styles.goldIcon} />
             <h2 className="h4 mb-3">20 Years of Accreditation<span className="d-lg-none d-xxl-inline"> with the BBB</span></h2>
-            <p>QC is proud to have held the highest possible consumer satisfaction rating with the Better Business Bureau for over 20 years. Our A+ rating reflects our commitment to quality and student satisfaction.</p>
+            <p>QC Career School, the parent company of QC Event School, is proud to have held the highest possible consumer satisfaction rating with the Better Business Bureau for over 20 years. Our A+ rating reflects our commitment to quality and student satisfaction.</p>
             <p className="mb-0">QC Event School has had thousands of satisfied students take our courses, with many going on to launch lucrative event businesses and build successful careers.</p>
           </div>
           <div className="col-12 col-lg-6">
