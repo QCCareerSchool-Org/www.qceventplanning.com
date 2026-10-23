@@ -30,7 +30,7 @@ export const CoreValuesSection: FC<Props> = ({ className }) => (
           <HeadphoneIcon height={iconHeight} className={`${styles.icon} mb-3`} />
           <p className={styles.heading}><strong>Support:</strong> QC's dedicated advisors offer you unmatched guidance and support.</p>
           <ul className={`${styles.list} mb-0 small`}>
-            <li>Assignment support 7 days a week</li>
+            <li>One-on-one assignment support when you need it</li>
             <li>Feedback and guidance from industry experts</li>
             <li>A vibrant virtual community of event and wedding planning students and professionals</li>
           </ul>
