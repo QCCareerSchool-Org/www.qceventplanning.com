@@ -33,7 +33,7 @@ export const CourseCard: FC<Props> = ({ type, name, description, href, backgroun
         <div>
           <div className={styles.type}>{type === 'foundation' ? 'Foundation Course' : 'Specialty Course'}</div>
           <h2 className="h4">{name}</h2>
-          {descriptions.map((p, i) => <p key={i}>{description}</p>)}
+          {descriptions.map((p, i) => <p key={i}>{p}</p>)}
         </div>
         {(buttons === 'courseAndTuition' || buttons === 'course') && (
           <div className="d-flex flex-column flex-sm-row">
