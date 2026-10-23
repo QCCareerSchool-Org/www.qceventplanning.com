@@ -30,8 +30,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <h1 className="mb-4">Online Event Planning Courses</h1>
           </div>
           <div className="col-12 col-lg-11 col-xl-9 col-xxl-8 text-center">
-            <p className="lead mb-0">QC offers courses for every stage of your career, from planning your very first event to growing an established business. Start with an ILEA-approved foundation course to develop essential skills, and advance your expertise with a specialty course. 
-</p>
+            <p className="lead mb-0">QC offers courses for every stage of your career, from planning your very first event to growing an established business. Start with an ILEA-approved foundation course to develop essential skills, and advance your expertise with a specialty course.</p>
           </div>
         </div>
         <div className="row justify-content-center g-4">
