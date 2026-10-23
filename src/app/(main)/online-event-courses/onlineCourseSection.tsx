@@ -49,7 +49,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="foundation"
               name="Corporate Event Planning"
-              description={[ 'Plan conferences, meetings, galas, and product launches that help businesses shine, and prepare to work with corporate clients or join an in-house events team.', 'Best for: Organized planners drawn to the business side of events.']}
+              description={[ 'Plan conferences, meetings, galas, and product launches that help businesses shine, and prepare to work with corporate clients or join an in-house events team.', 'Best for: Organized planners drawn to the business side of events.' ]}
               href="/online-event-courses/corporate-event-planning"
               backgroundSrc={CPImage}
               certification={<CourseCardCertifcation courseCode="cp" />}
@@ -59,7 +59,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="foundation"
               name="Event Planning"
-              description={[ 'Plan milestone parties, holiday celebrations, industry gatherings, and more for every kind of client, and build a business focused on social and community events.','Best for: Planners who want to focus on events other than weddings.']}
+              description={[ 'Plan milestone parties, holiday celebrations, industry gatherings, and more for every kind of client, and build a business focused on social and community events.', 'Best for: Planners who want to focus on events other than weddings.' ]}
               href="/online-event-courses/event-planning"
               backgroundSrc={CEImage}
               certification={<CourseCardCertifcation courseCode="ce" />}
@@ -69,7 +69,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="foundation"
               name="Floral Design"
-              description={[ 'Launch your own business, work for an experienced floral designer, or incorporate your floral design skills into an existing career in event planning.', 'Best for: Creative beginners and event planners who want to offer florals.']}
+              description={[ 'Launch your own business, work for an experienced floral designer, or incorporate your floral design skills into an existing career in event planning.', 'Best for: Creative beginners and event planners who want to offer florals.' ]}
               href="/online-event-courses/floral-design"
               backgroundSrc={FDImage}
               certification={<CourseCardCertifcation courseCode="fd" />}
@@ -79,7 +79,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="foundation"
               name="Wedding Planning"
-              description={[ 'Plan weddings tailored to each couple, from budgets and timelines to cultural traditions, and launch your career as a wedding planner.', 'Best for: Aspiring planners who want to specialize in weddings.'}]
+              description={[ 'Plan weddings tailored to each couple, from budgets and timelines to cultural traditions, and launch your career as a wedding planner.', 'Best for: Aspiring planners who want to specialize in weddings.' ]}
               href="/online-event-courses/wedding-planning"
               backgroundSrc={WPImage}
               certification={<CourseCardCertifcation courseCode="wp" />}
@@ -89,7 +89,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="foundation"
               name="Event Decor"
-              description={[ 'Design the look and mood of an event, coordinating lighting, color, and decor around a theme, and offer decor services on their own or alongside planning.', 'Best for: Creative beginners and planners who want to style events.'}]
+              description={[ 'Design the look and mood of an event, coordinating lighting, color, and decor around a theme, and offer decor services on their own or alongside planning.', 'Best for: Creative beginners and planners who want to style events.' ]}
               href="/online-event-courses/event-decor"
               backgroundSrc={EDImage}
               certification={<CourseCardCertifcation courseCode="ed" />}
@@ -99,7 +99,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="specialty"
               name={<>Luxury Wedding<span className="d-lg-none d-xl-inline"> &amp; Event</span> Planning</>}
-              description=[{ 'Plan upscale weddings and events with substantial budgets, work with high-end vendors, and position your business to attract luxury clients.', 'Best for: Planners ready to take on higher-budget clients.']}
+              description={[ 'Plan upscale weddings and events with substantial budgets, work with high-end vendors, and position your business to attract luxury clients.', 'Best for: Planners ready to take on higher-budget clients.' ]}
               href="/online-event-courses/luxury-wedding-and-event-planning"
               backgroundSrc={LWImage}
               certification={<CourseCardCertifcation courseCode="lw" />}
@@ -109,7 +109,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="specialty"
               name="Destination Wedding Planning"
-              description={[ 'Coordinate stunning weddings away from home, working with travel agents, translators, and local vendors, so couples can say "I do" anywhere in the world.', 'Best for: Wedding planners who want to add destination services.']}
+              description={[ 'Coordinate stunning weddings away from home, working with travel agents, translators, and local vendors, so couples can say "I do" anywhere in the world.', 'Best for: Wedding planners who want to add destination services.' ]}
               href="/online-event-courses/destination-wedding-planning"
               backgroundSrc={DWImage}
               certification={<CourseCardCertifcation courseCode="dw" />}
@@ -119,7 +119,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="specialty"
               name="Promotional Event Planning"
-              description={[ 'Plan pop-up shops, brand activations, and marketing events that get businesses noticed, building on your corporate event planning skills.', 'Best for: Corporate planners who want to add promotional events.']} 
+              description={[ 'Plan pop-up shops, brand activations, and marketing events that get businesses noticed, building on your corporate event planning skills.', 'Best for: Corporate planners who want to add promotional events.' ]}
               href="/online-event-courses/promotional-event-planning"
               backgroundSrc={PEImage}
               certification={<CourseCardCertifcation courseCode="pe" />}
@@ -129,7 +129,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="specialty"
               name="Festivals and Live Events"
-              description=[{ 'Plan festivals and entertainment events of every size, from live-event logistics to large-scale productions, using your corporate event planning experience.', 'Best for: Corporate planners ready to take on festivals and live entertainment.']}
+              description={[ 'Plan festivals and entertainment events of every size, from live-event logistics to large-scale productions, using your corporate event planning experience.', 'Best for: Corporate planners ready to take on festivals and live entertainment.' ]}
               href="/online-event-courses/festivals-and-live-events"
               backgroundSrc={FLImage}
               certification={<CourseCardCertifcation courseCode="fl" />}
@@ -139,7 +139,7 @@ export const OnlineCourseSection: FC<Props> = ({ className, countryCode, provinc
             <CourseCard
               type="specialty"
               name="Accelerate Your Business"
-              description={[ 'Start and grow your event planning business faster, with hands-on practice using the marketing tools that win new clients.', 'Best for: New planners getting a head start on business startup, and graduates and working planners ready to grow their businesses.']
+              description={[ 'Start and grow your event planning business faster, with hands-on practice using the marketing tools that win new clients.', 'Best for: New planners getting a head start on business startup, and graduates and working planners ready to grow their businesses.' ]}
               href="/online-event-courses/accelerate-your-business"
               backgroundSrc={EBImage}
               certification={<CourseCardCertifcation courseCode="eb" />}
