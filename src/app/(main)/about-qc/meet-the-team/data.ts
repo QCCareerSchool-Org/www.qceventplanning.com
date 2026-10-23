@@ -67,7 +67,7 @@ export const employees: Employee[] = [
     imagePositionX: 40,
     name: 'Ashli Scale',
     heading: 'Ashli Scale, Head of Student Services',
-    description: 'My job is to support you throughout your education. My team and I are here to help every step of the way, from choosing the right course and planning for your career to answering questions about your course materials and preparing for graduation. No matter where you are in your journey, you can reach us 7 days a week by phone, email, or live chat. We\'re here to make sure you always have the support you need to succeed.',
+    description: 'My job is to support you throughout your education. My team and I are here to help every step of the way, from choosing the right course and planning for your career to answering questions about your course materials and preparing for graduation. No matter where you are in your journey, you can reach us by phone, email, or live chat. We\'re here to make sure you always have the support you need to succeed.',
   },
   {
     src: LucieDemersImage,
