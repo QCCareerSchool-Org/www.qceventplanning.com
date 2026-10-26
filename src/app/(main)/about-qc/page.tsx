@@ -47,7 +47,7 @@ const AboutQCPage: PageComponent = () => (
           <div className="col-12 col-lg-6">
             <BBBIcon height={iconSize} className={styles.goldIcon} />
             <h2 className="h4 mb-3">20 Years of Accreditation<span className="d-lg-none d-xxl-inline"> with the BBB</span></h2>
-            <p>QC Career School, the parent company of QC Event School, is proud to have held the highest possible consumer satisfaction rating with the Better Business Bureau for over 20 years. Our A+ rating reflects our commitment to quality and student satisfaction.</p>
+            <p>QC Career School is proud to have held the highest possible consumer satisfaction rating with the Better Business Bureau for over 20 years. Our A+ rating reflects our commitment to quality and student satisfaction.</p>
             <p className="mb-0">QC Event School has had thousands of satisfied students take our courses, with many going on to launch lucrative event businesses and build successful careers.</p>
           </div>
           <div className="col-12 col-lg-6">
