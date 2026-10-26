@@ -5,7 +5,7 @@ import QIcon from './icons/q-logo.svg';
 import styles from './meetOurTeamSection.module.scss';
 import JoannePendonImage from '@/components/employees/joanne-pendon.jpg';
 import LucieDemersImage from '@/components/employees/lucie-demers.jpg';
-import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
+import AshliScaleImage from '@/components/employees/ashli-scale.jpg';
 import { ImageCircle } from '@/components/imageCircle';
 
 interface Props {
@@ -33,10 +33,10 @@ export const MeetOurTeamSection: FC<Props> = ({ className }) => (
         </div>
         <div className="col-12 col-md-8 col-lg-4">
           <div className="mb-4">
-            <ImageCircle size={imageSize} src={ShannonCooperImage} alt="Shannon Cooper" />
+            <ImageCircle size={imageSize} src={AshliScaleImage} alt="Ashli Scale" />
           </div>
-          <h3 className={styles.heading}>Shannon, Teaching Assistant</h3>
-          <p className="mb-0 small">As a teaching assistant at QC, I am here to help you excel in your course. I'm ready to answer any questions you might have about your course materials and coordinate with your expert instructor so that you get the most out of your learning experience. We want to do everything we can to help you succeed in your course.</p>
+          <h3 className={styles.heading}>Ashli, Head of Student Services</h3>
+          <p className="mb-0 small">My job is to support you throughout your education. My team and I are here to help every step of the way, from choosing the right course and planning for your career to answering questions about your course materials and preparing for graduation. No matter where you are in your journey, you can reach us by phone, email, or live chat. We're here to make sure you always have the support you need to succeed.</p>
         </div>
         <div className="col-12 col-md-8 col-lg-4">
           <div className="mb-4">

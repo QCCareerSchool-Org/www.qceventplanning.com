@@ -23,8 +23,8 @@ const CoursesPage: PageComponent = async ({ searchParams }) => {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(providerJsonLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListjsonLD) }} />
-      <ILEASection />
       <OnlineCourseSection countryCode={countryCode} provinceCode={provinceCode} />
+      <ILEASection />
       <GoogleReviewSection className="bg-light" />
       <GetStartedSection title="Get Started Today" text="Enroll Online and Start on Your Path to Becoming a Certified Event Planner" />
     </>
