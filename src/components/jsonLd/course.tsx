@@ -4,7 +4,9 @@ import type { Course, WithContext } from 'schema-dts';
 import { withSuspense } from '../withSuspense';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import { tutors } from '@/domain/tutorData';
 import { fetchPrice } from '@/lib/fetchPrice';
+import { slugify } from '@/lib/slugify';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
 
 interface Props {
@@ -24,6 +26,7 @@ export const CourseJsonLd = withSuspense(CourseJsonLdBase);
 
 export const getCourse = async (courseCode: CourseCode, id?: string, providerId?: string, showPrice?: boolean): Promise<Course> => {
   const certification = getCourseCertification(courseCode);
+  const instructors = tutors.filter(t => t.courses.includes(courseCode)).map(t => t.name);
 
   const course: WithContext<Course> = {
     '@context': 'https://schema.org',
@@ -43,6 +46,13 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
       '@type': 'CourseInstance',
       'courseMode': 'online',
       'courseWorkload': getCourseWorkload(courseCode),
+      ...(instructors.length ? {
+        instructor: instructors.map(t => ({
+          '@type': 'Instructor',
+          '@id': `https://www.qceventplanning.com/tutors/#tutor-${slugify(t)}`,
+          'name': t,
+        })),
+      } : undefined),
     },
     'provider': providerId
       ? { '@id': providerId }
