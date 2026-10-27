@@ -11,6 +11,7 @@ import HeatherHawesImage from '@/components/tutorImages/images/heather-hawes.jpg
 import KimberlyJerkinsImage from '@/components/tutorImages/images/kimberly-jerkins.jpg';
 import MarkCheplowitzImage from '@/components/tutorImages/images/mark-cheplowitz.jpg';
 import ReneeTucciImage from '@/components/tutorImages/images/renee-tucci.jpg';
+import type { Tutor } from '@/domain/tutor';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ const TutorsPage: PageComponent = () => (
           </div>
           {tutors.map((t, i) => (
             <div key={i} className="col-12">
-              <Blurb name={t.name} subHeading={t.subHeading} text={t.text} src={t.src} priority={i <= 1} />
+              <Blurb tutor={t} priority={i <= 1} />
             </div>
           ))}
         </div>
@@ -85,7 +86,7 @@ const TutorsPage: PageComponent = () => (
 
 export default TutorsPage;
 
-const tutors = [
+const tutors: Tutor[] = [
   {
     name: 'Alyssa Perna',
     subHeading: 'Principal and Managing Director of Experience Marketing and Events',
@@ -107,7 +108,7 @@ const tutors = [
   {
     name: 'Kimberly Jerkins',
     subHeading: 'Co-Owner and Lead Planner of Perfectly You Events',
-    text: 'Kimberly is a QC Event School graduate and holds QC’s International Event and Wedding Planning (IEWPTM) certification. She brings more than two decades of experience managing events and trade shows for corporate, retail, and nonprofit clients. Alongside her daughter, Hallye, she runs Perfectly You Events, a mother-daughter business specializing in planning, coordinating, and decorating weddings and special events throughout North Texas. Kimberly tutors Event & Wedding Planning, Event Decor, Luxury Wedding & Event Planning, Destination Wedding Planning, Festivals & Live Events, and Promotional Event Planning.',
+    text: 'Kimberly is a QC Event School graduate and holds QC\'s International Event and Wedding Planning (IEWPTM) certification. She brings more than two decades of experience managing events and trade shows for corporate, retail, and nonprofit clients. Alongside her daughter, Hallye, she runs Perfectly You Events, a mother-daughter business specializing in planning, coordinating, and decorating weddings and special events throughout North Texas. Kimberly tutors Event & Wedding Planning, Event Decor, Luxury Wedding & Event Planning, Destination Wedding Planning, Festivals & Live Events, and Promotional Event Planning.',
     src: KimberlyJerkinsImage,
   },
   {
