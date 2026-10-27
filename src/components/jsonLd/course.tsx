@@ -48,7 +48,6 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
       'courseWorkload': getCourseWorkload(courseCode),
       ...(instructors.length ? {
         instructor: instructors.map(t => ({
-          '@type': 'Instructor',
           '@id': `https://www.qceventplanning.com/tutors/#tutor-${slugify(t)}`,
           'name': t,
         })),
