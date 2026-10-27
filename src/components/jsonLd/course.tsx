@@ -26,7 +26,7 @@ export const CourseJsonLd = withSuspense(CourseJsonLdBase);
 
 export const getCourse = async (courseCode: CourseCode, id?: string, providerId?: string, showPrice?: boolean): Promise<Course> => {
   const certification = getCourseCertification(courseCode);
-  const instructors = tutors.filter(t => t.courses.includes(courseCode)).map(t => t.name);
+  const instructors = tutors.filter(t => t.courses.includes(courseCode));
 
   const course: WithContext<Course> = {
     '@context': 'https://schema.org',
@@ -50,7 +50,9 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
         instructor: instructors.map(t => ({
           '@type': 'Person',
           '@id': `https://www.qceventplanning.com/tutors/#tutor-${slugify(t)}`,
-          'name': t,
+          'name': t.name,
+          ...(t.website ? { url: t.website } : undefined),
+          ...(t.profiles ? { sameAs: t.profiles.length === 1 ? t.profiles[0] : t.profiles } : undefined),
         })),
       } : undefined),
     },

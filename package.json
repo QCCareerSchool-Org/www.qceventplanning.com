@@ -1,6 +1,6 @@
 {
   "name": "www.qceventplanning.com",
-  "version": "1.0.197",
+  "version": "1.0.198",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
