@@ -1,6 +1,6 @@
 import { dataMap } from './courseData';
 
-export const courseCodes = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe', 'aa' ] as const;
+export const courseCodes = [ 'ep', 'ce', 'wp', 'cp', 'ed', 'lw', 'dw', 'fd', 've', 'eb', 'fl', 'pe', 'aa', 'tt' ] as const;
 
 /** The courses included in the All-Access Program */
 export const aapCourseCodes: CourseCode[] = [ 'ep', 'cp', 'ed', 'lw', 'dw', 'fl', 'eb', 've' ] as const;
@@ -17,7 +17,7 @@ export const getCourseName = (c: CourseCode): string => {
   return dataMap[c].name;
 };
 
-export const getCourseUrl = (c: CourseCode): string => {
+export const getCourseUrl = (c: CourseCode): string | undefined => {
   return dataMap[c].url;
 };
 

@@ -2,7 +2,7 @@ import type { CourseCode } from './courseCode';
 
 interface CourseData {
   name: string;
-  url: string;
+  url: string | undefined;
   description: string;
   certification: string | undefined;
   subjects: string[] | undefined;
@@ -168,6 +168,14 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     url: `${baseUrl}/online-event-courses/all-access-program`,
     description: '',
     certification: undefined,
+    subjects: undefined,
+    workload: undefined,
+  },
+  tt: {
+    name: 'Travel and Tourism',
+    url: undefined,
+    description: '',
+    certification: '',
     subjects: undefined,
     workload: undefined,
   },
