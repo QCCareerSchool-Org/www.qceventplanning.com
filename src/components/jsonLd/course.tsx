@@ -49,7 +49,7 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
       ...(instructors.length ? {
         instructor: instructors.map(t => ({
           '@type': 'Person',
-          '@id': `https://www.qceventplanning.com/tutors/#tutor-${slugify(t)}`,
+          '@id': `https://www.qceventplanning.com/tutors/#tutor-${slugify(t.name)}`,
           'name': t.name,
           ...(t.website ? { url: t.website } : undefined),
           ...(t.profiles ? { sameAs: t.profiles.length === 1 ? t.profiles[0] : t.profiles } : undefined),
