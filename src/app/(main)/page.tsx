@@ -19,7 +19,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { ILEASection } from '@/components/ileaSection';
 import { PromoSection } from '@/components/promoSection';
-import { StatsSection } from '@/components/statsSection/statsSection';
+import { StatsSection } from '@/components/statsSection';
 import { SupportSection } from '@/components/supportSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';

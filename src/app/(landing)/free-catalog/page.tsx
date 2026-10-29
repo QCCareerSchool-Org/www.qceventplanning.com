@@ -13,7 +13,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { HowYoullLearnSection } from '@/components/howYoullLearnSection';
 import { PromoSection } from '@/components/promoSection';
-import { StatsSection } from '@/components/statsSection/statsSection';
+import { StatsSection } from '@/components/statsSection';
 import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';

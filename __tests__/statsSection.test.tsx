@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { renderToString } from 'react-dom/server';
 
-import { StatsSection } from '@/components/statsSection/statsSection';
+import { StatsSection } from '@/components/statsSection';
 
 describe('StatsSection', () => {
   it('server-renders the final values at full opacity', () => {
