@@ -21,7 +21,7 @@ import RulerIcon from '@/components/icons/ruler.svg';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { StageBox } from '@/components/stageBox';
-import { StatsSection } from '@/components/statsSection/statsSection';
+import { StatsSection } from '@/components/statsSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';

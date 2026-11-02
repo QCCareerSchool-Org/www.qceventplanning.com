@@ -10,7 +10,7 @@ import { SpecializationsSection } from './_components/specializationsSection';
 import { TraitsSection } from './_components/traitsSection';
 import { WhyQCSection } from './_components/whyQCSection';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { StatsSection } from '@/components/statsSection/statsSection';
+import { StatsSection } from '@/components/statsSection';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import type { PageComponent } from '@/serverComponent';
 
