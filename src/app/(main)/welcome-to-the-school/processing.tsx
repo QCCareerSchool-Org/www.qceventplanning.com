@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import { useEffect } from 'react';
 
 import type { Enrollment } from '@/domain/enrollment';
-import { brevoIdentifyStudent } from '@/lib/brevo';
 import { fbqSale } from '@/lib/fbq';
 import { gaSale } from '@/lib/gtag';
 import { oaiqSale } from '@/lib/oaiq';
+import { pintrkSale } from '@/lib/pintrk';
 import { uetSale } from '@/lib/uet';
 
 interface Props {
@@ -21,8 +21,8 @@ export const Processing: FC<Props> = ({ enrollment }) => {
       uetSale(enrollment);
       fbqSale(enrollment);
       oaiqSale(enrollment);
+      pintrkSale(enrollment);
     }
-    brevoIdentifyStudent(enrollment.emailAddress, enrollment.countryCode, enrollment.provinceCode ?? undefined, enrollment.firstName, enrollment.lastName);
   }, [ enrollment ]);
   return null;
 };
