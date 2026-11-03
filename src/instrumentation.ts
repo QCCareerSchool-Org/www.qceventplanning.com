@@ -15,7 +15,7 @@ const expectedVariables = [
   // Microsoft Ads
   'BING_ID',
   // Pinterest
-  'PINTEREST_ID',
+  'NEXT_PUBLIC_PINTEREST_ID',
   // ActiveCampaign
   'ACTIVE_CAMPAIGN_ACCOUNT',
   'ACTIVE_CAMPAIGN_API_TOKEN',
