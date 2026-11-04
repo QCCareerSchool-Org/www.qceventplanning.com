@@ -1,12 +1,12 @@
 import { cookies } from 'next/headers';
+import type { FC } from 'react';
 
 import { SiteLayout } from '@/components/siteLayout';
 import { isUserValues } from '@/domain/userValues';
 import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';
-import type { LayoutComponent } from '@/serverComponent';
 
-const MainLayout: LayoutComponent = async ({ children }) => {
+const MainLayout: FC<LayoutProps<'/'>> = async ({ children }) => {
   // eslint-disable-next-line react-hooks/purity
   const date = Date.now(); // best we can do in a layout
   const { countryCode, provinceCode } = await getServerData();

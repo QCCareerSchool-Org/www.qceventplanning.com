@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
-import type { PageComponent } from '@/serverComponent';
 import { siteVideos } from '@/videos';
 
 export const metadata: Metadata = {
@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   alternates: { canonical: '/videos' },
 };
 
-const VideosIndexPage: PageComponent = () => {
+const VideosIndexPage: FC<PageProps<'/videos'>> = () => {
   return (
     <section>
       <div className="container">
         <h1 className="mb-3">Videos</h1>
-        {siteVideos.map(s => <p key={s.slug}><Link href={s.player_loc}>{s.title}</Link></p>)}
+        {siteVideos.map(s => <p key={s.slug}><Link href={s.watch_loc}>{s.title}</Link></p>)}
       </div>
     </section>
   );

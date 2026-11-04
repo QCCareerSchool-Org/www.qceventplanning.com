@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { getThankyouData } from '..';
 import { Header } from '../../header';
@@ -13,7 +14,7 @@ import { ILEASection } from '@/components/ileaSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
-import type { PageComponent } from '@/serverComponent';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog',
@@ -23,8 +24,9 @@ export const metadata: Metadata = {
 
 const telephoneListId = 53;
 
-const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+const ThankYouCourseCatalogPage: FC<PageProps<'/download-all-access-course-catalog'>> = async props => {
+  const data = await getServerData(props.searchParams);
+  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(data);
   const searchParams = await props.searchParams;
   const alreadyPrompted = searchParams.t;
 

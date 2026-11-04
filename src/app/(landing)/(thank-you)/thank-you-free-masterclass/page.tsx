@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { getThankyouData } from '..';
 import { Header } from '../../header';
@@ -24,7 +25,7 @@ import { StageBox } from '@/components/stageBox';
 import { StatsSection } from '@/components/statsSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import type { PageComponent } from '@/serverComponent';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Your Masterclass Registration',
@@ -37,8 +38,9 @@ const testimonialIds: TestimonialId[] = [ 'TE-0017', 'TE-0027', 'TE-0015' ];
 const enrollHref = 'https://enroll.qceventplanning.com/masterclass-offer';
 const videoSrc = 'https://cdn.qccareerschool.com/event/profit-pivot-webinar.mp4';
 
-const ThankYouMasterclassRegistrationPage: PageComponent = async props => {
-  const { lead, jwt, recent } = await getThankyouData(props);
+const ThankYouMasterclassRegistrationPage: FC<PageProps<'/thank-you-free-masterclass'>> = async props => {
+  const data = await getServerData(props.searchParams);
+  const { lead, jwt, recent } = await getThankyouData(data);
 
   return (
     <>

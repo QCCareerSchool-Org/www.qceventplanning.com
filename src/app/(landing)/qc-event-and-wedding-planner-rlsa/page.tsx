@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import EBImage from '../../(main)/online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from '../../(main)/online-event-courses/corporate-event-planning/hero.jpg';
@@ -23,7 +24,6 @@ import { ILEASection } from '@/components/ileaSection';
 import { AylaOtto, TylerReid } from '@/components/testimonial/images';
 import { TestimonialSection } from '@/components/testimonialSection';
 import WhyQCImage from '@/components/why-qc.jpg';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Event & Wedding Planner Certification',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 const href = 'https://enroll.qceventplanning.com';
 
-const RSLAPage: PageComponent = () => {
+const RSLAPage: FC<PageProps<'/qc-event-and-wedding-planner-rlsa'>> = () => {
   return (
     <>
       <Header buttonHref={href} buttonContent="Enroll Now" buttonAlwaysVisible />

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
-import type { PageComponent } from '../serverComponent';
 import styles from './not-found.module.scss';
 import { SiteLayout } from '@/components/siteLayout';
 import { getServerData } from '@/lib/getServerData';
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Page Not Found',
 };
 
-const NotFoundPage: PageComponent = async props => {
+const NotFoundPage: FC<PageProps<'/'>> = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   return (
     <SiteLayout date={date} countryCode={countryCode} provinceCode={provinceCode}>

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import { employees } from './data';
 import { EmployeeColumn } from './employeeColumn';
 import { mapToPairs } from './mapToPairs';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Meet the Team',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-const MeetTheTeamPage: PageComponent = () => {
+const MeetTheTeamPage: FC<PageProps<'/about-qc/meet-the-team'>> = () => {
   const employeePairs = employees.flatMap(mapToPairs);
 
   return (

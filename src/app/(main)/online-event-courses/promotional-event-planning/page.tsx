@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
@@ -26,7 +27,6 @@ import { MarkCheplowitz } from '@/components/tutorImages/markCheplowitz';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
-import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'pe';
 const courseCodes: CourseCode[] = [ courseCode ];
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-const EventPlanningPage: PageComponent = () => (
+const EventPlanningPage: FC<PageProps<'/online-event-courses/promotional-event-planning'>> = () => (
   <div className={styles.page}>
     <CourseJsonLd courseCode={courseCode} showPrice />
     <section className="half-padding-top">

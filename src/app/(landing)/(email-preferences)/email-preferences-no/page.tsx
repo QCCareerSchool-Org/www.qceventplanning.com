@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { Header } from '../../header';
 import { EmailPreferencesNoSection } from '../_components/emailPreferencesSection';
@@ -11,7 +12,6 @@ import { SupportSection } from '@/components/supportSection';
 import { addToBrevoList } from '@/lib/brevoAPI';
 import { getBrevoContactId } from '@/lib/getBrevoContactId';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'No problem, we\'ll update your email preferences!',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 102;
 
-const EmailPreferencesNoPage: PageComponent = async props => {
+const EmailPreferencesNoPage: FC<PageProps<'/email-preferences-no'>> = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
 

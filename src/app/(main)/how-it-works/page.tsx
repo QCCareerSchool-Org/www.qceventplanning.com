@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import { CareerStatsSection } from './_components/careerStatsSection';
 import { ComparisonSection } from './_components/comparisonSection';
@@ -12,7 +13,6 @@ import { WhyQCSection } from './_components/whyQCSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { StatsSection } from '@/components/statsSection';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'How to Become an Event Planner',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
 };
 
-const HowItWorksPage: PageComponent = () => (
+const HowItWorksPage: FC<PageProps<'/how-it-works'>> = () => (
   <div className="chos">
     <HeroSection />
     <CareerStatsSection />

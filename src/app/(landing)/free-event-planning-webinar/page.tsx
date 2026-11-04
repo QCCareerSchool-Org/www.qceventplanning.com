@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import type { FC } from 'react';
 
 import { Header } from '../header';
 import { AboutQCSection } from './_sections/AboutQCSection';
@@ -13,7 +14,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Join the Free Webinar with Lisa Forbes',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
-const WebinarPage: PageComponent = async props => {
+const WebinarPage: FC<PageProps<'/free-event-planning-webinar'>> = async props => {
   const searchParams = await props.searchParams;
   const { countryCode } = await getServerData(props.searchParams);
   const gclid = getParam(searchParams.gclid);

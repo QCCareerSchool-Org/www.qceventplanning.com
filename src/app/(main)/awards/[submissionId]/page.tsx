@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import AwardImage from './award-of-excellence.png';
 import { fetchAward } from './fetchAward';
@@ -13,16 +13,11 @@ import { LinkedInShare } from '@/components/share/linkedIn';
 import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
-import type { GenerateMetadata, PageComponent } from '@/serverComponent';
-
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-type RouteParams = {
-  submissionId: string;
-};
+import type { GenerateMetadata } from '@/serverComponent';
 
 const schooolName: School = 'QC Event School';
 
-export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }: PageProps<'/awards/[submissionId]'>): Promise<Metadata> => {
+export const generateMetadata: GenerateMetadata<'/awards/[submissionId]'> = async ({ params }) => {
   const { submissionId } = await params;
 
   const award = await getAward(submissionId);
@@ -54,7 +49,7 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
   };
 };
 
-const AwardPage: PageComponent<RouteParams> = async ({ params }: PageProps<'/awards/[submissionId]'>) => {
+const AwardPage: FC<PageProps<'/awards/[submissionId]'>> = async ({ params }) => {
   const { submissionId } = await params;
 
   const award = await getAward(submissionId);

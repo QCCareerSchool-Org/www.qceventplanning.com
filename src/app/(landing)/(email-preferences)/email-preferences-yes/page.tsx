@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { Header } from '../../header';
 import { EmailPreferencesYesSection } from '../_components/emailPreferencesSection';
@@ -9,7 +10,6 @@ import HeroSmImage from '@/components/homeHeroImage/hero-small.jpg';
 import { ILEASection } from '@/components/ileaSection';
 import { SupportSection } from '@/components/supportSection';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'You\'re officially back in the loop!',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const EmailPreferencesYesPage: PageComponent = async props => {
+const EmailPreferencesYesPage: FC<PageProps<'/email-preferences-yes'>> = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
 
   return (

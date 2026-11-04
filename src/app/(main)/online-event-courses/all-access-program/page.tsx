@@ -1,5 +1,6 @@
 import Big from 'big.js';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { Card } from './_components/card';
 import { CourseDescription } from './_components/courseDescription';
@@ -26,7 +27,6 @@ import type { CoursePrice } from '@/domain/price';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { formatPrice } from '@/lib/formatPrice';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 const enrollHref = 'https://enroll.qceventplanning.com/all-access-program';
 
@@ -40,7 +40,7 @@ const col2 = 'col-12 col-lg-6';
 
 const sumPrices = (coursePrices: CoursePrice[]) => coursePrices.reduce((prev, cur) => prev.plus(cur.cost), Big(0));
 
-const AllAccessProgramPage: PageComponent = async ({ searchParams }) => {
+const AllAccessProgramPage: FC<PageProps<'/online-event-courses/all-access-program'>> = async ({ searchParams }) => {
   const { countryCode, provinceCode } = await getServerData(searchParams);
   const [ price, combinedPrice ] = await Promise.all([
     fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 import type { Course, EducationalOrganization, ItemList, WithContext } from 'schema-dts';
 
 import { OnlineCourseSection } from './onlineCourseSection';
@@ -8,7 +9,6 @@ import { ILEASection } from '@/components/ileaSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Online Event Courses',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-const CoursesPage: PageComponent = async ({ searchParams }) => {
+const CoursesPage: FC<PageProps<'/online-event-courses'>> = async ({ searchParams }) => {
   const { countryCode, provinceCode } = await getServerData(searchParams);
   return (
     <>

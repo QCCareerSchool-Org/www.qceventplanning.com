@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import styles from './page.module.scss';
 import { Question } from './question';
 import { getServerData } from '@/lib/getServerData';
 import { getTelephoneNumber } from '@/lib/telephone';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-const FAQPage: PageComponent = async props => {
+const FAQPage: FC<PageProps<'/frequently-asked-questions'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
   const telephoneNumber = getTelephoneNumber(countryCode);
 

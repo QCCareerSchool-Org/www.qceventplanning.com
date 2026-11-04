@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import ChatIcon from './chat.svg';
 import EmailIcon from './email.svg';
@@ -9,7 +10,6 @@ import { EmailLink } from '@/components/emailLink';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
 import { getTelephoneNumber } from '@/lib/telephone';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ContactUsPage: PageComponent = async props => {
+const ContactUsPage: FC<PageProps<'/contact-us'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
   const telephoneNumber = getTelephoneNumber(countryCode);
 

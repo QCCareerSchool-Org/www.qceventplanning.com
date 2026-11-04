@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { Blurb } from './blurb';
 import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { tutors } from '@/domain/tutorData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Tutors',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-const TutorsPage: PageComponent = () => (
+const TutorsPage: FC<PageProps<'/tutors'>> = () => (
   <>
     <section>
       <div className="container">
