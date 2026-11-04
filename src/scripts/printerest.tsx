@@ -49,12 +49,24 @@ export const Pinterest: FC<Props> = ({ id, userValues }) => {
 };
 
 const getScript = (id: string, pd: LoadParams): string => `
-!function(e){if(!window.pintrk){window.pintrk = function () {
-window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
-  n=window.pintrk;n.queue=[],n.version="3.0";var
-  t=document.createElement("script");t.async=!0,t.src=e;var
-  r=document.getElementsByTagName("script")[0];
-  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+(function () {
+  if (window.pintrk) {
+    return;
+  }
+
+  const pintrk = function (...args) {
+    pintrk.queue.push(args);
+  };
+  pintrk.queue = [];
+  pintrk.version = '3.0';
+  window.pintrk = pintrk;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://s.pinimg.com/ct/core.js';
+  document.head.appendChild(script);
+})();
+
 pintrk('load', ${safeJSON(id)}, ${safeJSON(pd)});
 pintrk('page');
 `;
