@@ -28,7 +28,7 @@ export const normalizeState = (state: string): string => {
 
 export const normalizeZipCode = (zipCode: string, countryCode: string): string => {
   if (countryCode === 'US') {
-    return zipCode.trim().substring(0, 4);
+    return zipCode.trim().substring(0, 5);
   }
   return zipCode.trim().toLowerCase().replace(/\s+/ug, '');
 };

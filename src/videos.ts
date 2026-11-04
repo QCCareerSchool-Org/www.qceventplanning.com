@@ -1,5 +1,7 @@
 /* eslint-disable camelcase */
 
+import { siteUrl } from './lib/siteUrl';
+
 export interface Video {
   /** unique identifier */
   slug: string;
@@ -10,8 +12,10 @@ export interface Video {
   description: string;
   /** Direct URL to the video file */
   content_loc: string;
-  /** URL to the player page (leave undefined for default) */
-  player_loc: string;
+  /** URL to an embeddable player, if there is one (must not be the watch page) */
+  player_loc?: string;
+  /** URL to the watch page (generated from the slug) */
+  watch_loc: string;
   /** Duration in seconds */
   duration: number;
   expiration_date?: string | Date;
@@ -32,10 +36,6 @@ export interface Video {
   tag?: string;
 }
 
-// import InteriorDecoratingPreviewPoster from '@/app/(blank)/previews/interior-decorating/_sections/platform/poster.jpg';
-
-const baseUrl = 'https://www.qceventplanning.com';
-
 export const siteVideos: Video[] = ([
   // {
   //   slug: 'your-journey-starts-here',
@@ -55,7 +55,7 @@ export const siteVideos: Video[] = ([
   // },
 ] as Video[]).map(v => ({
   ...v,
-  player_loc: 'player_loc' in v && v.player_loc ? v.player_loc : `${baseUrl}/videos/${v.slug}`,
+  watch_loc: `${siteUrl}/videos/${v.slug}`,
 }));
 
 // check for duplicate slugs

@@ -11,8 +11,8 @@ interface Props {
   description: string;
   /** Direct URL to the video file */
   content_loc: string;
-  /** URL to the player page (leave undefined for default) */
-  player_loc: string;
+  /** URL to an embeddable player, if there is one (must not be the watch page) */
+  player_loc?: string;
   /** Duration in seconds */
   duration: number;
   expiration_date?: string | Date;

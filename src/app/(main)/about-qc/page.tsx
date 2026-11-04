@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import AboutQCImage from './about-qc.jpg';
 import BBBIcon from './bbb.svg';
@@ -9,7 +10,6 @@ import { MeetOurTeamSection } from './meetOurTeamSection';
 import styles from './page.module.scss';
 import ShieldIcon from './shield.svg';
 import { ILEASection } from '@/components/ileaSection';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'About QC Event School',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const iconSize = 48;
 
-const AboutQCPage: PageComponent = () => (
+const AboutQCPage: FC<PageProps<'/about-qc'>> = () => (
   <>
     <section>
       <div className="container">

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { Header } from '../header';
 import HeroImage from './hero.jpg';
@@ -13,7 +14,6 @@ import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
 import { DeadlineFunnel } from '@/scripts/deadlineFunnel';
-import type { PageComponent } from '@/serverComponent';
 
 const bogoEnrollLink = 'https://enroll.qceventplanning.com/bogo-1';
 
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/bogo-offer' },
 };
 
-const BogoOfferPage: PageComponent = async props => {
+const BogoOfferPage: FC<PageProps<'/bogo-offer'>> = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 

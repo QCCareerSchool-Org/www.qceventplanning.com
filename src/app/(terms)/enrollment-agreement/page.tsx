@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import { AccountsEmailAddress } from '../accountsEmailAddress';
 import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Enrollment Agreement',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-const EnrollmentAgreementPage: PageComponent = () => {
+const EnrollmentAgreementPage: FC<PageProps<'/enrollment-agreement-gb'>> = () => {
   let i = 1;
 
   return (

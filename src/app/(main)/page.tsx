@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import BookIcon from './book.svg';
 import BriefcaseIcon from './briefcase.svg';
@@ -27,7 +28,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import WhyQCImage from '@/components/why-qc.jpg';
 import { getServerData } from '@/lib/getServerData';
 import { qcEventSchoolEducationalOrganization } from '@/qcEventSchoolEducationalOrganization';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Event School' },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TE-0013', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
-const HomePage: PageComponent = async props => {
+const HomePage: FC<PageProps<'/'>> = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
 
   return (

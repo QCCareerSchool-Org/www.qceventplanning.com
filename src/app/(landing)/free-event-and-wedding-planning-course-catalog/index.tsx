@@ -3,20 +3,19 @@ import { headers } from 'next/headers';
 import type { FC } from 'react';
 
 import { BottomSection } from '../bottomSection';
+import styles from './index.module.scss';
 import { AboutSection } from '../free-catalog/aboutSection';
 import { CertificationSection } from '../free-catalog/certificationSection';
 import { IndustrySection } from '../free-catalog/industrySection';
 import { JoinQCSection } from '../free-catalog/joinQCSection';
 import { Header } from '../header';
-import styles from './index.module.scss';
 import { ActiveCampaginForm } from '@/components/activeCampaignForm';
 import DownloadIcon from '@/components/download.svg';
 import { HomeHeroImage } from '@/components/homeHeroImage';
 import { PromoSection } from '@/components/promoSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
-import { getServerData } from '@/lib/getServerData';
-import type { PageProps } from '@/serverComponent';
+import type { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Free Event & Wedding Planning Course Catalog',
@@ -25,20 +24,21 @@ export const metadata: Metadata = {
   },
 };
 
-interface Props extends PageProps {
+interface Props {
   telephone: boolean;
+  searchParams: Record<string, string | string[] | undefined>;
+  data: Awaited<ReturnType<typeof getServerData>>;
 }
 
 export const FreeEventAndWeddingPlanningCatalog: FC<Props> = async props => {
-  const searchParams = await props.searchParams;
-  const { countryCode, date } = await getServerData(props.searchParams);
-  const gclid = getParam(searchParams.gclid);
-  const msclkid = getParam(searchParams.msclkid);
-  const utmSource = getParam(searchParams.utm_source);
-  const utmMedium = getParam(searchParams.utm_medium);
-  const utmCampaign = getParam(searchParams.utm_campaign);
-  const utmContent = getParam(searchParams.utm_content);
-  const utmTerm = getParam(searchParams.utm_term);
+  const { countryCode, date } = props.data;
+  const gclid = getParam(props.searchParams.gclid);
+  const msclkid = getParam(props.searchParams.msclkid);
+  const utmSource = getParam(props.searchParams.utm_source);
+  const utmMedium = getParam(props.searchParams.utm_medium);
+  const utmCampaign = getParam(props.searchParams.utm_campaign);
+  const utmContent = getParam(props.searchParams.utm_content);
+  const utmTerm = getParam(props.searchParams.utm_term);
   const headerList = await headers();
   const referrer = headerList.get('referer');
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { getThankyouData } from '..';
 import HeroImage from '../../free-floral-design-course-catalog/hero.jpg';
@@ -12,7 +13,7 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PageComponent } from '@/serverComponent';
+import { getServerData } from '@/lib/getServerData';
 
 const courseCode: CourseCode = 'fd';
 
@@ -24,8 +25,9 @@ export const metadata: Metadata = {
 
 const telephoneListId = 53;
 
-const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+const ThankYouCourseCatalogPage: FC<PageProps<'/download-floral-design-course-catalog'>> = async props => {
+  const data = await getServerData(props.searchParams);
+  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(data);
   const searchParams = await props.searchParams;
   const alreadyPrompted = searchParams.t;
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import { BottomSection } from '../bottomSection';
 import { CertificationSection } from '../free-catalog//certificationSection';
@@ -23,7 +24,6 @@ import { ReneeTucci } from '@/components/tutorImages/reneeTucci';
 import type { CourseCode } from '@/domain/courseCode';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Floral Design Course Catalog',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 const courseCodes: CourseCode[] = [ 'fd' ];
 const testimonialIds: TestimonialId[] = [ 'TE-0020', 'TE-0021', 'TE-0012', 'TE-0022', 'TE-0004', 'TE-0003' ];
 
-const FreeFloralDesignCatalogPage: PageComponent = async props => {
+const FreeFloralDesignCatalogPage: FC<PageProps<'/free-floral-design-course-catalog'>> = async props => {
   const searchParams = await props.searchParams;
   const { countryCode, date } = await getServerData(props.searchParams);
   const gclid = getParam(searchParams.gclid);

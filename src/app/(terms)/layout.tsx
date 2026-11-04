@@ -1,8 +1,7 @@
-import type { LayoutComponent } from '@/serverComponent';
-
 import '@/app/bootstrap.scss';
+import type { FC } from 'react';
 
-const TermsLayout: LayoutComponent = ({ children }) => (
+const TermsLayout: FC<LayoutProps<'/'>> = ({ children }) => (
   <>
     <main>{children}</main>
   </>

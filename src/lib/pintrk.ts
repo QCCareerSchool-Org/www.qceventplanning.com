@@ -1,11 +1,21 @@
 /* eslint-disable custom/no-window-outside-effects */
 import { Big } from 'big.js';
 
-import { normalizeEmailAddress } from './hash';
+import { normalizeCity, normalizeEmailAddress, normalizeName, normalizeState, normalizeTelephoneNumber, normalizeZipCode } from './hash';
 import type { Enrollment } from '@/domain/enrollment';
 
 export interface LoadParams {
   em?: string;
+  fn?: string;
+  ln?: string;
+  ph?: string;
+  ct?: string;
+  st?: string;
+  country?: string;
+  zp?: string;
+  ge?: string;
+  db?: string;
+  external_id?: string;
 }
 
 interface LineItem {
@@ -30,6 +40,7 @@ interface CheckoutParams {
 
 interface Pintrk {
   (action: 'load', tagId: string, params?: LoadParams): void;
+  (action: 'set', params: LoadParams): void;
   (action: 'track', type: 'lead', params?: LeadParams): void;
   (action: 'track', type: 'checkout', params: CheckoutParams): void;
 }
@@ -40,18 +51,55 @@ declare global {
   }
 }
 
-const pinterestId = process.env.NEXT_PUBLIC_PINTEREST_ID;
+export interface PintrkUserData {
+  emailAddress?: string | null;
+  telephoneNumber?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  city?: string | null;
+  provinceCode?: string | null;
+  countryCode?: string | null;
+  postalCode?: string | null;
+}
 
-// reload the tag with the email address for enhanced match
-const pintrkEnhancedMatch = (emailAddress: string): void => {
-  if (pinterestId) {
-    window.pintrk?.('load', pinterestId, { em: normalizeEmailAddress(emailAddress) });
+// the tag only trims and lowercases before hashing, so apply the full normalization here
+export const pintrkNormalize = (data: PintrkUserData): LoadParams => {
+  const params: LoadParams = {};
+  if (data.emailAddress) {
+    params.em = normalizeEmailAddress(data.emailAddress);
   }
+  if (data.telephoneNumber) {
+    params.ph = normalizeTelephoneNumber(data.telephoneNumber);
+  }
+  if (data.firstName) {
+    params.fn = normalizeName(data.firstName);
+  }
+  if (data.lastName) {
+    params.ln = normalizeName(data.lastName);
+  }
+  if (data.city) {
+    params.ct = normalizeCity(data.city);
+  }
+  if (data.provinceCode) {
+    params.st = normalizeState(data.provinceCode);
+  }
+  if (data.countryCode) {
+    params.country = data.countryCode.toLowerCase();
+  }
+  if (data.postalCode) {
+    params.zp = normalizeZipCode(data.postalCode, data.countryCode ?? '');
+  }
+  return params;
 };
 
-export const pintrkLead = (eventId?: string, emailAddress?: string): void => {
-  if (emailAddress) {
-    pintrkEnhancedMatch(emailAddress);
+// the tag hashes these values and attaches them to subsequent events
+const pintrkUserData = (data: PintrkUserData): void => {
+  window.pintrk?.('set', pintrkNormalize(data));
+};
+
+export const pintrkLead = (eventId?: string, userData?: PintrkUserData): void => {
+  if (userData) {
+    pintrkUserData(userData);
   }
   if (typeof eventId !== 'undefined') {
     // log the conversion with a specfic event_id
@@ -62,7 +110,15 @@ export const pintrkLead = (eventId?: string, emailAddress?: string): void => {
 };
 
 export const pintrkSale = (enrollment: Enrollment): void => {
-  pintrkEnhancedMatch(enrollment.emailAddress);
+  pintrkUserData({
+    emailAddress: enrollment.emailAddress,
+    telephoneNumber: enrollment.telephoneNumber,
+    firstName: enrollment.firstName,
+    lastName: enrollment.lastName,
+    city: enrollment.city,
+    provinceCode: enrollment.provinceCode,
+    countryCode: enrollment.countryCode,
+  });
   /* eslint-disable camelcase */
   window.pintrk?.('track', 'checkout', {
     event_id: enrollment.id.toString(),

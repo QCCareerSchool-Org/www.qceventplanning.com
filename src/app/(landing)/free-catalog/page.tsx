@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import type { FC } from 'react';
 
 import { BottomSection } from '../bottomSection';
 import { Header } from '../header';
@@ -17,7 +18,6 @@ import { StatsSection } from '@/components/statsSection';
 import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Course Catalog',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 };
 
-const FreeCatalogPage: PageComponent = async props => {
+const FreeCatalogPage: FC<PageProps<'/free-catalog'>> = async props => {
   const searchParams = await props.searchParams;
   const { countryCode, date } = await getServerData(props.searchParams);
 

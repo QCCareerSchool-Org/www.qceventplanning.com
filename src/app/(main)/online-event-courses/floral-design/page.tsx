@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
@@ -28,7 +29,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 const courseCode: CourseCode = 'fd';
 const courseCodes: CourseCode[] = [ courseCode ];
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
 };
 
-const FloralDesignPage: PageComponent = async props => {
+const FloralDesignPage: FC<PageProps<'/online-event-courses/floral-design'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
 
   return (

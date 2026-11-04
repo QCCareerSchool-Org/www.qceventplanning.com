@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { InfoSection } from './infoSection';
 import styles from './page.module.scss';
@@ -10,7 +11,6 @@ import HeroImageMobile from '@/components/homeHeroImage/hero-small.jpg';
 import { PerksSection } from '@/components/perksSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Your Event & Wedding Planning Career',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TE-0001', 'TE-0002', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0006' ];
 
-const YourCareerPage: PageComponent = () => (
+const YourCareerPage: FC<PageProps<'/your-career'>> = () => (
   <>
     <section className={styles.heroSection}>
       <BackgroundImage priority src={HeroImageDesktop} objectPosition="37.5% 25%" mobile={{ src: HeroImageMobile, breakpoint: 'lg', objectPosition: '50% 87.5%' }} />

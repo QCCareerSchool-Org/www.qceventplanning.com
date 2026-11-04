@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import EBImage from '../../(main)/online-event-courses/accelerate-your-business/hero.jpg';
 import CPImage from '../../(main)/online-event-courses/corporate-event-planning/hero.jpg';
@@ -14,7 +15,6 @@ import { CourseCardCertifcation } from '@/components/courseCardCertification';
 import { ILEASection } from '@/components/ileaSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { DeadlineFunnel } from '@/scripts/deadlineFunnel';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Specialty Course Offer',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 const enrollLink = 'https://enroll.qceventplanning.com/free-specialty';
 
-const FreeSpecialtyCourseOfferPage: PageComponent = () => (
+const FreeSpecialtyCourseOfferPage: FC<PageProps<'/free-event-and-wedding-planning-course-catalog'>> = () => (
   <>
     <DeadlineFunnel />
     <section style={{ paddingBottom: 0 }}>

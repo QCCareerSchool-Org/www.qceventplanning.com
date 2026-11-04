@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
+import type { FC } from 'react';
 import { FaPlay } from 'react-icons/fa';
 import { PiGift } from 'react-icons/pi';
 
@@ -27,7 +28,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Masterclass: How to Book $100K+ Luxury Event Clients',
@@ -41,7 +41,7 @@ const testimonialIds: TestimonialId[] = [ 'TE-0012', 'TE-0003', 'TE-0014' ];
 const listIconWidth = 32;
 const listIconHeight = 24;
 
-const MasterClassRegistrationPage: PageComponent = async props => {
+const MasterClassRegistrationPage: FC<PageProps<'/free-masterclass'>> = async props => {
   const searchParams = await props.searchParams;
   const { countryCode } = await getServerData(props.searchParams);
 

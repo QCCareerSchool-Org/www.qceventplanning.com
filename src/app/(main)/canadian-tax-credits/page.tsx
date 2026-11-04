@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
+import type { FC } from 'react';
 import { BiBulb, BiCheckCircle, BiError } from 'react-icons/bi';
 
 import styles from './box.module.scss';
@@ -10,7 +11,6 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
 import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Canadian Tax Credits',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/canadian-tax-credits' },
 };
 
-const CanadianTaxCreditsPage: PageComponent = async props => {
+const CanadianTaxCreditsPage: FC<PageProps<'/canadian-tax-credits'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
   if (countryCode !== 'CA') {
     redirect('/');
