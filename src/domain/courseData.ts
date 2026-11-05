@@ -18,7 +18,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     description: 'Become a certified event and wedding planner with QC\'s online course. Learn to plan weddings and celebrations, then start your own business or get hired in the industry.',
     certification: 'International Event and Wedding Planning Professional™ (IEWP™)',
     subjects: [
-     'The Foundations of Event Planning',
+      'The Foundations of Event Planning',
       'Celebrations and Milestone Parties',
       'Parties and Charity Events',
       'Essential Wedding Components',
@@ -37,7 +37,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'The Fundamentals of Event Planning',
       'Event Venues and Vendors',
       'The Planning Process',
-      'Risk Management and Contingency Planning'
+      'Risk Management and Contingency Planning',
       'Business Training',
     ],
     workload: 'About 10 hours of reading, assignments, and video tutorials. Students have 12 months to complete the course, and most finish in 3-6 months working part time.',
@@ -97,7 +97,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   dw: {
     name: 'Destination Wedding Planning Course',
     url: `${baseUrl}/online-event-courses/destination-wedding-planning.`,
-    description:'Become a certified destination wedding planner with QC\'s online specialty course for trained planners. Plan weddings abroad for couples anywhere in the world.',
+    description: 'Become a certified destination wedding planner with QC\'s online specialty course for trained planners. Plan weddings abroad for couples anywhere in the world.',
     certification: 'Destination Wedding Specialist (DWS)',
     subjects: [
       'Introduction to Planning Destination Weddings',
@@ -175,7 +175,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     name: 'All Access Program',
     url: `${baseUrl}/online-event-courses/all-access-program`,
     description: 'Get all of QC\'s online event planning courses in one enrollment and earn the Master Planner Certificate, so you can offer full-service planning and decor for every type of event.',
-    certification: 'Master Planner Certificate (MPC),
+    certification: 'Master Planner Certificate (MPC)',
     subjects: undefined,
     workload: 'Students have a full year to complete the program with extensions available upon request.',
   },
