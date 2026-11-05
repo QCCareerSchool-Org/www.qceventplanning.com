@@ -24,7 +24,7 @@ const InnerBanner: FC<Props> = ({ date }) => {
   if (november04.contains(date)) {
     return (
       <PromoBanner date={date} period={november04.toDTO()}>
-        <span className="d-none d-lg-inline">Black Friday Offer:</span>Get Two Specialty Courses FREE
+        <span className="d-none d-lg-inline">Black Friday Offer: </span>Get Two Specialty Courses FREE
       </PromoBanner>
     );
   }
