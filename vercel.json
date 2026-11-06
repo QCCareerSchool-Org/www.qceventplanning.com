@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog/" },
-    { "source": "/blog/:match*", "destination": "https://blog.qceventplanning.com/blog/:match" }
+    { "source": "/blog", "destination": "https://www.qceventplanning.com/blog/" },
+    { "source": "/blog/:match*", "destination": "https://www.qceventplanning.com/blog/:match" }
   ],
   "redirects": [
     { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path*", "destination": "/blog/:year/:month/:path" },
