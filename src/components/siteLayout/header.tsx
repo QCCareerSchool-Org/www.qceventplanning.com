@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { PromoBanner } from './promoBanner';
 import { MainNav } from '../../app/(main)/mainNav';
 import { Banner } from '../countDownTimer/banner';
-import { november04 } from '@/periods';
+import { november04, november16 } from '@/periods';
 
 interface Props {
   countryCode: string;
@@ -24,6 +24,13 @@ const InnerBanner: FC<Props> = ({ date }) => {
   if (november04.contains(date)) {
     return (
       <PromoBanner date={date} period={november04.toDTO()}>
+        <span className="d-none d-lg-inline">Black Friday Offer: </span>Get Two Specialty Courses FREE
+      </PromoBanner>
+    );
+  }
+  if (november16.contains(date)) {
+    return (
+      <PromoBanner date={date} period={november16.toDTO()}>
         <span className="d-none d-lg-inline">Black Friday Offer: </span>Get Two Specialty Courses FREE
       </PromoBanner>
     );

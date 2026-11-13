@@ -33,7 +33,7 @@ const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds: TestimonialId[] = [ 'TE-0006', 'TE-0003', 'TE-0004', 'TE-0005', 'TE-0002', 'TE-0017' ];
 
 export const metadata: Metadata = {
-  title: 'Event & Wedding Planning Course',
+  title: 'Online Event & Wedding Planning Course | IEWP™ Certification',
   description: getCourseDescription(courseCode),
   alternates: {
     canonical: '/online-event-courses/event-and-wedding-planning',
@@ -50,7 +50,12 @@ const EventAndWeddingPlanningPage: FC<PageProps<'/online-event-courses/event-and
             <Hero src={HeroImage} priority objectPosition="80% 0">
               <CourseType className="mb-2 mb-xl-4">Foundation Course</CourseType>
               <h1 className="mb-2 mb-xl-4">Event &amp; Wedding Planning</h1>
-              <p className="h5 mb-3 mb-xl-5">Become a Certified Event &amp; Wedding Planner</p>
+              <div className="row">
+                <div className="col-12 col-md-10 col-lg-8 col-xl-6">
+                  <p className="h5 mb-2">Become a Certified Event &amp; Wedding Planner</p>
+                  <p className="mb-3 mb-xl-5">QC Event School's Event & Wedding Planning course is a self-paced online certification for beginners and experienced planners. Learn to plan weddings, parties, and special events with dedicated training and templates to launch your own business.</p>
+                </div>
+              </div>
               <div className="d-flex justify-content-center justify-content-md-start">
                 <HeroButtons courseCodes={courseCodes} />
               </div>
