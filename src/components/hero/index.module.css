@@ -32,11 +32,11 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   }
 
-  .content > * { color: white }
+  .content * { color: white }
 
   .overlay {
     position: absolute; 
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 
     /* center overlay text */
     display: flex;
@@ -49,7 +49,7 @@
 
 @media only screen and (min-width: 992px) {
   .content { padding-left: 3rem; padding-right: 3rem }
-  .overlay { display: none; }
+  /* .overlay { display: none; } */
 }
 
 @media only screen and (min-width: 1200px) {

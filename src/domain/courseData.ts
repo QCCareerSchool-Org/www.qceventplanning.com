@@ -15,7 +15,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   ep: {
     name: 'Event and Wedding Planning Course',
     url: `${baseUrl}/online-event-courses/event-and-wedding-planning`,
-    description: 'Become a certified event and wedding planner with QC\'s online course. Learn to plan weddings and celebrations, then start your own business or get hired in the industry.',
+    description: 'Self-paced online course for beginners. Earn the ILEA-approved IEWP designation with personal tutor feedback, business training, and 12 months to finish.',
     certification: 'International Event and Wedding Planning Professional™ (IEWP™)',
     subjects: [
       'The Foundations of Event Planning',
