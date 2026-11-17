@@ -12,6 +12,7 @@ import styles from './index.module.scss';
 import { JavasciptInput } from './javascriptInput';
 import { CurrentPageInput } from '@/components/currentPageInput';
 import DownloadIcon from '@/components/download.svg';
+import { useIp } from '@/hooks/useIp';
 
 interface Props {
   successLocation: string;
@@ -43,6 +44,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
+  const ip = useIp();
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
@@ -104,6 +106,7 @@ export const ActiveCampaginForm: FC<Props> = props => {
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <CurrentPageInput />
       <JavasciptInput />
+      {ip && <input type="hidden" name="ip" value={ip} />}
       <input type="hidden" name="forward" value="0" />
       <input type="hidden" name="esp" value="ActiveCampaign" />
       <input type="hidden" name="nonce" value={nonce} />
@@ -186,8 +189,7 @@ interface InputProps {
 }
 
 const InputComponent = forwardRef<HTMLInputElement, DefaultInputComponentProps>((props, ref) => {
-  const { value, onChange, name } = props as InputProps;
-  const handleChange = onChange;
+  const { value, onChange: handleChange, name } = props as InputProps;
   return <input ref={ref} name={name} type="tel" value={value} onChange={handleChange} className="form-control" placeholder="Phone (Optional)" />;
 });
 
