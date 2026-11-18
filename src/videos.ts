@@ -32,6 +32,8 @@ export interface Video {
   };
   live?: 'yes' | 'no';
   tag?: string;
+  vtt?: string;
+  transcript?: string[];
 }
 
 export const siteVideos: Video[] = ([

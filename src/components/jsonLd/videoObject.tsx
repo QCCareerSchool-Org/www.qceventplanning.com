@@ -4,8 +4,6 @@ import type { VideoObject, WithContext } from 'schema-dts';
 interface Props {
   /** unique identifier */
   slug: string;
-  /** the pages this video appears on */
-  pages: string[];
   title: string;
   thumbnail_loc: string;
   description: string;
