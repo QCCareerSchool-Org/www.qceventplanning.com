@@ -5,8 +5,6 @@ import { siteUrl } from './lib/siteUrl';
 export interface Video {
   /** unique identifier */
   slug: string;
-  /** the pages this video appears on */
-  pages: string[];
   title: string;
   thumbnail_loc: string;
   description: string;
