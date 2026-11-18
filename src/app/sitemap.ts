@@ -6,28 +6,27 @@ import { siteVideos } from '../videos';
 import { siteUrl } from '@/lib/siteUrl';
 import { escapeXmlObject } from '@/lib/xml';
 
+// Folders that never map 1:1 to a URL segment
+const isNonRouteSegment = (name: string): boolean => /^(\[|_|@)/u.test(name);
+
 const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
   const files = await fs.readdir(filePath);
   for (const f of files) {
     const fullname = path.join(filePath, f);
-    const url = getUrl(filePath);
-    if (url.endsWith('/videos/[slug]')) {
-      result.push(...getVideoPages());
-      continue;
-    }
     const stat = await fs.stat(fullname);
     if (stat.isDirectory() && !stat.isSymbolicLink()) {
-      result.push(...await getAppDirectoryPages(fullname));
-    }
-    if (stat.isFile() && (f.endsWith('page.tsx') || f.endsWith('page.jsx'))) {
+      if (getUrl(fullname).endsWith('/videos/[slug]')) {
+        result.push(...getVideoPages());
+      } else if (!isNonRouteSegment(f)) {
+        result.push(...await getAppDirectoryPages(fullname));
+      }
+    } else if (stat.isFile() && /^page\.(tsx|jsx)$/u.test(f)) {
+      const url = getUrl(filePath);
       result.push({
         url,
-        lastModified: stat.mtime,
+        // lastModified: stat.mtime,
         priority: getPriority(url),
-        videos: siteVideos
-          .filter(v => v.pages.includes(url))
-          .map(escapeXmlObject),
       });
     }
   }
